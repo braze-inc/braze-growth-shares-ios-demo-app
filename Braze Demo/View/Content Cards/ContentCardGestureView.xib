@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" contentMode="scaleToFill" id="X8m-oz-hm0" customClass="ContentCardGestureView" customModule="BookDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PwB-Ai-zNb">
+                    <rect key="frame" x="0.0" y="0.0" width="200" height="125"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="0eY-br-SZb" appends="YES" id="Epp-Sw-j5m"/>
+                        <outletCollection property="gestureRecognizers" destination="3up-y2-cbR" appends="YES" id="PIP-NB-NmF"/>
+                    </connections>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PwB-Ai-zNb" firstAttribute="leading" secondItem="r7s-t9-mRE" secondAttribute="leading" id="APw-Ye-b8u"/>
+                <constraint firstItem="r7s-t9-mRE" firstAttribute="trailing" secondItem="PwB-Ai-zNb" secondAttribute="trailing" id="Kjr-Mh-LY0"/>
+                <constraint firstAttribute="bottom" secondItem="PwB-Ai-zNb" secondAttribute="bottom" id="Sh1-M8-AKZ"/>
+                <constraint firstItem="PwB-Ai-zNb" firstAttribute="top" secondItem="X8m-oz-hm0" secondAttribute="top" id="T2j-Pq-fdZ"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="r7s-t9-mRE"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                    <real key="value" value="0.5"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                    <size key="value" width="0.0" height="2"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imageView" destination="PwB-Ai-zNb" id="24s-7s-KeQ"/>
+                <outlet property="swipeGesture" destination="0eY-br-SZb" id="ePt-nn-XLD"/>
+            </connections>
+            <point key="canvasLocation" x="116" y="113"/>
+        </view>
+        <swipeGestureRecognizer direction="left" id="0eY-br-SZb">
+            <connections>
+                <action selector="viewDidSwipe:" destination="X8m-oz-hm0" id="IJ3-69-oO5"/>
+                <outlet property="delegate" destination="X8m-oz-hm0" id="kV3-dA-ZxC"/>
+            </connections>
+        </swipeGestureRecognizer>
+        <tapGestureRecognizer id="3up-y2-cbR">
+            <connections>
+                <action selector="viewDidTap:" destination="X8m-oz-hm0" id="bWR-ON-j6x"/>
+                <outlet property="delegate" destination="X8m-oz-hm0" id="i9F-CX-Nyb"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

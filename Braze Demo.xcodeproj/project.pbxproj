@@ -1,0 +1,915 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */; };
+		7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Local Data.json */; };
+		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
+		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
+		7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */; };
+		7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */; };
+		7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */; };
+		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
+		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
+		7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FFC1924EC7EB50082C71B /* APIRequest.swift */; };
+		7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */; };
+		7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC524AD787A00E8D207 /* Main.storyboard */; };
+		7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */; };
+		7F9DCBCC24AD79C300E8D207 /* AppboyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBCB24AD79C300E8D207 /* AppboyManager.swift */; };
+		7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */; };
+		7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBD124AD7A4F00E8D207 /* Tile.swift */; };
+		7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */; };
+		7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */; };
+		7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */; };
+		7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
+		7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26224D374B2008269E5 /* Coupon.swift */; };
+		7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26424D392AE008269E5 /* Array_Util.swift */; };
+		7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48824AD711E00EC0983 /* AppDelegate.swift */; };
+		7FBDD48B24AD711E00EC0983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */; };
+		7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */; };
+		7FBDD49324AD711E00EC0983 /* Braze Demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD49124AD711E00EC0983 /* Braze Demo.xcdatamodeld */; };
+		7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
+		7FBDD4A324AD711F00EC0983 /* BrazeDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */; };
+		7FBDD4AE24AD711F00EC0983 /* BrazeDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD4AD24AD711F00EC0983 /* BrazeDemoUITests.swift */; };
+		7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FC3106524D1C29A00053D90 /* ContentCardGestureView.swift */; };
+		7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FC3106724D1C30100053D90 /* ContentCardGestureView.xib */; };
+		7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB97824C2D184001AA381 /* Double_Util.swift */; };
+		7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB97A24C35EBA001AA381 /* ContentCardWebView.swift */; };
+		7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCFB97E24C35EE2001AA381 /* ContentCardWebView.xib */; };
+		7FCFB98124C55177001AA381 /* ContentCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB98024C55177001AA381 /* ContentCardData.swift */; };
+		7FCFB98D24C91421001AA381 /* Ad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB98C24C91421001AA381 /* Ad.swift */; };
+		7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */; };
+		7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */; };
+		7FCFB99524CA383C001AA381 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB99424CA383C001AA381 /* Message.swift */; };
+		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
+		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
+		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
+		7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */; };
+		7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */; };
+		7FE763EE24CBCDB10017C5D2 /* HomeListOperationQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE763ED24CBCDB10017C5D2 /* HomeListOperationQueue.swift */; };
+		7FE763F024CBD22A0017C5D2 /* UIViewController_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */; };
+		7FE763F224CD246A0017C5D2 /* Decimal_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */; };
+		7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7FBDD49F24AD711F00EC0983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FBDD47D24AD711D00EC0983 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FBDD48424AD711D00EC0983;
+			remoteInfo = BookDemo;
+		};
+		7FBDD4AA24AD711F00EC0983 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FBDD47D24AD711D00EC0983 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7FBDD48424AD711D00EC0983;
+			remoteInfo = BookDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.debug.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.debug.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7F754FC0250C2DF000CD7B45 /* Local Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Local Data.json"; sourceTree = "<group>"; };
+		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
+		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
+		7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterContainerViewController.swift; sourceTree = "<group>"; };
+		7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListDataSource.swift; sourceTree = "<group>"; };
+		7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboySettingsViewController.swift; sourceTree = "<group>"; };
+		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
+		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
+		7F8FFC1924EC7EB50082C71B /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7F9DCBC524AD787A00E8D207 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataCoordinator.swift; sourceTree = "<group>"; };
+		7F9DCBCB24AD79C300E8D207 /* AppboyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboyManager.swift; sourceTree = "<group>"; };
+		7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		7F9DCBD124AD7A4F00E8D207 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardFullPageView.swift; sourceTree = "<group>"; };
+		7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardFullPageView.xib; sourceTree = "<group>"; };
+		7FA45A3524C29131009A484B /* UIVIew_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew_Util.swift; sourceTree = "<group>"; };
+		7FAAE26224D374B2008269E5 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
+		7FAAE26424D392AE008269E5 /* Array_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Util.swift; sourceTree = "<group>"; };
+		7FABB1E42512A92600253FAF /* Braze Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Braze Demo.entitlements"; sourceTree = "<group>"; };
+		7FBDD48524AD711E00EC0983 /* Braze Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Braze Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBDD48824AD711E00EC0983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
+		7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDemo.xcdatamodel; sourceTree = "<group>"; };
+		7FBDD49424AD711F00EC0983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FBDD49924AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		7FBDD49E24AD711F00EC0983 /* Braze DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoTests.swift; sourceTree = "<group>"; };
+		7FBDD4A424AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FBDD4A924AD711F00EC0983 /* Braze DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBDD4AD24AD711F00EC0983 /* BrazeDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoUITests.swift; sourceTree = "<group>"; };
+		7FBDD4AF24AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FC3106524D1C29A00053D90 /* ContentCardGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardGestureView.swift; sourceTree = "<group>"; };
+		7FC3106724D1C30100053D90 /* ContentCardGestureView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardGestureView.xib; sourceTree = "<group>"; };
+		7FCFB97824C2D184001AA381 /* Double_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double_Util.swift; sourceTree = "<group>"; };
+		7FCFB97A24C35EBA001AA381 /* ContentCardWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardWebView.swift; sourceTree = "<group>"; };
+		7FCFB97E24C35EE2001AA381 /* ContentCardWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardWebView.xib; sourceTree = "<group>"; };
+		7FCFB98024C55177001AA381 /* ContentCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardData.swift; sourceTree = "<group>"; };
+		7FCFB98C24C91421001AA381 /* Ad.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad.swift; sourceTree = "<group>"; };
+		7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView_Util.swift; sourceTree = "<group>"; };
+		7FCFB99424CA383C001AA381 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
+		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
+		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
+		7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartTableViewCell.swift; sourceTree = "<group>"; };
+		7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterTableViewCell.swift; sourceTree = "<group>"; };
+		7FE763ED24CBCDB10017C5D2 /* HomeListOperationQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListOperationQueue.swift; sourceTree = "<group>"; };
+		7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Util.swift; sourceTree = "<group>"; };
+		7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal_Util.swift; sourceTree = "<group>"; };
+		7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDetailViewController.swift; sourceTree = "<group>"; };
+		B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braze_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E302133F4BCD5B9C06EB4680 /* Pods-Content Card Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.release.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.release.xcconfig"; sourceTree = "<group>"; };
+		FD1D66EF63678E2C41C4E6FD /* Pods-Braze Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.release.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FBDD48224AD711D00EC0983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBDD49B24AD711F00EC0983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBDD4A624AD711F00EC0983 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		019D6DB1F40ADB123C107AF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F87D4A824B01AAF00ED0A86 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */,
+				7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */,
+				7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		7F87D4AF24B2A25000ED0A86 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7F754FC4250C3A5200CD7B45 /* String_Util.swift */,
+				7FAAE26424D392AE008269E5 /* Array_Util.swift */,
+				7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */,
+				7FCFB97824C2D184001AA381 /* Double_Util.swift */,
+				7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */,
+				7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */,
+				7FA45A3524C29131009A484B /* UIVIew_Util.swift */,
+				7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7F9DCBC124AD784700E8D207 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				7F9DCBC524AD787A00E8D207 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		7F9DCBC224AD785200E8D207 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FABB1E42512A92600253FAF /* Braze Demo.entitlements */,
+				7F754FC0250C2DF000CD7B45 /* Local Data.json */,
+				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
+				7FBDD49424AD711F00EC0983 /* Assets.xcassets */,
+				7FBDD49924AD711F00EC0983 /* Info.plist */,
+				7FBDD49124AD711E00EC0983 /* Braze Demo.xcdatamodeld */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7F9DCBC924AD79B000E8D207 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */,
+				7FE763ED24CBCDB10017C5D2 /* HomeListOperationQueue.swift */,
+				7F8FFC1924EC7EB50082C71B /* APIRequest.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		7F9DCBCA24AD79B700E8D207 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
+				7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */,
+				7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */,
+				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
+				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
+				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7F9DCBCD24AD79C700E8D207 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				7FBDD48824AD711E00EC0983 /* AppDelegate.swift */,
+				7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		7F9DCBD024AD7A3B00E8D207 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */,
+				7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		7F9DCBD324AD7A5400E8D207 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FCFB98C24C91421001AA381 /* Ad.swift */,
+				7FAAE26224D374B2008269E5 /* Coupon.swift */,
+				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
+				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
+				7FCFB99424CA383C001AA381 /* Message.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F9DCBD824AD832400E8D207 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7FA45A3424C28BD5009A484B /* Content Cards */,
+				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
+				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
+				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
+				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7FA45A3424C28BD5009A484B /* Content Cards */ = {
+			isa = PBXGroup;
+			children = (
+				7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */,
+				7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */,
+				7FCFB97A24C35EBA001AA381 /* ContentCardWebView.swift */,
+				7FCFB97E24C35EE2001AA381 /* ContentCardWebView.xib */,
+				7FC3106524D1C29A00053D90 /* ContentCardGestureView.swift */,
+				7FC3106724D1C30100053D90 /* ContentCardGestureView.xib */,
+			);
+			path = "Content Cards";
+			sourceTree = "<group>";
+		};
+		7FBDD47C24AD711D00EC0983 = {
+			isa = PBXGroup;
+			children = (
+				7FBDD48724AD711E00EC0983 /* Braze Demo */,
+				7FBDD4A124AD711F00EC0983 /* Braze DemoTests */,
+				7FBDD4AC24AD711F00EC0983 /* Braze DemoUITests */,
+				7FBDD48624AD711E00EC0983 /* Products */,
+				FC71FD02EFEB100EF1D69F51 /* Pods */,
+				019D6DB1F40ADB123C107AF8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7FBDD48624AD711E00EC0983 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FBDD48524AD711E00EC0983 /* Braze Demo.app */,
+				7FBDD49E24AD711F00EC0983 /* Braze DemoTests.xctest */,
+				7FBDD4A924AD711F00EC0983 /* Braze DemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FBDD48724AD711E00EC0983 /* Braze Demo */ = {
+			isa = PBXGroup;
+			children = (
+				7F9DCBCB24AD79C300E8D207 /* AppboyManager.swift */,
+				7F9DCBCD24AD79C700E8D207 /* AppDelegate */,
+				7F9DCBC924AD79B000E8D207 /* API */,
+				7F87D4A824B01AAF00ED0A86 /* DataSource */,
+				7F9DCBD024AD7A3B00E8D207 /* Cache */,
+				7F9DCBD324AD7A5400E8D207 /* Model */,
+				7F9DCBC124AD784700E8D207 /* Storyboard */,
+				7F9DCBC224AD785200E8D207 /* Supporting Files */,
+				7F9DCBCA24AD79B700E8D207 /* ViewController */,
+				7F87D4AF24B2A25000ED0A86 /* Utils */,
+				7F9DCBD824AD832400E8D207 /* View */,
+			);
+			path = "Braze Demo";
+			sourceTree = "<group>";
+		};
+		7FBDD4A124AD711F00EC0983 /* Braze DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */,
+				7FBDD4A424AD711F00EC0983 /* Info.plist */,
+			);
+			path = "Braze DemoTests";
+			sourceTree = "<group>";
+		};
+		7FBDD4AC24AD711F00EC0983 /* Braze DemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7FBDD4AD24AD711F00EC0983 /* BrazeDemoUITests.swift */,
+				7FBDD4AF24AD711F00EC0983 /* Info.plist */,
+			);
+			path = "Braze DemoUITests";
+			sourceTree = "<group>";
+		};
+		FC71FD02EFEB100EF1D69F51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */,
+				E302133F4BCD5B9C06EB4680 /* Pods-Content Card Demo.release.xcconfig */,
+				2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */,
+				FD1D66EF63678E2C41C4E6FD /* Pods-Braze Demo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FBDD48424AD711D00EC0983 /* Braze Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze Demo" */;
+			buildPhases = (
+				B9BFAA1DE93F9F20BAF5AAFF /* [CP] Check Pods Manifest.lock */,
+				7FBDD48124AD711D00EC0983 /* Sources */,
+				7FBDD48224AD711D00EC0983 /* Frameworks */,
+				7FBDD48324AD711D00EC0983 /* Resources */,
+				8FC163F39FEBD99FF76B08F3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Braze Demo";
+			productName = BookDemo;
+			productReference = 7FBDD48524AD711E00EC0983 /* Braze Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7FBDD49D24AD711F00EC0983 /* Braze DemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FBDD4B524AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoTests" */;
+			buildPhases = (
+				7FBDD49A24AD711F00EC0983 /* Sources */,
+				7FBDD49B24AD711F00EC0983 /* Frameworks */,
+				7FBDD49C24AD711F00EC0983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FBDD4A024AD711F00EC0983 /* PBXTargetDependency */,
+			);
+			name = "Braze DemoTests";
+			productName = BookDemoTests;
+			productReference = 7FBDD49E24AD711F00EC0983 /* Braze DemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7FBDD4A824AD711F00EC0983 /* Braze DemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FBDD4B824AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoUITests" */;
+			buildPhases = (
+				7FBDD4A524AD711F00EC0983 /* Sources */,
+				7FBDD4A624AD711F00EC0983 /* Frameworks */,
+				7FBDD4A724AD711F00EC0983 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7FBDD4AB24AD711F00EC0983 /* PBXTargetDependency */,
+			);
+			name = "Braze DemoUITests";
+			productName = BookDemoUITests;
+			productReference = 7FBDD4A924AD711F00EC0983 /* Braze DemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FBDD47D24AD711D00EC0983 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Justin-Malandruccolo";
+				TargetAttributes = {
+					7FBDD48424AD711D00EC0983 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					7FBDD49D24AD711F00EC0983 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7FBDD48424AD711D00EC0983;
+					};
+					7FBDD4A824AD711F00EC0983 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 7FBDD48424AD711D00EC0983;
+					};
+				};
+			};
+			buildConfigurationList = 7FBDD48024AD711D00EC0983 /* Build configuration list for PBXProject "Braze Demo" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FBDD47C24AD711D00EC0983;
+			productRefGroup = 7FBDD48624AD711E00EC0983 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FBDD48424AD711D00EC0983 /* Braze Demo */,
+				7FBDD49D24AD711F00EC0983 /* Braze DemoTests */,
+				7FBDD4A824AD711F00EC0983 /* Braze DemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FBDD48324AD711D00EC0983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
+				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
+				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
+				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
+				7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */,
+				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
+				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBDD49C24AD711F00EC0983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBDD4A724AD711F00EC0983 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8FC163F39FEBD99FF76B08F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Braze Demo/Pods-Braze Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Braze Demo/Pods-Braze Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Braze Demo/Pods-Braze Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9BFAA1DE93F9F20BAF5AAFF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Braze Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FBDD48124AD711D00EC0983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */,
+				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
+				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
+				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,
+				7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */,
+				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
+				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
+				7FE763EE24CBCDB10017C5D2 /* HomeListOperationQueue.swift in Sources */,
+				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
+				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
+				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
+				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
+				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
+				7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */,
+				7F9DCBCC24AD79C300E8D207 /* AppboyManager.swift in Sources */,
+				7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */,
+				7FBDD49324AD711E00EC0983 /* Braze Demo.xcdatamodeld in Sources */,
+				7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */,
+				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
+				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
+				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
+				7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */,
+				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
+				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
+				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
+				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
+				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
+				7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */,
+				7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */,
+				7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */,
+				7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */,
+				7FE763F224CD246A0017C5D2 /* Decimal_Util.swift in Sources */,
+				7FBDD48B24AD711E00EC0983 /* SceneDelegate.swift in Sources */,
+				7FCFB98124C55177001AA381 /* ContentCardData.swift in Sources */,
+				7FE763F024CBD22A0017C5D2 /* UIViewController_Util.swift in Sources */,
+				7FCFB98D24C91421001AA381 /* Ad.swift in Sources */,
+				7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */,
+				7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBDD49A24AD711F00EC0983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FBDD4A324AD711F00EC0983 /* BrazeDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7FBDD4A524AD711F00EC0983 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FBDD4AE24AD711F00EC0983 /* BrazeDemoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7FBDD4A024AD711F00EC0983 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FBDD48424AD711D00EC0983 /* Braze Demo */;
+			targetProxy = 7FBDD49F24AD711F00EC0983 /* PBXContainerItemProxy */;
+		};
+		7FBDD4AB24AD711F00EC0983 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7FBDD48424AD711D00EC0983 /* Braze Demo */;
+			targetProxy = 7FBDD4AA24AD711F00EC0983 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7FBDD4B024AD711F00EC0983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7FBDD4B124AD711F00EC0983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FBDD4B324AD711F00EC0983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Braze Demo/Supporting Files/Braze Demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				INFOPLIST_FILE = "$(SRCROOT)/Braze Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Development";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7FBDD4B424AD711F00EC0983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD1D66EF63678E2C41C4E6FD /* Pods-Braze Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Braze Demo/Supporting Files/Braze Demo.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				INFOPLIST_FILE = "$(SRCROOT)/Braze Demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Development";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7FBDD4B624AD711F00EC0983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U883FP5L7Z;
+				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Braze.ContentCardDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braze Demo.app/Braze Demo";
+			};
+			name = Debug;
+		};
+		7FBDD4B724AD711F00EC0983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U883FP5L7Z;
+				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Braze.ContentCardDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braze Demo.app/Braze Demo";
+			};
+			name = Release;
+		};
+		7FBDD4B924AD711F00EC0983 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U883FP5L7Z;
+				INFOPLIST_FILE = "Braze DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Braze.ContentCardDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Braze Demo";
+			};
+			name = Debug;
+		};
+		7FBDD4BA24AD711F00EC0983 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = U883FP5L7Z;
+				INFOPLIST_FILE = "Braze DemoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Braze.ContentCardDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Braze Demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FBDD48024AD711D00EC0983 /* Build configuration list for PBXProject "Braze Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FBDD4B024AD711F00EC0983 /* Debug */,
+				7FBDD4B124AD711F00EC0983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FBDD4B324AD711F00EC0983 /* Debug */,
+				7FBDD4B424AD711F00EC0983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FBDD4B524AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FBDD4B624AD711F00EC0983 /* Debug */,
+				7FBDD4B724AD711F00EC0983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FBDD4B824AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FBDD4B924AD711F00EC0983 /* Debug */,
+				7FBDD4BA24AD711F00EC0983 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7FBDD49124AD711E00EC0983 /* Braze Demo.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */,
+			);
+			currentVersion = 7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */;
+			path = "Braze Demo.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 7FBDD47D24AD711D00EC0983 /* Project object */;
+}

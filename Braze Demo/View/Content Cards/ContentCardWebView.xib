@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="dfE-bD-6hs" customClass="ContentCardWebView" customModule="BookDemo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNg-k7-WSD">
+                    <rect key="frame" x="0.0" y="44" width="320" height="156"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="0HW-wD-EgK" firstAttribute="trailing" secondItem="qNg-k7-WSD" secondAttribute="trailing" id="Ghx-px-MmE"/>
+                <constraint firstItem="0HW-wD-EgK" firstAttribute="bottom" secondItem="qNg-k7-WSD" secondAttribute="bottom" id="rq8-iO-3Q7"/>
+                <constraint firstItem="qNg-k7-WSD" firstAttribute="leading" secondItem="0HW-wD-EgK" secondAttribute="leading" id="zMh-R7-kg1"/>
+                <constraint firstItem="qNg-k7-WSD" firstAttribute="top" secondItem="0HW-wD-EgK" secondAttribute="top" id="zZw-Vi-kAP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="0HW-wD-EgK"/>
+            <connections>
+                <outlet property="webView" destination="qNg-k7-WSD" id="Bj9-KK-hUj"/>
+            </connections>
+            <point key="canvasLocation" x="-243" y="-194"/>
+        </view>
+    </objects>
+</document>
