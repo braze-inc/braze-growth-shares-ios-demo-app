@@ -71,8 +71,8 @@ private extension AppboySettingsViewController {
   }
   
   func handleApiTriggeredCampaignKey(_ userId: String) {
-    let tileCampaignId = "2742017f-fa0b-f2d5-e77b-f27419b77209"
-    let tileCampaignAPIKey = "d40e6dd4-d510-400b-b426-6fedebe73070"
+    let tileCampaignId = "YOUR-CAMPAIGN-ID"
+    let tileCampaignAPIKey = "YOUR-CAMPAIGN-API-KEY"
     let tileTriggerProperties = ["tile_title": "Currents 101 Live Training", "tile_image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/2bffl8kjacmwy/promo-image.1585681509.png", "tile_price": "250.00", "tile_tags": "Currents", "tile_deeplink": ""]
     
     let request = APITriggeredCampaignRequest(campaignId: tileCampaignId, campaignAPIKey: tileCampaignAPIKey, userId: userId, triggerProperties: tileTriggerProperties)
