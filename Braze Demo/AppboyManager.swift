@@ -1,6 +1,7 @@
 import UIKit
 import Appboy_iOS_SDK
 import AdSupport
+import AppTrackingTransparency
 
 class AppboyManager: NSObject {
   static let shared = AppboyManager()
@@ -31,8 +32,12 @@ class AppboyManager: NSObject {
     func advertisingIdentifierString() -> String {
       return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
-    func isAdvertisingTrackingEnabled() -> Bool {
-      return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
+
+    func isAdvertisingTrackingEnabledOrATTAuthorized() -> Bool {
+     if #available(iOS 14, *) {
+        return ATTrackingManager.trackingAuthorizationStatus ==  ATTrackingManager.AuthorizationStatus.authorized
+     }
+     return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
   }
 }
