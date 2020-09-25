@@ -28,6 +28,15 @@ class AppboySettingsViewController: UIViewController {
     guard let userId = externalIDTextField.text, !userId.isEmpty else { return }
     handleApiTriggeredCampaignKey(userId)
   }
+  @IBAction func resetHomeScreenButtonPressed(_ sender: Any) {
+    #if targetEnvironment(simulator)
+      NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
+    #else
+      AppboyManager.shared.logCustomEvent("Reset Home Screen")
+    #endif
+    
+    presentAlert(title: "Reset Home Screen", message: nil)
+  }
   @IBAction func segmentChanged(_ sender: Any) {
     guard let segmentedControl = sender as? UISegmentedControl else { return }
     
