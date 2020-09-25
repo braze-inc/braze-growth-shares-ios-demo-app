@@ -9,7 +9,7 @@ class AppboySettingsViewController: UIViewController {
       externalIDTextField.text = userId
     }
   }
-  @IBOutlet weak var segmentedControl: UISegmentedControl!
+  @IBOutlet private weak var segmentedControl: UISegmentedControl!
   
   // MARK: - Actions
   @IBAction func changeUserButtonPressed(_ sender: Any) {

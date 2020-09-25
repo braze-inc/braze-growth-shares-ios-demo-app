@@ -3,10 +3,10 @@ import UIKit
 class ContentCardFullPageView: UIView {
   
   // MARK: - Variables
-  @IBOutlet weak var contentView: UIView!
-  @IBOutlet weak var imageView: UIImageView?
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var messageLabel: UILabel!
+  @IBOutlet private weak var contentView: UIView!
+  @IBOutlet private weak var imageView: UIImageView?
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var messageLabel: UILabel!
   
   func configureView(_ title: String?, _ message: String?, _ imageUrl: String?) {
     titleLabel.text = title

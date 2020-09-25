@@ -4,11 +4,11 @@ class MessageCenterTableViewCell: UITableViewCell {
   static let cellIdentifier = "MessageCenterTableViewCell"
   
   // MARK: - Outlets
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var titleImageView: UIImageView!
-  @IBOutlet weak var titleImageWidthConstraint: NSLayoutConstraint!
-  @IBOutlet weak var titleImageTrailingConstraint: NSLayoutConstraint!
-  @IBOutlet weak var dateLabel: UILabel!
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var titleImageView: UIImageView!
+  @IBOutlet private weak var titleImageWidthConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var titleImageTrailingConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var dateLabel: UILabel!
   
   func configureCell(_ title: String?, _ imageUrl: String?, _ unixDate: Double?) {
     titleLabel.text = title

@@ -4,9 +4,9 @@ import Appboy_iOS_SDK
 class MessageCenterContainerViewController: UIViewController {
   
   // MARK: - IBOutlets
-  @IBOutlet weak var segmentedControl: UISegmentedControl!
-  @IBOutlet weak var segmentedControlHeight: NSLayoutConstraint!
-  @IBOutlet weak var customContainerView: UIView!
+  @IBOutlet private weak var segmentedControl: UISegmentedControl!
+  @IBOutlet private weak var segmentedControlHeight: NSLayoutConstraint!
+  @IBOutlet private weak var customContainerView: UIView!
   
   // MARK: - IBActions
   @IBAction func segmentChanged(_ sender: Any) {
