@@ -15,6 +15,7 @@ class HomeListViewController: UIViewController {
           cartButtonItem.image = shoppingCartItems.isEmpty ? UIImage(systemName: "cart") : UIImage(systemName: "cart.fill")
       }
   }
+  private let refreshControl = UIRefreshControl()
   private let cartSegueIdentifier = "segueToCart"
 }
 
@@ -24,6 +25,8 @@ extension HomeListViewController {
     super.viewDidLoad()
     
     configureObservers()
+    configureRefreshControl()
+    
     downloadContent()
   }
   
@@ -47,6 +50,11 @@ private extension HomeListViewController {
     NotificationCenter.default.addObserver(self, selector: #selector(reorder(_:)), name: .reorderHomeScreen, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: .homeScreenContentCard, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(reset(_:)), name: .defaultAppExperience, object: nil)
+  }
+  
+  func configureRefreshControl() {
+    refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+    collectionView.refreshControl = refreshControl
   }
   
   func downloadContent() {
@@ -75,9 +83,11 @@ private extension HomeListViewController {
   }
   
   func reloadCollectionView() {
-    self.collectionView.performBatchUpdates({
+    collectionView.performBatchUpdates {
       self.collectionView.reloadSections(IndexSet(integer: 0))
-    }, completion: nil)
+    } completion: { _ in
+      self.refreshControl.endRefreshing()
+    }
   }
 }
 
