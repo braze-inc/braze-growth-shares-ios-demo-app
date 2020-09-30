@@ -13,7 +13,7 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 
 #### This demo highlights 4 uses cases:
 1. Content Cards as Supplemental Content to an existing feed
-    - [Tile.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Ad.swift#L5)
+    - [Tile.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Tile.swift#L18)
 2. Content Cards that can be inserted/removed to/from an existing feed in real-time via silent push (device only)
 3. Content Cards as a Message Center
     - [Message.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Message.swift#L7)
