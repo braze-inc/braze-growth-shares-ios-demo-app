@@ -93,11 +93,23 @@ private extension MessageCenterDetailViewController {
     })
   }
   
-  func loadContentBlock(_ contentBlockId: String?, for subview: UIView) {
+  func loadContentBlock(_ contentBlockId: String?, for contentCardWebView: ContentCardWebView) {
     guard let contentBlockId = contentBlockId else { return }
     
+    let contentBlockAPIKey = "YOUR-CONTENT-BLOCK-API-KEY"
+    let parameters = ["content_block_id": contentBlockId]
+    let request = ContentBlockRequest(contentBlockAPIKey: contentBlockAPIKey, parameters: parameters)
     
-    
+    APIURLRequest().make(request: request) { (result: APIResult<ContentBlock>) in
+      switch result {
+      case .success(let contentBlock):
+        DispatchQueue.main.async {
+          contentCardWebView.configureHTMLForView(contentBlock.content)
+        }
+      case .failure:
+        break
+      }
+    }
   }
 }
 
