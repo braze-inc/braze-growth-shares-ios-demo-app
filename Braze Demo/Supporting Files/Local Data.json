@@ -1,0 +1,60 @@
+{
+  "tiles": [
+    {
+      "id": 1,
+      "title": "Liquid 101",
+      "price": 35.00,
+      "tags": ["Certification"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/pc8rbpn21d4a/promo-image.1584555827.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Liquid 102",
+      "price": 65.00,
+      "tags": ["Certification"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/1hw0240lj6e26/promo-image.1584555900.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Create Customer Journeys with Canvas",
+      "price": 5.00,
+      "tags": ["Canvas"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/d1xl4zctvm0x/promo-image.1579285763.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Currents: The Basics",
+      "price": 25.00,
+      "tags": ["Currents"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/257srn6li40su/promo-image.1584561268.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Marketing Strategy Checklists and Toolkits",
+      "price": 140.00,
+      "tags": ["Campaign"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/8wv1oy3n0y72/promo-image.1563821372.png"
+    },
+    {
+      "id": 6,
+      "title": "Campaign Setup: Delivery, Targeting, Conversions",
+      "price": 100.00,
+      "tags": ["Campaign"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/2ej7566i2dms1/promo-image.1563821297.png"
+    },
+    {
+      "id": 7,
+      "title": "Braze Continuum: Get the Most out of the Braze Product",
+      "price": 75.00,
+      "tags": ["Product"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/2j1dm3pqlnhk3/promo-image.1579285432.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Email Onboarding: Achieving High Deliverability",
+      "price": 100.00,
+      "tags": ["Email"],
+      "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/1cek0ur6i5369/promo-image.1579286963.jpg"
+    }
+  ]
+}
