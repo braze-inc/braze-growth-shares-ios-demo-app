@@ -15,15 +15,15 @@ class ContentCardWebView: UIView {
     return "\(htmlHead)\(htmlString)"
   }
   
-  func configureView(_ webViewString: String?) {
-    guard let webViewString = webViewString else { return }
-    
-    if let url = URL(string: webViewString) {
-      webView.load(URLRequest(url: url))
-    } else if webViewString.contains("<html") && webViewString.contains("/html>") {
-      self.htmlString = webViewString
-      webView.loadHTMLString(htmlFullString, baseURL: nil)
-    }
+  func configureURLForView(_ urlString: String?) {
+    guard let urlString = urlString, let url = URL(string: urlString) else { return }
+    webView.load(URLRequest(url: url))
+  }
+  
+  func configureHTMLForView(_ htmlString: String?) {
+    guard let htmlString = htmlString else { return }
+    self.htmlString = htmlString
+    webView.loadHTMLString(htmlFullString, baseURL: nil)
   }
 }
 

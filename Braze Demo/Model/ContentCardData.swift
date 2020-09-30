@@ -63,6 +63,7 @@ enum ContentCardKey: String {
   case url
   case discountPercentage = "discount_percentage"
   case tags = "tile_tags"
+  case contentBlock = "content_block_id"
 }
 
 // MARK: - ContentCardClassType
