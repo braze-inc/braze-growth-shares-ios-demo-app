@@ -12,7 +12,7 @@ struct ContentBlockRequest: APIRequest {
 }
 
 // MARK: - Content Block
-///Content Blocks allow users to manage reusable, cross-channel content in a single, centralized location. A custom object is used in the demo is for HTML strings larger than 2kb.
+///Content Blocks allow users to manage reusable, cross-channel content in a single, centralized location. A custom object is used in the demo for HTML strings larger than 2kb.
 struct ContentBlock: Codable {
   let content: String?
 }
