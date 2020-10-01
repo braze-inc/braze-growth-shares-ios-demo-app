@@ -572,7 +572,7 @@
             </objects>
             <point key="canvasLocation" x="3533" y="90"/>
         </scene>
-        <!--Appboy Settings-->
+        <!--Braze Settings-->
         <scene sceneID="0Kx-XD-C1K">
             <objects>
                 <viewController id="MAV-8o-BCL" customClass="AppboySettingsViewController" customModule="Braze_Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -923,7 +923,7 @@
                             <constraint firstItem="E1Z-v8-gTE" firstAttribute="top" secondItem="4Kx-oJ-QDJ" secondAttribute="top" id="wNc-ra-70V"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Appboy Settings" id="S6N-dI-O1X"/>
+                    <navigationItem key="navigationItem" title="Braze Settings" id="S6N-dI-O1X"/>
                     <connections>
                         <outlet property="externalIDTextField" destination="YlC-av-iZJ" id="Ssv-Ga-F0a"/>
                         <outlet property="segmentedControl" destination="DtX-bu-IVY" id="tBJ-cT-UIw"/>
@@ -971,11 +971,11 @@
             </objects>
             <point key="canvasLocation" x="2621.739130434783" y="90.401785714285708"/>
         </scene>
-        <!--Appboy-->
+        <!--Braze-->
         <scene sceneID="jSE-xn-cAp">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZEm-yw-DLY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Appboy" image="gear" catalog="system" selectedImage="gear" id="Pji-DM-yJ9"/>
+                    <tabBarItem key="tabBarItem" title="Braze" image="gear" catalog="system" selectedImage="gear" id="Pji-DM-yJ9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hx9-bA-zf0">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
