@@ -20,7 +20,7 @@ extension ShoppingCartTableViewCell {
 extension ShoppingCartTableViewCell {
   func configure(_ title: String?, _ price: Decimal?, _ imageUrl: String?) {
     titleLabel.text = title
-    priceLabel.text = price?.formattedCurrencyString()
+    priceLabel.text = price == nil ? "FREE!" : price?.formattedCurrencyString()
     
     if let urlString = imageUrl, let url = URL(string: urlString) {
       ImageCache.sharedCache.image(from: url) { image in
