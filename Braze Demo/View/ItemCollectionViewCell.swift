@@ -27,7 +27,7 @@ extension ItemCollectionViewCell {
 extension ItemCollectionViewCell {
   func configureCell(_ title: String?, _ price: Decimal?, _ imageUrl: String?) {
     titlelLabel.text = title
-    priceLabel.text = price == nil ? "FREE!" : price?.formattedCurrencyString()
+    priceLabel.text = price?.formattedCurrencyString()
       
     if let urlString = imageUrl, let url = URL(string: urlString) {
         ImageCache.sharedCache.image(from: url) { image in
