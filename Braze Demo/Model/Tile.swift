@@ -1,7 +1,7 @@
 import Foundation
 
 protocol Purchasable {
-  var price: Decimal { get }
+  var price: Decimal? { get }
 }
 
 // MARK: - TileList
@@ -19,7 +19,7 @@ struct Tile: ContentCardable, Purchasable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
   let title: String
-  let price: Decimal
+  let price: Decimal?
   let tags: [String]
   let imageUrl: String
     
@@ -40,10 +40,13 @@ extension Tile {
       let isDismissable = metaData[.dismissable] as? Bool,
       let extras = metaData[.extras] as? [AnyHashable: Any],
       let title  = extras["tile_title"] as? String,
-      let priceString = extras["tile_price"] as? String,
-      let price = Decimal(string: priceString),
       let imageUrl = extras["tile_image"] as? String
       else { return nil }
+    
+    var price: Decimal?
+    if let priceString = extras["tile_price"] as? String {
+      price = Decimal(string: priceString)
+    }
     
     let tags = extras[ContentCardKey.tags.rawValue] as? String ?? ""
     let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)

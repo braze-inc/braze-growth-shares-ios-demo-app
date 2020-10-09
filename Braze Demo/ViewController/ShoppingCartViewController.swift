@@ -37,7 +37,7 @@ class ShoppingCartViewController: UIViewController {
   private var isCartEmpty: Bool { return items.isEmpty }
   private var totalPrice: Decimal {
     var sum: Decimal = 0.00
-    items.forEach { sum += $0.price }
+    items.forEach { sum += $0.price ?? 0.00 }
     return sum * (coupon?.discountMultipler ?? 1.00)
   }
   private weak var delegate: ShoppingCartActionDelegate?
