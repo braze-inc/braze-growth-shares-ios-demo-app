@@ -19,6 +19,7 @@ struct Tile: ContentCardable, Purchasable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
   let title: String
+  let detail: String?
   let price: Decimal?
   let tags: [String]
   let imageUrl: String
@@ -26,6 +27,7 @@ struct Tile: ContentCardable, Purchasable, Codable, Hashable {
   private enum CodingKeys: String, CodingKey {
     case id
     case title
+    case detail
     case price
     case tags
     case imageUrl = "image"
@@ -48,9 +50,11 @@ extension Tile {
       price = Decimal(string: priceString)
     }
     
+    let detail = extras[ContentCardKey.detail.rawValue] as? String ?? ""
     let tags = extras[ContentCardKey.tags.rawValue] as? String ?? ""
+    
     let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
     
-    self.init(contentCardData: contentCardData, id: -1, title: title, price: price, tags: tags.separatedByCommaSpaceValue, imageUrl: imageUrl)
+    self.init(contentCardData: contentCardData, id: -1, title: title, detail: detail, price: price, tags: tags.separatedByCommaSpaceValue, imageUrl: imageUrl)
   }
 }
