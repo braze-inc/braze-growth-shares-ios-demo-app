@@ -3,6 +3,7 @@
     {
       "id": 1,
       "title": "Liquid 101",
+      "detail": "This virtual, instructor-led, course will help you to take data collected in Braze and dynamically insert it into your messages using Liquid.",
       "price": 35.00,
       "tags": ["Certification"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/pc8rbpn21d4a/promo-image.1584555827.jpg"
@@ -10,6 +11,7 @@
     {
       "id": 2,
       "title": "Liquid 102",
+      "detail": "This virtual instructor-led course will help you get even more specific and personal in your messaging.",
       "price": 65.00,
       "tags": ["Certification"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/1hw0240lj6e26/promo-image.1584555900.jpg"
@@ -17,6 +19,7 @@
     {
       "id": 3,
       "title": "Create Customer Journeys with Canvas",
+      "detail": "Canvas is the engine behind fantastic, personalized, automated lifecycle marketing. Want to create brilliant customer experiences in a seamless UI while simultaneously testing your efforts? We hope so. Canvas is the tool that will get you there.",
       "price": 5.00,
       "tags": ["Canvas"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/d1xl4zctvm0x/promo-image.1579285763.jpg"
@@ -24,6 +27,7 @@
     {
       "id": 4,
       "title": "Currents: The Basics",
+      "detail": "Currents is a Braze feature that allows you to export and stream your event data to 3rd party systems to get even better insights from your users.",
       "price": 25.00,
       "tags": ["Currents"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/257srn6li40su/promo-image.1584561268.jpg"
@@ -31,6 +35,7 @@
     {
       "id": 5,
       "title": "Marketing Strategy Checklists and Toolkits",
+      "detail": "Get up and running with your Campaign strategy.",
       "price": 140.00,
       "tags": ["Campaign"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/8wv1oy3n0y72/promo-image.1563821372.png"
@@ -38,6 +43,7 @@
     {
       "id": 6,
       "title": "Campaign Setup: Delivery, Targeting, Conversions",
+      "detail": "After you've created segments and messages for your campaign, it's time to set up delivery, targeting and conversion tracking.",
       "price": 100.00,
       "tags": ["Campaign"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/2ej7566i2dms1/promo-image.1563821297.png"
@@ -45,6 +51,7 @@
     {
       "id": 7,
       "title": "Braze Continuum: Get the Most out of the Braze Product",
+      "detail": "",
       "price": 75.00,
       "tags": ["Product"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/2j1dm3pqlnhk3/promo-image.1579285432.jpg"
@@ -52,6 +59,7 @@
     {
       "id": 8,
       "title": "Email Onboarding: Achieving High Deliverability",
+      "detail": "Learn the foundational concepts of the world's biggest marketing stream in terms of ROI.",
       "price": 100.00,
       "tags": ["Email"],
       "image": "https://cc.sj-cdn.net/instructor/2mwq54fjyfsk3-braze/courses/1cek0ur6i5369/promo-image.1579286963.jpg"

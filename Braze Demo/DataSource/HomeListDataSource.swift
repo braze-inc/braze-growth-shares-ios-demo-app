@@ -158,7 +158,7 @@ extension HomeListDataSource: UICollectionViewDataSource {
     switch rows[indexPath.row] {
     case .item(let tile):
       let cell: ItemCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
-      cell.configureCell(tile.title, tile.price, tile.imageUrl)
+      cell.configureCell(tile.title, tile.detail, tile.price, tile.imageUrl)
       return cell
     case .ad(let ad):
       let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
