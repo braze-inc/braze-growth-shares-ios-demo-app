@@ -14,7 +14,7 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 ### This demo highlights 4 uses cases:
 1. Content Cards as Supplemental Content to an existing feed
     - [Tile.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Tile.swift#L18)</br></br>
-    <img src="https://i.imgur.com/LGkOp49.png" width="200" height="420" />
+    <img src="https://i.imgur.com/WtubJL9.png" width="200" height="420" />
 2. Content Cards as an Inline Ad Banner
     - [Ad.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Ad.swift#L5)</br></br>
     <img src="https://i.imgur.com/YLnPMNB.png" width="200" height="420" />
