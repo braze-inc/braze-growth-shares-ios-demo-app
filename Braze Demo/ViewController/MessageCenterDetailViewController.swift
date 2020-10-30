@@ -81,10 +81,10 @@ private extension MessageCenterDetailViewController {
       break
     }
     
-    layouSubview(contentCardWebView)
+    layoutSubview(contentCardWebView)
   }
   
-  func layouSubview(_ subview: UIView) {
+  func layoutSubview(_ subview: UIView) {
     view.addSubview(subview)
     subview.translatesAutoresizingMaskIntoConstraints = false
     let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .trailing, .leading]
