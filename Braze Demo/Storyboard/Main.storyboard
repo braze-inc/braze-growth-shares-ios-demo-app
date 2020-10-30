@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -468,13 +468,22 @@
                                                     <rect key="frame" x="0.0" y="222" width="394" height="150"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHv-hZ-MWa">
-                                                            <rect key="frame" x="20" y="20" width="150.5" height="32.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                            <rect key="frame" x="20" y="20" width="122" height="25.5"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-zY-AA3">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tc-y9-u4R">
+                                                            <rect key="frame" x="20" y="55.5" width="0.0" height="0.0"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sKw-zY-AA3">
                                                             <rect key="frame" x="374" y="130" width="0.0" height="0.0"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" priority="999" id="KeN-yq-oaU"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="22"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -482,13 +491,16 @@
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
+                                                        <constraint firstItem="sKw-zY-AA3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="4tc-y9-u4R" secondAttribute="trailing" constant="20" id="5dk-m9-qy3"/>
                                                         <constraint firstAttribute="trailing" secondItem="sKw-zY-AA3" secondAttribute="trailing" constant="20" id="96t-oy-aag"/>
-                                                        <constraint firstItem="sKw-zY-AA3" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uHv-hZ-MWa" secondAttribute="bottom" constant="20" id="BGa-gq-CUM"/>
                                                         <constraint firstAttribute="bottom" secondItem="sKw-zY-AA3" secondAttribute="bottom" constant="20" id="g3Q-Mq-jZW"/>
+                                                        <constraint firstItem="4tc-y9-u4R" firstAttribute="leading" secondItem="uHv-hZ-MWa" secondAttribute="leading" id="jZf-0O-h9s"/>
+                                                        <constraint firstItem="4tc-y9-u4R" firstAttribute="top" secondItem="uHv-hZ-MWa" secondAttribute="bottom" constant="10" id="kOd-9Y-PS3"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uHv-hZ-MWa" secondAttribute="trailing" constant="20" id="l7U-nc-ybR"/>
                                                         <constraint firstAttribute="height" constant="150" id="nOb-63-fV6"/>
                                                         <constraint firstItem="uHv-hZ-MWa" firstAttribute="leading" secondItem="ESQ-lq-anr" secondAttribute="leading" constant="20" id="pba-ai-cjv"/>
                                                         <constraint firstItem="uHv-hZ-MWa" firstAttribute="top" secondItem="ESQ-lq-anr" secondAttribute="top" constant="20" id="pu4-jN-1F4"/>
+                                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4tc-y9-u4R" secondAttribute="bottom" constant="20" id="tjO-dr-izE"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -506,6 +518,7 @@
                                         <connections>
                                             <outlet property="borderView" destination="Tt5-0G-CSu" id="uga-nc-OzD"/>
                                             <outlet property="coverImageView" destination="nHO-Hx-7Iw" id="EpZ-Dn-zZX"/>
+                                            <outlet property="detailLabel" destination="4tc-y9-u4R" id="mNN-7S-Nqf"/>
                                             <outlet property="priceLabel" destination="sKw-zY-AA3" id="rdk-bD-qrt"/>
                                             <outlet property="titlelLabel" destination="uHv-hZ-MWa" id="xyx-cc-WSP"/>
                                         </connections>
