@@ -14,14 +14,15 @@ protocol Message: ContentCardable {
 // MARK: - WebView Message
 ///The object that is responsible for working with the `message_webview` class_type from the Braze dashboard. When this message is clicked on in the Message Center, it will open to a WKWebView that loads either an html string or a url string.
 struct WebViewMessage: Message {
-  private enum WebViewType {
+  enum WebViewType {
     case html(String)
     case url(String)
+    case contentBlock(String)
     case none
   }
   
   let contentCardData: ContentCardData?
-  private let webViewType: WebViewType
+  let webViewType: WebViewType
   let messageHeader: String?
   let messageTitle: String?
   let imageUrl: String?
@@ -36,6 +37,8 @@ extension WebViewMessage {
       return htmlString
     case .url(let urlString):
       return urlString
+    case .contentBlock(let contentBlockId):
+      return contentBlockId
     default: return ""
     }
   }
@@ -61,6 +64,8 @@ extension WebViewMessage {
       webViewType = .html(htmlString)
     } else if let urlString = extras[ContentCardKey.url.rawValue] as? String {
       webViewType = .url(urlString)
+    } else if let contentBlockId = extras[ContentCardKey.contentBlock.rawValue] as? String {
+      webViewType = .contentBlock(contentBlockId)
     }
     
     let contentCardData = ContentCardData(contentCardId: contentCardId, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)

@@ -11,16 +11,27 @@ protocol APIRequest {
   var method: HTTPMethod { get }
   var hostname: String? { get }
   var path: String { get }
-  var body: [String: Any] { get }
+  var parameters: [String: String]? { get }
+  var body: [String: Any]? { get }
   var additionalHeaders: [String: String]? { get }
 }
 
 extension APIRequest {
+  var hostname: String? {
+    guard let appboyPlist = Bundle.main.infoDictionary?["Appboy"] as? [AnyHashable: Any] else { return nil }
+    let sdkEndpoint = appboyPlist["Endpoint"] as? String
+    let restEndpoint = sdkEndpoint?.replacingOccurrences(of: "sdk", with: "rest", options: .literal, range: nil)
+    return restEndpoint
+  }
+  
   var urlComponents: URLComponents {
     var components = URLComponents()
     components.scheme = "https"
     components.host = hostname
     components.path = path
+    if let parameters = parameters {
+      components.queryItems = parameters.map { URLQueryItem(name: $0, value: $1) }
+    }
     return components
   }
   
@@ -31,28 +42,6 @@ extension APIRequest {
     return headers.merging(additionalHeaders) { (_, allHeaders) -> String in
       return allHeaders
     }
-  }
-}
-
-struct APITriggeredCampaignRequest: APIRequest {
-  private(set) var method: HTTPMethod = .post
-  var hostname: String? {
-    guard let appboyPlist = Bundle.main.infoDictionary?["Appboy"] as? [AnyHashable: Any] else { return nil }
-    return appboyPlist["Endpoint"] as? String
-  }
-  private(set) var path: String = "/campaigns/trigger/send"
-  private(set) var body: [String : Any]
-  private(set) var additionalHeaders: [String : String]?
-  
-  init(campaignId: String, campaignAPIKey: String, userId: String, triggerProperties: [String: Any]) {
-    var body = [String: Any]()
-    body["campaign_id"] = campaignId
-    body["trigger_properties"] = triggerProperties
-    body["broadcast"] = false
-    body["recipients"] = [["external_user_id": userId]]
-    
-    self.body = body
-    self.additionalHeaders = ["Authorization": "Bearer \(campaignAPIKey)"]
   }
 }
 
@@ -70,9 +59,10 @@ struct APIURLRequest {
       urlRequest.setValue(value, forHTTPHeaderField: key)
     }
     
-    let body = request.body
-    let jsonData = try? JSONSerialization.data(withJSONObject: body)
-    urlRequest.httpBody = jsonData
+    if let body = request.body {
+      let jsonData = try? JSONSerialization.data(withJSONObject: body)
+      urlRequest.httpBody = jsonData
+    }
   
     let task = URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
     guard let data = data, error == nil else {
@@ -86,7 +76,6 @@ struct APIURLRequest {
        completion(.failure("Error"))
       }
     }
-
     task.resume()
   }
 }

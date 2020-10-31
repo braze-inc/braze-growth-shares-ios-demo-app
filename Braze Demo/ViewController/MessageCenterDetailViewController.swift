@@ -68,16 +68,48 @@ private extension MessageCenterDetailViewController {
   }
   
   func loadContentCardWebView(with message: WebViewMessage) {
-    let customHTMLCardView: ContentCardWebView = .fromNib()
+    let contentCardWebView: ContentCardWebView = .fromNib()
     
-    customHTMLCardView.configureView(message.webViewString)
-    view.addSubview(customHTMLCardView)
+    switch message.webViewType {
+    case .contentBlock(let contentBlockId):
+      loadContentBlock(contentBlockId, for: contentCardWebView)
+    case .url(let urlString):
+      contentCardWebView.configureURLForView(urlString)
+    case .html(let htmlString):
+      contentCardWebView.configureHTMLForView(htmlString)
+    default:
+      break
+    }
     
-    customHTMLCardView.translatesAutoresizingMaskIntoConstraints = false
+    layoutSubview(contentCardWebView)
+  }
+  
+  func layoutSubview(_ subview: UIView) {
+    view.addSubview(subview)
+    subview.translatesAutoresizingMaskIntoConstraints = false
     let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .trailing, .leading]
     NSLayoutConstraint.activate(attributes.map {
-      NSLayoutConstraint(item: customHTMLCardView, attribute: $0, relatedBy: .equal, toItem: view, attribute: $0, multiplier: 1, constant: 0)
+      NSLayoutConstraint(item: subview, attribute: $0, relatedBy: .equal, toItem: view, attribute: $0, multiplier: 1, constant: 0)
     })
+  }
+  
+  func loadContentBlock(_ contentBlockId: String?, for contentCardWebView: ContentCardWebView) {
+    guard let contentBlockId = contentBlockId else { return }
+    
+    let contentBlockAPIKey = "YOUR-CONTENT-BLOCK-API-KEY"
+    let parameters = ["content_block_id": contentBlockId]
+    let request = ContentBlockRequest(contentBlockAPIKey: contentBlockAPIKey, parameters: parameters)
+    
+    APIURLRequest().make(request: request) { (result: APIResult<ContentBlock>) in
+      switch result {
+      case .success(let contentBlock):
+        DispatchQueue.main.async {
+          contentCardWebView.configureHTMLForView(contentBlock.content)
+        }
+      case .failure:
+        break
+      }
+    }
   }
 }
 

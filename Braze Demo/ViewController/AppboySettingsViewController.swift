@@ -44,7 +44,7 @@ class AppboySettingsViewController: UIViewController {
   }
   @IBAction func messageCenterCampaignButtonPressed(_ sender: Any) {
     guard let button = sender as? UIButton else { return }
-    handleMessageCenterCampaignButtonPressed(with: button.tag)
+    handleMessageCenterCampaignButtonPressed(with: button.titleLabel?.text)
   }
 }
 
@@ -108,18 +108,9 @@ private extension AppboySettingsViewController {
     }
   }
   
-  func handleMessageCenterCampaignButtonPressed(with tag: Int) {
-    var eventTitle = ""
-    switch tag {
-    case 0:
-      eventTitle = "Full Page Pressed"
-    case 1:
-      eventTitle = "HTML Pressed"
-    case 2:
-      eventTitle = "URL Pressed"
-    default:
-      break
-    }
+  func handleMessageCenterCampaignButtonPressed(with title: String?) {
+    guard let title = title else { return }
+    let eventTitle = "\(title) Pressed"
     AppboyManager.shared.logCustomEvent(eventTitle)
     presentAlert(title: eventTitle, message: nil)
   }
