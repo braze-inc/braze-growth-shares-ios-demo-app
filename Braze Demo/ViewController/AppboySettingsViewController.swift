@@ -9,7 +9,13 @@ class AppboySettingsViewController: UIViewController {
       externalIDTextField.text = userId
     }
   }
-  @IBOutlet private weak var segmentedControl: UISegmentedControl!
+  @IBOutlet private weak var segmentedControl: UISegmentedControl! {
+    didSet {
+      if let value = RemoteStorage().retrieve(forKey: RemoteStorageKey.messageCenterStyle.rawValue) as? Int {
+        segmentedControl.selectedSegmentIndex = value
+      }
+    }
+  }
   
   // MARK: - Actions
   @IBAction func changeUserButtonPressed(_ sender: Any) {
@@ -53,18 +59,19 @@ extension AppboySettingsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureMessageCenterSegmentedControl()
+    AppboyManager.shared.setInAppMessageUIDelegate(self)
+  }
+}
+
+// MARK: - Public Methods
+extension AppboySettingsViewController {
+  func updateAppIcon(_ iconName: String) {
+    
   }
 }
 
 // MARK: - Private Methods
 private extension AppboySettingsViewController {
-  func configureMessageCenterSegmentedControl() {
-    if let value = RemoteStorage().retrieve(forKey: RemoteStorageKey.messageCenterStyle.rawValue) as? Int {
-      segmentedControl.selectedSegmentIndex = value
-    }
-  }
-  
   func handleCustomAttrributeButtonPressed(_ button: UIButton) {
     var attributeTitle = ""
     switch button.tag {

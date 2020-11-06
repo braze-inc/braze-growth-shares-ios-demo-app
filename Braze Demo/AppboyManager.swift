@@ -13,17 +13,16 @@ class AppboyManager: NSObject {
   }
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
-        
+      
+    // Installation
     Appboy.start(withApiKey: apiKey, in: application, withLaunchOptions: launchOptions, withAppboyOptions: appboyOptions)
     
+    // Push Notifications
     let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-    
-    /// This is how to include provisional push support
-    // options = UNAuthorizationOptions(rawValue: options.rawValue | UNAuthorizationOptions.provisional.rawValue)
-    
     UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
       Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
     }
+    
     UIApplication.shared.registerForRemoteNotifications()
   }
   
@@ -101,6 +100,30 @@ extension AppboyManager {
   
   func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuanitity quanity: Int) {
     Appboy.sharedInstance()?.logPurchase(productIdentifier, inCurrency: currency, atPrice: NSDecimalNumber(string: price), withQuantity: UInt(quanity))
+  }
+}
+
+// MARK: - In-App Messages
+extension AppboyManager: ABKInAppMessageUIDelegate {
+  func setInAppMessageUIDelegate(_ delegate: Any) {
+    Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(delegate)
+  }
+}
+
+// MARK: - ABKInAppMessage UI Delegate
+extension UIViewController: ABKInAppMessageUIDelegate {
+  public func on(inAppMessageHTMLButtonClicked inAppMessage: ABKInAppMessageHTMLBase, clickedURL: URL?, buttonID buttonId: String) -> Bool {
+    
+    switch buttonId {
+    case let iconName where iconName.contains("app_icon_"):
+      if self is AppboySettingsViewController {
+        let appboySettingsVC = self as! AppboySettingsViewController
+        appboySettingsVC.updateAppIcon(iconName)
+      }
+    default:
+      break
+    }
+    return true
   }
 }
 
