@@ -73,6 +73,18 @@ extension AppboySettingsViewController {
   }
 }
 
+// MARK: - IAM Click Delegate
+extension AppboySettingsViewController: InAppMessageClickDelegate {
+  func inAppMessageHTMLButtonClicked(clickedURL: URL?, buttonID buttonId: String) {
+    switch buttonId {
+    case let iconName where iconName.contains("app_icon_"):
+      updateAppIcon(iconName)
+    default:
+      break
+    }
+  }
+}
+
 // MARK: - Public Methods
 extension AppboySettingsViewController {
   func updateAppIcon(_ iconName: String?) {
