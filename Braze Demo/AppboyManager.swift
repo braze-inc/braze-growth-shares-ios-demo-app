@@ -24,6 +24,9 @@ class AppboyManager: NSObject {
     }
     
     UIApplication.shared.registerForRemoteNotifications()
+    
+    // In-App Messages
+    Appboy.sharedInstance()?.inAppMessageController.delegate = self
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -103,7 +106,18 @@ extension AppboyManager {
   }
 }
 
-// MARK: - In-App Messages
+// MARK: - In-App Messages Delegate
+extension AppboyManager: ABKInAppMessageControllerDelegate {
+  func before(inAppMessageDisplayed inAppMessage: ABKInAppMessage) -> ABKInAppMessageDisplayChoice {
+    
+    inAppMessage.animateIn = false
+    inAppMessage.animateOut = false
+    
+    return .displayInAppMessageNow
+  }
+}
+
+// MARK: - In-App Messages UI Delegate
 extension AppboyManager: ABKInAppMessageUIDelegate {
   func setInAppMessageUIDelegate(_ delegate: InAppMessageClickDelegate) {
     Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(delegate)
