@@ -31,6 +31,8 @@
 		7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
 		7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26224D374B2008269E5 /* Coupon.swift */; };
 		7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26424D392AE008269E5 /* Array_Util.swift */; };
+		7FBB1292255509ED000623AD /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBB1291255509ED000623AD /* InAppMessageData.swift */; };
+		7FBB12B725550A93000623AD /* app_icon_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FBB12B625550A93000623AD /* app_icon_gradient.png */; };
 		7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48824AD711E00EC0983 /* AppDelegate.swift */; };
 		7FBDD48B24AD711E00EC0983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */; };
 		7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */; };
@@ -103,6 +105,8 @@
 		7FAAE26224D374B2008269E5 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		7FAAE26424D392AE008269E5 /* Array_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Util.swift; sourceTree = "<group>"; };
 		7FABB1E42512A92600253FAF /* Braze Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Braze Demo.entitlements"; sourceTree = "<group>"; };
+		7FBB1291255509ED000623AD /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
+		7FBB12B625550A93000623AD /* app_icon_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_gradient.png; sourceTree = "<group>"; };
 		7FBDD48524AD711E00EC0983 /* Braze Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Braze Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD48824AD711E00EC0983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 		7F9DCBC224AD785200E8D207 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7FBB12BB25550A9C000623AD /* Alternate App Icons */,
 				7FABB1E42512A92600253FAF /* Braze Demo.entitlements */,
 				7F754FC0250C2DF000CD7B45 /* Local Data.json */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
@@ -276,9 +281,10 @@
 			children = (
 				7FCFB98C24C91421001AA381 /* Ad.swift */,
 				7FAAE26224D374B2008269E5 /* Coupon.swift */,
-				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
+				7FBB1291255509ED000623AD /* InAppMessageData.swift */,
 				7FCFB99424CA383C001AA381 /* Message.swift */,
+				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,6 +312,14 @@
 				7FC3106724D1C30100053D90 /* ContentCardGestureView.xib */,
 			);
 			path = "Content Cards";
+			sourceTree = "<group>";
+		};
+		7FBB12BB25550A9C000623AD /* Alternate App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				7FBB12B625550A93000623AD /* app_icon_gradient.png */,
+			);
+			path = "Alternate App Icons";
 			sourceTree = "<group>";
 		};
 		7FBDD47C24AD711D00EC0983 = {
@@ -483,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FBB12B725550A93000623AD /* app_icon_gradient.png in Resources */,
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
@@ -557,6 +572,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */,
+				7FBB1292255509ED000623AD /* InAppMessageData.swift in Sources */,
 				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
 				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,

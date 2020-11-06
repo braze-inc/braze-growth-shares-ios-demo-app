@@ -3,6 +3,7 @@ import Foundation
 enum RemoteStorageKey: String, CaseIterable {
   case homeListPriority = "home_list_priority"
   case messageCenterStyle = "message_center_style"
+  case appIcon = "app_icon"
 }
 
 struct RemoteStorage {

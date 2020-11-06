@@ -9,10 +9,17 @@ class AppboySettingsViewController: UIViewController {
       externalIDTextField.text = userId
     }
   }
+  @IBOutlet private weak var appIconButton: UIButton! {
+    didSet {
+      if let iconName = RemoteStorage().retrieve(forKey: RemoteStorageKey.appIcon.rawValue) as? String {
+        updateAppIconImage(iconName)
+      }
+    }
+  }
   @IBOutlet private weak var segmentedControl: UISegmentedControl! {
     didSet {
-      if let value = RemoteStorage().retrieve(forKey: RemoteStorageKey.messageCenterStyle.rawValue) as? Int {
-        segmentedControl.selectedSegmentIndex = value
+      if let index = RemoteStorage().retrieve(forKey: RemoteStorageKey.messageCenterStyle.rawValue) as? Int {
+        segmentedControl.selectedSegmentIndex = index
       }
     }
   }
@@ -23,6 +30,9 @@ class AppboySettingsViewController: UIViewController {
     AppboyManager.shared.changeUser(userId)
     
     presentAlert(title: "Changed User ID to \(userId)", message: nil)
+  }
+  @IBAction func changeAppIconPressed(_ sender: Any) {
+    AppboyManager.shared.logCustomEvent("Change App Icon")
   }
   @IBAction func customAttributeButtonPressed(_ sender: Any) {
     guard let button = sender as? UIButton else { return }
@@ -65,8 +75,19 @@ extension AppboySettingsViewController {
 
 // MARK: - Public Methods
 extension AppboySettingsViewController {
-  func updateAppIcon(_ iconName: String) {
-    
+  func updateAppIcon(_ iconName: String?) {
+    guard let iconName = iconName, UIApplication.shared.supportsAlternateIcons else { return }
+        
+    switch iconName {
+    case InAppMessageButtonIdKey.iconBlack.rawValue:
+      UIApplication.shared.setAlternateIconName(nil, completionHandler: nil)
+    case InAppMessageButtonIdKey.iconGradient.rawValue:
+      UIApplication.shared.setAlternateIconName(iconName, completionHandler: nil)
+    default:
+      return
+    }
+     
+    updateAppIconImage(iconName)
   }
 }
 
@@ -120,5 +141,12 @@ private extension AppboySettingsViewController {
     let eventTitle = "\(title) Pressed"
     AppboyManager.shared.logCustomEvent(eventTitle)
     presentAlert(title: eventTitle, message: nil)
+  }
+  
+  func updateAppIconImage(_ iconName: String) {
+    let image = UIImage(named: iconName)
+    appIconButton.setImage(image, for: .normal)
+    
+    RemoteStorage().store(iconName, forKey: RemoteStorageKey.appIcon.rawValue)
   }
 }

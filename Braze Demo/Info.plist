@@ -15,6 +15,19 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>app_icon_gradient</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>app_icon_gradient</string>
+				</array>
+			</dict>
+		</dict>
+	</dict>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

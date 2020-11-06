@@ -9,7 +9,7 @@ class AppboyManager: NSObject {
   private let apiKey = "YOUR-API-KEY"
 #warning("Please enter your API key above")
   private var appboyOptions: [String: Any] {
-    return [ABKIDFADelegateKey: AppboyIDFADelegate()]
+    return [ABKIDFADelegateKey: AppboyIDFADelegate(), ABKMinimumTriggerTimeIntervalKey: 0]
   }
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
