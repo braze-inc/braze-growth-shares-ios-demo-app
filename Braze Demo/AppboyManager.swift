@@ -106,6 +106,13 @@ extension AppboyManager {
   }
 }
 
+// MARK: - In-App Messages
+extension AppboyManager {
+  func setInAppMessageUIDelegate(_ delegate: InAppMessageClickDelegate) {
+    Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(delegate)
+  }
+}
+
 // MARK: - In-App Messages Delegate
 extension AppboyManager: ABKInAppMessageControllerDelegate {
   func before(inAppMessageDisplayed inAppMessage: ABKInAppMessage) -> ABKInAppMessageDisplayChoice {
@@ -118,12 +125,6 @@ extension AppboyManager: ABKInAppMessageControllerDelegate {
 }
 
 // MARK: - In-App Messages UI Delegate
-extension AppboyManager: ABKInAppMessageUIDelegate {
-  func setInAppMessageUIDelegate(_ delegate: InAppMessageClickDelegate) {
-    Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(delegate)
-  }
-}
-
 extension UIViewController: ABKInAppMessageUIDelegate {
   public func on(inAppMessageHTMLButtonClicked inAppMessage: ABKInAppMessageHTMLBase, clickedURL: URL?, buttonID buttonId: String) -> Bool {
     guard let clickDelegate = self as? InAppMessageClickDelegate else { return true }
