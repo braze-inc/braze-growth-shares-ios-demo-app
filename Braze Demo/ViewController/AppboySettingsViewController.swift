@@ -36,7 +36,7 @@ class AppboySettingsViewController: UIViewController {
   }
   @IBAction func customAttributeButtonPressed(_ sender: Any) {
     guard let button = sender as? UIButton else { return }
-    handleCustomAttrributeButtonPressed(button)
+    handleCustomAttrributeButtonPressed(button.titleLabel?.text)
     
     UINotificationFeedbackGenerator().notificationOccurred(.success)
   }
@@ -73,20 +73,8 @@ extension AppboySettingsViewController {
   }
 }
 
-// MARK: - IAM Click Delegate
-extension AppboySettingsViewController: InAppMessageClickDelegate {
-  func inAppMessageHTMLButtonClicked(clickedURL: URL?, buttonID buttonId: String) {
-    switch buttonId {
-    case let iconName where iconName.contains("app_icon_"):
-      updateAppIcon(iconName)
-    default:
-      break
-    }
-  }
-}
-
-// MARK: - Public Methods
-extension AppboySettingsViewController {
+// MARK: - Private Methods
+private extension AppboySettingsViewController {
   func updateAppIcon(_ iconName: String?) {
     guard let iconName = iconName, UIApplication.shared.supportsAlternateIcons else { return }
         
@@ -101,22 +89,19 @@ extension AppboySettingsViewController {
      
     updateAppIconImage(iconName)
   }
-}
-
-// MARK: - Private Methods
-private extension AppboySettingsViewController {
-  func handleCustomAttrributeButtonPressed(_ button: UIButton) {
-    var attributeTitle = ""
-    switch button.tag {
-    case 0:
-      attributeTitle = "Chicago Cubs"
-    case 1:
-      attributeTitle = "Chicago White Sox"
-    default:
-      return
-    }
-    AppboyManager.shared.setCustomAttributeWithKey("Favorite Team", andStringValue: attributeTitle)
-    presentAlert(title: "Favorite Team changed to \(attributeTitle)", message: nil)
+  
+  func updateAppIconImage(_ iconName: String) {
+    let image = UIImage(named: iconName)
+    appIconButton.setImage(image, for: .normal)
+    
+    RemoteStorage().store(iconName, forKey: RemoteStorageKey.appIcon.rawValue)
+  }
+  
+  func handleCustomAttrributeButtonPressed(_ attribute: String?) {
+    guard let attribute = attribute else { return }
+    
+    AppboyManager.shared.setCustomAttributeWithKey("Favorite Team", andStringValue: attribute.capitalized)
+    presentAlert(title: "Favorite Team changed to \(attribute.capitalized)", message: nil)
   }
   
   func handleApiTriggeredCampaignKey(_ userId: String) {
@@ -150,15 +135,21 @@ private extension AppboySettingsViewController {
   
   func handleMessageCenterCampaignButtonPressed(with title: String?) {
     guard let title = title else { return }
+    
     let eventTitle = "\(title) Pressed"
     AppboyManager.shared.logCustomEvent(eventTitle)
     presentAlert(title: eventTitle, message: nil)
   }
-  
-  func updateAppIconImage(_ iconName: String) {
-    let image = UIImage(named: iconName)
-    appIconButton.setImage(image, for: .normal)
-    
-    RemoteStorage().store(iconName, forKey: RemoteStorageKey.appIcon.rawValue)
+}
+
+// MARK: - IAM Click Delegate
+extension AppboySettingsViewController: InAppMessageClickDelegate {
+  func inAppMessageHTMLButtonClicked(clickedURL: URL?, buttonID buttonId: String) {
+    switch buttonId {
+    case let iconName where iconName.contains("app_icon_"):
+      updateAppIcon(iconName)
+    default:
+      break
+    }
   }
 }
