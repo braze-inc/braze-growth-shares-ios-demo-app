@@ -59,7 +59,7 @@ private extension HomeListViewController {
   
   func downloadContent() {
     let contentOperationQueue = ContentOperationQueue<Tile, TileList>(localDataFile: "Local Data", classType: .item(.tile))
-    contentOperationQueue.downloadContent { [weak self ] (content, ads) in
+    contentOperationQueue.downloadContent { [weak self] (content, ads) in
       guard let self = self else { return }
       
       DispatchQueue.main.async {
