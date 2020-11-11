@@ -63,7 +63,7 @@ extension AppboyManager {
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     Appboy.sharedInstance()?.register(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     
-    if let updateHomeTo = userInfo["Update_Home_To"] as? String {
+    if let updateHomeTo = userInfo["refresh_home"] as? String {
       switch updateHomeTo {
       case "Default":
         RemoteStorage().removeObject(forKey: RemoteStorageKey.homeListPriority.rawValue)
@@ -75,11 +75,15 @@ extension AppboyManager {
       }
     }
       
-    if let rank = userInfo["Update_Home_Tile_Priority"] as? String {
-      RemoteStorage().store(rank, forKey: RemoteStorageKey.homeListPriority.rawValue)
-      if userInfo["Update_Home_To"] == nil {
+    if let priority = userInfo["home_tile_priority"] as? String {
+      RemoteStorage().store(priority, forKey: RemoteStorageKey.homeListPriority.rawValue)
+      if userInfo["refresh_home"] == nil {
         NotificationCenter.default.post(name: .reorderHomeScreen, object: nil)
       }
+    }
+    
+    if let eventName = userInfo["event_name"] as? String {
+      logCustomEvent(eventName)
     }
   }
   
