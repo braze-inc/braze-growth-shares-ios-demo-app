@@ -2,7 +2,7 @@ import Foundation
 
 // MARK: - Ad
 ///The object that represents the inline ad banner on the home screen. Can be instantiated from Content Card payload data.
-struct Ad: ContentCardable {
+struct Ad: Hashable, ContentCardable {
   let contentCardData: ContentCardData?
   let imageUrl: String?
 }

@@ -3,9 +3,13 @@ import UIKit
 class HomeListViewController: UIViewController {
     
   // MARK: - Outlets
-  @IBOutlet private weak var collectionView: UICollectionView!
+  @IBOutlet private weak var collectionView: UICollectionView! {
+    didSet {
+      provider = HomeListDataSourceProvider(collectionView: collectionView, delegate: self)
+    }
+  }
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
-  @IBOutlet private var dataSource: HomeListDataSource!
+  private var provider: HomeListDataSourceProvider?
   
   // MARK: - Variables
   private var shoppingCartItems: [Tile] = [] {
@@ -47,9 +51,9 @@ extension HomeListViewController {
 // MARK: - Private Methods
 private extension HomeListViewController {
   func configureObservers() {
-    NotificationCenter.default.addObserver(self, selector: #selector(reorder(_:)), name: .reorderHomeScreen, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: .homeScreenContentCard, object: nil)
-    NotificationCenter.default.addObserver(self, selector: #selector(reset(_:)), name: .defaultAppExperience, object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(reorder(_:)), name: .reorderHomeScreen, object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: .homeScreenContentCard, object: nil)
+//    NotificationCenter.default.addObserver(self, selector: #selector(reset(_:)), name: .defaultAppExperience, object: nil)
   }
   
   func configureRefreshControl() {
@@ -62,8 +66,8 @@ private extension HomeListViewController {
       guard let self = self else { return }
       
       DispatchQueue.main.async {
-        self.dataSource.setDataSource(with: items, ads: ads, delegate: self)
-        self.reloadCollectionView()
+        self.provider?.applySnapshot(items, ads)
+        self.refreshControl.endRefreshing()
       }
     }
   }
@@ -72,23 +76,15 @@ private extension HomeListViewController {
     downloadContent()
   }
   
-  @objc func reorder(_ sender: Any) {
-    dataSource.reorderDataSource()
-    reloadCollectionView()
-  }
-  
-  @objc func reset(_ sender: Any) {
-    dataSource.resetDataSource()
-    reloadCollectionView()
-  }
-  
-  func reloadCollectionView() {
-    collectionView.performBatchUpdates {
-      self.collectionView.reloadSections(IndexSet(integer: 0))
-    } completion: { _ in
-      self.refreshControl.endRefreshing()
-    }
-  }
+//  @objc func reorder(_ sender: Any) {
+//    dataSource.reorderDataSource()
+//    reloadCollectionView()
+//  }
+//
+//  @objc func reset(_ sender: Any) {
+//    dataSource.resetDataSource()
+//    reloadCollectionView()
+//  }
 }
 
 // MARK: - ShoppingCartDelegate
