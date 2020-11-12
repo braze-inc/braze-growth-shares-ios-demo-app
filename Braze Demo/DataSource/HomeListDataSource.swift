@@ -37,6 +37,21 @@ class HomeListDataSourceProvider: NSObject {
     
     dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
   }
+  
+  func reorderDataSource() {
+    
+  }
+  
+  func resetDataSource() {
+    var currentSnapshot = dataSource.snapshot()
+    currentSnapshot.itemIdentifiers(inSection: .tile).forEach { content in
+      guard let tile = content as? Tile, tile.isContentCard else { return }
+      
+      tile.logContentCardDismissed()
+      currentSnapshot.deleteItems([tile])
+    }
+    dataSource.apply(currentSnapshot)
+  }
 }
 
 // MARK: - Private

@@ -51,9 +51,9 @@ extension HomeListViewController {
 // MARK: - Private Methods
 private extension HomeListViewController {
   func configureObservers() {
-//    NotificationCenter.default.addObserver(self, selector: #selector(reorder(_:)), name: .reorderHomeScreen, object: nil)
-//    NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: .homeScreenContentCard, object: nil)
-//    NotificationCenter.default.addObserver(self, selector: #selector(reset(_:)), name: .defaultAppExperience, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(reorder(_:)), name: .reorderHomeScreen, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: .homeScreenContentCard, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(reset(_:)), name: .defaultAppExperience, object: nil)
   }
   
   func configureRefreshControl() {
@@ -76,15 +76,13 @@ private extension HomeListViewController {
     downloadContent()
   }
   
-//  @objc func reorder(_ sender: Any) {
-//    dataSource.reorderDataSource()
-//    reloadCollectionView()
-//  }
-//
-//  @objc func reset(_ sender: Any) {
-//    dataSource.resetDataSource()
-//    reloadCollectionView()
-//  }
+  @objc func reorder(_ sender: Any) {
+    provider?.reorderDataSource()
+  }
+
+  @objc func reset(_ sender: Any) {
+    provider?.resetDataSource()
+  }
 }
 
 // MARK: - ShoppingCartDelegate
