@@ -33,24 +33,28 @@ class HomeListDataSourceProvider: NSObject {
     snapshot.appendSections([.ad, .tile])
     
     snapshot.appendItems(ads, toSection: .ad)
-    snapshot.appendItems(tiles, toSection: .tile)
+    snapshot.appendItems(reorderTiles(tiles), toSection: .tile)
     
     dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
   }
   
   func reorderDataSource() {
+    guard let tiles = dataSource.snapshot(for: .tile).items as? [Tile] else { return }
+      
+    var tileSnapshot = dataSource.snapshot(for: .tile)
+    tileSnapshot.deleteAll()
     
+    tileSnapshot.append(reorderTiles(tiles))
+    
+    dataSource.apply(tileSnapshot, to: .tile, animatingDifferences: true, completion: nil)
   }
   
   func resetDataSource() {
-    var currentSnapshot = dataSource.snapshot()
-    currentSnapshot.itemIdentifiers(inSection: .tile).forEach { content in
+    dataSource.snapshot(for: .tile).items.forEach { content in
       guard let tile = content as? Tile, tile.isContentCard else { return }
       
       tile.logContentCardDismissed()
-      currentSnapshot.deleteItems([tile])
     }
-    dataSource.apply(currentSnapshot)
   }
 }
 
@@ -112,6 +116,27 @@ private extension HomeListDataSourceProvider {
         return section
         }
     })
+  }
+  
+  func reorderTiles(_ tiles: [Tile]) -> [Tile] {
+    guard let priority = RemoteStorage().retrieve(forKey: RemoteStorageKey.homeListPriority.rawValue) as? String, !priority.isEmpty else { return tiles }
+    
+    let priorityKeys = priority.separatedByCommaSpaceValue
+    
+    var priorityTiles = [Tile]()
+    var tiles = tiles
+        
+    for (index, tile) in tiles.enumerated().reversed() {
+      if !tile.tags.intersection(priorityKeys).isEmpty {
+        tiles.remove(at: index)
+        if tile.isContentCard {
+          priorityTiles.insert(tile, at: 0)
+        } else {
+          priorityTiles.append(tile)
+        }
+      }
+    }
+    return priorityTiles + tiles
   }
 }
 

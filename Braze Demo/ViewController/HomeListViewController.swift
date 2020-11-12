@@ -9,9 +9,9 @@ class HomeListViewController: UIViewController {
     }
   }
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
-  private var provider: HomeListDataSourceProvider?
   
   // MARK: - Variables
+  private var provider: HomeListDataSourceProvider?
   private var shoppingCartItems: [Tile] = [] {
       didSet {
           guard let cartButtonItem = shoppingCartButtonItem else { return }
@@ -82,6 +82,7 @@ private extension HomeListViewController {
 
   @objc func reset(_ sender: Any) {
     provider?.resetDataSource()
+    downloadContent()
   }
 }
 
