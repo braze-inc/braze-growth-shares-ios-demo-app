@@ -34,10 +34,7 @@ class AppboyManager: NSObject {
     }
 
     func isAdvertisingTrackingEnabledOrATTAuthorized() -> Bool {
-     if #available(iOS 14, *) {
-        return ATTrackingManager.trackingAuthorizationStatus ==  ATTrackingManager.AuthorizationStatus.authorized
-     }
-     return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
+      return ATTrackingManager.trackingAuthorizationStatus ==  ATTrackingManager.AuthorizationStatus.authorized
     }
   }
 }
