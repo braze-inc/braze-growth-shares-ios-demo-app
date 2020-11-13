@@ -129,14 +129,16 @@ private extension HomeListDataSourceProvider {
     
     var priorityTiles = [Tile]()
     var tiles = tiles
-        
-    for (index, tile) in tiles.enumerated().reversed() {
-      if !tile.tags.intersection(priorityKeys).isEmpty {
-        tiles.remove(at: index)
-        if tile.isContentCard {
-          priorityTiles.insert(tile, at: 0)
-        } else {
-          priorityTiles.append(tile)
+       
+    for key in priorityKeys {
+      for (index, tile) in tiles.enumerated().reversed() {
+        if tile.tags.contains(key) {
+          tiles.remove(at: index)
+          if tile.isContentCard {
+            priorityTiles.insert(tile, at: 0)
+          } else {
+            priorityTiles.append(tile)
+          }
         }
       }
     }
