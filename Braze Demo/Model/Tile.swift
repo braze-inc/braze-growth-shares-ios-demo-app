@@ -1,16 +1,22 @@
 import Foundation
 
-protocol Purchasable {
-  var price: Decimal? { get }
+protocol MetaData: Codable {
+  associatedtype Element
+  var items: [Element] { get set }
 }
 
 // MARK: - TileList
-struct TileList: Codable {
-  var tiles: [Tile]
+struct TileList: MetaData {
+  typealias Element = Tile
+  var items: [Tile]
   
   private enum CodingKeys: String, CodingKey {
-    case tiles
+    case items = "tiles"
   }
+}
+
+protocol Purchasable {
+  var price: Decimal? { get }
 }
 
 // MARK: - Tile
