@@ -2,10 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,11 +17,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVa-me-7up" userLabel="Handler View">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-UY-Xdr" userLabel="Content View">
+                    <rect key="frame" x="5" y="0.0" width="404" height="500"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-iU-rnH" userLabel="Notch View">
-                            <rect key="frame" x="174.5" y="26" width="65" height="8"/>
+                            <rect key="frame" x="169.5" y="5" width="65" height="8"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="65" id="NdE-7M-R8X"/>
@@ -36,16 +34,23 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="j6L-iU-rnH" secondAttribute="bottom" constant="10" id="h2V-pD-V4d"/>
-                        <constraint firstItem="j6L-iU-rnH" firstAttribute="centerX" secondItem="bVa-me-7up" secondAttribute="centerX" id="m8a-KG-Aq7"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-UY-Xdr" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="44" width="414" height="456"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstItem="j6L-iU-rnH" firstAttribute="top" secondItem="r4V-UY-Xdr" secondAttribute="top" constant="5" id="Z4B-Kj-h42"/>
+                        <constraint firstItem="j6L-iU-rnH" firstAttribute="centerX" secondItem="r4V-UY-Xdr" secondAttribute="centerX" id="f95-rq-5Zm"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                            <real key="value" value="0.5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                            <size key="value" width="0.0" height="-2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="j09-g5-nXy" appends="YES" id="dFF-lB-zAO"/>
                     </connections>
@@ -54,14 +59,10 @@
             <viewLayoutGuide key="safeArea" id="8yX-xp-bb7"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="bVa-me-7up" firstAttribute="top" secondItem="mzv-Pq-JQw" secondAttribute="top" id="Bvc-1g-ZRl"/>
-                <constraint firstItem="bVa-me-7up" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" id="G7D-PZ-aGO"/>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" id="OqH-dB-icf"/>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="top" secondItem="bVa-me-7up" secondAttribute="bottom" id="XMG-fT-gpa"/>
-                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="bVa-me-7up" secondAttribute="trailing" id="XX7-dq-CoX"/>
+                <constraint firstItem="r4V-UY-Xdr" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" constant="5" id="OqH-dB-icf"/>
                 <constraint firstItem="8yX-xp-bb7" firstAttribute="bottom" secondItem="r4V-UY-Xdr" secondAttribute="bottom" id="ZjU-9z-e0g"/>
-                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="r4V-UY-Xdr" secondAttribute="trailing" id="azw-c2-NTd"/>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="top" secondItem="mzv-Pq-JQw" secondAttribute="top" constant="44" id="ngU-Mx-LZw"/>
+                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="r4V-UY-Xdr" secondAttribute="trailing" constant="5" id="azw-c2-NTd"/>
+                <constraint firstItem="r4V-UY-Xdr" firstAttribute="top" secondItem="mzv-Pq-JQw" secondAttribute="top" id="ngU-Mx-LZw"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
@@ -74,9 +75,4 @@
             </connections>
         </panGestureRecognizer>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

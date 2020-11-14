@@ -1,5 +1,11 @@
 import UIKit
 
+protocol SheetViewActionDelegate: class {
+  func sheetViewDidPan()
+  func sheetViewDidStopPanning()
+  func sheetViewDidSwipeToDismiss()
+}
+
 class SheetViewController: UIViewController {
   
   enum SheetViewState {
@@ -8,8 +14,9 @@ class SheetViewController: UIViewController {
   }
   
   var sheetViewState: SheetViewState!
-  var runningAnimations = [UIViewPropertyAnimator]()
-  var animationProgressWhenInterrupted: CGFloat = 0
+  var animator: UIViewPropertyAnimator!
+  var topConstraint: NSLayoutConstraint?
+  private weak var delegate: SheetViewActionDelegate?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -17,14 +24,32 @@ class SheetViewController: UIViewController {
   
   func addSheet(to viewController: UIViewController) {
     let visualEffectView = UIVisualEffectView()
-    visualEffectView.frame = self.view.frame
+    visualEffectView.isUserInteractionEnabled = false
+    visualEffectView.frame = viewController.view.frame
     viewController.view.addSubview(visualEffectView)
       
     viewController.addChild(self)
+    view.translatesAutoresizingMaskIntoConstraints = false
     viewController.view.addSubview(view)
-      
-    view.frame = CGRect(x: 0, y: view.frame.height, width: viewController.view.bounds.width, height: 600)
-    view.clipsToBounds = true
+    
+    topConstraint = NSLayoutConstraint(item: viewController.view!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0)
+    topConstraint?.isActive = true
+    
+    NSLayoutConstraint.activate([
+      view.leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 0),
+      view.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: 0),
+      view.heightAnchor.constraint(equalToConstant: 600)
+    ])
+  }
+  
+  func appearSlideUp(_ superview: UIView) {
+    animator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5, animations: {
+      self.topConstraint?.constant = 200
+      superview.layoutIfNeeded()
+    })
+    
+    animator.startAnimation()
+    sheetViewState = .slideUp
   }
   
   @IBAction func viewDidPan(_ sender: UIPanGestureRecognizer) {

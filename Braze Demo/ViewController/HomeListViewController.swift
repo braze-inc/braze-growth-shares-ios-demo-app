@@ -19,6 +19,7 @@ class HomeListViewController: UIViewController {
           cartButtonItem.image = shoppingCartItems.isEmpty ? UIImage(systemName: "cart") : UIImage(systemName: "cart.fill")
       }
   }
+  private let sheetVc = SheetViewController.fromNib()
   private let refreshControl = UIRefreshControl()
   private let cartSegueIdentifier = "segueToCart"
 }
@@ -33,7 +34,11 @@ extension HomeListViewController {
     
     downloadContent()
     
-    let sheetVc = SheetViewController.fromNib()
+    
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
     sheetVc.addSheet(to: self)
   }
   
@@ -108,6 +113,8 @@ extension HomeListViewController: CellActionDelegate {
     AppboyManager.shared.logCustomEvent("Added item to cart")
     shoppingCartItems.append(tile)
     presentAlert(title: "Added \(tile.title) to Shopping Cart", message: nil)
+    
+    sheetVc.appearSlideUp(view)
   }
 }
 
