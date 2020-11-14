@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */; };
+		7F6C94C2255F8866000CDAAA /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C94C1255F8866000CDAAA /* SheetViewController.swift */; };
+		7F6C94CA255F8884000CDAAA /* SheetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C94C9255F8884000CDAAA /* SheetViewController.xib */; };
 		7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Local Data.json */; };
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.debug.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.debug.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7F6C94C1255F8866000CDAAA /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		7F6C94C9255F8884000CDAAA /* SheetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SheetViewController.xib; sourceTree = "<group>"; };
 		7F754FC0250C2DF000CD7B45 /* Local Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Local Data.json"; sourceTree = "<group>"; };
 		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
 		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
@@ -172,6 +176,15 @@
 				B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7F6C94CE255F8895000CDAAA /* SheetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F6C94C1255F8866000CDAAA /* SheetViewController.swift */,
+				7F6C94C9255F8884000CDAAA /* SheetViewController.xib */,
+			);
+			path = SheetViewController;
 			sourceTree = "<group>";
 		};
 		7F87D4A824B01AAF00ED0A86 /* DataSource */ = {
@@ -290,6 +303,7 @@
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
+				7F6C94CE255F8895000CDAAA /* SheetViewController */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 			);
 			path = View;
@@ -484,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
+				7F6C94CA255F8884000CDAAA /* SheetViewController.xib in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
@@ -561,6 +576,7 @@
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
 				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,
 				7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */,
+				7F6C94C2255F8866000CDAAA /* SheetViewController.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,

@@ -28,6 +28,9 @@ extension HomeListViewController {
     configureRefreshControl()
     
     downloadContent()
+    
+    let sheetVc = SheetViewController.fromNib()
+    sheetVc.addSheet(to: self)
   }
   
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
