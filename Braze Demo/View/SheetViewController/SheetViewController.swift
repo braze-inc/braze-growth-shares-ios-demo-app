@@ -1,28 +1,56 @@
 import UIKit
 
-protocol SheetViewActionDelegate: class {
+protocol SheetViewActionDelegate where Self: UIViewController {
   func sheetViewDidPan()
   func sheetViewDidStopPanning()
   func sheetViewDidSwipeToDismiss()
 }
 
+enum SheetViewState {
+  case slideUp
+  case fullPage
+}
+
 class SheetViewController: UIViewController {
   
-  enum SheetViewState {
-    case slideUp
-    case fullPage
-  }
-  
-  var sheetViewState: SheetViewState!
-  var animator: UIViewPropertyAnimator!
-  var topConstraint: NSLayoutConstraint?
+  // MARK: - Variables
+  private var sheetViewState: SheetViewState!
+  private var animator: UIViewPropertyAnimator!
+  private var topConstraint: NSLayoutConstraint?
   private weak var delegate: SheetViewActionDelegate?
   
+  // MARK: - IBActions
+  @IBAction func viewDidPan(_ sender: UIPanGestureRecognizer) {
+    handleViewDidPan(sender)
+  }
+}
+
+// MARK: - View Properties
+extension SheetViewController {
+  private var fullPagePoint: CGFloat {
+    return view.frame.height - 200
+  }
+  private var slideUpPoint: CGFloat {
+    return 200
+  }
+  
+  private var midwayPoint: CGFloat {
+    return (fullPagePoint + slideUpPoint) / 2
+  }
+}
+
+// MARK: - View Lifecycle
+extension SheetViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
-  func addSheet(to viewController: UIViewController) {
+}
+
+// MARK: - Public
+extension SheetViewController {
+  func addSheet(to viewController: SheetViewActionDelegate) {
+    delegate = viewController
+    
     let visualEffectView = UIVisualEffectView()
     visualEffectView.isUserInteractionEnabled = false
     visualEffectView.frame = viewController.view.frame
@@ -38,25 +66,48 @@ class SheetViewController: UIViewController {
     NSLayoutConstraint.activate([
       view.leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 0),
       view.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: 0),
-      view.heightAnchor.constraint(equalToConstant: 600)
+      view.heightAnchor.constraint(equalTo: viewController.view.heightAnchor, multiplier: 1)
     ])
   }
   
-  func appearSlideUp(_ superview: UIView) {
+  func animatePoint(_ state: SheetViewState) {
     animator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5, animations: {
-      self.topConstraint?.constant = 200
-      superview.layoutIfNeeded()
+      self.topConstraint?.constant = state == .slideUp ? self.slideUpPoint : self.fullPagePoint
+      self.delegate?.view.layoutIfNeeded()
     })
     
     animator.startAnimation()
-    sheetViewState = .slideUp
+    
+    sheetViewState = state
   }
-  
-  @IBAction func viewDidPan(_ sender: UIPanGestureRecognizer) {
-    switch sender.state {
+}
+
+// MARK: - Private
+private extension SheetViewController {
+  func handleViewDidPan(_ recognizer: UIPanGestureRecognizer) {
+    guard let gestureView = recognizer.view else { return }
+    
+    let velocity = recognizer.velocity(in: gestureView)
+    
+    switch recognizer.state {
     case .began: break
-    case .changed: break
-    case .ended: break
+    case .changed:
+      guard let topConstraint = topConstraint else { return }
+      if topConstraint.constant > fullPagePoint && velocity.y < 0 { recognizer.state = .cancelled }
+      
+      let translation = recognizer.translation(in: delegate?.view)
+      topConstraint.constant -= translation.y
+      recognizer.setTranslation(.zero, in: delegate?.view)
+    case .ended, .cancelled:
+      guard let topConstraint = topConstraint else { return }
+      
+      if topConstraint.constant > fullPagePoint {
+        animatePoint(.fullPage)
+      } else {
+        sheetViewState = topConstraint.constant > midwayPoint ? .fullPage : .slideUp
+        
+        animatePoint(sheetViewState)
+      }
     default:
         break
     }

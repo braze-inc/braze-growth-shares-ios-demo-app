@@ -34,11 +34,6 @@ extension HomeListViewController {
     
     downloadContent()
     
-    
-  }
-  
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
     sheetVc.addSheet(to: self)
   }
   
@@ -114,7 +109,21 @@ extension HomeListViewController: CellActionDelegate {
     shoppingCartItems.append(tile)
     presentAlert(title: "Added \(tile.title) to Shopping Cart", message: nil)
     
-    sheetVc.appearSlideUp(view)
+    sheetVc.animatePoint(.slideUp)
+  }
+}
+
+extension HomeListViewController: SheetViewActionDelegate {
+  func sheetViewDidPan() {
+    // HERE
+  }
+  
+  func sheetViewDidStopPanning() {
+    // HERE
+  }
+  
+  func sheetViewDidSwipeToDismiss() {
+    // HERE
   }
 }
 
