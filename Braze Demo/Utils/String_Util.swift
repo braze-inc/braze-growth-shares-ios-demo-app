@@ -15,4 +15,8 @@ extension String {
   var separatedByCommaSpaceValue: [String] {
     return components(separatedBy: ", ")
   }
+  
+  var formattedTags: Set<String> {
+    return Set(components(separatedBy: ", "))
+  }
 }

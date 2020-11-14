@@ -3,11 +3,15 @@ import UIKit
 class HomeListViewController: UIViewController {
     
   // MARK: - Outlets
-  @IBOutlet private weak var collectionView: UICollectionView!
+  @IBOutlet private weak var collectionView: UICollectionView! {
+    didSet {
+      provider = HomeListDataSourceProvider(collectionView: collectionView, delegate: self)
+    }
+  }
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
-  @IBOutlet private var dataSource: HomeListDataSource!
   
   // MARK: - Variables
+  private var provider: HomeListDataSourceProvider?
   private var shoppingCartItems: [Tile] = [] {
       didSet {
           guard let cartButtonItem = shoppingCartButtonItem else { return }
@@ -63,8 +67,8 @@ private extension HomeListViewController {
       guard let self = self else { return }
       
       DispatchQueue.main.async {
-        self.dataSource.setDataSource(with: content, ads: ads, delegate: self)
-        self.reloadCollectionView()
+        self.provider?.applySnapshot(content, ads)
+        self.refreshControl.endRefreshing()
       }
     }
   }
@@ -74,21 +78,12 @@ private extension HomeListViewController {
   }
   
   @objc func reorder(_ sender: Any) {
-    dataSource.reorderDataSource()
-    reloadCollectionView()
+    provider?.reorderDataSource()
   }
-  
+
   @objc func reset(_ sender: Any) {
-    dataSource.resetDataSource()
-    reloadCollectionView()
-  }
-  
-  func reloadCollectionView() {
-    collectionView.performBatchUpdates {
-      self.collectionView.reloadSections(IndexSet(integer: 0))
-    } completion: { _ in
-      self.refreshControl.endRefreshing()
-    }
+    provider?.resetDataSource()
+    downloadContent()
   }
 }
 

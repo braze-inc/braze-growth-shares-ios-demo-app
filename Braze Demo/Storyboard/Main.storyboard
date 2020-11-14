@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FNB-ej-fHv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FNB-ej-fHv">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -497,7 +497,6 @@
                                                         <constraint firstItem="4tc-y9-u4R" firstAttribute="leading" secondItem="uHv-hZ-MWa" secondAttribute="leading" id="jZf-0O-h9s"/>
                                                         <constraint firstItem="4tc-y9-u4R" firstAttribute="top" secondItem="uHv-hZ-MWa" secondAttribute="bottom" constant="10" id="kOd-9Y-PS3"/>
                                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uHv-hZ-MWa" secondAttribute="trailing" constant="20" id="l7U-nc-ybR"/>
-                                                        <constraint firstAttribute="height" constant="150" id="nOb-63-fV6"/>
                                                         <constraint firstItem="uHv-hZ-MWa" firstAttribute="leading" secondItem="ESQ-lq-anr" secondAttribute="leading" constant="20" id="pba-ai-cjv"/>
                                                         <constraint firstItem="uHv-hZ-MWa" firstAttribute="top" secondItem="ESQ-lq-anr" secondAttribute="top" constant="20" id="pu4-jN-1F4"/>
                                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="4tc-y9-u4R" secondAttribute="bottom" constant="20" id="tjO-dr-izE"/>
@@ -547,10 +546,6 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="JKk-W2-smt" id="oAs-Be-Hsr"/>
-                                    <outlet property="delegate" destination="JKk-W2-smt" id="tXf-HW-36l"/>
-                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k0i-q7-63w"/>
@@ -576,12 +571,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="rhF-bn-Kjd" id="2I8-qX-BdE"/>
-                        <outlet property="dataSource" destination="JKk-W2-smt" id="Vaz-oe-Juk"/>
                         <outlet property="shoppingCartButtonItem" destination="lNs-WP-iWd" id="KE7-j2-fbY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jzv-Dg-zyZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <customObject id="JKk-W2-smt" customClass="HomeListDataSource" customModule="Braze_Demo" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="3533" y="90"/>
         </scene>
