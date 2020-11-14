@@ -27,7 +27,7 @@ struct Tile: ContentCardable, Purchasable, Codable, Hashable {
   let title: String
   let detail: String?
   let price: Decimal?
-  let tags: [String]
+  let tags: Set<String>
   let imageUrl: String
     
   private enum CodingKeys: String, CodingKey {
@@ -61,6 +61,6 @@ extension Tile {
     
     let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
     
-    self.init(contentCardData: contentCardData, id: -1, title: title, detail: detail, price: price, tags: tags.separatedByCommaSpaceValue, imageUrl: imageUrl)
+    self.init(contentCardData: contentCardData, id: -1, title: title, detail: detail, price: price, tags: tags.formattedTags, imageUrl: imageUrl)
   }
 }
