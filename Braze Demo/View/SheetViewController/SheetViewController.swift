@@ -16,8 +16,6 @@ class SheetViewController: UIViewController {
   // MARK: - Variables
   private var sheetViewState: SheetViewState!
   private let backgroundView = UIView()
-  private var animators = [UIViewPropertyAnimator]()
-  private var animationProgressWhenInterrupted: CGFloat = 0
   private var topConstraint: NSLayoutConstraint?
   private weak var delegate: SheetViewActionDelegate?
   
