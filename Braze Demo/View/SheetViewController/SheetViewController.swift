@@ -36,7 +36,6 @@ extension SheetViewController {
   private var slideUpPoint: CGFloat {
     return 200
   }
-  
   private var bottomThirdPoint: CGFloat {
     return (fullPagePoint + slideUpPoint) / 3
   }
