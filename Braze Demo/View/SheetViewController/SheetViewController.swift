@@ -1,14 +1,13 @@
 import UIKit
 
 protocol SheetViewActionDelegate where Self: UIViewController {
-  func sheetViewDidPan()
-  func sheetViewDidStopPanning()
   func sheetViewDidSwipeToDismiss()
 }
 
 enum SheetViewState {
   case slideUp
   case fullPage
+  case offScreen
 }
 
 class SheetViewController: UIViewController {
@@ -80,7 +79,16 @@ extension SheetViewController {
   
   func animatePoint(_ state: SheetViewState) {
     let sheetAnimator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.75, animations: {
-      self.topConstraint?.constant = state == .slideUp ? self.slideUpPoint : self.fullPagePoint
+      var constraintPoint: CGFloat = 0.0
+      switch state {
+      case .slideUp:
+        constraintPoint = self.slideUpPoint
+      case .fullPage:
+        constraintPoint = self.fullPagePoint
+      case .offScreen:
+        break
+      }
+      self.topConstraint?.constant = constraintPoint
       self.delegate?.view.layoutIfNeeded()
     })
     sheetAnimator.startAnimation()
@@ -88,6 +96,10 @@ extension SheetViewController {
     sheetViewState = state
     
     animateAlpha(state == .fullPage ? 0.75 : 0, animate: true)
+  }
+  
+  func dismiss() {
+    animatePoint(.offScreen)
   }
 }
 
@@ -117,7 +129,12 @@ private extension SheetViewController {
   func handleViewDidSwipe(_ recognizer: UISwipeGestureRecognizer) {
     switch recognizer.direction {
     case .down:
-      animatePoint(.slideUp)
+      if sheetViewState != .slideUp {
+        animatePoint(.slideUp)
+      } else {
+        dismiss()
+        delegate?.sheetViewDidSwipeToDismiss()
+      }
     default:
       break
     }

@@ -106,17 +106,9 @@ extension HomeListViewController: CellActionDelegate {
   }
 }
 
+// MARK: - SheetView Action Delegate
 extension HomeListViewController: SheetViewActionDelegate {
-  func sheetViewDidPan() {
-    // HERE
-  }
-  
-  func sheetViewDidStopPanning() {
-    // HERE
-  }
-  
   func sheetViewDidSwipeToDismiss() {
-    // HERE
+    sheetVc.removeFromParent()
   }
 }
-
