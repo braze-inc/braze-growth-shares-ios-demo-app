@@ -15,7 +15,9 @@ class SheetViewController: UIViewController {
   
   // MARK: - Variables
   private var sheetViewState: SheetViewState!
-  private var animator: UIViewPropertyAnimator!
+  private let backgroundView = UIView()
+  private var animators = [UIViewPropertyAnimator]()
+  private var animationProgressWhenInterrupted: CGFloat = 0
   private var topConstraint: NSLayoutConstraint?
   private weak var delegate: SheetViewActionDelegate?
   
@@ -51,10 +53,16 @@ extension SheetViewController {
   func addSheet(to viewController: SheetViewActionDelegate) {
     delegate = viewController
     
-    let visualEffectView = UIVisualEffectView()
-    visualEffectView.isUserInteractionEnabled = false
-    visualEffectView.frame = viewController.view.frame
-    viewController.view.addSubview(visualEffectView)
+    backgroundView.isUserInteractionEnabled = false
+    backgroundView.backgroundColor = .black
+    backgroundView.alpha = 0
+    viewController.view.addSubview(backgroundView)
+    
+    backgroundView.translatesAutoresizingMaskIntoConstraints = false
+    let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .trailing, .leading]
+    NSLayoutConstraint.activate(attributes.map {
+      NSLayoutConstraint(item: backgroundView, attribute: $0, relatedBy: .equal, toItem: viewController.view, attribute: $0, multiplier: 1, constant: 0)
+    })
       
     viewController.addChild(self)
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -71,45 +79,45 @@ extension SheetViewController {
   }
   
   func animatePoint(_ state: SheetViewState) {
-    animator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5, animations: {
+    let sheetAnimator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5, animations: {
       self.topConstraint?.constant = state == .slideUp ? self.slideUpPoint : self.fullPagePoint
       self.delegate?.view.layoutIfNeeded()
     })
-    
-    animator.startAnimation()
+    sheetAnimator.startAnimation()
     
     sheetViewState = state
+    
+    animateAlpha(state == .fullPage ? 0.75 : 0, animate: true)
   }
 }
 
 // MARK: - Private
 private extension SheetViewController {
   func handleViewDidPan(_ recognizer: UIPanGestureRecognizer) {
-    guard let gestureView = recognizer.view else { return }
-    
-    let velocity = recognizer.velocity(in: gestureView)
+    guard let topConstraint = topConstraint else { return }
     
     switch recognizer.state {
     case .began: break
     case .changed:
-      guard let topConstraint = topConstraint else { return }
-      if topConstraint.constant > fullPagePoint && velocity.y < 0 { recognizer.state = .cancelled }
+      if topConstraint.constant > fullPagePoint { recognizer.state = .cancelled }
       
       let translation = recognizer.translation(in: delegate?.view)
       topConstraint.constant -= translation.y
       recognizer.setTranslation(.zero, in: delegate?.view)
+    
+      let fractionComplete = (topConstraint.constant - slideUpPoint) / fullPagePoint
+      animateAlpha(fractionComplete)
     case .ended, .cancelled:
-      guard let topConstraint = topConstraint else { return }
-      
-      if topConstraint.constant > fullPagePoint {
-        animatePoint(.fullPage)
-      } else {
-        sheetViewState = topConstraint.constant > midwayPoint ? .fullPage : .slideUp
-        
-        animatePoint(sheetViewState)
-      }
+      sheetViewState = topConstraint.constant > midwayPoint ? .fullPage : .slideUp
+      animatePoint(sheetViewState)
     default:
         break
+    }
+  }
+  
+  func animateAlpha(_ alpha: CGFloat, animate: Bool = false) {
+    UIView.animate(withDuration: animate ? 0.25 : 0.0) {
+      self.backgroundView.alpha = alpha
     }
   }
 }

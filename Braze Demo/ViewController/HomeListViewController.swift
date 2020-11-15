@@ -36,13 +36,6 @@ extension HomeListViewController {
     
     sheetVc.addSheet(to: self)
   }
-  
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-      super.viewWillTransition(to: size, with: coordinator)
-      coordinator.animate(alongsideTransition: nil) { _ in
-        self.collectionView.reloadData()
-      }
-  }
     
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     guard segue.identifier == cartSegueIdentifier, let shoppingCartVc = segue.destination as? ShoppingCartViewController else { return }
