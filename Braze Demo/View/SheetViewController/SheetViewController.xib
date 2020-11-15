@@ -53,6 +53,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="j09-g5-nXy" appends="YES" id="dFF-lB-zAO"/>
+                        <outletCollection property="gestureRecognizers" destination="UDZ-pD-VU3" appends="YES" id="UdN-8G-y7H"/>
                     </connections>
                 </view>
             </subviews>
@@ -72,7 +73,14 @@
         <panGestureRecognizer minimumNumberOfTouches="1" id="j09-g5-nXy">
             <connections>
                 <action selector="viewDidPan:" destination="-1" id="Z4D-7d-9UF"/>
+                <outlet property="delegate" destination="-1" id="KOy-My-7Pw"/>
             </connections>
         </panGestureRecognizer>
+        <swipeGestureRecognizer direction="down" id="UDZ-pD-VU3">
+            <connections>
+                <action selector="viewDidSwipe:" destination="-1" id="qCL-Dn-L1W"/>
+                <outlet property="delegate" destination="-1" id="QbQ-jW-zsy"/>
+            </connections>
+        </swipeGestureRecognizer>
     </objects>
 </document>

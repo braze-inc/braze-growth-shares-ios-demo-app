@@ -23,6 +23,9 @@ class SheetViewController: UIViewController {
   @IBAction func viewDidPan(_ sender: UIPanGestureRecognizer) {
     handleViewDidPan(sender)
   }
+  @IBAction func viewDidSwipe(_ sender: UISwipeGestureRecognizer) {
+    handleViewDidSwipe(sender)
+  }
 }
 
 // MARK: - View Properties
@@ -34,8 +37,8 @@ extension SheetViewController {
     return 200
   }
   
-  private var midwayPoint: CGFloat {
-    return (fullPagePoint + slideUpPoint) / 2
+  private var bottomThirdPoint: CGFloat {
+    return (fullPagePoint + slideUpPoint) / 3
   }
 }
 
@@ -77,7 +80,7 @@ extension SheetViewController {
   }
   
   func animatePoint(_ state: SheetViewState) {
-    let sheetAnimator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.5, animations: {
+    let sheetAnimator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.75, animations: {
       self.topConstraint?.constant = state == .slideUp ? self.slideUpPoint : self.fullPagePoint
       self.delegate?.view.layoutIfNeeded()
     })
@@ -93,7 +96,6 @@ extension SheetViewController {
 private extension SheetViewController {
   func handleViewDidPan(_ recognizer: UIPanGestureRecognizer) {
     guard let topConstraint = topConstraint else { return }
-    
     switch recognizer.state {
     case .began: break
     case .changed:
@@ -106,10 +108,19 @@ private extension SheetViewController {
       let fractionComplete = (topConstraint.constant - slideUpPoint) / fullPagePoint
       animateAlpha(fractionComplete)
     case .ended, .cancelled:
-      sheetViewState = topConstraint.constant > midwayPoint ? .fullPage : .slideUp
+      sheetViewState = topConstraint.constant > bottomThirdPoint ? .fullPage : .slideUp
       animatePoint(sheetViewState)
     default:
         break
+    }
+  }
+  
+  func handleViewDidSwipe(_ recognizer: UISwipeGestureRecognizer) {
+    switch recognizer.direction {
+    case .down:
+      animatePoint(.slideUp)
+    default:
+      break
     }
   }
   
@@ -117,5 +128,16 @@ private extension SheetViewController {
     UIView.animate(withDuration: animate ? 0.25 : 0.0) {
       self.backgroundView.alpha = alpha
     }
+  }
+}
+
+extension SheetViewController: UIGestureRecognizerDelegate {
+  func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+           shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+     if gestureRecognizer is UISwipeGestureRecognizer &&
+            otherGestureRecognizer is UIPanGestureRecognizer {
+        return true
+     }
+     return false
   }
 }
