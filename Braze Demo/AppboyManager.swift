@@ -121,9 +121,6 @@ extension AppboyManager {
 extension AppboyManager: ABKInAppMessageControllerDelegate {
   func before(inAppMessageDisplayed inAppMessage: ABKInAppMessage) -> ABKInAppMessageDisplayChoice {
     
-    inAppMessage.animateIn = false
-    inAppMessage.animateOut = false
-    
     return .displayInAppMessageNow
   }
 }
