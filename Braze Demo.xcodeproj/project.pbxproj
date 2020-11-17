@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */; };
 		7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */; };
-		7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Local Data.json */; };
+		7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980525643E82000CDAAA /* GroupListDataSource.swift */; };
+		7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980A25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift */; };
+		7F6C981025644896000CDAAA /* Group List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C980F25644896000CDAAA /* Group List.json */; };
+		7F6C98182564539A000CDAAA /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C98172564539A000CDAAA /* Group.swift */; };
+		7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Tile List.json */; };
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */; };
@@ -80,7 +84,11 @@
 		1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.debug.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.debug.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileListDataSource.swift; sourceTree = "<group>"; };
-		7F754FC0250C2DF000CD7B45 /* Local Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Local Data.json"; sourceTree = "<group>"; };
+		7F6C980525643E82000CDAAA /* GroupListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListDataSource.swift; sourceTree = "<group>"; };
+		7F6C980A25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourceProvider.swift; sourceTree = "<group>"; };
+		7F6C980F25644896000CDAAA /* Group List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Group List.json"; sourceTree = "<group>"; };
+		7F6C98172564539A000CDAAA /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		7F754FC0250C2DF000CD7B45 /* Tile List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Tile List.json"; sourceTree = "<group>"; };
 		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
 		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
 		7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterContainerViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 				7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */,
 				7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */,
 				7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */,
+				7F6C980525643E82000CDAAA /* GroupListDataSource.swift */,
+				7F6C980A25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -219,8 +229,9 @@
 		7F9DCBC224AD785200E8D207 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F6C980F25644896000CDAAA /* Group List.json */,
 				7FABB1E42512A92600253FAF /* Braze Demo.entitlements */,
-				7F754FC0250C2DF000CD7B45 /* Local Data.json */,
+				7F754FC0250C2DF000CD7B45 /* Tile List.json */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
 				7FBDD49424AD711F00EC0983 /* Assets.xcassets */,
 				7FBDD49924AD711F00EC0983 /* Info.plist */,
@@ -279,6 +290,7 @@
 				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
 				7FCFB99424CA383C001AA381 /* Message.swift */,
+				7F6C98172564539A000CDAAA /* Group.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -483,11 +495,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6C981025644896000CDAAA /* Group List.json in Resources */,
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
-				7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */,
+				7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */,
 				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -560,11 +573,13 @@
 				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
 				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,
+				7F6C98182564539A000CDAAA /* Group.swift in Sources */,
 				7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
+				7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
 				7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */,
@@ -577,6 +592,7 @@
 				7FBDD49324AD711E00EC0983 /* Braze Demo.xcdatamodeld in Sources */,
 				7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */,
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
+				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,

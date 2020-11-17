@@ -1,5 +1,10 @@
 import UIKit
 
+enum HomeScreenType {
+  case tile
+  case group
+}
+
 class HomeListViewController: UIViewController {
     
   // MARK: - Outlets
@@ -11,6 +16,7 @@ class HomeListViewController: UIViewController {
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
   
   // MARK: - Variables
+  private var homeScreenType: HomeScreenType = .group
   private var provider: CollectionViewDataSourceProvider?
   private var shoppingCartItems: [Tile] = [] {
       didSet {
@@ -51,7 +57,12 @@ extension HomeListViewController {
 // MARK: - Private Methods
 private extension HomeListViewController {
   func configureDataSourceProvider() {
-    provider = TileListDataSource(collectionView: collectionView, delegate: self)
+    switch homeScreenType {
+    case .tile:
+      provider = TileListDataSource(collectionView: collectionView, delegate: self)
+    case .group:
+      provider = GroupListDataSource(collectionView: collectionView, delegate: self)
+    }
   }
   
   func configureObservers() {
@@ -66,13 +77,26 @@ private extension HomeListViewController {
   }
   
   func downloadContent() {
-    let contentOperationQueue = ContentOperationQueue<Tile, TileList>(localDataFile: "Local Data", classType: .item(.tile))
-    contentOperationQueue.downloadContent { [weak self] (content, ads) in
-      guard let self = self else { return }
-      
-      DispatchQueue.main.async {
-        self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
-        self.refreshControl.endRefreshing()
+    switch homeScreenType {
+    case .tile:
+      let contentOperationQueue = ContentOperationQueue<Tile, TileList>(localDataFile: "Tile List", classType: .item(.tile))
+      contentOperationQueue.downloadContent { [weak self] (content, ads) in
+        guard let self = self else { return }
+        
+        DispatchQueue.main.async {
+          self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
+          self.refreshControl.endRefreshing()
+        }
+      }
+    case .group:
+      let contentOperationQueue = ContentOperationQueue<Group, GroupList>(localDataFile: "Group List", classType: .item(.group))
+      contentOperationQueue.downloadContent { [weak self] (content, ads) in
+        guard let self = self else { return }
+        
+        DispatchQueue.main.async {
+          self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
+          self.refreshControl.endRefreshing()
+        }
       }
     }
   }

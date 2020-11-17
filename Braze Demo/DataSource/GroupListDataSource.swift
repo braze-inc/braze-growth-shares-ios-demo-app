@@ -1,13 +1,42 @@
 import UIKit
 
-enum TileSection: Int {
+enum GroupSection: Hashable {
+  case blank
+  case group(GroupType)
   case ad
-  case tile
+  
+  enum GroupType {
+    case primary
+    case secondary
+  }
 }
 
-class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
-  typealias DataSource = UICollectionViewDiffableDataSource<TileSection, AnyHashable>
-  typealias Snapshot = NSDiffableDataSourceSnapshot<TileSection, AnyHashable>
+extension GroupSection: RawRepresentable {
+  typealias RawValue = Int
+  
+  init?(rawValue: RawValue) {
+    switch rawValue {
+    case 0:  self = .blank
+    case 1:  self = .group(.primary)
+    case 2:  self = .group(.secondary)
+    case 3:  self = .ad
+    default: return nil
+    }
+  }
+
+  var rawValue: RawValue {
+    switch self {
+    case .blank:               return 0 
+    case .group(.primary):     return 1
+    case .group(.secondary):   return 2
+    case .ad:                  return 3
+    }
+  }
+}
+
+class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
+  typealias DataSource = UICollectionViewDiffableDataSource<GroupSection, AnyHashable>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<GroupSection, AnyHashable>
   
   // MARK: - Variables
   var dataSource: DataSource!
@@ -24,34 +53,24 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
   }
   
   func applySnapshot(_ content: [ContentCardable], ads: [Ad], animatingDifferences: Bool) {
-    guard content is [Tile] else { return }
+    guard content is [Group] else { return }
     
     var snapshot = Snapshot()
     
-    snapshot.appendSections([.ad, .tile])
-    
+    snapshot.appendSections([.blank, .group(.primary), .group(.secondary), .ad])
     snapshot.appendItems(ads, toSection: .ad)
-    snapshot.appendItems(reorderTiles(content as! [Tile]), toSection: .tile)
+    snapshot.appendItems(content as! [Group], toSection: .group(.primary))
     
     dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
   }
   
-  func reorderDataSource() {
-    guard let tiles = dataSource.snapshot(for: .tile).items as? [Tile] else { return }
-      
-    var tileSnapshot = dataSource.snapshot(for: .tile)
-    tileSnapshot.deleteAll()
-    
-    tileSnapshot.append(reorderTiles(tiles))
-    
-    dataSource.apply(tileSnapshot, to: .tile, animatingDifferences: true, completion: nil)
-  }
+  func reorderDataSource() { return }
   
   func resetDataSource() {
-    dataSource.snapshot(for: .tile).items.forEach { content in
-      guard let tile = content as? Tile, tile.isContentCard else { return }
+    dataSource.snapshot().itemIdentifiers.forEach { content in
+      guard let group = content as? Group, group.isContentCard else { return }
       
-      tile.logContentCardDismissed()
+      group.logContentCardDismissed()
     }
   }
   
@@ -63,9 +82,9 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
         let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
         cell.configureCell(ad.imageUrl)
         return cell
-      case let tile as Tile:
+      case let group as Group:
         let cell: ItemCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
-        cell.configureCell(tile.title, tile.detail, tile.price, tile.imageUrl)
+        cell.configureCell(group.name, nil, nil, "")
         return cell
       default:
         return UICollectionViewCell()
@@ -76,7 +95,7 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
   func configureLayout(_ collectionView: UICollectionView) {
     collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
     
-      guard let section = TileSection(rawValue: sectionIndex) else { return nil }
+      guard let section = GroupSection(rawValue: sectionIndex) else { return nil }
       
       let isPhone = layoutEnvironment.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone
       let spacing: CGFloat = 10
@@ -92,13 +111,23 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
         
         let section = NSCollectionLayoutSection(group: group)
         section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: spacing, leading: spacing, bottom: 0, trailing: spacing)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: spacing, bottom: spacing, trailing: spacing)
         return section
-      case .tile:
+      case .blank:
+        let heightDimension = NSCollectionLayoutDimension.estimated(500)
+        let itemSize = NSCollectionLayoutSize(
+                widthDimension: .fractionalWidth(1),
+                heightDimension: heightDimension)
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: heightDimension)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        return section
+      case .group(.primary), .group(.secondary):
         let itemCount = isPhone ? 1 : 2
             
         let width = (collectionView.frame.size.width - spacing) / CGFloat(itemCount)
-        let height: CGFloat = (width/500 * 282) + 150
+        let height: CGFloat = (width/500 * 282) + 450
         let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(height))
               
         let item = NSCollectionLayoutItem(layoutSize: size)
@@ -114,44 +143,8 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
   }
 }
 
-// MARK: - Private
-private extension TileListDataSource {
-  /// Reorders the tiles by looping through each `Tile` and bubbling up the object if it has a `tag` that matches any of the `priorityKeys`.
-  ///
-  /// If there are no `priorityKeys`, the order will be unchanged.
-  /// - parameter tiles: Array to be reordered.
-  func reorderTiles(_ tiles: [Tile]) -> [Tile] {
-    guard let priority = RemoteStorage().retrieve(forKey: RemoteStorageKey.homeListPriority.rawValue) as? String, !priority.isEmpty else { return tiles }
-    
-    let priorityKeys = priority.separatedByCommaSpaceValue
-    
-    var priorityTiles = [Tile]()
-    var tiles = tiles
-       
-    for key in priorityKeys {
-      for (index, tile) in tiles.enumerated().reversed() {
-        if tile.tags.contains(key) {
-          tiles.remove(at: index)
-          if tile.isContentCard {
-            priorityTiles.insert(tile, at: 0)
-          } else {
-            priorityTiles.append(tile)
-          }
-        }
-      }
-    }
-    return priorityTiles + tiles
-  }
-}
-
 // MARK: - CollectionViewDelegate
-extension TileListDataSource {
-  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    guard let tile = dataSource.itemIdentifier(for: indexPath) as? Tile else { return }
-    
-    delegate?.cellTapped(with: tile)
-  }
-  
+extension GroupListDataSource {  
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     guard let content = dataSource.itemIdentifier(for: indexPath) as? ContentCardable, content.isContentCard else { return }
     

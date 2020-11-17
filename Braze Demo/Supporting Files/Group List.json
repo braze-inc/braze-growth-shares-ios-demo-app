@@ -1,0 +1,27 @@
+{
+  "groups": [
+    {
+      "id": 1,
+      "name": "Liquid 101",
+      "items": [
+        {
+          "id": 1,
+           "title": "Invest in your future",
+           "image": ""
+        },
+        {
+          "id": 2,
+          "title": "Spend smarter",
+          "image": ""
+        }]
+    },
+    { "id": 2,
+      "name": "Liquid 102",
+      "items": [
+        {
+          "id": 1,
+          "title": "Earn more money"
+        }]
+    }
+  ]
+}
