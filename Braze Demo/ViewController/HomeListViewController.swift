@@ -5,13 +5,13 @@ class HomeListViewController: UIViewController {
   // MARK: - Outlets
   @IBOutlet private weak var collectionView: UICollectionView! {
     didSet {
-      provider = HomeListDataSourceProvider(collectionView: collectionView, delegate: self)
+      configureDataSourceProvider()
     }
   }
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
   
   // MARK: - Variables
-  private var provider: HomeListDataSourceProvider?
+  private var provider: CollectionViewDataSourceProvider?
   private var shoppingCartItems: [Tile] = [] {
       didSet {
           guard let cartButtonItem = shoppingCartButtonItem else { return }
@@ -50,6 +50,10 @@ extension HomeListViewController {
 
 // MARK: - Private Methods
 private extension HomeListViewController {
+  func configureDataSourceProvider() {
+    provider = TileListDataSource(collectionView: collectionView, delegate: self)
+  }
+  
   func configureObservers() {
     NotificationCenter.default.addObserver(self, selector: #selector(reorder(_:)), name: .reorderHomeScreen, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(refresh(_:)), name: .homeScreenContentCard, object: nil)
@@ -67,7 +71,7 @@ private extension HomeListViewController {
       guard let self = self else { return }
       
       DispatchQueue.main.async {
-        self.provider?.applySnapshot(content, ads)
+        self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
         self.refreshControl.endRefreshing()
       }
     }

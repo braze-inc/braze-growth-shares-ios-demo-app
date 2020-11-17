@@ -1,5 +1,13 @@
 import UIKit
 
+protocol CollectionViewDataSourceProvider: UICollectionViewDelegate {
+  init(collectionView: UICollectionView, delegate: CellActionDelegate)
+  func applySnapshot(_ content: [ContentCardable], ads: [Ad], animatingDifferences: Bool)
+  func reorderDataSource()
+  func resetDataSource()
+  var dataSource: DataSource! { get }
+}
+
 protocol CellActionDelegate: class {
   func cellTapped(with data: Any?)
 }
@@ -9,15 +17,17 @@ enum CollectionViewSection: Int {
   case tile
 }
 
-class HomeListDataSourceProvider: NSObject {
-  private typealias DataSource = UICollectionViewDiffableDataSource<CollectionViewSection, AnyHashable>
-  private typealias Snapshot = NSDiffableDataSourceSnapshot<CollectionViewSection, AnyHashable>
-  
+extension CollectionViewDataSourceProvider {
+  typealias DataSource = UICollectionViewDiffableDataSource<CollectionViewSection, AnyHashable>
+  typealias Snapshot = NSDiffableDataSourceSnapshot<CollectionViewSection, AnyHashable>
+}
+
+class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
   // MARK: - Variables
-  private var dataSource: DataSource!
+  var dataSource: DataSource!
   private weak var delegate: CellActionDelegate?
   
-  required init(collectionView: UICollectionView, delegate: CellActionDelegate? = nil) {
+  required init(collectionView: UICollectionView, delegate: CellActionDelegate) {
     super.init()
     self.delegate = delegate
    
@@ -27,13 +37,15 @@ class HomeListDataSourceProvider: NSObject {
     collectionView.delegate = self
   }
   
-  func applySnapshot(_ tiles: [Tile], _ ads: [Ad], animatingDifferences: Bool = true) {
+  func applySnapshot(_ content: [ContentCardable], ads: [Ad], animatingDifferences: Bool) {
+    guard content is [Tile] else { return }
+    
     var snapshot = Snapshot()
     
     snapshot.appendSections([.ad, .tile])
     
     snapshot.appendItems(ads, toSection: .ad)
-    snapshot.appendItems(reorderTiles(tiles), toSection: .tile)
+    snapshot.appendItems(reorderTiles(content as! [Tile]), toSection: .tile)
     
     dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
   }
@@ -56,10 +68,7 @@ class HomeListDataSourceProvider: NSObject {
       tile.logContentCardDismissed()
     }
   }
-}
-
-// MARK: - Private
-private extension HomeListDataSourceProvider {
+  
   func configureDataSource(_ collectionView: UICollectionView) {
     dataSource = DataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, content) -> UICollectionViewCell? in
       
@@ -117,7 +126,10 @@ private extension HomeListDataSourceProvider {
       }
     })
   }
-  
+}
+
+// MARK: - Private
+private extension TileListDataSource {
   /// Reorders the tiles by looping through each `Tile` and bubbling up the object if it has a `tag` that matches any of the `priorityKeys`.
   ///
   /// If there are no `priorityKeys`, the order will be unchanged.
@@ -147,7 +159,7 @@ private extension HomeListDataSourceProvider {
 }
 
 // MARK: - CollectionViewDelegate
-extension HomeListDataSourceProvider: UICollectionViewDelegate {
+extension TileListDataSource {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     guard let tile = dataSource.itemIdentifier(for: indexPath) as? Tile else { return }
     

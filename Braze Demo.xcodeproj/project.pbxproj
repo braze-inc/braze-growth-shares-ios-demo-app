@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */; };
+		7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */; };
 		7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Local Data.json */; };
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */; };
-		7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */; };
 		7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */; };
 		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
 		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
@@ -79,11 +79,11 @@
 /* Begin PBXFileReference section */
 		1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.debug.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.debug.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileListDataSource.swift; sourceTree = "<group>"; };
 		7F754FC0250C2DF000CD7B45 /* Local Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Local Data.json"; sourceTree = "<group>"; };
 		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
 		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
 		7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterContainerViewController.swift; sourceTree = "<group>"; };
-		7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListDataSource.swift; sourceTree = "<group>"; };
 		7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboySettingsViewController.swift; sourceTree = "<group>"; };
 		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
@@ -177,9 +177,9 @@
 		7F87D4A824B01AAF00ED0A86 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */,
 				7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */,
 				7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */,
+				7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -567,6 +567,7 @@
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
+				7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */,
 				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
 				7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */,
@@ -578,7 +579,6 @@
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
-				7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */,
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
