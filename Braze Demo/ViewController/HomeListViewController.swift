@@ -107,44 +107,40 @@ private extension HomeListViewController {
       headerImageView.isHidden = true
       collectionView.dataSource = nil
       provider = TileListDataSource(collectionView: collectionView, delegate: self)
+      configureAndProcessDownloadType()
     case .group:
       shoppingCartButtonItem.isEnabled = false
       headerImageView.isHidden = false
       view.backgroundColor = .systemGreen
       collectionView.dataSource = nil
       provider = GroupListDataSource(collectionView: collectionView, delegate: self)
+      configureAndProcessDownloadType()
     }
-
-    downloadContent()
   }
   
-  func downloadContent() {
+  func configureAndProcessDownloadType() {
     switch homeScreenType {
     case .tile:
-      let contentOperationQueue = ContentOperationQueue<Tile, TileList>(localDataFile: "Tile List", classType: .item(.tile))
-      contentOperationQueue.downloadContent { [weak self] (content, ads) in
-        guard let self = self else { return }
-        
-        DispatchQueue.main.async {
-          self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
-          self.refreshControl.endRefreshing()
-        }
-      }
+      downloadContent(Tile.self, TileList.self, fileName: "Tile List", classType: .item(.tile))
     case .group:
-      let contentOperationQueue = ContentOperationQueue<Group, GroupList>(localDataFile: "Group List", classType: .item(.group))
-      contentOperationQueue.downloadContent { [weak self] (content, ads) in
-        guard let self = self else { return }
-        
-        DispatchQueue.main.async {
-          self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
-          self.refreshControl.endRefreshing()
-        }
+      downloadContent(Group.self, GroupList.self, fileName: "Group List", classType: .item(.group))
+    }
+  }
+  
+  func downloadContent<T: ContentCardable, U: MetaData>(_ content: T.Type, _ metaData: U.Type, fileName: String, classType: ContentCardClassType) {
+    let contentOperationQueue = ContentOperationQueue<T, U>(localDataFile: fileName, classType: classType)
+    contentOperationQueue.downloadContent { [weak self] (content, ads) in
+      guard let self = self else { return }
+      
+      DispatchQueue.main.async {
+        self.provider?.applySnapshot(content, ads: ads, animatingDifferences: true)
+        self.refreshControl.endRefreshing()
       }
     }
   }
   
   @objc func refresh(_ sender: Any) {
-    downloadContent()
+    configureAndProcessDownloadType()
   }
   
   @objc func reorder(_ sender: Any) {
@@ -153,7 +149,7 @@ private extension HomeListViewController {
 
   @objc func reset(_ sender: Any) {
     provider?.resetDataSource()
-    downloadContent()
+    configureAndProcessDownloadType()
   }
   
   @objc func titlePressed(_ sender: Any) {
