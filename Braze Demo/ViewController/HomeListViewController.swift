@@ -140,7 +140,7 @@ private extension HomeListViewController {
   }
   
   @objc func refresh(_ sender: Any) {
-    configureAndProcessDownloadType(by: homeScreenType)
+    configureAndProcessDownload(by: homeScreenType)
   }
   
   @objc func reorder(_ sender: Any) {
