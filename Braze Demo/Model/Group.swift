@@ -8,23 +8,49 @@ struct GroupList: MetaData {
   }
 }
 
+enum GroupStyle: String {
+  case smallRow
+  case largeRow
+  case headline
+  case none
+  
+  init?(rawValue: String) {
+    switch rawValue {
+    case "smallrow":
+      self = .smallRow
+    case "largerow":
+      self = .largeRow
+    case "headline":
+      self = .headline
+    default: return nil
+    }
+  }
+}
+
 // MARK: - Group
 struct Group: ContentCardable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
-  let style: String
+  private let styleString: String
   let items: [Subgroup]
   
   private enum CodingKeys: String, CodingKey {
     case id
-    case style
+    case styleString = "style"
     case items
   }
 }
 
 extension Group {
+  var style: GroupStyle {
+    return GroupStyle(rawValue: styleString) ?? .none
+  }
+}
+
+extension Group {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
-    self.init(contentCardData: nil, id: 0, style: "", items: [])
+    // Not Braze Dashboard configured (yet)
+    self.init(contentCardData: nil, id: 0, styleString: "", items: [])
   }
 }
 

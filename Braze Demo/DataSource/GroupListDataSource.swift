@@ -68,10 +68,23 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     snapshot.appendItems(ads, toSection: .ad)
     
     let groups = content as! [Group]
-    snapshot.appendItems(groups[0].items, toSection: .group(.primary))
-    snapshot.appendItems(groups[1].items, toSection: .group(.secondary))
-    snapshot.appendItems(groups[2].items, toSection: .group(.headline))
-    snapshot.appendItems(groups[3].items, toSection: .group(.info))
+    var primaryItems = [Subgroup]()
+    groups.forEach {
+      switch $0.style {
+      case .smallRow:
+      if primaryItems.isEmpty {
+        primaryItems += $0.items
+        snapshot.appendItems(primaryItems, toSection: .group(.primary))
+      } else {
+        snapshot.appendItems($0.items, toSection: .group(.secondary))
+      }
+      case .headline:
+        snapshot.appendItems($0.items, toSection: .group(.headline))
+      case .largeRow:
+        snapshot.appendItems($0.items, toSection: .group(.info))
+      default: break
+      }
+    }
     
     dataSource.apply(snapshot, animatingDifferences: animatingDifferences)
   }
@@ -150,13 +163,13 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         return section
       case .group(.primary), .group(.secondary):
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        configuration.backgroundColor = .clear
+        configuration.backgroundColor = .systemGroupedBackground
         let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
         return section
       case .group(.info), .group(.headline):
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        configuration.backgroundColor = .clear
+        configuration.backgroundColor = .systemGroupedBackground
         configuration.showsSeparators = false
         let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)

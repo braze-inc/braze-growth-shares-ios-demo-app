@@ -2,7 +2,7 @@
   "groups": [
     {
       "id": 1,
-      "style": "small row",
+      "style": "smallrow",
       "items": [
         {
           "id": 1,
@@ -26,7 +26,7 @@
         }]
     },
     { "id": 2,
-      "style": "small row",
+      "style": "smallrow",
       "items": [
         {
           "id": 1,
@@ -44,7 +44,7 @@
         }]
     },
     { "id": 3,
-      "style": "banner",
+      "style": "headline",
       "items": [
         {
           "id": 1,
@@ -52,7 +52,7 @@
         }]
     },
     { "id": 4,
-      "style": "large row",
+      "style": "largerow",
       "items": [
         {
           "id": 1,
