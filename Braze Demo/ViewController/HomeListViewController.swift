@@ -115,10 +115,10 @@ private extension HomeListViewController {
       provider = GroupListDataSource(collectionView: collectionView, delegate: self)
     }
     
-    configureAndProcessDownloadType(by: homeScreenType)
+    configureAndProcessDownload(by: homeScreenType)
   }
   
-  func configureAndProcessDownloadType(by homeScreenType: HomeScreenType) {
+  func configureAndProcessDownload(by homeScreenType: HomeScreenType) {
     switch homeScreenType {
     case .tile:
       downloadContent(Tile.self, TileList.self, fileName: "Tile List", classType: .item(.tile))
@@ -149,7 +149,7 @@ private extension HomeListViewController {
 
   @objc func reset(_ sender: Any) {
     provider?.resetDataSource()
-    configureAndProcessDownloadType(by: homeScreenType)
+    configureAndProcessDownload(by: homeScreenType)
   }
   
   @objc func titlePressed(_ sender: Any) {
