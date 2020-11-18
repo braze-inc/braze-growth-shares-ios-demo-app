@@ -6,11 +6,17 @@ class SmallRowCollectionViewCell: UICollectionViewListCell {
   // MARK: - Outlets
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    self.accessories = [.disclosureIndicator()]
+  }
 
   func configureCell(_ title: String?, imageUrl: String?) {
-    titleLabel.text = title
+    if let title = title {
+      titleLabel.attributedText = title.firstWordBold()
+    }
+    
     imageView.image = UIImage(systemName: "globe")
-  
-    self.accessories = [.disclosureIndicator()]
   }
 }
