@@ -1,6 +1,6 @@
 import UIKit
 
-enum HomeScreenType {
+enum HomeScreenType: Int {
   case tile
   case group
 }
@@ -8,15 +8,16 @@ enum HomeScreenType {
 class HomeListViewController: UIViewController {
     
   // MARK: - Outlets
-  @IBOutlet private weak var collectionView: UICollectionView! {
-    didSet {
-      configureDataSourceProvider()
-    }
-  }
+  @IBOutlet private weak var collectionView: UICollectionView!
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
   
   // MARK: - Variables
-  private var homeScreenType: HomeScreenType = .group
+  private let homeScreenMenuView: HomeScreenMenuView = .fromNib()
+  private var homeScreenType: HomeScreenType = .group {
+    didSet {
+      configureHomeScreen()
+    }
+  }
   private var provider: CollectionViewDataSourceProvider?
   private var shoppingCartItems: [Tile] = [] {
       didSet {
@@ -34,10 +35,10 @@ extension HomeListViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    configureNavigationButton()
     configureObservers()
     configureRefreshControl()
-    
-    downloadContent()
+    configureHomeScreen()
   }
   
   override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -56,13 +57,38 @@ extension HomeListViewController {
 
 // MARK: - Private Methods
 private extension HomeListViewController {
-  func configureDataSourceProvider() {
+  func configureHomeScreen() {
     switch homeScreenType {
     case .tile:
+      view.backgroundColor = .lightGray
+      collectionView.dataSource = nil
       provider = TileListDataSource(collectionView: collectionView, delegate: self)
     case .group:
+      view.backgroundColor = .systemGreen
+      collectionView.dataSource = nil
       provider = GroupListDataSource(collectionView: collectionView, delegate: self)
     }
+
+    downloadContent()
+  }
+  
+  func configureNavigationButton() {
+    let button = UIButton(type: .custom)
+    button.setTitle("Home ▼", for: .normal)
+    button.setTitleColor(.black, for: .normal)
+    button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
+    button.addTarget(self, action: #selector(titlePressed(_:)), for: .touchUpInside)
+    navigationItem.titleView = button
+    
+    homeScreenMenuView.configureDelegate(self)
+    homeScreenMenuView.isHidden = true
+    view.addSubview(homeScreenMenuView)
+    homeScreenMenuView.translatesAutoresizingMaskIntoConstraints = false
+    let verticalConstraint = homeScreenMenuView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0.0)
+    let horizontalConstraint = NSLayoutConstraint(item: homeScreenMenuView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
+    let heightConstraint = NSLayoutConstraint(item: homeScreenMenuView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .height, multiplier: 1, constant: 125.0)
+    let widthConstraint = NSLayoutConstraint(item: homeScreenMenuView, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .width, multiplier: 1, constant: 250.0)
+    view.addConstraints([verticalConstraint, horizontalConstraint, heightConstraint, widthConstraint])
   }
   
   func configureObservers() {
@@ -113,6 +139,10 @@ private extension HomeListViewController {
     provider?.resetDataSource()
     downloadContent()
   }
+  
+  @objc func titlePressed(_ sender: Any) {
+    homeScreenMenuView.isHidden.toggle()
+  }
 }
 
 // MARK: - ShoppingCartDelegate
@@ -133,6 +163,13 @@ extension HomeListViewController: CellActionDelegate {
     AppboyManager.shared.logCustomEvent("Added item to cart")
     shoppingCartItems.append(tile)
     presentAlert(title: "Added \(tile.title) to Shopping Cart", message: nil)
+  }
+}
+
+extension HomeListViewController: HomeScreenMenuViewActionDelegate {
+  func menuButtonPressed(atIndex index: Int) {
+    homeScreenType = HomeScreenType(rawValue: index) ?? .tile
+    homeScreenMenuView.isHidden = true
   }
 }
 

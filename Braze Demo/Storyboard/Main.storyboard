@@ -668,7 +668,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="k0i-q7-63w"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="k0i-q7-63w" firstAttribute="bottom" secondItem="rhF-bn-Kjd" secondAttribute="bottom" id="5LH-ME-EhK"/>
                             <constraint firstItem="rhF-bn-Kjd" firstAttribute="top" secondItem="k0i-q7-63w" secondAttribute="top" id="Ar4-RP-hHh"/>
