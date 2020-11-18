@@ -12,19 +12,19 @@ struct GroupList: MetaData {
 struct Group: ContentCardable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
-  let name: String
+  let style: String
   let items: [Subgroup]
   
   private enum CodingKeys: String, CodingKey {
     case id
-    case name
+    case style
     case items
   }
 }
 
 extension Group {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
-    self.init(contentCardData: nil, id: 0, name: "", items: [])
+    self.init(contentCardData: nil, id: 0, style: "", items: [])
   }
 }
 

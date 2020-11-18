@@ -2,25 +2,81 @@
   "groups": [
     {
       "id": 1,
-      "name": "Liquid 101",
+      "style": "small row",
       "items": [
         {
           "id": 1,
-           "title": "Invest in your future",
+           "title": "Invest for your future",
            "image": ""
         },
         {
           "id": 2,
-          "title": "Spend smarter",
+           "title": "Spend smarter",
+           "image": ""
+        },
+        {
+          "id": 3,
+           "title": "Rainy day fund",
+           "image": ""
+        },
+        {
+          "id": 4,
+          "title": "Make that money",
           "image": ""
         }]
     },
     { "id": 2,
-      "name": "Liquid 102",
+      "style": "small row",
       "items": [
         {
           "id": 1,
           "title": "Earn more money"
+        },
+        {
+          "id": 2,
+           "title": "Protect what you make",
+           "image": ""
+        },
+        {
+          "id": 3,
+           "title": "Grow what you know",
+           "image": ""
+        }]
+    },
+    { "id": 3,
+      "style": "banner",
+      "items": [
+        {
+          "id": 1,
+          "title": "You invested $2,011.00 in the last 30 days"
+        }]
+    },
+    { "id": 4,
+      "style": "large row",
+      "items": [
+        {
+          "id": 1,
+          "title": "How Does Braze Work?"
+        },
+        {
+          "id": 2,
+           "title": "The Benefits of Working with Braze",
+           "image": ""
+        },
+        {
+          "id": 3,
+           "title": "What is so cool about Connected Content?",
+           "image": ""
+        },
+        {
+          "id": 4,
+           "title": "What are data points?",
+           "image": ""
+        },
+        {
+          "id": 5,
+           "title": "In-App Messages vs. Content Cards",
+           "image": ""
         }]
     }
   ]
