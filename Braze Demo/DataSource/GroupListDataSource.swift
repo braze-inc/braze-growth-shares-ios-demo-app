@@ -45,7 +45,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   typealias Snapshot = NSDiffableDataSourceSnapshot<GroupSection, AnyHashable>
   
   // MARK: - Variables
-  var dataSource: DataSource!
+  private var dataSource: DataSource!
   private weak var delegate: CellActionDelegate?
   
   required init(collectionView: UICollectionView, delegate: CellActionDelegate) {

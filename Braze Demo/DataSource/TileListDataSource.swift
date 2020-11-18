@@ -10,7 +10,7 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
   typealias Snapshot = NSDiffableDataSourceSnapshot<TileSection, AnyHashable>
   
   // MARK: - Variables
-  var dataSource: DataSource!
+  private var dataSource: DataSource!
   private weak var delegate: CellActionDelegate?
   
   required init(collectionView: UICollectionView, delegate: CellActionDelegate) {

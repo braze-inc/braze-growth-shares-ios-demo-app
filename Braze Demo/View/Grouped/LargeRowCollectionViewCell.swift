@@ -3,7 +3,7 @@ import UIKit
 class LargeRowCollectionViewCell: UICollectionViewListCell {
   static let cellIdentifier = "LargeRowCollectionViewCell"
   
-  // MARK: - Variables
+  // MARK: - Outlets
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
 

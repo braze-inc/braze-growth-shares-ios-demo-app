@@ -3,7 +3,7 @@ import UIKit
 class HeadlineCollectionViewCell: UICollectionViewListCell {
   static let cellIdentifier = "HeadlineCollectionViewCell"
   
-  // MARK: - Variables
+  // MARK: - Outlets
   @IBOutlet weak var titleLabel: UILabel!
 
   func configureCell(_ title: String?) {

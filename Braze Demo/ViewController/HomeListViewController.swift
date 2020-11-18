@@ -16,7 +16,7 @@ class HomeListViewController: UIViewController {
   private let homeScreenMenuView: HomeScreenMenuView = .fromNib()
   private var homeScreenType: HomeScreenType = .tile {
     didSet {
-      configureCollectionView()
+      configureCollectionView(by: homeScreenType)
     }
   }
   private var provider: CollectionViewDataSourceProvider?
@@ -99,7 +99,7 @@ private extension HomeListViewController {
   
 // MARK: - Dynamic Home List
 private extension HomeListViewController {
-  func configureCollectionView() {
+  func configureCollectionView(by homeScreenType: HomeScreenType) {
     switch homeScreenType {
     case .tile:
       shoppingCartButtonItem.isEnabled = true
@@ -107,18 +107,18 @@ private extension HomeListViewController {
       headerImageView.isHidden = true
       collectionView.dataSource = nil
       provider = TileListDataSource(collectionView: collectionView, delegate: self)
-      configureAndProcessDownloadType()
     case .group:
       shoppingCartButtonItem.isEnabled = false
       headerImageView.isHidden = false
       view.backgroundColor = .systemGreen
       collectionView.dataSource = nil
       provider = GroupListDataSource(collectionView: collectionView, delegate: self)
-      configureAndProcessDownloadType()
     }
+    
+    configureAndProcessDownloadType(by: homeScreenType)
   }
   
-  func configureAndProcessDownloadType() {
+  func configureAndProcessDownloadType(by homeScreenType: HomeScreenType) {
     switch homeScreenType {
     case .tile:
       downloadContent(Tile.self, TileList.self, fileName: "Tile List", classType: .item(.tile))
@@ -140,7 +140,7 @@ private extension HomeListViewController {
   }
   
   @objc func refresh(_ sender: Any) {
-    configureAndProcessDownloadType()
+    configureAndProcessDownloadType(by: homeScreenType)
   }
   
   @objc func reorder(_ sender: Any) {
@@ -149,7 +149,7 @@ private extension HomeListViewController {
 
   @objc func reset(_ sender: Any) {
     provider?.resetDataSource()
-    configureAndProcessDownloadType()
+    configureAndProcessDownloadType(by: homeScreenType)
   }
   
   @objc func titlePressed(_ sender: Any) {
@@ -178,6 +178,7 @@ extension HomeListViewController: CellActionDelegate {
   }
 }
 
+// MARK: - Home Screen Menu Delegate
 extension HomeListViewController: HomeScreenMenuViewActionDelegate {
   func menuButtonPressed(atIndex index: Int) {
     defer { homeScreenMenuView.isHidden = true }

@@ -3,7 +3,7 @@ import UIKit
 class SmallRowCollectionViewCell: UICollectionViewListCell {
   static let cellIdentifier = "SmallRowCollectionViewCell"
   
-  // MARK: - Variables
+  // MARK: - Outlets
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
 
