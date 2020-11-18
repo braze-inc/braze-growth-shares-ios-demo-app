@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -28,25 +29,29 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpC-ZG-WdO">
                             <rect key="frame" x="0.0" y="0.0" width="200" height="55"/>
-                            <state key="normal" title="Tiles"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Tiles">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
                             <connections>
                                 <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="K0A-cn-7Wx"/>
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1R-0q-jUC">
                             <rect key="frame" x="0.0" y="55" width="200" height="55"/>
-                            <state key="normal" title="Grouped"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="Grouped">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" systemColor="labelColor"/>
+                            </state>
                             <connections>
                                 <action selector="buttonPressed:" destination="-1" eventType="touchUpInside" id="cpQ-oi-uEh"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="EO5-ns-bYR"/>
@@ -70,10 +75,17 @@
                     <size key="value" width="0.0" height="2"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="groupedButton" destination="m1R-0q-jUC" id="scT-KL-XYY"/>
+                <outlet property="tileButton" destination="BpC-ZG-WdO" id="faV-6d-Oiv"/>
+            </connections>
             <point key="canvasLocation" x="-87" y="148"/>
         </view>
     </objects>
     <resources>
         <image name="triangle.fill" catalog="system" width="128" height="112"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

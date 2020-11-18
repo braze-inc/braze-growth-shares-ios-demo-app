@@ -121,7 +121,7 @@ private extension TileListDataSource {
   /// If there are no `priorityKeys`, the order will be unchanged.
   /// - parameter tiles: Array to be reordered.
   func reorderTiles(_ tiles: [Tile]) -> [Tile] {
-    guard let priority = RemoteStorage().retrieve(forKey: RemoteStorageKey.homeListPriority.rawValue) as? String, !priority.isEmpty else { return tiles }
+    guard let priority = RemoteStorage().retrieve(forKey: .homeListPriority) as? String, !priority.isEmpty else { return tiles }
     
     let priorityKeys = priority.separatedByCommaSpaceValue
     

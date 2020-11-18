@@ -40,7 +40,7 @@ class AppboySettingsViewController: UIViewController {
   @IBAction func segmentChanged(_ sender: Any) {
     guard let segmentedControl = sender as? UISegmentedControl else { return }
     
-    RemoteStorage().store(segmentedControl.selectedSegmentIndex, forKey: RemoteStorageKey.messageCenterStyle.rawValue)
+    RemoteStorage().store(segmentedControl.selectedSegmentIndex, forKey: .messageCenterStyle)
   }
   @IBAction func messageCenterCampaignButtonPressed(_ sender: Any) {
     guard let button = sender as? UIButton else { return }
@@ -60,7 +60,7 @@ extension AppboySettingsViewController {
 // MARK: - Private Methods
 private extension AppboySettingsViewController {
   func configureMessageCenterSegmentedControl() {
-    if let value = RemoteStorage().retrieve(forKey: RemoteStorageKey.messageCenterStyle.rawValue) as? Int {
+    if let value = RemoteStorage().retrieve(forKey: .messageCenterStyle) as? Int {
       segmentedControl.selectedSegmentIndex = value
     }
   }

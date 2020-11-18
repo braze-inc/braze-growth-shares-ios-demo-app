@@ -440,6 +440,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Braze_Logo_White_RGB" translatesAutoresizingMaskIntoConstraints="NO" id="wC8-J4-ji4">
+                                <rect key="frame" x="10" y="88" width="394" height="350"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rhF-bn-Kjd">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -670,9 +673,13 @@
                         <viewLayoutGuide key="safeArea" id="k0i-q7-63w"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="wC8-J4-ji4" firstAttribute="top" secondItem="k0i-q7-63w" secondAttribute="top" id="3He-Xq-xuW"/>
                             <constraint firstItem="k0i-q7-63w" firstAttribute="bottom" secondItem="rhF-bn-Kjd" secondAttribute="bottom" id="5LH-ME-EhK"/>
                             <constraint firstItem="rhF-bn-Kjd" firstAttribute="top" secondItem="k0i-q7-63w" secondAttribute="top" id="Ar4-RP-hHh"/>
                             <constraint firstItem="rhF-bn-Kjd" firstAttribute="leading" secondItem="k0i-q7-63w" secondAttribute="leading" id="RPg-Hx-9yi"/>
+                            <constraint firstItem="k0i-q7-63w" firstAttribute="trailing" secondItem="wC8-J4-ji4" secondAttribute="trailing" constant="10" id="Rwq-sS-0vt"/>
+                            <constraint firstItem="wC8-J4-ji4" firstAttribute="height" secondItem="Qyy-RE-HSO" secondAttribute="height" multiplier="350:896" id="a9k-Lu-VBc"/>
+                            <constraint firstItem="wC8-J4-ji4" firstAttribute="leading" secondItem="k0i-q7-63w" secondAttribute="leading" constant="10" id="oIa-GV-pXt"/>
                             <constraint firstItem="k0i-q7-63w" firstAttribute="trailing" secondItem="rhF-bn-Kjd" secondAttribute="trailing" id="s6R-m2-lWW"/>
                         </constraints>
                     </view>
@@ -690,6 +697,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="rhF-bn-Kjd" id="2I8-qX-BdE"/>
+                        <outlet property="headerImageView" destination="wC8-J4-ji4" id="6rD-xq-yKA"/>
                         <outlet property="shoppingCartButtonItem" destination="lNs-WP-iWd" id="KE7-j2-fbY"/>
                     </connections>
                 </viewController>
@@ -1151,6 +1159,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Braze_Logo_White_RGB" width="658" height="304"/>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="house" catalog="system" width="128" height="106"/>

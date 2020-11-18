@@ -9,13 +9,14 @@ class HomeListViewController: UIViewController {
     
   // MARK: - Outlets
   @IBOutlet private weak var collectionView: UICollectionView!
+  @IBOutlet private weak var headerImageView: UIImageView!
   @IBOutlet private weak var shoppingCartButtonItem: UIBarButtonItem!
   
   // MARK: - Variables
   private let homeScreenMenuView: HomeScreenMenuView = .fromNib()
-  private var homeScreenType: HomeScreenType = .group {
+  private var homeScreenType: HomeScreenType = .tile {
     didSet {
-      configureHomeScreen()
+      configureCollectionView()
     }
   }
   private var provider: CollectionViewDataSourceProvider?
@@ -35,17 +36,7 @@ extension HomeListViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureNavigationButton()
-    configureObservers()
-    configureRefreshControl()
     configureHomeScreen()
-  }
-  
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-      super.viewWillTransition(to: size, with: coordinator)
-      coordinator.animate(alongsideTransition: nil) { _ in
-        self.collectionView.reloadData()
-      }
   }
     
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -58,31 +49,28 @@ extension HomeListViewController {
 // MARK: - Private Methods
 private extension HomeListViewController {
   func configureHomeScreen() {
-    switch homeScreenType {
-    case .tile:
-      view.backgroundColor = .lightGray
-      collectionView.dataSource = nil
-      provider = TileListDataSource(collectionView: collectionView, delegate: self)
-    case .group:
-      view.backgroundColor = .systemGreen
-      collectionView.dataSource = nil
-      provider = GroupListDataSource(collectionView: collectionView, delegate: self)
-    }
-
-    downloadContent()
+    configureObservers()
+    configureNavigationButton()
+    configureHomeScreenMenuView()
+    configureRefreshControl()
+    configureHomeScreenType()
   }
   
   func configureNavigationButton() {
     let button = UIButton(type: .custom)
     button.setTitle("Home ▼", for: .normal)
     button.setTitleColor(.black, for: .normal)
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
     button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
     button.addTarget(self, action: #selector(titlePressed(_:)), for: .touchUpInside)
     navigationItem.titleView = button
-    
+  }
+  
+  func configureHomeScreenMenuView() {
     homeScreenMenuView.configureDelegate(self)
     homeScreenMenuView.isHidden = true
     view.addSubview(homeScreenMenuView)
+    
     homeScreenMenuView.translatesAutoresizingMaskIntoConstraints = false
     let verticalConstraint = homeScreenMenuView.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 0.0)
     let horizontalConstraint = NSLayoutConstraint(item: homeScreenMenuView, attribute: .centerX, relatedBy: .equal, toItem: view, attribute: .centerX, multiplier: 1, constant: 0)
@@ -100,6 +88,34 @@ private extension HomeListViewController {
   func configureRefreshControl() {
     refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
     collectionView.refreshControl = refreshControl
+  }
+  
+  func configureHomeScreenType() {
+    guard let index = RemoteStorage().retrieve(forKey: .homeScreenType) as? Int else { return homeScreenType = .tile }
+
+    homeScreenType = HomeScreenType(rawValue: index) ?? .tile
+  }
+}
+  
+// MARK: - Dynamic Home List
+private extension HomeListViewController {
+  func configureCollectionView() {
+    switch homeScreenType {
+    case .tile:
+      shoppingCartButtonItem.isEnabled = true
+      view.backgroundColor = .lightGray
+      headerImageView.isHidden = true
+      collectionView.dataSource = nil
+      provider = TileListDataSource(collectionView: collectionView, delegate: self)
+    case .group:
+      shoppingCartButtonItem.isEnabled = false
+      headerImageView.isHidden = false
+      view.backgroundColor = .systemGreen
+      collectionView.dataSource = nil
+      provider = GroupListDataSource(collectionView: collectionView, delegate: self)
+    }
+
+    downloadContent()
   }
   
   func downloadContent() {
@@ -168,8 +184,11 @@ extension HomeListViewController: CellActionDelegate {
 
 extension HomeListViewController: HomeScreenMenuViewActionDelegate {
   func menuButtonPressed(atIndex index: Int) {
+    defer { homeScreenMenuView.isHidden = true }
+    
+    guard index != homeScreenType.rawValue else { return }
+    
     homeScreenType = HomeScreenType(rawValue: index) ?? .tile
-    homeScreenMenuView.isHidden = true
+    RemoteStorage().store(index, forKey: .homeScreenType)
   }
 }
-
