@@ -1,7 +1,7 @@
 import UIKit
 
 protocol SheetViewActionDelegate where Self: UIViewController {
-  func sheetViewDidSwipeToDismiss()
+  func sheetViewDidDismiss()
 }
 
 enum SheetViewState {
@@ -100,6 +100,7 @@ extension SheetViewController {
   
   func dismiss() {
     animatePoint(.offScreen)
+    delegate?.sheetViewDidDismiss()
   }
 }
 
@@ -133,7 +134,6 @@ private extension SheetViewController {
         animatePoint(.slideUp)
       } else {
         dismiss()
-        delegate?.sheetViewDidSwipeToDismiss()
       }
     default:
       break

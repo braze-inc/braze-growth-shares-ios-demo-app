@@ -108,7 +108,7 @@ extension HomeListViewController: CellActionDelegate {
 
 // MARK: - SheetView Action Delegate
 extension HomeListViewController: SheetViewActionDelegate {
-  func sheetViewDidSwipeToDismiss() {
+  func sheetViewDidDismiss() {
     sheetVc.removeFromParent()
   }
 }
