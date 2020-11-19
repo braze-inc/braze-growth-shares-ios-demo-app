@@ -6,22 +6,22 @@
       "items": [
         {
           "id": 1,
-           "title": "Invest for your future",
+           "title": "Forge human connections",
            "image": ""
         },
         {
           "id": 2,
-           "title": "Spend smarter",
+           "title": "Grow your knowledge",
            "image": ""
         },
         {
           "id": 3,
-           "title": "Rainy day fund",
+           "title": "Live the brand",
            "image": ""
         },
         {
           "id": 4,
-          "title": "Make that money",
+          "title": "Communicate smarter",
           "image": ""
         }]
     },
@@ -30,16 +30,16 @@
       "items": [
         {
           "id": 1,
-          "title": "Earn more money"
+          "title": "Invest in your future"
         },
         {
           "id": 2,
-           "title": "Protect what you make",
+           "title": "Power relevant experiences",
            "image": ""
         },
         {
           "id": 3,
-           "title": "Grow what you know",
+           "title": "Increase engagement",
            "image": ""
         }]
     },
