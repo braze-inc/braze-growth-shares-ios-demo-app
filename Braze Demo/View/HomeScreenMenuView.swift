@@ -39,8 +39,6 @@ private extension HomeScreenMenuView {
     }
     
     switch HomeScreenType(rawValue: index) {
-    case .tile:
-      tileSelectedButtonState()
     case .group:
       groupedSelectedButtonState()
     default:

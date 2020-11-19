@@ -57,13 +57,7 @@ private extension HomeListViewController {
   }
   
   func configureNavigationButton() {
-    let button = UIButton(type: .custom)
-    button.setTitle("Home ▼", for: .normal)
-    button.setTitleColor(.black, for: .normal)
-    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18.0)
-    button.frame = CGRect(x: 0, y: 0, width: 200, height: 40)
-    button.addTarget(self, action: #selector(titlePressed(_:)), for: .touchUpInside)
-    navigationItem.titleView = button
+    navigationItem.titleView = UIButton.navigationButton(title: "Home ▼", target: self, selector: #selector(titlePressed(_:)))
   }
   
   func configureHomeScreenMenuView() {
