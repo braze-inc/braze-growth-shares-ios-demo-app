@@ -94,22 +94,30 @@ private extension HomeListViewController {
 // MARK: - Dynamic Home List
 private extension HomeListViewController {
   func configureCollectionView(by homeScreenType: HomeScreenType) {
+    collectionView.dataSource = nil
+    
     switch homeScreenType {
     case .tile:
-      shoppingCartButtonItem.isEnabled = true
-      view.backgroundColor = .lightGray
-      headerImageView.isHidden = true
-      collectionView.dataSource = nil
-      provider = TileListDataSource(collectionView: collectionView, delegate: self)
+      tileCollectionViewConfiguration()
     case .group:
-      shoppingCartButtonItem.isEnabled = false
-      headerImageView.isHidden = false
-      view.backgroundColor = .systemGreen
-      collectionView.dataSource = nil
-      provider = GroupListDataSource(collectionView: collectionView, delegate: self)
+      groupCollectionViewConfiguration()
     }
     
     configureAndProcessDownload(by: homeScreenType)
+  }
+  
+  func tileCollectionViewConfiguration() {
+    shoppingCartButtonItem.isEnabled = true
+    headerImageView.isHidden = true
+    view.backgroundColor = .systemGroupedBackground
+    provider = TileListDataSource(collectionView: collectionView, delegate: self)
+  }
+  
+  func groupCollectionViewConfiguration() {
+    shoppingCartButtonItem.isEnabled = false
+    headerImageView.isHidden = false
+    view.backgroundColor = .systemGreen
+    provider = GroupListDataSource(collectionView: collectionView, delegate: self)
   }
   
   func configureAndProcessDownload(by homeScreenType: HomeScreenType) {
