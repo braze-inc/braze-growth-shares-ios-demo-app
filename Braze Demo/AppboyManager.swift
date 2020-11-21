@@ -25,6 +25,8 @@ class AppboyManager: NSObject {
       Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
     }
     UIApplication.shared.registerForRemoteNotifications()
+    
+    Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(self)
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -102,6 +104,32 @@ extension AppboyManager {
   
   func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuanitity quanity: Int) {
     Appboy.sharedInstance()?.logPurchase(productIdentifier, inCurrency: currency, atPrice: NSDecimalNumber(string: price), withQuantity: UInt(quanity))
+  }
+}
+
+// MARK: - In-App Messages
+class SlideUpViewController: ABKInAppMessageSlideupViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+  }
+}
+
+extension AppboyManager: ABKInAppMessageUIDelegate {
+  func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
+    switch inAppMessage {
+    case is ABKInAppMessageFull:
+      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageSlideup:
+      return SheetViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageModal:
+      return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageHTML:
+      return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageImmersive:
+      return ABKInAppMessageImmersiveViewController(inAppMessage: inAppMessage)
+    default:
+      return ABKInAppMessageViewController(inAppMessage: inAppMessage)
+    }
   }
 }
 

@@ -9,23 +9,24 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheetViewController" customModule="Braze_Demo" customModuleProvider="target">
             <connections>
+                <outlet property="inAppMessageMessageLabel" destination="qBA-mV-LSS" id="cW8-RR-qvk"/>
                 <outlet property="view" destination="mzv-Pq-JQw" id="LfK-AB-DAi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="mzv-Pq-JQw">
+        <view contentMode="scaleToFill" id="mzv-Pq-JQw" customClass="ABKInAppMessageView">
             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-UY-Xdr" userLabel="Content View">
-                    <rect key="frame" x="5" y="0.0" width="404" height="500"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="456"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-iU-rnH" userLabel="Notch View">
-                            <rect key="frame" x="169.5" y="5" width="65" height="8"/>
+                            <rect key="frame" x="182" y="5" width="50" height="5"/>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="65" id="NdE-7M-R8X"/>
-                                <constraint firstAttribute="height" constant="8" id="beE-FP-jHE"/>
+                                <constraint firstAttribute="width" constant="50" id="NdE-7M-R8X"/>
+                                <constraint firstAttribute="height" constant="5" id="beE-FP-jHE"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -33,16 +34,26 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-mV-LSS">
+                            <rect key="frame" x="25" y="25" width="364" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <gestureRecognizers/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="qBA-mV-LSS" secondAttribute="trailing" constant="25" id="2dY-wD-ohQ"/>
+                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qBA-mV-LSS" secondAttribute="bottom" constant="25" id="I1L-w4-jfb"/>
+                        <constraint firstItem="qBA-mV-LSS" firstAttribute="top" secondItem="r4V-UY-Xdr" secondAttribute="top" constant="25" id="Y9D-5E-qxt"/>
                         <constraint firstItem="j6L-iU-rnH" firstAttribute="top" secondItem="r4V-UY-Xdr" secondAttribute="top" constant="5" id="Z4B-Kj-h42"/>
                         <constraint firstItem="j6L-iU-rnH" firstAttribute="centerX" secondItem="r4V-UY-Xdr" secondAttribute="centerX" id="f95-rq-5Zm"/>
+                        <constraint firstItem="qBA-mV-LSS" firstAttribute="leading" secondItem="r4V-UY-Xdr" secondAttribute="leading" constant="25" id="yZp-mO-3XK"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="20"/>
+                            <integer key="value" value="15"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
                             <real key="value" value="0.5"/>
@@ -60,10 +71,10 @@
             <viewLayoutGuide key="safeArea" id="8yX-xp-bb7"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" constant="5" id="OqH-dB-icf"/>
+                <constraint firstItem="r4V-UY-Xdr" firstAttribute="top" secondItem="8yX-xp-bb7" secondAttribute="top" id="5Zv-uj-3Ns"/>
+                <constraint firstItem="r4V-UY-Xdr" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" id="OqH-dB-icf"/>
                 <constraint firstItem="8yX-xp-bb7" firstAttribute="bottom" secondItem="r4V-UY-Xdr" secondAttribute="bottom" id="ZjU-9z-e0g"/>
-                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="r4V-UY-Xdr" secondAttribute="trailing" constant="5" id="azw-c2-NTd"/>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="top" secondItem="mzv-Pq-JQw" secondAttribute="top" id="ngU-Mx-LZw"/>
+                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="r4V-UY-Xdr" secondAttribute="trailing" id="azw-c2-NTd"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>

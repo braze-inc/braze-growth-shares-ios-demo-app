@@ -10,12 +10,13 @@ enum SheetViewState {
   case offScreen
 }
 
-class SheetViewController: UIViewController {
+class SheetViewController: SlideUpViewController {
+  
+  // MARK: - Outlets
+  @IBOutlet weak var heightConstraint: NSLayoutConstraint?
   
   // MARK: - Variables
   private var sheetViewState: SheetViewState!
-  private let backgroundView = UIView()
-  private var topConstraint: NSLayoutConstraint?
   private weak var delegate: SheetViewActionDelegate?
   
   // MARK: - IBActions
@@ -42,41 +43,14 @@ extension SheetViewController {
 
 // MARK: - View Lifecycle
 extension SheetViewController {
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func loadView() {
+    Bundle.main.loadNibNamed("SheetViewController", owner: self, options: nil)
+    sheetViewState = .slideUp
   }
 }
 
 // MARK: - Public
 extension SheetViewController {
-  func addSheet(to viewController: SheetViewActionDelegate) {
-    delegate = viewController
-    
-    backgroundView.isUserInteractionEnabled = false
-    backgroundView.backgroundColor = .black
-    backgroundView.alpha = 0
-    viewController.view.addSubview(backgroundView)
-    
-    backgroundView.translatesAutoresizingMaskIntoConstraints = false
-    let attributes: [NSLayoutConstraint.Attribute] = [.top, .bottom, .trailing, .leading]
-    NSLayoutConstraint.activate(attributes.map {
-      NSLayoutConstraint(item: backgroundView, attribute: $0, relatedBy: .equal, toItem: viewController.view, attribute: $0, multiplier: 1, constant: 0)
-    })
-      
-    viewController.addChild(self)
-    view.translatesAutoresizingMaskIntoConstraints = false
-    viewController.view.addSubview(view)
-    
-    topConstraint = NSLayoutConstraint(item: viewController.view!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1, constant: 0)
-    topConstraint?.isActive = true
-    
-    NSLayoutConstraint.activate([
-      view.leadingAnchor.constraint(equalTo: viewController.view.leadingAnchor, constant: 0),
-      view.trailingAnchor.constraint(equalTo: viewController.view.trailingAnchor, constant: 0),
-      view.heightAnchor.constraint(equalTo: viewController.view.heightAnchor, multiplier: 1)
-    ])
-  }
-  
   func animatePoint(_ state: SheetViewState) {
     let sheetAnimator = UIViewPropertyAnimator(duration: 0.5, dampingRatio: 0.75, animations: {
       var constraintPoint: CGFloat = 0.0
@@ -88,7 +62,7 @@ extension SheetViewController {
       case .offScreen:
         break
       }
-      self.topConstraint?.constant = constraintPoint
+      self.heightConstraint?.constant = constraintPoint
       self.delegate?.view.layoutIfNeeded()
     })
     sheetAnimator.startAnimation()
@@ -99,28 +73,27 @@ extension SheetViewController {
   }
   
   func dismiss() {
-    animatePoint(.offScreen)
-    delegate?.sheetViewDidDismiss()
+
   }
 }
 
 // MARK: - Private
 private extension SheetViewController {
   func handleViewDidPan(_ recognizer: UIPanGestureRecognizer) {
-    guard let topConstraint = topConstraint else { return }
+    guard let heightConstraint = heightConstraint else { return }
     switch recognizer.state {
     case .began: break
     case .changed:
-      if topConstraint.constant > fullPagePoint { recognizer.state = .cancelled }
+      if heightConstraint.constant > fullPagePoint { recognizer.state = .cancelled }
       
       let translation = recognizer.translation(in: delegate?.view)
-      topConstraint.constant -= translation.y
+      heightConstraint.constant += translation.y
       recognizer.setTranslation(.zero, in: delegate?.view)
     
-      let fractionComplete = (topConstraint.constant - slideUpPoint) / fullPagePoint
+      let fractionComplete = (heightConstraint.constant - slideUpPoint) / fullPagePoint
       animateAlpha(fractionComplete)
     case .ended, .cancelled:
-      sheetViewState = topConstraint.constant > bottomThirdPoint ? .fullPage : .slideUp
+      sheetViewState = heightConstraint.constant > bottomThirdPoint ? .fullPage : .slideUp
       animatePoint(sheetViewState)
     default:
         break
@@ -141,9 +114,6 @@ private extension SheetViewController {
   }
   
   func animateAlpha(_ alpha: CGFloat, animate: Bool = false) {
-    UIView.animate(withDuration: animate ? 0.25 : 0.0) {
-      self.backgroundView.alpha = alpha
-    }
   }
 }
 
