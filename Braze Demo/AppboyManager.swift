@@ -108,9 +108,15 @@ extension AppboyManager {
 }
 
 // MARK: - In-App Messages
-class SlideUpViewController: ABKInAppMessageSlideupViewController {
+class SlideupViewController: ABKInAppMessageSlideupViewController, ABKInAppMessageUIDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
+    inAppMessage.messageTextAlignment = .center
+  }
+  
+  override func viewDidLayoutSubviews() {
+    view.layer.shadowColor = UIColor.clear.cgColor
+    view.layer.shadowOpacity = 0.0
   }
 }
 

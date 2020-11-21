@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheetViewController" customModule="Braze_Demo" customModuleProvider="target">
             <connections>
+                <outlet property="imageHeightConstraint" destination="TxQ-zs-IhC" id="Nmt-Uf-MWp"/>
                 <outlet property="inAppMessageMessageLabel" destination="qBA-mV-LSS" id="cW8-RR-qvk"/>
                 <outlet property="view" destination="mzv-Pq-JQw" id="LfK-AB-DAi"/>
             </connections>
@@ -18,80 +19,48 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4V-UY-Xdr" userLabel="Content View">
-                    <rect key="frame" x="0.0" y="44" width="414" height="456"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6L-iU-rnH" userLabel="Notch View">
-                            <rect key="frame" x="182" y="5" width="50" height="5"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="NdE-7M-R8X"/>
-                                <constraint firstAttribute="height" constant="5" id="beE-FP-jHE"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="5"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-mV-LSS">
-                            <rect key="frame" x="25" y="25" width="364" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <gestureRecognizers/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="you-rock" translatesAutoresizingMaskIntoConstraints="NO" id="PjC-6L-I4J">
+                    <rect key="frame" x="25" y="485" width="364" height="0.0"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="qBA-mV-LSS" secondAttribute="trailing" constant="25" id="2dY-wD-ohQ"/>
-                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qBA-mV-LSS" secondAttribute="bottom" constant="25" id="I1L-w4-jfb"/>
-                        <constraint firstItem="qBA-mV-LSS" firstAttribute="top" secondItem="r4V-UY-Xdr" secondAttribute="top" constant="25" id="Y9D-5E-qxt"/>
-                        <constraint firstItem="j6L-iU-rnH" firstAttribute="top" secondItem="r4V-UY-Xdr" secondAttribute="top" constant="5" id="Z4B-Kj-h42"/>
-                        <constraint firstItem="j6L-iU-rnH" firstAttribute="centerX" secondItem="r4V-UY-Xdr" secondAttribute="centerX" id="f95-rq-5Zm"/>
-                        <constraint firstItem="qBA-mV-LSS" firstAttribute="leading" secondItem="r4V-UY-Xdr" secondAttribute="leading" constant="25" id="yZp-mO-3XK"/>
+                        <constraint firstAttribute="height" id="TxQ-zs-IhC"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                            <integer key="value" value="15"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
-                            <real key="value" value="0.5"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
-                            <size key="value" width="0.0" height="-2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBA-mV-LSS">
+                    <rect key="frame" x="157.5" y="69" width="99" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-Cc-fhJ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="441"/>
                     <connections>
-                        <outletCollection property="gestureRecognizers" destination="j09-g5-nXy" appends="YES" id="dFF-lB-zAO"/>
-                        <outletCollection property="gestureRecognizers" destination="UDZ-pD-VU3" appends="YES" id="UdN-8G-y7H"/>
+                        <action selector="sheetPressed:" destination="-1" eventType="touchUpInside" id="x23-xm-8O2"/>
                     </connections>
-                </view>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="8yX-xp-bb7"/>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="top" secondItem="8yX-xp-bb7" secondAttribute="top" id="5Zv-uj-3Ns"/>
-                <constraint firstItem="r4V-UY-Xdr" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" id="OqH-dB-icf"/>
-                <constraint firstItem="8yX-xp-bb7" firstAttribute="bottom" secondItem="r4V-UY-Xdr" secondAttribute="bottom" id="ZjU-9z-e0g"/>
-                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="r4V-UY-Xdr" secondAttribute="trailing" id="azw-c2-NTd"/>
+                <constraint firstItem="qBA-mV-LSS" firstAttribute="top" secondItem="8yX-xp-bb7" secondAttribute="top" constant="25" id="Acs-rL-nFz"/>
+                <constraint firstItem="PjC-6L-I4J" firstAttribute="top" secondItem="8mF-Cc-fhJ" secondAttribute="bottom" id="Oov-0w-j2h"/>
+                <constraint firstItem="8mF-Cc-fhJ" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" id="Ws4-Jd-6k0"/>
+                <constraint firstItem="8mF-Cc-fhJ" firstAttribute="top" secondItem="8yX-xp-bb7" secondAttribute="top" id="e5p-SO-dRO"/>
+                <constraint firstItem="qBA-mV-LSS" firstAttribute="centerX" secondItem="8yX-xp-bb7" secondAttribute="centerX" id="eP4-Qa-5zv"/>
+                <constraint firstItem="PjC-6L-I4J" firstAttribute="centerX" secondItem="8yX-xp-bb7" secondAttribute="centerX" id="gbd-vE-8AP"/>
+                <constraint firstItem="PjC-6L-I4J" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qBA-mV-LSS" secondAttribute="bottom" constant="10" id="joj-iw-Xav"/>
+                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="PjC-6L-I4J" secondAttribute="trailing" constant="25" id="mSV-c1-CsW"/>
+                <constraint firstItem="PjC-6L-I4J" firstAttribute="leading" secondItem="8yX-xp-bb7" secondAttribute="leading" constant="25" id="r2Q-Sh-u2f"/>
+                <constraint firstItem="8yX-xp-bb7" firstAttribute="trailing" secondItem="8mF-Cc-fhJ" secondAttribute="trailing" id="rzu-SQ-fea"/>
+                <constraint firstItem="8yX-xp-bb7" firstAttribute="bottom" secondItem="PjC-6L-I4J" secondAttribute="bottom" constant="15" id="xUE-PJ-gWg"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="166" y="100"/>
         </view>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="j09-g5-nXy">
-            <connections>
-                <action selector="viewDidPan:" destination="-1" id="Z4D-7d-9UF"/>
-                <outlet property="delegate" destination="-1" id="KOy-My-7Pw"/>
-            </connections>
-        </panGestureRecognizer>
-        <swipeGestureRecognizer direction="down" id="UDZ-pD-VU3">
-            <connections>
-                <action selector="viewDidSwipe:" destination="-1" id="qCL-Dn-L1W"/>
-                <outlet property="delegate" destination="-1" id="QbQ-jW-zsy"/>
-            </connections>
-        </swipeGestureRecognizer>
     </objects>
+    <resources>
+        <image name="you-rock" width="1300" height="1300"/>
+    </resources>
 </document>
