@@ -3,7 +3,7 @@ import UIKit
 class SheetViewController: SlideupViewController {
   
   // MARK: - Outlets
-  @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
   
   // MARK: - Actions
   @IBAction func sheetPressed(_ sender: Any) {
@@ -23,7 +23,10 @@ extension SheetViewController {
     super.viewDidAppear(animated)
     self.slideConstraint?.constant = 84
   }
-  
+}
+
+// MARK: - Private
+private extension SheetViewController {
   @objc func increaseHeight() {
     self.imageHeightConstraint.constant = 300
     UIView.animate(withDuration: 1.0) {
