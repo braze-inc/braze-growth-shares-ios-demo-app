@@ -12,12 +12,17 @@ class ExpandableViewController: SlideupViewController {
     
     increaseHeight()
   }
+  
+  // MARK: - Variables
+  override var nibName: String {
+    return "ExpandableViewController"
+  }
 }
 
 // MARK: - View Lifecycle
 extension ExpandableViewController {
   override func loadView() {
-    Bundle.main.loadNibNamed("SheetViewController", owner: self, options: nil)
+    Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
     
     ImageCache.sharedCache.image(from: inAppMessage.imageURI) { image in
       self.imageView.image = image
@@ -26,7 +31,14 @@ extension ExpandableViewController {
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    self.slideConstraint?.constant = 84
+    setSlideConstraint()
+  }
+  
+  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    coordinator.animate(alongsideTransition: { contetxt in
+      self.setSlideConstraint()
+    }, completion: nil)
   }
 }
 
@@ -37,5 +49,10 @@ private extension ExpandableViewController {
     UIView.animate(withDuration: 0.75) {
       self.view.superview?.layoutIfNeeded()
     }
+  }
+  
+  func setSlideConstraint() {
+    guard let superview = view.superview else { return }
+    slideConstraint?.constant = superview.safeAreaInsets.bottom + 50
   }
 }
