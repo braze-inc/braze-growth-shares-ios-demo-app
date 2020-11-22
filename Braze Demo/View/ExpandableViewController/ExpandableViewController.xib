@@ -7,9 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SheetViewController" customModule="Braze_Demo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpandableViewController" customModule="Braze_Demo" customModuleProvider="target">
             <connections>
                 <outlet property="imageHeightConstraint" destination="TxQ-zs-IhC" id="Nmt-Uf-MWp"/>
+                <outlet property="imageView" destination="PjC-6L-I4J" id="eKz-iM-x0c"/>
                 <outlet property="inAppMessageMessageLabel" destination="qBA-mV-LSS" id="cW8-RR-qvk"/>
                 <outlet property="view" destination="mzv-Pq-JQw" id="LfK-AB-DAi"/>
             </connections>
@@ -19,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="you-rock" translatesAutoresizingMaskIntoConstraints="NO" id="PjC-6L-I4J">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PjC-6L-I4J">
                     <rect key="frame" x="25" y="485" width="364" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" id="TxQ-zs-IhC"/>
@@ -60,7 +61,4 @@
             <point key="canvasLocation" x="166" y="100"/>
         </view>
     </objects>
-    <resources>
-        <image name="you-rock" width="1300" height="1300"/>
-    </resources>
 </document>

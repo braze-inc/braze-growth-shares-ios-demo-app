@@ -111,13 +111,12 @@ extension AppboyManager {
 class SlideupViewController: ABKInAppMessageSlideupViewController, ABKInAppMessageUIDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
-    inAppMessage.messageTextAlignment = .center
+    
+    view.layer.shadowOpacity = 0.5
+    view.layer.shadowOffset = CGSize(width: 0, height: 2)
   }
   
-  override func viewDidLayoutSubviews() {
-    view.layer.shadowColor = UIColor.clear.cgColor
-    view.layer.shadowOpacity = 0.0
-  }
+  override func viewDidLayoutSubviews() {}
 }
 
 extension AppboyManager: ABKInAppMessageUIDelegate {
@@ -126,7 +125,7 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
     case is ABKInAppMessageFull:
       return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageSlideup:
-      return SheetViewController(inAppMessage: inAppMessage)
+      return ExpandableViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageModal:
       return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:

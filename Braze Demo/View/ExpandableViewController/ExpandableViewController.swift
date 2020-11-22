@@ -1,8 +1,9 @@
 import UIKit
 
-class SheetViewController: SlideupViewController {
+class ExpandableViewController: SlideupViewController {
   
   // MARK: - Outlets
+  @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var imageHeightConstraint: NSLayoutConstraint!
   
   // MARK: - Actions
@@ -14,9 +15,13 @@ class SheetViewController: SlideupViewController {
 }
 
 // MARK: - View Lifecycle
-extension SheetViewController {
+extension ExpandableViewController {
   override func loadView() {
     Bundle.main.loadNibNamed("SheetViewController", owner: self, options: nil)
+    
+    ImageCache.sharedCache.image(from: inAppMessage.imageURI) { image in
+      self.imageView.image = image
+    }
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -26,10 +31,10 @@ extension SheetViewController {
 }
 
 // MARK: - Private
-private extension SheetViewController {
+private extension ExpandableViewController {
   @objc func increaseHeight() {
     self.imageHeightConstraint.constant = 300
-    UIView.animate(withDuration: 1.0) {
+    UIView.animate(withDuration: 0.75) {
       self.view.superview?.layoutIfNeeded()
     }
   }
