@@ -14,6 +14,7 @@ class ExpandableViewController: SlideupViewController {
   }
   
   // MARK: - Variables
+  private let tabBarHeight: CGFloat = 50
   override var nibName: String {
     return "ExpandableViewController"
   }
@@ -53,6 +54,6 @@ private extension ExpandableViewController {
   
   func setSlideConstraint() {
     guard let superview = view.superview else { return }
-    slideConstraint?.constant = superview.safeAreaInsets.bottom + 50
+    slideConstraint?.constant = superview.safeAreaInsets.bottom + tabBarHeight
   }
 }
