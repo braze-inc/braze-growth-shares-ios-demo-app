@@ -51,7 +51,7 @@
                         <outlet property="delegate" destination="-1" id="gJh-j5-f4N"/>
                     </connections>
                 </pickerView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEy-Aq-cwL" customClass="ABKInAppMessageUIButton">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEy-Aq-cwL" customClass="ABKInAppMessageUIButton">
                     <rect key="frame" x="10" y="350" width="394" height="40"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
@@ -61,8 +61,12 @@
                     <state key="normal" title="Lorem Ipsum">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
+                    <state key="disabled">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.30168904049295775" colorSpace="custom" customColorSpace="displayP3"/>
+                    </state>
                     <connections>
                         <action selector="buttonClicked:" destination="-1" eventType="touchUpInside" id="SkH-Sj-ixF"/>
+                        <action selector="primaryButtonTapped:" destination="-1" eventType="touchUpInside" id="zjt-st-Es9"/>
                     </connections>
                 </button>
             </subviews>

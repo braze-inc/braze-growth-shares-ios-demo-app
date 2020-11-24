@@ -5,12 +5,19 @@ class ModalListViewController: ModalViewController {
   // MARK: - Outlets
   @IBOutlet private weak var pickerView: UIPickerView!
   
+  // MARK: - Actions
+  @IBAction func primaryButtonTapped(_ sender: Any) {
+    guard let item = selectedItem, !item.isEmpty, let attributeKey = inAppMessage.extras?["attribute_name"] as? String else { return }
+    
+    AppboyManager.shared.setCustomAttributeWithKey(attributeKey, andStringValue: item)
+  }
+  
   // MARK: - Variables
   override var nibName: String {
     return "ModalListViewController"
   }
-  
-  private var teams = [Team]()
+  private var items = [Team]()
+  private var selectedItem: String?
 }
 
 // MARK: - View Lifecycle
@@ -27,8 +34,9 @@ extension ModalListViewController {
       guard let self = self else { return }
       
       switch result {
-      case .success(let teams):
-        self.teams = teams
+      case .success(let items):
+        self.items = items
+        self.items.insert(Team(teamID: "", abbreviation: "", title: ""), at: 0)
         DispatchQueue.main.async {
           self.pickerView.reloadAllComponents()
         }
@@ -40,7 +48,11 @@ extension ModalListViewController {
 }
 
 extension ModalListViewController: UIPickerViewDelegate {
-  
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    rightInAppMessageButton?.isEnabled = row != 0
+    
+    selectedItem = items[row].title
+  }
 }
 
 extension ModalListViewController: UIPickerViewDataSource {
@@ -49,10 +61,10 @@ extension ModalListViewController: UIPickerViewDataSource {
   }
   
   func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    return teams.count
+    return items.count
   }
   
   func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return teams[row].title
+    return items[row].title
   }
 }
