@@ -110,6 +110,7 @@ extension AppboyManager {
 // MARK: - In App Messages
 class ModalViewController: ABKInAppMessageModalViewController {
   
+  // MARK: - Outlets
   @IBOutlet private weak var primaryButton: ABKInAppMessageUIButton!
   
   override func viewDidLoad() {
@@ -124,7 +125,6 @@ class ModalViewController: ABKInAppMessageModalViewController {
       default:
         break
       }
-      
     }
   }
 }
@@ -137,7 +137,7 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
     case is ABKInAppMessageSlideup:
       return ABKInAppMessageViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageModal:
-      return ModalListViewController(inAppMessage: inAppMessage)
+      return modalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
       return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageImmersive:
@@ -279,4 +279,16 @@ extension Notification.Name {
   static let defaultAppExperience = Notification.Name("kDefaultApExperience")
   static let homeScreenContentCard = Notification.Name("kHomeScreenContentCard")
   static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
+}
+
+// MARK: - In-App Message View Controller Helper
+private extension AppboyManager {
+  func modalViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageModalViewController {
+    switch inAppMessage.extras?["view_type"] as? String {
+    case InAppMessageViewType.picker.rawValue:
+      return ModalPickerViewController(inAppMessage: inAppMessage)
+    default:
+      return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
+    }
+  }
 }

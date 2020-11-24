@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModalListViewController" customModule="Braze_Demo" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ModalPickerViewController" customModule="Braze_Demo" customModuleProvider="target">
             <connections>
                 <outlet property="inAppMessageHeaderLabel" destination="NSj-1t-Gd6" id="OJ6-om-nZL"/>
                 <outlet property="pickerView" destination="Rw3-MI-fsx" id="3IZ-0d-Wc3"/>
@@ -22,22 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEf-jy-hA6">
-                    <rect key="frame" x="354" y="10" width="40" height="40"/>
-                    <accessibility key="accessibilityConfiguration" label="Close In App Message"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="iwS-1x-Bdj"/>
-                        <constraint firstAttribute="width" constant="40" id="t0O-fq-w0c"/>
-                    </constraints>
-                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                    <inset key="imageEdgeInsets" minX="10" minY="15" maxX="15" maxY="10"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="f6s-xl-u5m"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSj-1t-Gd6">
                     <rect key="frame" x="10" y="40" width="389" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -52,7 +36,7 @@
                     </connections>
                 </pickerView>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEy-Aq-cwL" customClass="ABKInAppMessageUIButton">
-                    <rect key="frame" x="10" y="350" width="394" height="40"/>
+                    <rect key="frame" x="25" y="350" width="364" height="40"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="UyC-xP-jOz"/>
@@ -69,21 +53,33 @@
                         <action selector="primaryButtonTapped:" destination="-1" eventType="touchUpInside" id="zjt-st-Es9"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yin-Bu-QXm">
+                    <rect key="frame" x="374" y="0.0" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="gtN-Ah-KS6"/>
+                        <constraint firstAttribute="width" constant="40" id="tKn-VI-KBj"/>
+                    </constraints>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <state key="normal" image="xmark" catalog="system"/>
+                    <connections>
+                        <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="J3F-MS-P46"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="dHx-ff-IDa"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="cEf-jy-hA6" firstAttribute="top" secondItem="Fap-gY-ivl" secondAttribute="top" constant="10" id="2em-tu-c7B"/>
-                <constraint firstItem="cEf-jy-hA6" firstAttribute="trailing" secondItem="Fap-gY-ivl" secondAttribute="trailingMargin" id="GQx-Eb-2o9"/>
-                <constraint firstItem="dHx-ff-IDa" firstAttribute="trailing" secondItem="zEy-Aq-cwL" secondAttribute="trailing" constant="10" id="Jg4-Lv-Qkb"/>
+                <constraint firstItem="dHx-ff-IDa" firstAttribute="trailing" secondItem="yin-Bu-QXm" secondAttribute="trailing" id="43S-J1-U0L"/>
+                <constraint firstItem="dHx-ff-IDa" firstAttribute="trailing" secondItem="zEy-Aq-cwL" secondAttribute="trailing" constant="25" id="Jg4-Lv-Qkb"/>
                 <constraint firstItem="NSj-1t-Gd6" firstAttribute="leading" secondItem="dHx-ff-IDa" secondAttribute="leading" constant="10" id="JiJ-UT-nGP"/>
                 <constraint firstItem="Rw3-MI-fsx" firstAttribute="top" secondItem="NSj-1t-Gd6" secondAttribute="bottom" id="K40-Jg-q7t"/>
                 <constraint firstItem="dHx-ff-IDa" firstAttribute="trailing" secondItem="Rw3-MI-fsx" secondAttribute="trailing" id="KkX-PO-thS"/>
                 <constraint firstItem="Rw3-MI-fsx" firstAttribute="leading" secondItem="Fap-gY-ivl" secondAttribute="leading" id="PhG-NT-UOd"/>
                 <constraint firstItem="zEy-Aq-cwL" firstAttribute="top" secondItem="Rw3-MI-fsx" secondAttribute="bottom" constant="10" id="R2R-aA-NUs"/>
                 <constraint firstItem="dHx-ff-IDa" firstAttribute="bottom" secondItem="zEy-Aq-cwL" secondAttribute="bottom" constant="10" id="dPC-YP-oB9"/>
+                <constraint firstItem="yin-Bu-QXm" firstAttribute="top" secondItem="Fap-gY-ivl" secondAttribute="top" id="e2Z-m4-aSR"/>
                 <constraint firstItem="dHx-ff-IDa" firstAttribute="trailing" secondItem="NSj-1t-Gd6" secondAttribute="trailing" constant="15" id="ii8-n1-HRr"/>
-                <constraint firstItem="zEy-Aq-cwL" firstAttribute="leading" secondItem="dHx-ff-IDa" secondAttribute="leading" constant="10" id="l1q-xW-6ZA"/>
+                <constraint firstItem="zEy-Aq-cwL" firstAttribute="leading" secondItem="dHx-ff-IDa" secondAttribute="leading" constant="25" id="l1q-xW-6ZA"/>
                 <constraint firstItem="NSj-1t-Gd6" firstAttribute="top" secondItem="Fap-gY-ivl" secondAttribute="top" constant="40" id="uwS-aB-Bna"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
@@ -98,6 +94,10 @@
         </view>
     </objects>
     <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
