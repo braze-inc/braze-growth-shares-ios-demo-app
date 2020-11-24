@@ -25,6 +25,8 @@ class AppboyManager: NSObject {
       Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
     }
     UIApplication.shared.registerForRemoteNotifications()
+    
+    Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(self)
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -102,6 +104,47 @@ extension AppboyManager {
   
   func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuanitity quanity: Int) {
     Appboy.sharedInstance()?.logPurchase(productIdentifier, inCurrency: currency, atPrice: NSDecimalNumber(string: price), withQuantity: UInt(quanity))
+  }
+}
+
+// MARK: - In App Messages
+class ModalViewController: ABKInAppMessageModalViewController {
+  
+  @IBOutlet private weak var primaryButton: ABKInAppMessageUIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let immersiveMessage = inAppMessage as? ABKInAppMessageImmersive, let buttons = immersiveMessage.buttons {
+      switch buttons.count {
+      case 1:
+        primaryButton.titleLabel?.text = buttons[0].buttonText
+      case 2:
+        primaryButton.titleLabel?.text = buttons[1].buttonText
+      default:
+        break
+      }
+      
+    }
+  }
+}
+
+extension AppboyManager: ABKInAppMessageUIDelegate {
+  func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
+    switch inAppMessage {
+    case is ABKInAppMessageFull:
+      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageSlideup:
+      return ABKInAppMessageViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageModal:
+      return ModalListViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageHTML:
+      return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageImmersive:
+      return ABKInAppMessageImmersiveViewController(inAppMessage: inAppMessage)
+    default:
+      return ABKInAppMessageViewController(inAppMessage: inAppMessage)
+    }
   }
 }
 

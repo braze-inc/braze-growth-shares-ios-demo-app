@@ -48,6 +48,9 @@
 		7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */; };
 		7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */; };
 		7FCFB99524CA383C001AA381 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB99424CA383C001AA381 /* Message.swift */; };
+		7FCFEB0D256C389A00079EAF /* ModalListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFEB0C256C389A00079EAF /* ModalListViewController.swift */; };
+		7FCFEB19256C38B500079EAF /* ModalListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCFEB18256C38B500079EAF /* ModalListViewController.xib */; };
+		7FCFEB24256C6CD800079EAF /* TeamListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFEB23256C6CD800079EAF /* TeamListRequest.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -126,6 +129,9 @@
 		7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdCollectionViewCell.swift; sourceTree = "<group>"; };
 		7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView_Util.swift; sourceTree = "<group>"; };
 		7FCFB99424CA383C001AA381 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		7FCFEB0C256C389A00079EAF /* ModalListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalListViewController.swift; sourceTree = "<group>"; };
+		7FCFEB18256C38B500079EAF /* ModalListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalListViewController.xib; sourceTree = "<group>"; };
+		7FCFEB23256C6CD800079EAF /* TeamListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListRequest.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -204,6 +210,7 @@
 			children = (
 				7F8AF00625253501006F478B /* APITriggeredCampaignRequest.swift */,
 				7F8AF00B25253521006F478B /* ContentBlockRequest.swift */,
+				7FCFEB23256C6CD800079EAF /* TeamListRequest.swift */,
 			);
 			path = "API Requests";
 			sourceTree = "<group>";
@@ -287,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA45A3424C28BD5009A484B /* Content Cards */,
+				7FCFEB11256C389E00079EAF /* In App Messages */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
@@ -364,6 +372,15 @@
 				7FBDD4AF24AD711F00EC0983 /* Info.plist */,
 			);
 			path = "Braze DemoUITests";
+			sourceTree = "<group>";
+		};
+		7FCFEB11256C389E00079EAF /* In App Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7FCFEB0C256C389A00079EAF /* ModalListViewController.swift */,
+				7FCFEB18256C38B500079EAF /* ModalListViewController.xib */,
+			);
+			path = "In App Messages";
 			sourceTree = "<group>";
 		};
 		FC71FD02EFEB100EF1D69F51 /* Pods */ = {
@@ -487,6 +504,7 @@
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
+				7FCFEB19256C38B500079EAF /* ModalListViewController.xib in Resources */,
 				7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */,
 				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
@@ -562,6 +580,7 @@
 				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,
 				7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
+				7FCFEB24256C6CD800079EAF /* TeamListRequest.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
@@ -583,6 +602,7 @@
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
+				7FCFEB0D256C389A00079EAF /* ModalListViewController.swift in Sources */,
 				7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */,
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
 				7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */,
