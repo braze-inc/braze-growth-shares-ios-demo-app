@@ -180,6 +180,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7F02B4BC256E1E7100175158 /* Content Cards */ = {
+			isa = PBXGroup;
+			children = (
+				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
+			);
+			path = "Content Cards";
+			sourceTree = "<group>";
+		};
+		7F02B4C3256E1E7B00175158 /* In App Messages */ = {
+			isa = PBXGroup;
+			children = (
+				7F384B4D256DC59300673410 /* InAppMessageData.swift */,
+			);
+			path = "In App Messages";
+			sourceTree = "<group>";
+		};
 		7F87D4A824B01AAF00ED0A86 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +265,7 @@
 		7F9DCBCA24AD79B700E8D207 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7FCFEB11256C389E00079EAF /* In App Messages */,
 				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
 				7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */,
 				7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */,
@@ -280,10 +297,10 @@
 		7F9DCBD324AD7A5400E8D207 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7F02B4BC256E1E7100175158 /* Content Cards */,
+				7F02B4C3256E1E7B00175158 /* In App Messages */,
 				7FCFB98C24C91421001AA381 /* Ad.swift */,
 				7FAAE26224D374B2008269E5 /* Coupon.swift */,
-				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
-				7F384B4D256DC59300673410 /* InAppMessageData.swift */,
 				7FCFB99424CA383C001AA381 /* Message.swift */,
 				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 			);
@@ -294,7 +311,6 @@
 			isa = PBXGroup;
 			children = (
 				7FA45A3424C28BD5009A484B /* Content Cards */,
-				7FCFEB11256C389E00079EAF /* In App Messages */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,

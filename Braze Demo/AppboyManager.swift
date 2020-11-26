@@ -107,28 +107,6 @@ extension AppboyManager {
   }
 }
 
-// MARK: - In App Messages
-class ModalViewController: ABKInAppMessageModalViewController {
-  
-  // MARK: - Outlets
-  @IBOutlet private weak var primaryButton: ABKInAppMessageUIButton!
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    if let immersiveMessage = inAppMessage as? ABKInAppMessageImmersive, let buttons = immersiveMessage.buttons {
-      switch buttons.count {
-      case 1:
-        primaryButton.titleLabel?.text = buttons[0].buttonText
-      case 2:
-        primaryButton.titleLabel?.text = buttons[1].buttonText
-      default:
-        break
-      }
-    }
-  }
-}
-
 // MARK: - ABKInAppMessage UI Delegate
 extension AppboyManager: ABKInAppMessageUIDelegate {
   func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
@@ -280,6 +258,28 @@ extension Notification.Name {
   static let defaultAppExperience = Notification.Name("kDefaultApExperience")
   static let homeScreenContentCard = Notification.Name("kHomeScreenContentCard")
   static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
+}
+
+// MARK: - Modal In App Message
+class ModalViewController: ABKInAppMessageModalViewController {
+  
+  // MARK: - Outlets
+  @IBOutlet private weak var primaryButton: ABKInAppMessageUIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let immersiveMessage = inAppMessage as? ABKInAppMessageImmersive, let buttons = immersiveMessage.buttons {
+      switch buttons.count {
+      case 1:
+        primaryButton.titleLabel?.text = buttons[0].buttonText
+      case 2:
+        primaryButton.titleLabel?.text = buttons[1].buttonText
+      default:
+        break
+      }
+    }
+  }
 }
 
 // MARK: - In-App Message View Controller Helper
