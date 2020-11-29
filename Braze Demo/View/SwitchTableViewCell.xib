@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchTableViewCell" id="wg3-0O-j25" customClass="SwitchTableViewCell" customModule="Braze_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wg3-0O-j25" id="7xJ-cO-OUV">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-9z-V0A">
+                        <rect key="frame" x="25" y="10" width="42" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vpY-Y5-7Gi">
+                        <rect key="frame" x="340" y="10" width="51" height="24"/>
+                        <connections>
+                            <action selector="didSwitch:" destination="wg3-0O-j25" eventType="valueChanged" id="8ER-a3-BUG"/>
+                        </connections>
+                    </switch>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="tcR-9z-V0A" secondAttribute="bottom" constant="10" id="9GQ-Ai-0i2"/>
+                    <constraint firstItem="tcR-9z-V0A" firstAttribute="leading" secondItem="7xJ-cO-OUV" secondAttribute="leading" constant="25" id="CuI-26-iNp"/>
+                    <constraint firstAttribute="bottom" secondItem="vpY-Y5-7Gi" secondAttribute="bottom" constant="10" id="Oc9-lf-eUU"/>
+                    <constraint firstItem="tcR-9z-V0A" firstAttribute="top" secondItem="7xJ-cO-OUV" secondAttribute="top" constant="10" id="Zmd-MK-PBx"/>
+                    <constraint firstItem="vpY-Y5-7Gi" firstAttribute="top" secondItem="7xJ-cO-OUV" secondAttribute="top" constant="10" id="ioK-xq-4uo"/>
+                    <constraint firstAttribute="trailing" secondItem="vpY-Y5-7Gi" secondAttribute="trailing" constant="25" id="uJ3-0R-jzG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="switchView" destination="vpY-Y5-7Gi" id="KHU-BT-aQB"/>
+                <outlet property="titleLabel" destination="tcR-9z-V0A" id="pIa-n4-gkP"/>
+            </connections>
+            <point key="canvasLocation" x="-157" y="72"/>
+        </tableViewCell>
+    </objects>
+</document>
