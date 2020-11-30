@@ -66,7 +66,25 @@
                         <constraint firstItem="HDL-A7-Rvr" firstAttribute="top" secondItem="TrM-gC-nt5" secondAttribute="top" constant="25" id="ryu-Dc-jvN"/>
                     </constraints>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-8D-PBc">
+                <button opaque="NO" tag="50" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rdf-ju-g9h">
+                    <rect key="frame" x="349" y="19" width="40" height="40"/>
+                    <accessibility key="accessibilityConfiguration" label="Close In App Message"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="eag-Jg-Sra"/>
+                        <constraint firstAttribute="width" constant="40" id="fhL-wZ-WfW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                    <state key="normal" title="Skip">
+                        <color key="titleColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="iyi-vT-0rs"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-8D-PBc">
                     <rect key="frame" x="0.0" y="379" width="414" height="383"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
@@ -79,6 +97,7 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="TrM-gC-nt5" firstAttribute="leading" secondItem="ihr-9m-hqh" secondAttribute="leading" id="7Po-QI-UjF"/>
+                <constraint firstItem="ihr-9m-hqh" firstAttribute="top" secondItem="Rdf-ju-g9h" secondAttribute="top" constant="25" id="Cdm-vB-ENx"/>
                 <constraint firstItem="ihr-9m-hqh" firstAttribute="bottom" secondItem="CXL-8D-PBc" secondAttribute="bottom" constant="100" id="DGH-ew-oxX"/>
                 <constraint firstItem="ihr-9m-hqh" firstAttribute="trailing" secondItem="TrM-gC-nt5" secondAttribute="trailing" id="EDC-Ue-1vh"/>
                 <constraint firstItem="ihr-9m-hqh" firstAttribute="trailing" secondItem="efT-8c-Enw" secondAttribute="trailing" id="EwM-ul-VKf"/>
@@ -88,6 +107,7 @@
                 <constraint firstItem="TrM-gC-nt5" firstAttribute="top" secondItem="CXL-8D-PBc" secondAttribute="bottom" id="SfH-dc-kPh"/>
                 <constraint firstItem="ihr-9m-hqh" firstAttribute="bottom" secondItem="TrM-gC-nt5" secondAttribute="bottom" id="VXb-FD-sBQ"/>
                 <constraint firstItem="ihr-9m-hqh" firstAttribute="trailing" secondItem="CXL-8D-PBc" secondAttribute="trailing" id="Zs3-AN-Iti"/>
+                <constraint firstItem="ihr-9m-hqh" firstAttribute="trailing" secondItem="Rdf-ju-g9h" secondAttribute="trailing" constant="25" id="aML-mS-9GB"/>
                 <constraint firstItem="efT-8c-Enw" firstAttribute="top" secondItem="5jP-9y-UNB" secondAttribute="top" id="c40-5t-I76"/>
                 <constraint firstItem="CXL-8D-PBc" firstAttribute="leading" secondItem="ihr-9m-hqh" secondAttribute="leading" id="e8d-is-CMk"/>
                 <constraint firstItem="8SQ-Pq-2cp" firstAttribute="leading" secondItem="ihr-9m-hqh" secondAttribute="leading" constant="40" id="fSF-ug-MDP"/>

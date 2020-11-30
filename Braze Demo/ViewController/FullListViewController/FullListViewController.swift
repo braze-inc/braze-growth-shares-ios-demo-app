@@ -16,11 +16,15 @@ class FullListViewController: FullViewController {
   // MARK: - Variables
   private var items = [String]()
   private var selectedItems = [String]()
+  private var iconImageViewFrame: CGRect?
   
   override var nibName: String {
     return "FullListViewController"
   }
-  
+}
+
+// MARK: - View Lifecycle
+extension FullListViewController {
   override func loadView() {
     Bundle.main.loadNibNamed(nibName, owner: self, options: nil)
   }
@@ -38,7 +42,27 @@ class FullListViewController: FullViewController {
     items = inAppMessage.message.separatedByCommaSpaceValue
     selectedItems = items
     tableView.reloadData()
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
     
+    if iconImageView?.frame != iconImageViewFrame {
+      iconImageViewFrame = iconImageView?.frame
+      
+      addIconImageViewGradientLayer()
+    }
+  }
+}
+
+// MARK: - Private
+private extension FullListViewController {
+  func addIconImageViewGradientLayer() {
+    let gradientMaskLayer = CAGradientLayer()
+    gradientMaskLayer.frame = iconImageView?.frame ?? .zero
+    gradientMaskLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor]
+    gradientMaskLayer.locations = [0.90, 1]
+    iconImageView?.layer.mask = gradientMaskLayer
   }
 }
 

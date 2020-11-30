@@ -104,7 +104,6 @@ extension AppboyManager {
   
   func setCustomAttributeWithKey(_ key: String?, andArrayValue value: [Any]?) {
     guard let key = key, let value = value else { return }
-    
     Appboy.sharedInstance()?.user.setCustomAttributeArrayWithKey(key, array: value)
   }
   
