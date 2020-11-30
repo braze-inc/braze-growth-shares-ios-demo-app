@@ -66,7 +66,7 @@
                             </connections>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="HDL-A7-Rvr" secondAttribute="bottom" constant="25" id="63Y-Ob-WFZ"/>
                         <constraint firstItem="HDL-A7-Rvr" firstAttribute="leading" secondItem="TrM-gC-nt5" secondAttribute="leading" constant="25" id="ECr-HK-qEp"/>
