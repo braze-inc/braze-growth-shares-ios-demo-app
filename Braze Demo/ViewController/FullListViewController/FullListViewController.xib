@@ -23,6 +23,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-8D-PBc">
+                    <rect key="frame" x="0.0" y="379" width="414" height="383"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="iVb-FV-JlL"/>
+                        <outlet property="delegate" destination="-1" id="nHA-kV-qMj"/>
+                    </connections>
+                </tableView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="8SQ-Pq-2cp">
                     <rect key="frame" x="40" y="301" width="334" height="53"/>
                     <subviews>
@@ -46,7 +54,7 @@
                         <constraint firstAttribute="width" secondItem="efT-8c-Enw" secondAttribute="height" multiplier="12:8" id="qdm-ZW-MAU"/>
                     </constraints>
                 </imageView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrM-gC-nt5">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TrM-gC-nt5" userLabel="Button View">
                     <rect key="frame" x="0.0" y="762" width="414" height="100"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDL-A7-Rvr" customClass="ABKInAppMessageUIButton">
@@ -84,14 +92,6 @@
                         <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="iyi-vT-0rs"/>
                     </connections>
                 </button>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-8D-PBc">
-                    <rect key="frame" x="0.0" y="379" width="414" height="383"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="iVb-FV-JlL"/>
-                        <outlet property="delegate" destination="-1" id="nHA-kV-qMj"/>
-                    </connections>
-                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="ihr-9m-hqh"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>

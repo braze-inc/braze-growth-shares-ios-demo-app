@@ -1,5 +1,9 @@
 import UIKit
 
+private enum FullListSection {
+  case switchView
+}
+
 class FullListViewController: FullViewController {
   
   // MARK: - Outlets
@@ -14,9 +18,11 @@ class FullListViewController: FullViewController {
   }
   
   // MARK: - Variables
-  private var items = [String]()
+  private typealias DataSource = UITableViewDiffableDataSource<FullListSection, String>
+  private typealias Snapshot = NSDiffableDataSourceSnapshot<FullListSection, String>
   private var selectedItems = [String]()
   private var iconImageViewFrame: CGRect?
+  private var dataSource: DataSource!
   
   override var nibName: String {
     return "FullListViewController"
@@ -32,16 +38,13 @@ extension FullListViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    tableView.tableFooterView = UIView()
     tableView.register(UINib(nibName: SwitchTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: SwitchTableViewCell.cellIdentifier)
     
     if let subtitleText = inAppMessage.extras?["subtitle_text"] as? String {
       subtitleTextLabel.text = subtitleText
     }
     
-    items = inAppMessage.message.separatedByCommaSpaceValue
-    selectedItems = items
-    tableView.reloadData()
+    configureDataSource()
   }
   
   override func viewDidLayoutSubviews() {
@@ -64,35 +67,38 @@ private extension FullListViewController {
     gradientMaskLayer.locations = [0.90, 1]
     iconImageView?.layer.mask = gradientMaskLayer
   }
-}
-
-// MARK: - TableView DataSource
-extension FullListViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return items.count
-  }
   
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.cellIdentifier, for: indexPath) as? SwitchTableViewCell else { return UITableViewCell() }
+  func configureDataSource() {
+    var snapshot = Snapshot()
+    let items = inAppMessage.message.separatedByCommaSpaceValue
+    snapshot.appendSections([.switchView])
+    snapshot.appendItems(items, toSection: .switchView)
+    selectedItems = items
     
-    let item = items[indexPath.row]
-    cell.configureCell(items[indexPath.row], isOn: selectedItems.contains(item), tag: indexPath.row, delegate: self)
-    return cell
+    dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.cellIdentifier, for: indexPath) as? SwitchTableViewCell else { return UITableViewCell() }
+      
+      cell.configureCell(item, isOn: self.selectedItems.contains(item), tag: indexPath.row, delegate: self)
+      return cell
+    })
+    
+    dataSource.apply(snapshot, animatingDifferences: false)
   }
 }
 
 // MARK: - SwitchView Delegate
 extension FullListViewController: SwitchViewDelegate {
   func cellDidSwitch(tag: Int) {
-    let indexPath = IndexPath(item: tag, section: 0)
-    let item = items[indexPath.row]
-    
+    let snapshot = dataSource.snapshot()
+    let items = snapshot.itemIdentifiers(inSection: .switchView)
+    let item = items[tag]
+
     if let index = selectedItems.firstIndex(of: item) {
       selectedItems.remove(at: index)
     } else {
       selectedItems.append(item)
     }
     
-    tableView.reloadRows(at: [indexPath], with: .automatic)
+    dataSource.apply(snapshot, animatingDifferences: true)
   }
 }
