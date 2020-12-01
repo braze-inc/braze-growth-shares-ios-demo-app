@@ -63,7 +63,7 @@ extension AppboyManager {
     if let updateHomeTo = userInfo["refresh_home"] as? String {
       switch updateHomeTo {
       case "Default":
-        RemoteStorage().removeObject(forKey: RemoteStorageKey.homeListPriority.rawValue)
+        RemoteStorage().removeObject(forKey: .homeListPriority)
         NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
       case "Content Card":
         NotificationCenter.default.post(name: .homeScreenContentCard, object: nil)
@@ -73,7 +73,7 @@ extension AppboyManager {
     }
       
     if let priority = userInfo["home_tile_priority"] as? String {
-      RemoteStorage().store(priority, forKey: RemoteStorageKey.homeListPriority.rawValue)
+      RemoteStorage().store(priority, forKey: .homeListPriority)
       if userInfo["refresh_home"] == nil {
         NotificationCenter.default.post(name: .reorderHomeScreen, object: nil)
       }

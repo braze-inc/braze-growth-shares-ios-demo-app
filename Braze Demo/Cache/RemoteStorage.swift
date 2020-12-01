@@ -3,19 +3,20 @@ import Foundation
 enum RemoteStorageKey: String, CaseIterable {
   case homeListPriority = "home_list_priority"
   case messageCenterStyle = "message_center_style"
+  case homeScreenType = "home_screen_type"
 }
 
 struct RemoteStorage {
-  func store(_ value: Any, forKey key: String) {
-    defaults.set(value, forKey: key)
+  func store(_ value: Any, forKey key: RemoteStorageKey) {
+    defaults.set(value, forKey: key.rawValue)
   }
   
-  func retrieve(forKey key: String) -> Any? {
-    return defaults.object(forKey: key)
+  func retrieve(forKey key: RemoteStorageKey) -> Any? {
+    return defaults.object(forKey: key.rawValue)
   }
   
-  func removeObject(forKey key: String) {
-    defaults.removeObject(forKey: key)
+  func removeObject(forKey key: RemoteStorageKey) {
+    defaults.removeObject(forKey: key.rawValue)
   }
   
   func resetStorageKeys() {

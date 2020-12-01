@@ -45,7 +45,7 @@ extension MessageCenterContainerViewController {
 // MARK: - Private Methods
 private extension MessageCenterContainerViewController {
   func configureMessageCenterStyle() {
-    guard let value = RemoteStorage().retrieve(forKey: RemoteStorageKey.messageCenterStyle.rawValue) as? Int else { return configureOnlyCustom() }
+    guard let value = RemoteStorage().retrieve(forKey: .messageCenterStyle) as? Int else { return configureOnlyCustom() }
     
     switch value {
     case 0:
