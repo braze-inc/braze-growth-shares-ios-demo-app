@@ -285,7 +285,7 @@ class ModalViewController: ABKInAppMessageModalViewController {
 // MARK: - In-App Message View Controller Helper
 private extension AppboyManager {
   func modalViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageModalViewController {
-    switch inAppMessage.extras?["view_type"] as? String {
+    switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
     case InAppMessageViewType.picker.rawValue:
       return ModalPickerViewController(inAppMessage: inAppMessage)
     default:

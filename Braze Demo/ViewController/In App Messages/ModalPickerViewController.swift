@@ -7,7 +7,7 @@ class ModalPickerViewController: ModalViewController {
   
   // MARK: - Actions
   @IBAction func primaryButtonTapped(_ sender: Any) {
-    guard let item = selectedItem, !item.isEmpty, let attributeKey = inAppMessage.extras?["attribute_key"] as? String else { return }
+    guard let item = selectedItem, !item.isEmpty, let attributeKey = inAppMessage.extras?[InAppMessageKey.attributeKey.rawValue] as? String else { return }
     
     AppboyManager.shared.setCustomAttributeWithKey(attributeKey, andStringValue: item)
   }
