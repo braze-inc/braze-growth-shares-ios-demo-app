@@ -78,6 +78,7 @@ enum ContentCardClassType: Hashable {
   
   enum ItemType {
     case tile
+    case group
   }
   
   enum MessageCenterViewType {

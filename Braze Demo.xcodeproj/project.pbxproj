@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */; };
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
-		7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Local Data.json */; };
+		7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */; };
+		7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980525643E82000CDAAA /* GroupListDataSource.swift */; };
+		7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980A25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift */; };
+		7F6C981025644896000CDAAA /* Group List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F6C980F25644896000CDAAA /* Group List.json */; };
+		7F6C98182564539A000CDAAA /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C98172564539A000CDAAA /* Group.swift */; };
+		7F6C981D2564728F000CDAAA /* BlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C981C2564728F000CDAAA /* BlankCollectionViewCell.swift */; };
+		7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */; };
+		7F6C98442564A855000CDAAA /* SmallRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C98432564A855000CDAAA /* SmallRowCollectionViewCell.swift */; };
+		7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */; };
+		7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Tile List.json */; };
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */; };
-		7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */; };
 		7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */; };
 		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
 		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
@@ -51,6 +59,10 @@
 		7FCFB99524CA383C001AA381 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB99424CA383C001AA381 /* Message.swift */; };
 		7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFEB0C256C389A00079EAF /* ModalPickerViewController.swift */; };
 		7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */; };
+		7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */; };
+		7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */; };
+		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
+		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -83,11 +95,19 @@
 		1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.debug.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.debug.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
-		7F754FC0250C2DF000CD7B45 /* Local Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Local Data.json"; sourceTree = "<group>"; };
+		7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileListDataSource.swift; sourceTree = "<group>"; };
+		7F6C980525643E82000CDAAA /* GroupListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListDataSource.swift; sourceTree = "<group>"; };
+		7F6C980A25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourceProvider.swift; sourceTree = "<group>"; };
+		7F6C980F25644896000CDAAA /* Group List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Group List.json"; sourceTree = "<group>"; };
+		7F6C98172564539A000CDAAA /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		7F6C981C2564728F000CDAAA /* BlankCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F6C98432564A855000CDAAA /* SmallRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F754FC0250C2DF000CD7B45 /* Tile List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Tile List.json"; sourceTree = "<group>"; };
 		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
 		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
 		7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterContainerViewController.swift; sourceTree = "<group>"; };
-		7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListDataSource.swift; sourceTree = "<group>"; };
 		7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboySettingsViewController.swift; sourceTree = "<group>"; };
 		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
@@ -132,6 +152,10 @@
 		7FCFB99424CA383C001AA381 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7FCFEB0C256C389A00079EAF /* ModalPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPickerViewController.swift; sourceTree = "<group>"; };
 		7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
+		7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenMenuView.xib; sourceTree = "<group>"; };
+		7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMenuView.swift; sourceTree = "<group>"; };
+		7FD2F60D256607AB0061950D /* GroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
+		7FD2F612256608A20061950D /* UIButton_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Util.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -196,12 +220,25 @@
 			path = "In App Messages";
 			sourceTree = "<group>";
 		};
+		7F6C98482564B06D000CDAAA /* Grouped */ = {
+			isa = PBXGroup;
+			children = (
+				7F6C981C2564728F000CDAAA /* BlankCollectionViewCell.swift */,
+				7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */,
+				7F6C98432564A855000CDAAA /* SmallRowCollectionViewCell.swift */,
+				7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */,
+			);
+			path = Grouped;
+			sourceTree = "<group>";
+		};
 		7F87D4A824B01AAF00ED0A86 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				7F87D4A624B01AAA00ED0A86 /* HomeListDataSource.swift */,
 				7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */,
 				7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */,
+				7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */,
+				7F6C980525643E82000CDAAA /* GroupListDataSource.swift */,
+				7F6C980A25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -209,16 +246,26 @@
 		7F87D4AF24B2A25000ED0A86 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7F754FC4250C3A5200CD7B45 /* String_Util.swift */,
 				7FAAE26424D392AE008269E5 /* Array_Util.swift */,
 				7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */,
 				7FCFB97824C2D184001AA381 /* Double_Util.swift */,
+				7F754FC4250C3A5200CD7B45 /* String_Util.swift */,
 				7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */,
+				7FD2F612256608A20061950D /* UIButton_Util.swift */,
 				7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */,
 				7FA45A3524C29131009A484B /* UIVIew_Util.swift */,
 				7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7F8967EF2575F41500C61405 /* HomeScreenMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */,
+				7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */,
+			);
+			path = HomeScreenMenuView;
 			sourceTree = "<group>";
 		};
 		7F8AF0132525353D006F478B /* API Requests */ = {
@@ -241,8 +288,9 @@
 		7F9DCBC224AD785200E8D207 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F6C980F25644896000CDAAA /* Group List.json */,
 				7FABB1E42512A92600253FAF /* Braze Demo.entitlements */,
-				7F754FC0250C2DF000CD7B45 /* Local Data.json */,
+				7F754FC0250C2DF000CD7B45 /* Tile List.json */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
 				7FBDD49424AD711F00EC0983 /* Assets.xcassets */,
 				7FBDD49924AD711F00EC0983 /* Info.plist */,
@@ -265,13 +313,13 @@
 		7F9DCBCA24AD79B700E8D207 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7FCFEB11256C389E00079EAF /* In App Messages */,
-				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
 				7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */,
-				7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */,
-				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
-				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
+				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
+				7FCFEB11256C389E00079EAF /* In App Messages */,
 				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
+				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
+				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
+				7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -297,10 +345,12 @@
 		7F9DCBD324AD7A5400E8D207 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7F02B4BC256E1E7100175158 /* Content Cards */,
-				7F02B4C3256E1E7B00175158 /* In App Messages */,
 				7FCFB98C24C91421001AA381 /* Ad.swift */,
+				7F02B4BC256E1E7100175158 /* Content Cards */,
 				7FAAE26224D374B2008269E5 /* Coupon.swift */,
+				7F6C98172564539A000CDAAA /* Group.swift */,
+				7FD2F60D256607AB0061950D /* GroupSection.swift */,
+				7F02B4C3256E1E7B00175158 /* In App Messages */,
 				7FCFB99424CA383C001AA381 /* Message.swift */,
 				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 			);
@@ -310,11 +360,13 @@
 		7F9DCBD824AD832400E8D207 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7FA45A3424C28BD5009A484B /* Content Cards */,
-				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
-				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
-				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
+				7FA45A3424C28BD5009A484B /* Content Cards */,
+				7F6C98482564B06D000CDAAA /* Grouped */,
+				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,
+				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
+				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
+				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -516,12 +568,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F6C981025644896000CDAAA /* Group List.json in Resources */,
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
-				7F754FC1250C2DF000CD7B45 /* Local Data.json in Resources */,
+				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
+				7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */,
 				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -593,28 +647,35 @@
 				7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */,
 				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
+				7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */,
 				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,
+				7F6C98182564539A000CDAAA /* Group.swift in Sources */,
 				7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
+				7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
+				7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */,
 				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
 				7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */,
 				7F9DCBCC24AD79C300E8D207 /* AppboyManager.swift in Sources */,
 				7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */,
+				7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */,
+				7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */,
 				7F8AF00725253501006F478B /* APITriggeredCampaignRequest.swift in Sources */,
 				7FBDD49324AD711E00EC0983 /* Braze Demo.xcdatamodeld in Sources */,
 				7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */,
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
+				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
-				7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */,
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
+				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
@@ -628,9 +689,12 @@
 				7FE763F224CD246A0017C5D2 /* Decimal_Util.swift in Sources */,
 				7FBDD48B24AD711E00EC0983 /* SceneDelegate.swift in Sources */,
 				7FCFB98124C55177001AA381 /* ContentCardData.swift in Sources */,
+				7F6C98442564A855000CDAAA /* SmallRowCollectionViewCell.swift in Sources */,
+				7F6C981D2564728F000CDAAA /* BlankCollectionViewCell.swift in Sources */,
 				7FE763F024CBD22A0017C5D2 /* UIViewController_Util.swift in Sources */,
 				7FCFB98D24C91421001AA381 /* Ad.swift in Sources */,
 				7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */,
+				7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */,
 				7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
