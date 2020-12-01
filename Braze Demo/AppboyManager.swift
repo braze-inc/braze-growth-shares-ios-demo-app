@@ -65,7 +65,7 @@ extension AppboyManager {
     if let updateHomeTo = userInfo["refresh_home"] as? String {
       switch updateHomeTo {
       case "Default":
-        RemoteStorage().removeObject(forKey: RemoteStorageKey.homeListPriority.rawValue)
+        RemoteStorage().removeObject(forKey: .homeListPriority)
         NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
       case "Content Card":
         NotificationCenter.default.post(name: .homeScreenContentCard, object: nil)
@@ -75,7 +75,7 @@ extension AppboyManager {
     }
       
     if let priority = userInfo["home_tile_priority"] as? String {
-      RemoteStorage().store(priority, forKey: RemoteStorageKey.homeListPriority.rawValue)
+      RemoteStorage().store(priority, forKey: .homeListPriority)
       if userInfo["refresh_home"] == nil {
         NotificationCenter.default.post(name: .reorderHomeScreen, object: nil)
       }
@@ -112,15 +112,16 @@ extension AppboyManager {
   }
 }
 
+// MARK: - ABKInAppMessage UI Delegate
 extension AppboyManager: ABKInAppMessageUIDelegate {
   func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
     switch inAppMessage {
+    case is ABKInAppMessageSlideup:
+      return ABKInAppMessageViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageModal:
+      return modalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageFull:
       return FullListViewController(inAppMessage: inAppMessage)
-    case is ABKInAppMessageSlideup:
-      return ABKInAppMessageSlideupViewController(inAppMessage: inAppMessage)
-    case is ABKInAppMessageModal:
-      return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
       return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageImmersive:
@@ -264,4 +265,40 @@ extension Notification.Name {
   static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
 }
 
+
+// MARK: - Full In-App Message
 class FullViewController: ABKInAppMessageFullViewController {}
+
+// MARK: - Modal In-App Message
+class ModalViewController: ABKInAppMessageModalViewController {
+  
+  // MARK: - Outlets
+  @IBOutlet private weak var primaryButton: ABKInAppMessageUIButton!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    if let immersiveMessage = inAppMessage as? ABKInAppMessageImmersive, let buttons = immersiveMessage.buttons {
+      switch buttons.count {
+      case 1:
+        primaryButton.titleLabel?.text = buttons[0].buttonText
+      case 2:
+        primaryButton.titleLabel?.text = buttons[1].buttonText
+      default:
+        break
+      }
+    }
+  }
+}
+
+// MARK: - In-App Message View Controller Helper
+private extension AppboyManager {
+  func modalViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageModalViewController {
+    switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
+    case InAppMessageViewType.picker.rawValue:
+      return ModalPickerViewController(inAppMessage: inAppMessage)
+    default:
+      return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
+    }
+  }
+}
