@@ -28,5 +28,3 @@ class SwitchTableViewCell: UITableViewCell {
     switchView.tag = tag
   }
 }
-
-
