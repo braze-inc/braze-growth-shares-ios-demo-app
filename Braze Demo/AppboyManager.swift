@@ -108,16 +108,14 @@ extension AppboyManager {
 }
 
 // MARK: - In-App Messages
-class SlideupViewController: ABKInAppMessageSlideupViewController, ABKInAppMessageUIDelegate {
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    view.layer.shadowOpacity = 0.5
-    view.layer.shadowOffset = CGSize(width: 0, height: 2)
+extension AppboyManager {
+  func isInAppMessageSlideFromTop(_ inAppMessage: ABKInAppMessage) -> Bool {
+    guard let slideup = inAppMessage as? ABKInAppMessageSlideup else { return false }
+    return slideup.inAppMessageSlideupAnchor == .fromTop
   }
-  
-  override func viewDidLayoutSubviews() {}
 }
+
+class SlideupViewController: ABKInAppMessageSlideupViewController {}
 
 extension AppboyManager: ABKInAppMessageUIDelegate {
   func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
@@ -125,7 +123,11 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
     case is ABKInAppMessageFull:
       return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageSlideup:
-      return ExpandableViewController(inAppMessage: inAppMessage)
+      if isInAppMessageSlideFromTop(inAppMessage) {
+        return ABKInAppMessageSlideupViewController(inAppMessage: inAppMessage)
+      } else {
+        return SlideFromBottomViewController(inAppMessage: inAppMessage)
+      }
     case is ABKInAppMessageModal:
       return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
