@@ -9,4 +9,5 @@ enum InAppMessageKey: String {
 /// Represents the `view_type` key in your In-App Message key-value pairs.
 enum InAppMessageViewType: String {
   case picker
+  case tableList = "table_list"
 }

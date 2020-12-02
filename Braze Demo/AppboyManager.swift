@@ -102,6 +102,11 @@ extension AppboyManager {
     Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andStringValue: value)
   }
   
+  func setCustomAttributeWithKey(_ key: String?, andArrayValue value: [Any]?) {
+    guard let key = key, let value = value else { return }
+    Appboy.sharedInstance()?.user.setCustomAttributeArrayWithKey(key, array: value)
+  }
+  
   func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuanitity quanity: Int) {
     Appboy.sharedInstance()?.logPurchase(productIdentifier, inCurrency: currency, atPrice: NSDecimalNumber(string: price), withQuantity: UInt(quanity))
   }
@@ -124,7 +129,7 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
     case is ABKInAppMessageModal:
       return modalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageFull:
-      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
+      return fullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
       return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageImmersive:
@@ -293,6 +298,9 @@ class ModalViewController: ABKInAppMessageModalViewController {
   }
 }
 
+// MARK: - Full In-App Message
+class FullViewController: ABKInAppMessageFullViewController {}
+
 // MARK: - In-App Message View Controller Helpers
 private extension AppboyManager {
   func slideupViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageSlideupViewController {
@@ -309,6 +317,15 @@ private extension AppboyManager {
       return ModalPickerViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
+    }
+  }
+  
+  func fullViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageFullViewController {
+    switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
+    case InAppMessageViewType.tableList.rawValue:
+      return FullListViewController(inAppMessage: inAppMessage)
+    default:
+      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     }
   }
 }

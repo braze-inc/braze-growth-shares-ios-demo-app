@@ -26,6 +26,10 @@
 		7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */; };
 		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
 		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
+		7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8967C525740F9900C61405 /* FullListViewController.swift */; };
+		7F8967CB25740FA600C61405 /* FullListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8967CA25740FA600C61405 /* FullListViewController.xib */; };
+		7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */; };
+		7F8967D92574247500C61405 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8967D82574247500C61405 /* SwitchTableViewCell.xib */; };
 		7F8AF00725253501006F478B /* APITriggeredCampaignRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8AF00625253501006F478B /* APITriggeredCampaignRequest.swift */; };
 		7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8AF00B25253521006F478B /* ContentBlockRequest.swift */; };
 		7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FFC1924EC7EB50082C71B /* APIRequest.swift */; };
@@ -113,6 +117,10 @@
 		7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboySettingsViewController.swift; sourceTree = "<group>"; };
 		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
+		7F8967C525740F9900C61405 /* FullListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullListViewController.swift; sourceTree = "<group>"; };
+		7F8967CA25740FA600C61405 /* FullListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullListViewController.xib; sourceTree = "<group>"; };
+		7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		7F8967D82574247500C61405 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		7F8AF00625253501006F478B /* APITriggeredCampaignRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITriggeredCampaignRequest.swift; sourceTree = "<group>"; };
 		7F8AF00B25253521006F478B /* ContentBlockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockRequest.swift; sourceTree = "<group>"; };
 		7F8FFC1924EC7EB50082C71B /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -261,6 +269,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7F8967CF25740FAB00C61405 /* FullListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F8967C525740F9900C61405 /* FullListViewController.swift */,
+				7F8967CA25740FA600C61405 /* FullListViewController.xib */,
+			);
+			path = FullListViewController;
+      sourceTree = "<group>";
+    };
 		7F8967EF2575F41500C61405 /* HomeScreenMenuView */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +334,7 @@
 			children = (
 				7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */,
 				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
+        7F8967CF25740FAB00C61405 /* FullListViewController */,
 				7FCFEB11256C389E00079EAF /* In App Messages */,
 				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
 				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
@@ -368,8 +386,11 @@
 				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
+				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
         7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
+        7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */,
+        7F8967D82574247500C61405 /* SwitchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -573,9 +594,11 @@
 			files = (
 				7F6C981025644896000CDAAA /* Group List.json in Resources */,
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
+				7F8967CB25740FA600C61405 /* FullListViewController.xib in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
+				7F8967D92574247500C61405 /* SwitchTableViewCell.xib in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
 				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
 				7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */,
@@ -677,6 +700,8 @@
 				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
+				7F87D4A724B01AAA00ED0A86 /* HomeListDataSource.swift in Sources */,
+				7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */,
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
 				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
@@ -697,6 +722,7 @@
 				7F6C981D2564728F000CDAAA /* BlankCollectionViewCell.swift in Sources */,
 				7FE763F024CBD22A0017C5D2 /* UIViewController_Util.swift in Sources */,
 				7FCFB98D24C91421001AA381 /* Ad.swift in Sources */,
+				7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */,
 				7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */,
 				7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */,
 				7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */,
