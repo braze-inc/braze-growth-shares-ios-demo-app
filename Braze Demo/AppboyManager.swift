@@ -107,16 +107,24 @@ extension AppboyManager {
   }
 }
 
+// MARK: - In-App Messages
+extension AppboyManager {
+  func isInAppMessageSlideFromTop(_ inAppMessage: ABKInAppMessage) -> Bool {
+    guard let slideup = inAppMessage as? ABKInAppMessageSlideup else { return false }
+    return slideup.inAppMessageSlideupAnchor == .fromTop
+  }
+}
+
 // MARK: - ABKInAppMessage UI Delegate
 extension AppboyManager: ABKInAppMessageUIDelegate {
   func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
     switch inAppMessage {
-    case is ABKInAppMessageFull:
-      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageSlideup:
-      return ABKInAppMessageViewController(inAppMessage: inAppMessage)
+      return slideupViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageModal:
       return modalViewController(inAppMessage: inAppMessage)
+    case is ABKInAppMessageFull:
+      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
       return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageImmersive:
@@ -260,7 +268,10 @@ extension Notification.Name {
   static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
 }
 
-// MARK: - Modal In App Message
+// MARK: - Slideup In-App Message
+class SlideupViewController: ABKInAppMessageSlideupViewController {}
+
+// MARK: - Modal In-App Message
 class ModalViewController: ABKInAppMessageModalViewController {
   
   // MARK: - Outlets
@@ -282,8 +293,16 @@ class ModalViewController: ABKInAppMessageModalViewController {
   }
 }
 
-// MARK: - In-App Message View Controller Helper
+// MARK: - In-App Message View Controller Helpers
 private extension AppboyManager {
+  func slideupViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageSlideupViewController {
+    if isInAppMessageSlideFromTop(inAppMessage) {
+      return ABKInAppMessageSlideupViewController(inAppMessage: inAppMessage)
+    } else {
+      return SlideFromBottomViewController(inAppMessage: inAppMessage)
+    }
+  }
+  
   func modalViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageModalViewController {
     switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
     case InAppMessageViewType.picker.rawValue:
