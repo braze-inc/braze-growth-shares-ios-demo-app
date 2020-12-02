@@ -13,9 +13,7 @@ class SwitchTableViewCell: UITableViewCell {
   
   // MARK: - Actions
   @IBAction func didSwitch(_ sender: UISwitch) {
-    CATransaction.setCompletionBlock {
-      self.delegate?.cellDidSwitch(tag: sender.tag)
-    }
+    delegate?.cellDidSwitch(tag: sender.tag)
   }
   
   // MARK: - Variables

@@ -117,11 +117,11 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
   func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
     switch inAppMessage {
     case is ABKInAppMessageSlideup:
-      return ABKInAppMessageViewController(inAppMessage: inAppMessage)
+      return ABKInAppMessageSlideupViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageModal:
       return modalViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageFull:
-      return FullListViewController(inAppMessage: inAppMessage)
+      return fullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
       return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageImmersive:
@@ -291,7 +291,7 @@ class ModalViewController: ABKInAppMessageModalViewController {
   }
 }
 
-// MARK: - In-App Message View Controller Helper
+// MARK: - In-App Message View Controller Helpers
 private extension AppboyManager {
   func modalViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageModalViewController {
     switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
@@ -299,6 +299,15 @@ private extension AppboyManager {
       return ModalPickerViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
+    }
+  }
+  
+  func fullViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageFullViewController {
+    switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
+    case InAppMessageViewType.tableList.rawValue:
+      return FullListViewController(inAppMessage: inAppMessage)
+    default:
+      return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     }
   }
 }
