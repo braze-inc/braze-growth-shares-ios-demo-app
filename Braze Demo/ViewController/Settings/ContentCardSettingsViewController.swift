@@ -7,7 +7,7 @@ class ContentCardSettingsViewController: UIViewController {
   
   // MARK: - Actions
   @IBAction func apiTriggeredCampaignButtonPressed(_ sender: Any) {
-    guard let userId = AppboyManager.shared.userId else { return }
+    guard let userId = AppboyManager.shared.userId, !userId.isEmpty else { return }
     handleApiTriggeredCampaignKey(userId)
   }
   @IBAction func resetHomeScreenButtonPressed(_ sender: Any) {
