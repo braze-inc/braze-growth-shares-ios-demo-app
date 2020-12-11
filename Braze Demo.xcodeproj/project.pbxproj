@@ -11,6 +11,7 @@
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
+		7F554A19258337B200DAFB84 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F554A18258337B200DAFB84 /* README.rtf */; };
 		7F6C94C2255F8866000CDAAA /* SlideFromBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */; };
 		7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */; };
 		7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980525643E82000CDAAA /* GroupListDataSource.swift */; };
@@ -104,6 +105,7 @@
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
 		7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardSettingsViewController.swift; sourceTree = "<group>"; };
 		7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageSettingsViewController.swift; sourceTree = "<group>"; };
+		7F554A18258337B200DAFB84 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideFromBottomViewController.swift; sourceTree = "<group>"; };
 		7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileListDataSource.swift; sourceTree = "<group>"; };
 		7F6C980525643E82000CDAAA /* GroupListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListDataSource.swift; sourceTree = "<group>"; };
@@ -244,6 +246,16 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		7F554A172583372B00DAFB84 /* Local JSON */ = {
+			isa = PBXGroup;
+			children = (
+				7F554A18258337B200DAFB84 /* README.rtf */,
+				7F6C980F25644896000CDAAA /* Group List.json */,
+				7F754FC0250C2DF000CD7B45 /* Tile List.json */,
+			);
+			path = "Local JSON";
+			sourceTree = "<group>";
+		};
 		7F6C98482564B06D000CDAAA /* Grouped */ = {
 			isa = PBXGroup;
 			children = (
@@ -321,9 +333,8 @@
 		7F9DCBC224AD785200E8D207 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7F6C980F25644896000CDAAA /* Group List.json */,
+				7F554A172583372B00DAFB84 /* Local JSON */,
 				7FABB1E42512A92600253FAF /* Braze Demo.entitlements */,
-				7F754FC0250C2DF000CD7B45 /* Tile List.json */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
 				7FBDD49424AD711F00EC0983 /* Assets.xcassets */,
 				7FBDD49924AD711F00EC0983 /* Info.plist */,
@@ -609,6 +620,7 @@
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
 				7F8967CB25740FA600C61405 /* FullListViewController.xib in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
+				7F554A19258337B200DAFB84 /* README.rtf in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
 				7F8967D92574247500C61405 /* SwitchTableViewCell.xib in Resources */,
