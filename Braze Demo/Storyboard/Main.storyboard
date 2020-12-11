@@ -1072,7 +1072,7 @@
                             <constraint firstItem="ko9-AZ-IC0" firstAttribute="trailing" secondItem="DM6-6u-ajT" secondAttribute="trailing" id="nSJ-Vj-DjU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Content Cards" largeTitleDisplayMode="always" id="Wkw-WR-Vbg"/>
+                    <navigationItem key="navigationItem" title="Content Cards" id="Wkw-WR-Vbg"/>
                     <connections>
                         <outlet property="segmentedControl" destination="vB0-Eo-Zvu" id="PJq-gw-uwR"/>
                     </connections>
@@ -1265,7 +1265,7 @@
                             <constraint firstItem="1fh-oW-q07" firstAttribute="top" secondItem="uga-Ka-MGU" secondAttribute="top" id="fS7-ec-El5"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="In-App Messages" largeTitleDisplayMode="always" id="IV6-Dr-ToL"/>
+                    <navigationItem key="navigationItem" title="In-App Messages" id="IV6-Dr-ToL"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3n-G3-4ze" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
