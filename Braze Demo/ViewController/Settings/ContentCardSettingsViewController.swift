@@ -1,31 +1,13 @@
 import UIKit
 
-class AppboySettingsViewController: UIViewController {
-
+class ContentCardSettingsViewController: UIViewController {
+  
   // MARK: - Outlets
-  @IBOutlet private weak var externalIDTextField: UITextField! {
-    didSet {
-      guard let userId = AppboyManager.shared.userId, !userId.isEmpty else { return }
-      externalIDTextField.text = userId
-    }
-  }
   @IBOutlet private weak var segmentedControl: UISegmentedControl!
   
   // MARK: - Actions
-  @IBAction func changeUserButtonPressed(_ sender: Any) {
-    guard let userId = externalIDTextField.text else { return }
-    AppboyManager.shared.changeUser(userId)
-    
-    presentAlert(title: "Changed User ID to \(userId)", message: nil)
-  }
-  @IBAction func customAttributeButtonPressed(_ sender: Any) {
-    guard let button = sender as? UIButton else { return }
-    handleCustomAttrributeButtonPressed(button)
-    
-    UINotificationFeedbackGenerator().notificationOccurred(.success)
-  }
   @IBAction func apiTriggeredCampaignButtonPressed(_ sender: Any) {
-    guard let userId = externalIDTextField.text, !userId.isEmpty else { return }
+    guard let userId = AppboyManager.shared.userId else { return }
     handleApiTriggeredCampaignKey(userId)
   }
   @IBAction func resetHomeScreenButtonPressed(_ sender: Any) {
@@ -37,19 +19,16 @@ class AppboySettingsViewController: UIViewController {
     
     presentAlert(title: "Reset Home Screen", message: nil)
   }
-  @IBAction func segmentChanged(_ sender: Any) {
-    guard let segmentedControl = sender as? UISegmentedControl else { return }
-    
-    RemoteStorage().store(segmentedControl.selectedSegmentIndex, forKey: .messageCenterStyle)
+  @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+    RemoteStorage().store(sender.selectedSegmentIndex, forKey: .messageCenterStyle)
   }
-  @IBAction func messageCenterCampaignButtonPressed(_ sender: Any) {
-    guard let button = sender as? UIButton else { return }
-    handleMessageCenterCampaignButtonPressed(with: button.titleLabel?.text)
+  @IBAction func messageCenterCampaignButtonPressed(_ sender: UIButton) {
+    handleMessageCenterCampaignButtonPressed(with: sender.titleLabel?.text)
   }
 }
 
 // MARK: - View Lifecycle
-extension AppboySettingsViewController {
+extension ContentCardSettingsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -57,26 +36,19 @@ extension AppboySettingsViewController {
   }
 }
 
-// MARK: - Private Methods
-private extension AppboySettingsViewController {
+// MARK: - Private
+private extension ContentCardSettingsViewController {
   func configureMessageCenterSegmentedControl() {
     if let value = RemoteStorage().retrieve(forKey: .messageCenterStyle) as? Int {
       segmentedControl.selectedSegmentIndex = value
     }
   }
   
-  func handleCustomAttrributeButtonPressed(_ button: UIButton) {
-    var attributeTitle = ""
-    switch button.tag {
-    case 0:
-      attributeTitle = "Chicago Cubs"
-    case 1:
-      attributeTitle = "Chicago White Sox"
-    default:
-      return
-    }
-    AppboyManager.shared.setCustomAttributeWithKey("Favorite Team", andStringValue: attributeTitle)
-    presentAlert(title: "Favorite Team changed to \(attributeTitle)", message: nil)
+  func handleMessageCenterCampaignButtonPressed(with title: String?) {
+    guard let title = title else { return }
+    let eventTitle = "\(title) Pressed"
+    AppboyManager.shared.logCustomEvent(eventTitle)
+    presentAlert(title: eventTitle, message: nil)
   }
   
   func handleApiTriggeredCampaignKey(_ userId: String) {
@@ -106,12 +78,5 @@ private extension AppboySettingsViewController {
         self.presentAlert(title: alertTitle, message: nil)
       }
     }
-  }
-  
-  func handleMessageCenterCampaignButtonPressed(with title: String?) {
-    guard let title = title else { return }
-    let eventTitle = "\(title) Pressed"
-    AppboyManager.shared.logCustomEvent(eventTitle)
-    presentAlert(title: eventTitle, message: nil)
   }
 }
