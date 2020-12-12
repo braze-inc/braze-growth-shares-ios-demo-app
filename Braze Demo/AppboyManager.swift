@@ -254,6 +254,8 @@ private extension AppboyManager {
       return Ad(metaData: metaData, classType: classType)
     case .coupon:
       return Coupon(metaData: metaData, classType: classType)
+    case .item(.group):
+      return Group(metaData: metaData, classType: classType)
     case .item(.tile):
       return Tile(metaData: metaData, classType: classType)
     case .message(.fullPage):
