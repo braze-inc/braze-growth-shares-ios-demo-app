@@ -76,11 +76,9 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
       case let subgroup as Subgroup:
         switch GroupSection(rawValue: indexPath.section) {
         case .primary, .secondary:
-          return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredListCell(), for: indexPath, item: subgroup)
+          return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredCell(), for: indexPath, item: subgroup)
         case .headline:
-          let cell: HeadlineCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
-          cell.configureCell(subgroup.title)
-          return cell
+          return collectionView.dequeueConfiguredReusableCell(using: HeadlineCollectionViewCell.configuredCell(), for: indexPath, item: subgroup)
         case .large:
           let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
           cell.configureCell(subgroup.title, imageUrl: nil)
@@ -153,7 +151,11 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
 }
 
 // MARK: - CollectionViewDelegate
-extension GroupListDataSource {  
+extension GroupListDataSource: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    collectionView.deselectItem(at: indexPath, animated: true)
+  }
+  
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
     guard let content = dataSource.itemIdentifier(for: indexPath) as? ContentCardable, content.isContentCard else { return }
     

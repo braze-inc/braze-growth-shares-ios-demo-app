@@ -598,39 +598,6 @@
                                             <outlet property="titleLabel" destination="Gib-ZV-Qul" id="oF2-st-VWF"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="HeadlineCollectionViewCell" id="H9w-OT-YnR" customClass="HeadlineCollectionViewCell" customModule="Braze_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="765" width="394" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ALl-8s-yod">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="75"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh3-y8-bMm">
-                                                    <rect key="frame" x="147.5" y="20" width="99" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eh3-y8-bMm" secondAttribute="trailing" constant="50" id="Ew8-Kd-V1a"/>
-                                                <constraint firstItem="eh3-y8-bMm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ALl-8s-yod" secondAttribute="leading" constant="50" id="RWP-Df-OsD"/>
-                                                <constraint firstItem="eh3-y8-bMm" firstAttribute="centerX" secondItem="ALl-8s-yod" secondAttribute="centerX" id="SDA-2e-5Qa"/>
-                                                <constraint firstAttribute="bottom" secondItem="eh3-y8-bMm" secondAttribute="bottom" constant="20" id="XRd-tF-4KR"/>
-                                                <constraint firstItem="eh3-y8-bMm" firstAttribute="top" secondItem="ALl-8s-yod" secondAttribute="top" constant="20" id="oxO-yk-Omg"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="394" height="75"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="eh3-y8-bMm" id="YJe-MD-ZR4"/>
-                                        </connections>
-                                    </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
