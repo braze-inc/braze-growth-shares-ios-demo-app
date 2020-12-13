@@ -76,9 +76,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
       case let subgroup as Subgroup:
         switch GroupSection(rawValue: indexPath.section) {
         case .primary, .secondary:
-          let cell: SmallRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
-          cell.configureCell(subgroup.title, imageUrl: nil)
-          return cell
+          return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredListCell(), for: indexPath, item: subgroup)
         case .headline:
           let cell: HeadlineCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
           cell.configureCell(subgroup.title)

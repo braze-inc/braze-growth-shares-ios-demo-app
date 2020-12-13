@@ -1,22 +1,13 @@
 import UIKit
 
 class SmallRowCollectionViewCell: UICollectionViewListCell {
-  static let cellIdentifier = "SmallRowCollectionViewCell"
-  
-  // MARK: - Outlets
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var imageView: UIImageView!
-  
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    self.accessories = [.disclosureIndicator()]
-  }
-
-  func configureCell(_ title: String?, imageUrl: String?) {
-    if let title = title {
-      titleLabel.attributedText = title.firstWordBold()
+  static func configuredListCell() -> UICollectionView.CellRegistration<UICollectionViewListCell, Subgroup> {
+    return UICollectionView.CellRegistration<UICollectionViewListCell, Subgroup> { (cell, indexPath, subgroup) in
+      var content = UIListContentConfiguration.valueCell()
+      content.image = UIImage(systemName: "globe")
+      content.attributedText = subgroup.title.firstWordBold()
+      cell.contentConfiguration = content
+      cell.accessories = [.disclosureIndicator()]
     }
-    
-    imageView.image = UIImage(systemName: "globe")
   }
 }
