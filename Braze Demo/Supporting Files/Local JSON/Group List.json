@@ -49,6 +49,10 @@
         {
           "id": 1,
           "title": "You earned $2,011.00 in the last 30 days"
+        },
+        {
+          "id": 2,
+          "title": "You increased MAU by 12% in the last 30 days"
         }]
     },
     { "id": 4,

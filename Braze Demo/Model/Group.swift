@@ -52,14 +52,17 @@ extension Group {
     guard let idString = metaData[.idString] as? String,
           let createdAt = metaData[.created] as? Double,
           let isDismissable = metaData[.dismissable] as? Bool,
-          let title = metaData[.title] as? String,
           let message = metaData[.cardDescription] as? String,
           let extras = metaData[.extras] as? [AnyHashable: Any]
     else { return nil }
     
     let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
+    
     let styleString = extras[ContentCardKey.groupStyle.rawValue] as? String ?? ""
-    let item = Subgroup(id: 1, title: title + message, image: nil)
+    
+    let title = metaData[.title] as? String ?? ""
+    let groupTitle = title.isEmpty ? title + message : title + " " + message
+    let item = Subgroup(id: 1, title: groupTitle, image: nil)
     
     self.init(contentCardData: contentCardData, id: 0, styleString: styleString, items: [item])
   }

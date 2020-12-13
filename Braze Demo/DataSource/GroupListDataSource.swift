@@ -5,6 +5,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   typealias Snapshot = NSDiffableDataSourceSnapshot<GroupSection, AnyHashable>
   
   // MARK: - Variables
+  private static let sectionBackgroundDecorationElementKind = "section-background-element-kind"
   private var dataSource: DataSource!
   private weak var delegate: CellActionDelegate?
   
@@ -14,7 +15,8 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
    
     configureLayout(collectionView)
     configureDataSource(collectionView)
-    
+
+    collectionView.collectionViewLayout.register(SectionBackgroundDecorationView.self,forDecorationViewOfKind: GroupListDataSource.sectionBackgroundDecorationElementKind)
     collectionView.delegate = self
   }
   
@@ -23,7 +25,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     
     var snapshot = Snapshot()
     
-    snapshot.appendSections([.blank, .group(.primary), .group(.secondary), .group(.headline), .group(.info), .ad])
+    snapshot.appendSections(GroupSection.allCases)
     snapshot.appendItems(["Blank"], toSection: .blank)
     snapshot.appendItems(ads, toSection: .ad)
     
@@ -34,14 +36,14 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
       case .smallRow:
       if primaryItems.isEmpty {
         primaryItems += $0.items
-        snapshot.appendItems(primaryItems, toSection: .group(.primary))
+        snapshot.appendItems(primaryItems, toSection: .primary)
       } else {
-        snapshot.appendItems($0.items, toSection: .group(.secondary))
+        snapshot.appendItems($0.items, toSection: .secondary)
       }
       case .headline:
-        snapshot.appendItems($0.items, toSection: .group(.headline))
+        snapshot.appendItems($0.items, toSection: .headline)
       case .largeRow:
-        snapshot.appendItems($0.items, toSection: .group(.info))
+        snapshot.appendItems($0.items, toSection: .large)
       default: break
       }
     }
@@ -72,15 +74,15 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         return cell
       case let subgroup as Subgroup:
         switch GroupSection(rawValue: indexPath.section) {
-        case .group(.primary), .group(.secondary):
+        case .primary, .secondary:
           let cell: SmallRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
           cell.configureCell(subgroup.title, imageUrl: nil)
           return cell
-        case .group(.headline):
+        case .headline:
           let cell: HeadlineCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
           cell.configureCell(subgroup.title)
           return cell
-        case .group(.info):
+        case .large:
           let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
           cell.configureCell(subgroup.title, imageUrl: nil)
           return cell
@@ -104,35 +106,46 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         let width = collectionView.frame.size.width
         let height: CGFloat = width/394 * 100
         let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(height))
-          
         let item = NSCollectionLayoutItem(layoutSize: size)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
-        
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: verticalSpacing, trailing: 0)
         return section
       case .blank:
         let heightDimension = NSCollectionLayoutDimension.estimated(300)
-        let itemSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1),
-                heightDimension: heightDimension)
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),heightDimension: heightDimension)
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: heightDimension)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
         return section
-      case .group(.primary), .group(.secondary):
+      case .primary, .secondary:
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         configuration.backgroundColor = .systemGroupedBackground
         let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
         return section
-      case .group(.info), .group(.headline):
+      case .large:
         var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         configuration.backgroundColor = .systemGroupedBackground
         configuration.showsSeparators = false
+        
         let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
         section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
+        return section
+      case .headline:
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupFractionalWidth = CGFloat(layoutEnvironment.container.effectiveContentSize.width > 500 ?
+            0.425 : 0.85)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(groupFractionalWidth), heightDimension: .absolute(100))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .groupPaging
+        section.interGroupSpacing = horizontalSpacing
+        section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
+        let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
+            elementKind: GroupListDataSource.sectionBackgroundDecorationElementKind)
+        section.decorationItems = [sectionBackgroundDecoration]
         return section
       }
     })
@@ -145,5 +158,23 @@ extension GroupListDataSource {
     guard let content = dataSource.itemIdentifier(for: indexPath) as? ContentCardable, content.isContentCard else { return }
     
     content.logContentCardImpression()
+  }
+}
+
+class SectionBackgroundDecorationView: UICollectionReusableView {
+
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+      configure()
+    }
+  
+    required init?(coder: NSCoder) {
+      super.init(coder: coder)
+    }
+}
+
+private extension SectionBackgroundDecorationView {
+  func configure() {
+    backgroundColor = .systemGroupedBackground
   }
 }
