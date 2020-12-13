@@ -13,10 +13,11 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     super.init()
     self.delegate = delegate
    
-    configureLayout(collectionView)
     configureDataSource(collectionView)
-
+    
+    collectionView.collectionViewLayout = configureLayout()
     collectionView.collectionViewLayout.register(SectionBackgroundDecorationView.self,forDecorationViewOfKind: GroupListDataSource.sectionBackgroundDecorationElementKind)
+    
     collectionView.delegate = self
   }
   
@@ -93,8 +94,8 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     }
   }
   
-  func configureLayout(_ collectionView: UICollectionView) {
-    collectionView.collectionViewLayout = UICollectionViewCompositionalLayout(sectionProvider: { (sectionIndex, layoutEnvironment) -> NSCollectionLayoutSection? in
+  func configureLayout() -> UICollectionViewLayout {
+    let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
     
       guard let section = GroupSection(rawValue: sectionIndex) else { return nil }
       
@@ -103,7 +104,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
                   
       switch section {
       case .ad:
-        let width = collectionView.frame.size.width
+        let width = layoutEnvironment.container.effectiveContentSize.width
         let height: CGFloat = width/394 * 100
         let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(height))
         let item = NSCollectionLayoutItem(layoutSize: size)
@@ -148,7 +149,8 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         section.decorationItems = [sectionBackgroundDecoration]
         return section
       }
-    })
+    }
+    return UICollectionViewCompositionalLayout(sectionProvider: sectionProvider)
   }
 }
 
@@ -158,23 +160,5 @@ extension GroupListDataSource {
     guard let content = dataSource.itemIdentifier(for: indexPath) as? ContentCardable, content.isContentCard else { return }
     
     content.logContentCardImpression()
-  }
-}
-
-class SectionBackgroundDecorationView: UICollectionReusableView {
-
-    override init(frame: CGRect) {
-      super.init(frame: frame)
-      configure()
-    }
-  
-    required init?(coder: NSCoder) {
-      super.init(coder: coder)
-    }
-}
-
-private extension SectionBackgroundDecorationView {
-  func configure() {
-    backgroundColor = .systemGroupedBackground
   }
 }

@@ -12,6 +12,7 @@
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
 		7F554A19258337B200DAFB84 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F554A18258337B200DAFB84 /* README.rtf */; };
+		7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */; };
 		7F6C94C2255F8866000CDAAA /* SlideFromBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */; };
 		7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */; };
 		7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980525643E82000CDAAA /* GroupListDataSource.swift */; };
@@ -106,6 +107,7 @@
 		7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardSettingsViewController.swift; sourceTree = "<group>"; };
 		7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageSettingsViewController.swift; sourceTree = "<group>"; };
 		7F554A18258337B200DAFB84 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
+		7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
 		7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideFromBottomViewController.swift; sourceTree = "<group>"; };
 		7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileListDataSource.swift; sourceTree = "<group>"; };
 		7F6C980525643E82000CDAAA /* GroupListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListDataSource.swift; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */,
 				7F6C98432564A855000CDAAA /* SmallRowCollectionViewCell.swift */,
 				7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */,
+				7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */,
 			);
 			path = Grouped;
 			sourceTree = "<group>";
@@ -737,6 +740,7 @@
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,
 				7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */,
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
+				7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */,
 				7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */,
 				7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */,
 				7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */,
