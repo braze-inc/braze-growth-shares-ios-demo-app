@@ -14,8 +14,8 @@ class HeadlineCollectionViewCell: UICollectionViewListCell {
     super.init(coder: coder)
   }
 
-  static func configuredCell() ->  UICollectionView.CellRegistration<HeadlineCollectionViewCell, Subgroup> {
-    return UICollectionView.CellRegistration<HeadlineCollectionViewCell, Subgroup> { (cell, indexPath, subgroup) in
+  static func configuredCell() ->  UICollectionView.CellRegistration<HeadlineCollectionViewCell, Group> {
+    return UICollectionView.CellRegistration<HeadlineCollectionViewCell, Group> { (cell, indexPath, subgroup) in
       cell.layer.cornerRadius = 15
       cell.layer.masksToBounds = true
       

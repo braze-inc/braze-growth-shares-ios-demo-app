@@ -2,81 +2,81 @@
   "groups": [
     {
       "id": 1,
-      "style": "smallrow",
-      "items": [
-        {
-          "id": 1,
-           "title": "Forge human connections",
-           "image": ""
-        },
-        {
-          "id": 2,
-           "title": "Grow your knowledge",
-           "image": ""
-        },
-        {
-          "id": 3,
-          "title": "Communicate smarter",
-          "image": ""
-        }]
+      "title": "Forge human connections",
+      "image": "",
+      "style": "primary"
     },
-    { "id": 2,
-      "style": "smallrow",
-      "items": [
-        {
-          "id": 1,
-          "title": "Invest in your future"
-        },
-        {
-          "id": 2,
-           "title": "Power relevant experiences",
-           "image": ""
-        },
-        {
-          "id": 3,
-           "title": "Increase engagement",
-           "image": ""
-        }]
+    {
+      "id": 2,
+      "title": "Grow your knowledge",
+      "image": "",
+      "style": "primary"
     },
-    { "id": 3,
-      "style": "headline",
-      "items": [
-        {
-          "id": 1,
-          "title": "You earned $2,011.00 in the last 30 days"
-        },
-        {
-          "id": 2,
-          "title": "You increased MAU by 12% in the last 30 days"
-        }]
+    {
+      "id": 3,
+      "title": "Communicate smarter",
+      "image": "",
+      "style": "primary"
     },
-    { "id": 4,
-      "style": "largerow",
-      "items": [
-        {
-          "id": 1,
-          "title": "How Does Braze Work?"
-        },
-        {
-          "id": 2,
-           "title": "The Benefits of Working with Braze",
-           "image": ""
-        },
-        {
-          "id": 3,
-           "title": "What is so cool about Connected Content?",
-           "image": ""
-        },
-        {
-          "id": 4,
-           "title": "What are data points?",
-           "image": ""
-        },
-        {
-          "id": 5,
-           "title": "In-App Messages vs. Content Cards",
-           "image": ""
-        }]
+    {
+      "id": 4,
+      "title": "Invest in your future",
+      "image": "",
+      "style": "secondary"
+    },
+    {
+      "id": 5,
+      "title": "Power relevant experiences",
+      "image": "",
+      "style": "secondary"
+    },
+    {
+      "id": 6,
+      "title": "Increase engagement",
+      "image": "",
+      "style": "secondary"
+    },
+    {
+      "id": 7,
+      "title": "You earned $2,011.00 in the last 30 days",
+      "image": "",
+      "style": "headline"
+    },
+    {
+      "id": 8,
+      "title": "You increased MAU by 12% in the last 30 days",
+      "image": "",
+      "style": "headline"
+    },
+    {
+      "id": 9,
+      "title": "How Does Braze Work?",
+      "image": "",
+      "style": "largerow"
+    },
+    {
+      "id": 10,
+      "title": "The Benefits of Working with Braze",
+      "image": "",
+      "style": "largerow"
+    },
+    {
+      "id": 11,
+      "title": "What is so cool about Connected Content?",
+      "image": "",
+      "style": "largerow"
+    },
+    {
+      "id": 12,
+      "title": "What are data points?",
+      "image": "",
+      "style": "largerow"
+    },
+    {
+      "id": 13,
+      "title": "In-App Messages vs. Content Cards",
+      "image": "",
+      "style": "largerow"
     }
   ]
 }

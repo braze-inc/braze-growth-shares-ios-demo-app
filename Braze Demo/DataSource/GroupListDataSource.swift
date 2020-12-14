@@ -7,7 +7,6 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   // MARK: - Variables
   private var dataSource: DataSource!
   private weak var delegate: CellActionDelegate?
-  private var groups: [Group] = []
   
   required init(collectionView: UICollectionView, delegate: CellActionDelegate) {
     super.init()
@@ -34,19 +33,17 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     snapshot.appendItems(["Blank"], toSection: .blank)
     snapshot.appendItems(ads, toSection: .ad)
     
-    groups = content as! [Group]
+    let groups = content as! [Group]
     groups.forEach {
       switch $0.style {
-      case .smallRow:
-        if $0.id == 1 {
-          snapshot.appendItems($0.items, toSection: .primary)
-        } else if $0.id == 2 {
-          snapshot.appendItems($0.items, toSection: .secondary)
-        }
+      case .primary:
+        snapshot.appendItems([$0], toSection: .primary)
+      case .secondary:
+        snapshot.appendItems([$0], toSection: .secondary)
       case .headline:
-        snapshot.appendItems($0.items, toSection: .headline)
+        snapshot.appendItems([$0], toSection: .headline)
       case .largeRow:
-        snapshot.appendItems($0.items, toSection: .large)
+        snapshot.appendItems([$0], toSection: .large)
       default: break
       }
     }
@@ -57,8 +54,8 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   func reorderDataSource() { return }
   
   func resetDataSource() {
-    groups.forEach { group in
-      guard group.isContentCard else { return }
+    dataSource.snapshot().itemIdentifiers.forEach { content in
+      guard let group = content as? ContentCardable, group.isContentCard else { return }
       
       group.logContentCardDismissed()
     }
@@ -75,15 +72,15 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
         cell.configureCell(ad.imageUrl)
         return cell
-      case let subgroup as Subgroup:
+      case let group as Group:
         switch GroupSection(rawValue: indexPath.section) {
         case .primary, .secondary:
-          return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredCell(), for: indexPath, item: subgroup)
+          return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredCell(), for: indexPath, item: group)
         case .headline:
-          return collectionView.dequeueConfiguredReusableCell(using: HeadlineCollectionViewCell.configuredCell(), for: indexPath, item: subgroup)
+          return collectionView.dequeueConfiguredReusableCell(using: HeadlineCollectionViewCell.configuredCell(), for: indexPath, item: group)
         case .large:
           let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
-          cell.configureCell(subgroup.title, imageUrl: nil)
+          cell.configureCell(group.title, imageUrl: nil)
           return cell
         default: return UICollectionViewCell()
         }
@@ -132,6 +129,9 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
 extension GroupListDataSource: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     collectionView.deselectItem(at: indexPath, animated: true)
+    guard let content = dataSource.itemIdentifier(for: indexPath) as? ContentCardable, content.isContentCard else { return }
+    
+    content.logContentCardClicked()
   }
   
   func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
