@@ -80,7 +80,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
           return collectionView.dequeueConfiguredReusableCell(using: HeadlineCollectionViewCell.configuredCell(), for: indexPath, item: group)
         case .large:
           let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
-          cell.configureCell(group.title, imageUrl: nil)
+          cell.configureCell(group.title, imageUrl: group.imageUrl)
           return cell
         default: return UICollectionViewCell()
         }

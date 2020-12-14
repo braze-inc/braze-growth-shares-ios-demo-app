@@ -5,6 +5,7 @@ class SmallRowCollectionViewCell: UICollectionViewListCell {
     return UICollectionView.CellRegistration<SmallRowCollectionViewCell, Group> { (cell, indexPath, subgroup) in
       var content = UIListContentConfiguration.valueCell()
       content.image = UIImage(systemName: "globe")
+      content.imageProperties.tintColor = .systemGreen
       content.attributedText = subgroup.title.firstWordBold()
       cell.contentConfiguration = content
       cell.accessories = [.disclosureIndicator()]

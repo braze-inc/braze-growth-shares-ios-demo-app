@@ -20,7 +20,7 @@ class FooterSupplementaryView: UICollectionReusableView {
 private extension FooterSupplementaryView {
   func configure() {
     view.backgroundColor = .white
-    view.layer.cornerRadius = 15
+    view.layer.cornerRadius = 5
     view.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
     view.translatesAutoresizingMaskIntoConstraints = false
     addSubview(view)

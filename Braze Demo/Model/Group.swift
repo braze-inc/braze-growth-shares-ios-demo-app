@@ -35,11 +35,13 @@ struct Group: ContentCardable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
   let title: String
+  let imageUrl: String?
   private let styleString: String
   
   private enum CodingKeys: String, CodingKey {
     case id
     case title
+    case imageUrl = "image"
     case styleString = "style"
   }
 }
@@ -66,7 +68,8 @@ extension Group {
     
     let title = metaData[.title] as? String ?? ""
     let groupTitle = title.isEmpty ? title + message : title + " " + message
+    let imageUrl = metaData[.image] as? String ?? ""
     
-    self.init(contentCardData: contentCardData, id: -1, title: groupTitle, styleString: styleString)
+    self.init(contentCardData: contentCardData, id: -1, title: groupTitle, imageUrl: imageUrl, styleString: styleString)
   }
 }
