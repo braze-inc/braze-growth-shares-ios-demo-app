@@ -734,13 +734,34 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL4-lz-FBU" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="631.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="671.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RVu-wt-a4i">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="631.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="671.5"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orW-fs-nQj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOs-8w-GKW">
+                                                                <rect key="frame" x="10" y="25" width="394" height="15"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <state key="normal" title="Reset Home Screen"/>
+                                                                <connections>
+                                                                    <action selector="resetHomeScreenButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="d1u-Zu-28T"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hOs-8w-GKW" firstAttribute="leading" secondItem="orW-fs-nQj" secondAttribute="leading" constant="10" id="9NX-Me-Wk4"/>
+                                                            <constraint firstItem="hOs-8w-GKW" firstAttribute="top" secondItem="orW-fs-nQj" secondAttribute="top" constant="25" id="B29-jh-GX9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hOs-8w-GKW" secondAttribute="trailing" constant="10" id="CFC-p0-Icr"/>
+                                                            <constraint firstAttribute="height" constant="50" id="pm7-Ou-04Y"/>
+                                                            <constraint firstAttribute="bottom" secondItem="hOs-8w-GKW" secondAttribute="bottom" constant="10" id="tkI-bW-ALA"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92X-Dn-3rX" userLabel="Campaign">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
+                                                        <rect key="frame" x="0.0" y="70" width="414" height="120.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tile Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2C-Va-tEE">
                                                                 <rect key="frame" x="137.5" y="20" width="139" height="20.5"/>
@@ -772,29 +793,19 @@
                                                                     <action selector="apiTriggeredCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="7EA-C7-Vxa"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPE-5L-pkN">
-                                                                <rect key="frame" x="136.5" y="120.5" width="141" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                <state key="normal" title="Reset Home Screen"/>
-                                                                <connections>
-                                                                    <action selector="resetHomeScreenButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="1AZ-JP-eWD"/>
-                                                                </connections>
-                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="iPE-5L-pkN" firstAttribute="top" secondItem="eJN-1f-kGR" secondAttribute="bottom" constant="20" id="1Bf-FG-G9U"/>
+                                                            <constraint firstAttribute="bottom" secondItem="eJN-1f-kGR" secondAttribute="bottom" constant="20" id="5R8-kX-lRT"/>
                                                             <constraint firstItem="eJN-1f-kGR" firstAttribute="top" secondItem="y2C-Va-tEE" secondAttribute="bottom" constant="10" id="85e-DH-hT5"/>
                                                             <constraint firstAttribute="trailing" secondItem="eJN-1f-kGR" secondAttribute="trailing" constant="20" id="C2D-RU-Bdi"/>
-                                                            <constraint firstItem="iPE-5L-pkN" firstAttribute="centerX" secondItem="92X-Dn-3rX" secondAttribute="centerX" id="Q18-yM-1fi"/>
-                                                            <constraint firstAttribute="bottom" secondItem="iPE-5L-pkN" secondAttribute="bottom" id="SVO-BL-8Ia"/>
                                                             <constraint firstItem="y2C-Va-tEE" firstAttribute="centerX" secondItem="92X-Dn-3rX" secondAttribute="centerX" id="aAc-hJ-YTx"/>
                                                             <constraint firstItem="eJN-1f-kGR" firstAttribute="leading" secondItem="92X-Dn-3rX" secondAttribute="leading" constant="20" id="bgy-iE-xCb"/>
                                                             <constraint firstItem="y2C-Va-tEE" firstAttribute="top" secondItem="92X-Dn-3rX" secondAttribute="top" constant="20" id="wgB-0e-E6T"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eh-Cy-uqA" userLabel="Campaign">
-                                                        <rect key="frame" x="0.0" y="170.5" width="414" height="120.5"/>
+                                                        <rect key="frame" x="0.0" y="210.5" width="414" height="120.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rh-SR-U1R">
                                                                 <rect key="frame" x="127.5" y="20" width="159.5" height="20.5"/>
@@ -838,7 +849,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98I-Ph-gUW" userLabel="Message Center">
-                                                        <rect key="frame" x="0.0" y="311" width="414" height="120"/>
+                                                        <rect key="frame" x="0.0" y="351" width="414" height="120"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Center Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-pE-Lvy">
                                                                 <rect key="frame" x="120" y="20" width="174" height="20.5"/>
@@ -870,7 +881,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbU-ud-e3O" userLabel="Attribute">
-                                                        <rect key="frame" x="0.0" y="451" width="414" height="180.5"/>
+                                                        <rect key="frame" x="0.0" y="491" width="414" height="180.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Center Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgt-cO-56S">
                                                                 <rect key="frame" x="87" y="20" width="240" height="20.5"/>
