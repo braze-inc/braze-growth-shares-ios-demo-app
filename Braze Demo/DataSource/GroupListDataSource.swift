@@ -55,7 +55,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   
   func resetDataSource() {
     dataSource.snapshot().itemIdentifiers.forEach { content in
-      guard let group = content as? ContentCardable, group.isContentCard else { return }
+      guard let group = content as? Group, group.isContentCard else { return }
       
       group.logContentCardDismissed()
     }
