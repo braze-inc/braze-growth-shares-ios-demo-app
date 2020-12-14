@@ -78,37 +78,14 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
     
       guard let section = TileSection(rawValue: sectionIndex) else { return nil }
       
-      let isPhone = layoutEnvironment.traitCollection.userInterfaceIdiom == UIUserInterfaceIdiom.phone
-      let spacing: CGFloat = 10
-                  
       switch section {
       case .ad:
-        let width = collectionView.frame.size.width
-        let height: CGFloat = width/394 * 100
-        let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(height))
-          
-        let item = NSCollectionLayoutItem(layoutSize: size)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: spacing, leading: spacing, bottom: 0, trailing: spacing)
+        let inset: CGFloat = 10.0
+        let section = TileLayoutBuilder.buildAdLayoutSection(layoutEnvironment: layoutEnvironment)
+        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: 0.0, trailing: inset)
         return section
       case .tile:
-        let itemCount = isPhone ? 1 : 2
-            
-        let width = (collectionView.frame.size.width - spacing) / CGFloat(itemCount)
-        let height: CGFloat = (width/500 * 282) + 150
-        let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(height))
-              
-        let item = NSCollectionLayoutItem(layoutSize: size)
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: itemCount)
-        group.interItemSpacing = .fixed(spacing)
-        
-        let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = spacing
-        section.contentInsets = NSDirectionalEdgeInsets(top: spacing, leading: spacing, bottom: spacing, trailing: spacing)
-        return section
+        return TileLayoutBuilder.buildTileLayoutSection(layoutEnvironment: layoutEnvironment)
       }
     })
   }

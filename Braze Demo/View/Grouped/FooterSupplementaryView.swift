@@ -23,8 +23,7 @@ private extension FooterSupplementaryView {
     view.translatesAutoresizingMaskIntoConstraints = false
     addSubview(view)
     
-    let inset = CGFloat(10)
-      
+    let inset: CGFloat = 10
     NSLayoutConstraint.activate([
       view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
       view.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),

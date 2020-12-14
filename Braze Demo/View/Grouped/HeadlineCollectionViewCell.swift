@@ -35,7 +35,7 @@ private extension HeadlineCollectionViewCell {
     titleLabel.translatesAutoresizingMaskIntoConstraints = false
     contentView.addSubview(titleLabel)
     
-    let inset = CGFloat(10)
+    let inset: CGFloat = 10
     NSLayoutConstraint.activate([
       titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: inset),
       titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -inset),

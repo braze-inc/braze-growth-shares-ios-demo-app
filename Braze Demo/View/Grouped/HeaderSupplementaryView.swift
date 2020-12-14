@@ -34,7 +34,7 @@ private extension HeaderSupplementaryView {
     label.adjustsFontForContentSizeCategory = true
     view.addSubview(label)
     
-    let inset = CGFloat(10)
+    let inset: CGFloat = 10
       
     NSLayoutConstraint.activate([
       view.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
