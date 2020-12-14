@@ -31,7 +31,7 @@ class GroupedLayoutBuilder: LayoutBuilder {
     let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(20))
     let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
     let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind:  UICollectionView.elementKindSectionFooter, alignment: .bottom)
-    let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(80))
+    let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.estimated(80))
     let item = NSCollectionLayoutItem(layoutSize: size)
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
     let section = NSCollectionLayoutSection(group: group)

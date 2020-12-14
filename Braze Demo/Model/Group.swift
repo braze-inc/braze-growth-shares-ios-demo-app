@@ -64,7 +64,7 @@ extension Group {
     let groupTitle = title.isEmpty ? title + message : title + " " + message
     let item = Subgroup(id: 1, title: groupTitle, image: nil)
     
-    self.init(contentCardData: contentCardData, id: 0, styleString: styleString, items: [item])
+    self.init(contentCardData: contentCardData, id: 1, styleString: styleString, items: [item])
   }
 }
 

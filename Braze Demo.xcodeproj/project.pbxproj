@@ -281,6 +281,7 @@
 		7F6C98482564B06D000CDAAA /* Grouped */ = {
 			isa = PBXGroup;
 			children = (
+				7F554A50258725BC00DAFB84 /* CompositionalLayout */,
 				7F6C981C2564728F000CDAAA /* BlankCollectionViewCell.swift */,
 				7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */,
 				7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */,
@@ -430,7 +431,6 @@
 		7F9DCBD824AD832400E8D207 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7F554A50258725BC00DAFB84 /* CompositionalLayout */,
 				7FA45A3424C28BD5009A484B /* Content Cards */,
 				7F6C98482564B06D000CDAAA /* Grouped */,
 				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,

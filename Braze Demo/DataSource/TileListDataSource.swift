@@ -80,10 +80,7 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
       
       switch section {
       case .ad:
-        let inset: CGFloat = 10.0
-        let section = TileLayoutBuilder.buildAdLayoutSection(layoutEnvironment: layoutEnvironment)
-        section.contentInsets = NSDirectionalEdgeInsets(top: inset, leading: inset, bottom: 0.0, trailing: inset)
-        return section
+        return TileLayoutBuilder.buildAdLayoutSection(layoutEnvironment: layoutEnvironment)
       case .tile:
         return TileLayoutBuilder.buildTileLayoutSection(layoutEnvironment: layoutEnvironment)
       }

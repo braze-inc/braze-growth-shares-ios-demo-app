@@ -7,6 +7,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   // MARK: - Variables
   private var dataSource: DataSource!
   private weak var delegate: CellActionDelegate?
+  private var groups: [Group] = []
   
   required init(collectionView: UICollectionView, delegate: CellActionDelegate) {
     super.init()
@@ -33,17 +34,15 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     snapshot.appendItems(["Blank"], toSection: .blank)
     snapshot.appendItems(ads, toSection: .ad)
     
-    let groups = content as! [Group]
-    var primaryItems = [Subgroup]()
+    groups = content as! [Group]
     groups.forEach {
       switch $0.style {
       case .smallRow:
-      if primaryItems.isEmpty {
-        primaryItems += $0.items
-        snapshot.appendItems(primaryItems, toSection: .primary)
-      } else {
-        snapshot.appendItems($0.items, toSection: .secondary)
-      }
+        if $0.id == 1 {
+          snapshot.appendItems($0.items, toSection: .primary)
+        } else if $0.id == 2 {
+          snapshot.appendItems($0.items, toSection: .secondary)
+        }
       case .headline:
         snapshot.appendItems($0.items, toSection: .headline)
       case .largeRow:
@@ -58,8 +57,8 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   func reorderDataSource() { return }
   
   func resetDataSource() {
-    dataSource.snapshot().itemIdentifiers.forEach { content in
-      guard let group = content as? Group, group.isContentCard else { return }
+    groups.forEach { group in
+      guard group.isContentCard else { return }
       
       group.logContentCardDismissed()
     }
