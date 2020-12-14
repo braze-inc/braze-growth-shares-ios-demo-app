@@ -14,6 +14,8 @@
 		7F554A19258337B200DAFB84 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F554A18258337B200DAFB84 /* README.rtf */; };
 		7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */; };
 		7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A302585F2B400DAFB84 /* SmallRowCollectionViewCell.swift */; };
+		7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A3625871FE900DAFB84 /* HeaderSupplementaryView.swift */; };
+		7F554A3F2587209700DAFB84 /* FooterSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A3E2587209700DAFB84 /* FooterSupplementaryView.swift */; };
 		7F6C94C2255F8866000CDAAA /* SlideFromBottomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */; };
 		7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */; };
 		7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C980525643E82000CDAAA /* GroupListDataSource.swift */; };
@@ -109,6 +111,8 @@
 		7F554A18258337B200DAFB84 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
 		7F554A302585F2B400DAFB84 /* SmallRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRowCollectionViewCell.swift; sourceTree = "<group>"; };
+		7F554A3625871FE900DAFB84 /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
+		7F554A3E2587209700DAFB84 /* FooterSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterSupplementaryView.swift; sourceTree = "<group>"; };
 		7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideFromBottomViewController.swift; sourceTree = "<group>"; };
 		7F6C97FD25642DA4000CDAAA /* TileListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileListDataSource.swift; sourceTree = "<group>"; };
 		7F6C980525643E82000CDAAA /* GroupListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListDataSource.swift; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 				7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */,
 				7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */,
 				7F554A302585F2B400DAFB84 /* SmallRowCollectionViewCell.swift */,
+				7F554A3625871FE900DAFB84 /* HeaderSupplementaryView.swift */,
+				7F554A3E2587209700DAFB84 /* FooterSupplementaryView.swift */,
 			);
 			path = Grouped;
 			sourceTree = "<group>";
@@ -721,6 +727,7 @@
 				7F9DCBCC24AD79C300E8D207 /* AppboyManager.swift in Sources */,
 				7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */,
 				7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */,
+				7F554A3F2587209700DAFB84 /* FooterSupplementaryView.swift in Sources */,
 				7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */,
 				7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */,
 				7F8AF00725253501006F478B /* APITriggeredCampaignRequest.swift in Sources */,
@@ -736,6 +743,7 @@
 				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
+				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,

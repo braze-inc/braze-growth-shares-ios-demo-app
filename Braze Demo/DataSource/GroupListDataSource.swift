@@ -7,13 +7,19 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   // MARK: - Variables
   private static let sectionBackgroundDecorationElementKind = "section-background-element-kind"
   private var dataSource: DataSource!
+  private var header: HeaderSupplementaryView!
+  private var footer: FooterSupplementaryView!
   private weak var delegate: CellActionDelegate?
   
   required init(collectionView: UICollectionView, delegate: CellActionDelegate) {
     super.init()
     self.delegate = delegate
    
+    collectionView.register(HeaderSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderSupplementaryView.reuseIdentifier)
+    collectionView.register(FooterSupplementaryView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterSupplementaryView.reuseIdentifier)
+    
     configureDataSource(collectionView)
+    configureHeaderFooter()
     
     collectionView.collectionViewLayout = configureLayout()
     collectionView.collectionViewLayout.register(SectionBackgroundDecorationView.self,forDecorationViewOfKind: GroupListDataSource.sectionBackgroundDecorationElementKind)
@@ -90,10 +96,27 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     }
   }
   
+  func configureHeaderFooter() {
+    dataSource.supplementaryViewProvider = { (collectionView: UICollectionView, kind: String, indexPath: IndexPath) -> UICollectionReusableView? in
+      if self.header == nil {
+        self.header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderSupplementaryView.reuseIdentifier, for: indexPath) as? HeaderSupplementaryView
+        self.header.label.text = "Learning Materials"
+      }
+     
+      if self.footer == nil {
+        self.footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: FooterSupplementaryView.reuseIdentifier, for: indexPath) as? FooterSupplementaryView
+      }
+      
+      return kind == UICollectionView.elementKindSectionHeader ? self.header : self.footer
+    }
+  }
+  
   func configureLayout() -> UICollectionViewLayout {
     let sectionProvider = { (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
     
       guard let section = GroupSection(rawValue: sectionIndex) else { return nil }
+      
+      let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(elementKind: GroupListDataSource.sectionBackgroundDecorationElementKind)
       
       let horizontalSpacing: CGFloat = 20
       let verticalSpacing: CGFloat = 10
@@ -122,12 +145,17 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
         return section
       case .large:
-        var configuration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        configuration.backgroundColor = .systemGroupedBackground
-        configuration.showsSeparators = false
-        
-        let section = NSCollectionLayoutSection.list(using: configuration, layoutEnvironment: layoutEnvironment)
-        section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
+        let footerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(20))
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+        let sectionFooter = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: footerSize, elementKind:  UICollectionView.elementKindSectionFooter, alignment: .bottom)
+        let size = NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1), heightDimension: NSCollectionLayoutDimension.absolute(80))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: size, subitem: item, count: 1)
+        let section = NSCollectionLayoutSection(group: group)
+        section.decorationItems = [sectionBackgroundDecoration]
+        section.boundarySupplementaryItems = [sectionHeader, sectionFooter]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: horizontalSpacing, bottom: 0.0, trailing: horizontalSpacing)
         return section
       case .headline:
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -140,8 +168,6 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         section.orthogonalScrollingBehavior = .groupPaging
         section.interGroupSpacing = horizontalSpacing
         section.contentInsets = NSDirectionalEdgeInsets(top: verticalSpacing, leading: horizontalSpacing, bottom: verticalSpacing, trailing: horizontalSpacing)
-        let sectionBackgroundDecoration = NSCollectionLayoutDecorationItem.background(
-            elementKind: GroupListDataSource.sectionBackgroundDecorationElementKind)
         section.decorationItems = [sectionBackgroundDecoration]
         return section
       }
