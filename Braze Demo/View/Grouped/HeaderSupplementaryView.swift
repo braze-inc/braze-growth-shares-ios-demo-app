@@ -3,6 +3,7 @@ import UIKit
 class HeaderSupplementaryView: UICollectionReusableView {
   static let reuseIdentifier = "header-supplementary-reuse-identifier"
   
+  // MARK: - Variables
   let label = UILabel()
   let view = UIView()
   let borderView = UIView()

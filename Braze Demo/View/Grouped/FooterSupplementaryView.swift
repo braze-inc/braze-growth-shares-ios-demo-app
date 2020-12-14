@@ -3,6 +3,7 @@ import UIKit
 class FooterSupplementaryView: UICollectionReusableView {
   static let reuseIdentifier = "footer-supplementary-reuse-identifier"
     
+  // MARK: - Variables
   let view = UIView()
   
   override init(frame: CGRect) {
@@ -15,6 +16,7 @@ class FooterSupplementaryView: UICollectionReusableView {
   }
 }
 
+// MARK: - Private
 private extension FooterSupplementaryView {
   func configure() {
     view.backgroundColor = .white
