@@ -52,31 +52,36 @@
       "id": 9,
       "title": "How Does Braze Work?",
       "image": "https://image.winudf.com/v2/image1/Y29tLmx0cmFwcF9pY29uXzE1NzM0NzI2MzZfMDM4/icon.png?w=170&fakeurl=1",
-      "style": "largerow"
+      "style": "largerow",
+      "click_url": ""
     },
     {
       "id": 10,
       "title": "The Benefits of Working with Braze",
       "image": "https://img.pngio.com/dna-png-images-free-download-dna-strand-png-512_512.png",
-      "style": "largerow"
+      "style": "largerow",
+      "click_url": ""
     },
     {
       "id": 11,
       "title": "What is so cool about Connected Content?",
       "image": "",
-      "style": "largerow"
+      "style": "largerow",
+      "click_url": ""
     },
     {
       "id": 12,
       "title": "What are data points?",
       "image": "https://cdn3.iconfinder.com/data/icons/data-science-set-03-1/65/119-512.png",
-      "style": "largerow"
+      "style": "largerow",
+      "click_url": ""
     },
     {
       "id": 13,
       "title": "In-App Messages vs. Content Cards",
       "image": "https://minddata.org/wp-content/uploads/2020/01/Diversity-and-AI-Artificial-Intelligence.png",
-      "style": "largerow"
+      "style": "largerow",
+      "click_url": ""
     }
   ]
 }

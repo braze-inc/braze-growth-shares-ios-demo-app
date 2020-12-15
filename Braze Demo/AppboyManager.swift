@@ -235,6 +235,7 @@ private extension AppboyManager {
       metaData[.idString] = card.idString
       metaData[.created] = card.created
       metaData[.dismissable] = card.dismissible
+      metaData[.urlString] = card.urlString
       metaData[.extras] = card.extras
      
       if let contentCardable = contentCardable(with: metaData, for: classType) {
