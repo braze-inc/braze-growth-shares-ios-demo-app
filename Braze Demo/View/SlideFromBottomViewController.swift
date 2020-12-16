@@ -3,7 +3,7 @@ import UIKit
 class SlideFromBottomViewController: SlideupViewController {
 
   // MARK: - Variables
-  private let tabBarHeight: CGFloat = 50
+  private let tabBarHeight: CGFloat = 49
 }
 
 // MARK: - View Lifecycle
