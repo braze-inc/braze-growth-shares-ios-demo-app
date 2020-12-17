@@ -1,9 +1,12 @@
 import UIKit
+import Appboy_iOS_SDK
 
-class SlideFromBottomViewController: SlideupViewController {
+class SlideFromBottomViewController: ABKInAppMessageSlideupViewController {
 
   // MARK: - Variables
-  private let tabBarHeight: CGFloat = 50
+  private var bottomSpacing: CGFloat {
+    return ABKUIUtils.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
+  }
 }
 
 // MARK: - View Lifecycle
@@ -25,8 +28,6 @@ extension SlideFromBottomViewController {
 // MARK: - Private
 private extension SlideFromBottomViewController {
   func setSlideConstraint() {
-    guard let superview = view.superview else { return }
-    
-    slideConstraint?.constant = superview.safeAreaInsets.bottom + tabBarHeight
+    slideConstraint?.constant = bottomSpacing
   }
 }

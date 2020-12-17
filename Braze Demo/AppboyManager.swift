@@ -273,9 +273,6 @@ extension Notification.Name {
   static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
 }
 
-// MARK: - Slideup In-App Message
-class SlideupViewController: ABKInAppMessageSlideupViewController {}
-
 // MARK: - Modal In-App Message
 class ModalViewController: ABKInAppMessageModalViewController {
   
