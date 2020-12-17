@@ -198,7 +198,7 @@ extension AppboyManager {
   }
 }
 
-// MARK: - Public Methods
+// MARK: - ABKUIUtils
 extension AppboyManager {
   var activeApplicationViewController: UIViewController {
     return ABKUIUtils.activeApplicationViewController
