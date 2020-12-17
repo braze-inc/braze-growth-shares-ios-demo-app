@@ -1,11 +1,10 @@
 import UIKit
-import Appboy_iOS_SDK
 
-class SlideFromBottomViewController: ABKInAppMessageSlideupViewController {
+class SlideFromBottomViewController: SlideupViewController {
 
   // MARK: - Variables
   private var bottomSpacing: CGFloat {
-    return ABKUIUtils.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
+    return AppboyManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
   }
 }
 

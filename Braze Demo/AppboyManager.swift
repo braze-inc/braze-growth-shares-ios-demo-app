@@ -198,6 +198,13 @@ extension AppboyManager {
   }
 }
 
+// MARK: - Public Methods
+extension AppboyManager {
+  var activeApplicationViewController: UIViewController {
+    return ABKUIUtils.activeApplicationViewController
+  }
+}
+
 // MARK: - Private Methods
 private extension AppboyManager {
   /// Helper method to convert `ABKContentCard` objects to `ContentCardable` objects.
@@ -295,13 +302,16 @@ class ModalViewController: ABKInAppMessageModalViewController {
   }
 }
 
+// MARK: - Slideup In-App Message
+class SlideupViewController: ABKInAppMessageSlideupViewController {}
+
 // MARK: - Full In-App Message
 class FullViewController: ABKInAppMessageFullViewController {}
 
 // MARK: - In-App Message View Controller Helpers
 private extension AppboyManager {
   func slideupViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageSlideupViewController {
-    if isInAppMessageSlideFromTop(inAppMessage) {
+    if isInAppMessageSlideFromTop(inAppMessage) || activeApplicationViewController.topMostViewController() is UIAlertController {
       return ABKInAppMessageSlideupViewController(inAppMessage: inAppMessage)
     } else {
       return SlideFromBottomViewController(inAppMessage: inAppMessage)

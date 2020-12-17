@@ -15,12 +15,8 @@ extension UIViewController {
   
   // SOURCE: - https://gist.github.com/db0company/369bfa43cb84b145dfd8#gistcomment-2640891
   func topMostViewController() -> UIViewController {
-    if let presented = self.presentedViewController {
-      if presented is UIAlertController {
-        return self
-      } else {
-        return presented.topMostViewController()
-      }
+    if let presented = presentedViewController {
+      return presented.topMostViewController()
     }
           
     if let navigation = self as? UINavigationController {
