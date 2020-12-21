@@ -38,5 +38,5 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 1. Replace "YOUR-API-KEY" with your Braze API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L9)
 2. Replace the Appboy/Endpoint value with your Appboy endpoint [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Info.plist#L8)
 3. For an API Triggered Campaign:
-    - Replace "YOUR-CAMPAIGN-API-KEY" with your Braze campaign API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/AppboySettingsViewController.swift#L84)
-    - Replace "YOUR-CAMPAIGN-ID" with your Braze campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/AppboySettingsViewController.swift#L83)
+    - Replace "YOUR-CAMPAIGN-API-KEY" with your Braze campaign API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/Settings/ContentCardSettingsViewController.swift#L56)
+    - Replace "YOUR-CAMPAIGN-ID" with your Braze campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/Settings/ContentCardSettingsViewController.swift#L55)

@@ -3,7 +3,9 @@ import UIKit
 class SlideFromBottomViewController: SlideupViewController {
 
   // MARK: - Variables
-  private let tabBarHeight: CGFloat = 49
+  private var bottomSpacing: CGFloat {
+    return AppboyManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
+  }
 }
 
 // MARK: - View Lifecycle
@@ -25,8 +27,6 @@ extension SlideFromBottomViewController {
 // MARK: - Private
 private extension SlideFromBottomViewController {
   func setSlideConstraint() {
-    guard let superview = view.superview else { return }
-    
-    slideConstraint?.constant = superview.safeAreaInsets.bottom + tabBarHeight
+    slideConstraint?.constant = bottomSpacing
   }
 }
