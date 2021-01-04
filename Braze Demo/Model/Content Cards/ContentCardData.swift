@@ -60,11 +60,12 @@ enum ContentCardKey: String {
   case messageHeader = "message_header"
   case messageTitle = "message_title"
   case html
-  case url
   case discountPercentage = "discount_percentage"
   case tags = "tile_tags"
   case contentBlock = "content_block_id"
   case detail = "tile_detail"
+  case groupStyle = "group_style"
+  case urlString
 }
 
 // MARK: - ContentCardClassType
@@ -93,6 +94,8 @@ enum ContentCardClassType: Hashable {
       self = .coupon
     case "home_tile":
       self = .item(.tile)
+    case "group":
+      self = .item(.group)
     case "message_full_page":
       self = .message(.fullPage)
     case "message_webview":

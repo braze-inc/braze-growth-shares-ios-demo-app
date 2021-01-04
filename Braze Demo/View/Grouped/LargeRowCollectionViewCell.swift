@@ -9,6 +9,13 @@ class LargeRowCollectionViewCell: UICollectionViewListCell {
 
   func configureCell(_ title: String?, imageUrl: String?) {
     titleLabel.text = title
-    imageView.image = UIImage(systemName: "globe")
+    
+    if let urlString = imageUrl, let url = URL(string: urlString) {
+        ImageCache.sharedCache.image(from: url) { image in
+          self.imageView.image = image
+      }
+    } else {
+      imageView.image = UIImage(systemName: "globe")
+    }
   }
 }

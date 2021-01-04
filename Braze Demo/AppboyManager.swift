@@ -242,6 +242,7 @@ private extension AppboyManager {
       metaData[.idString] = card.idString
       metaData[.created] = card.created
       metaData[.dismissable] = card.dismissible
+      metaData[.urlString] = card.urlString
       metaData[.extras] = card.extras
      
       if let contentCardable = contentCardable(with: metaData, for: classType) {
@@ -261,6 +262,8 @@ private extension AppboyManager {
       return Ad(metaData: metaData, classType: classType)
     case .coupon:
       return Coupon(metaData: metaData, classType: classType)
+    case .item(.group):
+      return Group(metaData: metaData, classType: classType)
     case .item(.tile):
       return Tile(metaData: metaData, classType: classType)
     case .message(.fullPage):

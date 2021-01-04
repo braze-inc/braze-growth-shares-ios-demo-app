@@ -60,10 +60,10 @@ extension WebViewMessage {
     let messageTitle = extras[ContentCardKey.messageTitle.rawValue] as? String
     
     var webViewType: WebViewType = .none
-    if let htmlString = extras[ContentCardKey.html.rawValue] as? String {
-      webViewType = .html(htmlString)
-    } else if let urlString = extras[ContentCardKey.url.rawValue] as? String {
+    if let urlString = metaData[.urlString] as? String {
       webViewType = .url(urlString)
+    } else if let htmlString = extras[ContentCardKey.html.rawValue] as? String {
+      webViewType = .html(htmlString)
     } else if let contentBlockId = extras[ContentCardKey.contentBlock.rawValue] as? String {
       webViewType = .contentBlock(contentBlockId)
     }

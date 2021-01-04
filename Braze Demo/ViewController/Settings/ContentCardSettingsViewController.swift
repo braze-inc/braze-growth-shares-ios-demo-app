@@ -19,6 +19,11 @@ class ContentCardSettingsViewController: UIViewController {
     
     presentAlert(title: "Reset Home Screen", message: nil)
   }
+  @IBAction func eventRemovalCampaignButtonPressed(_ sender: Any) {
+    let eventTitle = "Group Event Removal Campaign Pressed"
+    AppboyManager.shared.logCustomEvent(eventTitle)
+    presentAlert(title: eventTitle, message: nil)
+  }
   @IBAction func segmentChanged(_ sender: UISegmentedControl) {
     RemoteStorage().store(sender.selectedSegmentIndex, forKey: .messageCenterStyle)
   }

@@ -571,12 +571,9 @@
                                                         <constraint firstAttribute="width" constant="50" id="WFm-8H-4ki"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-ZV-Qul">
-                                                    <rect key="frame" x="70" y="25" width="99" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="pFg-DL-f3X"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-ZV-Qul">
+                                                    <rect key="frame" x="70" y="40" width="97.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -596,75 +593,6 @@
                                         <connections>
                                             <outlet property="imageView" destination="5gn-1y-zm1" id="cXh-YZ-4H3"/>
                                             <outlet property="titleLabel" destination="Gib-ZV-Qul" id="oF2-st-VWF"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="SmallRowCollectionViewCell" id="CZt-L3-v0p" customClass="SmallRowCollectionViewCell" customModule="Braze_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="765" width="394" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="WVj-Vg-6KX">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="50"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pl-pN-W4a">
-                                                    <rect key="frame" x="10" y="12.5" width="25" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="HgZ-YL-5xP"/>
-                                                        <constraint firstAttribute="width" constant="25" id="kel-64-zzr"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tKW-Ul-Y4Z">
-                                                    <rect key="frame" x="45" y="12.5" width="99" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="25" id="oLL-Ij-fLw"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstItem="1pl-pN-W4a" firstAttribute="leading" secondItem="WVj-Vg-6KX" secondAttribute="leading" constant="10" id="9M1-Dm-D5L"/>
-                                                <constraint firstItem="tKW-Ul-Y4Z" firstAttribute="centerY" secondItem="1pl-pN-W4a" secondAttribute="centerY" id="Bu2-I0-tRS"/>
-                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tKW-Ul-Y4Z" secondAttribute="bottom" constant="10" id="ENR-IO-6lf"/>
-                                                <constraint firstItem="1pl-pN-W4a" firstAttribute="centerY" secondItem="WVj-Vg-6KX" secondAttribute="centerY" id="GLi-LE-OP3"/>
-                                                <constraint firstItem="tKW-Ul-Y4Z" firstAttribute="leading" secondItem="1pl-pN-W4a" secondAttribute="trailing" constant="10" id="I16-cV-rQh"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tKW-Ul-Y4Z" secondAttribute="trailing" constant="50" id="ayu-SN-nWg"/>
-                                                <constraint firstItem="tKW-Ul-Y4Z" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WVj-Vg-6KX" secondAttribute="top" constant="10" id="tad-TI-0gM"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="394" height="50"/>
-                                        <connections>
-                                            <outlet property="imageView" destination="1pl-pN-W4a" id="6Ue-Fc-RTs"/>
-                                            <outlet property="titleLabel" destination="tKW-Ul-Y4Z" id="zvL-dl-SzD"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="HeadlineCollectionViewCell" id="H9w-OT-YnR" customClass="HeadlineCollectionViewCell" customModule="Braze_Demo" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="825" width="394" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="ALl-8s-yod">
-                                            <rect key="frame" x="0.0" y="0.0" width="394" height="75"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Lorem Ipsum" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh3-y8-bMm">
-                                                    <rect key="frame" x="147.5" y="20" width="99" height="35"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eh3-y8-bMm" secondAttribute="trailing" constant="50" id="Ew8-Kd-V1a"/>
-                                                <constraint firstItem="eh3-y8-bMm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ALl-8s-yod" secondAttribute="leading" constant="50" id="RWP-Df-OsD"/>
-                                                <constraint firstItem="eh3-y8-bMm" firstAttribute="centerX" secondItem="ALl-8s-yod" secondAttribute="centerX" id="SDA-2e-5Qa"/>
-                                                <constraint firstAttribute="bottom" secondItem="eh3-y8-bMm" secondAttribute="bottom" constant="20" id="XRd-tF-4KR"/>
-                                                <constraint firstItem="eh3-y8-bMm" firstAttribute="top" secondItem="ALl-8s-yod" secondAttribute="top" constant="20" id="oxO-yk-Omg"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <size key="customSize" width="394" height="75"/>
-                                        <connections>
-                                            <outlet property="titleLabel" destination="eh3-y8-bMm" id="YJe-MD-ZR4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -806,16 +734,37 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rL4-lz-FBU" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="491"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="671.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RVu-wt-a4i">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="491"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="671.5"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92X-Dn-3rX" userLabel="Campaign">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="orW-fs-nQj">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Screen Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2C-Va-tEE">
-                                                                <rect key="frame" x="98.5" y="20" width="217.5" height="20.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOs-8w-GKW">
+                                                                <rect key="frame" x="10" y="25" width="394" height="15"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <state key="normal" title="Reset Home Screen"/>
+                                                                <connections>
+                                                                    <action selector="resetHomeScreenButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="d1u-Zu-28T"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="hOs-8w-GKW" firstAttribute="leading" secondItem="orW-fs-nQj" secondAttribute="leading" constant="10" id="9NX-Me-Wk4"/>
+                                                            <constraint firstItem="hOs-8w-GKW" firstAttribute="top" secondItem="orW-fs-nQj" secondAttribute="top" constant="25" id="B29-jh-GX9"/>
+                                                            <constraint firstAttribute="trailing" secondItem="hOs-8w-GKW" secondAttribute="trailing" constant="10" id="CFC-p0-Icr"/>
+                                                            <constraint firstAttribute="height" constant="50" id="pm7-Ou-04Y"/>
+                                                            <constraint firstAttribute="bottom" secondItem="hOs-8w-GKW" secondAttribute="bottom" constant="10" id="tkI-bW-ALA"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92X-Dn-3rX" userLabel="Campaign">
+                                                        <rect key="frame" x="0.0" y="70" width="414" height="120.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tile Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2C-Va-tEE">
+                                                                <rect key="frame" x="137.5" y="20" width="139" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -842,33 +791,65 @@
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
                                                                     <action selector="apiTriggeredCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="7EA-C7-Vxa"/>
-                                                                    <action selector="apiTriggeredCampaignButtonPressed:" destination="MAV-8o-BCL" eventType="touchUpInside" id="EFo-c5-Gfk"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPE-5L-pkN">
-                                                                <rect key="frame" x="136.5" y="120.5" width="141" height="30"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                                                <state key="normal" title="Reset Home Screen"/>
-                                                                <connections>
-                                                                    <action selector="resetHomeScreenButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="1AZ-JP-eWD"/>
-                                                                    <action selector="resetHomeScreenButtonPressed:" destination="MAV-8o-BCL" eventType="touchUpInside" id="x5A-wc-1D3"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
-                                                            <constraint firstItem="iPE-5L-pkN" firstAttribute="top" secondItem="eJN-1f-kGR" secondAttribute="bottom" constant="20" id="1Bf-FG-G9U"/>
+                                                            <constraint firstAttribute="bottom" secondItem="eJN-1f-kGR" secondAttribute="bottom" constant="20" id="5R8-kX-lRT"/>
                                                             <constraint firstItem="eJN-1f-kGR" firstAttribute="top" secondItem="y2C-Va-tEE" secondAttribute="bottom" constant="10" id="85e-DH-hT5"/>
                                                             <constraint firstAttribute="trailing" secondItem="eJN-1f-kGR" secondAttribute="trailing" constant="20" id="C2D-RU-Bdi"/>
-                                                            <constraint firstItem="iPE-5L-pkN" firstAttribute="centerX" secondItem="92X-Dn-3rX" secondAttribute="centerX" id="Q18-yM-1fi"/>
-                                                            <constraint firstAttribute="bottom" secondItem="iPE-5L-pkN" secondAttribute="bottom" id="SVO-BL-8Ia"/>
                                                             <constraint firstItem="y2C-Va-tEE" firstAttribute="centerX" secondItem="92X-Dn-3rX" secondAttribute="centerX" id="aAc-hJ-YTx"/>
                                                             <constraint firstItem="eJN-1f-kGR" firstAttribute="leading" secondItem="92X-Dn-3rX" secondAttribute="leading" constant="20" id="bgy-iE-xCb"/>
                                                             <constraint firstItem="y2C-Va-tEE" firstAttribute="top" secondItem="92X-Dn-3rX" secondAttribute="top" constant="20" id="wgB-0e-E6T"/>
                                                         </constraints>
                                                     </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8eh-Cy-uqA" userLabel="Campaign">
+                                                        <rect key="frame" x="0.0" y="210.5" width="414" height="120.5"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Rh-SR-U1R">
+                                                                <rect key="frame" x="127.5" y="20" width="159.5" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNZ-Xf-rVp">
+                                                                <rect key="frame" x="20" y="50.5" width="374" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="EoH-MM-YCt"/>
+                                                                </constraints>
+                                                                <state key="normal" title="EVENT REMOVAL CAMPAIGN">
+                                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                                        <real key="value" value="0.5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                                        <size key="value" width="0.0" height="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="eventRemovalCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="pMz-N9-Y0x"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="fNZ-Xf-rVp" firstAttribute="top" secondItem="9Rh-SR-U1R" secondAttribute="bottom" constant="10" id="7AU-3s-9sw"/>
+                                                            <constraint firstAttribute="bottom" secondItem="fNZ-Xf-rVp" secondAttribute="bottom" constant="20" id="EuV-1B-gDr"/>
+                                                            <constraint firstAttribute="trailing" secondItem="fNZ-Xf-rVp" secondAttribute="trailing" constant="20" id="J8g-v0-M74"/>
+                                                            <constraint firstItem="9Rh-SR-U1R" firstAttribute="centerX" secondItem="8eh-Cy-uqA" secondAttribute="centerX" id="iuf-3v-0E1"/>
+                                                            <constraint firstItem="fNZ-Xf-rVp" firstAttribute="leading" secondItem="8eh-Cy-uqA" secondAttribute="leading" constant="20" id="jpG-mI-YFC"/>
+                                                            <constraint firstItem="9Rh-SR-U1R" firstAttribute="top" secondItem="8eh-Cy-uqA" secondAttribute="top" constant="20" id="ocJ-JQ-r8f"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98I-Ph-gUW" userLabel="Message Center">
-                                                        <rect key="frame" x="0.0" y="170.5" width="414" height="120"/>
+                                                        <rect key="frame" x="0.0" y="351" width="414" height="120"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Center Style" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzt-pE-Lvy">
                                                                 <rect key="frame" x="120" y="20" width="174" height="20.5"/>
@@ -887,7 +868,6 @@
                                                                     <segment title="Both"/>
                                                                 </segments>
                                                                 <connections>
-                                                                    <action selector="segmentChanged:" destination="MAV-8o-BCL" eventType="valueChanged" id="2JT-aO-GGC"/>
                                                                     <action selector="segmentChanged:" destination="MM0-Al-hGe" eventType="valueChanged" id="TH9-fo-D2l"/>
                                                                 </connections>
                                                             </segmentedControl>
@@ -901,7 +881,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VbU-ud-e3O" userLabel="Attribute">
-                                                        <rect key="frame" x="0.0" y="310.5" width="414" height="180.5"/>
+                                                        <rect key="frame" x="0.0" y="491" width="414" height="180.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message Center Content Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgt-cO-56S">
                                                                 <rect key="frame" x="87" y="20" width="240" height="20.5"/>
@@ -936,7 +916,6 @@
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                                 <connections>
-                                                                                    <action selector="messageCenterCampaignButtonPressed:" destination="MAV-8o-BCL" eventType="touchUpInside" id="Ds9-Ms-W3F"/>
                                                                                     <action selector="messageCenterCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="UbG-a1-gWq"/>
                                                                                 </connections>
                                                                             </button>
@@ -962,7 +941,6 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                                 <connections>
                                                                                     <action selector="messageCenterCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="4Sc-yx-msv"/>
-                                                                                    <action selector="messageCenterCampaignButtonPressed:" destination="MAV-8o-BCL" eventType="touchUpInside" id="xYq-Eo-V7p"/>
                                                                                 </connections>
                                                                             </button>
                                                                         </subviews>
@@ -992,7 +970,6 @@
                                                                                 </userDefinedRuntimeAttributes>
                                                                                 <connections>
                                                                                     <action selector="messageCenterCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="qhY-fn-teS"/>
-                                                                                    <action selector="messageCenterCampaignButtonPressed:" destination="MAV-8o-BCL" eventType="touchUpInside" id="uP3-2M-gtf"/>
                                                                                 </connections>
                                                                             </button>
                                                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AyM-04-A3U">
@@ -1016,7 +993,6 @@
                                                                                     </userDefinedRuntimeAttribute>
                                                                                 </userDefinedRuntimeAttributes>
                                                                                 <connections>
-                                                                                    <action selector="messageCenterCampaignButtonPressed:" destination="MAV-8o-BCL" eventType="touchUpInside" id="JUk-Z6-i2U"/>
                                                                                     <action selector="messageCenterCampaignButtonPressed:" destination="MM0-Al-hGe" eventType="touchUpInside" id="ttZ-0q-8kE"/>
                                                                                 </connections>
                                                                             </button>

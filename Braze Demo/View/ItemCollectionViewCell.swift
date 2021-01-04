@@ -33,7 +33,7 @@ extension ItemCollectionViewCell {
       
     if let urlString = imageUrl, let url = URL(string: urlString) {
         ImageCache.sharedCache.image(from: url) { image in
-            self.coverImageView.image = image
+          self.coverImageView.image = image
       }
     }
   }

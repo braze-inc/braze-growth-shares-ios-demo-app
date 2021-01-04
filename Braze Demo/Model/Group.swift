@@ -9,15 +9,18 @@ struct GroupList: MetaData {
 }
 
 enum GroupStyle: String {
-  case smallRow
+  case primary
+  case secondary
   case largeRow
   case headline
   case none
   
   init?(rawValue: String) {
     switch rawValue {
-    case "smallrow":
-      self = .smallRow
+    case "primary":
+      self = .primary
+    case "secondary":
+      self = .secondary
     case "largerow":
       self = .largeRow
     case "headline":
@@ -31,13 +34,17 @@ enum GroupStyle: String {
 struct Group: ContentCardable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
+  let title: String
+  let imageUrl: String?
+  let clickUrl: String?
   private let styleString: String
-  let items: [Subgroup]
   
   private enum CodingKeys: String, CodingKey {
     case id
+    case title
+    case imageUrl = "image"
+    case clickUrl = "click_url"
     case styleString = "style"
-    case items
   }
 }
 
@@ -47,16 +54,25 @@ extension Group {
   }
 }
 
+// MARK: - Content Card Initializer
 extension Group {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
-    // Not Braze Dashboard configured (yet)
-    self.init(contentCardData: nil, id: 0, styleString: "", items: [])
+    guard let idString = metaData[.idString] as? String,
+          let createdAt = metaData[.created] as? Double,
+          let isDismissable = metaData[.dismissable] as? Bool,
+          let message = metaData[.cardDescription] as? String,
+          let extras = metaData[.extras] as? [AnyHashable: Any]
+    else { return nil }
+    
+    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
+    
+    let styleString = extras[ContentCardKey.groupStyle.rawValue] as? String ?? ""
+    
+    let title = metaData[.title] as? String ?? ""
+    let groupTitle = title.isEmpty ? title + message : title + " " + message
+    let imageUrl = metaData[.image] as? String
+    let clickUrl = metaData[.urlString] as? String
+    
+    self.init(contentCardData: contentCardData, id: -1, title: groupTitle, imageUrl: imageUrl, clickUrl: clickUrl, styleString: styleString)
   }
-}
-
-// MARK: - Item
-struct Subgroup: Codable, Hashable {
-  let id: Int
-  let title: String
-  let image: String?
 }
