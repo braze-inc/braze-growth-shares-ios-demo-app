@@ -132,8 +132,6 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
       return fullViewController(inAppMessage: inAppMessage)
     case is ABKInAppMessageHTML:
       return ABKInAppMessageHTMLViewController(inAppMessage: inAppMessage)
-    case is ABKInAppMessageImmersive:
-      return ABKInAppMessageImmersiveViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageViewController(inAppMessage: inAppMessage)
     }

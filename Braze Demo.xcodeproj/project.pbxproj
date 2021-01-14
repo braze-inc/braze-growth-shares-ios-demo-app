@@ -248,6 +248,15 @@
 			path = "In App Messages";
 			sourceTree = "<group>";
 		};
+		7F3FBEF325B0F417007715C0 /* ModalPickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7FCFEB0C256C389A00079EAF /* ModalPickerViewController.swift */,
+				7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */,
+			);
+			path = ModalPickerViewController;
+			sourceTree = "<group>";
+		};
 		7F5549EB2582F3BC00DAFB84 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,7 +392,6 @@
 		7F9DCBCA24AD79B700E8D207 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				7F8967CF25740FAB00C61405 /* FullListViewController */,
 				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
 				7FCFEB11256C389E00079EAF /* In App Messages */,
 				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
@@ -438,7 +446,6 @@
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
-				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 				7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */,
 				7F8967D82574247500C61405 /* SwitchTableViewCell.xib */,
 			);
@@ -519,8 +526,9 @@
 		7FCFEB11256C389E00079EAF /* In App Messages */ = {
 			isa = PBXGroup;
 			children = (
-				7FCFEB0C256C389A00079EAF /* ModalPickerViewController.swift */,
-				7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */,
+				7F8967CF25740FAB00C61405 /* FullListViewController */,
+				7F3FBEF325B0F417007715C0 /* ModalPickerViewController */,
+				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
 			path = "In App Messages";
 			sourceTree = "<group>";
