@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F2C910425BA5071009A4FB9 /* AppboyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2C910325BA5071009A4FB9 /* AppboyKit */; };
-		7F2C910625BA5071009A4FB9 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2C910525BA5071009A4FB9 /* AppboyPushStory */; };
-		7F2C910825BA5071009A4FB9 /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F2C910725BA5071009A4FB9 /* AppboyUI */; };
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
@@ -29,6 +26,8 @@
 		7F6C981D2564728F000CDAAA /* BlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C981C2564728F000CDAAA /* BlankCollectionViewCell.swift */; };
 		7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */; };
 		7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */; };
+		7F7531C125BB21D0008CFA3E /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F7531C025BB21D0008CFA3E /* AppboyUI */; };
+		7F7531C325BB21D0008CFA3E /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F7531C225BB21D0008CFA3E /* AppboyPushStory */; };
 		7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Tile List.json */; };
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
@@ -200,9 +199,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F2C910425BA5071009A4FB9 /* AppboyKit in Frameworks */,
-				7F2C910825BA5071009A4FB9 /* AppboyUI in Frameworks */,
-				7F2C910625BA5071009A4FB9 /* AppboyPushStory in Frameworks */,
+				7F7531C125BB21D0008CFA3E /* AppboyUI in Frameworks */,
+				7F7531C325BB21D0008CFA3E /* AppboyPushStory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,9 +537,8 @@
 			);
 			name = "Braze Demo";
 			packageProductDependencies = (
-				7F2C910325BA5071009A4FB9 /* AppboyKit */,
-				7F2C910525BA5071009A4FB9 /* AppboyPushStory */,
-				7F2C910725BA5071009A4FB9 /* AppboyUI */,
+				7F7531C025BB21D0008CFA3E /* AppboyUI */,
+				7F7531C225BB21D0008CFA3E /* AppboyPushStory */,
 			);
 			productName = BookDemo;
 			productReference = 7FBDD48524AD711E00EC0983 /* Braze Demo.app */;
@@ -616,7 +613,7 @@
 			);
 			mainGroup = 7FBDD47C24AD711D00EC0983;
 			packageReferences = (
-				7F2C910225BA5071009A4FB9 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */,
+				7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */,
 			);
 			productRefGroup = 7FBDD48624AD711E00EC0983 /* Products */;
 			projectDirPath = "";
@@ -1055,7 +1052,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7F2C910225BA5071009A4FB9 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */ = {
+		7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Appboy/appboy-ios-sdk";
 			requirement = {
@@ -1066,20 +1063,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7F2C910325BA5071009A4FB9 /* AppboyKit */ = {
+		7F7531C025BB21D0008CFA3E /* AppboyUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7F2C910225BA5071009A4FB9 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
-			productName = AppboyKit;
-		};
-		7F2C910525BA5071009A4FB9 /* AppboyPushStory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7F2C910225BA5071009A4FB9 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
-			productName = AppboyPushStory;
-		};
-		7F2C910725BA5071009A4FB9 /* AppboyUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7F2C910225BA5071009A4FB9 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			package = 7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
 			productName = AppboyUI;
+		};
+		7F7531C225BB21D0008CFA3E /* AppboyPushStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			productName = AppboyPushStory;
 		};
 /* End XCSwiftPackageProductDependency section */
 

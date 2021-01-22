@@ -1,5 +1,4 @@
 import UIKit
-import AppboyKit
 import AppboyUI
 import AdSupport
 import AppTrackingTransparency
