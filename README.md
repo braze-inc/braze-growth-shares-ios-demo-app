@@ -29,10 +29,6 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 1. Content Cards that can be inserted/removed to/from an existing feed in real-time via silent push (device only)
 2. Content Cards that can be reordered in an existing feed in real-time via silent push (device only)
 
-# Running the Project
-1. [Install CocoaPods](http://guides.cocoapods.org/using/getting-started.html)
-2. Run `pod install` in the root directory
-3. Open the `Braze Demo.xcworkspace` to open the project.
 
 # Using the Project
 1. Replace "YOUR-API-KEY" with your Braze API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L9)
