@@ -1,5 +1,6 @@
 import UIKit
-import Appboy_iOS_SDK
+import AppboyKit
+import AppboyUI
 import AdSupport
 import AppTrackingTransparency
 

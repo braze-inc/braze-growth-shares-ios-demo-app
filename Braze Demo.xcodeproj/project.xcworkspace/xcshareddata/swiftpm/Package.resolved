@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Appboy_iOS_SDK",
+        "repositoryURL": "https://github.com/Appboy/appboy-ios-sdk",
+        "state": {
+          "branch": null,
+          "revision": "37f67d0852cb7f9b572abd7488419a8fc9bd00e0",
+          "version": "3.31.2"
+        }
+      },
+      {
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
+        "state": {
+          "branch": null,
+          "revision": "564d238f8814c4a82502336fd80b28a9d321ff47",
+          "version": "5.10.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
