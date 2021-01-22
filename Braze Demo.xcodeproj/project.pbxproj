@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */; };
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
@@ -27,6 +26,8 @@
 		7F6C981D2564728F000CDAAA /* BlankCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C981C2564728F000CDAAA /* BlankCollectionViewCell.swift */; };
 		7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */; };
 		7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */; };
+		7F7531C125BB21D0008CFA3E /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F7531C025BB21D0008CFA3E /* AppboyUI */; };
+		7F7531C325BB21D0008CFA3E /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F7531C225BB21D0008CFA3E /* AppboyPushStory */; };
 		7F754FC1250C2DF000CD7B45 /* Tile List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7F754FC0250C2DF000CD7B45 /* Tile List.json */; };
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
@@ -106,8 +107,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.debug.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.debug.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
 		7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardSettingsViewController.swift; sourceTree = "<group>"; };
 		7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageSettingsViewController.swift; sourceTree = "<group>"; };
@@ -193,9 +192,6 @@
 		7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Util.swift; sourceTree = "<group>"; };
 		7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal_Util.swift; sourceTree = "<group>"; };
 		7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDetailViewController.swift; sourceTree = "<group>"; };
-		B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Braze_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E302133F4BCD5B9C06EB4680 /* Pods-Content Card Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Content Card Demo.release.xcconfig"; path = "Target Support Files/Pods-Content Card Demo/Pods-Content Card Demo.release.xcconfig"; sourceTree = "<group>"; };
-		FD1D66EF63678E2C41C4E6FD /* Pods-Braze Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Braze Demo.release.xcconfig"; path = "Target Support Files/Pods-Braze Demo/Pods-Braze Demo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,7 +199,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27723D7521BF7CE6FD5B4286 /* Pods_Braze_Demo.framework in Frameworks */,
+				7F7531C125BB21D0008CFA3E /* AppboyUI in Frameworks */,
+				7F7531C325BB21D0008CFA3E /* AppboyPushStory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,14 +221,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		019D6DB1F40ADB123C107AF8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				B9F3D1806BA83A07E901DAB9 /* Pods_Braze_Demo.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		7F02B4BC256E1E7100175158 /* Content Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,8 +461,6 @@
 				7FBDD4A124AD711F00EC0983 /* Braze DemoTests */,
 				7FBDD4AC24AD711F00EC0983 /* Braze DemoUITests */,
 				7FBDD48624AD711E00EC0983 /* Products */,
-				FC71FD02EFEB100EF1D69F51 /* Pods */,
-				019D6DB1F40ADB123C107AF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -533,17 +520,6 @@
 			path = "In App Messages";
 			sourceTree = "<group>";
 		};
-		FC71FD02EFEB100EF1D69F51 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1F1A7B6D6119A0C4FBEDFF4E /* Pods-Content Card Demo.debug.xcconfig */,
-				E302133F4BCD5B9C06EB4680 /* Pods-Content Card Demo.release.xcconfig */,
-				2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */,
-				FD1D66EF63678E2C41C4E6FD /* Pods-Braze Demo.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -551,17 +527,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze Demo" */;
 			buildPhases = (
-				B9BFAA1DE93F9F20BAF5AAFF /* [CP] Check Pods Manifest.lock */,
 				7FBDD48124AD711D00EC0983 /* Sources */,
 				7FBDD48224AD711D00EC0983 /* Frameworks */,
 				7FBDD48324AD711D00EC0983 /* Resources */,
-				8FC163F39FEBD99FF76B08F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Braze Demo";
+			packageProductDependencies = (
+				7F7531C025BB21D0008CFA3E /* AppboyUI */,
+				7F7531C225BB21D0008CFA3E /* AppboyPushStory */,
+			);
 			productName = BookDemo;
 			productReference = 7FBDD48524AD711E00EC0983 /* Braze Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -634,6 +612,9 @@
 				Base,
 			);
 			mainGroup = 7FBDD47C24AD711D00EC0983;
+			packageReferences = (
+				7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */,
+			);
 			productRefGroup = 7FBDD48624AD711E00EC0983 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -681,48 +662,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		8FC163F39FEBD99FF76B08F3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Braze Demo/Pods-Braze Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Braze Demo/Pods-Braze Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Braze Demo/Pods-Braze Demo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B9BFAA1DE93F9F20BAF5AAFF /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Braze Demo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7FBDD48124AD711D00EC0983 /* Sources */ = {
@@ -943,7 +882,6 @@
 		};
 		7FBDD4B324AD711F00EC0983 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2EB1C05B634C28291702665D /* Pods-Braze Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Braze Demo/Supporting Files/Braze Demo.entitlements";
@@ -967,7 +905,6 @@
 		};
 		7FBDD4B424AD711F00EC0983 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FD1D66EF63678E2C41C4E6FD /* Pods-Braze Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Braze Demo/Supporting Files/Braze Demo.entitlements";
@@ -1113,6 +1050,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Appboy/appboy-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.31.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F7531C025BB21D0008CFA3E /* AppboyUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			productName = AppboyUI;
+		};
+		7F7531C225BB21D0008CFA3E /* AppboyPushStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F7531BF25BB21D0008CFA3E /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			productName = AppboyPushStory;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7FBDD49124AD711E00EC0983 /* Braze Demo.xcdatamodeld */ = {

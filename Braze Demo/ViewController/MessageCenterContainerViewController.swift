@@ -1,5 +1,5 @@
 import UIKit
-import Appboy_iOS_SDK
+import AppboyUI
 
 class MessageCenterContainerViewController: UIViewController {
   
