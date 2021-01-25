@@ -23,7 +23,6 @@ struct RemoteStorage {
     for key in RemoteStorageKey.allCases {
       defaults.removeObject(forKey: key.rawValue)
     }
-    defaults.synchronize()
   }
 }
 

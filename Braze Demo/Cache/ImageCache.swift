@@ -1,3 +1,7 @@
+/*
+I would advise against using this code in a fully functioning production application. ImageCache is not built to scale well (UIImage are ~ raw bitmap data, e.g: 1000px x 1000px x 4 color components ~= 7MB)
+ */
+
 import UIKit
 
 class ImageCache: NSObject {
