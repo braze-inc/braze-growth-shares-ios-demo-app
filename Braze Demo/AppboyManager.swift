@@ -19,7 +19,7 @@ class AppboyManager: NSObject {
     let options: UNAuthorizationOptions = [.alert, .sound, .badge]
     
     /// This is how to include provisional push support
-    // options = UNAuthorizationOptions(rawValue: options.rawValue | UNAuthorizationOptions.provisional.rawValue)
+    // options.insert(.provisional)
     
     UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
       Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
