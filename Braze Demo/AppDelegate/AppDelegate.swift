@@ -6,11 +6,13 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-      // Override point for customization after application launch.
+    // Override point for customization after application launch.
 
-      AppboyManager.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    AppboyManager.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    
+    UNUserNotificationCenter.current().delegate = self
         
-      return true
+    return true
   }
 
   // MARK: UISceneSession Lifecycle
