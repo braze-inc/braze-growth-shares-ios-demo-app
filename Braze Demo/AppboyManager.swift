@@ -55,6 +55,9 @@ extension AppboyManager {
 // MARK: - Push
 extension AppboyManager {
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let appboyCategories = ABKPushUtils.getAppboyUNNotificationCategorySet()
+    UNUserNotificationCenter.current().setNotificationCategories(appboyCategories)
+    
     Appboy.sharedInstance()?.registerDeviceToken(deviceToken)
   }
   
