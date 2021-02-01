@@ -9,7 +9,11 @@ class AppboyManager: NSObject {
   private let apiKey = "YOUR-API-KEY"
 #warning("Please enter your API key above")
   private var appboyOptions: [String: Any] {
-    return [ABKIDFADelegateKey: AppboyIDFADelegate(), ABKMinimumTriggerTimeIntervalKey: 0]
+    return [
+      ABKIDFADelegateKey: AppboyIDFADelegate(),
+      ABKMinimumTriggerTimeIntervalKey: 0,
+      ABKPushStoryAppGroupKey : "group.com.braze.book-demo"
+    ]
   }
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
