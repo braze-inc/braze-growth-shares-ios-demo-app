@@ -34,8 +34,8 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
     - [Coupon.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Coupon.swift#L5)</br></br> 
     
 #### Extra use cases:
-1. Content Cards that can be inserted/removed to/from an existing feed in real-time via silent push (device only)
-2. Content Cards that can be reordered in an existing feed in real-time via silent push (device only)
+1. Content Cards that can be inserted/removed to/from an existing feed in real-time via [silent push](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L84) (device only)
+2. Content Cards that can be [reordered](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/DataSource/TileListDataSource.swift#L97) in an existing feed in real-time via silent push (device only)
 
 ## In-App Messages
 
