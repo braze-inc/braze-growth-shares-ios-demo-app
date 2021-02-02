@@ -104,14 +104,25 @@ extension AppboyManager {
     Appboy.sharedInstance()?.logCustomEvent(eventName, withProperties: properties)
   }
   
-  func setCustomAttributeWithKey(_ key: String?, andStringValue value: String?) {
+  func setCustomAttributeWithKey<T: Equatable>(_ key: String?, andValue value: T?) {
     guard let key = key, let value = value else { return }
-    Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andStringValue: value)
-  }
-  
-  func setCustomAttributeWithKey(_ key: String?, andArrayValue value: [Any]?) {
-    guard let key = key, let value = value else { return }
-    Appboy.sharedInstance()?.user.setCustomAttributeArrayWithKey(key, array: value)
+    
+    switch value.self {
+    case let value as Array<String>:
+      Appboy.sharedInstance()?.user.setCustomAttributeArrayWithKey(key, array: value)
+    case let value as Date:
+      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andDateValue: value)
+    case let value as Bool:
+      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andBOOLValue: value)
+    case let value as String:
+      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andStringValue: value)
+    case let value as Double:
+      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andDoubleValue: value)
+    case let value as Int:
+      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andIntegerValue: value)
+    default:
+      return
+    }
   }
   
   func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuanitity quanity: Int) {
