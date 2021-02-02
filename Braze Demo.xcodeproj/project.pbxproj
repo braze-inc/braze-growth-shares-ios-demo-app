@@ -84,6 +84,7 @@
 		7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */; };
 		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
 		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
+		7FD4527A25C8C7B9007C76D0 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD4527925C8C7B9007C76D0 /* AppboyPushStory */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -227,6 +228,7 @@
 		7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMenuView.swift; sourceTree = "<group>"; };
 		7FD2F60D256607AB0061950D /* GroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
 		7FD2F612256608A20061950D /* UIButton_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Util.swift; sourceTree = "<group>"; };
+		7FD4526525C8C756007C76D0 /* Braze Demo Content Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze Demo Content Extension.entitlements"; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F8CB2EB25C888000001F270 /* UserNotificationsUI.framework in Frameworks */,
+				7FD4527A25C8C7B9007C76D0 /* AppboyPushStory in Frameworks */,
 				7F8CB2E925C888000001F270 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +429,7 @@
 		7F8CB2EC25C888000001F270 /* Braze Demo Content Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7FD4526525C8C756007C76D0 /* Braze Demo Content Extension.entitlements */,
 				7F8CB2ED25C888000001F270 /* NotificationViewController.swift */,
 				7F8CB2EF25C888000001F270 /* MainInterface.storyboard */,
 				7F8CB2F225C888000001F270 /* Info.plist */,
@@ -645,6 +649,9 @@
 			dependencies = (
 			);
 			name = "Braze Demo Content Extension";
+			packageProductDependencies = (
+				7FD4527925C8C7B9007C76D0 /* AppboyPushStory */,
+			);
 			productName = "Braze Demo Content Extension";
 			productReference = 7F8CB2E625C888000001F270 /* Braze Demo Content Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1008,6 +1015,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Braze Demo Content Extension/Braze Demo Content Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
@@ -1020,6 +1028,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Content Extension Development";
@@ -1033,6 +1042,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Braze Demo Content Extension/Braze Demo Content Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
@@ -1045,6 +1055,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Content Extension Development";
@@ -1379,6 +1390,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7F8CB31C25C88C6C0001F270 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
 			productName = AppboyUI;
+		};
+		7FD4527925C8C7B9007C76D0 /* AppboyPushStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F8CB31C25C88C6C0001F270 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			productName = AppboyPushStory;
 		};
 /* End XCSwiftPackageProductDependency section */
 
