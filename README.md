@@ -10,7 +10,7 @@
 
 
 
-### About Braze Demo
+## About Braze Demo
 The focus of this application demonstrates how to decouple any dependencies on `Appboy-iOS-SDK`from the rest of your existing production code. One objective was for there to be only one `import Appboy-iOS-SDK` in the entire application.
 
 All of the Braze-related dependencies are handled in the [AppboyManager.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift) file that the existing production code calls into.
@@ -46,7 +46,7 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 3. Full In-App Message as a push primer with list of push tags
 
 
-# Using the Project
+## Using the Project
 1. Replace "YOUR-API-KEY" with your Braze API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L9)
 2. Replace the Appboy/Endpoint value with your Appboy endpoint [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Info.plist#L8)
 3. Replace "YOUR-CONTENT-BLOCK-API-KEY" with your Braze Content Block API Key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/MessageCenterDetailViewController.swift#L99)
