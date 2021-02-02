@@ -2,11 +2,22 @@
 
 # A Braze SDK implementiation Swift iOS Application
 
+## Table of Contents
+- [About Braze Demo](#about-braze)
+- [Content Cards](#braze-cla)
+- [In-App Messages](#open-source-license)
+- [Using the Project](#before-you-contribute)
+
+
+
+### About Braze Demo
 The focus of this application demonstrates how to decouple any dependencies on `Appboy-iOS-SDK`from the rest of your existing production code. One objective was for there to be only one `import Appboy-iOS-SDK` in the entire application.
 
 All of the Braze-related dependencies are handled in the [AppboyManager.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift) file that the existing production code calls into.
 
-In doing do, this project demonstrates the abilities of how custom objects can be represented as Content Cards.
+In doing do, this project demonstrates the abilities of how custom objects can be represented as Content Cards. This project also demonstrates how to natively customize In-App Message with subclassed `ABKInAppMessageViewControllers`.
+
+## Content Cards
 
 Objects can adopt the [ContentCardable](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/ContentCardData.swift#L9) protocol which comes with the `ContentCardData` object and an initializer.
 Upon receiving an array of `ABKContentCard` objects from the SDK, the corresponding `ABKContentCard` objects are [converted](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L174) into a `Dictionary` of metadata that are used to instantiate your custom objects.
@@ -29,10 +40,16 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 1. Content Cards that can be inserted/removed to/from an existing feed in real-time via silent push (device only)
 2. Content Cards that can be reordered in an existing feed in real-time via silent push (device only)
 
+## In-App Messages
+1. Slideup In-App Message with a modified resting point
+2. Modal In-App Message as a dynamic list
+3. Full In-App Message as a push primer with list of push tags
+
 
 # Using the Project
 1. Replace "YOUR-API-KEY" with your Braze API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L9)
 2. Replace the Appboy/Endpoint value with your Appboy endpoint [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Info.plist#L8)
-3. For an API Triggered Campaign:
+3. Replace "YOUR-CONTENT-BLOCK-API-KEY" with your Braze Content Block API Key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/MessageCenterDetailViewController.swift#L99)
+4. For an API Triggered Campaign:
     - Replace "YOUR-CAMPAIGN-API-KEY" with your Braze campaign API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/Settings/ContentCardSettingsViewController.swift#L56)
     - Replace "YOUR-CAMPAIGN-ID" with your Braze campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/ViewController/Settings/ContentCardSettingsViewController.swift#L55)
