@@ -3,10 +3,10 @@
 # A Braze SDK implementiation Swift iOS Application
 
 ## Table of Contents
-- [About Braze Demo](#about-braze)
-- [Content Cards](#braze-cla)
-- [In-App Messages](#open-source-license)
-- [Using the Project](#before-you-contribute)
+- [About Braze Demo](#about-braze-demo)
+- [Content Cards](#content-cards)
+- [In-App Messages](#in-app-messages)
+- [Using the Project](#using-the-project)
 
 
 
