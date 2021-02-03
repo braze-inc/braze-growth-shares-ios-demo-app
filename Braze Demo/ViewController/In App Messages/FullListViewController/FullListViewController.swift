@@ -14,7 +14,7 @@ class FullListViewController: FullViewController {
   @IBAction func primaryButtonTapped(_ sender: Any) {
     guard let attributeKey = inAppMessage.extras?["attribute_key"] as? String else { return }
     
-    AppboyManager.shared.setCustomAttributeWithKey(attributeKey, andArrayValue: selectedItems)
+    AppboyManager.shared.setCustomAttributeWithKey(attributeKey, andValue: selectedItems)
   }
   
   // MARK: - Variables
