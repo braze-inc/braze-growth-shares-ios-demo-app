@@ -334,6 +334,32 @@
 			path = "In App Messages";
 			sourceTree = "<group>";
 		};
+		7F1ADD3D25E198E200116E92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F96CCD025E061D7002D9AD9 /* MatchGame.swift */,
+				7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */,
+				7F96CCF225E16E98002D9AD9 /* AttemptCounter.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7F1ADD4425E198E900116E92 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F96CC9925E014EF002D9AD9 /* NotificationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		7F1ADD4B25E198EF00116E92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7F3FBEF325B0F417007715C0 /* ModalPickerViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,13 +501,11 @@
 		7F96CC9825E014EF002D9AD9 /* Braze Demo Match Game Content Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7F96CC9925E014EF002D9AD9 /* NotificationViewController.swift */,
-				7F96CCD025E061D7002D9AD9 /* MatchGame.swift */,
-				7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */,
-				7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */,
+				7F1ADD3D25E198E200116E92 /* Model */,
+				7F1ADD4425E198E900116E92 /* ViewController */,
+				7F1ADD4B25E198EF00116E92 /* View */,
 				7F96CC9B25E014EF002D9AD9 /* MainInterface.storyboard */,
 				7F96CC9E25E014F0002D9AD9 /* Info.plist */,
-				7F96CCF225E16E98002D9AD9 /* AttemptCounter.swift */,
 			);
 			path = "Braze Demo Match Game Content Extension";
 			sourceTree = "<group>";
