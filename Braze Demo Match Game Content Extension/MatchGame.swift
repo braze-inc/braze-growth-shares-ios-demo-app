@@ -1,12 +1,13 @@
 protocol MatchGameDelegate: class {
   func cardsDidLoad(_ cards: [MatchCard])
-  func didCardsMatch(_ didMatch: Bool, indicies: [Int])
+  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int])
 }
 
 struct MatchGame {
   
   // MARK: - Variables
   private var cards = [MatchCard]()
+  private var cardTypes = [CardType]()
   private var flippedIndicies = [Int]() // array represents the 2 flipped cards
   private var matchedIndicies = [Int]() // array represents the matched pairs
   private weak var delegate: MatchGameDelegate?
@@ -16,16 +17,18 @@ struct MatchGame {
   }
   
   mutating func configureGame(cardTypes: [CardType], delegate: MatchGameDelegate? = nil) {
+    self.cardTypes = cardTypes
     self.delegate = delegate
     
-    for type in cardTypes {
-      let card = MatchCard(type: type)
-      cards.append(card)
-      cards.append(card)
-    }
-    randomizeCards()
+    loadCards(from: cardTypes)
+  }
+  
+  mutating func playAgain() {
+    cards.removeAll()
+    flippedIndicies.removeAll()
+    matchedIndicies.removeAll()
     
-    delegate?.cardsDidLoad(cards)
+    loadCards(from: cardTypes)
   }
   
   mutating func cardFlipped(at index: Int) {
@@ -55,6 +58,17 @@ private extension MatchGame {
     cards.shuffle()
     cards.shuffle()
     cards.shuffle()
+  }
+  
+  mutating func loadCards(from cardTypes: [CardType]) {
+    for type in cardTypes {
+      let card = MatchCard(type: type)
+      cards.append(card)
+      cards.append(card)
+    }
+    randomizeCards()
+    
+    delegate?.cardsDidLoad(cards)
   }
   
   func isMatched() -> Bool {

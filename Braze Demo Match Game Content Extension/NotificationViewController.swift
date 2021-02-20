@@ -7,8 +7,16 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   // MARK: - Outlets
   @IBOutlet private var cardViews: [MatchCardView]!
   @IBOutlet private var cardButtons: [UIButton]!
-  @IBOutlet private weak var gameOverLabel: UILabel!
+  @IBOutlet weak var playAgainButton: UIButton!
   
+  @IBAction func playAgainPressed(_ sender: UIButton) {
+    matchGame.playAgain()
+    playAgainButton.isHidden = true
+    cardViews.forEach {
+      $0.flipCard()
+      $0.alpha = 1.0
+    }
+  }
   // MARK: - Variables
   private var matchGame = MatchGame()
   var lockBoard = false {
@@ -31,11 +39,11 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
 // MARK: - MatchGame Delegate
 extension NotificationViewController: MatchGameDelegate {
-  func didCardsMatch(_ didMatch: Bool, indicies: [Int]) {
+  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int]) {
     disableBoard()
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-      didMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
+      didCardsMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
       self.enableBoard()
     }
   }
@@ -60,7 +68,7 @@ private extension NotificationViewController {
       self.cardViews[index].alpha = 0.0
     } completion: { _ in
       if self.matchGame.noMatchesLeft {
-        self.displayIsGameOverText()
+        self.displayPlayAgainText()
       }
     }
   }
@@ -77,8 +85,8 @@ private extension NotificationViewController {
     lockBoard = false
   }
   
-  func displayIsGameOverText() {
-    gameOverLabel.text = gameOverString()
+  func displayPlayAgainText() {
+    playAgainButton.isHidden = false
   }
 }
 
@@ -88,18 +96,5 @@ extension NotificationViewController: MatchCardViewDelegate {
     if let cardIndex = cardButtons.firstIndex(of: sender) {
       matchGame.cardFlipped(at: cardIndex)
     }
-  }
-}
-
-// MARK: - Game Over String
-private extension NotificationViewController {
-  func gameOverString() -> String {
-    return """
-      🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
-
-      🎉 🎉 🎉 WINNER!! 🎉 🎉 🎉
-
-      🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
-    """
   }
 }
