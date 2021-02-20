@@ -345,25 +345,38 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULa-dx-SjZ">
+                                <rect key="frame" x="207" y="229" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="CaW-sH-fvC" secondAttribute="bottom" constant="14" id="0dD-u9-EnF"/>
                             <constraint firstItem="CaW-sH-fvC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="14" id="28c-Fm-bB7"/>
+                            <constraint firstItem="ULa-dx-SjZ" firstAttribute="centerX" secondItem="2BE-c3-nQJ" secondAttribute="centerX" id="5cV-8A-GYi"/>
+                            <constraint firstItem="ULa-dx-SjZ" firstAttribute="centerY" secondItem="2BE-c3-nQJ" secondAttribute="centerY" id="Ehk-JJ-V4R"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ULa-dx-SjZ" secondAttribute="bottom" constant="15" id="MwA-qO-aL2"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" id="bul-f8-mH4"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="cHu-1K-LmU"/>
+                            <constraint firstItem="ULa-dx-SjZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="15" id="eqL-Ni-Xj3"/>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CaW-sH-fvC" secondAttribute="trailing" constant="14" id="i7n-al-Ssu"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="ich-pr-CB4"/>
                             <constraint firstItem="CaW-sH-fvC" firstAttribute="centerX" secondItem="2BE-c3-nQJ" secondAttribute="centerX" id="npr-Bf-5zo"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ULa-dx-SjZ" secondAttribute="trailing" constant="15" id="o0l-Os-Tbl"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="bottom" secondItem="2BE-c3-nQJ" secondAttribute="bottom" id="oi5-QH-tyk"/>
                             <constraint firstItem="CaW-sH-fvC" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="80" id="tVl-A1-XlI"/>
+                            <constraint firstItem="ULa-dx-SjZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2BE-c3-nQJ" secondAttribute="top" constant="15" id="vNI-e9-GWc"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="414"/>
                     <connections>
+                        <outlet property="gameOverLabel" destination="ULa-dx-SjZ" id="Tkf-fO-Zd0"/>
                         <outletCollection property="cardViews" destination="C2G-Cd-5kY" collectionClass="NSMutableArray" id="zEJ-P2-NET"/>
                         <outletCollection property="cardViews" destination="6rK-85-DsF" collectionClass="NSMutableArray" id="d5h-vV-rcr"/>
                         <outletCollection property="cardViews" destination="GaE-yF-JFg" collectionClass="NSMutableArray" id="tjJ-jr-gzD"/>
@@ -376,6 +389,18 @@
                         <outletCollection property="cardViews" destination="pdP-le-4KY" collectionClass="NSMutableArray" id="npK-9M-lYT"/>
                         <outletCollection property="cardViews" destination="SEn-tH-0nz" collectionClass="NSMutableArray" id="b7M-5W-z4C"/>
                         <outletCollection property="cardViews" destination="SNW-H6-jNJ" collectionClass="NSMutableArray" id="sXk-tb-89E"/>
+                        <outletCollection property="cardButtons" destination="Z87-Xk-NTF" collectionClass="NSMutableArray" id="SeJ-go-GaR"/>
+                        <outletCollection property="cardButtons" destination="9uU-kV-XIR" collectionClass="NSMutableArray" id="Hfo-jd-YvY"/>
+                        <outletCollection property="cardButtons" destination="ECQ-c8-qcF" collectionClass="NSMutableArray" id="RYr-DU-ZQU"/>
+                        <outletCollection property="cardButtons" destination="BOn-xh-IYE" collectionClass="NSMutableArray" id="z9e-hq-1Mj"/>
+                        <outletCollection property="cardButtons" destination="K4g-KL-YTY" collectionClass="NSMutableArray" id="E4S-qG-Etj"/>
+                        <outletCollection property="cardButtons" destination="0tw-0f-J8e" collectionClass="NSMutableArray" id="5V6-zj-Keo"/>
+                        <outletCollection property="cardButtons" destination="VPM-va-ydq" collectionClass="NSMutableArray" id="aUu-Vr-HA5"/>
+                        <outletCollection property="cardButtons" destination="88c-iQ-ZA5" collectionClass="NSMutableArray" id="Bur-9E-5Ff"/>
+                        <outletCollection property="cardButtons" destination="N3q-Vf-qi5" collectionClass="NSMutableArray" id="V1V-TQ-jln"/>
+                        <outletCollection property="cardButtons" destination="tnK-6f-3n1" collectionClass="NSMutableArray" id="QQB-La-mmu"/>
+                        <outletCollection property="cardButtons" destination="lyB-3R-jqm" collectionClass="NSMutableArray" id="vGF-5I-8aN"/>
+                        <outletCollection property="cardButtons" destination="nuN-6M-0Um" collectionClass="NSMutableArray" id="h6Y-NK-h4j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

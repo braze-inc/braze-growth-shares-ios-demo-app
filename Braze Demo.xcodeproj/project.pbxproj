@@ -1174,6 +1174,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze Demo Match Game Content Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1182,6 +1183,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.Braze-Demo-Match-Game-Content-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -1196,6 +1198,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze Demo Match Game Content Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1204,6 +1207,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.Braze-Demo-Match-Game-Content-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

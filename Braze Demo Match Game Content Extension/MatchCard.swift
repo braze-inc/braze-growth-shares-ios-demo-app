@@ -17,4 +17,10 @@ struct MatchCard {
   }
 }
 
+extension MatchCard: Equatable {
+  static func ==(lhs: MatchCard, rhs: MatchCard) -> Bool {
+    return lhs.type == rhs.type
+  }
+}
+
 
