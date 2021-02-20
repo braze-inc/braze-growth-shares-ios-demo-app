@@ -7,6 +7,10 @@ enum CardType: String, CaseIterable {
   case rainbow
   case stunned
   case tearsOfJoy = "tears-of-joy"
+  
+  static var landscapeCases: [CardType] {
+    return [.angry, .heartEyes, .rainbow, tearsOfJoy]
+  }
 }
 
 struct MatchCard {

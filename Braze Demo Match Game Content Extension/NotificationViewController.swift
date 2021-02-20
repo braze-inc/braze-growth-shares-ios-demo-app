@@ -5,7 +5,10 @@ import UserNotificationsUI
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
   
   // MARK: - Outlets
-  @IBOutlet private var cardViews: [MatchCardView]!
+  @IBOutlet private var firstRowCardViews: [MatchCardView]!
+  @IBOutlet private var secondRowCardViews: [MatchCardView]!
+  @IBOutlet private var thirdRowCardViews: [MatchCardView]!
+  @IBOutlet private weak var stackView: UIStackView!
   @IBOutlet private weak var playAgainButton: UIButton!
   @IBOutlet private weak var bestScoreLabel: UILabel!
   @IBOutlet private weak var attemptsLabel: UILabel!
@@ -17,17 +20,30 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   
   // MARK: - Variables
   private var matchGame = MatchGame()
-  var lockBoard = false {
+  
+  private var isLandscape: Bool {
+    return traitCollection.verticalSizeClass == .compact
+  }
+  
+  private var cardViews: [MatchCardView] {
+    if isLandscape {
+      return firstRowCardViews + secondRowCardViews
+    } else {
+      return firstRowCardViews + secondRowCardViews + thirdRowCardViews
+    }
+  }
+  
+  // lock/unlock the board to avoid fast fingers, no more than 2 cards visible at a time
+  private var lockBoard = false {
     didSet {
-      // freeze/unfreeze the board to avoid fast fingers, no more than 2 cards visible
-      view.isUserInteractionEnabled = !lockBoard
+     view.isUserInteractionEnabled = !lockBoard
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    matchGame.configureGame(cardTypes: CardType.allCases, delegate: self)
+    configureBoard()
   }
   
   func didReceive(_ notification: UNNotification) {
@@ -53,13 +69,25 @@ extension NotificationViewController: MatchGameDelegate {
   
   func cardsDidNotMatch(_ indicies: [Int], currentScore: Int) {
     updateBoard(currentScore: currentScore) {
-      self.unflipCards(at: indicies)
+      self.flipUnmatchedCards(at: indicies)
     }
   }
 }
 
 // MARK: - Private Methods
 private extension NotificationViewController {
+  func configureBoard() {
+    let cardTypes = isLandscape ? CardType.landscapeCases : CardType.allCases
+    
+    if isLandscape {
+      while stackView.arrangedSubviews.count > 2 {
+        stackView.arrangedSubviews.last!.removeFromSuperview()
+      }
+    }
+    
+    matchGame.configureGame(cardTypes: cardTypes, delegate: self)
+  }
+  
   func updateBoard(currentScore: Int, animateBoard: @escaping () -> ()) {
     disableBoard()
     
@@ -84,7 +112,7 @@ private extension NotificationViewController {
     }
   }
   
-  func unflipCards(at indicies: [Int]) {
+  func flipUnmatchedCards(at indicies: [Int]) {
     indicies.forEach { self.cardViews[$0].flipCard() }
   }
   
