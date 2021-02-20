@@ -54,7 +54,6 @@
 		7F96CC9D25E014F0002D9AD9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F96CC9B25E014EF002D9AD9 /* MainInterface.storyboard */; };
 		7F96CCA125E014F0002D9AD9 /* Braze Demo Match Game Content Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F96CC9525E014EF002D9AD9 /* Braze Demo Match Game Content Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F96CCAB25E03ACE002D9AD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
-		7F96CCB325E03F64002D9AD9 /* MatchGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCB225E03F64002D9AD9 /* MatchGameView.swift */; };
 		7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */; };
 		7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */; };
 		7F96CCD125E061D7002D9AD9 /* MatchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCD025E061D7002D9AD9 /* MatchGame.swift */; };
@@ -207,7 +206,6 @@
 		7F96CC9925E014EF002D9AD9 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7F96CC9C25E014EF002D9AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7F96CC9E25E014F0002D9AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F96CCB225E03F64002D9AD9 /* MatchGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGameView.swift; sourceTree = "<group>"; };
 		7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
 		7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		7F96CCD025E061D7002D9AD9 /* MatchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGame.swift; sourceTree = "<group>"; };
@@ -477,7 +475,6 @@
 			children = (
 				7F96CC9925E014EF002D9AD9 /* NotificationViewController.swift */,
 				7F96CCD025E061D7002D9AD9 /* MatchGame.swift */,
-				7F96CCB225E03F64002D9AD9 /* MatchGameView.swift */,
 				7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */,
 				7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */,
 				7F96CC9B25E014EF002D9AD9 /* MainInterface.storyboard */,
@@ -924,7 +921,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F96CCB325E03F64002D9AD9 /* MatchGameView.swift in Sources */,
 				7F96CCD125E061D7002D9AD9 /* MatchGame.swift in Sources */,
 				7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */,
 				7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */,

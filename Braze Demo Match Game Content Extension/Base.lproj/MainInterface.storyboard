@@ -16,466 +16,366 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKw-d6-LNt" customClass="MatchGameView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="felt-background" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-Wy-IpL">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CaW-sH-fvC">
+                                <rect key="frame" x="47.5" y="80" width="319" height="320"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="felt-background" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-Wy-IpL">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
-                                    </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lEq-ae-ym3">
-                                        <rect key="frame" x="48.5" y="80" width="317" height="320"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZQx-lk-cks">
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="100"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-7Z-JgD">
-                                                <rect key="frame" x="0.0" y="0.0" width="317" height="99.5"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2G-Cd-5kY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2G-Cd-5kY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-Xk-NTF">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="C2G-Cd-5kY" eventType="touchUpInside" id="Tcb-Dv-QdQ"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="p3y-tN-Ghz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="p3y-tN-Ghz" secondAttribute="trailing" id="0wm-gi-rCT"/>
-                                                            <constraint firstAttribute="width" secondItem="C2G-Cd-5kY" secondAttribute="height" multiplier="2.5:3.5" id="4H7-gH-gLS"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Z87-Xk-NTF" secondAttribute="bottom" id="6tG-Lv-3DV"/>
-                                                            <constraint firstItem="Z87-Xk-NTF" firstAttribute="top" secondItem="C2G-Cd-5kY" secondAttribute="top" id="Q3e-qx-Odz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Z87-Xk-NTF" secondAttribute="trailing" id="VO6-2O-hsH"/>
-                                                            <constraint firstItem="p3y-tN-Ghz" firstAttribute="leading" secondItem="C2G-Cd-5kY" secondAttribute="leading" id="WbO-Dk-pit"/>
-                                                            <constraint firstAttribute="bottom" secondItem="p3y-tN-Ghz" secondAttribute="bottom" id="e7X-Ur-0h2"/>
-                                                            <constraint firstItem="p3y-tN-Ghz" firstAttribute="top" secondItem="C2G-Cd-5kY" secondAttribute="top" id="gYE-bQ-eU5"/>
-                                                            <constraint firstItem="Z87-Xk-NTF" firstAttribute="leading" secondItem="C2G-Cd-5kY" secondAttribute="leading" id="qqe-Fl-jcO"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="eOP-x9-nNY"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6uh-dF-Iyg" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="82" y="0.0" width="71" height="99.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MhN-UJ-6e9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="6uh-dF-Iyg" eventType="touchUpInside" id="rhj-sj-PuF"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="MJ8-5N-LxC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="MJ8-5N-LxC" firstAttribute="top" secondItem="6uh-dF-Iyg" secondAttribute="top" id="0tt-ST-6lP"/>
-                                                            <constraint firstItem="MJ8-5N-LxC" firstAttribute="leading" secondItem="6uh-dF-Iyg" secondAttribute="leading" id="6la-m8-xHT"/>
-                                                            <constraint firstAttribute="width" secondItem="6uh-dF-Iyg" secondAttribute="height" multiplier="2.5:3.5" id="BAE-AI-MRf"/>
-                                                            <constraint firstAttribute="bottom" secondItem="MhN-UJ-6e9" secondAttribute="bottom" id="DgO-Zl-X1Y"/>
-                                                            <constraint firstAttribute="trailing" secondItem="MJ8-5N-LxC" secondAttribute="trailing" id="ZIM-Bw-x3V"/>
-                                                            <constraint firstItem="MhN-UJ-6e9" firstAttribute="leading" secondItem="6uh-dF-Iyg" secondAttribute="leading" id="mSU-XA-0sG"/>
-                                                            <constraint firstAttribute="bottom" secondItem="MJ8-5N-LxC" secondAttribute="bottom" id="pwa-FZ-Asn"/>
-                                                            <constraint firstItem="MhN-UJ-6e9" firstAttribute="top" secondItem="6uh-dF-Iyg" secondAttribute="top" id="yRJ-Bb-udu"/>
-                                                            <constraint firstAttribute="trailing" secondItem="MhN-UJ-6e9" secondAttribute="trailing" id="yV7-8y-pUv"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="vtd-MZ-62p"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-sg-YuA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="164" y="0.0" width="71" height="99.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1hf-Yk-ttG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="qWF-sg-YuA" eventType="touchUpInside" id="3lh-tM-7uf"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="aBk-Ae-kaU">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="qWF-sg-YuA" secondAttribute="height" multiplier="2.5:3.5" id="36Q-Zc-QjS"/>
-                                                            <constraint firstItem="aBk-Ae-kaU" firstAttribute="top" secondItem="qWF-sg-YuA" secondAttribute="top" id="7AI-IZ-l87"/>
-                                                            <constraint firstAttribute="trailing" secondItem="1hf-Yk-ttG" secondAttribute="trailing" id="GX1-qc-q21"/>
-                                                            <constraint firstAttribute="bottom" secondItem="1hf-Yk-ttG" secondAttribute="bottom" id="O45-bd-1AQ"/>
-                                                            <constraint firstItem="1hf-Yk-ttG" firstAttribute="top" secondItem="qWF-sg-YuA" secondAttribute="top" id="PVa-GG-Uf3"/>
-                                                            <constraint firstItem="aBk-Ae-kaU" firstAttribute="leading" secondItem="qWF-sg-YuA" secondAttribute="leading" id="WMq-SR-0hE"/>
-                                                            <constraint firstAttribute="trailing" secondItem="aBk-Ae-kaU" secondAttribute="trailing" id="i5q-Bt-abE"/>
-                                                            <constraint firstAttribute="bottom" secondItem="aBk-Ae-kaU" secondAttribute="bottom" id="tKf-WU-QON"/>
-                                                            <constraint firstItem="1hf-Yk-ttG" firstAttribute="leading" secondItem="qWF-sg-YuA" secondAttribute="leading" id="wJN-M7-xrK"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="WNG-Or-jKb"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FEh-wm-Ih1" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="246" y="0.0" width="71" height="99.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TvF-9X-fkk">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="FEh-wm-Ih1" eventType="touchUpInside" id="w2c-Rg-6Ae"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="nbn-P9-SeD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71" height="99.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="nbn-P9-SeD" firstAttribute="leading" secondItem="FEh-wm-Ih1" secondAttribute="leading" id="XBD-Ke-7bn"/>
-                                                            <constraint firstAttribute="width" secondItem="FEh-wm-Ih1" secondAttribute="height" multiplier="2.5:3.5" id="YDb-JW-U7K"/>
-                                                            <constraint firstItem="nbn-P9-SeD" firstAttribute="top" secondItem="FEh-wm-Ih1" secondAttribute="top" id="a6h-8J-tEz"/>
-                                                            <constraint firstAttribute="trailing" secondItem="TvF-9X-fkk" secondAttribute="trailing" id="cj4-LR-cld"/>
-                                                            <constraint firstItem="TvF-9X-fkk" firstAttribute="top" secondItem="FEh-wm-Ih1" secondAttribute="top" id="h0J-1H-48p"/>
-                                                            <constraint firstItem="TvF-9X-fkk" firstAttribute="leading" secondItem="FEh-wm-Ih1" secondAttribute="leading" id="l52-d1-9XT"/>
-                                                            <constraint firstAttribute="trailing" secondItem="nbn-P9-SeD" secondAttribute="trailing" id="ujz-bp-x89"/>
-                                                            <constraint firstAttribute="bottom" secondItem="nbn-P9-SeD" secondAttribute="bottom" id="v8D-Te-rlV"/>
-                                                            <constraint firstAttribute="bottom" secondItem="TvF-9X-fkk" secondAttribute="bottom" id="xvA-I2-k9c"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="H6h-6h-bUR"/>
-                                                        </connections>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="FEh-wm-Ih1" firstAttribute="width" secondItem="FEh-wm-Ih1" secondAttribute="height" multiplier="2.5:3.5" id="Vzn-zI-a9D"/>
-                                                    <constraint firstItem="qWF-sg-YuA" firstAttribute="width" secondItem="qWF-sg-YuA" secondAttribute="height" multiplier="2.5:3.5" id="XTc-ve-7nA"/>
-                                                    <constraint firstItem="qWF-sg-YuA" firstAttribute="width" secondItem="qWF-sg-YuA" secondAttribute="height" multiplier="2.5:3.5" id="guk-3c-cla"/>
-                                                    <constraint firstItem="6uh-dF-Iyg" firstAttribute="width" secondItem="6uh-dF-Iyg" secondAttribute="height" multiplier="2.5:3.5" id="nea-vL-IzH"/>
-                                                    <constraint firstItem="FEh-wm-Ih1" firstAttribute="width" secondItem="FEh-wm-Ih1" secondAttribute="height" multiplier="2.5:3.5" id="oPx-Cl-AKH"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4bC-rP-8PN">
-                                                <rect key="frame" x="0.0" y="109.5" width="317" height="100"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpU-03-2CO" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-Xk-NTF">
                                                         <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMn-yW-BUP">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="qpU-03-2CO" eventType="touchUpInside" id="FRA-Xj-Grn"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="4Ky-mf-oqf">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="4Ky-mf-oqf" firstAttribute="leading" secondItem="qpU-03-2CO" secondAttribute="leading" id="Ahg-py-Dv1"/>
-                                                            <constraint firstAttribute="bottom" secondItem="yMn-yW-BUP" secondAttribute="bottom" id="Crx-MH-8Zb"/>
-                                                            <constraint firstItem="yMn-yW-BUP" firstAttribute="leading" secondItem="qpU-03-2CO" secondAttribute="leading" id="Lwk-9N-3yV"/>
-                                                            <constraint firstAttribute="bottom" secondItem="4Ky-mf-oqf" secondAttribute="bottom" id="MUd-Dg-c7m"/>
-                                                            <constraint firstAttribute="trailing" secondItem="yMn-yW-BUP" secondAttribute="trailing" id="MWc-B0-gmt"/>
-                                                            <constraint firstItem="4Ky-mf-oqf" firstAttribute="top" secondItem="qpU-03-2CO" secondAttribute="top" id="fuP-wy-IBe"/>
-                                                            <constraint firstAttribute="trailing" secondItem="4Ky-mf-oqf" secondAttribute="trailing" id="jkl-Um-Kga"/>
-                                                            <constraint firstItem="yMn-yW-BUP" firstAttribute="top" secondItem="qpU-03-2CO" secondAttribute="top" id="vY4-um-mou"/>
-                                                            <constraint firstAttribute="width" secondItem="qpU-03-2CO" secondAttribute="height" multiplier="2.5:3.5" id="vvx-y3-3g1"/>
-                                                        </constraints>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="YUe-ER-bPI"/>
+                                                            <action selector="cardTapped:" destination="C2G-Cd-5kY" eventType="touchUpInside" id="Tcb-Dv-QdQ"/>
                                                         </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlN-nA-hoo" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="82" y="0.0" width="71.5" height="100"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o49-5g-Ysj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="XlN-nA-hoo" eventType="touchUpInside" id="nY4-3G-FVP"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="9ez-Zm-nLV">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="XlN-nA-hoo" secondAttribute="height" multiplier="2.5:3.5" id="ALk-js-KI1"/>
-                                                            <constraint firstAttribute="trailing" secondItem="o49-5g-Ysj" secondAttribute="trailing" id="PVO-vv-EQQ"/>
-                                                            <constraint firstItem="9ez-Zm-nLV" firstAttribute="top" secondItem="XlN-nA-hoo" secondAttribute="top" id="YZO-b7-1Wy"/>
-                                                            <constraint firstAttribute="bottom" secondItem="9ez-Zm-nLV" secondAttribute="bottom" id="e38-Wd-5Pk"/>
-                                                            <constraint firstItem="o49-5g-Ysj" firstAttribute="leading" secondItem="XlN-nA-hoo" secondAttribute="leading" id="o7m-Yz-Uvx"/>
-                                                            <constraint firstItem="o49-5g-Ysj" firstAttribute="top" secondItem="XlN-nA-hoo" secondAttribute="top" id="oaT-Af-WwN"/>
-                                                            <constraint firstItem="9ez-Zm-nLV" firstAttribute="leading" secondItem="XlN-nA-hoo" secondAttribute="leading" id="sTW-qY-fcq"/>
-                                                            <constraint firstAttribute="trailing" secondItem="9ez-Zm-nLV" secondAttribute="trailing" id="uf3-CB-wNh"/>
-                                                            <constraint firstAttribute="bottom" secondItem="o49-5g-Ysj" secondAttribute="bottom" id="vam-xt-ljq"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="0YO-TA-TAb"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mjo-Qr-hHp" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="163.5" y="0.0" width="71.5" height="100"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RmU-Y9-JYx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="mjo-Qr-hHp" eventType="touchUpInside" id="XsF-oL-f6K"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="mwK-wm-Pek">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="mwK-wm-Pek" firstAttribute="top" secondItem="mjo-Qr-hHp" secondAttribute="top" id="5Zq-c6-7ec"/>
-                                                            <constraint firstItem="RmU-Y9-JYx" firstAttribute="leading" secondItem="mjo-Qr-hHp" secondAttribute="leading" id="F8e-RL-E9X"/>
-                                                            <constraint firstAttribute="trailing" secondItem="mwK-wm-Pek" secondAttribute="trailing" id="GBz-EU-ldd"/>
-                                                            <constraint firstAttribute="bottom" secondItem="mwK-wm-Pek" secondAttribute="bottom" id="Glb-G3-8Vk"/>
-                                                            <constraint firstItem="mwK-wm-Pek" firstAttribute="leading" secondItem="mjo-Qr-hHp" secondAttribute="leading" id="HCV-mJ-GjC"/>
-                                                            <constraint firstAttribute="width" secondItem="mjo-Qr-hHp" secondAttribute="height" multiplier="2.5:3.5" id="bHP-nL-VCh"/>
-                                                            <constraint firstItem="RmU-Y9-JYx" firstAttribute="top" secondItem="mjo-Qr-hHp" secondAttribute="top" id="eZ8-OJ-My0"/>
-                                                            <constraint firstAttribute="bottom" secondItem="RmU-Y9-JYx" secondAttribute="bottom" id="wAN-ox-N4v"/>
-                                                            <constraint firstAttribute="trailing" secondItem="RmU-Y9-JYx" secondAttribute="trailing" id="xIc-Jz-bRf"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="ejp-Dx-mKz"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rQ-ta-iXU" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="245.5" y="0.0" width="71.5" height="100"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BD8-0g-JYG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="6rQ-ta-iXU" eventType="touchUpInside" id="WE7-Vi-Vu8"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="U1Q-O7-eqx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="U1Q-O7-eqx" secondAttribute="bottom" id="3My-z4-Tp1"/>
-                                                            <constraint firstItem="U1Q-O7-eqx" firstAttribute="leading" secondItem="6rQ-ta-iXU" secondAttribute="leading" id="LBU-V5-q0w"/>
-                                                            <constraint firstAttribute="width" secondItem="6rQ-ta-iXU" secondAttribute="height" multiplier="2.5:3.5" id="TBl-gT-WXF"/>
-                                                            <constraint firstAttribute="trailing" secondItem="BD8-0g-JYG" secondAttribute="trailing" id="W7f-T8-KO1"/>
-                                                            <constraint firstAttribute="bottom" secondItem="BD8-0g-JYG" secondAttribute="bottom" id="aHl-jJ-mEX"/>
-                                                            <constraint firstItem="BD8-0g-JYG" firstAttribute="top" secondItem="6rQ-ta-iXU" secondAttribute="top" id="fso-p3-z5v"/>
-                                                            <constraint firstItem="U1Q-O7-eqx" firstAttribute="top" secondItem="6rQ-ta-iXU" secondAttribute="top" id="hzU-Eq-TW2"/>
-                                                            <constraint firstAttribute="trailing" secondItem="U1Q-O7-eqx" secondAttribute="trailing" id="kXf-9b-514"/>
-                                                            <constraint firstItem="BD8-0g-JYG" firstAttribute="leading" secondItem="6rQ-ta-iXU" secondAttribute="leading" id="l3M-6f-aOZ"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="6JI-aD-0hN"/>
-                                                        </connections>
-                                                    </view>
+                                                    </button>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="mjo-Qr-hHp" firstAttribute="width" secondItem="mjo-Qr-hHp" secondAttribute="height" multiplier="2.5:3.5" id="85W-k9-6tB"/>
-                                                    <constraint firstItem="6rQ-ta-iXU" firstAttribute="width" secondItem="6rQ-ta-iXU" secondAttribute="height" multiplier="2.5:3.5" id="KDe-qw-Kiz"/>
-                                                    <constraint firstItem="XlN-nA-hoo" firstAttribute="width" secondItem="XlN-nA-hoo" secondAttribute="height" multiplier="2.5:3.5" id="U8z-b4-8LD"/>
+                                                    <constraint firstAttribute="width" secondItem="C2G-Cd-5kY" secondAttribute="height" multiplier="2.5:3.5" id="4H7-gH-gLS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Z87-Xk-NTF" secondAttribute="bottom" id="6tG-Lv-3DV"/>
+                                                    <constraint firstItem="Z87-Xk-NTF" firstAttribute="top" secondItem="C2G-Cd-5kY" secondAttribute="top" id="Q3e-qx-Odz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Z87-Xk-NTF" secondAttribute="trailing" id="VO6-2O-hsH"/>
+                                                    <constraint firstItem="Z87-Xk-NTF" firstAttribute="leading" secondItem="C2G-Cd-5kY" secondAttribute="leading" id="qqe-Fl-jcO"/>
                                                 </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LCu-N7-DKc">
-                                                <rect key="frame" x="0.0" y="219.5" width="317" height="100.5"/>
+                                                <connections>
+                                                    <outlet property="button" destination="Z87-Xk-NTF" id="RzG-2Z-Eoh"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="fsk-mM-GVk"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rK-85-DsF" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="82.5" y="0.0" width="71.5" height="100"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sWF-x4-Jjw" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvf-h8-0xW">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="sWF-x4-Jjw" eventType="touchUpInside" id="Yo7-6b-eCS"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="hbU-lf-o7K">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="Dvf-h8-0xW" firstAttribute="leading" secondItem="sWF-x4-Jjw" secondAttribute="leading" id="6R5-yW-G3n"/>
-                                                            <constraint firstAttribute="bottom" secondItem="hbU-lf-o7K" secondAttribute="bottom" id="6cP-Tk-DtR"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Dvf-h8-0xW" secondAttribute="trailing" id="DCD-rT-eYt"/>
-                                                            <constraint firstItem="hbU-lf-o7K" firstAttribute="top" secondItem="sWF-x4-Jjw" secondAttribute="top" id="E8d-76-Q5f"/>
-                                                            <constraint firstItem="hbU-lf-o7K" firstAttribute="leading" secondItem="sWF-x4-Jjw" secondAttribute="leading" id="P4y-Ad-AMH"/>
-                                                            <constraint firstAttribute="width" secondItem="sWF-x4-Jjw" secondAttribute="height" multiplier="2.5:3.5" id="dH4-Ex-7ia"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Dvf-h8-0xW" secondAttribute="bottom" id="eUw-jB-5aa"/>
-                                                            <constraint firstAttribute="trailing" secondItem="hbU-lf-o7K" secondAttribute="trailing" id="uFW-A7-5WX"/>
-                                                            <constraint firstItem="Dvf-h8-0xW" firstAttribute="top" secondItem="sWF-x4-Jjw" secondAttribute="top" id="vKl-ch-Ssc"/>
-                                                        </constraints>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uU-kV-XIR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
                                                         <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="vK0-6N-Rx5"/>
+                                                            <action selector="cardTapped:" destination="6rK-85-DsF" eventType="touchUpInside" id="WQK-Ee-XgL"/>
                                                         </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c6V-eu-BLj" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="81.5" y="0.0" width="72" height="100.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0G-qo-0Rg">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="100.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="c6V-eu-BLj" eventType="touchUpInside" id="de1-Hw-3o8"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="vUf-my-SQi">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="100.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="vUf-my-SQi" secondAttribute="bottom" id="15G-se-y0H"/>
-                                                            <constraint firstItem="vUf-my-SQi" firstAttribute="top" secondItem="c6V-eu-BLj" secondAttribute="top" id="15n-tZ-GhP"/>
-                                                            <constraint firstAttribute="width" secondItem="c6V-eu-BLj" secondAttribute="height" multiplier="2.5:3.5" id="CSK-P9-iud"/>
-                                                            <constraint firstItem="P0G-qo-0Rg" firstAttribute="leading" secondItem="c6V-eu-BLj" secondAttribute="leading" id="Sso-Pr-yMK"/>
-                                                            <constraint firstAttribute="trailing" secondItem="P0G-qo-0Rg" secondAttribute="trailing" id="T0E-mo-cqM"/>
-                                                            <constraint firstAttribute="bottom" secondItem="P0G-qo-0Rg" secondAttribute="bottom" id="bNY-ZL-EvL"/>
-                                                            <constraint firstAttribute="trailing" secondItem="vUf-my-SQi" secondAttribute="trailing" id="key-8C-IbJ"/>
-                                                            <constraint firstItem="P0G-qo-0Rg" firstAttribute="top" secondItem="c6V-eu-BLj" secondAttribute="top" id="mPX-3W-FMB"/>
-                                                            <constraint firstItem="vUf-my-SQi" firstAttribute="leading" secondItem="c6V-eu-BLj" secondAttribute="leading" id="rNs-yl-A4W"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="T8t-57-lcl"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNr-Oh-6sC" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="163.5" y="0.0" width="72" height="100.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lEY-Ut-aA1">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="100.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="iNr-Oh-6sC" eventType="touchUpInside" id="z0t-T6-cc0"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="6HD-6D-Zjp">
-                                                                <rect key="frame" x="0.0" y="0.0" width="72" height="100.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstItem="lEY-Ut-aA1" firstAttribute="leading" secondItem="iNr-Oh-6sC" secondAttribute="leading" id="2rD-1l-f2I"/>
-                                                            <constraint firstAttribute="bottom" secondItem="lEY-Ut-aA1" secondAttribute="bottom" id="8V9-mx-tZ5"/>
-                                                            <constraint firstItem="6HD-6D-Zjp" firstAttribute="leading" secondItem="iNr-Oh-6sC" secondAttribute="leading" id="8jG-jm-Njl"/>
-                                                            <constraint firstAttribute="trailing" secondItem="6HD-6D-Zjp" secondAttribute="trailing" id="93C-a4-fcd"/>
-                                                            <constraint firstItem="lEY-Ut-aA1" firstAttribute="top" secondItem="iNr-Oh-6sC" secondAttribute="top" id="b2L-pJ-NIG"/>
-                                                            <constraint firstItem="6HD-6D-Zjp" firstAttribute="top" secondItem="iNr-Oh-6sC" secondAttribute="top" id="bdd-dR-PCg"/>
-                                                            <constraint firstAttribute="bottom" secondItem="6HD-6D-Zjp" secondAttribute="bottom" id="jMD-Rr-fro"/>
-                                                            <constraint firstAttribute="width" secondItem="iNr-Oh-6sC" secondAttribute="height" multiplier="2.5:3.5" id="w3c-e9-qif"/>
-                                                            <constraint firstAttribute="trailing" secondItem="lEY-Ut-aA1" secondAttribute="trailing" id="yWK-6i-4Wf"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="mWW-aI-4tr"/>
-                                                        </connections>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JmG-XC-QBC" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                        <rect key="frame" x="245.5" y="0.0" width="71.5" height="100.5"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRx-wN-nee">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100.5"/>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                                <connections>
-                                                                    <action selector="cardTapped:" destination="JmG-XC-QBC" eventType="touchUpInside" id="IIf-D4-krr"/>
-                                                                </connections>
-                                                            </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card-background" translatesAutoresizingMaskIntoConstraints="NO" id="iIj-ii-FLw">
-                                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100.5"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="bottom" secondItem="iIj-ii-FLw" secondAttribute="bottom" id="5xp-ss-hrW"/>
-                                                            <constraint firstAttribute="bottom" secondItem="oRx-wN-nee" secondAttribute="bottom" id="7Hh-a2-bOm"/>
-                                                            <constraint firstAttribute="trailing" secondItem="iIj-ii-FLw" secondAttribute="trailing" id="OMa-rM-sv8"/>
-                                                            <constraint firstAttribute="trailing" secondItem="oRx-wN-nee" secondAttribute="trailing" id="dfB-ih-bVl"/>
-                                                            <constraint firstItem="oRx-wN-nee" firstAttribute="top" secondItem="JmG-XC-QBC" secondAttribute="top" id="erA-Af-7b5"/>
-                                                            <constraint firstItem="iIj-ii-FLw" firstAttribute="leading" secondItem="JmG-XC-QBC" secondAttribute="leading" id="f1w-56-igr"/>
-                                                            <constraint firstAttribute="width" secondItem="JmG-XC-QBC" secondAttribute="height" multiplier="2.5:3.5" id="i7M-D5-1Vn"/>
-                                                            <constraint firstItem="iIj-ii-FLw" firstAttribute="top" secondItem="JmG-XC-QBC" secondAttribute="top" id="uRU-Al-ION"/>
-                                                            <constraint firstItem="oRx-wN-nee" firstAttribute="leading" secondItem="JmG-XC-QBC" secondAttribute="leading" id="yHZ-1C-33f"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="aKw-d6-LNt" id="NZi-aj-Btn"/>
-                                                        </connections>
-                                                    </view>
+                                                    </button>
                                                 </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="JmG-XC-QBC" firstAttribute="width" secondItem="JmG-XC-QBC" secondAttribute="height" multiplier="2.5:3.5" id="4JY-gm-kfq"/>
-                                                    <constraint firstItem="iNr-Oh-6sC" firstAttribute="width" secondItem="iNr-Oh-6sC" secondAttribute="height" multiplier="2.5:3.5" id="F9E-sE-pK4"/>
-                                                    <constraint firstItem="c6V-eu-BLj" firstAttribute="width" secondItem="c6V-eu-BLj" secondAttribute="height" multiplier="2.5:3.5" id="WB9-zQ-Ws7"/>
+                                                    <constraint firstAttribute="bottom" secondItem="9uU-kV-XIR" secondAttribute="bottom" id="1bd-dV-Coz"/>
+                                                    <constraint firstItem="9uU-kV-XIR" firstAttribute="leading" secondItem="6rK-85-DsF" secondAttribute="leading" id="D6K-ck-Pbv"/>
+                                                    <constraint firstItem="9uU-kV-XIR" firstAttribute="top" secondItem="6rK-85-DsF" secondAttribute="top" id="fQO-O3-twQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="9uU-kV-XIR" secondAttribute="trailing" id="pix-Y0-CtV"/>
                                                 </constraints>
-                                            </stackView>
+                                                <connections>
+                                                    <outlet property="button" destination="9uU-kV-XIR" id="7Kg-d8-CAa"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="L9z-lA-SGy"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaE-yF-JFg" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-c8-qcF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="GaE-yF-JFg" eventType="touchUpInside" id="GhY-Z5-Kpb"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ECQ-c8-qcF" secondAttribute="trailing" id="CLv-7V-VlI"/>
+                                                    <constraint firstItem="ECQ-c8-qcF" firstAttribute="leading" secondItem="GaE-yF-JFg" secondAttribute="leading" id="cBd-c3-D1d"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ECQ-c8-qcF" secondAttribute="bottom" id="gBH-4t-72d"/>
+                                                    <constraint firstItem="ECQ-c8-qcF" firstAttribute="top" secondItem="GaE-yF-JFg" secondAttribute="top" id="hw3-BL-Qfn"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="ECQ-c8-qcF" id="cSM-0t-yEN"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="39G-hV-lym"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-sb-pF6" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="247.5" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-xh-IYE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="2Zo-sb-pF6" eventType="touchUpInside" id="TZe-ZZ-ZsK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="BOn-xh-IYE" firstAttribute="top" secondItem="2Zo-sb-pF6" secondAttribute="top" id="5fp-HS-s2R"/>
+                                                    <constraint firstItem="BOn-xh-IYE" firstAttribute="leading" secondItem="2Zo-sb-pF6" secondAttribute="leading" id="7Up-g7-fTL"/>
+                                                    <constraint firstAttribute="bottom" secondItem="BOn-xh-IYE" secondAttribute="bottom" id="ZBL-oE-TTd"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BOn-xh-IYE" secondAttribute="trailing" id="zYk-g0-BZi"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="BOn-xh-IYE" id="5NP-7F-Qd8"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="PBs-jJ-ubv"/>
+                                                </connections>
+                                            </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="GaE-yF-JFg" firstAttribute="width" secondItem="GaE-yF-JFg" secondAttribute="height" multiplier="2.5:3.5" id="PYc-VD-2Bj"/>
+                                            <constraint firstItem="6rK-85-DsF" firstAttribute="width" secondItem="6rK-85-DsF" secondAttribute="height" multiplier="2.5:3.5" id="XXs-fT-cEY"/>
+                                            <constraint firstItem="2Zo-sb-pF6" firstAttribute="width" secondItem="2Zo-sb-pF6" secondAttribute="height" multiplier="2.5:3.5" id="hnm-HA-3RO"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="8CW-w4-4XN">
+                                        <rect key="frame" x="0.0" y="110" width="319" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-JM-H6I" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-KL-YTY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="K5j-JM-H6I" eventType="touchUpInside" id="SHB-f4-rzm"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="K5j-JM-H6I" secondAttribute="height" multiplier="2.5:3.5" id="55c-nr-RT4"/>
+                                                    <constraint firstAttribute="bottom" secondItem="K4g-KL-YTY" secondAttribute="bottom" id="UNM-gm-AgP"/>
+                                                    <constraint firstAttribute="trailing" secondItem="K4g-KL-YTY" secondAttribute="trailing" id="bD9-Qz-dS5"/>
+                                                    <constraint firstItem="K4g-KL-YTY" firstAttribute="top" secondItem="K5j-JM-H6I" secondAttribute="top" id="dfg-Z4-qOw"/>
+                                                    <constraint firstItem="K4g-KL-YTY" firstAttribute="leading" secondItem="K5j-JM-H6I" secondAttribute="leading" id="tUy-1P-DmL"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="K4g-KL-YTY" id="dM1-Yz-I1s"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="g5K-Qj-nSG"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqO-Mb-DIA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="82.5" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tw-0f-J8e">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="JqO-Mb-DIA" eventType="touchUpInside" id="cZ6-QX-PM8"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="0tw-0f-J8e" secondAttribute="bottom" id="iim-ik-kF4"/>
+                                                    <constraint firstItem="0tw-0f-J8e" firstAttribute="top" secondItem="JqO-Mb-DIA" secondAttribute="top" id="jf4-lP-a81"/>
+                                                    <constraint firstAttribute="trailing" secondItem="0tw-0f-J8e" secondAttribute="trailing" id="opg-hJ-6bw"/>
+                                                    <constraint firstItem="0tw-0f-J8e" firstAttribute="leading" secondItem="JqO-Mb-DIA" secondAttribute="leading" id="wjk-WS-H8P"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="0tw-0f-J8e" id="eiE-hd-Opi"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="D1u-3P-MEA"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2h-4v-2RS" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPM-va-ydq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="a2h-4v-2RS" eventType="touchUpInside" id="BhN-WR-7cK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="VPM-va-ydq" firstAttribute="top" secondItem="a2h-4v-2RS" secondAttribute="top" id="AZI-It-otR"/>
+                                                    <constraint firstItem="VPM-va-ydq" firstAttribute="leading" secondItem="a2h-4v-2RS" secondAttribute="leading" id="VLg-PJ-GGD"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VPM-va-ydq" secondAttribute="trailing" id="WlL-Co-NQg"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VPM-va-ydq" secondAttribute="bottom" id="oHK-RT-pIC"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="VPM-va-ydq" id="GgN-YM-osF"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="0Xi-iz-lDE"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et3-SB-D7i" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="247.5" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88c-iQ-ZA5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="et3-SB-D7i" eventType="touchUpInside" id="lqG-bI-nFN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="88c-iQ-ZA5" firstAttribute="leading" secondItem="et3-SB-D7i" secondAttribute="leading" id="32r-0E-mfX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="88c-iQ-ZA5" secondAttribute="trailing" id="A0M-en-h3h"/>
+                                                    <constraint firstAttribute="bottom" secondItem="88c-iQ-ZA5" secondAttribute="bottom" id="cz5-O5-kli"/>
+                                                    <constraint firstItem="88c-iQ-ZA5" firstAttribute="top" secondItem="et3-SB-D7i" secondAttribute="top" id="suT-L0-Woz"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="88c-iQ-ZA5" id="Et1-m7-xrS"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="F3P-b5-B6x"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="et3-SB-D7i" firstAttribute="width" secondItem="et3-SB-D7i" secondAttribute="height" multiplier="2.5:3.5" id="Zyb-7h-LwN"/>
+                                            <constraint firstItem="JqO-Mb-DIA" firstAttribute="width" secondItem="JqO-Mb-DIA" secondAttribute="height" multiplier="2.5:3.5" id="vLb-Bi-JGg"/>
+                                            <constraint firstItem="a2h-4v-2RS" firstAttribute="width" secondItem="a2h-4v-2RS" secondAttribute="height" multiplier="2.5:3.5" id="vSf-ql-2l1"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-RT-PgA">
+                                        <rect key="frame" x="0.0" y="220" width="319" height="100"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kY-h6-ozA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3q-Vf-qi5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="4kY-h6-ozA" eventType="touchUpInside" id="BWb-kW-Rct"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="N3q-Vf-qi5" firstAttribute="leading" secondItem="4kY-h6-ozA" secondAttribute="leading" id="7nY-Bq-rlw"/>
+                                                    <constraint firstAttribute="trailing" secondItem="N3q-Vf-qi5" secondAttribute="trailing" id="JnK-FT-a24"/>
+                                                    <constraint firstAttribute="bottom" secondItem="N3q-Vf-qi5" secondAttribute="bottom" id="W5Y-KC-Qcv"/>
+                                                    <constraint firstAttribute="width" secondItem="4kY-h6-ozA" secondAttribute="height" multiplier="2.5:3.5" id="Yef-Oa-aBT"/>
+                                                    <constraint firstItem="N3q-Vf-qi5" firstAttribute="top" secondItem="4kY-h6-ozA" secondAttribute="top" id="h5p-cF-jDT"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="N3q-Vf-qi5" id="Tfy-a3-QQl"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="iSZ-ur-iUo"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdP-le-4KY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="82.5" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnK-6f-3n1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="pdP-le-4KY" eventType="touchUpInside" id="bmE-Qz-cRe"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="tnK-6f-3n1" secondAttribute="trailing" id="6kI-a5-bYw"/>
+                                                    <constraint firstItem="tnK-6f-3n1" firstAttribute="top" secondItem="pdP-le-4KY" secondAttribute="top" id="TPF-4m-J0q"/>
+                                                    <constraint firstItem="tnK-6f-3n1" firstAttribute="leading" secondItem="pdP-le-4KY" secondAttribute="leading" id="jjX-DC-RjR"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tnK-6f-3n1" secondAttribute="bottom" id="zDa-Ro-4OU"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="tnK-6f-3n1" id="4Li-uY-Kh0"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="COT-5i-6UV"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-tH-0nz" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="165" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyB-3R-jqm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="SEn-tH-0nz" eventType="touchUpInside" id="32M-9X-dwK"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="lyB-3R-jqm" secondAttribute="bottom" id="CTv-KK-glA"/>
+                                                    <constraint firstItem="lyB-3R-jqm" firstAttribute="top" secondItem="SEn-tH-0nz" secondAttribute="top" id="VZe-AD-Fx6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="lyB-3R-jqm" secondAttribute="trailing" id="WVO-Vf-qIc"/>
+                                                    <constraint firstItem="lyB-3R-jqm" firstAttribute="leading" secondItem="SEn-tH-0nz" secondAttribute="leading" id="bUs-fT-Zcr"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="lyB-3R-jqm" id="Qks-5K-7zi"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="5mF-id-XLN"/>
+                                                </connections>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNW-H6-jNJ" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
+                                                <rect key="frame" x="247.5" y="0.0" width="71.5" height="100"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuN-6M-0Um">
+                                                        <rect key="frame" x="0.0" y="0.0" width="71.5" height="100"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <state key="normal" image="card-background"/>
+                                                        <connections>
+                                                            <action selector="cardTapped:" destination="SNW-H6-jNJ" eventType="touchUpInside" id="a54-Cm-JC6"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="nuN-6M-0Um" firstAttribute="top" secondItem="SNW-H6-jNJ" secondAttribute="top" id="D0a-tf-IMs"/>
+                                                    <constraint firstItem="nuN-6M-0Um" firstAttribute="leading" secondItem="SNW-H6-jNJ" secondAttribute="leading" id="JmS-Ew-Frm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="nuN-6M-0Um" secondAttribute="trailing" id="Tn5-Wm-rHX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nuN-6M-0Um" secondAttribute="bottom" id="vVh-F7-TUt"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="button" destination="nuN-6M-0Um" id="cAP-wB-9wx"/>
+                                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="tDh-gh-lVV"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="pdP-le-4KY" firstAttribute="width" secondItem="pdP-le-4KY" secondAttribute="height" multiplier="2.5:3.5" id="R6i-Xo-jwT"/>
+                                            <constraint firstItem="SNW-H6-jNJ" firstAttribute="width" secondItem="SNW-H6-jNJ" secondAttribute="height" multiplier="2.5:3.5" id="ks0-ns-ues"/>
+                                            <constraint firstItem="SEn-tH-0nz" firstAttribute="width" secondItem="SEn-tH-0nz" secondAttribute="height" multiplier="2.5:3.5" id="wi3-78-1zR"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="xtf-Wy-IpL" secondAttribute="trailing" id="82m-hf-ZLi"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="lEq-ae-ym3" secondAttribute="trailing" constant="14" id="9zE-72-dvE"/>
-                                    <constraint firstItem="lEq-ae-ym3" firstAttribute="top" secondItem="aKw-d6-LNt" secondAttribute="top" constant="80" id="ZYt-OZ-Qve"/>
-                                    <constraint firstAttribute="bottom" secondItem="xtf-Wy-IpL" secondAttribute="bottom" id="Zfp-fO-9tu"/>
-                                    <constraint firstItem="lEq-ae-ym3" firstAttribute="centerX" secondItem="aKw-d6-LNt" secondAttribute="centerX" id="adc-4O-TSq"/>
-                                    <constraint firstAttribute="bottom" secondItem="lEq-ae-ym3" secondAttribute="bottom" constant="14" id="bCN-fc-wQm"/>
-                                    <constraint firstItem="lEq-ae-ym3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aKw-d6-LNt" secondAttribute="leading" constant="14" id="dUn-mu-1eg"/>
-                                    <constraint firstItem="xtf-Wy-IpL" firstAttribute="top" secondItem="aKw-d6-LNt" secondAttribute="top" id="emg-Qg-c6P"/>
-                                    <constraint firstItem="xtf-Wy-IpL" firstAttribute="leading" secondItem="aKw-d6-LNt" secondAttribute="leading" id="wr1-Us-ewx"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="cardButtons" destination="Z87-Xk-NTF" collectionClass="NSMutableArray" id="69S-Gw-R4b"/>
-                                    <outletCollection property="cardButtons" destination="MhN-UJ-6e9" collectionClass="NSMutableArray" id="3Hw-9c-Rmf"/>
-                                    <outletCollection property="cardButtons" destination="1hf-Yk-ttG" collectionClass="NSMutableArray" id="wgZ-Jv-LBj"/>
-                                    <outletCollection property="cardButtons" destination="TvF-9X-fkk" collectionClass="NSMutableArray" id="o1m-jb-2gp"/>
-                                    <outletCollection property="cardButtons" destination="yMn-yW-BUP" collectionClass="NSMutableArray" id="N8k-10-kd0"/>
-                                    <outletCollection property="cardButtons" destination="o49-5g-Ysj" collectionClass="NSMutableArray" id="yg6-e4-4oL"/>
-                                    <outletCollection property="cardButtons" destination="RmU-Y9-JYx" collectionClass="NSMutableArray" id="3xn-vO-4ra"/>
-                                    <outletCollection property="cardButtons" destination="BD8-0g-JYG" collectionClass="NSMutableArray" id="KRl-1D-DuL"/>
-                                    <outletCollection property="cardButtons" destination="Dvf-h8-0xW" collectionClass="NSMutableArray" id="1X9-o1-kox"/>
-                                    <outletCollection property="cardButtons" destination="P0G-qo-0Rg" collectionClass="NSMutableArray" id="OAV-Lj-dcJ"/>
-                                    <outletCollection property="cardButtons" destination="lEY-Ut-aA1" collectionClass="NSMutableArray" id="rWy-S2-HKx"/>
-                                    <outletCollection property="cardButtons" destination="oRx-wN-nee" collectionClass="NSMutableArray" id="Tly-eb-wkJ"/>
-                                </connections>
-                            </view>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="aKw-d6-LNt" secondAttribute="bottom" id="5U2-wi-pIF"/>
-                            <constraint firstItem="aKw-d6-LNt" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="P4h-WU-oaO"/>
-                            <constraint firstItem="aKw-d6-LNt" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="bKX-KS-o1m"/>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="aKw-d6-LNt" secondAttribute="trailing" id="fh6-Ml-4XP"/>
-                            <constraint firstAttribute="trailing" secondItem="aKw-d6-LNt" secondAttribute="trailing" id="hxa-Cz-otF"/>
-                            <constraint firstItem="aKw-d6-LNt" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="zZg-Qu-GcE"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="CaW-sH-fvC" secondAttribute="bottom" constant="14" id="0dD-u9-EnF"/>
+                            <constraint firstItem="CaW-sH-fvC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="14" id="28c-Fm-bB7"/>
+                            <constraint firstItem="xtf-Wy-IpL" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" id="bul-f8-mH4"/>
+                            <constraint firstItem="xtf-Wy-IpL" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="cHu-1K-LmU"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CaW-sH-fvC" secondAttribute="trailing" constant="14" id="i7n-al-Ssu"/>
+                            <constraint firstItem="xtf-Wy-IpL" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="ich-pr-CB4"/>
+                            <constraint firstItem="CaW-sH-fvC" firstAttribute="centerX" secondItem="2BE-c3-nQJ" secondAttribute="centerX" id="npr-Bf-5zo"/>
+                            <constraint firstItem="xtf-Wy-IpL" firstAttribute="bottom" secondItem="2BE-c3-nQJ" secondAttribute="bottom" id="oi5-QH-tyk"/>
+                            <constraint firstItem="CaW-sH-fvC" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="80" id="tVl-A1-XlI"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="414"/>
                     <connections>
-                        <outlet property="matchGameView" destination="aKw-d6-LNt" id="WMM-CR-XD7"/>
+                        <outletCollection property="cardViews" destination="C2G-Cd-5kY" collectionClass="NSMutableArray" id="zEJ-P2-NET"/>
+                        <outletCollection property="cardViews" destination="6rK-85-DsF" collectionClass="NSMutableArray" id="d5h-vV-rcr"/>
+                        <outletCollection property="cardViews" destination="GaE-yF-JFg" collectionClass="NSMutableArray" id="tjJ-jr-gzD"/>
+                        <outletCollection property="cardViews" destination="2Zo-sb-pF6" collectionClass="NSMutableArray" id="s3u-Wr-iY4"/>
+                        <outletCollection property="cardViews" destination="K5j-JM-H6I" collectionClass="NSMutableArray" id="0hQ-Ma-T9N"/>
+                        <outletCollection property="cardViews" destination="JqO-Mb-DIA" collectionClass="NSMutableArray" id="vHF-Pw-ct8"/>
+                        <outletCollection property="cardViews" destination="a2h-4v-2RS" collectionClass="NSMutableArray" id="i5q-Nu-99h"/>
+                        <outletCollection property="cardViews" destination="et3-SB-D7i" collectionClass="NSMutableArray" id="vCy-9I-s7F"/>
+                        <outletCollection property="cardViews" destination="4kY-h6-ozA" collectionClass="NSMutableArray" id="i4I-3Y-dLK"/>
+                        <outletCollection property="cardViews" destination="pdP-le-4KY" collectionClass="NSMutableArray" id="npK-9M-lYT"/>
+                        <outletCollection property="cardViews" destination="SEn-tH-0nz" collectionClass="NSMutableArray" id="b7M-5W-z4C"/>
+                        <outletCollection property="cardViews" destination="SNW-H6-jNJ" collectionClass="NSMutableArray" id="sXk-tb-89E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
