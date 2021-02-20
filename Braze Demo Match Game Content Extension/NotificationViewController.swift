@@ -6,9 +6,9 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   
   // MARK: - Outlets
   @IBOutlet private var cardViews: [MatchCardView]!
-  @IBOutlet private var cardButtons: [UIButton]!
   @IBOutlet weak var playAgainButton: UIButton!
-  
+
+  // MARK: - Actions
   @IBAction func playAgainPressed(_ sender: UIButton) {
     matchGame.playAgain()
     playAgainButton.isHidden = true
@@ -17,6 +17,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
       $0.alpha = 1.0
     }
   }
+  
   // MARK: - Variables
   private var matchGame = MatchGame()
   var lockBoard = false {
@@ -39,20 +40,20 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
 // MARK: - MatchGame Delegate
 extension NotificationViewController: MatchGameDelegate {
+  func cardsDidLoad(_ cards: [MatchCard]) {
+    guard cards.count == cardViews.count else { return }
+    
+    for (card, cardView) in zip(cards, cardViews) {
+      cardView.configureImage(card.selectedImage)
+    }
+  }
+  
   func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int]) {
     disableBoard()
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
       didCardsMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
       self.enableBoard()
-    }
-  }
-  
-  func cardsDidLoad(_ cards: [MatchCard]) {
-    guard cards.count == cardButtons.count else { return }
-    
-    for (card, button) in zip(cards, cardButtons) {
-      button.setImage(card.selectedImage, for: .selected)
     }
   }
 }
@@ -92,9 +93,7 @@ private extension NotificationViewController {
 
 // MARK: - MatchView Delegate
 extension NotificationViewController: MatchCardViewDelegate {
-  func cardTapped(sender: UIButton) {
-    if let cardIndex = cardButtons.firstIndex(of: sender) {
-      matchGame.cardFlipped(at: cardIndex)
-    }
+  func cardTapped(at index: Int) {
+    matchGame.cardFlipped(at: index)
   }
 }

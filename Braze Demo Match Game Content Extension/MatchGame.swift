@@ -8,14 +8,17 @@ struct MatchGame {
   // MARK: - Variables
   private var cards = [MatchCard]()
   private var cardTypes = [CardType]()
-  private var flippedIndicies = [Int]() // array represents the 2 flipped cards
-  private var matchedIndicies = [Int]() // array represents the matched pairs
+  private var flippedIndicies = [Int]() // represents the 2 flipped cards
+  private var matchedCardsCount = 0
   private weak var delegate: MatchGameDelegate?
   
   var noMatchesLeft: Bool {
-    return matchedIndicies.count == cards.count
+    return matchedCardsCount == cards.count
   }
-  
+}
+
+// MARK: - Public Methods
+extension MatchGame {
   mutating func configureGame(cardTypes: [CardType], delegate: MatchGameDelegate? = nil) {
     self.cardTypes = cardTypes
     self.delegate = delegate
@@ -26,7 +29,7 @@ struct MatchGame {
   mutating func playAgain() {
     cards.removeAll()
     flippedIndicies.removeAll()
-    matchedIndicies.removeAll()
+    matchedCardsCount = 0
     
     loadCards(from: cardTypes)
   }
@@ -39,7 +42,7 @@ struct MatchGame {
       delegate?.didCardsMatch(didCardsMatch, indicies: flippedIndicies)
       
       if didCardsMatch {
-        matchedIndicies.append(contentsOf: flippedIndicies)
+        matchedCardsCount += 2
       }
       
       flippedIndicies.removeAll()
@@ -49,17 +52,6 @@ struct MatchGame {
 
 // MARK: - Private Methods
 private extension MatchGame {
-  // https://www.dartmouth.edu/~chance/teaching_aids/Mann.pdf
-  mutating func randomizeCards() {
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-  }
-  
   mutating func loadCards(from cardTypes: [CardType]) {
     for type in cardTypes {
       let card = MatchCard(type: type)
@@ -69,6 +61,17 @@ private extension MatchGame {
     randomizeCards()
     
     delegate?.cardsDidLoad(cards)
+  }
+  
+  // https://www.dartmouth.edu/~chance/teaching_aids/Mann.pdf
+  mutating func randomizeCards() {
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
   }
   
   func isMatched() -> Bool {
