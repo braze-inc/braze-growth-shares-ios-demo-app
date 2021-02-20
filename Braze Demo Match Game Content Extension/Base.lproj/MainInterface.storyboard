@@ -346,18 +346,18 @@
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ShS-Ae-ItW">
-                                <rect key="frame" x="15" y="142" width="384" height="174"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                <rect key="frame" x="15" y="115.5" width="384" height="227"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <state key="normal">
-                                    <string key="title">      🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
+                                    <string key="title">🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
 
-      🎉 🎉 🎉 WINNER!! 🎉 🎉 🎉
+🎉 🎉 🎉 WINNER!! 🎉 🎉 🎉
 
-        CLICK HERE TO PLAY AGAIN
+  CLICK HERE TO PLAY AGAIN
 
-      🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
+🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
 
-      🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉</string>
+🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉</string>
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
