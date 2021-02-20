@@ -13,7 +13,7 @@ struct MatchGame {
   private var matchedCardsCount = 0
   private weak var delegate: MatchGameDelegate?
   
-  var scoreTracker = ScoreTracker()
+  private var scoreTracker = ScoreTracker()
   private var noMatchesLeft: Bool {
     return matchedCardsCount == cards.count
   }
@@ -54,8 +54,7 @@ extension MatchGame {
       delegate?.didCardsMatch(didCardsMatch, indicies: flippedIndicies, currentScore: scoreTracker.score)
       
       if noMatchesLeft {
-        scoreTracker.gameOver()
-        delegate?.gameOver(highScore: scoreTracker.highScore)
+        delegate?.gameOver(highScore: scoreTracker.getHighScore())
       }
       
       flippedIndicies.removeAll()

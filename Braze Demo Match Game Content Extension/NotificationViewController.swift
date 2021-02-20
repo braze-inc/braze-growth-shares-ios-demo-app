@@ -12,13 +12,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   
   // MARK: - Actions
   @IBAction func playAgainPressed(_ sender: UIButton) {
-    matchGame.playAgain()
-    playAgainButton.isHidden = true
-    cardViews.forEach {
-      $0.flipCard()
-      $0.alpha = 1.0
-    }
-    scoreLabel.text = "0"
+    resetGame()
   }
   
   // MARK: - Variables
@@ -47,11 +41,10 @@ extension NotificationViewController: MatchGameDelegate {
     disableBoard()
     
     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+      self.updateScore(currentScore: currentScore)
       didCardsMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
       self.enableBoard()
     }
-    
-    updateScore(currentScore: currentScore)
   }
   
   func cardsDidLoad(_ cards: [MatchCard]) {
@@ -63,9 +56,10 @@ extension NotificationViewController: MatchGameDelegate {
   }
   
   func gameOver(highScore: Int) {
-    highScoreLabel.text = String(highScore)
-    
-    self.displayPlayAgainText()
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+      self.highScoreLabel.text = String(highScore)
+      self.displayPlayAgainText()
+    }
   }
 }
 
@@ -100,6 +94,16 @@ private extension NotificationViewController {
   
   func updateScore(currentScore: Int) {
     scoreLabel.text = String(currentScore)
+  }
+  
+  func resetGame() {
+    matchGame.playAgain()
+    playAgainButton.isHidden = true
+    cardViews.forEach {
+      $0.flipCard()
+      $0.alpha = 1.0
+    }
+    scoreLabel.text = "0"
   }
 }
 

@@ -13,8 +13,9 @@ struct ScoreTracker {
     matchStreak = 1
   }
   
-  mutating func gameOver() {
+  mutating func getHighScore() -> Int {
     highScore = max(highScore, score)
+    return highScore
   }
   
   mutating func reset() {
