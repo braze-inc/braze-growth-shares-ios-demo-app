@@ -1,5 +1,5 @@
-struct ScoreTracker {
-  var score = 0
+struct FlipCounter {
+  var flipCount = 0
   var highScore = 0
   var matchStreak = 1
   

@@ -20,16 +20,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-3Z-uVp" userLabel="High Score View">
-                                <rect key="frame" x="295" y="20" width="109" height="20.5"/>
+                                <rect key="frame" x="296.5" y="20" width="107.5" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnI-YQ-9Tv">
-                                        <rect key="frame" x="0.0" y="0.0" width="93" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnI-YQ-9Tv">
+                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-lX-CzY">
-                                        <rect key="frame" x="98" y="0.0" width="11" height="20.5"/>
+                                        <rect key="frame" x="96.5" y="0.0" width="11" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -47,16 +47,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-iB-F1a" userLabel="Score View">
-                                <rect key="frame" x="10" y="20" width="67.5" height="20.5"/>
+                                <rect key="frame" x="10" y="20" width="95" height="20.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-3e-HbH">
-                                        <rect key="frame" x="0.0" y="0.0" width="51.5" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-3e-HbH">
+                                        <rect key="frame" x="0.0" y="0.0" width="79" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-Wp-xDo">
-                                        <rect key="frame" x="56.5" y="0.0" width="11" height="20.5"/>
+                                        <rect key="frame" x="84" y="0.0" width="11" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -447,9 +447,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="414"/>
                     <connections>
-                        <outlet property="highScoreLabel" destination="tPJ-lX-CzY" id="ize-Ep-ays"/>
+                        <outlet property="attemptsLabel" destination="fAS-Wp-xDo" id="2IS-ah-QIF"/>
+                        <outlet property="bestScoreLabel" destination="tPJ-lX-CzY" id="ize-Ep-ays"/>
                         <outlet property="playAgainButton" destination="ShS-Ae-ItW" id="Iq0-em-EWD"/>
-                        <outlet property="scoreLabel" destination="fAS-Wp-xDo" id="2IS-ah-QIF"/>
                         <outletCollection property="cardViews" destination="C2G-Cd-5kY" collectionClass="NSMutableArray" id="zEJ-P2-NET"/>
                         <outletCollection property="cardViews" destination="6rK-85-DsF" collectionClass="NSMutableArray" id="d5h-vV-rcr"/>
                         <outletCollection property="cardViews" destination="GaE-yF-JFg" collectionClass="NSMutableArray" id="tjJ-jr-gzD"/>

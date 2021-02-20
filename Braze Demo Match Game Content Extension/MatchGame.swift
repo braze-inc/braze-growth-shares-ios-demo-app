@@ -1,7 +1,7 @@
 protocol MatchGameDelegate: class {
   func cardsDidLoad(_ cards: [MatchCard])
-  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int], currentScore: Int)
-  func gameOver(highScore: Int)
+  func cardsDidMatch(_ indicies: [Int], currentScore: Int)
+  func cardsDidNotMatch(_ indicies: [Int], currentScore: Int)
 }
 
 struct MatchGame {
@@ -13,8 +13,8 @@ struct MatchGame {
   private var matchedCardsCount = 0
   private weak var delegate: MatchGameDelegate?
   
-  private var scoreTracker = ScoreTracker()
-  private var noMatchesLeft: Bool {
+  private var attemptCounter = AttemptCounter()
+  var noMatchesLeft: Bool {
     return matchedCardsCount == cards.count
   }
 }
@@ -28,37 +28,34 @@ extension MatchGame {
     loadCards(from: cardTypes)
   }
   
-  mutating func playAgain() {
-    cards.removeAll()
-    flippedIndicies.removeAll()
-    matchedCardsCount = 0
-    scoreTracker.reset()
-    
-    loadCards(from: cardTypes)
-  }
-  
   mutating func cardFlipped(at index: Int) {
     flippedIndicies.append(index)
     
     if flippedIndicies.count == 2 {
-      let didCardsMatch = isMatched()
+      attemptCounter.increment()
       
-      if didCardsMatch {
-        scoreTracker.yesMatch()
-        
+      if isMatched() {
+        delegate?.cardsDidMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
         matchedCardsCount += 2
       } else {
-        scoreTracker.noMatch()
-      }
-      
-      delegate?.didCardsMatch(didCardsMatch, indicies: flippedIndicies, currentScore: scoreTracker.score)
-      
-      if noMatchesLeft {
-        delegate?.gameOver(highScore: scoreTracker.getHighScore())
+        delegate?.cardsDidNotMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
       }
       
       flippedIndicies.removeAll()
     }
+  }
+  
+  mutating func getHighScore() -> Int {
+    return attemptCounter.getHighScore()
+  }
+  
+  mutating func playAgain() {
+    cards.removeAll()
+    flippedIndicies.removeAll()
+    matchedCardsCount = 0
+    attemptCounter.reset()
+    
+    loadCards(from: cardTypes)
   }
 }
 

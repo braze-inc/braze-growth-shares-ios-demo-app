@@ -7,8 +7,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   // MARK: - Outlets
   @IBOutlet private var cardViews: [MatchCardView]!
   @IBOutlet private weak var playAgainButton: UIButton!
-  @IBOutlet private weak var highScoreLabel: UILabel!
-  @IBOutlet private weak var scoreLabel: UILabel!
+  @IBOutlet private weak var bestScoreLabel: UILabel!
+  @IBOutlet private weak var attemptsLabel: UILabel!
   
   // MARK: - Actions
   @IBAction func playAgainPressed(_ sender: UIButton) {
@@ -37,16 +37,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
 // MARK: - MatchGame Delegate
 extension NotificationViewController: MatchGameDelegate {
-  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int], currentScore: Int) {
-    disableBoard()
-    
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-      self.updateScore(currentScore: currentScore)
-      didCardsMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
-      self.enableBoard()
-    }
-  }
-  
   func cardsDidLoad(_ cards: [MatchCard]) {
     guard cards.count == cardViews.count else { return }
     
@@ -55,16 +45,31 @@ extension NotificationViewController: MatchGameDelegate {
     }
   }
   
-  func gameOver(highScore: Int) {
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-      self.highScoreLabel.text = String(highScore)
-      self.displayPlayAgainText()
+  func cardsDidMatch(_ indicies: [Int], currentScore: Int) {
+    updateBoard(currentScore: currentScore) {
+      self.fadeOutMatchedCards(at: indicies)
+    }
+  }
+  
+  func cardsDidNotMatch(_ indicies: [Int], currentScore: Int) {
+    updateBoard(currentScore: currentScore) {
+      self.unflipCards(at: indicies)
     }
   }
 }
 
 // MARK: - Private Methods
 private extension NotificationViewController {
+  func updateBoard(currentScore: Int, animateBoard: @escaping () -> ()) {
+    disableBoard()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+      self.updateScore(currentScore: currentScore)
+      animateBoard()
+      self.enableBoard()
+    }
+  }
+  
   func fadeOutMatchedCards(at indicies: [Int]) {
     indicies.forEach { self.fadeOutMatchedCard(at: $0) }
   }
@@ -73,6 +78,9 @@ private extension NotificationViewController {
     UIView.animate(withDuration: 0.25) {
       self.cardViews[index].alpha = 0.0
     } completion: { _ in
+      if self.matchGame.noMatchesLeft {
+        self.displayCompletedBoard()
+      }
     }
   }
   
@@ -88,12 +96,13 @@ private extension NotificationViewController {
     lockBoard = false
   }
   
-  func displayPlayAgainText() {
+  func displayCompletedBoard() {
+    bestScoreLabel.text = String(matchGame.getHighScore())
     playAgainButton.isHidden = false
   }
   
   func updateScore(currentScore: Int) {
-    scoreLabel.text = String(currentScore)
+    attemptsLabel.text = String(currentScore)
   }
   
   func resetGame() {
@@ -103,7 +112,7 @@ private extension NotificationViewController {
       $0.flipCard()
       $0.alpha = 1.0
     }
-    scoreLabel.text = "0"
+    attemptsLabel.text = "0"
   }
 }
 
