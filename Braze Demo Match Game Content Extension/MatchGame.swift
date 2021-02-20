@@ -1,6 +1,7 @@
 protocol MatchGameDelegate: class {
   func cardsDidLoad(_ cards: [MatchCard])
-  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int])
+  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int], currentScore: Int)
+  func gameOver(highScore: Int)
 }
 
 struct MatchGame {
@@ -12,7 +13,8 @@ struct MatchGame {
   private var matchedCardsCount = 0
   private weak var delegate: MatchGameDelegate?
   
-  var noMatchesLeft: Bool {
+  var scoreTracker = ScoreTracker()
+  private var noMatchesLeft: Bool {
     return matchedCardsCount == cards.count
   }
 }
@@ -30,6 +32,7 @@ extension MatchGame {
     cards.removeAll()
     flippedIndicies.removeAll()
     matchedCardsCount = 0
+    scoreTracker.reset()
     
     loadCards(from: cardTypes)
   }
@@ -39,10 +42,20 @@ extension MatchGame {
     
     if flippedIndicies.count == 2 {
       let didCardsMatch = isMatched()
-      delegate?.didCardsMatch(didCardsMatch, indicies: flippedIndicies)
       
       if didCardsMatch {
+        scoreTracker.yesMatch()
+        
         matchedCardsCount += 2
+      } else {
+        scoreTracker.noMatch()
+      }
+      
+      delegate?.didCardsMatch(didCardsMatch, indicies: flippedIndicies, currentScore: scoreTracker.score)
+      
+      if noMatchesLeft {
+        scoreTracker.gameOver()
+        delegate?.gameOver(highScore: scoreTracker.highScore)
       }
       
       flippedIndicies.removeAll()

@@ -57,6 +57,7 @@
 		7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */; };
 		7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */; };
 		7F96CCD125E061D7002D9AD9 /* MatchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCD025E061D7002D9AD9 /* MatchGame.swift */; };
+		7F96CCF325E16E99002D9AD9 /* ScoreTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCF225E16E98002D9AD9 /* ScoreTracker.swift */; };
 		7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */; };
 		7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC524AD787A00E8D207 /* Main.storyboard */; };
 		7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */; };
@@ -209,6 +210,7 @@
 		7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCardView.swift; sourceTree = "<group>"; };
 		7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCard.swift; sourceTree = "<group>"; };
 		7F96CCD025E061D7002D9AD9 /* MatchGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchGame.swift; sourceTree = "<group>"; };
+		7F96CCF225E16E98002D9AD9 /* ScoreTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreTracker.swift; sourceTree = "<group>"; };
 		7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9DCBC524AD787A00E8D207 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataCoordinator.swift; sourceTree = "<group>"; };
@@ -479,6 +481,7 @@
 				7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */,
 				7F96CC9B25E014EF002D9AD9 /* MainInterface.storyboard */,
 				7F96CC9E25E014F0002D9AD9 /* Info.plist */,
+				7F96CCF225E16E98002D9AD9 /* ScoreTracker.swift */,
 			);
 			path = "Braze Demo Match Game Content Extension";
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */,
 				7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */,
 				7F96CC9A25E014EF002D9AD9 /* NotificationViewController.swift in Sources */,
+				7F96CCF325E16E99002D9AD9 /* ScoreTracker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

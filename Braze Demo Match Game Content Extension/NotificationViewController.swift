@@ -6,8 +6,10 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   
   // MARK: - Outlets
   @IBOutlet private var cardViews: [MatchCardView]!
-  @IBOutlet weak var playAgainButton: UIButton!
-
+  @IBOutlet private weak var playAgainButton: UIButton!
+  @IBOutlet private weak var highScoreLabel: UILabel!
+  @IBOutlet private weak var scoreLabel: UILabel!
+  
   // MARK: - Actions
   @IBAction func playAgainPressed(_ sender: UIButton) {
     matchGame.playAgain()
@@ -16,6 +18,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
       $0.flipCard()
       $0.alpha = 1.0
     }
+    scoreLabel.text = "0"
   }
   
   // MARK: - Variables
@@ -40,6 +43,17 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
 // MARK: - MatchGame Delegate
 extension NotificationViewController: MatchGameDelegate {
+  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int], currentScore: Int) {
+    disableBoard()
+    
+    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+      didCardsMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
+      self.enableBoard()
+    }
+    
+    updateScore(currentScore: currentScore)
+  }
+  
   func cardsDidLoad(_ cards: [MatchCard]) {
     guard cards.count == cardViews.count else { return }
     
@@ -48,13 +62,10 @@ extension NotificationViewController: MatchGameDelegate {
     }
   }
   
-  func didCardsMatch(_ didCardsMatch: Bool, indicies: [Int]) {
-    disableBoard()
+  func gameOver(highScore: Int) {
+    highScoreLabel.text = String(highScore)
     
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-      didCardsMatch ? self.fadeOutMatchedCards(at: indicies) : self.unflipCards(at: indicies)
-      self.enableBoard()
-    }
+    self.displayPlayAgainText()
   }
 }
 
@@ -68,9 +79,6 @@ private extension NotificationViewController {
     UIView.animate(withDuration: 0.25) {
       self.cardViews[index].alpha = 0.0
     } completion: { _ in
-      if self.matchGame.noMatchesLeft {
-        self.displayPlayAgainText()
-      }
     }
   }
   
@@ -88,6 +96,10 @@ private extension NotificationViewController {
   
   func displayPlayAgainText() {
     playAgainButton.isHidden = false
+  }
+  
+  func updateScore(currentScore: Int) {
+    scoreLabel.text = String(currentScore)
   }
 }
 
