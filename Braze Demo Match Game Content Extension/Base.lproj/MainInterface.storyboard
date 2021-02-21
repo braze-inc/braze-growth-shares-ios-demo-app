@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina6_5" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,14 +13,14 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="290" height="461"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="461"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="felt-background" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-Wy-IpL">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="440"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="461"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-3Z-uVp" userLabel="High Score View">
-                                <rect key="frame" x="161.33333333333334" y="14.999999999999996" width="103.66666666666666" height="50.666666666666657"/>
+                                <rect key="frame" x="245.33333333333334" y="14.999999999999996" width="103.66666666666666" height="50.666666666666657"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnI-YQ-9Tv">
                                         <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="25.333333333333332"/>
@@ -29,7 +29,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-lX-CzY">
-                                        <rect key="frame" x="45" y="25.333333333333336" width="13.666666666666664" height="25.333333333333336"/>
+                                        <rect key="frame" x="44.999999999999972" y="25.333333333333336" width="13.666666666666664" height="25.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -76,16 +76,16 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CaW-sH-fvC">
-                                <rect key="frame" x="14" y="80" width="262" height="262.66666666666669"/>
+                                <rect key="frame" x="14" y="80" width="346" height="350.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZQx-lk-cks">
-                                        <rect key="frame" x="0.0" y="0.0" width="262" height="81.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="110.66666666666667"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2G-Cd-5kY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-Xk-NTF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -107,10 +107,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rK-85-DsF" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="68" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="89" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uU-kV-XIR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -131,10 +131,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaE-yF-JFg" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="136" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="178" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-c8-qcF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -155,10 +155,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-sb-pF6" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="204" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="267" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-xh-IYE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -186,13 +186,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="8CW-w4-4XN">
-                                        <rect key="frame" x="0.0" y="91.333333333333343" width="262" height="80"/>
+                                        <rect key="frame" x="0.0" y="120.66666666666666" width="346" height="109.33333333333334"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-JM-H6I" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="109.33333333333333"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-KL-YTY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="109.33333333333333"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -214,10 +214,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqO-Mb-DIA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="68.333333333333329" y="0.0" width="57.333333333333329" height="80"/>
+                                                <rect key="frame" x="89.333333333333343" y="0.0" width="78.333333333333343" height="109.33333333333333"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tw-0f-J8e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="109.33333333333333"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -238,10 +238,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2h-4v-2RS" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="136.66666666666666" y="0.0" width="57" height="80"/>
+                                                <rect key="frame" x="178.66666666666666" y="0.0" width="77.999999999999972" height="109.33333333333333"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPM-va-ydq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="78" height="109.33333333333333"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -262,10 +262,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et3-SB-D7i" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="204.66666666666666" y="0.0" width="57.333333333333343" height="80"/>
+                                                <rect key="frame" x="267.66666666666669" y="0.0" width="78.333333333333314" height="109.33333333333333"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88c-iQ-ZA5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="78.333333333333329" height="109.33333333333333"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -293,13 +293,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-RT-PgA">
-                                        <rect key="frame" x="0.0" y="181.33333333333331" width="262" height="81.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="239.99999999999997" width="346" height="110.66666666666666"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kY-h6-ozA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3q-Vf-qi5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -321,10 +321,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdP-le-4KY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="68" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="89" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnK-6f-3n1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -345,10 +345,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-tH-0nz" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="136" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="178" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyB-3R-jqm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -369,10 +369,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNW-H6-jNJ" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="204" y="0.0" width="58" height="81.333333333333329"/>
+                                                <rect key="frame" x="267" y="0.0" width="79" height="110.66666666666667"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuN-6M-0Um">
-                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="79" height="110.66666666666667"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -402,7 +402,7 @@
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ShS-Ae-ItW">
-                                <rect key="frame" x="12" y="117" width="266" height="227"/>
+                                <rect key="frame" x="54" y="117" width="266" height="227"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <state key="normal">
                                     <string key="title">🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
@@ -447,7 +447,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="290" height="461"/>
+                    <size key="freeformSize" width="374" height="461"/>
                     <connections>
                         <outlet property="attemptsLabel" destination="fAS-Wp-xDo" id="2IS-ah-QIF"/>
                         <outlet property="bestScoreLabel" destination="tPJ-lX-CzY" id="ize-Ep-ays"/>
