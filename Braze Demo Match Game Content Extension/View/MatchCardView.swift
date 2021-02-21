@@ -17,6 +17,13 @@ class MatchCardView: UIView {
     flipCard()
   }
   
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    layer.cornerRadius = 5
+    layer.masksToBounds = true
+  }
+  
   func configureImage(_ selectedImage: UIImage?) {
     button.setImage(selectedImage, for: .selected)
   }

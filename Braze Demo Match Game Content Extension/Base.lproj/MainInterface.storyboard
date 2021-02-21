@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <device id="retina6_5" orientation="landscape" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,77 +13,79 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="290" height="461"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="felt-background" translatesAutoresizingMaskIntoConstraints="NO" id="xtf-Wy-IpL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="393"/>
+                                <rect key="frame" x="0.0" y="0.0" width="290" height="440"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cd-3Z-uVp" userLabel="High Score View">
-                                <rect key="frame" x="296.5" y="20" width="107.5" height="20.5"/>
+                                <rect key="frame" x="161.33333333333334" y="14.999999999999996" width="103.66666666666666" height="50.666666666666657"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnI-YQ-9Tv">
-                                        <rect key="frame" x="0.0" y="0.0" width="91.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Score" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnI-YQ-9Tv">
+                                        <rect key="frame" x="0.0" y="0.0" width="103.66666666666667" height="25.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-lX-CzY">
-                                        <rect key="frame" x="96.5" y="0.0" width="11" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="45" y="25.333333333333336" width="13.666666666666664" height="25.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="tPJ-lX-CzY" firstAttribute="top" secondItem="7cd-3Z-uVp" secondAttribute="top" id="6oZ-9U-Wla"/>
-                                    <constraint firstAttribute="trailing" secondItem="tPJ-lX-CzY" secondAttribute="trailing" id="EF3-Fy-uuA"/>
+                                    <constraint firstItem="tPJ-lX-CzY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7cd-3Z-uVp" secondAttribute="leading" constant="15" id="5c4-yV-oZq"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tPJ-lX-CzY" secondAttribute="trailing" constant="15" id="EF3-Fy-uuA"/>
+                                    <constraint firstItem="tPJ-lX-CzY" firstAttribute="top" secondItem="xnI-YQ-9Tv" secondAttribute="bottom" id="ERF-eR-egg"/>
                                     <constraint firstItem="xnI-YQ-9Tv" firstAttribute="top" secondItem="7cd-3Z-uVp" secondAttribute="top" id="HIU-lw-lRF"/>
+                                    <constraint firstAttribute="trailing" secondItem="xnI-YQ-9Tv" secondAttribute="trailing" id="MWi-rB-d9u"/>
+                                    <constraint firstItem="tPJ-lX-CzY" firstAttribute="centerX" secondItem="7cd-3Z-uVp" secondAttribute="centerX" id="MfS-Bw-8so"/>
                                     <constraint firstItem="xnI-YQ-9Tv" firstAttribute="leading" secondItem="7cd-3Z-uVp" secondAttribute="leading" id="h0J-ya-OPU"/>
-                                    <constraint firstAttribute="bottom" secondItem="xnI-YQ-9Tv" secondAttribute="bottom" id="rFN-BP-ySz"/>
-                                    <constraint firstItem="tPJ-lX-CzY" firstAttribute="leading" secondItem="xnI-YQ-9Tv" secondAttribute="trailing" constant="5" id="v1Y-gS-w4T"/>
                                     <constraint firstAttribute="bottom" secondItem="tPJ-lX-CzY" secondAttribute="bottom" id="wJl-2a-eXz"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a3I-iB-F1a" userLabel="Score View">
-                                <rect key="frame" x="10" y="20" width="95" height="20.5"/>
+                                <rect key="frame" x="25" y="14.999999999999996" width="89" height="50.666666666666657"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-3e-HbH">
-                                        <rect key="frame" x="0.0" y="0.0" width="79" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attempts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t3K-3e-HbH">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="25.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-Wp-xDo">
-                                        <rect key="frame" x="84" y="0.0" width="11" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <rect key="frame" x="37.666666666666664" y="25.333333333333336" width="13.666666666666664" height="25.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fAS-Wp-xDo" secondAttribute="trailing" id="2eW-eg-4Zn"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fAS-Wp-xDo" secondAttribute="trailing" constant="15" id="2eW-eg-4Zn"/>
+                                    <constraint firstItem="fAS-Wp-xDo" firstAttribute="centerX" secondItem="a3I-iB-F1a" secondAttribute="centerX" id="8Uc-PO-nCS"/>
                                     <constraint firstAttribute="bottom" secondItem="fAS-Wp-xDo" secondAttribute="bottom" id="DcD-Ww-L2I"/>
+                                    <constraint firstItem="fAS-Wp-xDo" firstAttribute="top" secondItem="t3K-3e-HbH" secondAttribute="bottom" id="MfT-xG-uSk"/>
+                                    <constraint firstAttribute="trailing" secondItem="t3K-3e-HbH" secondAttribute="trailing" id="SAi-br-QN7"/>
+                                    <constraint firstItem="fAS-Wp-xDo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="a3I-iB-F1a" secondAttribute="leading" constant="15" id="SYV-pd-G9X"/>
                                     <constraint firstItem="t3K-3e-HbH" firstAttribute="top" secondItem="a3I-iB-F1a" secondAttribute="top" id="UY6-Oh-Npn"/>
                                     <constraint firstItem="t3K-3e-HbH" firstAttribute="leading" secondItem="a3I-iB-F1a" secondAttribute="leading" id="XP2-3b-oct"/>
-                                    <constraint firstItem="fAS-Wp-xDo" firstAttribute="top" secondItem="a3I-iB-F1a" secondAttribute="top" id="hAW-Ur-TZo"/>
-                                    <constraint firstAttribute="bottom" secondItem="t3K-3e-HbH" secondAttribute="bottom" id="iPd-2n-EgV"/>
-                                    <constraint firstItem="fAS-Wp-xDo" firstAttribute="leading" secondItem="t3K-3e-HbH" secondAttribute="trailing" constant="5" id="u81-al-cec"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CaW-sH-fvC">
-                                <rect key="frame" x="58.5" y="80" width="297" height="299"/>
+                                <rect key="frame" x="14" y="80" width="262" height="262.66666666666669"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZQx-lk-cks">
-                                        <rect key="frame" x="0.0" y="0.0" width="297" height="93.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="262" height="81.333333333333329"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2G-Cd-5kY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="93.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z87-Xk-NTF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -105,10 +107,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6rK-85-DsF" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="76.5" y="0.0" width="67" height="93.5"/>
+                                                <rect key="frame" x="68" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9uU-kV-XIR">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -129,10 +131,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GaE-yF-JFg" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="153.5" y="0.0" width="67" height="93.5"/>
+                                                <rect key="frame" x="136" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ECQ-c8-qcF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -153,10 +155,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zo-sb-pF6" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="230.5" y="0.0" width="66.5" height="93.5"/>
+                                                <rect key="frame" x="204" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-xh-IYE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -184,13 +186,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="8CW-w4-4XN">
-                                        <rect key="frame" x="0.0" y="103.5" width="297" height="92"/>
+                                        <rect key="frame" x="0.0" y="91.333333333333343" width="262" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5j-JM-H6I" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="65.5" height="92"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K4g-KL-YTY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -212,10 +214,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JqO-Mb-DIA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="77" y="0.0" width="66" height="92"/>
+                                                <rect key="frame" x="68.333333333333329" y="0.0" width="57.333333333333329" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0tw-0f-J8e">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -236,10 +238,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a2h-4v-2RS" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="154" y="0.0" width="66" height="92"/>
+                                                <rect key="frame" x="136.66666666666666" y="0.0" width="57" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VPM-va-ydq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -260,10 +262,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="et3-SB-D7i" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="231.5" y="0.0" width="65.5" height="92"/>
+                                                <rect key="frame" x="204.66666666666666" y="0.0" width="57.333333333333343" height="80"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88c-iQ-ZA5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="65.5" height="92"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="57.333333333333336" height="80"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -291,13 +293,13 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Kkh-RT-PgA">
-                                        <rect key="frame" x="0.0" y="205.5" width="297" height="93.5"/>
+                                        <rect key="frame" x="0.0" y="181.33333333333331" width="262" height="81.333333333333314"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kY-h6-ozA" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="66.5" height="93.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3q-Vf-qi5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -319,10 +321,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdP-le-4KY" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="76.5" y="0.0" width="67" height="93.5"/>
+                                                <rect key="frame" x="68" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tnK-6f-3n1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -343,10 +345,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SEn-tH-0nz" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="153.5" y="0.0" width="67" height="93.5"/>
+                                                <rect key="frame" x="136" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lyB-3R-jqm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="67" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -367,10 +369,10 @@
                                                 </connections>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SNW-H6-jNJ" customClass="MatchCardView" customModule="Braze_Demo_Match_Game_Content_Extension" customModuleProvider="target">
-                                                <rect key="frame" x="230.5" y="0.0" width="66.5" height="93.5"/>
+                                                <rect key="frame" x="204" y="0.0" width="58" height="81.333333333333329"/>
                                                 <subviews>
                                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nuN-6M-0Um">
-                                                        <rect key="frame" x="0.0" y="0.0" width="66.5" height="93.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="58" height="81.333333333333329"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" image="card-background"/>
                                                         <connections>
@@ -400,7 +402,7 @@
                                 </subviews>
                             </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ShS-Ae-ItW">
-                                <rect key="frame" x="44" y="83" width="370" height="227"/>
+                                <rect key="frame" x="12" y="117" width="266" height="227"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
                                 <state key="normal">
                                     <string key="title">🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉 🎉
@@ -423,29 +425,29 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="CaW-sH-fvC" secondAttribute="bottom" constant="14" id="0dD-u9-EnF"/>
-                            <constraint firstItem="a3I-iB-F1a" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="20" id="1a7-ZO-ATO"/>
+                            <constraint firstItem="a3I-iB-F1a" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="15" id="1a7-ZO-ATO"/>
                             <constraint firstItem="CaW-sH-fvC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="28c-Fm-bB7"/>
-                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="2BE-c3-nQJ" secondAttribute="top" id="CYN-ST-JJ7"/>
-                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="centerY" secondItem="2BE-c3-nQJ" secondAttribute="centerY" id="bjK-bt-fbs"/>
-                            <constraint firstItem="xtf-Wy-IpL" firstAttribute="trailing" secondItem="2BE-c3-nQJ" secondAttribute="trailing" id="bul-f8-mH4"/>
+                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="S3S-Oj-5AN" secondAttribute="top" id="CYN-ST-JJ7"/>
+                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="bjK-bt-fbs"/>
+                            <constraint firstItem="xtf-Wy-IpL" firstAttribute="trailing" secondItem="S3S-Oj-5AN" secondAttribute="trailing" id="bul-f8-mH4"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="cHu-1K-LmU"/>
-                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" id="h1j-P3-EDR"/>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="7cd-3Z-uVp" secondAttribute="trailing" constant="10" id="hjS-Lb-CRd"/>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CaW-sH-fvC" secondAttribute="trailing" constant="14" id="i7n-al-Ssu"/>
+                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="h1j-P3-EDR"/>
+                            <constraint firstAttribute="trailing" secondItem="7cd-3Z-uVp" secondAttribute="trailing" constant="25" id="hjS-Lb-CRd"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CaW-sH-fvC" secondAttribute="trailing" constant="14" id="i7n-al-Ssu"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="ich-pr-CB4"/>
-                            <constraint firstItem="7cd-3Z-uVp" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="20" id="jYB-Zd-OMh"/>
+                            <constraint firstItem="7cd-3Z-uVp" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="15" id="jYB-Zd-OMh"/>
                             <constraint firstItem="CaW-sH-fvC" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="npr-Bf-5zo"/>
                             <constraint firstItem="xtf-Wy-IpL" firstAttribute="bottom" secondItem="2BE-c3-nQJ" secondAttribute="bottom" id="oi5-QH-tyk"/>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ShS-Ae-ItW" secondAttribute="trailing" id="qcV-K2-W5N"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ShS-Ae-ItW" secondAttribute="trailing" id="qcV-K2-W5N"/>
                             <constraint firstItem="CaW-sH-fvC" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="80" id="tVl-A1-XlI"/>
-                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="centerX" secondItem="2BE-c3-nQJ" secondAttribute="centerX" id="thu-VN-b9u"/>
+                            <constraint firstItem="ShS-Ae-ItW" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="thu-VN-b9u"/>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ShS-Ae-ItW" secondAttribute="bottom" id="vQR-hb-4vZ"/>
-                            <constraint firstItem="a3I-iB-F1a" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="10" id="x88-r0-Bdq"/>
+                            <constraint firstItem="a3I-iB-F1a" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="25" id="x88-r0-Bdq"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="414" height="414"/>
+                    <size key="freeformSize" width="290" height="461"/>
                     <connections>
                         <outlet property="attemptsLabel" destination="fAS-Wp-xDo" id="2IS-ah-QIF"/>
                         <outlet property="bestScoreLabel" destination="tPJ-lX-CzY" id="ize-Ep-ays"/>
