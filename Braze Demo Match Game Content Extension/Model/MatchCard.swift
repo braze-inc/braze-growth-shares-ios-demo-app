@@ -10,7 +10,7 @@ enum CardType: String, CaseIterable {
 }
 
 struct MatchCard {
-  var type: CardType
+  private(set) var type: CardType
   
   var selectedImage: UIImage? {
     return UIImage(named: type.rawValue)

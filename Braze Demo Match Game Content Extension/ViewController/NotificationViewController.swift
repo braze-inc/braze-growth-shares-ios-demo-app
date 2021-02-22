@@ -18,7 +18,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   // MARK: - Variables
   private var matchGame = MatchGame()
   private var cardViews = [MatchCardView]()
-
   
   private var boardLayout: (rows: Int, columns: Int) {
     if traitCollection.verticalSizeClass == .compact {

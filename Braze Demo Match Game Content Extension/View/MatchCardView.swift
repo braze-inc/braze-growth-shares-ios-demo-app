@@ -1,6 +1,6 @@
 import UIKit
 
-@objc protocol MatchCardViewDelegate: class {
+protocol MatchCardViewDelegate: class {
   func cardTapped(at index: Int)
 }
 
