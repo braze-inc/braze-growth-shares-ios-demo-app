@@ -3,14 +3,10 @@ import UIKit
 enum CardType: String, CaseIterable {
   case angry
   case heartEyes = "heart-eyes"
-  case pensive
-  case rainbow
-  case stunned
   case tearsOfJoy = "tears-of-joy"
-  
-  static var landscapeCases: [CardType] {
-    return [.angry, .heartEyes, .rainbow, tearsOfJoy]
-  }
+  case rainbow
+  case pensive
+  case stunned
 }
 
 struct MatchCard {
@@ -26,5 +22,3 @@ extension MatchCard: Equatable {
     return lhs.type == rhs.type
   }
 }
-
-

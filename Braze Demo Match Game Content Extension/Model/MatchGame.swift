@@ -8,12 +8,12 @@ struct MatchGame {
   
   // MARK: - Variables
   private var cards = [MatchCard]()
-  private var cardTypes = [CardType]()
-  private var flippedIndicies = [Int]() // represents the 2 flipped cards
+  private var numberOfCards = 0
   private var matchedCardsCount = 0
+  private var flippedIndicies = [Int]() // represents the 2 flipped cards
+  private var attemptCounter = AttemptCounter()
   private weak var delegate: MatchGameDelegate?
   
-  private var attemptCounter = AttemptCounter()
   var noMatchesLeft: Bool {
     return matchedCardsCount == cards.count
   }
@@ -21,11 +21,11 @@ struct MatchGame {
 
 // MARK: - Public Methods
 extension MatchGame {
-  mutating func configureGame(cardTypes: [CardType], delegate: MatchGameDelegate? = nil) {
-    self.cardTypes = cardTypes
+  mutating func configureGame(numberOfCards: Int, delegate: MatchGameDelegate? = nil) {
+    self.numberOfCards = numberOfCards
     self.delegate = delegate
     
-    loadCards(from: cardTypes)
+    loadCards(numberOfCards: numberOfCards)
   }
   
   mutating func cardFlipped(at index: Int) {
@@ -50,19 +50,20 @@ extension MatchGame {
   }
   
   mutating func playAgain() {
-    cards.removeAll()
-    flippedIndicies.removeAll()
     matchedCardsCount = 0
     attemptCounter.reset()
     
-    loadCards(from: cardTypes)
+    loadCards(numberOfCards: numberOfCards)
   }
 }
 
 // MARK: - Private Methods
 private extension MatchGame {
-  mutating func loadCards(from cardTypes: [CardType]) {
-    for type in cardTypes {
+  mutating func loadCards(numberOfCards: Int) {
+    cards = []
+    
+    for index in 0..<numberOfCards / 2 {
+      let type = CardType.allCases[index % CardType.allCases.count]
       let card = MatchCard(type: type)
       cards.append(card)
       cards.append(card)
@@ -72,14 +73,7 @@ private extension MatchGame {
     delegate?.cardsDidLoad(cards)
   }
   
-  // https://www.dartmouth.edu/~chance/teaching_aids/Mann.pdf
   mutating func randomizeCards() {
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
     cards.shuffle()
   }
   

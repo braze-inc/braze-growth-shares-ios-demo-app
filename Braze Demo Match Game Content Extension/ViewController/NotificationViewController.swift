@@ -34,6 +34,14 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     }
   }
   
+  private var boardLayout: (rows: Int, columns: Int) {
+    if isLandscape {
+      return (4, 2)
+    } else {
+      return (4, 3)
+    }
+  }
+  
   // lock/unlock the board to avoid fast fingers, no more than 2 cards visible at a time
   private var lockBoard = false {
     didSet {
@@ -55,7 +63,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 // MARK: - MatchGame Delegate
 extension NotificationViewController: MatchGameDelegate {
   func cardsDidLoad(_ cards: [MatchCard]) {
-    guard cards.count == cardViews.count else { return }
+    guard cards.count == cardViews.count else { fatalError("Mistakes were made") }
     
     for (card, cardView) in zip(cards, cardViews) {
       cardView.configureImage(card.selectedImage)
@@ -78,15 +86,11 @@ extension NotificationViewController: MatchGameDelegate {
 // MARK: - Private Methods
 private extension NotificationViewController {
   func configureBoard() {
-    let cardTypes = isLandscape ? CardType.landscapeCases : CardType.allCases
-    
-    if isLandscape {
-      while stackView.arrangedSubviews.count > 2 {
-        stackView.arrangedSubviews.last!.removeFromSuperview()
-      }
+    while stackView.arrangedSubviews.count > boardLayout.columns {
+      stackView.arrangedSubviews.last!.removeFromSuperview()
     }
     
-    matchGame.configureGame(cardTypes: cardTypes, delegate: self)
+    matchGame.configureGame(numberOfCards: cardViews.count, delegate: self)
   }
   
   func updateBoard(currentScore: Int, animateBoard: @escaping () -> ()) {
@@ -100,21 +104,21 @@ private extension NotificationViewController {
   }
   
   func fadeOutMatchedCards(at indicies: [Int]) {
-    indicies.forEach { self.fadeOutMatchedCard(at: $0) }
-    
-    if self.matchGame.noMatchesLeft {
-      self.displayCompletedBoard()
+    UIView.animate(withDuration: 0.25) {
+      indicies.forEach { self.fadeOutMatchedCard(at: $0) }
+    } completion: { _ in
+      if self.matchGame.noMatchesLeft {
+        self.displayCompletedBoard()
+      }
     }
   }
   
   func fadeOutMatchedCard(at index: Int) {
-    UIView.animate(withDuration: 0.25) {
-      self.cardViews[index].alpha = 0.0
-    }
+    self.cardViews[index].alpha = 0.0
   }
   
   func flipUnmatchedCards(at indicies: [Int]) {
-    indicies.forEach { self.cardViews[$0].flipCard() }
+    indicies.forEach { cardViews[$0].flipCard() }
   }
   
   func disableBoard() {
