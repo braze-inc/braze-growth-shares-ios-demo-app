@@ -28,19 +28,12 @@ extension MatchGame {
     loadCards(numberOfCards: numberOfCards)
   }
   
+  /// The top-left card on the board has an index of 0 and increments from left to right. The bottom-right card has an index of n-1, n representing the number of cards.
   mutating func cardFlipped(at index: Int) {
     flippedIndicies.append(index)
     
     if flippedIndicies.count == 2 {
-      attemptCounter.increment()
-      
-      if isMatched() {
-        delegate?.cardsDidMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
-        matchedCardsCount += 2
-      } else {
-        delegate?.cardsDidNotMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
-      }
-      
+      checkForMatch(with: flippedIndicies)
       flippedIndicies.removeAll()
     }
   }
@@ -59,6 +52,8 @@ extension MatchGame {
 
 // MARK: - Private Methods
 private extension MatchGame {
+  /// Creates the deck of cards to be synced up with the card views. The loop creates a pair of `MatchCard` objects with the same `CardType` value.
+  /// - parameter numberOfCards: The number of cards the game needs to create. Number of pairs is `numberOfCards / 2`.
   mutating func loadCards(numberOfCards: Int) {
     cards = []
     
@@ -84,7 +79,20 @@ private extension MatchGame {
     cards.shuffle()
   }
   
-  func isMatched() -> Bool {
+  mutating func checkForMatch(with flippedIndicies: [Int]) {
+    attemptCounter.increment()
+    
+    if isMatched(flippedIndicies: flippedIndicies) {
+      matchedCardsCount += 2
+      delegate?.cardsDidMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
+    } else {
+      delegate?.cardsDidNotMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
+    }
+  }
+  
+  /// The indicies are used to fetch the `MatchCard` from the `cards` array and adds the card to the `cardsToMatch` array. If all cards in the array have an equal `CardType`, the return value will be `true`.
+  /// - parameter flippedIndicies: Rrepresent an array of each index flipped cards on the board.
+  func isMatched(flippedIndicies: [Int]) -> Bool {
     var cardsToMatch = [MatchCard]()
     for index in flippedIndicies {
       cardsToMatch.append(cards[index])

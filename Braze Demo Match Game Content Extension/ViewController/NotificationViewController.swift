@@ -88,6 +88,8 @@ private extension NotificationViewController {
     }
   }
   
+  /// Configures each `MatchCardView`'s flipped image with an associated `selectedImage` (torchie) and `tag`. If the number of `cards` do not equal the number of `cardViews`, mistakes were made.
+  /// - parameter cards: The array of shuffled cards that will be assigned to an array of `cardViews` one by one.
   func configureCardViews(_ cards: [MatchCard]) {
     guard cards.count == cardViews.count else { fatalError("Mistakes were made") }
     
@@ -147,6 +149,11 @@ private extension NotificationViewController {
     saveCompletedMatchGameEvent(with: highScore)
   }
   
+  
+  /// Saves a custom event to user defaults with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved and `highScore` is added to the `properties` dictionary.
+  /// - parameter highScore: The value that will be saved to the `properties` dictionary with the key `"Score"`.
+  ///
+  /// There is a conditional unwrap to check if there are saved pending events (in the case of a user completing multiple games) and appends the event or saves a new array with one event.
   func saveCompletedMatchGameEvent(with highScore: Int) {
     let customEventDictionary = [["Event Name": "Completed Match Game", "Score": highScore]] as [[String : Any]]
     let remoteStorage = RemoteStorage(storageType: .suite)
