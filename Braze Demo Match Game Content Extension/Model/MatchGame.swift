@@ -73,7 +73,14 @@ private extension MatchGame {
     delegate?.cardsDidLoad(cards)
   }
   
+  // SOURCE: - https://www.dartmouth.edu/~chance/teaching_aids/Mann.pdf
   mutating func randomizeCards() {
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
+    cards.shuffle()
     cards.shuffle()
   }
   

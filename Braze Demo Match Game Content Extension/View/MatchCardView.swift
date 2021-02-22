@@ -7,7 +7,6 @@ import UIKit
 class MatchCardView: UIView {
   
   // MARK: - Outlets
-  @IBOutlet private weak var delegate: MatchCardViewDelegate?
   @IBOutlet private weak var button: UIButton!
   
   // MARK: - Actions
@@ -17,6 +16,9 @@ class MatchCardView: UIView {
     flipCard()
   }
   
+  // MARK: - Variables
+  private weak var delegate: MatchCardViewDelegate?
+  
   override func awakeFromNib() {
     super.awakeFromNib()
     
@@ -24,8 +26,11 @@ class MatchCardView: UIView {
     layer.masksToBounds = true
   }
   
-  func configureImage(_ selectedImage: UIImage?) {
+  func configureView(selectedImage: UIImage?, tag: Int, delegate: MatchCardViewDelegate? = nil) {
+    self.delegate = delegate
+    
     button.setImage(selectedImage, for: .selected)
+    button.tag = tag
   }
   
   func flipCard() {

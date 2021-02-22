@@ -5,9 +5,6 @@ import UserNotificationsUI
 class NotificationViewController: UIViewController, UNNotificationContentExtension {
   
   // MARK: - Outlets
-  @IBOutlet private var firstRowCardViews: [MatchCardView]!
-  @IBOutlet private var secondRowCardViews: [MatchCardView]!
-  @IBOutlet private var thirdRowCardViews: [MatchCardView]!
   @IBOutlet private weak var stackView: UIStackView!
   @IBOutlet private weak var playAgainButton: UIButton!
   @IBOutlet private weak var bestScoreLabel: UILabel!
@@ -20,25 +17,14 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   
   // MARK: - Variables
   private var matchGame = MatchGame()
-  
-  private var isLandscape: Bool {
-    return traitCollection.verticalSizeClass == .compact
-  }
-  
-  // 12 cards in portrait mode and 8 cards in landscape mode
-  private var cardViews: [MatchCardView] {
-    if isLandscape {
-      return firstRowCardViews + secondRowCardViews
-    } else {
-      return firstRowCardViews + secondRowCardViews + thirdRowCardViews
-    }
-  }
+  private var cardViews = [MatchCardView]()
+
   
   private var boardLayout: (rows: Int, columns: Int) {
-    if isLandscape {
-      return (4, 2)
+    if traitCollection.verticalSizeClass == .compact {
+      return (2, 4)
     } else {
-      return (4, 3)
+      return (3, 4)
     }
   }
   
@@ -52,7 +38,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    configureBoard()
+    configureBoard(rows: boardLayout.rows, columns: boardLayout.columns)
+    matchGame.configureGame(numberOfCards: cardViews.count, delegate: self)
   }
   
   func didReceive(_ notification: UNNotification) {
@@ -63,11 +50,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 // MARK: - MatchGame Delegate
 extension NotificationViewController: MatchGameDelegate {
   func cardsDidLoad(_ cards: [MatchCard]) {
-    guard cards.count == cardViews.count else { fatalError("Mistakes were made") }
-    
-    for (card, cardView) in zip(cards, cardViews) {
-      cardView.configureImage(card.selectedImage)
-    }
+    configureCardViews(cards)
   }
   
   func cardsDidMatch(_ indicies: [Int], currentScore: Int) {
@@ -85,12 +68,35 @@ extension NotificationViewController: MatchGameDelegate {
 
 // MARK: - Private Methods
 private extension NotificationViewController {
-  func configureBoard() {
-    while stackView.arrangedSubviews.count > boardLayout.columns {
-      stackView.arrangedSubviews.last!.removeFromSuperview()
+  func configureBoard(rows: Int, columns: Int) {
+    for _ in 0..<rows {
+      let matchCardsStackView = UIStackView()
+      matchCardsStackView.axis = .horizontal
+      matchCardsStackView.distribution = .equalSpacing
+      matchCardsStackView.spacing = 10
+
+      for _ in 0..<columns {
+        let cardView: MatchCardView = .fromNib()
+        
+        matchCardsStackView.addArrangedSubview(cardView)
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        cardView.widthAnchor.constraint(equalTo: cardView.heightAnchor, multiplier: 2.5/3.5).isActive = true
+        
+        cardViews.append(cardView)
+      }
+      
+      stackView.addArrangedSubview(matchCardsStackView)
     }
+  }
+  
+  func configureCardViews(_ cards: [MatchCard]) {
+    guard cards.count == cardViews.count else { fatalError("Mistakes were made") }
     
-    matchGame.configureGame(numberOfCards: cardViews.count, delegate: self)
+    var tag = 0
+    for (card, cardView) in zip(cards, cardViews) {
+      cardView.configureView(selectedImage: card.selectedImage, tag: tag, delegate: self)
+      tag += 1
+    }
   }
   
   func updateBoard(currentScore: Int, animateBoard: @escaping () -> ()) {
