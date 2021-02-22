@@ -25,6 +25,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     return traitCollection.verticalSizeClass == .compact
   }
   
+  // 12 cards in portrait mode and 8 cards in landscape mode
   private var cardViews: [MatchCardView] {
     if isLandscape {
       return firstRowCardViews + secondRowCardViews
@@ -47,7 +48,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   }
   
   func didReceive(_ notification: UNNotification) {
-    // self.label?.text = notification.request.content.body
+    // do nothing
   }
 }
 
@@ -100,15 +101,15 @@ private extension NotificationViewController {
   
   func fadeOutMatchedCards(at indicies: [Int]) {
     indicies.forEach { self.fadeOutMatchedCard(at: $0) }
+    
+    if self.matchGame.noMatchesLeft {
+      self.displayCompletedBoard()
+    }
   }
   
   func fadeOutMatchedCard(at index: Int) {
     UIView.animate(withDuration: 0.25) {
       self.cardViews[index].alpha = 0.0
-    } completion: { _ in
-      if self.matchGame.noMatchesLeft {
-        self.displayCompletedBoard()
-      }
     }
   }
   
@@ -124,13 +125,29 @@ private extension NotificationViewController {
     lockBoard = false
   }
   
-  func displayCompletedBoard() {
-    bestScoreLabel.text = String(matchGame.getHighScore())
-    playAgainButton.isHidden = false
-  }
-  
   func updateScore(currentScore: Int) {
     attemptsLabel.text = String(currentScore)
+  }
+  
+  func displayCompletedBoard() {
+    let highScore = matchGame.getHighScore()
+    
+    bestScoreLabel.text = String(highScore)
+    playAgainButton.isHidden = false
+    
+    saveCompletedMatchGameEvent(with: highScore)
+  }
+  
+  func saveCompletedMatchGameEvent(with highScore: Int) {
+    let customEventDictionary = [["Event Name": "Completed Match Game", "Score": highScore]] as [[String : Any]]
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+      pendingEvents.append(contentsOf: customEventDictionary)
+      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
+    } else {
+      remoteStorage.store(customEventDictionary, forKey: .pendingEvents)
+    }
   }
   
   func resetGame() {

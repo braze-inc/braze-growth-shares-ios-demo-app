@@ -20,17 +20,18 @@ class AppboyManager: NSObject {
         
     Appboy.start(withApiKey: apiKey, in: application, withLaunchOptions: launchOptions, withAppboyOptions: appboyOptions)
     
+    // MARK: - Push Notifications
     let options: UNAuthorizationOptions = [.alert, .sound, .badge]
-    
-    /// This is how to include provisional push support
-    // options.insert(.provisional)
-    
     UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
       Appboy.sharedInstance()?.pushAuthorization(fromUserNotificationCenter: granted)
     }
     UIApplication.shared.registerForRemoteNotifications()
     
+    // MARK: - In-App Messages
     Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(self)
+    
+    // MARK: - Analytics from Notifcation Content Extensions
+    logPendingEventsIfNecessary()
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -100,6 +101,27 @@ extension AppboyManager {
 
 // MARK: - Analytics
 extension AppboyManager {
+  /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
+  func logPendingEventsIfNecessary() {
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] else { return }
+    
+    for event in pendingEvents {
+      var eventName = ""
+      var properties: [AnyHashable: Any] = [:]
+      for (key, value) in event {
+        if key == "Event Name", let eventNameValue = value as? String {
+          eventName = eventNameValue
+        } else {
+          properties[key] = value
+        }
+      }
+      logCustomEvent(eventName, withProperties: properties)
+      
+      remoteStorage.removeObject(forKey: .pendingEvents)
+    }
+  }
+  
   func logCustomEvent(_ eventName: String, withProperties properties: [AnyHashable: Any]? = nil) {
     Appboy.sharedInstance()?.logCustomEvent(eventName, withProperties: properties)
   }

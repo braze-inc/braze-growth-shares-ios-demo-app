@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F1ADD5825E32EF600116E92 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
@@ -161,6 +162,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F1ADD6D25E3406300116E92 /* Braze Demo Match Game Content Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze Demo Match Game Content Extension.entitlements"; sourceTree = "<group>"; };
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
 		7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardSettingsViewController.swift; sourceTree = "<group>"; };
 		7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageSettingsViewController.swift; sourceTree = "<group>"; };
@@ -501,6 +503,7 @@
 		7F96CC9825E014EF002D9AD9 /* Braze Demo Match Game Content Extension */ = {
 			isa = PBXGroup;
 			children = (
+				7F1ADD6D25E3406300116E92 /* Braze Demo Match Game Content Extension.entitlements */,
 				7F1ADD3D25E198E200116E92 /* Model */,
 				7F1ADD4425E198E900116E92 /* ViewController */,
 				7F1ADD4B25E198EF00116E92 /* View */,
@@ -953,6 +956,7 @@
 				7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */,
 				7F96CC9A25E014EF002D9AD9 /* NotificationViewController.swift in Sources */,
 				7F96CCF325E16E99002D9AD9 /* AttemptCounter.swift in Sources */,
+				7F1ADD5825E32EF600116E92 /* RemoteStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1200,8 +1204,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Braze Demo Match Game Content Extension/Braze Demo Match Game Content Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze Demo Match Game Content Extension/Info.plist";
@@ -1212,8 +1217,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.Braze-Demo-Match-Game-Content-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.match-game.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Match Game Content Extension Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1224,8 +1230,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Braze Demo Match Game Content Extension/Braze Demo Match Game Content Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze Demo Match Game Content Extension/Info.plist";
@@ -1236,8 +1243,9 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 2.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.Braze-Demo-Match-Game-Content-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.match-game.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Match Game Content Extension Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
