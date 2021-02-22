@@ -150,7 +150,7 @@ private extension NotificationViewController {
   }
   
   
-  /// Saves a custom event to user defaults with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved and `highScore` is added to the `properties` dictionary.
+  /// Saves a custom event to `userDefaults` with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved and `highScore` is added to the `properties` dictionary.
   /// - parameter highScore: The value that will be saved to the `properties` dictionary with the key `"Score"`.
   ///
   /// There is a conditional unwrap to check if there are saved pending events (in the case of a user completing multiple games) and appends the event or saves a new array with one event.
