@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7F8CB2E525C888000001F270"
-               BuildableName = "Braze Demo Content Extension.appex"
-               BlueprintName = "Braze Demo Content Extension"
+               BuildableName = "Braze Demo Push Story Content Extension.appex"
+               BlueprintName = "Braze Demo Push Story Content Extension"
                ReferencedContainer = "container:Braze Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
