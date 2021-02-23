@@ -70,13 +70,9 @@ private extension MatchGame {
   
   // SOURCE: - https://www.dartmouth.edu/~chance/teaching_aids/Mann.pdf
   mutating func randomizeCards() {
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
-    cards.shuffle()
+    for _ in 0..<7 {
+      cards.shuffle()
+    }
   }
   
   mutating func checkForMatch(with flippedIndicies: [Int]) {
@@ -84,9 +80,9 @@ private extension MatchGame {
     
     if isMatched(flippedIndicies: flippedIndicies) {
       matchedCardsCount += 2
-      delegate?.cardsDidMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
+      delegate?.cardsDidMatch(flippedIndicies, currentScore: attemptCounter.attemptCount)
     } else {
-      delegate?.cardsDidNotMatch(flippedIndicies, currentScore: attemptCounter.attempCount)
+      delegate?.cardsDidNotMatch(flippedIndicies, currentScore: attemptCounter.attemptCount)
     }
   }
   

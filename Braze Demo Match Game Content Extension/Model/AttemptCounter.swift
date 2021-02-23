@@ -1,17 +1,17 @@
 struct AttemptCounter {
-  private(set) var attempCount = 0
+  private(set) var attemptCount = 0
   private var bestScore = Int.max
   
   mutating func increment() {
-    attempCount += 1
+    attemptCount += 1
   }
   
   mutating func getHighScore() -> Int {
-    bestScore = min(bestScore, attempCount)
+    bestScore = min(bestScore, attemptCount)
     return bestScore
   }
   
   mutating func reset() {
-    attempCount = 0
+    attemptCount = 0
   }
 }
