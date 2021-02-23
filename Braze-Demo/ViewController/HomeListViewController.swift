@@ -123,9 +123,9 @@ private extension HomeListViewController {
   func configureAndProcessDownload(by homeScreenType: HomeScreenType) {
     switch homeScreenType {
     case .tile:
-      downloadContent(Tile.self, TileList.self, fileName: "Tile List", classType: .item(.tile))
+      downloadContent(Tile.self, TileList.self, fileName: "Tile-List", classType: .item(.tile))
     case .group:
-      downloadContent(Group.self, GroupList.self, fileName: "Group List", classType: .item(.group))
+      downloadContent(Group.self, GroupList.self, fileName: "Group-List", classType: .item(.group))
     }
   }
   
