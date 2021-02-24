@@ -70,7 +70,11 @@ extension AppboyManager {
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     Appboy.sharedInstance()?.register(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     
-    if let updateHomeTo = userInfo["refresh_home"] as? String {
+    if let priority = userInfo[PushNotificationKey.homeListPriority.rawValue] as? String {
+      RemoteStorage().store(priority, forKey: .homeListPriority)
+    }
+    
+    if let updateHomeTo = userInfo[PushNotificationKey.refreshHome.rawValue] as? String {
       switch updateHomeTo {
       case "Default":
         RemoteStorage().removeObject(forKey: .homeListPriority)
@@ -81,15 +85,8 @@ extension AppboyManager {
         break
       }
     }
-      
-    if let priority = userInfo["home_tile_priority"] as? String {
-      RemoteStorage().store(priority, forKey: .homeListPriority)
-      if userInfo["refresh_home"] == nil {
-        NotificationCenter.default.post(name: .reorderHomeScreen, object: nil)
-      }
-    }
     
-    if let eventName = userInfo["event_name"] as? String {
+    if let eventName = userInfo[PushNotificationKey.eventName.rawValue] as? String {
       logCustomEvent(eventName)
     }
   }
@@ -312,13 +309,6 @@ private extension AppboyManager {
       return nil
     }
   }
-}
-
-// MARK: - Silent Push Notifcation Names
-extension Notification.Name {
-  static let defaultAppExperience = Notification.Name("kDefaultApExperience")
-  static let homeScreenContentCard = Notification.Name("kHomeScreenContentCard")
-  static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
 }
 
 // MARK: - Slideup In-App Message

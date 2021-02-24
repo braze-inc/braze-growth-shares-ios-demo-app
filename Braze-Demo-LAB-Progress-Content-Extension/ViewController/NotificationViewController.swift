@@ -29,8 +29,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   func didReceive(_ notification: UNNotification) {
     let userInfo = notification.request.content.userInfo
     
-    guard let completedSessionsString = userInfo["session_completed_count"] as? String,
-          let totalSessionString = userInfo["session_total_count"] as? String,
+    guard let completedSessionsString = userInfo[PushNotificationKey.completedSessionCount.rawValue] as? String,
+          let totalSessionString = userInfo[PushNotificationKey.totalSessionCount.rawValue] as? String,
           let completedSessions = Int(completedSessionsString),
           let totalSessions = Int(totalSessionString)
     else { fatalError("Key-Value Pairs are incorrect.")}
@@ -45,6 +45,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
 // MARK: - Private methods
 private extension NotificationViewController {
+  ///
   func configureTotalSessionProgress() {
     var sessionCount = 1
     
@@ -75,7 +76,7 @@ private extension NotificationViewController {
   }
   
   func configureNextSessionLabels(with userInfo: [AnyHashable: Any]) {
-    nextSessionLabel.text = userInfo["next_session_name"] as? String
-    completeNextSessionByLabel.text = userInfo["complete_next_session_date"] as? String
+    nextSessionLabel.text = userInfo[PushNotificationKey.nextSessionName.rawValue] as? String
+    completeNextSessionByLabel.text = userInfo[PushNotificationKey.nextSessionCompleteDate.rawValue] as? String
   }
 }
