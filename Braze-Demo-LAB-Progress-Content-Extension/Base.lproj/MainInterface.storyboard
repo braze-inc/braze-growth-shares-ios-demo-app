@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Braze_Demo_LAB_Progress_Content_Extension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="273"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="veP-Cn-KHX">
+                                <rect key="frame" x="14" y="14" width="346" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="79" placeholder="YES" id="tc3-y0-O74"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fpR-Sm-srl">
+                                <rect key="frame" x="86.5" y="133" width="201" height="112.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wL-yeA" userLabel="Next Session Stack View">
+                                        <rect key="frame" x="51" y="0.0" width="99.5" height="48"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Session" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N5-mk-N6i">
+                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liquid 102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-O7-Xhn">
+                                                <rect key="frame" x="0.0" y="24" width="99.5" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yvh-qx-ruA" userLabel="Complete Next Session Stack View">
+                                        <rect key="frame" x="0.0" y="68" width="201" height="44.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Next Session By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84N-9d-h7J">
+                                                <rect key="frame" x="0.0" y="0.0" width="201" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 06, 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPc-Df-6Xp">
+                                                <rect key="frame" x="0.0" y="20.5" width="201" height="24"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="veP-Cn-KHX" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="8cr-sE-Xxr"/>
+                            <constraint firstItem="fpR-Sm-srl" firstAttribute="centerX" secondItem="S3S-Oj-5AN" secondAttribute="centerX" id="99H-Zi-OWl"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" secondItem="fpR-Sm-srl" secondAttribute="bottom" priority="250" constant="20" id="OLc-0p-Ahu"/>
+                            <constraint firstItem="fpR-Sm-srl" firstAttribute="top" secondItem="veP-Cn-KHX" secondAttribute="bottom" constant="40" id="XBA-Yg-idM"/>
+                            <constraint firstAttribute="trailing" secondItem="veP-Cn-KHX" secondAttribute="trailing" constant="14" id="cLn-TD-PGe"/>
+                            <constraint firstItem="veP-Cn-KHX" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="d0W-UH-cEO"/>
+                            <constraint firstItem="veP-Cn-KHX" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="14" id="fDn-Ie-xtn"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="374" height="273"/>
+                    <connections>
+                        <outlet property="completeNextSessionByLabel" destination="vPc-Df-6Xp" id="0Oz-yZ-ePe"/>
+                        <outlet property="nextSessionLabel" destination="vPc-Df-6Xp" id="Xv7-3t-lj1"/>
+                        <outlet property="stackView" destination="veP-Cn-KHX" id="mB2-iU-lSG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="93"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
