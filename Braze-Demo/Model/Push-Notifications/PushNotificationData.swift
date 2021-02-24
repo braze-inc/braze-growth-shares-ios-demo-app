@@ -5,7 +5,7 @@ import NotificationCenter
 enum PushNotificationKey: String {
   
   // MARK: - Silent Push Notifications
-  case homeListPriority = "home_list_priority"
+  case homeTilePriority = "home_tile_priority"
   case refreshHome = "refresh_home"
   case eventName = "event_name"
   

@@ -70,14 +70,14 @@ extension AppboyManager {
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     Appboy.sharedInstance()?.register(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     
-    if let priority = userInfo[PushNotificationKey.homeListPriority.rawValue] as? String {
-      RemoteStorage().store(priority, forKey: .homeListPriority)
+    if let priority = userInfo[PushNotificationKey.homeTilePriority.rawValue] as? String {
+      RemoteStorage().store(priority, forKey: .homeTilePriority)
     }
     
     if let updateHomeTo = userInfo[PushNotificationKey.refreshHome.rawValue] as? String {
       switch updateHomeTo {
       case "Default":
-        RemoteStorage().removeObject(forKey: .homeListPriority)
+        RemoteStorage().removeObject(forKey: .homeTilePriority)
         NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
       case "Content Card":
         NotificationCenter.default.post(name: .homeScreenContentCard, object: nil)

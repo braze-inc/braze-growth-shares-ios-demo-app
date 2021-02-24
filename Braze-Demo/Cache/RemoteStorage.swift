@@ -1,7 +1,7 @@
 import Foundation
 
 enum RemoteStorageKey: String, CaseIterable {
-  case homeListPriority = "home_list_priority"
+  case homeTilePriority = "home_tile_priority"
   case messageCenterStyle = "message_center_style"
   case homeScreenType = "home_screen_type"
   case pendingEvents = "pending_events"
