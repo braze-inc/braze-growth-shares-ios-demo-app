@@ -17,8 +17,8 @@ class SessionView: UIView {
     isACircle = true
   }
   
-  func configureView(_ sessionString: String?, isSessionCompleted: Bool) {
-    sessionNumberLabel.text = sessionString
+  func configureView(_ sessionNumber: String?, isSessionCompleted: Bool) {
+    sessionNumberLabel.text = sessionNumber
     sessionNumberLabel.textColor = isSessionCompleted ? .white : .black
     
     backgroundColor = isSessionCompleted ? .systemGreen : UIColor(named: "progress-background-color")
