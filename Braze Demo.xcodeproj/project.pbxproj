@@ -104,6 +104,8 @@
 		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
 		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
 		7FD4527A25C8C7B9007C76D0 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD4527925C8C7B9007C76D0 /* AppboyPushStory */; };
+		7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
+		7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -1050,6 +1052,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FF6178A25E6B0BB0058F98D /* MainInterface.storyboard in Resources */,
+				7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */,
 				7F12B40D25E6F842003AD64F /* SessionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1181,6 +1184,7 @@
 			files = (
 				7F12B47A25E71F30003AD64F /* Session.swift in Sources */,
 				7F12B48A25E721B1003AD64F /* UIStackView_Util.swift in Sources */,
+				7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */,
 				7FF6178725E6B0BB0058F98D /* NotificationViewController.swift in Sources */,
 				7FF617D525E6E67F0058F98D /* UIVIew_Util.swift in Sources */,
 				7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */,

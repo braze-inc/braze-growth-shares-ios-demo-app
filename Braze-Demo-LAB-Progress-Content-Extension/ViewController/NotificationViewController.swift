@@ -33,6 +33,8 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     configureNextSessionLabels(with: userInfo)
     configureTotalSessionProgress(rows: rowCount, columns: columnCount)
+    
+    saveViewedSessionProgressEvent()
   }
 }
 
@@ -54,7 +56,7 @@ private extension NotificationViewController {
         let session = sessionData.getSession(for: currentSessionCount)
         
         if currentSessionCount <= sessionData.totalSessionCount {
-          sessionView.configureView(session.numberString, isCompleted: session.isCompleted)
+          sessionView.configureView(session.numberString, isSessionCompleted: session.isCompleted)
         } else {
           sessionView.configureBlankView()
         }
@@ -73,5 +75,20 @@ private extension NotificationViewController {
   func configureNextSessionLabels(with userInfo: [AnyHashable: Any]) {
     nextSessionLabel.text = userInfo[PushNotificationKey.nextSessionName.rawValue] as? String
     completeNextSessionByLabel.text = userInfo[PushNotificationKey.nextSessionCompleteDate.rawValue] as? String
+  }
+  
+  /// Saves a custom event to `userDefaults` with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved.
+  ///
+  /// There is a conditional unwrap to check if there are saved pending events (in the case of a user viewing the content extension multiple times) and appends the event or saves a new array with one event.
+  func saveViewedSessionProgressEvent() {
+    let customEventDictionary = [["Event Name": "Viewed Session Progress"]] as [[String : Any]]
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+      pendingEvents.append(contentsOf: customEventDictionary)
+      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
+    } else {
+      remoteStorage.store(customEventDictionary, forKey: .pendingEvents)
+    }
   }
 }
