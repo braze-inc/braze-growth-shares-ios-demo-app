@@ -10,6 +10,9 @@
 		7F12B40D25E6F842003AD64F /* SessionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF617C425E6E5860058F98D /* SessionView.xib */; };
 		7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7F12B45A25E7183C003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
+		7F12B47A25E71F30003AD64F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B46225E71EEF003AD64F /* Session.swift */; };
+		7F12B48A25E721B1003AD64F /* UIStackView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B48925E721B1003AD64F /* UIStackView_Util.swift */; };
+		7F12B49225E72313003AD64F /* UIStackView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B48925E721B1003AD64F /* UIStackView_Util.swift */; };
 		7F1ADD5825E32EF600116E92 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F1ADDA125E4199A00116E92 /* MatchCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1ADDA025E4199A00116E92 /* MatchCardView.xib */; };
 		7F1ADDA825E41D3200116E92 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
@@ -183,6 +186,8 @@
 
 /* Begin PBXFileReference section */
 		7F12B41525E71594003AD64F /* PushNotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
+		7F12B46225E71EEF003AD64F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7F12B48925E721B1003AD64F /* UIStackView_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView_Util.swift; sourceTree = "<group>"; };
 		7F1ADD6D25E3406300116E92 /* Braze-Demo-Match-Game-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Match-Game-Content-Extension.entitlements"; sourceTree = "<group>"; };
 		7F1ADDA025E4199A00116E92 /* MatchCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCardView.xib; sourceTree = "<group>"; };
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
@@ -399,6 +404,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		7F12B46B25E71EF6003AD64F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F12B46225E71EEF003AD64F /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7F1ADD3D25E198E200116E92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,6 +517,7 @@
 				7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */,
 				7FA45A3524C29131009A484B /* UIVIew_Util.swift */,
 				7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */,
+				7F12B48925E721B1003AD64F /* UIStackView_Util.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -767,6 +781,7 @@
 				7FF617A025E6B1E00058F98D /* Braze-Demo-LAB-Progress-Content-Extension.entitlements */,
 				7F12B43C25E7164E003AD64F /* ViewController */,
 				7F12B43425E71645003AD64F /* View */,
+				7F12B46B25E71EF6003AD64F /* Model */,
 				7FF6178825E6B0BB0058F98D /* MainInterface.storyboard */,
 				7FF6178B25E6B0BB0058F98D /* Info.plist */,
 			);
@@ -1067,6 +1082,7 @@
 				7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */,
 				7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */,
 				7F96CC9A25E014EF002D9AD9 /* NotificationViewController.swift in Sources */,
+				7F12B49225E72313003AD64F /* UIStackView_Util.swift in Sources */,
 				7F96CCF325E16E99002D9AD9 /* AttemptCounter.swift in Sources */,
 				7F1ADD5825E32EF600116E92 /* RemoteStorage.swift in Sources */,
 			);
@@ -1163,6 +1179,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F12B47A25E71F30003AD64F /* Session.swift in Sources */,
+				7F12B48A25E721B1003AD64F /* UIStackView_Util.swift in Sources */,
 				7FF6178725E6B0BB0058F98D /* NotificationViewController.swift in Sources */,
 				7FF617D525E6E67F0058F98D /* UIVIew_Util.swift in Sources */,
 				7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */,

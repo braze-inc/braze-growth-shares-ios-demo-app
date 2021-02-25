@@ -69,10 +69,7 @@ extension NotificationViewController: MatchGameDelegate {
 private extension NotificationViewController {
   func configureBoard(rows: Int, columns: Int) {
     for _ in 0..<rows {
-      let matchCardsStackView = UIStackView()
-      matchCardsStackView.axis = .horizontal
-      matchCardsStackView.distribution = .equalSpacing
-      matchCardsStackView.spacing = 10
+      let matchCardsStackView = UIStackView(axis: .horizontal, distribution: .equalSpacing, spacing: 10)
 
       for _ in 0..<columns {
         let cardView: MatchCardView = .fromNib()
