@@ -25,6 +25,7 @@ class SessionView: UIView {
   }
   
   func configureBlankView() {
+    sessionNumberLabel.text = ""
     backgroundColor = .clear
   }
 }
