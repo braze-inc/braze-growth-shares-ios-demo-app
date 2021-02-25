@@ -79,5 +79,22 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Light</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Sailec-Black.otf</string>
+		<string>Sailec-BlackItalic.otf</string>
+		<string>Sailec-Bold.otf</string>
+		<string>Sailec-BoldItalic.otf</string>
+		<string>Sailec-Hairline.otf</string>
+		<string>Sailec-HarlineItalic.otf</string>
+		<string>Sailec-Light.otf</string>
+		<string>Sailec-LightItalic.otf</string>
+		<string>Sailec-Medium.otf</string>
+		<string>Sailec-MediumItalic.otf</string>
+		<string>Sailec-Regular.otf</string>
+		<string>Sailec-RegularItalic.otf</string>
+		<string>Sailec-Thin.otf</string>
+		<string>Sailec-ThinItalic.otf</string>
+	</array>
 </dict>
 </plist>

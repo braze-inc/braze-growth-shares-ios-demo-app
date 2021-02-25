@@ -106,6 +106,34 @@
 		7FD4527A25C8C7B9007C76D0 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD4527925C8C7B9007C76D0 /* AppboyPushStory */; };
 		7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
+		7FD8EA2625E75942004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
+		7FD8EA2725E75942004A89FA /* Sailec-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */; };
+		7FD8EA2825E75942004A89FA /* Sailec-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */; };
+		7FD8EA2925E75942004A89FA /* Sailec-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1B25E75941004A89FA /* Sailec-Black.otf */; };
+		7FD8EA2A25E75942004A89FA /* Sailec-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1C25E75941004A89FA /* Sailec-MediumItalic.otf */; };
+		7FD8EA2B25E75942004A89FA /* Sailec-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */; };
+		7FD8EA2C25E75942004A89FA /* Sailec-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1E25E75941004A89FA /* Sailec-Bold.otf */; };
+		7FD8EA2D25E75942004A89FA /* Sailec-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1F25E75941004A89FA /* Sailec-Regular.otf */; };
+		7FD8EA2E25E75942004A89FA /* Sailec-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2025E75941004A89FA /* Sailec-BoldItalic.otf */; };
+		7FD8EA2F25E75942004A89FA /* Sailec-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2125E75941004A89FA /* Sailec-RegularItalic.otf */; };
+		7FD8EA3025E75942004A89FA /* Sailec-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2225E75941004A89FA /* Sailec-LightItalic.otf */; };
+		7FD8EA3125E75942004A89FA /* Sailec-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */; };
+		7FD8EA3225E75942004A89FA /* Sailec-HairlineItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */; };
+		7FD8EA3325E75942004A89FA /* Sailec-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */; };
+		7FD8EA3B25E759F9004A89FA /* Sailec-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1B25E75941004A89FA /* Sailec-Black.otf */; };
+		7FD8EA3C25E759F9004A89FA /* Sailec-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1E25E75941004A89FA /* Sailec-Bold.otf */; };
+		7FD8EA3D25E759F9004A89FA /* Sailec-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2025E75941004A89FA /* Sailec-BoldItalic.otf */; };
+		7FD8EA3E25E759F9004A89FA /* Sailec-HairlineItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */; };
+		7FD8EA3F25E759F9004A89FA /* Sailec-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2225E75941004A89FA /* Sailec-LightItalic.otf */; };
+		7FD8EA4025E759F9004A89FA /* Sailec-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1C25E75941004A89FA /* Sailec-MediumItalic.otf */; };
+		7FD8EA4125E759F9004A89FA /* Sailec-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */; };
+		7FD8EA4225E759F9004A89FA /* Sailec-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2125E75941004A89FA /* Sailec-RegularItalic.otf */; };
+		7FD8EA4325E759F9004A89FA /* Sailec-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */; };
+		7FD8EA4425E759F9004A89FA /* Sailec-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */; };
+		7FD8EA4525E759F9004A89FA /* Sailec-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1F25E75941004A89FA /* Sailec-Regular.otf */; };
+		7FD8EA4625E759F9004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
+		7FD8EA4725E759F9004A89FA /* Sailec-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */; };
+		7FD8EA4825E759F9004A89FA /* Sailec-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -286,6 +314,20 @@
 		7FD2F60D256607AB0061950D /* GroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
 		7FD2F612256608A20061950D /* UIButton_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Util.swift; sourceTree = "<group>"; };
 		7FD4526525C8C756007C76D0 /* Braze-Demo-Push-Story-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Push-Story-Content-Extension.entitlements"; sourceTree = "<group>"; };
+		7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Medium.otf"; sourceTree = "<group>"; };
+		7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-BlackItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-ThinItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA1B25E75941004A89FA /* Sailec-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Black.otf"; sourceTree = "<group>"; };
+		7FD8EA1C25E75941004A89FA /* Sailec-MediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-MediumItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Light.otf"; sourceTree = "<group>"; };
+		7FD8EA1E25E75941004A89FA /* Sailec-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Bold.otf"; sourceTree = "<group>"; };
+		7FD8EA1F25E75941004A89FA /* Sailec-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Regular.otf"; sourceTree = "<group>"; };
+		7FD8EA2025E75941004A89FA /* Sailec-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-BoldItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA2125E75941004A89FA /* Sailec-RegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-RegularItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA2225E75941004A89FA /* Sailec-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-LightItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Hairline.otf"; sourceTree = "<group>"; };
+		7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-HairlineItalic.otf"; sourceTree = "<group>"; };
+		7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Thin.otf"; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -604,6 +646,7 @@
 		7F9DCBC224AD785200E8D207 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				7FD8EA1725E758F1004A89FA /* Sailec-Font */,
 				7F554A172583372B00DAFB84 /* Local-JSON */,
 				7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
@@ -775,6 +818,27 @@
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
 			path = "In App Messages";
+			sourceTree = "<group>";
+		};
+		7FD8EA1725E758F1004A89FA /* Sailec-Font */ = {
+			isa = PBXGroup;
+			children = (
+				7FD8EA1B25E75941004A89FA /* Sailec-Black.otf */,
+				7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */,
+				7FD8EA1E25E75941004A89FA /* Sailec-Bold.otf */,
+				7FD8EA2025E75941004A89FA /* Sailec-BoldItalic.otf */,
+				7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */,
+				7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */,
+				7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */,
+				7FD8EA2225E75941004A89FA /* Sailec-LightItalic.otf */,
+				7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */,
+				7FD8EA1C25E75941004A89FA /* Sailec-MediumItalic.otf */,
+				7FD8EA1F25E75941004A89FA /* Sailec-Regular.otf */,
+				7FD8EA2125E75941004A89FA /* Sailec-RegularItalic.otf */,
+				7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */,
+				7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */,
+			);
+			name = "Sailec-Font";
 			sourceTree = "<group>";
 		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
@@ -1018,18 +1082,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F6C981025644896000CDAAA /* Group-List.json in Resources */,
+				7FD8EA2C25E75942004A89FA /* Sailec-Bold.otf in Resources */,
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
+				7FD8EA3325E75942004A89FA /* Sailec-Thin.otf in Resources */,
+				7FD8EA2725E75942004A89FA /* Sailec-BlackItalic.otf in Resources */,
+				7FD8EA2825E75942004A89FA /* Sailec-ThinItalic.otf in Resources */,
 				7F8967CB25740FA600C61405 /* FullListViewController.xib in Resources */,
+				7FD8EA2925E75942004A89FA /* Sailec-Black.otf in Resources */,
+				7FD8EA2F25E75942004A89FA /* Sailec-RegularItalic.otf in Resources */,
+				7FD8EA2625E75942004A89FA /* Sailec-Medium.otf in Resources */,
+				7FD8EA3025E75942004A89FA /* Sailec-LightItalic.otf in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7F554A19258337B200DAFB84 /* README.rtf in Resources */,
 				7FBDD49524AD711F00EC0983 /* Assets.xcassets in Resources */,
 				7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */,
+				7FD8EA2B25E75942004A89FA /* Sailec-Light.otf in Resources */,
 				7F8967D92574247500C61405 /* SwitchTableViewCell.xib in Resources */,
+				7FD8EA3225E75942004A89FA /* Sailec-HairlineItalic.otf in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
 				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
 				7F754FC1250C2DF000CD7B45 /* Tile-List.json in Resources */,
+				7FD8EA2E25E75942004A89FA /* Sailec-BoldItalic.otf in Resources */,
 				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
+				7FD8EA2D25E75942004A89FA /* Sailec-Regular.otf in Resources */,
+				7FD8EA3125E75942004A89FA /* Sailec-Hairline.otf in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
+				7FD8EA2A25E75942004A89FA /* Sailec-MediumItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,9 +1129,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD8EA4225E759F9004A89FA /* Sailec-RegularItalic.otf in Resources */,
+				7FD8EA4425E759F9004A89FA /* Sailec-Thin.otf in Resources */,
 				7FF6178A25E6B0BB0058F98D /* MainInterface.storyboard in Resources */,
+				7FD8EA4325E759F9004A89FA /* Sailec-BlackItalic.otf in Resources */,
+				7FD8EA3F25E759F9004A89FA /* Sailec-LightItalic.otf in Resources */,
+				7FD8EA3C25E759F9004A89FA /* Sailec-Bold.otf in Resources */,
+				7FD8EA4125E759F9004A89FA /* Sailec-ThinItalic.otf in Resources */,
+				7FD8EA3E25E759F9004A89FA /* Sailec-HairlineItalic.otf in Resources */,
+				7FD8EA4625E759F9004A89FA /* Sailec-Medium.otf in Resources */,
 				7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */,
+				7FD8EA3D25E759F9004A89FA /* Sailec-BoldItalic.otf in Resources */,
+				7FD8EA4825E759F9004A89FA /* Sailec-Hairline.otf in Resources */,
+				7FD8EA3B25E759F9004A89FA /* Sailec-Black.otf in Resources */,
+				7FD8EA4525E759F9004A89FA /* Sailec-Regular.otf in Resources */,
+				7FD8EA4725E759F9004A89FA /* Sailec-Light.otf in Resources */,
 				7F12B40D25E6F842003AD64F /* SessionView.xib in Resources */,
+				7FD8EA4025E759F9004A89FA /* Sailec-MediumItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

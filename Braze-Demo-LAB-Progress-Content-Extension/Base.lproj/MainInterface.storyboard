@@ -7,6 +7,14 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sailec-Bold.otf">
+            <string>Sailec-Bold</string>
+        </array>
+        <array key="Sailec-Regular.otf">
+            <string>Sailec-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Notification View Controller-->
         <scene sceneID="cwh-vc-ff4">
@@ -23,37 +31,37 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fpR-Sm-srl">
-                                <rect key="frame" x="86.5" y="133" width="201" height="112.5"/>
+                                <rect key="frame" x="79" y="133" width="216.5" height="103"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wL-yeA" userLabel="Next Session Stack View">
-                                        <rect key="frame" x="51" y="0.0" width="99.5" height="48"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wL-yeA" userLabel="Next Session Stack View">
+                                        <rect key="frame" x="55.5" y="0.0" width="105.5" height="43"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Session" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N5-mk-N6i">
-                                                <rect key="frame" x="0.0" y="0.0" width="99.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="Sailec-Regular" family="Sailec" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liquid 102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-O7-Xhn">
-                                                <rect key="frame" x="0.0" y="24" width="99.5" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="23" width="105.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Yvh-qx-ruA" userLabel="Complete Next Session Stack View">
-                                        <rect key="frame" x="0.0" y="68" width="201" height="44.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Yvh-qx-ruA" userLabel="Complete Next Session Stack View">
+                                        <rect key="frame" x="0.0" y="63" width="216.5" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Next Session By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84N-9d-h7J">
-                                                <rect key="frame" x="0.0" y="0.0" width="201" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="216.5" height="17"/>
+                                                <fontDescription key="fontDescription" name="Sailec-Regular" family="Sailec" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 06, 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPc-Df-6Xp">
-                                                <rect key="frame" x="0.0" y="20.5" width="201" height="24"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <rect key="frame" x="0.0" y="20" width="216.5" height="20"/>
+                                                <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
