@@ -9,6 +9,8 @@ class SessionView: UIView {
   private var isACircle = false
   
   override func layoutSubviews() {
+    super.layoutSubviews()
+    
     guard !isACircle else { return }
     
     layer.cornerRadius = frame.size.width / 2
