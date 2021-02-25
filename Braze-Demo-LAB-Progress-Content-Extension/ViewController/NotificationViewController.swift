@@ -51,7 +51,7 @@ private extension NotificationViewController {
       
       for _ in 0..<columns {
         let sessionView: SessionView = .fromNib()
-        let session = sessionData.getSession(currentSessionCount: currentSessionCount)
+        let session = sessionData.getSession(for: currentSessionCount)
         
         if currentSessionCount <= sessionData.totalSessionCount {
           sessionView.configureView(session.numberString, isCompleted: session.isCompleted)

@@ -2,7 +2,7 @@ struct SessionData {
   private(set) var totalSessionCount: Int
   private(set) var completedSessionCount: Int
   
-  func getSession(currentSessionCount: Int) -> Session {
+  func getSession(for currentSessionCount: Int) -> Session {
     return Session(number: currentSessionCount, isCompleted: currentSessionCount <= completedSessionCount)
   }
   
