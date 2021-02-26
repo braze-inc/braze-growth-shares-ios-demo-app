@@ -16,10 +16,9 @@ enum PushNotificationKey: String {
   case nextSessionCompleteDate = "next_session_complete_date"
 }
 
-// MARK: - Silent Push Notifcation Names
+// MARK: - Silent Push Notification Names
 extension Notification.Name {
   static let defaultAppExperience = Notification.Name("kDefaultApExperience")
   static let homeScreenContentCard = Notification.Name("kHomeScreenContentCard")
   static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
 }
-
