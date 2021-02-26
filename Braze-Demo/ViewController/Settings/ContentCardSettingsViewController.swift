@@ -7,21 +7,21 @@ class ContentCardSettingsViewController: UIViewController {
   
   // MARK: - Actions
   @IBAction func apiTriggeredCampaignButtonPressed(_ sender: Any) {
-    guard let userId = AppboyManager.shared.userId, !userId.isEmpty else { return }
+    guard let userId = BrazeManager.shared.userId, !userId.isEmpty else { return }
     handleApiTriggeredCampaignKey(userId)
   }
   @IBAction func resetHomeScreenButtonPressed(_ sender: Any) {
     #if targetEnvironment(simulator)
       NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
     #else
-      AppboyManager.shared.logCustomEvent("Reset Home Screen")
+      BrazeManager.shared.logCustomEvent("Reset Home Screen")
     #endif
     
     presentAlert(title: "Reset Home Screen", message: nil)
   }
   @IBAction func eventRemovalCampaignButtonPressed(_ sender: Any) {
     let eventTitle = "Group Event Removal Campaign Pressed"
-    AppboyManager.shared.logCustomEvent(eventTitle)
+    BrazeManager.shared.logCustomEvent(eventTitle)
     presentAlert(title: eventTitle, message: nil)
   }
   @IBAction func segmentChanged(_ sender: UISegmentedControl) {
@@ -52,7 +52,7 @@ private extension ContentCardSettingsViewController {
   func handleMessageCenterCampaignButtonPressed(with title: String?) {
     guard let title = title else { return }
     let eventTitle = "\(title) Pressed"
-    AppboyManager.shared.logCustomEvent(eventTitle)
+    BrazeManager.shared.logCustomEvent(eventTitle)
     presentAlert(title: eventTitle, message: nil)
   }
   

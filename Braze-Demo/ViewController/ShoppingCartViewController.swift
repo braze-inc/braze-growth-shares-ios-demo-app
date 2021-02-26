@@ -74,12 +74,12 @@ extension ShoppingCartViewController {
 // MARK: - Private Methods
 extension ShoppingCartViewController {
   func loadContentCards() {
-    AppboyManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
-    AppboyManager.shared.requestContentCardsRefresh()
+    BrazeManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
+    BrazeManager.shared.requestContentCardsRefresh()
   }
   
   @objc func contentCardsUpdated(_ notification: Notification) {
-    guard let contentCards = AppboyManager.shared.handleContentCardsUpdated(notification, for: [.coupon]) as? [Coupon], !contentCards.isEmpty else { return }
+    guard let contentCards = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.coupon]) as? [Coupon], !contentCards.isEmpty else { return }
     
     coupon = contentCards.first
     configureGestureView(coupon?.imageUrl)
@@ -110,7 +110,7 @@ extension ShoppingCartViewController {
     delegate?.emptiedCart()
     
     if logEvent {
-      AppboyManager.shared.logCustomEvent("Emptied items from cart")
+      BrazeManager.shared.logCustomEvent("Emptied items from cart")
     }
   }
   
@@ -123,7 +123,7 @@ extension ShoppingCartViewController {
   
   func logPurchase(with items: [Tile]) {
     for (item, quantity) in items.countDictionary {
-      AppboyManager.shared.logPurchase(productIdentifier: item.title, inCurrency: "USD", atPrice: "\(item.price ?? 0.00)", withQuanitity: quantity)
+      BrazeManager.shared.logPurchase(productIdentifier: item.title, inCurrency: "USD", atPrice: "\(item.price ?? 0.00)", withQuanitity: quantity)
     }
   }
 }
@@ -138,7 +138,7 @@ extension ShoppingCartViewController: GestureViewEventDelegate {
     let action = UIAlertAction(title: "Woo!", style: .default, handler: nil)
     presentAlert(title: eventTitle, message: "Your total price has been updated", actions: [action])
     
-    AppboyManager.shared.logCustomEvent(eventTitle)
+    BrazeManager.shared.logCustomEvent(eventTitle)
     coupon?.logContentCardClicked()
   }
 }

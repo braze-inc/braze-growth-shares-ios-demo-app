@@ -39,7 +39,7 @@
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */; };
-		7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */; };
+		7F87D4AA24B0500200ED0A86 /* BrazeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */; };
 		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
 		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
 		7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8967C525740F9900C61405 /* FullListViewController.swift */; };
@@ -70,7 +70,7 @@
 		7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */; };
 		7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC524AD787A00E8D207 /* Main.storyboard */; };
 		7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */; };
-		7F9DCBCC24AD79C300E8D207 /* AppboyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBCB24AD79C300E8D207 /* AppboyManager.swift */; };
+		7F9DCBCC24AD79C300E8D207 /* BrazeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBCB24AD79C300E8D207 /* BrazeManager.swift */; };
 		7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */; };
 		7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBD124AD7A4F00E8D207 /* Tile.swift */; };
 		7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */; };
@@ -243,7 +243,7 @@
 		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
 		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
 		7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterContainerViewController.swift; sourceTree = "<group>"; };
-		7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboySettingsViewController.swift; sourceTree = "<group>"; };
+		7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeSettingsViewController.swift; sourceTree = "<group>"; };
 		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
 		7F8967C525740F9900C61405 /* FullListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullListViewController.swift; sourceTree = "<group>"; };
@@ -273,7 +273,7 @@
 		7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7F9DCBC524AD787A00E8D207 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataCoordinator.swift; sourceTree = "<group>"; };
-		7F9DCBCB24AD79C300E8D207 /* AppboyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppboyManager.swift; sourceTree = "<group>"; };
+		7F9DCBCB24AD79C300E8D207 /* BrazeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeManager.swift; sourceTree = "<group>"; };
 		7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		7F9DCBD124AD7A4F00E8D207 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -495,7 +495,7 @@
 		7F5549EB2582F3BC00DAFB84 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				7F87D4A924B0500200ED0A86 /* AppboySettingsViewController.swift */,
+				7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */,
 				7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */,
 				7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */,
 			);
@@ -777,7 +777,7 @@
 		7FBDD48724AD711E00EC0983 /* Braze-Demo */ = {
 			isa = PBXGroup;
 			children = (
-				7F9DCBCB24AD79C300E8D207 /* AppboyManager.swift */,
+				7F9DCBCB24AD79C300E8D207 /* BrazeManager.swift */,
 				7F9DCBCD24AD79C700E8D207 /* AppDelegate */,
 				7F9DCBC924AD79B000E8D207 /* API */,
 				7F87D4A824B01AAF00ED0A86 /* DataSource */,
@@ -1208,7 +1208,7 @@
 				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
 				7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */,
-				7F9DCBCC24AD79C300E8D207 /* AppboyManager.swift in Sources */,
+				7F9DCBCC24AD79C300E8D207 /* BrazeManager.swift in Sources */,
 				7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */,
 				7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */,
 				7F554A3F2587209700DAFB84 /* FooterSupplementaryView.swift in Sources */,
@@ -1236,7 +1236,7 @@
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
 				7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */,
 				7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */,
-				7F87D4AA24B0500200ED0A86 /* AppboySettingsViewController.swift in Sources */,
+				7F87D4AA24B0500200ED0A86 /* BrazeSettingsViewController.swift in Sources */,
 				7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */,
 				7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */,
 				7FE763F224CD246A0017C5D2 /* Decimal_Util.swift in Sources */,

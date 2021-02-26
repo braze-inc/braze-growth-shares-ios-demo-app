@@ -14,7 +14,7 @@ private extension InAppMessageSettingsViewController {
     guard let title = title else { return }
     
     let eventTitle = "\(title) Pressed"
-    AppboyManager.shared.logCustomEvent(eventTitle)
+    BrazeManager.shared.logCustomEvent(eventTitle)
     
     UINotificationFeedbackGenerator().notificationOccurred(.success)
   }
