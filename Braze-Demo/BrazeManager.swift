@@ -10,7 +10,7 @@ class BrazeManager: NSObject {
 #warning("Please enter your API key above")
   private var appboyOptions: [String: Any] {
     return [
-      ABKIDFADelegateKey: AppboyIDFADelegate(),
+      ABKIDFADelegateKey: BrazeIDFADelegate(),
       ABKMinimumTriggerTimeIntervalKey: 0,
       ABKPushStoryAppGroupKey : "group.com.braze.book-demo"
     ]
@@ -35,7 +35,7 @@ class BrazeManager: NSObject {
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
-  private class AppboyIDFADelegate: NSObject, ABKIDFADelegate {
+  private class BrazeIDFADelegate: NSObject, ABKIDFADelegate {
     func advertisingIdentifierString() -> String {
       return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
