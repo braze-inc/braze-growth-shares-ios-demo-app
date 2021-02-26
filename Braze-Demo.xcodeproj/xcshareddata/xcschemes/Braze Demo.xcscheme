@@ -15,9 +15,9 @@
                   <BuildableReference
                      BuildableIdentifier = "primary"
                      BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-                     BuildableName = "Braze Demo.app"
-                     BlueprintName = "Braze Demo"
-                     ReferencedContainer = "container:Braze Demo.xcodeproj">
+                     BuildableName = "Braze-Demo.app"
+                     BlueprintName = "Braze-Demo"
+                     ReferencedContainer = "container:Braze-Demo.xcodeproj">
                   </BuildableReference>
                </EnvironmentBuildable>
             </ActionContent>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-               BuildableName = "Braze Demo.app"
-               BlueprintName = "Braze Demo"
-               ReferencedContainer = "container:Braze Demo.xcodeproj">
+               BuildableName = "Braze-Demo.app"
+               BlueprintName = "Braze-Demo"
+               ReferencedContainer = "container:Braze-Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7FBDD49D24AD711F00EC0983"
-               BuildableName = "Braze DemoTests.xctest"
-               BlueprintName = "Braze DemoTests"
-               ReferencedContainer = "container:Braze Demo.xcodeproj">
+               BuildableName = "Braze-DemoTests.xctest"
+               BlueprintName = "Braze-DemoTests"
+               ReferencedContainer = "container:Braze-Demo.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7FBDD4A824AD711F00EC0983"
-               BuildableName = "Braze DemoUITests.xctest"
-               BlueprintName = "Braze DemoUITests"
-               ReferencedContainer = "container:Braze Demo.xcodeproj">
+               BuildableName = "Braze-DemoUITests.xctest"
+               BlueprintName = "Braze-DemoUITests"
+               ReferencedContainer = "container:Braze-Demo.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -83,9 +83,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-            BuildableName = "Braze Demo.app"
-            BlueprintName = "Braze Demo"
-            ReferencedContainer = "container:Braze Demo.xcodeproj">
+            BuildableName = "Braze-Demo.app"
+            BlueprintName = "Braze-Demo"
+            ReferencedContainer = "container:Braze-Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -100,9 +100,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-            BuildableName = "Braze Demo.app"
-            BlueprintName = "Braze Demo"
-            ReferencedContainer = "container:Braze Demo.xcodeproj">
+            BuildableName = "Braze-Demo.app"
+            BlueprintName = "Braze-Demo"
+            ReferencedContainer = "container:Braze-Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

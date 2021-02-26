@@ -15,10 +15,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7F8CB2AB25C845900001F270"
-               BuildableName = "Braze Demo Service Extension.appex"
-               BlueprintName = "Braze Demo Service Extension"
-               ReferencedContainer = "container:Braze Demo.xcodeproj">
+               BlueprintIdentifier = "7F8CB2E525C888000001F270"
+               BuildableName = "Braze-Demo-Push-Story-Content-Extension.appex"
+               BlueprintName = "Braze-Demo-Push-Story-Content-Extension"
+               ReferencedContainer = "container:Braze-Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -30,9 +30,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-               BuildableName = "Braze Demo.app"
-               BlueprintName = "Braze Demo"
-               ReferencedContainer = "container:Braze Demo.xcodeproj">
+               BuildableName = "Braze-Demo.app"
+               BlueprintName = "Braze-Demo"
+               ReferencedContainer = "container:Braze-Demo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-            BuildableName = "Braze Demo.app"
-            BlueprintName = "Braze Demo"
-            ReferencedContainer = "container:Braze Demo.xcodeproj">
+            BuildableName = "Braze-Demo.app"
+            BlueprintName = "Braze-Demo"
+            ReferencedContainer = "container:Braze-Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7FBDD48424AD711D00EC0983"
-            BuildableName = "Braze Demo.app"
-            BlueprintName = "Braze Demo"
-            ReferencedContainer = "container:Braze Demo.xcodeproj">
+            BuildableName = "Braze-Demo.app"
+            BlueprintName = "Braze-Demo"
+            ReferencedContainer = "container:Braze-Demo.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

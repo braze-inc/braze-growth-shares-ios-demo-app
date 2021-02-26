@@ -41,12 +41,12 @@ extension MessageCenterViewController {
 // MARK: - Private Methods
 private extension MessageCenterViewController {
   func loadContentCards() {
-    AppboyManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
-    AppboyManager.shared.requestContentCardsRefresh()
+    BrazeManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
+    BrazeManager.shared.requestContentCardsRefresh()
   }
   
   @objc func contentCardsUpdated(_ notification: Notification) {
-    let contentCards = AppboyManager.shared.handleContentCardsUpdated(notification, for: [.message(.fullPage), .message(.webView)]) as! [Message]
+    let contentCards = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.message(.fullPage), .message(.webView)]) as! [Message]
     
     setDataSource(with: contentCards)
   }

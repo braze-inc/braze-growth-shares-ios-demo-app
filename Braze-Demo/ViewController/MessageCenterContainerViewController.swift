@@ -60,7 +60,7 @@ private extension MessageCenterContainerViewController {
   }
   
   func configureCustomAndDefault() {
-    configureAppboyContainer()
+    configureBrazeContainer()
     defaultContainerView.isHidden = true
   }
   
@@ -69,12 +69,12 @@ private extension MessageCenterContainerViewController {
   }
   
   func configureOnlyDefault() {
-    configureAppboyContainer()
+    configureBrazeContainer()
     customContainerView.isHidden = true
     segmentedControlHeight.constant = 0
   }
   
-  func configureAppboyContainer() {
+  func configureBrazeContainer() {
     defaultContainerView = UIView()
     defaultContainerView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(defaultContainerView)

@@ -18,12 +18,12 @@ class ContentOperationQueue<T: ContentCardable, U: MetaData>: OperationQueue {
   
   /// The observer in this case is `ContentOperationQueue`. The observer needs to be retained in memory long enough to recieve the initial `contentCardsUpdated(_ notification: Notification)` callback.
   func loadContentCards() {
-    AppboyManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
-    AppboyManager.shared.requestContentCardsRefresh()
+    BrazeManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
+    BrazeManager.shared.requestContentCardsRefresh()
   }
   
   @objc private func contentCardsUpdated(_ notification: Notification) {
-    let contentCards = AppboyManager.shared.handleContentCardsUpdated(notification, for: [classType, .ad])
+    let contentCards = BrazeManager.shared.handleContentCardsUpdated(notification, for: [classType, .ad])
     contentCardCompletionHandler(contentCards)
     semaphore.signal()
   }

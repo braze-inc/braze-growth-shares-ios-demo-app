@@ -8,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
 
-    AppboyManager.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
+    BrazeManager.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
     
     UNUserNotificationCenter.current().delegate = self
         
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   // MARK: - Push Notifications
   
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-    AppboyManager.shared.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    BrazeManager.shared.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
   }
   
   func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
   }
   
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-    AppboyManager.shared.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+    BrazeManager.shared.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
   }
   
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-    AppboyManager.shared.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
+    BrazeManager.shared.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
   }
 
   // MARK: - Core Data stack

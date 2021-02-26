@@ -174,7 +174,7 @@ extension HomeListViewController: CellActionDelegate {
     if tile.isContentCard {
       tile.logContentCardClicked()
     }
-    AppboyManager.shared.logCustomEvent("Added item to cart")
+    BrazeManager.shared.logCustomEvent("Added item to cart")
     shoppingCartItems.append(tile)
     presentAlert(title: "Added \(tile.title) to Shopping Cart", message: nil)
   }

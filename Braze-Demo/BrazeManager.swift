@@ -3,14 +3,14 @@ import AppboyUI
 import AdSupport
 import AppTrackingTransparency
 
-class AppboyManager: NSObject {
-  static let shared = AppboyManager()
+class BrazeManager: NSObject {
+  static let shared = BrazeManager()
 #warning("Please enter your API key below")
   private let apiKey = "YOUR-API-KEY"
 #warning("Please enter your API key above")
   private var appboyOptions: [String: Any] {
     return [
-      ABKIDFADelegateKey: AppboyIDFADelegate(),
+      ABKIDFADelegateKey: BrazeIDFADelegate(),
       ABKMinimumTriggerTimeIntervalKey: 0,
       ABKPushStoryAppGroupKey : "group.com.braze.book-demo"
     ]
@@ -35,7 +35,7 @@ class AppboyManager: NSObject {
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
-  private class AppboyIDFADelegate: NSObject, ABKIDFADelegate {
+  private class BrazeIDFADelegate: NSObject, ABKIDFADelegate {
     func advertisingIdentifierString() -> String {
       return ASIdentifierManager.shared().advertisingIdentifier.uuidString
     }
@@ -47,7 +47,7 @@ class AppboyManager: NSObject {
 }
 
 // MARK: - User
-extension AppboyManager {
+extension BrazeManager {
   var userId: String? {
      return Appboy.sharedInstance()?.user.userID
    }
@@ -58,7 +58,7 @@ extension AppboyManager {
 }
 
 // MARK: - Push
-extension AppboyManager {
+extension BrazeManager {
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let appboyCategories = ABKPushUtils.getAppboyUNNotificationCategorySet()
     UNUserNotificationCenter.current().setNotificationCategories(appboyCategories)
@@ -70,10 +70,14 @@ extension AppboyManager {
   func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
     Appboy.sharedInstance()?.register(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     
-    if let updateHomeTo = userInfo["refresh_home"] as? String {
+    if let priority = userInfo[PushNotificationKey.homeTilePriority.rawValue] as? String {
+      RemoteStorage().store(priority, forKey: .homeTilePriority)
+    }
+    
+    if let updateHomeTo = userInfo[PushNotificationKey.refreshHome.rawValue] as? String {
       switch updateHomeTo {
       case "Default":
-        RemoteStorage().removeObject(forKey: .homeListPriority)
+        RemoteStorage().removeObject(forKey: .homeTilePriority)
         NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
       case "Content Card":
         NotificationCenter.default.post(name: .homeScreenContentCard, object: nil)
@@ -81,15 +85,8 @@ extension AppboyManager {
         break
       }
     }
-      
-    if let priority = userInfo["home_tile_priority"] as? String {
-      RemoteStorage().store(priority, forKey: .homeListPriority)
-      if userInfo["refresh_home"] == nil {
-        NotificationCenter.default.post(name: .reorderHomeScreen, object: nil)
-      }
-    }
     
-    if let eventName = userInfo["event_name"] as? String {
+    if let eventName = userInfo[PushNotificationKey.eventName.rawValue] as? String {
       logCustomEvent(eventName)
     }
   }
@@ -100,7 +97,7 @@ extension AppboyManager {
 }
 
 // MARK: - Analytics
-extension AppboyManager {
+extension BrazeManager {
   /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
   func logPendingEventsIfNecessary() {
     let remoteStorage = RemoteStorage(storageType: .suite)
@@ -153,7 +150,7 @@ extension AppboyManager {
 }
 
 // MARK: - In-App Messages
-extension AppboyManager {
+extension BrazeManager {
   func isInAppMessageSlideFromTop(_ inAppMessage: ABKInAppMessage) -> Bool {
     guard let slideup = inAppMessage as? ABKInAppMessageSlideup else { return false }
     return slideup.inAppMessageSlideupAnchor == .fromTop
@@ -161,7 +158,7 @@ extension AppboyManager {
 }
 
 // MARK: - ABKInAppMessage UI Delegate
-extension AppboyManager: ABKInAppMessageUIDelegate {
+extension BrazeManager: ABKInAppMessageUIDelegate {
   func inAppMessageViewControllerWith(_ inAppMessage: ABKInAppMessage) -> ABKInAppMessageViewController {
     switch inAppMessage {
     case is ABKInAppMessageSlideup:
@@ -179,7 +176,7 @@ extension AppboyManager: ABKInAppMessageUIDelegate {
 }
 
 // MARK: - Content Cards
-extension AppboyManager {
+extension BrazeManager {
   var contentCards: [ABKContentCard]? {
     return Appboy.sharedInstance()?.contentCardsController.contentCards as? [ABKContentCard]
   }
@@ -237,14 +234,14 @@ extension AppboyManager {
 }
 
 // MARK: - ABKUIUtils
-extension AppboyManager {
+extension BrazeManager {
   var activeApplicationViewController: UIViewController {
     return ABKUIUtils.activeApplicationViewController
   }
 }
 
 // MARK: - Private Methods
-private extension AppboyManager {
+private extension BrazeManager {
   /// Helper method to convert `ABKContentCard` objects to `ContentCardable` objects.
   ///
   /// The variables of `ABKContentCard` are parsed into a dictionary to be used as the `metaData` parameter for the `ContentCardable` initializer. All key-value pairs from the Braze dashboard are represented in the `extras` variable.
@@ -314,13 +311,6 @@ private extension AppboyManager {
   }
 }
 
-// MARK: - Silent Push Notifcation Names
-extension Notification.Name {
-  static let defaultAppExperience = Notification.Name("kDefaultApExperience")
-  static let homeScreenContentCard = Notification.Name("kHomeScreenContentCard")
-  static let reorderHomeScreen = Notification.Name("kReorderHomeScreen")
-}
-
 // MARK: - Slideup In-App Message
 class SlideupViewController: ABKInAppMessageSlideupViewController {}
 
@@ -350,7 +340,7 @@ class ModalViewController: ABKInAppMessageModalViewController {
 class FullViewController: ABKInAppMessageFullViewController {}
 
 // MARK: - In-App Message View Controller Helpers
-private extension AppboyManager {
+private extension BrazeManager {
   func slideupViewController(inAppMessage: ABKInAppMessage) -> ABKInAppMessageSlideupViewController {
     if isInAppMessageSlideFromTop(inAppMessage) || activeApplicationViewController.topMostViewController() is UIAlertController {
       return ABKInAppMessageSlideupViewController(inAppMessage: inAppMessage)

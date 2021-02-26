@@ -4,13 +4,13 @@ private enum SettingsSection {
   case row
 }
 
-class AppboySettingsViewController: UIViewController {
+class BrazeSettingsViewController: UIViewController {
 
   // MARK: - Outlets
   @IBOutlet private weak var tableView: UITableView!
   @IBOutlet private weak var externalIDTextField: UITextField! {
     didSet {
-      guard let userId = AppboyManager.shared.userId, !userId.isEmpty else { return }
+      guard let userId = BrazeManager.shared.userId, !userId.isEmpty else { return }
       externalIDTextField.text = userId
     }
   }
@@ -18,7 +18,7 @@ class AppboySettingsViewController: UIViewController {
   // MARK: - Actions
   @IBAction func changeUserButtonPressed(_ sender: Any) {
     guard let userId = externalIDTextField.text else { return }
-    AppboyManager.shared.changeUser(userId)
+    BrazeManager.shared.changeUser(userId)
     
     presentAlert(title: "Changed User ID to \(userId)", message: nil)
   }
@@ -33,7 +33,7 @@ class AppboySettingsViewController: UIViewController {
 }
 
 // MARK: - View Lifecycle
-extension AppboySettingsViewController {
+extension BrazeSettingsViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -43,7 +43,7 @@ extension AppboySettingsViewController {
 }
 
 // MARK: - Private
-private extension AppboySettingsViewController {
+private extension BrazeSettingsViewController {
   func configureDataSource() {
     var snapshot = Snapshot()
 
@@ -70,7 +70,7 @@ private extension AppboySettingsViewController {
   }
 }
 
-extension AppboySettingsViewController: UITableViewDelegate {
+extension BrazeSettingsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     tableView.deselectRow(at: indexPath, animated: false)
     

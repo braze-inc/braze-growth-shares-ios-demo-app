@@ -1,6 +1,5 @@
 import Foundation
 
-
 ///Extends custom object functionality to contain Content Card object data without any depencies of the Appboy-iOS-SDK. The logging methods can be called directly from conforming objects. For example, to log a click for a message in the Message Center, `message.logContentCardImpression()` all is that is needed.
 ///
 /// Includes:
@@ -17,15 +16,15 @@ extension ContentCardable {
   }
   
   func logContentCardClicked() {
-    AppboyManager.shared.logContentCardClicked(idString: contentCardData?.contentCardId)
+    BrazeManager.shared.logContentCardClicked(idString: contentCardData?.contentCardId)
   }
   
   func logContentCardDismissed() {
-    AppboyManager.shared.logContentCardDismissed(idString: contentCardData?.contentCardId)
+    BrazeManager.shared.logContentCardDismissed(idString: contentCardData?.contentCardId)
   }
   
   func logContentCardImpression() {
-    AppboyManager.shared.logContentCardImpression(idString: contentCardData?.contentCardId)
+    BrazeManager.shared.logContentCardImpression(idString: contentCardData?.contentCardId)
   }
 }
 

@@ -4,7 +4,7 @@ class SlideFromBottomViewController: SlideupViewController {
 
   // MARK: - Variables
   private var bottomSpacing: CGFloat {
-    return AppboyManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
+    return BrazeManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
   }
 }
 
