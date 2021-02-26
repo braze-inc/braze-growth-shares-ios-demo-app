@@ -12,7 +12,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   // MARK: - Variables
   private var sessionData: SessionData! {
     didSet {
-      rowCount = (sessionData.totalSessionCount + columnCount - 1) / columnCount
+      rowCount = (sessionData.totalSessions + columnCount - 1) / columnCount
     }
   }
   private var rowCount: Int = 0
@@ -29,7 +29,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
           let totalSessions = Int(totalSessionString)
     else { fatalError("Key-Value Pairs are incorrect.")}
     
-    self.sessionData = SessionData(totalSessionCount: totalSessions, completedSessionCount: completedSessions)
+    self.sessionData = SessionData(completedSessions: completedSessions, totalSessions: totalSessions)
     
     configureNextSessionLabels(with: userInfo)
     configureTotalSessionProgress(rows: rowCount, columns: columnCount)
@@ -46,17 +46,16 @@ private extension NotificationViewController {
   ///
   /// If there are not enough sessions to fill the columns in the row, the for loop will create blank views to maintain the UI consistency within the `UIStackView`.
   func configureTotalSessionProgress(rows: Int, columns: Int) {
-    var currentSessionCount = 1
+    var currentSessionIndex = 0
     
     for _ in 0..<rows {
       let sessionStackView = UIStackView(axis: .horizontal, distribution: .fillEqually, spacing: 10)
       
       for _ in 0..<columns {
         let sessionView: SessionView = .fromNib()
-        let session = sessionData.getSession(for: currentSessionCount)
         
-        if currentSessionCount <= sessionData.totalSessionCount {
-          sessionView.configureView(session.numberString, isSessionCompleted: session.isCompleted)
+        if let session = sessionData.getSession(at: currentSessionIndex) {
+          sessionView.configureView(session.number, isSessionCompleted: session.isCompleted)
         } else {
           sessionView.configureBlankView()
         }
@@ -65,7 +64,7 @@ private extension NotificationViewController {
         sessionView.translatesAutoresizingMaskIntoConstraints = false
         sessionView.widthAnchor.constraint(equalTo: sessionView.heightAnchor, multiplier: 1).isActive = true
         
-        currentSessionCount += 1
+        currentSessionIndex += 1
       }
       
       stackView.addArrangedSubview(sessionStackView)
