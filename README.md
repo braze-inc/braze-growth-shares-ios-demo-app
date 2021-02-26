@@ -13,14 +13,16 @@
 ## About Braze Demo
 The focus of this application demonstrates how to decouple any dependencies on `Appboy-iOS-SDK`from the rest of your existing production code. One objective was for there to be only one `import Appboy-iOS-SDK` in the entire application.
 
-All of the Braze-related dependencies are handled in the [AppboyManager.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift) file that the existing production code calls into.
+All of the Braze-related dependencies are handled in the [BrazeManager.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/BrazeManager.swift) file that the existing production code calls into.
 
-In doing do, this project demonstrates the abilities of how custom objects can be represented as Content Cards. This project also demonstrates how to natively customize In-App Message with subclassed `ABKInAppMessageViewControllers`.
+In doing do, this project demonstrates the abilities of how custom objects can be represented as Content Cards. 
+
+In doing so, this project also demonstrates how to natively customize In-App Message with subclassed `ABKInAppMessageViewControllers`.
 
 ## Content Cards
 
 Objects can adopt the [ContentCardable](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/ContentCardData.swift#L9) protocol which comes with the `ContentCardData` object and an initializer.
-Upon receiving an array of `ABKContentCard` objects from the SDK, the corresponding `ABKContentCard` objects are [converted](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L174) into a `Dictionary` of metadata that are used to instantiate your custom objects.
+Upon receiving an array of `ABKContentCard` objects from the SDK, the corresponding `ABKContentCard` objects are [converted](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/BrazeManager.swift#L174) into a `Dictionary` of metadata that are used to instantiate your custom objects.
 
 ### This demo highlights 4 Content Card uses cases:
 1. Content Cards as Supplemental Content to an existing feed
@@ -34,7 +36,7 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
     - [Coupon.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/Model/Coupon.swift#L5)</br></br> 
     
 #### Extra use cases:
-1. Content Cards that can be inserted/removed to/from an existing feed in real-time via [silent push](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/AppboyManager.swift#L84) (device only)
+1. Content Cards that can be inserted/removed to/from an existing feed in real-time via [silent push](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/BrazeManager.swift#L84) (device only)
 2. Content Cards that can be [reordered](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze%20Demo/DataSource/TileListDataSource.swift#L97) in an existing feed in real-time via silent push (device only)
 
 ## In-App Messages
