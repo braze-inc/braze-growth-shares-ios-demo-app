@@ -49,19 +49,19 @@
 		7F8AF00725253501006F478B /* APITriggeredCampaignRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8AF00625253501006F478B /* APITriggeredCampaignRequest.swift */; };
 		7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8AF00B25253521006F478B /* ContentBlockRequest.swift */; };
 		7F8CB2AF25C845900001F270 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CB2AE25C845900001F270 /* NotificationService.swift */; };
-		7F8CB2B325C845900001F270 /* Braze Demo Service Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F8CB2AC25C845900001F270 /* Braze Demo Service Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F8CB2B325C845900001F270 /* Braze-Demo-Service-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F8CB2AC25C845900001F270 /* Braze-Demo-Service-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F8CB2E925C888000001F270 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2E825C888000001F270 /* UserNotifications.framework */; };
 		7F8CB2EB25C888000001F270 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
 		7F8CB2EE25C888000001F270 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CB2ED25C888000001F270 /* NotificationViewController.swift */; };
 		7F8CB2F125C888000001F270 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CB2EF25C888000001F270 /* MainInterface.storyboard */; };
-		7F8CB2F525C888000001F270 /* Braze Demo Push Story Content Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F8CB2E625C888000001F270 /* Braze Demo Push Story Content Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F8CB2F525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F8CB31E25C88C6C0001F270 /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F8CB31D25C88C6C0001F270 /* AppboyUI */; };
 		7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FFC1924EC7EB50082C71B /* APIRequest.swift */; };
 		7F96CC9625E014EF002D9AD9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2E825C888000001F270 /* UserNotifications.framework */; };
 		7F96CC9725E014EF002D9AD9 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
 		7F96CC9A25E014EF002D9AD9 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CC9925E014EF002D9AD9 /* NotificationViewController.swift */; };
 		7F96CC9D25E014F0002D9AD9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F96CC9B25E014EF002D9AD9 /* MainInterface.storyboard */; };
-		7F96CCA125E014F0002D9AD9 /* Braze Demo Match Game Content Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F96CC9525E014EF002D9AD9 /* Braze Demo Match Game Content Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F96CCA125E014F0002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F96CC9525E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7F96CCAB25E03ACE002D9AD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7F96CCBB25E046C0002D9AD9 /* MatchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCBA25E046C0002D9AD9 /* MatchCardView.swift */; };
 		7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */; };
@@ -147,7 +147,7 @@
 		7FF6178425E6B0BB0058F98D /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
 		7FF6178725E6B0BB0058F98D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF6178625E6B0BB0058F98D /* NotificationViewController.swift */; };
 		7FF6178A25E6B0BB0058F98D /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6178825E6B0BB0058F98D /* MainInterface.storyboard */; };
-		7FF6178E25E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7FF6178225E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7FF6178E25E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7FF6178225E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7FF617CD25E6E6400058F98D /* SessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FF617C525E6E58F0058F98D /* SessionView.swift */; };
 		7FF617D525E6E67F0058F98D /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
 /* End PBXBuildFile section */
@@ -204,10 +204,10 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				7FF6178E25E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension.appex in Embed App Extensions */,
-				7F96CCA125E014F0002D9AD9 /* Braze Demo Match Game Content Extension.appex in Embed App Extensions */,
-				7F8CB2B325C845900001F270 /* Braze Demo Service Extension.appex in Embed App Extensions */,
-				7F8CB2F525C888000001F270 /* Braze Demo Push Story Content Extension.appex in Embed App Extensions */,
+				7FF6178E25E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex in Embed App Extensions */,
+				7F96CCA125E014F0002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex in Embed App Extensions */,
+				7F8CB2B325C845900001F270 /* Braze-Demo-Service-Extension.appex in Embed App Extensions */,
+				7F8CB2F525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,17 +252,17 @@
 		7F8967D82574247500C61405 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		7F8AF00625253501006F478B /* APITriggeredCampaignRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITriggeredCampaignRequest.swift; sourceTree = "<group>"; };
 		7F8AF00B25253521006F478B /* ContentBlockRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentBlockRequest.swift; sourceTree = "<group>"; };
-		7F8CB2AC25C845900001F270 /* Braze Demo Service Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze Demo Service Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F8CB2AC25C845900001F270 /* Braze-Demo-Service-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-Service-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8CB2AE25C845900001F270 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7F8CB2B025C845900001F270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F8CB2E625C888000001F270 /* Braze Demo Push Story Content Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze Demo Push Story Content Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-Push-Story-Content-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8CB2E825C888000001F270 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 		7F8CB2ED25C888000001F270 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7F8CB2F025C888000001F270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7F8CB2F225C888000001F270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F8FFC1924EC7EB50082C71B /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
-		7F96CC9525E014EF002D9AD9 /* Braze Demo Match Game Content Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze Demo Match Game Content Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F96CC9525E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-Match-Game-Content-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F96CC9925E014EF002D9AD9 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7F96CC9C25E014EF002D9AD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7F96CC9E25E014F0002D9AD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -283,17 +283,17 @@
 		7FAAE26224D374B2008269E5 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		7FAAE26424D392AE008269E5 /* Array_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Util.swift; sourceTree = "<group>"; };
 		7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo.entitlements"; sourceTree = "<group>"; };
-		7FBDD48524AD711E00EC0983 /* Braze Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Braze Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBDD48524AD711E00EC0983 /* Braze-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Braze-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD48824AD711E00EC0983 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
 		7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDemo.xcdatamodel; sourceTree = "<group>"; };
 		7FBDD49424AD711F00EC0983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FBDD49924AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
-		7FBDD49E24AD711F00EC0983 /* Braze DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBDD49E24AD711F00EC0983 /* Braze-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoTests.swift; sourceTree = "<group>"; };
 		7FBDD4A424AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7FBDD4A924AD711F00EC0983 /* Braze DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FBDD4A924AD711F00EC0983 /* Braze-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD4AD24AD711F00EC0983 /* BrazeDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoUITests.swift; sourceTree = "<group>"; };
 		7FBDD4AF24AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FC3106524D1C29A00053D90 /* ContentCardGestureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardGestureView.swift; sourceTree = "<group>"; };
@@ -337,7 +337,7 @@
 		7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_Util.swift; sourceTree = "<group>"; };
 		7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal_Util.swift; sourceTree = "<group>"; };
 		7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDetailViewController.swift; sourceTree = "<group>"; };
-		7FF6178225E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze Demo LAB Progress Content Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FF6178225E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-LAB-Progress-Content-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF6178625E6B0BB0058F98D /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7FF6178925E6B0BB0058F98D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7FF6178B25E6B0BB0058F98D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -763,13 +763,13 @@
 		7FBDD48624AD711E00EC0983 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7FBDD48524AD711E00EC0983 /* Braze Demo.app */,
-				7FBDD49E24AD711F00EC0983 /* Braze DemoTests.xctest */,
-				7FBDD4A924AD711F00EC0983 /* Braze DemoUITests.xctest */,
-				7F8CB2AC25C845900001F270 /* Braze Demo Service Extension.appex */,
-				7F8CB2E625C888000001F270 /* Braze Demo Push Story Content Extension.appex */,
-				7F96CC9525E014EF002D9AD9 /* Braze Demo Match Game Content Extension.appex */,
-				7FF6178225E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension.appex */,
+				7FBDD48524AD711E00EC0983 /* Braze-Demo.app */,
+				7FBDD49E24AD711F00EC0983 /* Braze-DemoTests.xctest */,
+				7FBDD4A924AD711F00EC0983 /* Braze-DemoUITests.xctest */,
+				7F8CB2AC25C845900001F270 /* Braze-Demo-Service-Extension.appex */,
+				7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */,
+				7F96CC9525E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex */,
+				7FF6178225E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -857,9 +857,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7F8CB2AB25C845900001F270 /* Braze Demo Service Extension */ = {
+		7F8CB2AB25C845900001F270 /* Braze-Demo-Service-Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F8CB2B725C845900001F270 /* Build configuration list for PBXNativeTarget "Braze Demo Service Extension" */;
+			buildConfigurationList = 7F8CB2B725C845900001F270 /* Build configuration list for PBXNativeTarget "Braze-Demo-Service-Extension" */;
 			buildPhases = (
 				7F8CB2A825C845900001F270 /* Sources */,
 				7F8CB2A925C845900001F270 /* Frameworks */,
@@ -869,14 +869,14 @@
 			);
 			dependencies = (
 			);
-			name = "Braze Demo Service Extension";
+			name = "Braze-Demo-Service-Extension";
 			productName = "Braze Demo Service Extension";
-			productReference = 7F8CB2AC25C845900001F270 /* Braze Demo Service Extension.appex */;
+			productReference = 7F8CB2AC25C845900001F270 /* Braze-Demo-Service-Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		7F8CB2E525C888000001F270 /* Braze Demo Push Story Content Extension */ = {
+		7F8CB2E525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F8CB2F825C888000001F270 /* Build configuration list for PBXNativeTarget "Braze Demo Push Story Content Extension" */;
+			buildConfigurationList = 7F8CB2F825C888000001F270 /* Build configuration list for PBXNativeTarget "Braze-Demo-Push-Story-Content-Extension" */;
 			buildPhases = (
 				7F8CB2E225C888000001F270 /* Sources */,
 				7F8CB2E325C888000001F270 /* Frameworks */,
@@ -886,17 +886,17 @@
 			);
 			dependencies = (
 			);
-			name = "Braze Demo Push Story Content Extension";
+			name = "Braze-Demo-Push-Story-Content-Extension";
 			packageProductDependencies = (
 				7FD4527925C8C7B9007C76D0 /* AppboyPushStory */,
 			);
 			productName = "Braze Demo Content Extension";
-			productReference = 7F8CB2E625C888000001F270 /* Braze Demo Push Story Content Extension.appex */;
+			productReference = 7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		7F96CC9425E014EF002D9AD9 /* Braze Demo Match Game Content Extension */ = {
+		7F96CC9425E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F96CCA225E014F0002D9AD9 /* Build configuration list for PBXNativeTarget "Braze Demo Match Game Content Extension" */;
+			buildConfigurationList = 7F96CCA225E014F0002D9AD9 /* Build configuration list for PBXNativeTarget "Braze-Demo-Match-Game-Content-Extension" */;
 			buildPhases = (
 				7F96CC9125E014EF002D9AD9 /* Sources */,
 				7F96CC9225E014EF002D9AD9 /* Frameworks */,
@@ -906,14 +906,14 @@
 			);
 			dependencies = (
 			);
-			name = "Braze Demo Match Game Content Extension";
+			name = "Braze-Demo-Match-Game-Content-Extension";
 			productName = "Braze Demo Match Game Content Extension";
-			productReference = 7F96CC9525E014EF002D9AD9 /* Braze Demo Match Game Content Extension.appex */;
+			productReference = 7F96CC9525E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		7FBDD48424AD711D00EC0983 /* Braze Demo */ = {
+		7FBDD48424AD711D00EC0983 /* Braze-Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze Demo" */;
+			buildConfigurationList = 7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze-Demo" */;
 			buildPhases = (
 				7FBDD48124AD711D00EC0983 /* Sources */,
 				7FBDD48224AD711D00EC0983 /* Frameworks */,
@@ -928,17 +928,17 @@
 				7F96CCA025E014F0002D9AD9 /* PBXTargetDependency */,
 				7FF6178D25E6B0BB0058F98D /* PBXTargetDependency */,
 			);
-			name = "Braze Demo";
+			name = "Braze-Demo";
 			packageProductDependencies = (
 				7F8CB31D25C88C6C0001F270 /* AppboyUI */,
 			);
 			productName = BookDemo;
-			productReference = 7FBDD48524AD711E00EC0983 /* Braze Demo.app */;
+			productReference = 7FBDD48524AD711E00EC0983 /* Braze-Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7FBDD49D24AD711F00EC0983 /* Braze DemoTests */ = {
+		7FBDD49D24AD711F00EC0983 /* Braze-DemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FBDD4B524AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoTests" */;
+			buildConfigurationList = 7FBDD4B524AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze-DemoTests" */;
 			buildPhases = (
 				7FBDD49A24AD711F00EC0983 /* Sources */,
 				7FBDD49B24AD711F00EC0983 /* Frameworks */,
@@ -949,14 +949,14 @@
 			dependencies = (
 				7FBDD4A024AD711F00EC0983 /* PBXTargetDependency */,
 			);
-			name = "Braze DemoTests";
+			name = "Braze-DemoTests";
 			productName = BookDemoTests;
-			productReference = 7FBDD49E24AD711F00EC0983 /* Braze DemoTests.xctest */;
+			productReference = 7FBDD49E24AD711F00EC0983 /* Braze-DemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7FBDD4A824AD711F00EC0983 /* Braze DemoUITests */ = {
+		7FBDD4A824AD711F00EC0983 /* Braze-DemoUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FBDD4B824AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoUITests" */;
+			buildConfigurationList = 7FBDD4B824AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze-DemoUITests" */;
 			buildPhases = (
 				7FBDD4A524AD711F00EC0983 /* Sources */,
 				7FBDD4A624AD711F00EC0983 /* Frameworks */,
@@ -967,14 +967,14 @@
 			dependencies = (
 				7FBDD4AB24AD711F00EC0983 /* PBXTargetDependency */,
 			);
-			name = "Braze DemoUITests";
+			name = "Braze-DemoUITests";
 			productName = BookDemoUITests;
-			productReference = 7FBDD4A924AD711F00EC0983 /* Braze DemoUITests.xctest */;
+			productReference = 7FBDD4A924AD711F00EC0983 /* Braze-DemoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		7FF6178125E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension */ = {
+		7FF6178125E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7FF6179125E6B0BB0058F98D /* Build configuration list for PBXNativeTarget "Braze Demo LAB Progress Content Extension" */;
+			buildConfigurationList = 7FF6179125E6B0BB0058F98D /* Build configuration list for PBXNativeTarget "Braze-Demo-LAB-Progress-Content-Extension" */;
 			buildPhases = (
 				7FF6177E25E6B0BB0058F98D /* Sources */,
 				7FF6177F25E6B0BB0058F98D /* Frameworks */,
@@ -984,9 +984,9 @@
 			);
 			dependencies = (
 			);
-			name = "Braze Demo LAB Progress Content Extension";
+			name = "Braze-Demo-LAB-Progress-Content-Extension";
 			productName = "Braze Demo LAB Progress Content Extension";
-			productReference = 7FF6178225E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension.appex */;
+			productReference = 7FF6178225E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -1024,7 +1024,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7FBDD48024AD711D00EC0983 /* Build configuration list for PBXProject "Braze Demo" */;
+			buildConfigurationList = 7FBDD48024AD711D00EC0983 /* Build configuration list for PBXProject "Braze-Demo" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1040,13 +1040,13 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7FBDD48424AD711D00EC0983 /* Braze Demo */,
-				7FBDD49D24AD711F00EC0983 /* Braze DemoTests */,
-				7FBDD4A824AD711F00EC0983 /* Braze DemoUITests */,
-				7F8CB2AB25C845900001F270 /* Braze Demo Service Extension */,
-				7F8CB2E525C888000001F270 /* Braze Demo Push Story Content Extension */,
-				7F96CC9425E014EF002D9AD9 /* Braze Demo Match Game Content Extension */,
-				7FF6178125E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension */,
+				7FBDD48424AD711D00EC0983 /* Braze-Demo */,
+				7FBDD49D24AD711F00EC0983 /* Braze-DemoTests */,
+				7FBDD4A824AD711F00EC0983 /* Braze-DemoUITests */,
+				7F8CB2AB25C845900001F270 /* Braze-Demo-Service-Extension */,
+				7F8CB2E525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension */,
+				7F96CC9425E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension */,
+				7FF6178125E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -1289,32 +1289,32 @@
 /* Begin PBXTargetDependency section */
 		7F8CB2B225C845900001F270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7F8CB2AB25C845900001F270 /* Braze Demo Service Extension */;
+			target = 7F8CB2AB25C845900001F270 /* Braze-Demo-Service-Extension */;
 			targetProxy = 7F8CB2B125C845900001F270 /* PBXContainerItemProxy */;
 		};
 		7F8CB2F425C888000001F270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7F8CB2E525C888000001F270 /* Braze Demo Push Story Content Extension */;
+			target = 7F8CB2E525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension */;
 			targetProxy = 7F8CB2F325C888000001F270 /* PBXContainerItemProxy */;
 		};
 		7F96CCA025E014F0002D9AD9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7F96CC9425E014EF002D9AD9 /* Braze Demo Match Game Content Extension */;
+			target = 7F96CC9425E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension */;
 			targetProxy = 7F96CC9F25E014F0002D9AD9 /* PBXContainerItemProxy */;
 		};
 		7FBDD4A024AD711F00EC0983 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7FBDD48424AD711D00EC0983 /* Braze Demo */;
+			target = 7FBDD48424AD711D00EC0983 /* Braze-Demo */;
 			targetProxy = 7FBDD49F24AD711F00EC0983 /* PBXContainerItemProxy */;
 		};
 		7FBDD4AB24AD711F00EC0983 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7FBDD48424AD711D00EC0983 /* Braze Demo */;
+			target = 7FBDD48424AD711D00EC0983 /* Braze-Demo */;
 			targetProxy = 7FBDD4AA24AD711F00EC0983 /* PBXContainerItemProxy */;
 		};
 		7FF6178D25E6B0BB0058F98D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7FF6178125E6B0BB0058F98D /* Braze Demo LAB Progress Content Extension */;
+			target = 7FF6178125E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */;
 			targetProxy = 7FF6178C25E6B0BB0058F98D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1689,7 +1689,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braze Demo.app/Braze Demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braze-Demo.app/Braze-Demo";
 			};
 			name = Debug;
 		};
@@ -1711,7 +1711,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braze Demo.app/Braze Demo";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Braze-Demo.app/Braze-Demo";
 			};
 			name = Release;
 		};
@@ -1810,7 +1810,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F8CB2B725C845900001F270 /* Build configuration list for PBXNativeTarget "Braze Demo Service Extension" */ = {
+		7F8CB2B725C845900001F270 /* Build configuration list for PBXNativeTarget "Braze-Demo-Service-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F8CB2B525C845900001F270 /* Debug */,
@@ -1819,7 +1819,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F8CB2F825C888000001F270 /* Build configuration list for PBXNativeTarget "Braze Demo Push Story Content Extension" */ = {
+		7F8CB2F825C888000001F270 /* Build configuration list for PBXNativeTarget "Braze-Demo-Push-Story-Content-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F8CB2F625C888000001F270 /* Debug */,
@@ -1828,7 +1828,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F96CCA225E014F0002D9AD9 /* Build configuration list for PBXNativeTarget "Braze Demo Match Game Content Extension" */ = {
+		7F96CCA225E014F0002D9AD9 /* Build configuration list for PBXNativeTarget "Braze-Demo-Match-Game-Content-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7F96CCA325E014F0002D9AD9 /* Debug */,
@@ -1837,7 +1837,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FBDD48024AD711D00EC0983 /* Build configuration list for PBXProject "Braze Demo" */ = {
+		7FBDD48024AD711D00EC0983 /* Build configuration list for PBXProject "Braze-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FBDD4B024AD711F00EC0983 /* Debug */,
@@ -1846,7 +1846,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze Demo" */ = {
+		7FBDD4B224AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze-Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FBDD4B324AD711F00EC0983 /* Debug */,
@@ -1855,7 +1855,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FBDD4B524AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoTests" */ = {
+		7FBDD4B524AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze-DemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FBDD4B624AD711F00EC0983 /* Debug */,
@@ -1864,7 +1864,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FBDD4B824AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze DemoUITests" */ = {
+		7FBDD4B824AD711F00EC0983 /* Build configuration list for PBXNativeTarget "Braze-DemoUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FBDD4B924AD711F00EC0983 /* Debug */,
@@ -1873,7 +1873,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7FF6179125E6B0BB0058F98D /* Build configuration list for PBXNativeTarget "Braze Demo LAB Progress Content Extension" */ = {
+		7FF6179125E6B0BB0058F98D /* Build configuration list for PBXNativeTarget "Braze-Demo-LAB-Progress-Content-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7FF6178F25E6B0BB0058F98D /* Debug */,
