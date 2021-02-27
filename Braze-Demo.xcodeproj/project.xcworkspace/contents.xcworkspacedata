@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/justin.malandruccolo/Documents/BrazeSDK-Demos/braze-growth-shares-ios-demo-app/Braze-Demo.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
