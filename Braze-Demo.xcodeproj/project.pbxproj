@@ -726,7 +726,7 @@
 			isa = PBXGroup;
 			children = (
 				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
-				7FCFEB11256C389E00079EAF /* In App Messages */,
+				7FCFEB11256C389E00079EAF /* In-App-Messages */,
 				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
 				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
 				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
@@ -866,14 +866,14 @@
 			path = "Braze-DemoUITests";
 			sourceTree = "<group>";
 		};
-		7FCFEB11256C389E00079EAF /* In App Messages */ = {
+		7FCFEB11256C389E00079EAF /* In-App-Messages */ = {
 			isa = PBXGroup;
 			children = (
 				7F8967CF25740FAB00C61405 /* FullListViewController */,
 				7F3FBEF325B0F417007715C0 /* ModalPickerViewController */,
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
-			path = "In App Messages";
+			path = "In-App-Messages";
 			sourceTree = "<group>";
 		};
 		7FD8EA1725E758F1004A89FA /* Sailec-Font */ = {
@@ -1477,6 +1477,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1485,6 +1486,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
@@ -1501,6 +1503,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -1509,6 +1512,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
