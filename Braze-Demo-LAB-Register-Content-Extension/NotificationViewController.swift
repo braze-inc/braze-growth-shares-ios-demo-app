@@ -31,7 +31,6 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   }
 
   func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
-  
     switch response.actionIdentifier {
     case "REGISTER":
       allSet {
