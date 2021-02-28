@@ -71,6 +71,8 @@ private extension NotificationViewController {
   func validateEmail(_ email: String?) {
     if let email = email, email.isValidEmail {
       configureNotificationActions([registerAction])
+    } else {
+      configureNotificationActions([])
     }
   }
   
