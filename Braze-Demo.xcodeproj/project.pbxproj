@@ -28,6 +28,7 @@
 		7F04D47725EB083E0034FB10 /* Sailec-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1F25E75941004A89FA /* Sailec-Regular.otf */; };
 		7F04D47825EB083E0034FB10 /* Sailec-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2225E75941004A89FA /* Sailec-LightItalic.otf */; };
 		7F04D47925EB083E0034FB10 /* Sailec-HairlineItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */; };
+		7F04D4B525EB560E0034FB10 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7F12B40D25E6F842003AD64F /* SessionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF617C425E6E5860058F98D /* SessionView.xib */; };
 		7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7F12B45A25E7183C003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
@@ -155,6 +156,7 @@
 		7FD8EA4625E759F9004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
 		7FD8EA4725E759F9004A89FA /* Sailec-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */; };
 		7FD8EA4825E759F9004A89FA /* Sailec-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */; };
+		7FD90A4C25EB57D600E8F411 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -1257,6 +1259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F04D4B525EB560E0034FB10 /* String_Util.swift in Sources */,
 				7F04D42E25EAF79A0034FB10 /* NotificationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1267,6 +1270,7 @@
 			files = (
 				7F04D45A25EB00880034FB10 /* NotificationViewController.swift in Sources */,
 				7F8CB2AF25C845900001F270 /* NotificationService.swift in Sources */,
+				7FD90A4C25EB57D600E8F411 /* String_Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

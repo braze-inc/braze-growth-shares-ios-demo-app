@@ -4,13 +4,6 @@ import NotificationCenter
 /// A safer alternative to typing "string" types. Declared as `String` type to query the key name via `rawValue`.
 enum PushNotificationKey: String {
   
-  static var registerAction: UNNotificationCategory {
-    let registerAction = UNNotificationAction(identifier: "REGISTER", title: "Register", options: UNNotificationActionOptions(rawValue: 0))
-    let registerCategory = UNNotificationCategory(identifier: "lab_register", actions: [registerAction], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
-    
-    return registerCategory
-  }
-  
   // MARK: - Silent Push Notifications
   case homeTilePriority = "home_tile_priority"
   case refreshHome = "refresh_home"

@@ -61,11 +61,7 @@ extension BrazeManager {
 extension BrazeManager {
   func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
     let appboyCategories = ABKPushUtils.getAppboyUNNotificationCategorySet()
-    let registerCategory = PushNotificationKey.registerAction
-    
-    var allCategories = appboyCategories
-    allCategories.insert(registerCategory)
-    UNUserNotificationCenter.current().setNotificationCategories(allCategories)
+    UNUserNotificationCenter.current().setNotificationCategories(appboyCategories)
     
     Appboy.sharedInstance()?.registerDeviceToken(deviceToken)
   }
