@@ -30,46 +30,59 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register-background" translatesAutoresizingMaskIntoConstraints="NO" id="5L1-TB-via">
-                                <rect key="frame" x="0.0" y="0.0" width="374" height="101"/>
+                                <rect key="frame" x="0.0" y="0.0" width="374" height="88.5"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f5W-fG-m7n" userLabel="Left Border">
-                                <rect key="frame" x="0.0" y="99" width="199.5" height="2"/>
+                                <rect key="frame" x="0.0" y="86.5" width="224.5" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="r1E-q7-maH"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xhr-0v-F1o" userLabel="Header View">
+                                <rect key="frame" x="14" y="102.5" width="196.5" height="47"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this certification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-6i-eFX">
+                                        <rect key="frame" x="39.5" y="3.5" width="117.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="Sailec-Medium" family="Sailec" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="YSu-6i-eFX" firstAttribute="centerX" secondItem="Xhr-0v-F1o" secondAttribute="centerX" id="GvF-Xk-yZh"/>
+                                    <constraint firstItem="YSu-6i-eFX" firstAttribute="centerY" secondItem="Xhr-0v-F1o" secondAttribute="centerY" id="T1m-8I-FtP"/>
+                                    <constraint firstItem="YSu-6i-eFX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xhr-0v-F1o" secondAttribute="leading" id="av2-ss-Scb"/>
+                                    <constraint firstItem="YSu-6i-eFX" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xhr-0v-F1o" secondAttribute="top" id="bIa-Jc-Dcc"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="YSu-6i-eFX" secondAttribute="bottom" id="cmC-dg-d2b"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="YSu-6i-eFX" secondAttribute="trailing" id="jEz-uw-1dA"/>
+                                </constraints>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VpY-bi-3sV">
-                                <rect key="frame" x="199.5" y="25" width="149.5" height="149.5"/>
+                                <rect key="frame" x="224.5" y="25" width="124.5" height="124.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="VpY-bi-3sV" secondAttribute="height" multiplier="1:1" id="5g4-Ql-bqZ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this certification" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-6i-eFX">
-                                <rect key="frame" x="14" y="117.5" width="171.5" height="47"/>
-                                <fontDescription key="fontDescription" name="Sailec-Medium" family="Sailec" pointSize="20"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbc-8w-ZlK" userLabel="Right Border">
-                                <rect key="frame" x="349" y="99" width="25" height="2"/>
+                                <rect key="frame" x="349" y="86.5" width="25" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="VJa-cv-jIJ"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-UX-St8">
-                                <rect key="frame" x="14" y="188.5" width="346" height="140"/>
+                                <rect key="frame" x="14" y="163.5" width="346" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-fN-ww4">
-                                        <rect key="frame" x="0.0" y="0.0" width="346" height="105"/>
-                                        <string key="text">Certified Braze Marketers drive best-in-class customer marketing strategies that will both support the brand's promotional efforts, as well as shape the complete end-to-end customer journey using Braze.</string>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-fN-ww4">
+                                        <rect key="frame" x="0.0" y="0.0" width="346" height="0.0"/>
                                         <fontDescription key="fontDescription" name="Sailec-Regular" family="Sailec" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Register with your email address below" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwo-Qz-Q3W">
-                                        <rect key="frame" x="0.0" y="119" width="346" height="21"/>
+                                        <rect key="frame" x="0.0" y="14" width="346" height="18"/>
                                         <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -77,7 +90,7 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Tap here to enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nwa-HP-uc0">
-                                <rect key="frame" x="14" y="352.5" width="346" height="30"/>
+                                <rect key="frame" x="14" y="219.5" width="346" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HNL-Gs-eF0"/>
                                 </constraints>
@@ -88,51 +101,67 @@
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="Cga-Xk-O8B"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marketer Certification" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RU-7V-hsH">
-                                <rect key="frame" x="14" y="25" width="113.5" height="49"/>
-                                <fontDescription key="fontDescription" name="Sailec-Black" family="Sailec" pointSize="21"/>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAU-dX-HSd" userLabel="Title View">
+                                <rect key="frame" x="14" y="25" width="196.5" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RU-7V-hsH">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.5" height="61.5"/>
+                                        <fontDescription key="fontDescription" name="Sailec-Black" family="Sailec" pointSize="21"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="8RU-7V-hsH" firstAttribute="top" secondItem="FAU-dX-HSd" secondAttribute="top" id="Exc-1V-axq"/>
+                                    <constraint firstItem="8RU-7V-hsH" firstAttribute="leading" secondItem="FAU-dX-HSd" secondAttribute="leading" id="SNG-Am-z4b"/>
+                                    <constraint firstAttribute="trailing" secondItem="8RU-7V-hsH" secondAttribute="trailing" id="oz6-qe-bUO"/>
+                                    <constraint firstAttribute="bottom" secondItem="8RU-7V-hsH" secondAttribute="bottom" id="x65-uu-wja"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
                         <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="Nwa-HP-uc0" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="3FC-qf-5Qo"/>
-                            <constraint firstItem="YSu-6i-eFX" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="14" id="8Ig-xI-AxJ"/>
+                            <constraint firstItem="Xhr-0v-F1o" firstAttribute="bottom" secondItem="VpY-bi-3sV" secondAttribute="bottom" id="6H2-sR-F5a"/>
                             <constraint firstItem="f5W-fG-m7n" firstAttribute="centerY" secondItem="VpY-bi-3sV" secondAttribute="centerY" id="Bov-Fm-dvA"/>
                             <constraint firstItem="5L1-TB-via" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="CNR-a1-NDg"/>
-                            <constraint firstItem="VpY-bi-3sV" firstAttribute="bottom" secondItem="YSu-6i-eFX" secondAttribute="bottom" constant="10" id="D4C-nb-sAk"/>
+                            <constraint firstItem="VpY-bi-3sV" firstAttribute="leading" secondItem="Xhr-0v-F1o" secondAttribute="trailing" constant="14" id="Cjh-I6-J3I"/>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="trailing" secondItem="jbc-8w-ZlK" secondAttribute="trailing" id="DdL-0x-CBB"/>
                             <constraint firstItem="5L1-TB-via" firstAttribute="bottom" secondItem="f5W-fG-m7n" secondAttribute="bottom" id="Dfu-BL-13e"/>
-                            <constraint firstItem="VpY-bi-3sV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8RU-7V-hsH" secondAttribute="trailing" constant="14" id="FXY-xj-Rbx"/>
                             <constraint firstAttribute="trailing" secondItem="RfB-UX-St8" secondAttribute="trailing" constant="14" id="L56-vx-Pay"/>
+                            <constraint firstItem="Xhr-0v-F1o" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="14" id="O3S-WN-xJM"/>
                             <constraint firstItem="5L1-TB-via" firstAttribute="bottom" secondItem="jbc-8w-ZlK" secondAttribute="bottom" id="OoZ-uY-767"/>
+                            <constraint firstItem="VpY-bi-3sV" firstAttribute="leading" secondItem="FAU-dX-HSd" secondAttribute="trailing" constant="14" id="Q7t-nX-Nmi"/>
                             <constraint firstItem="jbc-8w-ZlK" firstAttribute="leading" secondItem="VpY-bi-3sV" secondAttribute="trailing" id="QWO-4S-mCW"/>
                             <constraint firstItem="f5W-fG-m7n" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="QZV-yc-PNZ"/>
+                            <constraint firstItem="FAU-dX-HSd" firstAttribute="top" secondItem="VpY-bi-3sV" secondAttribute="top" id="ScO-gb-vJ7"/>
+                            <constraint firstItem="FAU-dX-HSd" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="14" id="VQb-3Y-gxY"/>
                             <constraint firstAttribute="trailing" secondItem="VpY-bi-3sV" secondAttribute="trailing" constant="25" id="YZb-gR-mAT"/>
                             <constraint firstAttribute="trailing" secondItem="Nwa-HP-uc0" secondAttribute="trailing" constant="14" id="ZJ9-Ae-Xq1"/>
                             <constraint firstItem="5L1-TB-via" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="aGB-2g-qTi"/>
-                            <constraint firstItem="VpY-bi-3sV" firstAttribute="leading" secondItem="YSu-6i-eFX" secondAttribute="trailing" constant="14" id="coO-L0-B5Z"/>
-                            <constraint firstItem="8RU-7V-hsH" firstAttribute="top" secondItem="VpY-bi-3sV" secondAttribute="top" id="eKg-5l-tUh"/>
                             <constraint firstItem="VpY-bi-3sV" firstAttribute="leading" secondItem="f5W-fG-m7n" secondAttribute="trailing" id="fNI-Tv-dxY"/>
-                            <constraint firstItem="8RU-7V-hsH" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="gU1-X2-wLl"/>
                             <constraint firstItem="VpY-bi-3sV" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="25" id="hCJ-GG-6yS"/>
+                            <constraint firstItem="Xhr-0v-F1o" firstAttribute="top" secondItem="f5W-fG-m7n" secondAttribute="bottom" constant="14" id="hbG-ZI-RfI"/>
                             <constraint firstAttribute="trailing" secondItem="5L1-TB-via" secondAttribute="trailing" id="hnc-30-QsA"/>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Nwa-HP-uc0" secondAttribute="bottom" priority="250" constant="14" id="mcN-7X-Wh9"/>
                             <constraint firstItem="RfB-UX-St8" firstAttribute="top" secondItem="VpY-bi-3sV" secondAttribute="bottom" constant="14" id="ngF-eA-8ir"/>
                             <constraint firstItem="jbc-8w-ZlK" firstAttribute="top" secondItem="f5W-fG-m7n" secondAttribute="top" id="oLl-RH-IgO"/>
                             <constraint firstItem="RfB-UX-St8" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="peI-U2-oqR"/>
                             <constraint firstItem="Nwa-HP-uc0" firstAttribute="top" secondItem="RfB-UX-St8" secondAttribute="bottom" constant="24" id="qEb-UL-4Df"/>
-                            <constraint firstItem="VpY-bi-3sV" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="1:2.5" id="w2o-qW-pc2"/>
+                            <constraint firstItem="f5W-fG-m7n" firstAttribute="top" secondItem="FAU-dX-HSd" secondAttribute="bottom" id="rMt-VG-ecr"/>
+                            <constraint firstItem="VpY-bi-3sV" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="1:3" id="w2o-qW-pc2"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="374" height="474"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="fGb-fN-ww4" id="XDK-zf-ao3"/>
                         <outlet property="emailTextField" destination="Nwa-HP-uc0" id="KgY-Q0-RkL"/>
                         <outlet property="imageView" destination="VpY-bi-3sV" id="05d-mB-uZE"/>
+                        <outlet property="titleLabel" destination="8RU-7V-hsH" id="whp-35-ZeG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>

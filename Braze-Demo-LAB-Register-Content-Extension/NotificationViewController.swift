@@ -5,6 +5,8 @@ import UserNotificationsUI
 class NotificationViewController: UIViewController {
 
   // MARK: - Outlets
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var descriptionLabel: UILabel!
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var emailTextField: UITextField! {
     didSet {
@@ -27,16 +29,11 @@ class NotificationViewController: UIViewController {
 extension NotificationViewController: UNNotificationContentExtension {
   func didReceive(_ notification: UNNotification) {
     let content = notification.request.content
-    
-    if let attachment = content.attachments.first {
-      if attachment.url.startAccessingSecurityScopedResource() {
-        if let data = try? Data(contentsOf: attachment.url),
-           let image = UIImage(data: data) {
-          imageView.image = image
-        }
-        attachment.url.stopAccessingSecurityScopedResource()
-      }
-    }
+    let userInfo = content.userInfo
+
+    titleLabel.text = userInfo[PushNotificationKey.certificationTitle.rawValue] as? String
+    descriptionLabel.text = userInfo[PushNotificationKey.certificationDescription.rawValue] as? String
+    imageView.image = imageFromNotification(content: content)
   }
 
   func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
@@ -64,6 +61,15 @@ extension NotificationViewController: UITextFieldDelegate {
 
 // MARK: - Private Methods
 private extension NotificationViewController {
+  func imageFromNotification(content: UNNotificationContent) -> UIImage? {
+    guard let attachment = content.attachments.first else { return nil }
+    guard attachment.url.startAccessingSecurityScopedResource() else { return nil }
+    let data = try? Data(contentsOf: attachment.url)
+    attachment.url.stopAccessingSecurityScopedResource()
+    
+    return data != nil ? UIImage(data: data!) : nil
+  }
+  
   func configureNotificationActions(_ actions: [UNNotificationAction]) {
     extensionContext?.notificationActions = actions
   }
@@ -85,7 +91,7 @@ private extension NotificationViewController {
     UIView.animate(withDuration: 1.0) {
       allSetView.alpha = 1.0
     } completion: { _ in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
         completion()
       }
     }
