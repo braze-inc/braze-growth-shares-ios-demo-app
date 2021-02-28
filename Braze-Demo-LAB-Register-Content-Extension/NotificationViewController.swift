@@ -38,10 +38,12 @@ extension NotificationViewController: UNNotificationContentExtension {
 
   func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
     if response.actionIdentifier == registerIdentifier {
-        UINotificationFeedbackGenerator().notificationOccurred(.success)
-        configureNotificationActions([])
-     
-        displayAllSetView { completion(.dismiss) }
+      UINotificationFeedbackGenerator().notificationOccurred(.success)
+        
+      configureNotificationActions([])
+      saveRegisteredForCertificationEvent()
+      
+      displayAllSetView { completion(.dismiss) }
     } else {
       completion(.doNotDismiss)
     }
@@ -79,6 +81,21 @@ private extension NotificationViewController {
       configureNotificationActions([registerAction])
     } else {
       configureNotificationActions([])
+    }
+  }
+  
+  /// Saves a custom event to `userDefaults` with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved.
+  ///
+  /// There is a conditional unwrap to check if there are saved pending events (in the case of a user viewing the content extension multiple times) and appends the event or saves a new array with one event.
+  func saveRegisteredForCertificationEvent() {
+    let customEventDictionary = [["Event Name": "Registered for Certification", "cert_name": PushNotificationKey.certificationTitle.rawValue]] as [[String : Any]]
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+      pendingEvents.append(contentsOf: customEventDictionary)
+      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
+    } else {
+      remoteStorage.store(customEventDictionary, forKey: .pendingEvents)
     }
   }
   

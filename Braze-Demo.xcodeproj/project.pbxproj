@@ -164,6 +164,8 @@
 		7FD90AAF25EC022A00E8F411 /* AllSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD90AA525EC022100E8F411 /* AllSetView.swift */; };
 		7FD90AB825EC0DB500E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
+		7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
+		7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -1284,6 +1286,7 @@
 				7FD90A9425EBFCCF00E8F411 /* UIVIew_Util.swift in Sources */,
 				7FD90AB825EC0DB500E8F411 /* PushNotificationData.swift in Sources */,
 				7FD90AA625EC022100E8F411 /* AllSetView.swift in Sources */,
+				7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1293,6 +1296,7 @@
 			files = (
 				7F04D45A25EB00880034FB10 /* NotificationViewController.swift in Sources */,
 				7FD90AAF25EC022A00E8F411 /* AllSetView.swift in Sources */,
+				7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */,
 				7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */,
 				7FD90A8325EBFBCB00E8F411 /* UIVIew_Util.swift in Sources */,
 				7F8CB2AF25C845900001F270 /* NotificationService.swift in Sources */,
