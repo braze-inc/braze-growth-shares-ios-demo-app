@@ -13,6 +13,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   }
   
   // MARK: - Variables
+  private let registerIdentifier = "REGISTER"
   override var canBecomeFirstResponder: Bool {
     return true
   }
@@ -32,7 +33,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
   func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
     switch response.actionIdentifier {
-    case "REGISTER":
+    case registerIdentifier:
       allSet {
         // completion(.dismiss)
       }
@@ -65,7 +66,7 @@ private extension NotificationViewController {
   }
   
   func readyToRegister() {
-    let registerAction = UNNotificationAction(identifier: "REGISTER", title: "Register", options: .authenticationRequired)
+    let registerAction = UNNotificationAction(identifier: registerIdentifier, title: registerIdentifier.capitalized, options: .authenticationRequired)
     extensionContext?.notificationActions = [registerAction]
   }
   
