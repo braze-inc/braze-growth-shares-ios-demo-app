@@ -32,12 +32,12 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
   }
 
   func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
-    switch response.actionIdentifier {
-    case registerIdentifier:
-      allSet {
-        // completion(.dismiss)
-      }
-    default:
+    if response.actionIdentifier == registerIdentifier {
+        UINotificationFeedbackGenerator().notificationOccurred(.success)
+        extensionContext?.notificationActions = []
+       
+        displayAllSetView { completion(.dismiss) }
+    } else {
       completion(.doNotDismiss)
     }
   }
@@ -46,13 +46,11 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 // MARK: - Email TextField Delegate
 extension NotificationViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
-    textField.resignFirstResponder()
+    validateEmail(textField.text)
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    textField.resignFirstResponder()
-    validateEmail(textField.text)
-    return true
+    return textField.resignFirstResponder()
   }
 }
 
@@ -60,17 +58,27 @@ extension NotificationViewController: UITextFieldDelegate {
 private extension NotificationViewController {
   func validateEmail(_ email: String?) {
     if let email = email, email.isValidEmail {
-      readyToRegister()
-    } else {
+      displayRegisterActionButton()
     }
   }
   
-  func readyToRegister() {
+  func displayRegisterActionButton() {
     let registerAction = UNNotificationAction(identifier: registerIdentifier, title: registerIdentifier.capitalized, options: .authenticationRequired)
     extensionContext?.notificationActions = [registerAction]
   }
   
-  func allSet(completion: @escaping () -> ()) {
-    completion()
+  func displayAllSetView(completion: @escaping () -> ()) {
+    let allSetView: AllSetView = .fromNib()
+    allSetView.frame = view.frame
+    allSetView.alpha = 0.0
+    view.addSubview(allSetView)
+    
+    UIView.animate(withDuration: 1.0) {
+      allSetView.alpha = 1.0
+    } completion: { _ in
+      DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        completion()
+      }
+    }
   }
 }

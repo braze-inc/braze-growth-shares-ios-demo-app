@@ -1,5 +1,3 @@
 import UIKit
 
-class AllSetView: UIView {
-  
-}
+class AllSetView: UIView {}

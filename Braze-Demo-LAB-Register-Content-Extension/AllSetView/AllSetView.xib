@@ -6,14 +6,59 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Sailec-Black.otf">
+            <string>Sailec-Black</string>
+        </array>
+        <array key="Sailec-Bold.otf">
+            <string>Sailec-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="7Pj-f4-Q6D" customClass="AllSetView" customModule="Braze_Demo_LAB_Register_Content_Extension" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-Zo-hTt">
+                    <rect key="frame" x="14" y="161.5" width="346" height="95"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All Set!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zed-PB-152">
+                            <rect key="frame" x="0.0" y="0.0" width="346" height="30"/>
+                            <fontDescription key="fontDescription" name="Sailec-Black" family="Sailec" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="An email will be sent to you shortly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQB-dt-Ev3">
+                            <rect key="frame" x="0.0" y="45" width="346" height="50"/>
+                            <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="25"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="XQB-dt-Ev3" firstAttribute="leading" secondItem="aUZ-Zo-hTt" secondAttribute="leading" id="8Q3-D8-fs9"/>
+                        <constraint firstAttribute="trailing" secondItem="XQB-dt-Ev3" secondAttribute="trailing" id="SBA-In-TQK"/>
+                        <constraint firstItem="Zed-PB-152" firstAttribute="leading" secondItem="aUZ-Zo-hTt" secondAttribute="leading" id="hw5-Bn-FmA"/>
+                        <constraint firstItem="Zed-PB-152" firstAttribute="top" secondItem="aUZ-Zo-hTt" secondAttribute="top" id="ks5-WO-Lqu"/>
+                        <constraint firstAttribute="trailing" secondItem="Zed-PB-152" secondAttribute="trailing" id="o83-eA-T8O"/>
+                        <constraint firstItem="XQB-dt-Ev3" firstAttribute="top" secondItem="Zed-PB-152" secondAttribute="bottom" constant="15" id="u82-Kh-hku"/>
+                        <constraint firstAttribute="bottom" secondItem="XQB-dt-Ev3" secondAttribute="bottom" id="xrM-17-N2q"/>
+                    </constraints>
+                </view>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="aX4-1d-Ryp"/>
             <color key="backgroundColor" red="0.22745098039215686" green="0.80000000000000004" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="aUZ-Zo-hTt" firstAttribute="centerX" secondItem="aX4-1d-Ryp" secondAttribute="centerX" id="4UE-fU-OyF"/>
+                <constraint firstItem="aX4-1d-Ryp" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="aUZ-Zo-hTt" secondAttribute="bottom" constant="14" id="9N6-Nr-bPq"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aUZ-Zo-hTt" secondAttribute="trailing" constant="14" id="Gx2-hm-ig1"/>
+                <constraint firstItem="aUZ-Zo-hTt" firstAttribute="centerY" secondItem="aX4-1d-Ryp" secondAttribute="centerY" id="HIa-FM-pAk"/>
+                <constraint firstItem="aUZ-Zo-hTt" firstAttribute="leading" relation="lessThanOrEqual" secondItem="7Pj-f4-Q6D" secondAttribute="leading" constant="14" id="kTV-cn-sYu"/>
+                <constraint firstItem="aUZ-Zo-hTt" firstAttribute="top" relation="greaterThanOrEqual" secondItem="7Pj-f4-Q6D" secondAttribute="top" constant="14" id="ygb-xp-MDa"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="200" y="100"/>
         </view>
