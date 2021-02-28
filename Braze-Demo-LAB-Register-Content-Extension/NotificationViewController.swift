@@ -88,7 +88,7 @@ private extension NotificationViewController {
   ///
   /// There is a conditional unwrap to check if there are saved pending events (in the case of multiple registrations) and appends the event or saves a new array with one event.
   func saveRegisteredForCertificationEvent() {
-    let customEventDictionary = [["Event Name": "Registered for Certification", "cert_name": PushNotificationKey.certificationTitle.rawValue]] as [[String : Any]]
+    let customEventDictionary = [["Event Name": "Registered for Certification"]] as [[String : Any]]
     let remoteStorage = RemoteStorage(storageType: .suite)
     
     if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
