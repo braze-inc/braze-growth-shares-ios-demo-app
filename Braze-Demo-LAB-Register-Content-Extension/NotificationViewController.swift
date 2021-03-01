@@ -65,6 +65,9 @@ extension NotificationViewController: UITextFieldDelegate {
 
 // MARK: - Private Methods
 private extension NotificationViewController {
+  /// Loading an image from a push notifcation.
+  ///
+  /// The `Service Extension` target must be included with the `ContentExtension` target
   func imageFromNotification(content: UNNotificationContent) -> UIImage? {
     guard let attachment = content.attachments.first else { return nil }
     guard attachment.url.startAccessingSecurityScopedResource() else { return nil }
