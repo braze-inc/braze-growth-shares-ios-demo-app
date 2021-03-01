@@ -32,6 +32,7 @@ class BrazeManager: NSObject {
     
     // MARK: - Analytics from Notifcation Content Extensions
     logPendingEventsIfNecessary()
+    logPendingAttributesIfNecessary()
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -119,11 +120,27 @@ extension BrazeManager {
     }
   }
   
+  /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.
+  ///
+  /// `key` represents the attribute key and `value` represents the attribute value.
+  func logPendingAttributesIfNecessary() {
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] else { return }
+    
+    for attribute in pendingAttributes {
+      for (key, value) in attribute {
+        setCustomAttributeWithKey(key, andValue: value)
+      }
+    }
+    
+    remoteStorage.removeObject(forKey: .pendingAttributes)
+  }
+  
   func logCustomEvent(_ eventName: String, withProperties properties: [AnyHashable: Any]? = nil) {
     Appboy.sharedInstance()?.logCustomEvent(eventName, withProperties: properties)
   }
   
-  func setCustomAttributeWithKey<T: Equatable>(_ key: String?, andValue value: T?) {
+  func setCustomAttributeWithKey(_ key: String?, andValue value: Any?) {
     guard let key = key, let value = value else { return }
     
     switch value.self {

@@ -5,6 +5,7 @@ enum RemoteStorageKey: String, CaseIterable {
   case messageCenterStyle = "message_center_style"
   case homeScreenType = "home_screen_type"
   case pendingEvents = "pending_events"
+  case pendingAttributes = "pending_attributes"
 }
 
 enum RemoteStorageType {
