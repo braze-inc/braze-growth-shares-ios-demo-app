@@ -26,8 +26,10 @@
 		<dict>
 			<key>UNNotificationExtensionCategory</key>
 			<string>lab_register</string>
+			<key>UNNotificationExtensionDefaultContentHidden</key>
+			<true/>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<real>0.65</real>
+			<integer>1</integer>
 			<key>UNNotificationExtensionUserInteractionEnabled</key>
 			<true/>
 		</dict>

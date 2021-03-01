@@ -43,7 +43,7 @@
                                 <rect key="frame" x="14" y="102.5" width="196.5" height="47"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this certification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-6i-eFX">
-                                        <rect key="frame" x="39.5" y="3.5" width="117.5" height="40"/>
+                                        <rect key="frame" x="46" y="0.0" width="104.5" height="47"/>
                                         <fontDescription key="fontDescription" name="Sailec-Medium" family="Sailec" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -73,7 +73,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-UX-St8">
-                                <rect key="frame" x="14" y="163.5" width="346" height="32"/>
+                                <rect key="frame" x="14" y="163.5" width="346" height="35"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-fN-ww4">
                                         <rect key="frame" x="0.0" y="0.0" width="346" height="0.0"/>
@@ -82,7 +82,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Register with your email address below" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwo-Qz-Q3W">
-                                        <rect key="frame" x="0.0" y="14" width="346" height="18"/>
+                                        <rect key="frame" x="0.0" y="14" width="346" height="21"/>
                                         <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -90,9 +90,9 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Tap here to enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nwa-HP-uc0">
-                                <rect key="frame" x="14" y="219.5" width="346" height="30"/>
+                                <rect key="frame" x="14" y="222.5" width="346" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="HNL-Gs-eF0"/>
+                                    <constraint firstAttribute="height" constant="50" id="HNL-Gs-eF0"/>
                                 </constraints>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -145,7 +145,7 @@
                             <constraint firstItem="VpY-bi-3sV" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="25" id="hCJ-GG-6yS"/>
                             <constraint firstItem="Xhr-0v-F1o" firstAttribute="top" secondItem="f5W-fG-m7n" secondAttribute="bottom" constant="14" id="hbG-ZI-RfI"/>
                             <constraint firstAttribute="trailing" secondItem="5L1-TB-via" secondAttribute="trailing" id="hnc-30-QsA"/>
-                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Nwa-HP-uc0" secondAttribute="bottom" priority="250" constant="14" id="mcN-7X-Wh9"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Nwa-HP-uc0" secondAttribute="bottom" priority="250" constant="24" id="mcN-7X-Wh9"/>
                             <constraint firstItem="RfB-UX-St8" firstAttribute="top" secondItem="VpY-bi-3sV" secondAttribute="bottom" constant="14" id="ngF-eA-8ir"/>
                             <constraint firstItem="jbc-8w-ZlK" firstAttribute="top" secondItem="f5W-fG-m7n" secondAttribute="top" id="oLl-RH-IgO"/>
                             <constraint firstItem="RfB-UX-St8" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="peI-U2-oqR"/>
