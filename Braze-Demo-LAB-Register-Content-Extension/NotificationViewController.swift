@@ -15,15 +15,19 @@ class NotificationViewController: UIViewController {
   }
   
   // MARK: - Variables
-  private var registerEmail: String? = nil
+  private var registerEmail: String? = nil {
+    didSet {
+      if registerEmail == nil {
+        extensionContext?.notificationActions = []
+      } else {
+        extensionContext?.notificationActions = [registerAction]
+      }
+    }
+  }
   private let registerIdentifier = "REGISTER"
   private lazy var registerAction: UNNotificationAction = {
     UNNotificationAction(identifier: registerIdentifier, title: registerIdentifier.capitalized, options: .authenticationRequired)
   }()
-  
-  override var canBecomeFirstResponder: Bool {
-    return true
-  }
 }
 
 // MARK: - Notification Content Extension Methods
@@ -41,7 +45,7 @@ extension NotificationViewController: UNNotificationContentExtension {
     if response.actionIdentifier == registerIdentifier {
       UINotificationFeedbackGenerator().notificationOccurred(.success)
         
-      configureNotificationActions([])
+      extensionContext?.notificationActions = []
       saveRegisteredForCertificationEvent()
       saveEmailAttribute()
       
@@ -55,7 +59,7 @@ extension NotificationViewController: UNNotificationContentExtension {
 // MARK: - Email TextField Delegate
 extension NotificationViewController: UITextFieldDelegate {
   func textFieldDidEndEditing(_ textField: UITextField) {
-    validateEmail(textField.text)
+    setRegisterEmail(textField.text)
   }
   
   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -77,17 +81,11 @@ private extension NotificationViewController {
     return data != nil ? UIImage(data: data!) : nil
   }
   
-  func configureNotificationActions(_ actions: [UNNotificationAction]) {
-    extensionContext?.notificationActions = actions
-  }
-  
-  func validateEmail(_ email: String?) {
+  func setRegisterEmail(_ email: String?) {
     if let email = email, email.isValidEmail {
       registerEmail = email
-      configureNotificationActions([registerAction])
     } else {
       registerEmail = nil
-      configureNotificationActions([])
     }
   }
   
