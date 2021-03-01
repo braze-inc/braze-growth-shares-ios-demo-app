@@ -166,6 +166,7 @@
 		7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
+		7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -1181,6 +1182,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
