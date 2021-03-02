@@ -75,12 +75,15 @@ private extension NotificationViewController {
     nextSessionLabel.text = userInfo[PushNotificationKey.nextSessionName.rawValue] as? String
     completeNextSessionByLabel.text = userInfo[PushNotificationKey.nextSessionCompleteDate.rawValue] as? String
   }
-  
+}
+
+// MARK: - Analytics
+private extension NotificationViewController {
   /// Saves a custom event to `userDefaults` with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved.
   ///
   /// There is a conditional unwrap to check if there are saved pending events (in the case of a user viewing the content extension multiple times) and appends the event or saves a new array with one event.
   func saveViewedSessionProgressEvent() {
-    let customEventDictionary = Dictionary<String, Any>(eventName: "Viewed Session Progress")
+    let customEventDictionary = Dictionary(eventName: "Viewed Session Progress")
     let remoteStorage = RemoteStorage(storageType: .suite)
     
     if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {

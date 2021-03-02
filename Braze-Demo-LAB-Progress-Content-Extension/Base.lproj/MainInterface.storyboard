@@ -21,7 +21,7 @@
             <objects>
                 <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="Braze_Demo_LAB_Progress_Content_Extension" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="273"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="veP-Cn-KHX">
@@ -31,19 +31,19 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fpR-Sm-srl">
-                                <rect key="frame" x="79" y="133" width="216.5" height="103"/>
+                                <rect key="frame" x="79" y="133" width="216.5" height="193"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wL-yeA" userLabel="Next Session Stack View">
-                                        <rect key="frame" x="55.5" y="0.0" width="105.5" height="43"/>
+                                        <rect key="frame" x="55.5" y="0.0" width="105.5" height="103"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next Session" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8N5-mk-N6i">
-                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="105.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Sailec-Regular" family="Sailec" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liquid 102" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-O7-Xhn">
-                                                <rect key="frame" x="0.0" y="23" width="105.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJz-O7-Xhn">
+                                                <rect key="frame" x="0.0" y="53" width="105.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -51,7 +51,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="Yvh-qx-ruA" userLabel="Complete Next Session Stack View">
-                                        <rect key="frame" x="0.0" y="63" width="216.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="123" width="216.5" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Complete Next Session By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84N-9d-h7J">
                                                 <rect key="frame" x="0.0" y="0.0" width="216.5" height="17"/>
@@ -59,8 +59,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mar 06, 2021" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPc-Df-6Xp">
-                                                <rect key="frame" x="0.0" y="20" width="216.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPc-Df-6Xp">
+                                                <rect key="frame" x="0.0" y="20" width="216.5" height="50"/>
                                                 <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -84,10 +84,10 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="374" height="273"/>
+                    <size key="freeformSize" width="374" height="374"/>
                     <connections>
                         <outlet property="completeNextSessionByLabel" destination="vPc-Df-6Xp" id="0Oz-yZ-ePe"/>
-                        <outlet property="nextSessionLabel" destination="vPc-Df-6Xp" id="Xv7-3t-lj1"/>
+                        <outlet property="nextSessionLabel" destination="BJz-O7-Xhn" id="Xig-Sq-ptv"/>
                         <outlet property="stackView" destination="veP-Cn-KHX" id="mB2-iU-lSG"/>
                     </connections>
                 </viewController>
