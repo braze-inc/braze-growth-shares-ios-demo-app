@@ -45,11 +45,11 @@ Custom view controllers can represent in-app messages by subclassing `ABKInAppMe
 
 ### This demo highlights 3 in-app message uses cases:
 1. Slideup In-App Message with a modified resting point
-    - [SlideFromBottomViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In%20App%20Messages/SlideFromBottomViewController.swift)</br></br> 
+    - [SlideFromBottomViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In-App-Messages/SlideFromBottomViewController.swift)</br></br> 
 2. Modal In-App Message as a dynamic list
-    - [ModalPickerViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In%20App%20Messages/ModalPickerViewController/ModalPickerViewController.swift)</br></br> 
+    - [ModalPickerViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In-App-Messages/ModalPickerViewController/ModalPickerViewController.swift)</br></br> 
 3. Full In-App Message as a push primer with list of push tags
-    - [FullListViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In%20App%20Messages/FullListViewController/FullListViewController.swift)</br></br> 
+    - [FullListViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In-App-Messages/FullListViewController/FullListViewController.swift)</br></br> 
 
 
 ## Using the Project
