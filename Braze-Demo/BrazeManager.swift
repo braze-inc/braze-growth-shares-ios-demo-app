@@ -32,6 +32,7 @@ class BrazeManager: NSObject {
     
     // MARK: - Analytics from Notifcation Content Extensions
     logPendingEventsIfNecessary()
+    logPendingAttributesIfNecessary()
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -101,29 +102,47 @@ extension BrazeManager {
   /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
   func logPendingEventsIfNecessary() {
     let remoteStorage = RemoteStorage(storageType: .suite)
-    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] else { return }
+    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[AnyHashable: Any]] else { return }
     
     for event in pendingEvents {
       var eventName = ""
       var properties: [AnyHashable: Any] = [:]
       for (key, value) in event {
-        if key == "Event Name", let eventNameValue = value as? String {
+        if key as? String == "event_name", let eventNameValue = value as? String {
           eventName = eventNameValue
         } else {
           properties[key] = value
         }
       }
       logCustomEvent(eventName, withProperties: properties)
-      
-      remoteStorage.removeObject(forKey: .pendingEvents)
     }
+    
+    remoteStorage.removeObject(forKey: .pendingEvents)
+  }
+  
+  /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.
+  ///
+  /// `key` represents the attribute key and `value` represents the attribute value.
+  func logPendingAttributesIfNecessary() {
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] else { return }
+    
+    pendingAttributes.forEach { setCustomAttributesWith(keysAndValues: $0) }
+    
+    remoteStorage.removeObject(forKey: .pendingAttributes)
   }
   
   func logCustomEvent(_ eventName: String, withProperties properties: [AnyHashable: Any]? = nil) {
     Appboy.sharedInstance()?.logCustomEvent(eventName, withProperties: properties)
   }
   
-  func setCustomAttributeWithKey<T: Equatable>(_ key: String?, andValue value: T?) {
+  private func setCustomAttributesWith(keysAndValues: [String: Any]) {
+    for (key, value) in keysAndValues {
+      setCustomAttributeWithKey(key, andValue: value)
+    }
+  }
+  
+  func setCustomAttributeWithKey(_ key: String?, andValue value: Any?) {
     guard let key = key, let value = value else { return }
     
     switch value.self {

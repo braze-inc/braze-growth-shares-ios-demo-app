@@ -2,15 +2,9 @@ import Foundation
 import UIKit
 
 extension String {
-  var boolValue: Bool? {
-    switch lowercased() {
-    case "true", "t", "yes", "y", "1":
-      return true
-    case "false", "f", "no", "n", "0":
-      return false
-    default:
-      return nil
-    }
+  /// For demo purposes only. Don't validate an email this way in a production app.
+  var isValidEmail: Bool {
+    NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}").evaluate(with: self)
   }
   
   var separatedByCommaSpaceValue: [String] {

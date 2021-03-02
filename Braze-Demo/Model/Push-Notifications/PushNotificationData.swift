@@ -14,6 +14,8 @@ enum PushNotificationKey: String {
   case totalSessionCount = "total_session_count"
   case nextSessionName = "next_session_name"
   case nextSessionCompleteDate = "next_session_complete_date"
+  case certificationTitle = "cert_title"
+  case certificationDescription = "cert_description"
 }
 
 // MARK: - Silent Push Notification Names

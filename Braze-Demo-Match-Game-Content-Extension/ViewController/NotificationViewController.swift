@@ -152,14 +152,14 @@ private extension NotificationViewController {
   ///
   /// There is a conditional unwrap to check if there are saved pending events (in the case of a user completing multiple games) and appends the event or saves a new array with one event.
   func saveCompletedMatchGameEvent(with highScore: Int) {
-    let customEventDictionary = [["Event Name": "Completed Match Game", "Score": highScore]] as [[String : Any]]
+    let customEventDictionary = Dictionary<AnyHashable, Any>(eventName: "Completed Match Game", properties: ["Score": highScore])
     let remoteStorage = RemoteStorage(storageType: .suite)
     
-    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
-      pendingEvents.append(contentsOf: customEventDictionary)
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[AnyHashable: Any]] {
+      pendingEvents.append(contentsOf: [customEventDictionary])
       remoteStorage.store(pendingEvents, forKey: .pendingEvents)
     } else {
-      remoteStorage.store(customEventDictionary, forKey: .pendingEvents)
+      remoteStorage.store([customEventDictionary], forKey: .pendingEvents)
     }
   }
   

@@ -7,6 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F04D42A25EAF79A0034FB10 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2E825C888000001F270 /* UserNotifications.framework */; };
+		7F04D42B25EAF79A0034FB10 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
+		7F04D42E25EAF79A0034FB10 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */; };
+		7F04D43125EAF79A0034FB10 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F04D42F25EAF79A0034FB10 /* MainInterface.storyboard */; };
+		7F04D43525EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7F04D45A25EB00880034FB10 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */; };
+		7F04D46325EB07040034FB10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
+		7F04D46C25EB083E0034FB10 /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
+		7F04D46D25EB083E0034FB10 /* Sailec-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */; };
+		7F04D46E25EB083E0034FB10 /* Sailec-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */; };
+		7F04D46F25EB083E0034FB10 /* Sailec-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */; };
+		7F04D47025EB083E0034FB10 /* Sailec-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1C25E75941004A89FA /* Sailec-MediumItalic.otf */; };
+		7F04D47125EB083E0034FB10 /* Sailec-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1B25E75941004A89FA /* Sailec-Black.otf */; };
+		7F04D47225EB083E0034FB10 /* Sailec-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */; };
+		7F04D47325EB083E0034FB10 /* Sailec-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2025E75941004A89FA /* Sailec-BoldItalic.otf */; };
+		7F04D47425EB083E0034FB10 /* Sailec-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2125E75941004A89FA /* Sailec-RegularItalic.otf */; };
+		7F04D47525EB083E0034FB10 /* Sailec-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1E25E75941004A89FA /* Sailec-Bold.otf */; };
+		7F04D47625EB083E0034FB10 /* Sailec-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */; };
+		7F04D47725EB083E0034FB10 /* Sailec-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1F25E75941004A89FA /* Sailec-Regular.otf */; };
+		7F04D47825EB083E0034FB10 /* Sailec-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2225E75941004A89FA /* Sailec-LightItalic.otf */; };
+		7F04D47925EB083E0034FB10 /* Sailec-HairlineItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */; };
+		7F04D4B525EB560E0034FB10 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
+		7F0660EC25EECC1400384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
+		7F0660EE25EECC1400384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
+		7F0660EF25EECC1400384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
+		7F06610025EECC2100384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
 		7F12B40D25E6F842003AD64F /* SessionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF617C425E6E5860058F98D /* SessionView.xib */; };
 		7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7F12B45A25E7183C003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
@@ -134,6 +160,17 @@
 		7FD8EA4625E759F9004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
 		7FD8EA4725E759F9004A89FA /* Sailec-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */; };
 		7FD8EA4825E759F9004A89FA /* Sailec-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */; };
+		7FD90A4C25EB57D600E8F411 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
+		7FD90A6025EB63FE00E8F411 /* AllSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD90A5F25EB63FE00E8F411 /* AllSetView.xib */; };
+		7FD90A8325EBFBCB00E8F411 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
+		7FD90A9425EBFCCF00E8F411 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
+		7FD90AA625EC022100E8F411 /* AllSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD90AA525EC022100E8F411 /* AllSetView.swift */; };
+		7FD90AAF25EC022A00E8F411 /* AllSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD90AA525EC022100E8F411 /* AllSetView.swift */; };
+		7FD90AB825EC0DB500E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
+		7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
+		7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
+		7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
+		7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -153,6 +190,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7F04D43325EAF79A0034FB10 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7FBDD47D24AD711D00EC0983 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7F04D42825EAF79A0034FB10;
+			remoteInfo = "Braze-Demo-Exam-Register-Content-Extension";
+		};
 		7F8CB2B125C845900001F270 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7FBDD47D24AD711D00EC0983 /* Project object */;
@@ -207,6 +251,7 @@
 				7FF6178E25E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex in Embed App Extensions */,
 				7F96CCA125E014F0002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex in Embed App Extensions */,
 				7F8CB2B325C845900001F270 /* Braze-Demo-Service-Extension.appex in Embed App Extensions */,
+				7F04D43525EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex in Embed App Extensions */,
 				7F8CB2F525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -215,6 +260,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-LAB-Register-Content-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		7F04D43025EAF79A0034FB10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7F04D43225EAF79A0034FB10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7F04D44925EAF8620034FB10 /* Braze-Demo-LAB-Register-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-LAB-Register-Content-Extension.entitlements"; sourceTree = "<group>"; };
+		7F0660EB25EECC1400384756 /* Dictionary_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary_Util.swift; sourceTree = "<group>"; };
 		7F12B41525E71594003AD64F /* PushNotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
 		7F12B46225E71EEF003AD64F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7F12B48925E721B1003AD64F /* UIStackView_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView_Util.swift; sourceTree = "<group>"; };
@@ -328,6 +379,8 @@
 		7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Hairline.otf"; sourceTree = "<group>"; };
 		7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-HairlineItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Thin.otf"; sourceTree = "<group>"; };
+		7FD90A5F25EB63FE00E8F411 /* AllSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllSetView.xib; sourceTree = "<group>"; };
+		7FD90AA525EC022100E8F411 /* AllSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSetView.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -347,6 +400,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7F04D42625EAF79A0034FB10 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F04D42B25EAF79A0034FB10 /* UserNotificationsUI.framework in Frameworks */,
+				7F04D42A25EAF79A0034FB10 /* UserNotifications.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F8CB2A925C845900001F270 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -421,6 +483,18 @@
 				7F384B4D256DC59300673410 /* InAppMessageData.swift */,
 			);
 			path = "In-App-Messages";
+			sourceTree = "<group>";
+		};
+		7F04D42C25EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7F04D44925EAF8620034FB10 /* Braze-Demo-LAB-Register-Content-Extension.entitlements */,
+				7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */,
+				7F04D42F25EAF79A0034FB10 /* MainInterface.storyboard */,
+				7F04D43225EAF79A0034FB10 /* Info.plist */,
+				7FD90A6925EB641200E8F411 /* AllSetView */,
+			);
+			path = "Braze-Demo-LAB-Register-Content-Extension";
 			sourceTree = "<group>";
 		};
 		7F12B41E25E715A0003AD64F /* Push-Notifications */ = {
@@ -554,6 +628,7 @@
 			children = (
 				7FAAE26424D392AE008269E5 /* Array_Util.swift */,
 				7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */,
+				7F0660EB25EECC1400384756 /* Dictionary_Util.swift */,
 				7FCFB97824C2D184001AA381 /* Double_Util.swift */,
 				7F754FC4250C3A5200CD7B45 /* String_Util.swift */,
 				7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */,
@@ -672,7 +747,7 @@
 			isa = PBXGroup;
 			children = (
 				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
-				7FCFEB11256C389E00079EAF /* In App Messages */,
+				7FCFEB11256C389E00079EAF /* In-App-Messages */,
 				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
 				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
 				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
@@ -755,6 +830,7 @@
 				7F8CB2EC25C888000001F270 /* Braze-Demo-Push-Story-Content-Extension */,
 				7F96CC9825E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension */,
 				7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */,
+				7F04D42C25EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension */,
 				7F8CB2E725C888000001F270 /* Frameworks */,
 				7FBDD48624AD711E00EC0983 /* Products */,
 			);
@@ -770,6 +846,7 @@
 				7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */,
 				7F96CC9525E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension.appex */,
 				7FF6178225E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension.appex */,
+				7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -810,14 +887,14 @@
 			path = "Braze-DemoUITests";
 			sourceTree = "<group>";
 		};
-		7FCFEB11256C389E00079EAF /* In App Messages */ = {
+		7FCFEB11256C389E00079EAF /* In-App-Messages */ = {
 			isa = PBXGroup;
 			children = (
 				7F8967CF25740FAB00C61405 /* FullListViewController */,
 				7F3FBEF325B0F417007715C0 /* ModalPickerViewController */,
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
-			path = "In App Messages";
+			path = "In-App-Messages";
 			sourceTree = "<group>";
 		};
 		7FD8EA1725E758F1004A89FA /* Sailec-Font */ = {
@@ -841,6 +918,15 @@
 			name = "Sailec-Font";
 			sourceTree = "<group>";
 		};
+		7FD90A6925EB641200E8F411 /* AllSetView */ = {
+			isa = PBXGroup;
+			children = (
+				7FD90AA525EC022100E8F411 /* AllSetView.swift */,
+				7FD90A5F25EB63FE00E8F411 /* AllSetView.xib */,
+			);
+			path = AllSetView;
+			sourceTree = "<group>";
+		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -857,6 +943,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7F04D42825EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7F04D43625EAF79A0034FB10 /* Build configuration list for PBXNativeTarget "Braze-Demo-LAB-Register-Content-Extension" */;
+			buildPhases = (
+				7F04D42525EAF79A0034FB10 /* Sources */,
+				7F04D42625EAF79A0034FB10 /* Frameworks */,
+				7F04D42725EAF79A0034FB10 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Braze-Demo-LAB-Register-Content-Extension";
+			productName = "Braze-Demo-Exam-Register-Content-Extension";
+			productReference = 7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7F8CB2AB25C845900001F270 /* Braze-Demo-Service-Extension */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7F8CB2B725C845900001F270 /* Build configuration list for PBXNativeTarget "Braze-Demo-Service-Extension" */;
@@ -927,6 +1030,7 @@
 				7F8CB2F425C888000001F270 /* PBXTargetDependency */,
 				7F96CCA025E014F0002D9AD9 /* PBXTargetDependency */,
 				7FF6178D25E6B0BB0058F98D /* PBXTargetDependency */,
+				7F04D43425EAF79A0034FB10 /* PBXTargetDependency */,
 			);
 			name = "Braze-Demo";
 			packageProductDependencies = (
@@ -999,6 +1103,9 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Justin-Malandruccolo";
 				TargetAttributes = {
+					7F04D42825EAF79A0034FB10 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					7F8CB2AB25C845900001F270 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -1047,15 +1154,41 @@
 				7F8CB2E525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension */,
 				7F96CC9425E014EF002D9AD9 /* Braze-Demo-Match-Game-Content-Extension */,
 				7FF6178125E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */,
+				7F04D42825EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7F04D42725EAF79A0034FB10 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F04D47925EB083E0034FB10 /* Sailec-HairlineItalic.otf in Resources */,
+				7F04D47425EB083E0034FB10 /* Sailec-RegularItalic.otf in Resources */,
+				7F04D46325EB07040034FB10 /* Assets.xcassets in Resources */,
+				7F04D47325EB083E0034FB10 /* Sailec-BoldItalic.otf in Resources */,
+				7F04D43125EAF79A0034FB10 /* MainInterface.storyboard in Resources */,
+				7F04D47125EB083E0034FB10 /* Sailec-Black.otf in Resources */,
+				7F04D46F25EB083E0034FB10 /* Sailec-Hairline.otf in Resources */,
+				7F04D46E25EB083E0034FB10 /* Sailec-Thin.otf in Resources */,
+				7F04D46C25EB083E0034FB10 /* Sailec-Medium.otf in Resources */,
+				7F04D47625EB083E0034FB10 /* Sailec-Light.otf in Resources */,
+				7F04D47025EB083E0034FB10 /* Sailec-MediumItalic.otf in Resources */,
+				7F04D47525EB083E0034FB10 /* Sailec-Bold.otf in Resources */,
+				7F04D47725EB083E0034FB10 /* Sailec-Regular.otf in Resources */,
+				7FD90A6025EB63FE00E8F411 /* AllSetView.xib in Resources */,
+				7F04D47825EB083E0034FB10 /* Sailec-LightItalic.otf in Resources */,
+				7F04D46D25EB083E0034FB10 /* Sailec-ThinItalic.otf in Resources */,
+				7F04D47225EB083E0034FB10 /* Sailec-BlackItalic.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F8CB2AA25C845900001F270 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1152,11 +1285,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7F04D42525EAF79A0034FB10 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7F04D4B525EB560E0034FB10 /* String_Util.swift in Sources */,
+				7F04D42E25EAF79A0034FB10 /* NotificationViewController.swift in Sources */,
+				7F06610025EECC2100384756 /* Dictionary_Util.swift in Sources */,
+				7FD90A9425EBFCCF00E8F411 /* UIVIew_Util.swift in Sources */,
+				7FD90AB825EC0DB500E8F411 /* PushNotificationData.swift in Sources */,
+				7FD90AA625EC022100E8F411 /* AllSetView.swift in Sources */,
+				7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7F8CB2A825C845900001F270 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F04D45A25EB00880034FB10 /* NotificationViewController.swift in Sources */,
+				7FD90AAF25EC022A00E8F411 /* AllSetView.swift in Sources */,
+				7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */,
+				7F0660EC25EECC1400384756 /* Dictionary_Util.swift in Sources */,
+				7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */,
+				7FD90A8325EBFBCB00E8F411 /* UIVIew_Util.swift in Sources */,
 				7F8CB2AF25C845900001F270 /* NotificationService.swift in Sources */,
+				7FD90A4C25EB57D600E8F411 /* String_Util.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1172,6 +1326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0660EE25EECC1400384756 /* Dictionary_Util.swift in Sources */,
 				7F1ADDA825E41D3200116E92 /* UIVIew_Util.swift in Sources */,
 				7F96CCD125E061D7002D9AD9 /* MatchGame.swift in Sources */,
 				7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */,
@@ -1277,6 +1432,7 @@
 				7F12B47A25E71F30003AD64F /* Session.swift in Sources */,
 				7F12B48A25E721B1003AD64F /* UIStackView_Util.swift in Sources */,
 				7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */,
+				7F0660EF25EECC1400384756 /* Dictionary_Util.swift in Sources */,
 				7FF6178725E6B0BB0058F98D /* NotificationViewController.swift in Sources */,
 				7FF617D525E6E67F0058F98D /* UIVIew_Util.swift in Sources */,
 				7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */,
@@ -1287,6 +1443,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7F04D43425EAF79A0034FB10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7F04D42825EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension */;
+			targetProxy = 7F04D43325EAF79A0034FB10 /* PBXContainerItemProxy */;
+		};
 		7F8CB2B225C845900001F270 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7F8CB2AB25C845900001F270 /* Braze-Demo-Service-Extension */;
@@ -1320,6 +1481,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7F04D42F25EAF79A0034FB10 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7F04D43025EAF79A0034FB10 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		7F8CB2EF25C888000001F270 /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1347,6 +1516,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7F04D43725EAF79A0034FB10 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register.notification-content-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7F04D43825EAF79A0034FB10 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
+				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register.notification-content-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7F8CB2B525C845900001F270 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1461,7 +1682,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1487,7 +1708,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1679,7 +1900,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
 				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1701,7 +1922,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
 				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1765,7 +1986,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1791,7 +2012,7 @@
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1810,6 +2031,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7F04D43625EAF79A0034FB10 /* Build configuration list for PBXNativeTarget "Braze-Demo-LAB-Register-Content-Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F04D43725EAF79A0034FB10 /* Debug */,
+				7F04D43825EAF79A0034FB10 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7F8CB2B725C845900001F270 /* Build configuration list for PBXNativeTarget "Braze-Demo-Service-Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
