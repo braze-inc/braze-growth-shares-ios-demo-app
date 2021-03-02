@@ -102,13 +102,13 @@ extension BrazeManager {
   /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
   func logPendingEventsIfNecessary() {
     let remoteStorage = RemoteStorage(storageType: .suite)
-    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] else { return }
+    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[AnyHashable: Any]] else { return }
     
     for event in pendingEvents {
       var eventName = ""
       var properties: [AnyHashable: Any] = [:]
       for (key, value) in event {
-        if key == "event_name", let eventNameValue = value as? String {
+        if key as? String == "event_name", let eventNameValue = value as? String {
           eventName = eventNameValue
         } else {
           properties[key] = value

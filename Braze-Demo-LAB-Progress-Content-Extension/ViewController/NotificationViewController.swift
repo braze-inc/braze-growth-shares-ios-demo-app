@@ -80,10 +80,10 @@ private extension NotificationViewController {
   ///
   /// There is a conditional unwrap to check if there are saved pending events (in the case of a user viewing the content extension multiple times) and appends the event or saves a new array with one event.
   func saveViewedSessionProgressEvent() {
-    let customEventDictionary = Dictionary<String, Any>(eventName: "Viewed Session Progress")
+    let customEventDictionary = Dictionary<AnyHashable, Any>(eventName: "Viewed Session Progress")
     let remoteStorage = RemoteStorage(storageType: .suite)
     
-    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[AnyHashable: Any]] {
       pendingEvents.append(contentsOf: [customEventDictionary])
       remoteStorage.store(pendingEvents, forKey: .pendingEvents)
     } else {

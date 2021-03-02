@@ -1,5 +1,5 @@
 extension Dictionary {
-  init(eventName: String, properties: [String: AnyHashable]? = nil) {
+  init(eventName: String, properties: [AnyHashable: Any]? = nil) {
     self.init()
     self["event_name" as! Key] = eventName as? Value
     
