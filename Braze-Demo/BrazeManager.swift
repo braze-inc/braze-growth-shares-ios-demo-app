@@ -127,17 +127,19 @@ extension BrazeManager {
     let remoteStorage = RemoteStorage(storageType: .suite)
     guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] else { return }
     
-    for attribute in pendingAttributes {
-      for (key, value) in attribute {
-        setCustomAttributeWithKey(key, andValue: value)
-      }
-    }
+    pendingAttributes.forEach { setCustomAttributesWith(keysAndValues: $0) }
     
     remoteStorage.removeObject(forKey: .pendingAttributes)
   }
   
   func logCustomEvent(_ eventName: String, withProperties properties: [AnyHashable: Any]? = nil) {
     Appboy.sharedInstance()?.logCustomEvent(eventName, withProperties: properties)
+  }
+  
+  private func setCustomAttributesWith(keysAndValues: [String: Any]) {
+    for (key, value) in keysAndValues {
+      setCustomAttributeWithKey(key, andValue: value)
+    }
   }
   
   func setCustomAttributeWithKey(_ key: String?, andValue value: Any?) {
