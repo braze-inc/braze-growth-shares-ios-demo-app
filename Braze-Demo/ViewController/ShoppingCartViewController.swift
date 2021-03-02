@@ -123,7 +123,7 @@ extension ShoppingCartViewController {
   
   func logPurchase(with items: [Tile]) {
     for (item, quantity) in items.countDictionary {
-      BrazeManager.shared.logPurchase(productIdentifier: item.title, inCurrency: "USD", atPrice: "\(item.price ?? 0.00)", withQuanitity: quantity)
+      BrazeManager.shared.logPurchase(productIdentifier: item.title, inCurrency: "USD", atPrice: "\(item.price ?? 0.00)", withQuantity: quantity)
     }
   }
 }

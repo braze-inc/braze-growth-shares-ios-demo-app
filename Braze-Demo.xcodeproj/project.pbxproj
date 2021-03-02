@@ -93,6 +93,7 @@
 		7F96CCC925E05FE5002D9AD9 /* MatchCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCC825E05FE5002D9AD9 /* MatchCard.swift */; };
 		7F96CCD125E061D7002D9AD9 /* MatchGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCD025E061D7002D9AD9 /* MatchGame.swift */; };
 		7F96CCF325E16E99002D9AD9 /* AttemptCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96CCF225E16E98002D9AD9 /* AttemptCounter.swift */; };
+		7F9843CA25EEEEA90055EDBF /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */; };
 		7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC524AD787A00E8D207 /* Main.storyboard */; };
 		7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBC724AD79AC00E8D207 /* LocalDataCoordinator.swift */; };
@@ -1334,6 +1335,7 @@
 				7F96CC9A25E014EF002D9AD9 /* NotificationViewController.swift in Sources */,
 				7F12B49225E72313003AD64F /* UIStackView_Util.swift in Sources */,
 				7F96CCF325E16E99002D9AD9 /* AttemptCounter.swift in Sources */,
+				7F9843CA25EEEEA90055EDBF /* PushNotificationData.swift in Sources */,
 				7F1ADD5825E32EF600116E92 /* RemoteStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

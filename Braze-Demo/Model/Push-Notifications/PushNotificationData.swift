@@ -2,12 +2,16 @@ import NotificationCenter
 
 // MARK: - PushNotificationsKey
 /// A safer alternative to typing "string" types. Declared as `String` type to query the key name via `rawValue`.
+///
+///Represents the keys in your Push Notification key-value pairs.
 enum PushNotificationKey: String {
+  
+  // MARK: - Analytics
+  case eventName = "event_name"
   
   // MARK: - Silent Push Notifications
   case homeTilePriority = "home_tile_priority"
   case refreshHome = "refresh_home"
-  case eventName = "event_name"
   
   // MARK: - Content Extension Notifications
   case completedSessionCount = "completed_session_count"
