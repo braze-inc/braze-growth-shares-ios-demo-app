@@ -22,7 +22,7 @@ In doing so, this project also demonstrates how to natively customize In-App Mes
 ## Content Cards
 
 Objects can adopt the [ContentCardable](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/ContentCardData.swift#L9) protocol which comes with the `ContentCardData` object and an initializer.
-Upon receiving an array of `ABKContentCard` objects from the SDK, the corresponding `ABKContentCard` objects are [converted](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L252) into a `Dictionary` of metadata that are used to instantiate your custom objects.
+Upon receiving an array of `ABKContentCard` objects from the SDK, the corresponding `ABKContentCard` objects are [converted](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L247) into a `Dictionary` of metadata that are used to instantiate your custom objects.
 
 ### This demo highlights 4 Content Card uses cases:
 1. Content Cards as Supplemental Content to an existing feed
@@ -36,12 +36,12 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
     - [Coupon.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Coupon.swift#L5)</br></br> 
     
 #### Extra use cases:
-1. Content Cards that can be inserted/removed to/from an existing feed in real-time via [silent push](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L70) (device only)
+1. Content Cards that can be inserted/removed to/from an existing feed in real-time via [silent push](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L75) (device only)
 2. Content Cards that can be [reordered](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/DataSource/TileListDataSource.swift#L97) in an existing feed in real-time via silent push (device only)
 
 ## In-App Messages
 
-Custom view controllers can represent in-app messages by subclassing `ABKInAppMessageViewController`. Due to the individusalitic nature of in-app messages, we can [mix and match](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L162) displaying custom in-app messages and default in-app messages.
+Custom view controllers can represent in-app messages by subclassing `ABKInAppMessageViewController`. Due to the individusalitic nature of in-app messages, we can [mix and match](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L154) displaying custom in-app messages and default in-app messages.
 
 ### This demo highlights 3 in-app message uses cases:
 1. Slideup In-App Message with a modified resting point
