@@ -14,7 +14,7 @@ class FullListViewController: FullViewController {
   @IBAction func primaryButtonTapped(_ sender: Any) {
     guard let attributeKey = inAppMessage.extras?["attribute_key"] as? String else { return }
     
-    BrazeManager.shared.setCustomAttributeWithKey(attributeKey, andValue: selectedItems)
+    BrazeManager.shared.setCustomAttributeArrayWithKey(attributeKey, andValue: selectedItems)
   }
   
   // MARK: - Variables

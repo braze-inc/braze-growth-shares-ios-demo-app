@@ -49,8 +49,12 @@ class BrazeManager: NSObject {
 
 // MARK: - User
 extension BrazeManager {
+  private var user: ABKUser? {
+    return Appboy.sharedInstance()?.user
+  }
+  
   var userId: String? {
-     return Appboy.sharedInstance()?.user.userID
+     return user?.userID
    }
     
   func changeUser(_ userId: String) {
@@ -99,72 +103,41 @@ extension BrazeManager {
 
 // MARK: - Analytics
 extension BrazeManager {
-  /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
-  func logPendingEventsIfNecessary() {
-    let remoteStorage = RemoteStorage(storageType: .suite)
-    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[AnyHashable: Any]] else { return }
-    
-    for event in pendingEvents {
-      var eventName = ""
-      var properties: [AnyHashable: Any] = [:]
-      for (key, value) in event {
-        if key as? String == "event_name", let eventNameValue = value as? String {
-          eventName = eventNameValue
-        } else {
-          properties[key] = value
-        }
-      }
-      logCustomEvent(eventName, withProperties: properties)
-    }
-    
-    remoteStorage.removeObject(forKey: .pendingEvents)
+  func setCustomAttributeArrayWithKey(_ key: String, andValue valueArray: [String]) {
+    user?.setCustomAttributeArrayWithKey(key, array: valueArray)
   }
   
-  /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.
-  ///
-  /// `key` represents the attribute key and `value` represents the attribute value.
-  func logPendingAttributesIfNecessary() {
-    let remoteStorage = RemoteStorage(storageType: .suite)
-    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] else { return }
+  func addToCustomAttributeArrayWithKey(_ key: String, andValue valueArray: [String]) {
+    valueArray.forEach {
+      user?.addToCustomAttributeArray(withKey: key, value: $0)
+    }
+  }
+  
+  func setCustomAttributeWithKey(_ key: String, andValue value: Any?) {
+    guard let value = value else { return }
     
-    pendingAttributes.forEach { setCustomAttributesWith(keysAndValues: $0) }
-    
-    remoteStorage.removeObject(forKey: .pendingAttributes)
+    switch value.self {
+    case let value as Date:
+      user?.setCustomAttributeWithKey(key, andDateValue: value)
+    case let value as Bool:
+      user?.setCustomAttributeWithKey(key, andBOOLValue: value)
+    case let value as String:
+      user?.setCustomAttributeWithKey(key, andStringValue: value)
+    case let value as Double:
+      user?.setCustomAttributeWithKey(key, andDoubleValue: value)
+    case let value as Int:
+      user?.setCustomAttributeWithKey(key, andIntegerValue: value)
+    default:
+      return
+    }
   }
   
   func logCustomEvent(_ eventName: String, withProperties properties: [AnyHashable: Any]? = nil) {
     Appboy.sharedInstance()?.logCustomEvent(eventName, withProperties: properties)
   }
   
-  private func setCustomAttributesWith(keysAndValues: [String: Any]) {
-    for (key, value) in keysAndValues {
-      setCustomAttributeWithKey(key, andValue: value)
-    }
-  }
-  
-  func setCustomAttributeWithKey(_ key: String?, andValue value: Any?) {
-    guard let key = key, let value = value else { return }
-    
-    switch value.self {
-    case let value as Array<String>:
-      Appboy.sharedInstance()?.user.setCustomAttributeArrayWithKey(key, array: value)
-    case let value as Date:
-      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andDateValue: value)
-    case let value as Bool:
-      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andBOOLValue: value)
-    case let value as String:
-      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andStringValue: value)
-    case let value as Double:
-      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andDoubleValue: value)
-    case let value as Int:
-      Appboy.sharedInstance()?.user.setCustomAttributeWithKey(key, andIntegerValue: value)
-    default:
-      return
-    }
-  }
-  
-  func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuanitity quanity: Int) {
-    Appboy.sharedInstance()?.logPurchase(productIdentifier, inCurrency: currency, atPrice: NSDecimalNumber(string: price), withQuantity: UInt(quanity))
+  func logPurchase(productIdentifier: String, inCurrency currency: String, atPrice price: String, withQuantity quantity: Int) {
+    Appboy.sharedInstance()?.logPurchase(productIdentifier, inCurrency: currency, atPrice: NSDecimalNumber(string: price), withQuantity: UInt(quantity))
   }
 }
 
@@ -214,7 +187,8 @@ extension BrazeManager {
   
   /// Parses the Appboy dependent information from `Notification.userInfo` dictionary and converts the `ABKContentCard` objects into `ContentCardable` objects.
   /// - parameter notification: A container for information broadcast through a notification center to all registered observers.
-  /// - parameter classTypes: The filter to determine what custom objects to be returned
+  /// - parameter classTypes: The filter to determine what custom objects to be returned.
+  /// - Returns: An array of converted `ABKContentCard`s for the corresponding `classTypes`.
   func handleContentCardsUpdated(_ notification: Notification, for classTypes: [ContentCardClassType]) -> [ContentCardable] {
     guard let updateIsSuccessful = notification.userInfo?[ABKContentCardsProcessedIsSuccessfulKey] as? Bool, updateIsSuccessful, let cards = contentCards else { return [] }
             
@@ -222,7 +196,7 @@ extension BrazeManager {
   }
   
   /// Logs an` ABKContentCard` clicked.
-  /// - parameter idString: Identifier used to retrieve an ABKContentCard.
+  /// - parameter idString: Identifier used to retrieve an `ABKContentCard`.
   func logContentCardClicked(idString: String?) {
     guard let contentCard = getContentCard(forString: idString) else { return }
     
@@ -230,7 +204,7 @@ extension BrazeManager {
   }
   
   /// Logs an` ABKContentCard` impression.
-  /// - parameter idString: Identifier used to retrieve an ABKContentCard.
+  /// - parameter idString: Identifier used to retrieve an `ABKContentCard`.
   func logContentCardImpression(idString: String?) {
     guard let contentCard = getContentCard(forString: idString) else { return }
     
@@ -247,6 +221,7 @@ extension BrazeManager {
   
   /// Retrieves an `ABKContentCard` from the `Appboy.sharedInstance()?.contentCardsController.contentCards` array.
   /// - parameter idString: Identifier used to retrieve an ABKContentCard.
+  /// - Returns: An `ABKContentCard` object with a matching `idString`
   private func getContentCard(forString idString: String?) -> ABKContentCard? {
     return contentCards?.first(where: { $0.idString == idString })
   }
@@ -268,6 +243,7 @@ private extension BrazeManager {
   /// The `ContentCardKey` is used to identify the values from each `ABKContentCard` variable.
   /// - parameter cards: Array of Content Cards.
   /// - parameter classTypes: Used to determine what Content Cards to convert. If a Content Card's classType does not match any of the classTypes, it will skip converting that `ABKContentCard`.
+  /// - Returns: An array of converted `ABKContentCard`s for the corresponding `classTypes`.
   func convertContentCards(_ cards: [ABKContentCard], for classTypes: [ContentCardClassType]) -> [ContentCardable] {
     var contentCardables: [ContentCardable] = []
     for card in cards {
@@ -310,6 +286,7 @@ private extension BrazeManager {
   ///
   /// - parameter metaData: `Dictionary` used to instantiate the custom object.
   /// - parameter classType: Determines the custom object to instantiate.
+  /// - Returns: A custom object for the corresponding `classType`
   func contentCardable(with metaData: [ContentCardKey: Any], for classType: ContentCardClassType) -> ContentCardable? {
     switch classType {
     case .ad:
@@ -383,6 +360,49 @@ private extension BrazeManager {
       return FullListViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
+    }
+  }
+}
+
+// MARK: - Notification Content Extension Analytics
+private extension BrazeManager {
+  /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
+  func logPendingEventsIfNecessary() {
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] else { return }
+    
+    for event in pendingEvents {
+      var eventName = ""
+      var properties: [AnyHashable: Any] = [:]
+      for (key, value) in event {
+        if key == PushNotificationKey.eventName.rawValue,
+           let eventNameValue = value as? String {
+          eventName = eventNameValue
+        } else {
+          properties[key] = value
+        }
+      }
+      logCustomEvent(eventName, withProperties: properties)
+    }
+    
+    remoteStorage.removeObject(forKey: .pendingEvents)
+  }
+  
+  /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.
+  ///
+  /// `key` represents the attribute key and `value` represents the attribute value.
+  func logPendingAttributesIfNecessary() {
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] else { return }
+    
+    pendingAttributes.forEach { setCustomAttributesWith(keysAndValues: $0) }
+    
+    remoteStorage.removeObject(forKey: .pendingAttributes)
+  }
+  
+  func setCustomAttributesWith(keysAndValues: [String: Any]) {
+    for (key, value) in keysAndValues {
+      setCustomAttributeWithKey(key, andValue: value)
     }
   }
 }
