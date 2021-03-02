@@ -108,16 +108,16 @@ extension BrazeManager {
       var eventName = ""
       var properties: [AnyHashable: Any] = [:]
       for (key, value) in event {
-        if key == "Event Name", let eventNameValue = value as? String {
+        if key == "event_name", let eventNameValue = value as? String {
           eventName = eventNameValue
         } else {
           properties[key] = value
         }
       }
       logCustomEvent(eventName, withProperties: properties)
-      
-      remoteStorage.removeObject(forKey: .pendingEvents)
     }
+    
+    remoteStorage.removeObject(forKey: .pendingEvents)
   }
   
   /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.

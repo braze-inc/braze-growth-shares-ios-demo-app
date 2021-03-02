@@ -111,14 +111,14 @@ private extension NotificationViewController {
   ///
   /// There is a conditional unwrap to check if there are saved pending events (in the case of multiple registrations) and appends the event or saves a new array with one event.
   func saveRegisteredForCertificationEvent() {
-    let customEventDictionary = [["Event Name": "Registered for Certification"]] as [[String : Any]]
+    let customEventDictionary = Dictionary<String, Any>(eventName: "Registered for Certification")
     let remoteStorage = RemoteStorage(storageType: .suite)
     
     if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
-      pendingEvents.append(contentsOf: customEventDictionary)
+      pendingEvents.append(contentsOf: [customEventDictionary])
       remoteStorage.store(pendingEvents, forKey: .pendingEvents)
     } else {
-      remoteStorage.store(customEventDictionary, forKey: .pendingEvents)
+      remoteStorage.store([customEventDictionary], forKey: .pendingEvents)
     }
   }
   
@@ -128,14 +128,14 @@ private extension NotificationViewController {
   func saveEmailAttribute() {
     guard let email = registerEmail else { return }
     
-    let customAttributeDictionary: [[String: Any]] = [["Certification Registration Email": email]]
+    let customAttributeDictionary: [String: Any] = ["Certification Registration Email": email]
     let remoteStorage = RemoteStorage(storageType: .suite)
     
     if var pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] {
-      pendingAttributes.append(contentsOf: customAttributeDictionary)
+      pendingAttributes.append(contentsOf: [customAttributeDictionary])
       remoteStorage.store(pendingAttributes, forKey: .pendingAttributes)
     } else {
-      remoteStorage.store(customAttributeDictionary, forKey: .pendingAttributes)
+      remoteStorage.store([customAttributeDictionary], forKey: .pendingAttributes)
     }
   }
 }
