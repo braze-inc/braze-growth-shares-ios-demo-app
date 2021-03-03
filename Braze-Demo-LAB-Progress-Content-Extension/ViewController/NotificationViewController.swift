@@ -6,6 +6,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
 
   // MARK: - Outlets
   @IBOutlet private weak var stackView: UIStackView!
+  @IBOutlet private weak var sessionProgressLabel: UILabel!
   @IBOutlet private weak var nextSessionLabel: UILabel!
   @IBOutlet private weak var completeNextSessionByLabel: UILabel!
   
@@ -31,7 +32,10 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     
     self.sessionData = SessionData(completedSessions: completedSessions, totalSessions: totalSessions)
     
-    configureNextSessionLabels(with: userInfo)
+    sessionProgressLabel.text = "\(completedSessions)/\(totalSessions)"
+    nextSessionLabel.text = userInfo[PushNotificationKey.nextSessionName.rawValue] as? String
+    completeNextSessionByLabel.text = userInfo[PushNotificationKey.nextSessionCompleteDate.rawValue] as? String
+    
     configureTotalSessionProgress(rows: rowCount, columns: columnCount)
     
     saveViewedSessionProgressEvent()
@@ -69,11 +73,6 @@ private extension NotificationViewController {
       
       stackView.addArrangedSubview(sessionStackView)
     }
-  }
-  
-  func configureNextSessionLabels(with userInfo: [AnyHashable: Any]) {
-    nextSessionLabel.text = userInfo[PushNotificationKey.nextSessionName.rawValue] as? String
-    completeNextSessionByLabel.text = userInfo[PushNotificationKey.nextSessionCompleteDate.rawValue] as? String
   }
 }
 
