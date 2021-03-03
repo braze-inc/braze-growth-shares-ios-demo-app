@@ -1,11 +1,18 @@
 import Foundation
 
 enum RemoteStorageKey: String, CaseIterable {
+  // MARK: - Home Screen
   case homeTilePriority = "home_tile_priority"
-  case messageCenterStyle = "message_center_style"
   case homeScreenType = "home_screen_type"
-  case pendingEvents = "pending_events"
-  case pendingAttributes = "pending_attributes"
+  
+  // MARK: - Message Center
+  case messageCenterStyle = "message_center_style"
+  
+  // MARK: - Notification Content Extension Analytics
+  case pendingCustomEvents = "pending_custom_events"
+  case pendingCustomAttributes = "pending_custom_attributes"
+  case pendingUserAttributes = "pending_user_attributes"
+  
 }
 
 enum RemoteStorageType {

@@ -125,6 +125,9 @@
 		7FCFB99524CA383C001AA381 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFB99424CA383C001AA381 /* Message.swift */; };
 		7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FCFEB0C256C389A00079EAF /* ModalPickerViewController.swift */; };
 		7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */; };
+		7FD1216F25F0047B00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
+		7FD1218025F00B8D00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
+		7FD1218925F00B8E00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
 		7FD213D625872B5700FEFAAB /* TileLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */; };
 		7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */; };
 		7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */; };
@@ -360,6 +363,7 @@
 		7FCFB99424CA383C001AA381 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		7FCFEB0C256C389A00079EAF /* ModalPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPickerViewController.swift; sourceTree = "<group>"; };
 		7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
+		7FD1216E25F0047B00961131 /* UserAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAttribute.swift; sourceTree = "<group>"; };
 		7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileLayoutBuilder.swift; sourceTree = "<group>"; };
 		7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenMenuView.xib; sourceTree = "<group>"; };
 		7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMenuView.swift; sourceTree = "<group>"; };
@@ -473,6 +477,12 @@
 		7F02B4BC256E1E7100175158 /* Content-Cards */ = {
 			isa = PBXGroup;
 			children = (
+				7FCFB98C24C91421001AA381 /* Ad.swift */,
+				7FAAE26224D374B2008269E5 /* Coupon.swift */,
+				7F6C98172564539A000CDAAA /* Group.swift */,
+				7FD2F60D256607AB0061950D /* GroupSection.swift */,
+				7FCFB99424CA383C001AA381 /* Message.swift */,
+				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
 			);
 			path = "Content-Cards";
@@ -502,6 +512,7 @@
 			isa = PBXGroup;
 			children = (
 				7F12B41525E71594003AD64F /* PushNotificationData.swift */,
+				7FD1216E25F0047B00961131 /* UserAttribute.swift */,
 			);
 			path = "Push-Notifications";
 			sourceTree = "<group>";
@@ -779,15 +790,9 @@
 		7F9DCBD324AD7A5400E8D207 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7FCFB98C24C91421001AA381 /* Ad.swift */,
 				7F02B4BC256E1E7100175158 /* Content-Cards */,
-				7FAAE26224D374B2008269E5 /* Coupon.swift */,
-				7F6C98172564539A000CDAAA /* Group.swift */,
-				7FD2F60D256607AB0061950D /* GroupSection.swift */,
 				7F02B4C3256E1E7B00175158 /* In-App-Messages */,
-				7FCFB99424CA383C001AA381 /* Message.swift */,
 				7F12B41E25E715A0003AD64F /* Push-Notifications */,
-				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1291,6 +1296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F04D4B525EB560E0034FB10 /* String_Util.swift in Sources */,
+				7FD1218025F00B8D00961131 /* UserAttribute.swift in Sources */,
 				7F04D42E25EAF79A0034FB10 /* NotificationViewController.swift in Sources */,
 				7F06610025EECC2100384756 /* Dictionary_Util.swift in Sources */,
 				7FD90A9425EBFCCF00E8F411 /* UIVIew_Util.swift in Sources */,
@@ -1312,6 +1318,7 @@
 				7FD90A8325EBFBCB00E8F411 /* UIVIew_Util.swift in Sources */,
 				7F8CB2AF25C845900001F270 /* NotificationService.swift in Sources */,
 				7FD90A4C25EB57D600E8F411 /* String_Util.swift in Sources */,
+				7FD1218925F00B8E00961131 /* UserAttribute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1359,6 +1366,7 @@
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
 				7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */,
+				7FD1216F25F0047B00961131 /* UserAttribute.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
 				7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */,

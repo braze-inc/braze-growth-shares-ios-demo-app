@@ -85,11 +85,11 @@ private extension NotificationViewController {
     let customEventDictionary = Dictionary(eventName: "Viewed Session Progress")
     let remoteStorage = RemoteStorage(storageType: .suite)
     
-    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingCustomEvents) as? [[String: Any]] {
       pendingEvents.append(contentsOf: [customEventDictionary])
-      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
+      remoteStorage.store(pendingEvents, forKey: .pendingCustomEvents)
     } else {
-      remoteStorage.store([customEventDictionary], forKey: .pendingEvents)
+      remoteStorage.store([customEventDictionary], forKey: .pendingCustomEvents)
     }
   }
 }

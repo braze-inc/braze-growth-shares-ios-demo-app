@@ -31,8 +31,9 @@ class BrazeManager: NSObject {
     Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.setInAppMessageUIDelegate?(self)
     
     // MARK: - Analytics from Notifcation Content Extensions
-    logPendingEventsIfNecessary()
-    logPendingAttributesIfNecessary()
+    logPendingCustomEventsIfNecessary()
+    logPendingCustomAttributesIfNecessary()
+    logPendingUserAttributesIfNecessary()
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -367,9 +368,9 @@ private extension BrazeManager {
 // MARK: - Notification Content Extension Analytics
 private extension BrazeManager {
   /// Loops through an array of saved custom event data saved from storage. In the loop, the value `"Event Name`" is explicity checked against and the rest of the keys/values are added as the `properties` dictionary. Once the events are logged, they are cleared from storage.
-  func logPendingEventsIfNecessary() {
+  func logPendingCustomEventsIfNecessary() {
     let remoteStorage = RemoteStorage(storageType: .suite)
-    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] else { return }
+    guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingCustomEvents) as? [[String: Any]] else { return }
     
     for event in pendingEvents {
       var eventName = ""
@@ -385,24 +386,41 @@ private extension BrazeManager {
       logCustomEvent(eventName, withProperties: properties)
     }
     
-    remoteStorage.removeObject(forKey: .pendingEvents)
+    remoteStorage.removeObject(forKey: .pendingCustomEvents)
   }
   
-  /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.
+  /// Loops through an array of saved custom attribute data saved from storage. Each `key` is set as the attribute key with a corresponding `value`. Once the attributes are logged, they are cleared from storage.
   ///
   /// `key` represents the attribute key and `value` represents the attribute value.
-  func logPendingAttributesIfNecessary() {
+  func logPendingCustomAttributesIfNecessary() {
     let remoteStorage = RemoteStorage(storageType: .suite)
-    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] else { return }
+    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingCustomAttributes) as? [[String: Any]] else { return }
     
     pendingAttributes.forEach { setCustomAttributesWith(keysAndValues: $0) }
     
-    remoteStorage.removeObject(forKey: .pendingAttributes)
+    remoteStorage.removeObject(forKey: .pendingCustomAttributes)
   }
   
   func setCustomAttributesWith(keysAndValues: [String: Any]) {
     for (key, value) in keysAndValues {
       setCustomAttributeWithKey(key, andValue: value)
     }
+  }
+  
+  /// Loops through an array of saved user attribute data saved from storage. In the loop, the data is decoded to represent a `UserAttribute` object. Based on the type of `UserAttribute`, the field is set accordingly with the associated value. Once the attributes are logged, they are cleared from storage.
+  func logPendingUserAttributesIfNecessary() {
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingUserAttributes) as? [Data] else { return }
+    
+    for attributeData in pendingAttributes {
+      guard let userAttribute = try? PropertyListDecoder().decode(UserAttribute.self, from: attributeData) else { continue }
+      
+      switch userAttribute {
+      case .email(let email):
+        user?.email = email
+      }
+    }
+    
+    remoteStorage.removeObject(forKey: .pendingUserAttributes)
   }
 }

@@ -44,10 +44,11 @@ extension NotificationViewController: UNNotificationContentExtension {
   func didReceive(_ response: UNNotificationResponse, completionHandler completion: @escaping (UNNotificationContentExtensionResponseOption) -> Void) {
     if response.actionIdentifier == registerIdentifier {
       UINotificationFeedbackGenerator().notificationOccurred(.success)
-        
       extensionContext?.notificationActions = []
+      
       saveRegisteredForCertificationEvent()
-      saveEmailAttribute()
+      saveEmailCustomAttribute()
+      saveEmailUserAttribute()
       
       displayAllSetView { completion(.dismiss) }
     } else {
@@ -114,28 +115,45 @@ private extension NotificationViewController {
     let customEventDictionary = Dictionary(eventName: "Registered for Certification")
     let remoteStorage = RemoteStorage(storageType: .suite)
     
-    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingCustomEvents) as? [[String: Any]] {
       pendingEvents.append(contentsOf: [customEventDictionary])
-      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
+      remoteStorage.store(pendingEvents, forKey: .pendingCustomEvents)
     } else {
-      remoteStorage.store([customEventDictionary], forKey: .pendingEvents)
+      remoteStorage.store([customEventDictionary], forKey: .pendingCustomEvents)
     }
   }
   
   /// Saves a custom attribute to `userDefaults` with the given suite name that is your `App Group` name.
   ///
-  /// Saving the value as an array to handle the case of multiple emails being registered from the same user. Braze removes duplicates from custom arribute arrays so there will only be unique values.
-  func saveEmailAttribute() {
+  /// There is a conditional unwrap to check if there are saved pending events (in the case of multiple registrations) and appends the event or saves a new array with one event.
+  func saveEmailCustomAttribute() {
     guard let email = registerEmail else { return }
     
     let customAttributeDictionary: [String: Any] = ["Certification Registration Email": email]
     let remoteStorage = RemoteStorage(storageType: .suite)
     
-    if var pendingAttributes = remoteStorage.retrieve(forKey: .pendingAttributes) as? [[String: Any]] {
+    if var pendingAttributes = remoteStorage.retrieve(forKey: .pendingCustomAttributes) as? [[String: Any]] {
       pendingAttributes.append(contentsOf: [customAttributeDictionary])
-      remoteStorage.store(pendingAttributes, forKey: .pendingAttributes)
+      remoteStorage.store(pendingAttributes, forKey: .pendingCustomAttributes)
     } else {
-      remoteStorage.store([customAttributeDictionary], forKey: .pendingAttributes)
+      remoteStorage.store([customAttributeDictionary], forKey: .pendingCustomAttributes)
+    }
+  }
+  
+  /// Saves an encoded `userAttribute` object to `userDefaults` with the given suite name that is your `App Group` name.
+  ///
+  /// There is a conditional unwrap to check if there are saved pending attributes (in the case of other attributes being saved from another notification) and appends the event or saves a new array with one attribute. If there are multiple registrations, the most recent email used will be saved to the user profile. 
+  func saveEmailUserAttribute() {
+    guard let email = registerEmail,
+          let data = try? PropertyListEncoder().encode(UserAttribute.email(email)) else { return }
+        
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    
+    if var pendingAttributes = remoteStorage.retrieve(forKey: .pendingUserAttributes) as? [Data] {
+      pendingAttributes.append(contentsOf: [data])
+      remoteStorage.store(pendingAttributes, forKey: .pendingUserAttributes)
+    } else {
+      remoteStorage.store([data], forKey: .pendingUserAttributes)
     }
   }
 }
