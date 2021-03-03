@@ -146,23 +146,6 @@ private extension NotificationViewController {
     saveCompletedMatchGameEvent(with: highScore)
   }
   
-  
-  /// Saves a custom event to `userDefaults` with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved and `highScore` is added to the `properties` dictionary.
-  /// - parameter highScore: The value that will be saved to the `properties` dictionary with the key `"Score"`.
-  ///
-  /// There is a conditional unwrap to check if there are saved pending events (in the case of a user completing multiple games) and appends the event or saves a new array with one event.
-  func saveCompletedMatchGameEvent(with highScore: Int) {
-    let customEventDictionary = Dictionary<String, Any>(eventName: "Completed Match Game", properties: ["Score": highScore])
-    let remoteStorage = RemoteStorage(storageType: .suite)
-    
-    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
-      pendingEvents.append(contentsOf: [customEventDictionary])
-      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
-    } else {
-      remoteStorage.store([customEventDictionary], forKey: .pendingEvents)
-    }
-  }
-  
   func resetGame() {
     matchGame.playAgain()
     playAgainButton.isHidden = true
@@ -178,5 +161,24 @@ private extension NotificationViewController {
 extension NotificationViewController: MatchCardViewDelegate {
   func cardTapped(at index: Int) {
     matchGame.cardFlipped(at: index)
+  }
+}
+
+// MARK: - Analytics
+private extension NotificationViewController {
+  /// Saves a custom event to `userDefaults` with the given suite name that is your `App Group` name.  The value `"Event Name`" is explicity saved and `highScore` is added to the `properties` dictionary.
+  /// - parameter highScore: The value that will be saved to the `properties` dictionary with the key `"Score"`.
+  ///
+  /// There is a conditional unwrap to check if there are saved pending events (in the case of a user completing multiple games) and appends the event or saves a new array with one event.
+  func saveCompletedMatchGameEvent(with highScore: Int) {
+    let customEventDictionary = Dictionary(eventName: "Completed Match Game", properties: ["Score": highScore])
+    let remoteStorage = RemoteStorage(storageType: .suite)
+    
+    if var pendingEvents = remoteStorage.retrieve(forKey: .pendingEvents) as? [[String: Any]] {
+      pendingEvents.append(contentsOf: [customEventDictionary])
+      remoteStorage.store(pendingEvents, forKey: .pendingEvents)
+    } else {
+      remoteStorage.store([customEventDictionary], forKey: .pendingEvents)
+    }
   }
 }
