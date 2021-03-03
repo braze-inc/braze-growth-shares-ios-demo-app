@@ -389,7 +389,7 @@ private extension BrazeManager {
     remoteStorage.removeObject(forKey: .pendingCustomEvents)
   }
   
-  /// Loops through an array of saved custom attribute data saved from storage. In the loop, the value. Once the attributes are logged, they are cleared from storage.
+  /// Loops through an array of saved custom attribute data saved from storage. Each `key` is set as the attribute key with a corresponding `value`. Once the attributes are logged, they are cleared from storage.
   ///
   /// `key` represents the attribute key and `value` represents the attribute value.
   func logPendingCustomAttributesIfNecessary() {
@@ -407,6 +407,7 @@ private extension BrazeManager {
     }
   }
   
+  /// Loops through an array of saved user attribute data saved from storage. In the loop, the data is decoded to represent a `UserAttribute` object. Based on the type of `UserAttribute`, the field is set accordingly with the associated value. Once the attributes are logged, they are cleared from storage.
   func logPendingUserAttributesIfNecessary() {
     let remoteStorage = RemoteStorage(storageType: .suite)
     guard let pendingAttributes = remoteStorage.retrieve(forKey: .pendingUserAttributes) as? [Data] else { return }

@@ -125,7 +125,7 @@ private extension NotificationViewController {
   
   /// Saves a custom attribute to `userDefaults` with the given suite name that is your `App Group` name.
   ///
-  /// Saving the value as an array to handle the case of multiple emails being registered from the same user. Braze removes duplicates from custom arribute arrays so there will only be unique values.
+  /// There is a conditional unwrap to check if there are saved pending events (in the case of multiple registrations) and appends the event or saves a new array with one event.
   func saveEmailCustomAttribute() {
     guard let email = registerEmail else { return }
     
@@ -140,9 +140,9 @@ private extension NotificationViewController {
     }
   }
   
-  /// Saves a `userAttribute` object to `userDefaults` with the given suite name that is your `App Group` name.
+  /// Saves an encoded `userAttribute` object to `userDefaults` with the given suite name that is your `App Group` name.
   ///
-  /// Saving the value as an array to handle the case of multiple user attributes saved. Braze removes duplicates from custom arribute arrays so there will only be unique values.
+  /// There is a conditional unwrap to check if there are saved pending attributes (in the case of other attributes being saved from another notification) and appends the event or saves a new array with one attribute. If there are multiple registrations, the most recent email used will be saved to the user profile. 
   func saveEmailUserAttribute() {
     guard let email = registerEmail,
           let data = try? PropertyListEncoder().encode(UserAttribute.email(email)) else { return }

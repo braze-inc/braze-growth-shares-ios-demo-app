@@ -1,7 +1,11 @@
+/// Saved user attributes are tied to a specific field (firstName, lastName, email, phoneNumber, etc.) and need to be set accordingly when loaded from `UserDefaults`. Individual fields will be set based on the type and its associated value.
+///
+/// Conforms to the `Codable` protocol to be able to be saved to `UserDefaults`.
 enum UserAttribute: Hashable {
   case email(String)
 }
 
+// MARK: - Codable
 extension UserAttribute: Codable {
   private enum CodingKeys: String, CodingKey {
     case email
