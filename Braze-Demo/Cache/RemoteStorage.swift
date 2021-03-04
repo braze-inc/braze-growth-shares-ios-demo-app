@@ -20,8 +20,17 @@ enum RemoteStorageType {
   case suite
 }
 
-struct RemoteStorage {
+class RemoteStorage: NSObject {
+  // MARK: - Variables
   private var storageType: RemoteStorageType = .standard
+  private lazy var defaults: UserDefaults = {
+    switch storageType {
+    case .standard:
+      return .standard
+    case .suite:
+      return UserDefaults(suiteName: "group.com.braze.book-demo")!
+    }
+  }()
   
   init(storageType: RemoteStorageType = .standard) {
     self.storageType = storageType
@@ -42,18 +51,6 @@ struct RemoteStorage {
   func resetStorageKeys() {
     for key in RemoteStorageKey.allCases {
       defaults.removeObject(forKey: key.rawValue)
-    }
-  }
-}
-
-// MARK: Private
-private extension RemoteStorage {
-  var defaults: UserDefaults {
-    switch storageType {
-    case .standard:
-      return .standard
-    case .suite:
-      return UserDefaults(suiteName: "group.com.braze.book-demo")!
     }
   }
 }
