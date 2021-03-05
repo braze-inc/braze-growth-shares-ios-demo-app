@@ -2,7 +2,7 @@
 ///
 /// Conforms to the `Codable` protocol to be able to be saved to `UserDefaults`.
 enum UserAttribute: Hashable {
-  case email(String)
+  case email(String?)
 }
 
 // MARK: - Codable
