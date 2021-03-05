@@ -373,17 +373,23 @@ private extension BrazeManager {
     guard let pendingEvents = remoteStorage.retrieve(forKey: .pendingCustomEvents) as? [[String: Any]] else { return }
     
     for event in pendingEvents {
-      var eventName = ""
+      var eventName: String?
       var properties: [AnyHashable: Any] = [:]
       for (key, value) in event {
-        if key == PushNotificationKey.eventName.rawValue,
-           let eventNameValue = value as? String {
-          eventName = eventNameValue
+        if key == PushNotificationKey.eventName.rawValue {
+          if let eventNameValue = value as? String {
+            eventName = eventNameValue
+          } else {
+            print("Invalid type for event_name key")
+          }
         } else {
           properties[key] = value
         }
       }
-      logCustomEvent(eventName, withProperties: properties)
+      
+      if let eventName = eventName {
+        logCustomEvent(eventName, withProperties: properties)
+      }
     }
     
     remoteStorage.removeObject(forKey: .pendingCustomEvents)
@@ -403,7 +409,11 @@ private extension BrazeManager {
   
   func setCustomAttributesWith(keysAndValues: [String: Any]) {
     for (key, value) in keysAndValues {
-      setCustomAttributeWithKey(key, andValue: value)
+      if let value = value as? [String] {
+        setCustomAttributeArrayWithKey(key, andValue: value)
+      } else {
+        setCustomAttributeWithKey(key, andValue: value)
+      }
     }
   }
   
