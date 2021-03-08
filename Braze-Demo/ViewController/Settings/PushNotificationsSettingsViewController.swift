@@ -50,7 +50,7 @@ class PushNotificationsSettingsViewController: UIViewController {
     
     let content = UNMutableNotificationContent()
     content.title = "Get Braze Certified!"
-    content.body = "Swipe on this notification to register"
+    content.body = "Swipe down on this notification to register"
     content.categoryIdentifier = "lab_register"
     content.attachments = [attachment]
     content.userInfo = userInfo
