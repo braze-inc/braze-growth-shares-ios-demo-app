@@ -6,6 +6,7 @@
 - [About Braze Demo](#about-braze-demo)
 - [Content Cards](#content-cards)
 - [In-App Messages](#in-app-messages)
+- [Push Notifications (Content Extension Notifications)](#push-notifications)
 - [Using the Project](#using-the-project)
 
 
@@ -24,7 +25,7 @@ In doing so, this project also demonstrates how to natively customize In-App Mes
 Objects can adopt the [ContentCardable](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/ContentCardData.swift#L9) protocol which comes with the `ContentCardData` object and an initializer.
 Upon receiving an array of `ABKContentCard` objects from the SDK, the corresponding `ABKContentCard` objects are [converted](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L248) into a `Dictionary` of metadata that are used to instantiate your custom objects.
 
-### This demo highlights 4 Content Card uses cases:
+### This demo highlights 4 Content Card use cases:
 1. Content Cards as Supplemental Content to an existing feed
     - [Tile.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/Tile.swift#L18)
     - [Group.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/Group.swift#L34)</br></br>
@@ -43,13 +44,25 @@ Upon receiving an array of `ABKContentCard` objects from the SDK, the correspond
 
 Custom view controllers can represent in-app messages by subclassing `ABKInAppMessageViewController`. Due to the individusalitic nature of in-app messages, we can [mix and match](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/BrazeManager.swift#L155) displaying custom in-app messages and default in-app messages.
 
-### This demo highlights 3 in-app message uses cases:
+### This demo highlights 3 in-app message use cases:
 1. Slideup In-App Message with a modified resting point
     - [SlideFromBottomViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In-App-Messages/SlideFromBottomViewController.swift)</br></br> 
 2. Modal In-App Message as a dynamic list
     - [ModalPickerViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In-App-Messages/ModalPickerViewController/ModalPickerViewController.swift)</br></br> 
 3. Full In-App Message as a push primer with list of push tags
     - [FullListViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/In-App-Messages/FullListViewController/FullListViewController.swift)</br></br> 
+
+## Push Notifications
+
+Custom interfaces can be added to Push Notifications with the help of Notification Content Extensions. 
+
+### This demo highlight 3 Notification Content Extension use cases:
+1. Interactive Push Notification (Match Game)
+    - [(Match Game) NotificationViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo-Match-Game-Content-Extension/ViewController/NotificationViewController.swift)</br></br> 
+2. Personalized Push Notification (Braze LAB Progress)
+    - [(Braze LAB Progress) NotificationViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo-LAB-Progress-Content-Extension/ViewController/NotificationViewController.swift)</br></br> 
+3. Information Capture Push Notification (Register Email)
+    - [(Register Email) NotificationViewController.swift](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo-LAB-Register-Content-Extension/NotificationViewController.swift)</br></br> 
 
 
 ## Using the Project
