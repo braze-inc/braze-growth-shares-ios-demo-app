@@ -44,6 +44,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     BrazeManager.shared.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
   }
   
+  func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+    #if targetEnvironment(simulator)
+      completionHandler(.banner)
+    #else
+      completionHandler(.list)
+    #endif
+  }
+  
   func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     BrazeManager.shared.userNotificationCenter(center, didReceive: response, withCompletionHandler: completionHandler)
   }
