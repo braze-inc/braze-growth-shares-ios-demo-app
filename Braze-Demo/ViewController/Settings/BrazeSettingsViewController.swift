@@ -27,9 +27,10 @@ class BrazeSettingsViewController: UIViewController {
   private typealias DataSource = UITableViewDiffableDataSource<SettingsSection, String>
   private typealias Snapshot = NSDiffableDataSourceSnapshot<SettingsSection, String>
   private var dataSource: DataSource!
-  private let rows = ["Content Cards", "In-App Messages"]
+  private let rows = ["Content Cards", "In-App Messages", "Push Notifications"]
   private let contentCardsSegueIdentifer = "segueToContentCards"
   private let inAppMessagesSegueIdentifier = "segueToInAppMessages"
+  private let pushNotificationsSegueIdentifier = "segueToPushNotifications"
 }
 
 // MARK: - View Lifecycle
@@ -79,6 +80,8 @@ extension BrazeSettingsViewController: UITableViewDelegate {
       performSegue(withIdentifier: contentCardsSegueIdentifer, sender: nil)
     case 1:
       performSegue(withIdentifier: inAppMessagesSegueIdentifier, sender: nil)
+    case 2:
+      performSegue(withIdentifier: pushNotificationsSegueIdentifier, sender: nil)
     default: return
     }
   }

@@ -33,6 +33,7 @@
 		7F0660EE25EECC1400384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
 		7F0660EF25EECC1400384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
 		7F06610025EECC2100384756 /* Dictionary_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0660EB25EECC1400384756 /* Dictionary_Util.swift */; };
+		7F0B4A7D25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0B4A7C25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift */; };
 		7F12B40D25E6F842003AD64F /* SessionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FF617C425E6E5860058F98D /* SessionView.xib */; };
 		7F12B45225E716E7003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7F12B45A25E7183C003AD64F /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
@@ -270,6 +271,7 @@
 		7F04D43225EAF79A0034FB10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F04D44925EAF8620034FB10 /* Braze-Demo-LAB-Register-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-LAB-Register-Content-Extension.entitlements"; sourceTree = "<group>"; };
 		7F0660EB25EECC1400384756 /* Dictionary_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dictionary_Util.swift; sourceTree = "<group>"; };
+		7F0B4A7C25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationsSettingsViewController.swift; sourceTree = "<group>"; };
 		7F12B41525E71594003AD64F /* PushNotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationData.swift; sourceTree = "<group>"; };
 		7F12B46225E71EEF003AD64F /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7F12B48925E721B1003AD64F /* UIStackView_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView_Util.swift; sourceTree = "<group>"; };
@@ -584,6 +586,7 @@
 				7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */,
 				7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */,
 				7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */,
+				7F0B4A7C25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1394,6 +1397,7 @@
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
+				7F0B4A7D25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,
 				7F554A442587257F00DAFB84 /* GroupedLayoutBuilder.swift in Sources */,
@@ -1596,7 +1600,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-service-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Service Extension Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Service Extension Development";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1621,7 +1625,7 @@
 				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-service-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Service Extension Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Service Extension Development";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1868,7 +1872,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = YES;
@@ -1895,7 +1899,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Book Demo Development";
+				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_WORKSPACE = YES;
