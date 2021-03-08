@@ -11,7 +11,7 @@ class PushNotificationsSettingsViewController: UIViewController {
   private lazy var matchGameNotificationRequest: UNNotificationRequest = {
     let content = UNMutableNotificationContent()
     content.title = "Your Braze LAB session starts soon!"
-    content.body = "Press and hold on this notification to play a game while you wait"
+    content.body = "Swipe down on this notification to play a game while you wait"
     content.categoryIdentifier = "match_game"
 
     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
@@ -32,7 +32,7 @@ class PushNotificationsSettingsViewController: UIViewController {
     
     let content = UNMutableNotificationContent()
     content.title = "Your completed a Braze LAB session!"
-    content.body = "Press and hold on this notification to check your progress!"
+    content.body = "Swipe down on this notification to check your progress!"
     content.categoryIdentifier = "lab_progress"
     content.userInfo = userInfo
 
@@ -50,7 +50,7 @@ class PushNotificationsSettingsViewController: UIViewController {
     
     let content = UNMutableNotificationContent()
     content.title = "Get Braze Certified!"
-    content.body = "Press and hold on this notification to register"
+    content.body = "Swipe on this notification to register"
     content.categoryIdentifier = "lab_register"
     content.attachments = [attachment]
     content.userInfo = userInfo
