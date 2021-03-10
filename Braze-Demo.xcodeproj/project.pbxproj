@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F009D4A25F9848100B6C7BC /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D4925F9848100B6C7BC /* Summary.swift */; };
+		7F009D5C25F984DB00B6C7BC /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D5B25F984DB00B6C7BC /* Row.swift */; };
+		7F009D6F25F9856C00B6C7BC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D6E25F9856C00B6C7BC /* ModelData.swift */; };
 		7F04D42A25EAF79A0034FB10 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2E825C888000001F270 /* UserNotifications.framework */; };
 		7F04D42B25EAF79A0034FB10 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
 		7F04D42E25EAF79A0034FB10 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */; };
@@ -265,6 +268,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7F009D4925F9848100B6C7BC /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		7F009D5B25F984DB00B6C7BC /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		7F009D6E25F9856C00B6C7BC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-LAB-Register-Content-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7F04D43025EAF79A0034FB10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -476,6 +482,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F009D4825F9846F00B6C7BC /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7F009D6525F9856000B6C7BC /* Model */,
+				7F009D5B25F984DB00B6C7BC /* Row.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		7F009D6525F9856000B6C7BC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7F009D4925F9848100B6C7BC /* Summary.swift */,
+				7F009D6E25F9856C00B6C7BC /* ModelData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7F02B4BC256E1E7100175158 /* Content-Cards */ = {
 			isa = PBXGroup;
 			children = (
@@ -871,6 +895,7 @@
 				7F9DCBD324AD7A5400E8D207 /* Model */,
 				7F9DCBC124AD784700E8D207 /* Storyboard */,
 				7F9DCBC224AD785200E8D207 /* SupportingFiles */,
+				7F009D4825F9846F00B6C7BC /* SwiftUI */,
 				7F9DCBCA24AD79B700E8D207 /* ViewController */,
 				7F87D4AF24B2A25000ED0A86 /* Utils */,
 				7F9DCBD824AD832400E8D207 /* View */,
@@ -1365,6 +1390,7 @@
 				7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */,
 				7F6C94C2255F8866000CDAAA /* SlideFromBottomViewController.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
+				7F009D4A25F9848100B6C7BC /* Summary.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
@@ -1389,6 +1415,7 @@
 				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
+				7F009D5C25F984DB00B6C7BC /* Row.swift in Sources */,
 				7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */,
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
@@ -1402,6 +1429,7 @@
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,
 				7F554A442587257F00DAFB84 /* GroupedLayoutBuilder.swift in Sources */,
 				7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */,
+				7F009D6F25F9856C00B6C7BC /* ModelData.swift in Sources */,
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
 				7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */,
 				7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */,
