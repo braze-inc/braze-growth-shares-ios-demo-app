@@ -125,7 +125,7 @@ private extension HomeListViewController {
     case .tile:
       downloadContent(Tile.self, TileList.self, fileName: "Tile-List", classType: .item(.tile))
     case .group:
-      downloadContent(Group.self, GroupList.self, fileName: "Group-List", classType: .item(.group))
+      downloadContent(GroupItem.self, GroupList.self, fileName: "Group-List", classType: .item(.group))
     }
   }
   

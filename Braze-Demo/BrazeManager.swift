@@ -295,7 +295,7 @@ private extension BrazeManager {
     case .coupon:
       return Coupon(metaData: metaData, classType: classType)
     case .item(.group):
-      return Group(metaData: metaData, classType: classType)
+      return GroupItem(metaData: metaData, classType: classType)
     case .item(.tile):
       return Tile(metaData: metaData, classType: classType)
     case .message(.fullPage):

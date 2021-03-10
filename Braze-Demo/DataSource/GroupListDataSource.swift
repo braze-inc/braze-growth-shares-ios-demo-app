@@ -25,7 +25,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   }
   
   func applySnapshot(_ content: [ContentCardable], ads: [Ad], animatingDifferences: Bool) {
-    guard content is [Group] else { return }
+    guard content is [GroupItem] else { return }
     
     var snapshot = Snapshot()
     
@@ -33,7 +33,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     snapshot.appendItems(["Blank"], toSection: .blank)
     snapshot.appendItems(ads, toSection: .ad)
     
-    let groups = content as! [Group]
+    let groups = content as! [GroupItem]
     groups.forEach {
       switch $0.style {
       case .primary:
@@ -55,7 +55,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   
   func resetDataSource() {
     dataSource.snapshot().itemIdentifiers.forEach { content in
-      guard let group = content as? Group, group.isContentCard else { return }
+      guard let group = content as? GroupItem, group.isContentCard else { return }
       
       group.logContentCardDismissed()
     }
@@ -72,7 +72,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
         cell.configureCell(ad.imageUrl)
         return cell
-      case let group as Group:
+      case let group as GroupItem:
         switch GroupSection(rawValue: indexPath.section) {
         case .primary, .secondary:
           return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredCell(), for: indexPath, item: group)

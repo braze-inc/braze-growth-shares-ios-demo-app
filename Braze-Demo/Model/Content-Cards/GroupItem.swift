@@ -1,7 +1,7 @@
 // MARK: - List
 struct GroupList: MetaData {
-  typealias Element = Group
-  var items: [Group]
+  typealias Element = GroupItem
+  var items: [GroupItem]
   
   private enum CodingKeys: String, CodingKey {
     case items = "groups"
@@ -31,7 +31,7 @@ enum GroupStyle: String {
 }
 
 // MARK: - Group
-struct Group: ContentCardable, Codable, Hashable {
+struct GroupItem: ContentCardable, Codable, Hashable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
   let title: String
@@ -48,14 +48,14 @@ struct Group: ContentCardable, Codable, Hashable {
   }
 }
 
-extension Group {
+extension GroupItem {
   var style: GroupStyle {
     return GroupStyle(rawValue: styleString) ?? .none
   }
 }
 
 // MARK: - Content Card Initializer
-extension Group {
+extension GroupItem {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
     guard let idString = metaData[.idString] as? String,
           let createdAt = metaData[.created] as? Double,
