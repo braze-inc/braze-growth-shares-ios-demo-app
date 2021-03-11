@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct Row: View {
-  @State var isSwiped: Bool = false
+  @State var moveOffScreen: Bool = false
+  @Binding var isReset: Bool
   var summary: Summary
   
   var drag: some Gesture {
     DragGesture()
       .onChanged {
         if $0.startLocation.x > $0.location.x {
-          self.isSwiped = true
+          self.moveOffScreen = true
       }
     }
   }
@@ -44,11 +45,17 @@ struct Row: View {
       .padding(.horizontal, 15)
       .padding(.bottom, 15)
     }
+    .onChange(of: isReset, perform: { value in
+      if value {
+        moveOffScreen = false
+        isReset = false
+      }
+    })
     .background(Color.white)
     .cornerRadius(10.0)
     .gesture(drag)
     .animation(.easeIn)
-    .offset(x: isSwiped ? -1000 : 0)
+    .offset(x: moveOffScreen ? -1000 : 0)
   }
 }
 
@@ -57,7 +64,7 @@ struct Row_Previews: PreviewProvider {
   
   static var previews: some View {
     Group {
-      Row(summary: summaries[0])
+      Row(isReset: .constant(false), summary: summaries[0])
     }.previewLayout(.fixed(width: 394, height: 150))
   }
 }
