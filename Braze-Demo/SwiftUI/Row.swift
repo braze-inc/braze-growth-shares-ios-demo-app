@@ -1,15 +1,17 @@
-//
-//  Row.swift
-//  Braze-Demo
-//
-//  Created by Justin Malandruccolo on 3/10/21.
-//  Copyright © 2021 Justin-Malandruccolo. All rights reserved.
-//
-
 import SwiftUI
 
 struct Row: View {
+  @State var isSwiped: Bool = false
   var summary: Summary
+  
+  var drag: some Gesture {
+    DragGesture()
+      .onChanged {
+        if $0.startLocation.x > $0.location.x {
+          self.isSwiped = true
+      }
+    }
+  }
   
   var body: some View {
     VStack {
@@ -18,13 +20,13 @@ struct Row: View {
           .fontWeight(.semibold)
         Spacer()
       }
-      .padding(.bottom, 5)
+      .padding(5)
       HStack {
         Text(summary.body)
           .fontWeight(.light)
         Spacer()
       }
-      .padding(.bottom, 5)
+      .padding(5)
       
       
       HStack {
@@ -34,10 +36,12 @@ struct Row: View {
         Text(summary.timeStamp)
           .fontWeight(.light)
       }
+      .padding(5)
     }
-    .padding(.leading, 15)
-    .padding(.trailing, 15)
-    
+    .background(Color.white)
+    .gesture(drag)
+    .animation(.easeIn)
+    .offset(x: isSwiped ? -1000 : 0)
   }
 }
 

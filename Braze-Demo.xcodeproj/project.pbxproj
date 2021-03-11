@@ -10,6 +10,7 @@
 		7F009D4A25F9848100B6C7BC /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D4925F9848100B6C7BC /* Summary.swift */; };
 		7F009D5C25F984DB00B6C7BC /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D5B25F984DB00B6C7BC /* Row.swift */; };
 		7F009D6F25F9856C00B6C7BC /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D6E25F9856C00B6C7BC /* ModelData.swift */; };
+		7F009D7925F9D46E00B6C7BC /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F009D7825F9D46E00B6C7BC /* List.swift */; };
 		7F04D42A25EAF79A0034FB10 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2E825C888000001F270 /* UserNotifications.framework */; };
 		7F04D42B25EAF79A0034FB10 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
 		7F04D42E25EAF79A0034FB10 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */; };
@@ -271,6 +272,7 @@
 		7F009D4925F9848100B6C7BC /* Summary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		7F009D5B25F984DB00B6C7BC /* Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		7F009D6E25F9856C00B6C7BC /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		7F009D7825F9D46E00B6C7BC /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Braze-Demo-LAB-Register-Content-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7F04D43025EAF79A0034FB10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -487,6 +489,7 @@
 			children = (
 				7F009D6525F9856000B6C7BC /* Model */,
 				7F009D5B25F984DB00B6C7BC /* Row.swift */,
+				7F009D7825F9D46E00B6C7BC /* List.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1402,6 +1405,7 @@
 				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
 				7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */,
+				7F009D7925F9D46E00B6C7BC /* List.swift in Sources */,
 				7F9DCBCC24AD79C300E8D207 /* BrazeManager.swift in Sources */,
 				7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */,
 				7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */,
