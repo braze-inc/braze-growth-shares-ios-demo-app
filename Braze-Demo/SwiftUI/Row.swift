@@ -20,13 +20,17 @@ struct Row: View {
           .fontWeight(.semibold)
         Spacer()
       }
-      .padding(5)
+      .padding(.top, 15)
+      .padding(.horizontal, 15)
+      .padding(.bottom, 5)
+      
       HStack {
         Text(summary.body)
           .fontWeight(.light)
         Spacer()
       }
-      .padding(5)
+      .padding(.horizontal, 15)
+      .padding(.vertical, 5)
       
       
       HStack {
@@ -36,9 +40,12 @@ struct Row: View {
         Text(summary.timeStamp)
           .fontWeight(.light)
       }
-      .padding(5)
+      .padding(.top, 5)
+      .padding(.horizontal, 15)
+      .padding(.bottom, 15)
     }
     .background(Color.white)
+    .cornerRadius(10.0)
     .gesture(drag)
     .animation(.easeIn)
     .offset(x: isSwiped ? -1000 : 0)

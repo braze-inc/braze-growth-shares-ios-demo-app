@@ -4,13 +4,17 @@ struct List: View {
   let summary = ModelData().summaries[0]
   
   var body: some View {
-    ZStack {
-      ForEach(0..<5) { _ in
-        Row(summary: summary)
+    VStack {
+      ZStack {
+        ForEach(0..<5) { _ in
+          Row(summary: summary)
+        }
       }
+      .padding(15)
+      
+      Spacer()
     }
-    .padding(15)
-    .background(Color.gray)
+    .background(Color(UIColor.systemGray5))
   }
 }
 
