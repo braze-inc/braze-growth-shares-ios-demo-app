@@ -3,13 +3,13 @@ import UIKit
 class SlideFromBottomViewController: SlideupViewController {
 
   // MARK: - Variables
-  private let DefaultVerticalMarginHeight: CGFloat = 10
+  private let brazeDefaultVerticalMarginHeight: CGFloat = 10
   
   private var safeAreaOffset: CGFloat {
     guard view.superview?.layoutMargins.bottom == 0,
           bottomSpacing != 0 else { return 0 }
     
-    return -DefaultVerticalMarginHeight
+    return -brazeDefaultVerticalMarginHeight
   }
   
   private var bottomSpacing: CGFloat {
