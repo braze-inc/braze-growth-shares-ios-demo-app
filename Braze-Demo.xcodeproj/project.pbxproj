@@ -44,6 +44,8 @@
 		7F1ADDA125E4199A00116E92 /* MatchCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1ADDA025E4199A00116E92 /* MatchCardView.xib */; };
 		7F1ADDA825E41D3200116E92 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
+		7F43668425FC7F4F003DE7AA /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43668325FC7F4F003DE7AA /* AppboyUI */; };
+		7F43669A25FC94CA003DE7AA /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43669925FC94CA003DE7AA /* AppboyPushStory */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
 		7F554A19258337B200DAFB84 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F554A18258337B200DAFB84 /* README.rtf */; };
@@ -82,7 +84,6 @@
 		7F8CB2EE25C888000001F270 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8CB2ED25C888000001F270 /* NotificationViewController.swift */; };
 		7F8CB2F125C888000001F270 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8CB2EF25C888000001F270 /* MainInterface.storyboard */; };
 		7F8CB2F525C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7F8CB31E25C88C6C0001F270 /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F8CB31D25C88C6C0001F270 /* AppboyUI */; };
 		7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8FFC1924EC7EB50082C71B /* APIRequest.swift */; };
 		7F96CC9625E014EF002D9AD9 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2E825C888000001F270 /* UserNotifications.framework */; };
 		7F96CC9725E014EF002D9AD9 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F8CB2EA25C888000001F270 /* UserNotificationsUI.framework */; };
@@ -134,7 +135,6 @@
 		7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */; };
 		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
 		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
-		7FD4527A25C8C7B9007C76D0 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FD4527925C8C7B9007C76D0 /* AppboyPushStory */; };
 		7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FD8EA2625E75942004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
@@ -412,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F04D42B25EAF79A0034FB10 /* UserNotificationsUI.framework in Frameworks */,
+				7F43669A25FC94CA003DE7AA /* AppboyPushStory in Frameworks */,
 				7F04D42A25EAF79A0034FB10 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +429,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F8CB2EB25C888000001F270 /* UserNotificationsUI.framework in Frameworks */,
-				7FD4527A25C8C7B9007C76D0 /* AppboyPushStory in Frameworks */,
 				7F8CB2E925C888000001F270 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,7 +446,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8CB31E25C88C6C0001F270 /* AppboyUI in Frameworks */,
+				7F43668425FC7F4F003DE7AA /* AppboyUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -965,6 +965,9 @@
 			dependencies = (
 			);
 			name = "Braze-Demo-LAB-Register-Content-Extension";
+			packageProductDependencies = (
+				7F43669925FC94CA003DE7AA /* AppboyPushStory */,
+			);
 			productName = "Braze-Demo-Exam-Register-Content-Extension";
 			productReference = 7F04D42925EAF79A0034FB10 /* Braze-Demo-LAB-Register-Content-Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -1000,7 +1003,6 @@
 			);
 			name = "Braze-Demo-Push-Story-Content-Extension";
 			packageProductDependencies = (
-				7FD4527925C8C7B9007C76D0 /* AppboyPushStory */,
 			);
 			productName = "Braze Demo Content Extension";
 			productReference = 7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */;
@@ -1043,7 +1045,7 @@
 			);
 			name = "Braze-Demo";
 			packageProductDependencies = (
-				7F8CB31D25C88C6C0001F270 /* AppboyUI */,
+				7F43668325FC7F4F003DE7AA /* AppboyUI */,
 			);
 			productName = BookDemo;
 			productReference = 7FBDD48524AD711E00EC0983 /* Braze-Demo.app */;
@@ -1150,7 +1152,7 @@
 			);
 			mainGroup = 7FBDD47C24AD711D00EC0983;
 			packageReferences = (
-				7F8CB31C25C88C6C0001F270 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */,
+				7F43668225FC7F4F003DE7AA /* XCRemoteSwiftPackageReference "braze-ios-sdk" */,
 			);
 			productRefGroup = 7FBDD48624AD711E00EC0983 /* Products */;
 			projectDirPath = "";
@@ -1537,7 +1539,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1546,7 +1548,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
@@ -1563,7 +1565,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1572,7 +1574,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
@@ -1588,7 +1590,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1597,7 +1599,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-service-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Service Extension Development";
@@ -1613,7 +1615,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1622,7 +1624,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-service-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Service Extension Development";
@@ -1639,7 +1641,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Push-Story-Content-Extension/Braze-Demo-Push-Story-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1648,7 +1650,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.push-story.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1666,7 +1668,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Push-Story-Content-Extension/Braze-Demo-Push-Story-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1675,7 +1677,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.push-story.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1693,7 +1695,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Match-Game-Content-Extension/Braze-Demo-Match-Game-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1702,7 +1704,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.match-game.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Match Game Content Extension Dev";
@@ -1719,7 +1721,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Match-Game-Content-Extension/Braze-Demo-Match-Game-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1728,7 +1730,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.match-game.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Match Game Content Extension Dev";
@@ -1860,7 +1862,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo/SupportingFiles/Braze-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1868,7 +1870,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1887,7 +1889,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo/SupportingFiles/Braze-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1895,7 +1897,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1997,7 +1999,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Progress-Content-Extension/Braze-Demo-LAB-Progress-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2006,7 +2008,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.progress.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Progress Content Extension Dev";
@@ -2023,7 +2025,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Progress-Content-Extension/Braze-Demo-LAB-Progress-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2032,7 +2034,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.0;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.progress.notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Progress Content Extension Dev";
@@ -2129,25 +2131,25 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7F8CB31C25C88C6C0001F270 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */ = {
+		7F43668225FC7F4F003DE7AA /* XCRemoteSwiftPackageReference "braze-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Appboy/appboy-ios-sdk";
+			repositoryURL = "https://github.com/braze-inc/braze-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 3.31.2;
+				minimumVersion = 4.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7F8CB31D25C88C6C0001F270 /* AppboyUI */ = {
+		7F43668325FC7F4F003DE7AA /* AppboyUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7F8CB31C25C88C6C0001F270 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			package = 7F43668225FC7F4F003DE7AA /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
 			productName = AppboyUI;
 		};
-		7FD4527925C8C7B9007C76D0 /* AppboyPushStory */ = {
+		7F43669925FC94CA003DE7AA /* AppboyPushStory */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7F8CB31C25C88C6C0001F270 /* XCRemoteSwiftPackageReference "appboy-ios-sdk" */;
+			package = 7F43668225FC7F4F003DE7AA /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
 			productName = AppboyPushStory;
 		};
 /* End XCSwiftPackageProductDependency section */
