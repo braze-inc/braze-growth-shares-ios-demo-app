@@ -28,7 +28,7 @@ private extension SlideFromBottomViewController {
     return BrazeManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
   }
   
-  /// Calculating the net `safeAreaInsets.bottom` value from the top most view controller and the root view controller In order to position the `SlideFromBottomViewController` above the tab bar (if present).
+  /// Calculating the net `safeAreaInsets.bottom` value from the top most view controller and the root view controller in order to position the `SlideFromBottomViewController` above the tab bar (if present).
   var bottomSpacing: CGFloat {
     return  topMostViewBottomSpacing - rootViewBottomSpacing
   }
