@@ -5,20 +5,34 @@ class SlideFromBottomViewController: SlideupViewController {
   // MARK: ABK Variables
   override var offset: CGFloat {
     get {
-      return bottomSpacing
+      return super.offset
     }
     set {
-      super.offset = newValue
+      super.offset = newValue + adjustedOffset
     }
   }
 }
 
 // MARK: - Bottom Spacing Variables
 private extension SlideFromBottomViewController {
-  // MARK: - Variables
+  /// See the `DefaultVerticalMarginHeight` value from the `ABKInAppMessageSlideupViewController.m` file.
   var brazeDefaultVerticalMarginHeight: CGFloat {
     return 10
   }
+  
+  var rootViewBottomSpacing: CGFloat {
+    return BrazeManager.shared.activeApplicationViewController.view.safeAreaInsets.bottom
+  }
+  
+  var topMostViewBottomSpacing: CGFloat {
+    return BrazeManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
+  }
+  
+  /// Calculating the net `safeAreaInsets.bottom` value from the top most view controller and the root view controller In order to position the `SlideFromBottomViewController` above the tab bar (if present).
+  var bottomSpacing: CGFloat {
+    return  topMostViewBottomSpacing - rootViewBottomSpacing
+  }
+  
   
   /// See the `safeAreaOffset` value from the `ABKInAppMessageSlideupViewController.m` file.
   ///
@@ -30,19 +44,9 @@ private extension SlideFromBottomViewController {
     return brazeDefaultVerticalMarginHeight
   }
   
-  var rootViewBottomSpacing: CGFloat {
-    return BrazeManager.shared.activeApplicationViewController.view.safeAreaInsets.bottom
-  }
-  
-  var topMostViewBottomSpacing: CGFloat {
-    return BrazeManager.shared.activeApplicationViewController.topMostViewController().view.safeAreaInsets.bottom
-  }
-  
-  /// Calculating the net `safeAreaInsets.bottom` value from the top most view controller and the root view controller.
-  ///
-  /// In order to position the `SlideFromBottomViewController` above the tab bar (if present).
-  var bottomSpacing: CGFloat {
-    return  topMostViewBottomSpacing - rootViewBottomSpacing
+  /// Used in the `offset` setter value to set the correct value when presented on screen and when dragged. (see `inAppSlideupWasPanned` in `ABKInAppMessageWindowController.m`)
+  var adjustedOffset: CGFloat {
+    return -(bottomSpacing - safeAreaOffset)
   }
 }
 
@@ -66,6 +70,6 @@ extension SlideFromBottomViewController {
 // MARK: - Private
 private extension SlideFromBottomViewController {
   func setOffset() {
-    offset = -(bottomSpacing - safeAreaOffset)
+    offset = 0
   }
 }
