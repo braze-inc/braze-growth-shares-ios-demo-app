@@ -15,11 +15,6 @@ class SlideFromBottomViewController: SlideupViewController {
 
 // MARK: - Bottom Spacing Variables
 private extension SlideFromBottomViewController {
-  /// See the `DefaultVerticalMarginHeight` value from the `ABKInAppMessageSlideupViewController.m` file.
-  var brazeDefaultVerticalMarginHeight: CGFloat {
-    return 10
-  }
-  
   var rootViewBottomSpacing: CGFloat {
     return BrazeManager.shared.activeApplicationViewController.view.safeAreaInsets.bottom
   }
@@ -33,7 +28,6 @@ private extension SlideFromBottomViewController {
     return  topMostViewBottomSpacing - rootViewBottomSpacing
   }
   
-  
   /// See the `safeAreaOffset` value from the `ABKInAppMessageSlideupViewController.m` file.
   ///
   /// On devices such as the iPhone SE, we only want to negate the `DefaultVerticalMarginHeight` if there is no bottom tab bar.
@@ -42,6 +36,11 @@ private extension SlideFromBottomViewController {
           bottomSpacing != 0 else { return 0 }
     
     return brazeDefaultVerticalMarginHeight
+  }
+  
+  /// See the `DefaultVerticalMarginHeight` value from the `ABKInAppMessageSlideupViewController.m` file.
+  var brazeDefaultVerticalMarginHeight: CGFloat {
+    return 10
   }
   
   /// Used in the `offset` setter value to set the correct value when presented on screen and when dragged. (see `inAppSlideupWasPanned` in `ABKInAppMessageWindowController.m`)
