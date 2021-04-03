@@ -6,10 +6,19 @@ class NotificationViewController: UIViewController {
 
   // MARK: - Outlets
   @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var headerLabel: UILabel!
   @IBOutlet private weak var descriptionLabel: UILabel!
   @IBOutlet private weak var imageView: UIImageView!
+  @IBOutlet private weak var registerView: UIView!
+  @IBOutlet private weak var emailTextFieldBorderView: UIView! {
+    didSet {
+      emailTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+    }
+  }
   @IBOutlet private weak var emailTextField: UITextField! {
     didSet {
+      let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.italicSystemFont(ofSize: 17)]
+      emailTextField.attributedPlaceholder = NSAttributedString(string: "Tap here to enter your email", attributes: attributes)
       emailTextField.overrideUserInterfaceStyle = .light
     }
   }
@@ -28,6 +37,10 @@ class NotificationViewController: UIViewController {
   private lazy var registerAction: UNNotificationAction = {
     UNNotificationAction(identifier: registerIdentifier, title: registerIdentifier.capitalized, options: .authenticationRequired)
   }()
+  private let closeIdentifier = "CLOSE"
+  private lazy var closeAction: UNNotificationAction = {
+    UNNotificationAction(identifier: closeIdentifier, title: closeIdentifier.capitalized, options: .authenticationRequired)
+  }()
 }
 
 // MARK: - Notification Content Extension Methods
@@ -37,7 +50,7 @@ extension NotificationViewController: UNNotificationContentExtension {
     let userInfo = content.userInfo
 
     titleLabel.text = userInfo[PushNotificationKey.certificationTitle.rawValue] as? String
-    descriptionLabel.text = userInfo[PushNotificationKey.certificationDescription.rawValue] as? String
+    descriptionLabel.attributedText = descriptionAttributedText(with: userInfo[PushNotificationKey.certificationDescription.rawValue] as? String)
     imageView.image = imageFromNotification(content: content)
   }
 
@@ -45,12 +58,14 @@ extension NotificationViewController: UNNotificationContentExtension {
     if response.actionIdentifier == registerIdentifier {
       UINotificationFeedbackGenerator().notificationOccurred(.success)
       extensionContext?.notificationActions = []
-      
+    
       saveRegisteredForCertificationEvent()
       saveEmailCustomAttribute()
       saveEmailUserAttribute()
       
-      displayAllSetView { completion(.dismiss) }
+      displayCloseView()
+    } else if response.actionIdentifier == closeIdentifier {
+      completion(.dismiss)
     } else {
       completion(.doNotDismiss)
     }
@@ -90,19 +105,22 @@ private extension NotificationViewController {
     }
   }
   
-  func displayAllSetView(completion: @escaping () -> ()) {
-    let allSetView: AllSetView = .fromNib()
-    allSetView.frame = view.frame
-    allSetView.alpha = 0.0
-    view.addSubview(allSetView)
+  func displayCloseView() {
+    extensionContext?.notificationActions = [closeAction]
     
-    UIView.animate(withDuration: 1.0) {
-      allSetView.alpha = 1.0
-    } completion: { _ in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-        completion()
-      }
-    }
+    headerLabel.text = "Thanks for registering!"
+    descriptionLabel.text = "You'll receive a confirmation email shortly."
+    registerView.removeFromSuperview()
+  }
+  
+  func descriptionAttributedText(with textString: String?) -> NSAttributedString {
+    guard let textString = textString else { return NSAttributedString(string: "") }
+    
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 7
+    let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: style, .font: UIFont(name: "Sailec-Regular", size: 15.0)!]
+    
+    return NSAttributedString(string: textString, attributes: attributes)
   }
 }
 

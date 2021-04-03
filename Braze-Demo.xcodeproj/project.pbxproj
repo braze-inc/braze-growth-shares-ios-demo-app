@@ -166,11 +166,8 @@
 		7FD8EA4725E759F9004A89FA /* Sailec-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1D25E75941004A89FA /* Sailec-Light.otf */; };
 		7FD8EA4825E759F9004A89FA /* Sailec-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */; };
 		7FD90A4C25EB57D600E8F411 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
-		7FD90A6025EB63FE00E8F411 /* AllSetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD90A5F25EB63FE00E8F411 /* AllSetView.xib */; };
 		7FD90A8325EBFBCB00E8F411 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
 		7FD90A9425EBFCCF00E8F411 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
-		7FD90AA625EC022100E8F411 /* AllSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD90AA525EC022100E8F411 /* AllSetView.swift */; };
-		7FD90AAF25EC022A00E8F411 /* AllSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD90AA525EC022100E8F411 /* AllSetView.swift */; };
 		7FD90AB825EC0DB500E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F12B41525E71594003AD64F /* PushNotificationData.swift */; };
 		7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
@@ -386,8 +383,6 @@
 		7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Hairline.otf"; sourceTree = "<group>"; };
 		7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-HairlineItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Thin.otf"; sourceTree = "<group>"; };
-		7FD90A5F25EB63FE00E8F411 /* AllSetView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllSetView.xib; sourceTree = "<group>"; };
-		7FD90AA525EC022100E8F411 /* AllSetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSetView.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -505,7 +500,6 @@
 				7F04D42D25EAF79A0034FB10 /* NotificationViewController.swift */,
 				7F04D42F25EAF79A0034FB10 /* MainInterface.storyboard */,
 				7F04D43225EAF79A0034FB10 /* Info.plist */,
-				7FD90A6925EB641200E8F411 /* AllSetView */,
 			);
 			path = "Braze-Demo-LAB-Register-Content-Extension";
 			sourceTree = "<group>";
@@ -927,15 +921,6 @@
 			name = "Sailec-Font";
 			sourceTree = "<group>";
 		};
-		7FD90A6925EB641200E8F411 /* AllSetView */ = {
-			isa = PBXGroup;
-			children = (
-				7FD90AA525EC022100E8F411 /* AllSetView.swift */,
-				7FD90A5F25EB63FE00E8F411 /* AllSetView.xib */,
-			);
-			path = AllSetView;
-			sourceTree = "<group>";
-		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -1188,7 +1173,6 @@
 				7F04D47025EB083E0034FB10 /* Sailec-MediumItalic.otf in Resources */,
 				7F04D47525EB083E0034FB10 /* Sailec-Bold.otf in Resources */,
 				7F04D47725EB083E0034FB10 /* Sailec-Regular.otf in Resources */,
-				7FD90A6025EB63FE00E8F411 /* AllSetView.xib in Resources */,
 				7F04D47825EB083E0034FB10 /* Sailec-LightItalic.otf in Resources */,
 				7F04D46D25EB083E0034FB10 /* Sailec-ThinItalic.otf in Resources */,
 				7F04D47225EB083E0034FB10 /* Sailec-BlackItalic.otf in Resources */,
@@ -1306,7 +1290,6 @@
 				7F06610025EECC2100384756 /* Dictionary_Util.swift in Sources */,
 				7FD90A9425EBFCCF00E8F411 /* UIVIew_Util.swift in Sources */,
 				7FD90AB825EC0DB500E8F411 /* PushNotificationData.swift in Sources */,
-				7FD90AA625EC022100E8F411 /* AllSetView.swift in Sources */,
 				7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1316,7 +1299,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F04D45A25EB00880034FB10 /* NotificationViewController.swift in Sources */,
-				7FD90AAF25EC022A00E8F411 /* AllSetView.swift in Sources */,
 				7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */,
 				7F0660EC25EECC1400384756 /* Dictionary_Util.swift in Sources */,
 				7FD90AD225EC101D00E8F411 /* PushNotificationData.swift in Sources */,
