@@ -179,6 +179,7 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="fGb-fN-ww4" id="XDK-zf-ao3"/>
                         <outlet property="emailTextField" destination="Nwa-HP-uc0" id="KgY-Q0-RkL"/>
+                        <outlet property="emailTextFieldBorderView" destination="95o-iV-ZhW" id="Vkj-ob-lyV"/>
                         <outlet property="headerLabel" destination="YSu-6i-eFX" id="MC5-Cz-l4B"/>
                         <outlet property="imageView" destination="VpY-bi-3sV" id="05d-mB-uZE"/>
                         <outlet property="registerView" destination="1m4-iP-4mD" id="rtk-d4-aCO"/>

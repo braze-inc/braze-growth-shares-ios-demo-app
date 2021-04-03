@@ -8,12 +8,16 @@ class NotificationViewController: UIViewController {
   @IBOutlet private weak var titleLabel: UILabel!
   @IBOutlet private weak var headerLabel: UILabel!
   @IBOutlet private weak var descriptionLabel: UILabel!
-  @IBOutlet private weak var registerView: UIView!
   @IBOutlet private weak var imageView: UIImageView!
+  @IBOutlet private weak var registerView: UIView!
+  @IBOutlet private weak var emailTextFieldBorderView: UIView! {
+    didSet {
+      emailTextFieldBorderView.layer.borderColor = UIColor.lightGray.cgColor
+    }
+  }
   @IBOutlet private weak var emailTextField: UITextField! {
     didSet {
       let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.italicSystemFont(ofSize: 17)]
-
       emailTextField.attributedPlaceholder = NSAttributedString(string: "Tap here to enter your email", attributes: attributes)
       emailTextField.overrideUserInterfaceStyle = .light
     }
