@@ -10,6 +10,9 @@ class NotificationViewController: UIViewController {
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var emailTextField: UITextField! {
     didSet {
+      let attributes: [NSAttributedString.Key: Any] = [.font: UIFont.italicSystemFont(ofSize: 17)]
+
+      emailTextField.attributedPlaceholder = NSAttributedString(string: "Tap here to enter your email", attributes: attributes)
       emailTextField.overrideUserInterfaceStyle = .light
     }
   }
@@ -37,7 +40,7 @@ extension NotificationViewController: UNNotificationContentExtension {
     let userInfo = content.userInfo
 
     titleLabel.text = userInfo[PushNotificationKey.certificationTitle.rawValue] as? String
-    descriptionLabel.text = userInfo[PushNotificationKey.certificationDescription.rawValue] as? String
+    descriptionLabel.attributedText = descriptionAttributedText(with: userInfo[PushNotificationKey.certificationDescription.rawValue] as? String)
     imageView.image = imageFromNotification(content: content)
   }
 
@@ -103,6 +106,16 @@ private extension NotificationViewController {
         completion()
       }
     }
+  }
+  
+  func descriptionAttributedText(with textString: String?) -> NSAttributedString {
+    guard let textString = textString else { return NSAttributedString(string: "") }
+    
+    let style = NSMutableParagraphStyle()
+    style.lineSpacing = 7
+    let attributes: [NSAttributedString.Key: Any] = [.paragraphStyle: style, .font: UIFont(name: "Sailec-Regular", size: 15.0)!]
+    
+    return NSAttributedString(string: textString, attributes: attributes)
   }
 }
 
