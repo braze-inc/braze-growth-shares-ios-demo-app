@@ -51,7 +51,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="RfB-UX-St8">
-                                <rect key="frame" x="20" y="150" width="334" height="0.0"/>
+                                <rect key="frame" x="20" y="153" width="334" height="0.0"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGb-fN-ww4">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="0.0"/>
@@ -62,16 +62,16 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1m4-iP-4mD" userLabel="Register Now">
-                                <rect key="frame" x="20" y="154" width="329" height="100"/>
+                                <rect key="frame" x="20" y="157" width="329" height="100.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Register now:" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIH-PM-PJz">
-                                        <rect key="frame" x="0.0" y="25" width="102.5" height="15"/>
+                                        <rect key="frame" x="0.0" y="25" width="92.5" height="17.5"/>
                                         <fontDescription key="fontDescription" name="Sailec-Black" family="Sailec" pointSize="15"/>
                                         <color key="textColor" red="0.1529411765" green="0.21176470589999999" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95o-iV-ZhW">
-                                        <rect key="frame" x="0.0" y="50" width="329" height="50"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="329" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Tap here to enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nwa-HP-uc0">
                                                 <rect key="frame" x="10" y="0.0" width="309" height="50"/>
@@ -109,7 +109,7 @@
                                     <constraint firstItem="UIH-PM-PJz" firstAttribute="top" secondItem="1m4-iP-4mD" secondAttribute="top" constant="25" id="Prw-TC-9pS"/>
                                     <constraint firstItem="95o-iV-ZhW" firstAttribute="leading" secondItem="1m4-iP-4mD" secondAttribute="leading" id="hja-qc-Dc9"/>
                                     <constraint firstAttribute="bottom" secondItem="95o-iV-ZhW" secondAttribute="bottom" id="j1d-Ys-uFb"/>
-                                    <constraint firstItem="95o-iV-ZhW" firstAttribute="top" secondItem="UIH-PM-PJz" secondAttribute="bottom" constant="10" id="nNB-hB-v2g"/>
+                                    <constraint firstItem="95o-iV-ZhW" firstAttribute="top" secondItem="UIH-PM-PJz" secondAttribute="bottom" constant="8" id="nNB-hB-v2g"/>
                                     <constraint firstAttribute="trailing" secondItem="95o-iV-ZhW" secondAttribute="trailing" id="puV-Fm-JlV"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UIH-PM-PJz" secondAttribute="trailing" constant="10" id="ras-cT-6R5"/>
                                     <constraint firstItem="UIH-PM-PJz" firstAttribute="leading" secondItem="1m4-iP-4mD" secondAttribute="leading" id="ue6-QO-odt"/>
@@ -120,7 +120,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8RU-7V-hsH">
                                         <rect key="frame" x="0.0" y="10" width="214" height="70"/>
-                                        <fontDescription key="fontDescription" name="Sailec-Black" family="Sailec" pointSize="22"/>
+                                        <fontDescription key="fontDescription" name="Sailec-Black" family="Sailec" pointSize="21"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -134,7 +134,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About This Certification" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSu-6i-eFX">
-                                <rect key="frame" x="20" y="122" width="215" height="18"/>
+                                <rect key="frame" x="20" y="122" width="189" height="21"/>
                                 <fontDescription key="fontDescription" name="Sailec-Bold" family="Sailec" pointSize="18"/>
                                 <color key="textColor" red="0.15294117647058825" green="0.21176470588235294" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -169,6 +169,7 @@
                             <constraint firstItem="f5W-fG-m7n" firstAttribute="top" secondItem="FAU-dX-HSd" secondAttribute="bottom" id="rMt-VG-ecr"/>
                             <constraint firstItem="YSu-6i-eFX" firstAttribute="top" secondItem="VpY-bi-3sV" secondAttribute="bottom" constant="5" id="riy-cr-tBS"/>
                             <constraint firstItem="VpY-bi-3sV" firstAttribute="width" secondItem="S3S-Oj-5AN" secondAttribute="width" multiplier="1:3.5" id="w2o-qW-pc2"/>
+                            <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RfB-UX-St8" secondAttribute="bottom" constant="40" id="w6z-3F-TGB"/>
                             <constraint firstItem="VpY-bi-3sV" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="10" id="yhh-St-Jj5"/>
                             <constraint firstItem="2BE-c3-nQJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1m4-iP-4mD" secondAttribute="bottom" constant="20" id="zeu-xu-XSb"/>
                         </constraints>
@@ -179,7 +180,9 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="fGb-fN-ww4" id="XDK-zf-ao3"/>
                         <outlet property="emailTextField" destination="Nwa-HP-uc0" id="KgY-Q0-RkL"/>
+                        <outlet property="headerLabel" destination="YSu-6i-eFX" id="MC5-Cz-l4B"/>
                         <outlet property="imageView" destination="VpY-bi-3sV" id="05d-mB-uZE"/>
+                        <outlet property="registerView" destination="1m4-iP-4mD" id="rtk-d4-aCO"/>
                         <outlet property="titleLabel" destination="8RU-7V-hsH" id="whp-35-ZeG"/>
                     </connections>
                 </viewController>

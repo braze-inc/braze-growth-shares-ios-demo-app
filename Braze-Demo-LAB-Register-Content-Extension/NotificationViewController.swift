@@ -6,7 +6,9 @@ class NotificationViewController: UIViewController {
 
   // MARK: - Outlets
   @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var headerLabel: UILabel!
   @IBOutlet private weak var descriptionLabel: UILabel!
+  @IBOutlet private weak var registerView: UIView!
   @IBOutlet private weak var imageView: UIImageView!
   @IBOutlet private weak var emailTextField: UITextField! {
     didSet {
@@ -31,6 +33,10 @@ class NotificationViewController: UIViewController {
   private lazy var registerAction: UNNotificationAction = {
     UNNotificationAction(identifier: registerIdentifier, title: registerIdentifier.capitalized, options: .authenticationRequired)
   }()
+  private let closeIdentifier = "CLOSE"
+  private lazy var closeAction: UNNotificationAction = {
+    UNNotificationAction(identifier: closeIdentifier, title: closeIdentifier.capitalized, options: .authenticationRequired)
+  }()
 }
 
 // MARK: - Notification Content Extension Methods
@@ -48,12 +54,14 @@ extension NotificationViewController: UNNotificationContentExtension {
     if response.actionIdentifier == registerIdentifier {
       UINotificationFeedbackGenerator().notificationOccurred(.success)
       extensionContext?.notificationActions = []
-      
+    
       saveRegisteredForCertificationEvent()
       saveEmailCustomAttribute()
       saveEmailUserAttribute()
       
-      displayAllSetView { completion(.dismiss) }
+      displayCloseView()
+    } else if response.actionIdentifier == closeIdentifier {
+      completion(.dismiss)
     } else {
       completion(.doNotDismiss)
     }
@@ -93,19 +101,12 @@ private extension NotificationViewController {
     }
   }
   
-  func displayAllSetView(completion: @escaping () -> ()) {
-    let allSetView: AllSetView = .fromNib()
-    allSetView.frame = view.frame
-    allSetView.alpha = 0.0
-    view.addSubview(allSetView)
+  func displayCloseView() {
+    extensionContext?.notificationActions = [closeAction]
     
-    UIView.animate(withDuration: 1.0) {
-      allSetView.alpha = 1.0
-    } completion: { _ in
-      DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-        completion()
-      }
-    }
+    headerLabel.text = "Thanks for registering!"
+    descriptionLabel.text = "You'll receive a confirmation email shortly."
+    registerView.removeFromSuperview()
   }
   
   func descriptionAttributedText(with textString: String?) -> NSAttributedString {
