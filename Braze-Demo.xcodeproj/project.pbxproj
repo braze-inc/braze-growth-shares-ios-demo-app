@@ -71,6 +71,8 @@
 		7F87D4AA24B0500200ED0A86 /* BrazeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */; };
 		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
 		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
+		7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F88F9982644969500B68025 /* FullPermissionViewController.swift */; };
+		7F88F9A3264496A000B68025 /* FullPermissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F88F9A2264496A000B68025 /* FullPermissionViewController.xib */; };
 		7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8967C525740F9900C61405 /* FullListViewController.swift */; };
 		7F8967CB25740FA600C61405 /* FullListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F8967CA25740FA600C61405 /* FullListViewController.xib */; };
 		7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */; };
@@ -300,6 +302,8 @@
 		7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeSettingsViewController.swift; sourceTree = "<group>"; };
 		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
+		7F88F9982644969500B68025 /* FullPermissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPermissionViewController.swift; sourceTree = "<group>"; };
+		7F88F9A2264496A000B68025 /* FullPermissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullPermissionViewController.xib; sourceTree = "<group>"; };
 		7F8967C525740F9900C61405 /* FullListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullListViewController.swift; sourceTree = "<group>"; };
 		7F8967CA25740FA600C61405 /* FullListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullListViewController.xib; sourceTree = "<group>"; };
 		7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
@@ -650,6 +654,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7F88F9AC264496A500B68025 /* FullPermissionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F88F9982644969500B68025 /* FullPermissionViewController.swift */,
+				7F88F9A2264496A000B68025 /* FullPermissionViewController.xib */,
+			);
+			path = FullPermissionViewController;
+			sourceTree = "<group>";
+		};
 		7F8967CF25740FAB00C61405 /* FullListViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -894,6 +907,7 @@
 			isa = PBXGroup;
 			children = (
 				7F8967CF25740FAB00C61405 /* FullListViewController */,
+				7F88F9AC264496A500B68025 /* FullPermissionViewController */,
 				7F3FBEF325B0F417007715C0 /* ModalPickerViewController */,
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
@@ -1229,6 +1243,7 @@
 				7FD8EA3225E75942004A89FA /* Sailec-HairlineItalic.otf in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
 				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
+				7F88F9A3264496A000B68025 /* FullPermissionViewController.xib in Resources */,
 				7F754FC1250C2DF000CD7B45 /* Tile-List.json in Resources */,
 				7FD8EA2E25E75942004A89FA /* Sailec-BoldItalic.otf in Resources */,
 				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
@@ -1377,6 +1392,7 @@
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
 				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
+				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
