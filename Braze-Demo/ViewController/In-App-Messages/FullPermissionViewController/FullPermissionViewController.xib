@@ -128,13 +128,13 @@
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoG-z9-Rn6">
                                     <rect key="frame" x="0.0" y="0.0" width="289" height="31.5"/>
-                                    <fontDescription key="fontDescription" name="Sailec-Medium" family="Sailec" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Sailec-Medium" family="Sailec" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2E-My-PMl">
                                     <rect key="frame" x="0.0" y="43.5" width="289" height="31.5"/>
-                                    <fontDescription key="fontDescription" name="Sailec-Regular" family="Sailec" pointSize="17"/>
+                                    <fontDescription key="fontDescription" name="Sailec-Regular" family="Sailec" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>

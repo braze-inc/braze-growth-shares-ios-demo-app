@@ -51,7 +51,23 @@ extension FullPermissionViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+    configureGradient()
     
     inAppMessageHeaderLabel?.textAlignment = .center
+  }
+}
+
+// MARK:- Private
+private extension FullPermissionViewController {
+  func configureGradient() {
+    let colorTop =  UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor
+    let colorBottom = UIColor(red: 200.0/255.0, green: 200.0/255.0, blue: 200.0/255.0, alpha: 1.0).cgColor
+                    
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.colors = [colorTop, colorBottom]
+    gradientLayer.locations = [0.25, 1.0]
+    gradientLayer.frame = view.bounds
+                
+    view.layer.insertSublayer(gradientLayer, at:0)
   }
 }
