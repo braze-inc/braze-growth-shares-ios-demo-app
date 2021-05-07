@@ -1,13 +1,31 @@
 import UIKit
+import AppTrackingTransparency
 
 class FullPermissionViewController: FullViewController {
   
   // MARK: - Outlets
   @IBOutlet private weak var permissionView: UIView!
-  @IBOutlet private weak var arrowView: UIView!
+  @IBOutlet private weak var checkboxButton: UIButton!
   @IBOutlet private weak var permissionTitle: UILabel!
   @IBOutlet private weak var permissionSubtitle: UILabel!
   
+  // MARK: Actions
+  @IBAction func checkboxDidTap(_ sender: Any) {
+    ATTrackingManager.requestTrackingAuthorization { [weak self] status in
+      guard let self = self else { return }
+      
+      switch status {
+      case .authorized:
+        DispatchQueue.main.async {
+          self.checkboxButton.setTitle("✓", for: .normal)
+        }
+      default:
+        break
+      }
+    }
+  }
+  
+  // MARK: - Variables
   override var nibName: String {
     return "FullPermissionViewController"
   }

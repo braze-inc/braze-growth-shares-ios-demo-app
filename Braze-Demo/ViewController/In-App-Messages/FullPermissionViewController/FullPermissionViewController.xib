@@ -21,6 +21,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FullPermissionViewController" customModule="Braze_Demo" customModuleProvider="target">
             <connections>
+                <outlet property="checkboxButton" destination="df7-8W-uwH" id="tOr-1X-FfV"/>
                 <outlet property="iconImageView" destination="NMj-Ey-DBa" id="mxF-nk-nrN"/>
                 <outlet property="inAppMessageHeaderLabel" destination="hcG-dV-pwK" id="Xb6-QZ-kI6"/>
                 <outlet property="inAppMessageMessageLabel" destination="cl7-AA-xVz" id="IJu-8j-PZ5"/>
@@ -95,6 +96,13 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df7-8W-uwH">
                                     <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="60"/>
+                                    <state key="normal">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="checkboxDidTap:" destination="-1" eventType="touchUpInside" id="wd5-VA-min"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
