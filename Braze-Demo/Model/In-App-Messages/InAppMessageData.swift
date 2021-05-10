@@ -12,4 +12,5 @@ enum InAppMessageKey: String {
 enum InAppMessageViewType: String {
   case picker
   case tableList = "table_list"
+  case permission
 }

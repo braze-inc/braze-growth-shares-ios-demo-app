@@ -359,6 +359,8 @@ private extension BrazeManager {
     switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
     case InAppMessageViewType.tableList.rawValue:
       return FullListViewController(inAppMessage: inAppMessage)
+    case InAppMessageViewType.permission.rawValue:
+      return FullPermissionViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageFullViewController(inAppMessage: inAppMessage)
     }
