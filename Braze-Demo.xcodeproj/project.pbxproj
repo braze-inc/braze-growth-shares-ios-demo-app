@@ -46,6 +46,7 @@
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
 		7F43668425FC7F4F003DE7AA /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43668325FC7F4F003DE7AA /* AppboyUI */; };
 		7F43669A25FC94CA003DE7AA /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43669925FC94CA003DE7AA /* AppboyPushStory */; };
+		7F4A20D526694FED00168812 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F4A20D426694FED00168812 /* AppboyPushStory */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
 		7F554A19258337B200DAFB84 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F554A18258337B200DAFB84 /* README.rtf */; };
@@ -428,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F8CB2EB25C888000001F270 /* UserNotificationsUI.framework in Frameworks */,
+				7F4A20D526694FED00168812 /* AppboyPushStory in Frameworks */,
 				7F8CB2E925C888000001F270 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1002,6 +1004,7 @@
 			);
 			name = "Braze-Demo-Push-Story-Content-Extension";
 			packageProductDependencies = (
+				7F4A20D426694FED00168812 /* AppboyPushStory */,
 			);
 			productName = "Braze Demo Content Extension";
 			productReference = 7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */;
@@ -2146,6 +2149,11 @@
 			productName = AppboyUI;
 		};
 		7F43669925FC94CA003DE7AA /* AppboyPushStory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F43668225FC7F4F003DE7AA /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
+			productName = AppboyPushStory;
+		};
+		7F4A20D426694FED00168812 /* AppboyPushStory */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7F43668225FC7F4F003DE7AA /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
 			productName = AppboyPushStory;

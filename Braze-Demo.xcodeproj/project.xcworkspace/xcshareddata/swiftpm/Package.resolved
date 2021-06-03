@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/braze-inc/braze-ios-sdk",
         "state": {
           "branch": null,
-          "revision": "34b478973b133878aa2585e3e11559c53582a262",
-          "version": "4.0.0"
+          "revision": "4e0f126e0bb100d734e53a70a40c1bf6382c98df",
+          "version": "4.2.0"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "a6b6e44eadf0d39250c10a7cc0e3b91d0bdb0e94",
-          "version": "5.10.4"
+          "revision": "76dd4b49110b8624317fc128e7fa0d8a252018bc",
+          "version": "5.11.1"
         }
       }
     ]
