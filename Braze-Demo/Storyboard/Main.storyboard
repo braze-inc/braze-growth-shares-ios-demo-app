@@ -1228,6 +1228,7 @@
                     </view>
                     <connections>
                         <outlet property="segmentedControl" destination="6O3-15-jXZ" id="rw9-0F-vSI"/>
+                        <outlet property="stackView" destination="G3a-cn-i8H" id="mWE-DD-azN"/>
                         <outlet property="triggerCampaignButton" destination="sqL-Mi-3hd" id="VXg-kK-NcP"/>
                     </connections>
                 </viewController>

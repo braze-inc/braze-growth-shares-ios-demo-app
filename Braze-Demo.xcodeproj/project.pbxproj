@@ -177,6 +177,10 @@
 		7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */; };
+		7FDBFDDD268CF264000C1244 /* SliderConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDDC268CF264000C1244 /* SliderConfigurationView.swift */; };
+		7FDBFDDF268CF26F000C1244 /* SliderConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */; };
+		7FDBFDE3268CF723000C1244 /* ColorConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */; };
+		7FDBFDE5268CF72F000C1244 /* ColorConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE4268CF72F000C1244 /* ColorConfigurationView.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -390,6 +394,10 @@
 		7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-HairlineItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Thin.otf"; sourceTree = "<group>"; };
 		7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxContentCardsViewController.swift; sourceTree = "<group>"; };
+		7FDBFDDC268CF264000C1244 /* SliderConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderConfigurationView.swift; sourceTree = "<group>"; };
+		7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderConfigurationView.xib; sourceTree = "<group>"; };
+		7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorConfigurationView.xib; sourceTree = "<group>"; };
+		7FDBFDE4268CF72F000C1244 /* ColorConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfigurationView.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -812,15 +820,16 @@
 		7F9DCBD824AD832400E8D207 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7FDBFDE6268CF733000C1244 /* ColorConfigurationView */,
 				7FA45A3424C28BD5009A484B /* Content Cards */,
 				7F6C98482564B06D000CDAAA /* Grouped */,
 				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,
+				7FDBFDE0268CF275000C1244 /* SliderConfigurationView */,
+				7FDBFDE1268CF280000C1244 /* SwitchTableViewCell */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
-				7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */,
-				7F8967D82574247500C61405 /* SwitchTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -946,6 +955,33 @@
 				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
 			);
 			path = "Content-Cards";
+			sourceTree = "<group>";
+		};
+		7FDBFDE0268CF275000C1244 /* SliderConfigurationView */ = {
+			isa = PBXGroup;
+			children = (
+				7FDBFDDC268CF264000C1244 /* SliderConfigurationView.swift */,
+				7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */,
+			);
+			path = SliderConfigurationView;
+			sourceTree = "<group>";
+		};
+		7FDBFDE1268CF280000C1244 /* SwitchTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7F8967D32574246B00C61405 /* SwitchTableViewCell.swift */,
+				7F8967D82574247500C61405 /* SwitchTableViewCell.xib */,
+			);
+			path = SwitchTableViewCell;
+			sourceTree = "<group>";
+		};
+		7FDBFDE6268CF733000C1244 /* ColorConfigurationView */ = {
+			isa = PBXGroup;
+			children = (
+				7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */,
+				7FDBFDE4268CF72F000C1244 /* ColorConfigurationView.swift */,
+			);
+			path = ColorConfigurationView;
 			sourceTree = "<group>";
 		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
@@ -1247,6 +1283,7 @@
 				7FD8EA2925E75942004A89FA /* Sailec-Black.otf in Resources */,
 				7FD8EA2F25E75942004A89FA /* Sailec-RegularItalic.otf in Resources */,
 				7FD8EA2625E75942004A89FA /* Sailec-Medium.otf in Resources */,
+				7FDBFDDF268CF26F000C1244 /* SliderConfigurationView.xib in Resources */,
 				7FD8EA3025E75942004A89FA /* Sailec-LightItalic.otf in Resources */,
 				7F9DCBC624AD787A00E8D207 /* Main.storyboard in Resources */,
 				7F554A19258337B200DAFB84 /* README.rtf in Resources */,
@@ -1263,6 +1300,7 @@
 				7FC3106824D1C30100053D90 /* ContentCardGestureView.xib in Resources */,
 				7FD8EA2D25E75942004A89FA /* Sailec-Regular.otf in Resources */,
 				7FD8EA3125E75942004A89FA /* Sailec-Hairline.otf in Resources */,
+				7FDBFDE3268CF723000C1244 /* ColorConfigurationView.xib in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
 				7FD8EA2A25E75942004A89FA /* Sailec-MediumItalic.otf in Resources */,
 			);
@@ -1390,6 +1428,7 @@
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
 				7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */,
 				7F9DCBCC24AD79C300E8D207 /* BrazeManager.swift in Sources */,
+				7FDBFDE5268CF72F000C1244 /* ColorConfigurationView.swift in Sources */,
 				7FDFA26F24B68DC000E3B132 /* MessageCenterTableViewCell.swift in Sources */,
 				7F6C983B25648B1F000CDAAA /* LargeRowCollectionViewCell.swift in Sources */,
 				7F554A3F2587209700DAFB84 /* FooterSupplementaryView.swift in Sources */,
@@ -1410,6 +1449,7 @@
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
+				7FDBFDDD268CF264000C1244 /* SliderConfigurationView.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
 				7F0B4A7D25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
