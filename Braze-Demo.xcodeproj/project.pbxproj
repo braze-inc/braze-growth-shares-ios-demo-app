@@ -176,6 +176,7 @@
 		7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
+		7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -388,6 +389,7 @@
 		7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Hairline.otf"; sourceTree = "<group>"; };
 		7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-HairlineItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Thin.otf"; sourceTree = "<group>"; };
+		7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxContentCardsViewController.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -770,11 +772,9 @@
 		7F9DCBCA24AD79B700E8D207 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7FDBFDDB268CDBBD000C1244 /* Content-Cards */,
 				7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */,
 				7FCFEB11256C389E00079EAF /* In-App-Messages */,
-				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
-				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
-				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
 				7F5549EB2582F3BC00DAFB84 /* Settings */,
 				7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */,
 			);
@@ -935,6 +935,17 @@
 				7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */,
 			);
 			name = "Sailec-Font";
+			sourceTree = "<group>";
+		};
+		7FDBFDDB268CDBBD000C1244 /* Content-Cards */ = {
+			isa = PBXGroup;
+			children = (
+				7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */,
+				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
+				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
+				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
+			);
+			path = "Content-Cards";
 			sourceTree = "<group>";
 		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
@@ -1420,6 +1431,7 @@
 				7FCFB98D24C91421001AA381 /* Ad.swift in Sources */,
 				7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */,
 				7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */,
+				7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift in Sources */,
 				7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */,
 				7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */,
 				7F554A4C258725B600DAFB84 /* LayoutBuilder.swift in Sources */,
