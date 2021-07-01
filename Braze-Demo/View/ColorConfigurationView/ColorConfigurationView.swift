@@ -1,24 +1,25 @@
 import UIKit
 
-protocol ConfigurationViewDelegate: AnyObject {
-  func colorPressed(_ currentColor: UIColor?)
-}
-
 class ColorConfigurationView: UIView {
   
   // MARK: - Outlets
-  @IBOutlet var colorButtons: [UIButton]!
-  weak var delegate: ConfigurationViewDelegate?
+  @IBOutlet weak var stackView: UIStackView!
   
-  // MARK: - Actions
-  @IBAction func colorButtonPressed(_ sender: UIButton) {
-    delegate?.colorPressed(sender.backgroundColor)
-  }
-  
-  func configureView(_ delegate: ConfigurationViewDelegate? = nil) {
-    self.delegate = delegate
-  }
-  
-  func setBackgroundColor( _ color: UIColor) {
+  func configureView(_ delegate: ColorBoxActionDelegate? = nil) {
+    let borderColor: ColorBoxView = .fromNib()
+    borderColor.configureView("Border", tag: 0, delegate: delegate)
+    stackView.addArrangedSubview(borderColor)
+    
+    let backgroundColor: ColorBoxView = .fromNib()
+    backgroundColor.configureView("Background", color: .white, tag: 1, delegate: delegate)
+    stackView.addArrangedSubview(backgroundColor)
+    
+    let labelColor: ColorBoxView = .fromNib()
+    labelColor.configureView("Label", tag: 2, delegate: delegate)
+    stackView.addArrangedSubview(labelColor)
+    
+    let linkColor: ColorBoxView = .fromNib()
+    linkColor.configureView("Link", tag: 3, delegate: delegate)
+    stackView.addArrangedSubview(linkColor)
   }
 }

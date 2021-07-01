@@ -14,9 +14,19 @@ enum ContentCardCampaignType: Int {
   }
 }
 
+struct ConfigurationData {
+  var cornerRadius: Int = 0
+  var borderWidth: Int = 0
+  var borderColor: String = "FFFFFF"
+  var backgroundColor: String = "000000"
+  var labelColor: String = "FFFFFF"
+  var linkColor: String = "FFFFFF"
+}
+
 class OutOfTheBoxContentCardsViewController: UIViewController {
   
   // MARK: - Variables
+  private var configurationData = ConfigurationData()
   private let colorView: ColorConfigurationView = .fromNib()
   private var campaignType: ContentCardCampaignType {
     return ContentCardCampaignType(rawValue: segmentedControl.selectedSegmentIndex) ?? .banner
@@ -60,19 +70,21 @@ extension OutOfTheBoxContentCardsViewController {
 }
 
 // MARK: Configuration View Delegate
-extension OutOfTheBoxContentCardsViewController: ConfigurationViewDelegate {
-  func colorPressed(_ currentColor: UIColor?) {
+extension OutOfTheBoxContentCardsViewController: ColorBoxActionDelegate {
+  func colorDidUpdate(newColor: UIColor, tag: Int) {
+    switch tag {
+    case 0: configurationData.borderColor = newColor.hexValue()
+    case 1: configurationData.backgroundColor = newColor.hexValue()
+    case 2: configurationData.labelColor = newColor.hexValue()
+    case 3: configurationData.linkColor = newColor.hexValue()
+    default: break
+    }
+  }
+  
+  func boxDidPress(currentColor: UIColor?, colorPickerDelegate: UIColorPickerViewControllerDelegate) {
     let colorPicker = UIColorPickerViewController()
     colorPicker.selectedColor = currentColor!
-    colorPicker.delegate = self
+    colorPicker.delegate = colorPickerDelegate
     present(colorPicker, animated: true, completion: nil)
-  }
-}
-
-// MARK: Color Picker Delegate
-extension OutOfTheBoxContentCardsViewController: UIColorPickerViewControllerDelegate {
-  func colorPickerViewControllerDidFinish(_ viewController: UIColorPickerViewController) {
-    let newColor = viewController.selectedColor
-    colorView.setBackgroundColor(newColor)
   }
 }

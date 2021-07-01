@@ -181,6 +181,9 @@
 		7FDBFDDF268CF26F000C1244 /* SliderConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */; };
 		7FDBFDE3268CF723000C1244 /* ColorConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */; };
 		7FDBFDE5268CF72F000C1244 /* ColorConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE4268CF72F000C1244 /* ColorConfigurationView.swift */; };
+		7FDBFDE8268E1669000C1244 /* ColorBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE7268E1669000C1244 /* ColorBoxView.xib */; };
+		7FDBFDEA268E17B5000C1244 /* ColorBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE9268E17B5000C1244 /* ColorBoxView.swift */; };
+		7FDBFDED268E2AD6000C1244 /* UIColor_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDEC268E2AD6000C1244 /* UIColor_Util.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -353,7 +356,7 @@
 		7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
 		7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDemo.xcdatamodel; sourceTree = "<group>"; };
 		7FBDD49424AD711F00EC0983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7FBDD49924AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		7FBDD49924AD711F00EC0983 /* New_Name.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = New_Name.plist; path = ../New_Name.plist; sourceTree = "<group>"; };
 		7FBDD49E24AD711F00EC0983 /* Braze-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoTests.swift; sourceTree = "<group>"; };
 		7FBDD4A424AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -398,6 +401,9 @@
 		7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderConfigurationView.xib; sourceTree = "<group>"; };
 		7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorConfigurationView.xib; sourceTree = "<group>"; };
 		7FDBFDE4268CF72F000C1244 /* ColorConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConfigurationView.swift; sourceTree = "<group>"; };
+		7FDBFDE7268E1669000C1244 /* ColorBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorBoxView.xib; sourceTree = "<group>"; };
+		7FDBFDE9268E17B5000C1244 /* ColorBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBoxView.swift; sourceTree = "<group>"; };
+		7FDBFDEC268E2AD6000C1244 /* UIColor_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Util.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -659,6 +665,7 @@
 				7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */,
 				7FD2F612256608A20061950D /* UIButton_Util.swift */,
 				7FCFB99224C9445B001AA381 /* UICollectionView_Util.swift */,
+				7FDBFDEC268E2AD6000C1244 /* UIColor_Util.swift */,
 				7FA45A3524C29131009A484B /* UIVIew_Util.swift */,
 				7FE763EF24CBD22A0017C5D2 /* UIViewController_Util.swift */,
 				7F12B48925E721B1003AD64F /* UIStackView_Util.swift */,
@@ -760,7 +767,7 @@
 				7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
 				7FBDD49424AD711F00EC0983 /* Assets.xcassets */,
-				7FBDD49924AD711F00EC0983 /* Info.plist */,
+				7FBDD49924AD711F00EC0983 /* New_Name.plist */,
 				7FBDD49124AD711E00EC0983 /* Braze-Demo.xcdatamodeld */,
 			);
 			path = SupportingFiles;
@@ -827,6 +834,7 @@
 				7FDBFDE0268CF275000C1244 /* SliderConfigurationView */,
 				7FDBFDE1268CF280000C1244 /* SwitchTableViewCell */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
+				7FDBFDEB268E17B9000C1244 /* ColorBoxView */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
@@ -982,6 +990,15 @@
 				7FDBFDE4268CF72F000C1244 /* ColorConfigurationView.swift */,
 			);
 			path = ColorConfigurationView;
+			sourceTree = "<group>";
+		};
+		7FDBFDEB268E17B9000C1244 /* ColorBoxView */ = {
+			isa = PBXGroup;
+			children = (
+				7FDBFDE7268E1669000C1244 /* ColorBoxView.xib */,
+				7FDBFDE9268E17B5000C1244 /* ColorBoxView.swift */,
+			);
+			path = ColorBoxView;
 			sourceTree = "<group>";
 		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
@@ -1292,6 +1309,7 @@
 				7FD8EA2B25E75942004A89FA /* Sailec-Light.otf in Resources */,
 				7F8967D92574247500C61405 /* SwitchTableViewCell.xib in Resources */,
 				7FD8EA3225E75942004A89FA /* Sailec-HairlineItalic.otf in Resources */,
+				7FDBFDE8268E1669000C1244 /* ColorBoxView.xib in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
 				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
 				7F88F9A3264496A000B68025 /* FullPermissionViewController.xib in Resources */,
@@ -1410,6 +1428,7 @@
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
 				7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */,
 				7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */,
+				7FDBFDEA268E17B5000C1244 /* ColorBoxView.swift in Sources */,
 				7F6C98182564539A000CDAAA /* Group.swift in Sources */,
 				7F9DCBC824AD79AC00E8D207 /* LocalDataCoordinator.swift in Sources */,
 				7FD213D625872B5700FEFAAB /* TileLayoutBuilder.swift in Sources */,
@@ -1451,6 +1470,7 @@
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
 				7FDBFDDD268CF264000C1244 /* SliderConfigurationView.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
+				7FDBFDED268E2AD6000C1244 /* UIColor_Util.swift in Sources */,
 				7F0B4A7D25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,
@@ -1917,7 +1937,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
-				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/New_Name.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1944,7 +1964,7 @@
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
-				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/New_Name.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
