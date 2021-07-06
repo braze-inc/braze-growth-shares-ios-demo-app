@@ -7,16 +7,25 @@ protocol ColorBoxActionDelegate: AnyObject {
 
 class ColorBoxView: UIView {
   
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var colorButton: UIButton!
+  // MARK: - Outlets
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var colorButton: UIButton!
   
-  @IBAction func boxDidPress(_ sender: UIButton) {
+  // MARK: - Actions
+  @IBAction private func boxDidPress(_ sender: UIButton) {
     delegate?.boxDidPress(currentColor: sender.backgroundColor, colorPickerDelegate: self)
   }
   
-  weak var delegate: ColorBoxActionDelegate?
+  // MARK: - Variables
+  private weak var delegate: ColorBoxActionDelegate?
   
-  func configureView(_ title: String?, color: UIColor = .black, tag: Int, delegate: ColorBoxActionDelegate? = nil) {
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    
+    titleLabel.adjustsFontSizeToFitWidth = true
+  }
+  
+  func configureView(_ title: String?, color: UIColor?, tag: Int, delegate: ColorBoxActionDelegate? = nil) {
     self.delegate = delegate
     self.tag = tag
     

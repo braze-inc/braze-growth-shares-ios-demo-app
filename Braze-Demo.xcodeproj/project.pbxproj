@@ -176,7 +176,7 @@
 		7FD90ADB25EC177900E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD90AE425EC177A00E8F411 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD90B1925ED3F1D00E8F411 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
-		7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */; };
+		7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsConfigurationViewController.swift */; };
 		7FDBFDDD268CF264000C1244 /* SliderConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDDC268CF264000C1244 /* SliderConfigurationView.swift */; };
 		7FDBFDDF268CF26F000C1244 /* SliderConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */; };
 		7FDBFDE3268CF723000C1244 /* ColorConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */; };
@@ -184,6 +184,15 @@
 		7FDBFDE8268E1669000C1244 /* ColorBoxView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE7268E1669000C1244 /* ColorBoxView.xib */; };
 		7FDBFDEA268E17B5000C1244 /* ColorBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDE9268E17B5000C1244 /* ColorBoxView.swift */; };
 		7FDBFDED268E2AD6000C1244 /* UIColor_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDEC268E2AD6000C1244 /* UIColor_Util.swift */; };
+		7FDBFDF1268E3883000C1244 /* OutOfTheBoxContentCardsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDF0268E3883000C1244 /* OutOfTheBoxContentCardsTableViewController.swift */; };
+		7FDBFDF4268E3902000C1244 /* CustomCaptionedImageContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDF3268E3902000C1244 /* CustomCaptionedImageContentCardCell.swift */; };
+		7FDBFDF9268E6978000C1244 /* CustomBannerContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDF8268E6978000C1244 /* CustomBannerContentCardCell.swift */; };
+		7FDBFDFB268E6C8C000C1244 /* CustomClassicContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDFA268E6C8C000C1244 /* CustomClassicContentCardCell.swift */; };
+		7FDBFDFD268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDFC268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift */; };
+		7FDBFE01268FD47B000C1244 /* ABKContentCardCell_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE00268FD47B000C1244 /* ABKContentCardCell_Util.swift */; };
+		7FDBFE0326900738000C1244 /* OutOfTheBoxConfigurationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */; };
+		7FDBFE052690B2A2000C1244 /* FontConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */; };
+		7FDBFE072690B2EE000C1244 /* FontConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -396,7 +405,7 @@
 		7FD8EA2325E75941004A89FA /* Sailec-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Hairline.otf"; sourceTree = "<group>"; };
 		7FD8EA2425E75942004A89FA /* Sailec-HairlineItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-HairlineItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA2525E75942004A89FA /* Sailec-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Thin.otf"; sourceTree = "<group>"; };
-		7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxContentCardsViewController.swift; sourceTree = "<group>"; };
+		7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxContentCardsConfigurationViewController.swift; sourceTree = "<group>"; };
 		7FDBFDDC268CF264000C1244 /* SliderConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderConfigurationView.swift; sourceTree = "<group>"; };
 		7FDBFDDE268CF26F000C1244 /* SliderConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderConfigurationView.xib; sourceTree = "<group>"; };
 		7FDBFDE2268CF723000C1244 /* ColorConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorConfigurationView.xib; sourceTree = "<group>"; };
@@ -404,6 +413,15 @@
 		7FDBFDE7268E1669000C1244 /* ColorBoxView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorBoxView.xib; sourceTree = "<group>"; };
 		7FDBFDE9268E17B5000C1244 /* ColorBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBoxView.swift; sourceTree = "<group>"; };
 		7FDBFDEC268E2AD6000C1244 /* UIColor_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor_Util.swift; sourceTree = "<group>"; };
+		7FDBFDF0268E3883000C1244 /* OutOfTheBoxContentCardsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxContentCardsTableViewController.swift; sourceTree = "<group>"; };
+		7FDBFDF3268E3902000C1244 /* CustomCaptionedImageContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCaptionedImageContentCardCell.swift; sourceTree = "<group>"; };
+		7FDBFDF8268E6978000C1244 /* CustomBannerContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBannerContentCardCell.swift; sourceTree = "<group>"; };
+		7FDBFDFA268E6C8C000C1244 /* CustomClassicContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassicContentCardCell.swift; sourceTree = "<group>"; };
+		7FDBFDFC268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassicImageContentCardCell.swift; sourceTree = "<group>"; };
+		7FDBFE00268FD47B000C1244 /* ABKContentCardCell_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABKContentCardCell_Util.swift; sourceTree = "<group>"; };
+		7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxConfigurationData.swift; sourceTree = "<group>"; };
+		7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfigurationView.swift; sourceTree = "<group>"; };
+		7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontConfigurationView.xib; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -503,6 +521,7 @@
 				7FCFB99424CA383C001AA381 /* Message.swift */,
 				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
+				7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */,
 			);
 			path = "Content-Cards";
 			sourceTree = "<group>";
@@ -657,6 +676,7 @@
 		7F87D4AF24B2A25000ED0A86 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7FDBFE00268FD47B000C1244 /* ABKContentCardCell_Util.swift */,
 				7FAAE26424D392AE008269E5 /* Array_Util.swift */,
 				7FE763F124CD246A0017C5D2 /* Decimal_Util.swift */,
 				7F0660EB25EECC1400384756 /* Dictionary_Util.swift */,
@@ -827,14 +847,11 @@
 		7F9DCBD824AD832400E8D207 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				7FDBFDE6268CF733000C1244 /* ColorConfigurationView */,
-				7FA45A3424C28BD5009A484B /* Content Cards */,
+				7FA45A3424C28BD5009A484B /* Content-Cards */,
 				7F6C98482564B06D000CDAAA /* Grouped */,
 				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,
-				7FDBFDE0268CF275000C1244 /* SliderConfigurationView */,
 				7FDBFDE1268CF280000C1244 /* SwitchTableViewCell */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
-				7FDBFDEB268E17B9000C1244 /* ColorBoxView */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
@@ -842,17 +859,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		7FA45A3424C28BD5009A484B /* Content Cards */ = {
+		7FA45A3424C28BD5009A484B /* Content-Cards */ = {
 			isa = PBXGroup;
 			children = (
-				7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */,
-				7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */,
-				7FCFB97A24C35EBA001AA381 /* ContentCardWebView.swift */,
-				7FCFB97E24C35EE2001AA381 /* ContentCardWebView.xib */,
-				7FC3106524D1C29A00053D90 /* ContentCardGestureView.swift */,
-				7FC3106724D1C30100053D90 /* ContentCardGestureView.xib */,
+				7FDBFDF2268E38F1000C1244 /* Custom */,
+				7FDBFDF5268E3905000C1244 /* Out-of-the-Box */,
 			);
-			path = "Content Cards";
+			path = "Content-Cards";
 			sourceTree = "<group>";
 		};
 		7FBDD47C24AD711D00EC0983 = {
@@ -957,7 +970,8 @@
 		7FDBFDDB268CDBBD000C1244 /* Content-Cards */ = {
 			isa = PBXGroup;
 			children = (
-				7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift */,
+				7FDBFDF0268E3883000C1244 /* OutOfTheBoxContentCardsTableViewController.swift */,
+				7FDBFDD9268CDBB0000C1244 /* OutOfTheBoxContentCardsConfigurationViewController.swift */,
 				7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */,
 				7FF1ADB924C0B67400AF09F0 /* MessageCenterDetailViewController.swift */,
 				7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */,
@@ -999,6 +1013,43 @@
 				7FDBFDE9268E17B5000C1244 /* ColorBoxView.swift */,
 			);
 			path = ColorBoxView;
+			sourceTree = "<group>";
+		};
+		7FDBFDF2268E38F1000C1244 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */,
+				7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */,
+				7FCFB97A24C35EBA001AA381 /* ContentCardWebView.swift */,
+				7FCFB97E24C35EE2001AA381 /* ContentCardWebView.xib */,
+				7FC3106524D1C29A00053D90 /* ContentCardGestureView.swift */,
+				7FC3106724D1C30100053D90 /* ContentCardGestureView.xib */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		7FDBFDF5268E3905000C1244 /* Out-of-the-Box */ = {
+			isa = PBXGroup;
+			children = (
+				7FDBFDEB268E17B9000C1244 /* ColorBoxView */,
+				7FDBFDE6268CF733000C1244 /* ColorConfigurationView */,
+				7FDBFE082690B2FF000C1244 /* FontConfigurationView */,
+				7FDBFDE0268CF275000C1244 /* SliderConfigurationView */,
+				7FDBFDF3268E3902000C1244 /* CustomCaptionedImageContentCardCell.swift */,
+				7FDBFDF8268E6978000C1244 /* CustomBannerContentCardCell.swift */,
+				7FDBFDFA268E6C8C000C1244 /* CustomClassicContentCardCell.swift */,
+				7FDBFDFC268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift */,
+			);
+			path = "Out-of-the-Box";
+			sourceTree = "<group>";
+		};
+		7FDBFE082690B2FF000C1244 /* FontConfigurationView */ = {
+			isa = PBXGroup;
+			children = (
+				7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */,
+				7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */,
+			);
+			path = FontConfigurationView;
 			sourceTree = "<group>";
 		};
 		7FF6178525E6B0BB0058F98D /* Braze-Demo-LAB-Progress-Content-Extension */ = {
@@ -1310,6 +1361,7 @@
 				7F8967D92574247500C61405 /* SwitchTableViewCell.xib in Resources */,
 				7FD8EA3225E75942004A89FA /* Sailec-HairlineItalic.otf in Resources */,
 				7FDBFDE8268E1669000C1244 /* ColorBoxView.xib in Resources */,
+				7FDBFE072690B2EE000C1244 /* FontConfigurationView.xib in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
 				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
 				7F88F9A3264496A000B68025 /* FullPermissionViewController.xib in Resources */,
@@ -1454,20 +1506,26 @@
 				7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */,
 				7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */,
 				7F8AF00725253501006F478B /* APITriggeredCampaignRequest.swift in Sources */,
+				7FDBFDF9268E6978000C1244 /* CustomBannerContentCardCell.swift in Sources */,
+				7FDBFE052690B2A2000C1244 /* FontConfigurationView.swift in Sources */,
 				7FBDD49324AD711E00EC0983 /* Braze-Demo.xcdatamodeld in Sources */,
 				7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */,
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
+				7FDBFDFB268E6C8C000C1244 /* CustomClassicContentCardCell.swift in Sources */,
 				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
 				7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */,
+				7FDBFDF4268E3902000C1244 /* CustomCaptionedImageContentCardCell.swift in Sources */,
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
 				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
+				7FDBFE0326900738000C1244 /* OutOfTheBoxConfigurationData.swift in Sources */,
 				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
+				7FDBFE01268FD47B000C1244 /* ABKContentCardCell_Util.swift in Sources */,
 				7FDBFDDD268CF264000C1244 /* SliderConfigurationView.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
 				7FDBFDED268E2AD6000C1244 /* UIColor_Util.swift in Sources */,
@@ -1477,8 +1535,10 @@
 				7F554A442587257F00DAFB84 /* GroupedLayoutBuilder.swift in Sources */,
 				7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */,
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
+				7FDBFDF1268E3883000C1244 /* OutOfTheBoxContentCardsTableViewController.swift in Sources */,
 				7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */,
 				7FCFB97B24C35EBA001AA381 /* ContentCardWebView.swift in Sources */,
+				7FDBFDFD268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift in Sources */,
 				7F87D4AA24B0500200ED0A86 /* BrazeSettingsViewController.swift in Sources */,
 				7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */,
 				7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */,
@@ -1491,7 +1551,7 @@
 				7FCFB98D24C91421001AA381 /* Ad.swift in Sources */,
 				7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */,
 				7F8FFC1A24EC7EB50082C71B /* APIRequest.swift in Sources */,
-				7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsViewController.swift in Sources */,
+				7FDBFDDA268CDBB0000C1244 /* OutOfTheBoxContentCardsConfigurationViewController.swift in Sources */,
 				7F6C984A2564B08B000CDAAA /* HeadlineCollectionViewCell.swift in Sources */,
 				7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */,
 				7F554A4C258725B600DAFB84 /* LayoutBuilder.swift in Sources */,

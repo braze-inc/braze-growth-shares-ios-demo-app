@@ -254,25 +254,23 @@ private extension BrazeManager {
       
       var metaData: [ContentCardKey: Any] = [:]
       switch card {
-      case is ABKBannerContentCard:
-        let banner = card as! ABKBannerContentCard
+      case let banner as ABKBannerContentCard:
         metaData[.image] = banner.image
-      case is ABKCaptionedImageContentCard:
-        let captioned = card as! ABKCaptionedImageContentCard
+      case let captioned as ABKCaptionedImageContentCard:
         metaData[.title] = captioned.title
         metaData[.cardDescription] = captioned.cardDescription
         metaData[.image] = captioned.image
-      case is ABKClassicContentCard:
-        let classic = card as! ABKClassicContentCard
+      case let classic as ABKClassicContentCard:
         metaData[.title] = classic.title
         metaData[.cardDescription] = classic.cardDescription
         metaData[.image] = classic.image
       default:
         break
       }
+      
       metaData[.idString] = card.idString
       metaData[.created] = card.created
-      metaData[.dismissable] = card.dismissible
+      metaData[.dismissible] = card.dismissible
       metaData[.urlString] = card.urlString
       metaData[.extras] = card.extras
      

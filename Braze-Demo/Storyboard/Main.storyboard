@@ -1076,10 +1076,10 @@
             </objects>
             <point key="canvasLocation" x="2841" y="1665"/>
         </scene>
-        <!--Out Of The Box Content Cards View Controller-->
+        <!--Out Of The Box Content Cards Configuration View Controller-->
         <scene sceneID="M0o-kb-SIT">
             <objects>
-                <viewController id="7v5-q9-fq3" customClass="OutOfTheBoxContentCardsViewController" customModule="Braze_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7v5-q9-fq3" customClass="OutOfTheBoxContentCardsConfigurationViewController" customModule="Braze_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SFS-uA-BOQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1117,12 +1117,12 @@
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zkp-VS-iGo">
-                                <rect key="frame" x="0.0" y="50" width="414" height="792"/>
+                                <rect key="frame" x="0.0" y="50" width="414" height="758"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7NY-QY-tFc" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="G3a-cn-i8H">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="G3a-cn-i8H">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NCt-ZG-Xoi" userLabel="Message Center">
@@ -1217,8 +1217,8 @@
                             <constraint firstItem="f0h-rN-G1b" firstAttribute="top" secondItem="362-WH-thZ" secondAttribute="top" id="5fe-bg-pup"/>
                             <constraint firstItem="zkp-VS-iGo" firstAttribute="leading" secondItem="362-WH-thZ" secondAttribute="leading" id="8NT-3F-kaA"/>
                             <constraint firstItem="sqL-Mi-3hd" firstAttribute="leading" secondItem="362-WH-thZ" secondAttribute="leading" constant="25" id="Fhk-kt-qvw"/>
-                            <constraint firstAttribute="bottom" secondItem="zkp-VS-iGo" secondAttribute="bottom" id="WOZ-Pl-FBt"/>
                             <constraint firstItem="362-WH-thZ" firstAttribute="trailing" secondItem="sqL-Mi-3hd" secondAttribute="trailing" constant="25" id="b4j-9O-GNy"/>
+                            <constraint firstItem="362-WH-thZ" firstAttribute="bottom" secondItem="zkp-VS-iGo" secondAttribute="bottom" id="gsB-pX-vW2"/>
                             <constraint firstItem="362-WH-thZ" firstAttribute="bottom" secondItem="sqL-Mi-3hd" secondAttribute="bottom" constant="25" id="hLR-Hs-vhg"/>
                             <constraint firstItem="362-WH-thZ" firstAttribute="trailing" secondItem="f0h-rN-G1b" secondAttribute="trailing" id="jKl-lm-VsT"/>
                             <constraint firstItem="zkp-VS-iGo" firstAttribute="top" secondItem="f0h-rN-G1b" secondAttribute="bottom" id="no4-g5-YeP"/>

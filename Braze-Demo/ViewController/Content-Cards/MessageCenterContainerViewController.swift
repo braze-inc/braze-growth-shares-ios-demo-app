@@ -85,7 +85,7 @@ private extension MessageCenterContainerViewController {
         defaultContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
         ])
 
-    let controller = ABKContentCardsTableViewController()
+    let controller = OutOfTheBoxContentCardsTableViewController()
     addChild(controller)
     controller.view.translatesAutoresizingMaskIntoConstraints = false
     defaultContainerView.addSubview(controller.view)

@@ -1,7 +1,7 @@
 import UIKit
 import WebKit
 
-protocol MessageActionDelegate: class {
+protocol MessageActionDelegate: AnyObject {
   func messageDeleted(_ message: Message)
 }
 

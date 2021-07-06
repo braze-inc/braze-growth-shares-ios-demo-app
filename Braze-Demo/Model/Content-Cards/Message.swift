@@ -49,7 +49,7 @@ extension WebViewMessage {
   init?(metaData: [ContentCardKey: Any], classType contentCardClassType: ContentCardClassType) {
     guard let contentCardId = metaData[.idString] as? String,
       let createdAt = metaData[.created] as? Double,
-      let isDismissable = metaData[.dismissable] as? Bool,
+      let isDismissible = metaData[.dismissible] as? Bool,
       let extras = metaData[.extras] as? [AnyHashable: Any]
       else { return nil }
     
@@ -68,7 +68,7 @@ extension WebViewMessage {
       webViewType = .contentBlock(contentBlockId)
     }
     
-    let contentCardData = ContentCardData(contentCardId: contentCardId, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
+    let contentCardData = ContentCardData(contentCardId: contentCardId, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
   
     
     self.init(contentCardData: contentCardData, webViewType: webViewType, messageHeader: messageHeader, messageTitle: messageTitle, imageUrl: imageUrl, cardDescription: cardDescription)
@@ -91,7 +91,7 @@ extension FullPageMessage {
   init?(metaData: [ContentCardKey: Any], classType contentCardClassType: ContentCardClassType) {
     guard let contentCardId = metaData[.idString] as? String,
       let createdAt = metaData[.created] as? Double,
-      let isDismissable = metaData[.dismissable] as? Bool,
+      let isDismissible = metaData[.dismissible] as? Bool,
       let extras = metaData[.extras] as? [AnyHashable: Any]
       else { return nil }
     
@@ -102,7 +102,7 @@ extension FullPageMessage {
     let messageHeader = extras[ContentCardKey.messageHeader.rawValue] as? String
     let messageTitle = extras[ContentCardKey.messageTitle.rawValue] as? String ?? cardTitle
     
-    let contentCardData = ContentCardData(contentCardId: contentCardId, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
+    let contentCardData = ContentCardData(contentCardId: contentCardId, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
     
     self.init(contentCardData: contentCardData, messageHeader: messageHeader, messageTitle: messageTitle, imageUrl: imageUrl, cardTitle: cardTitle, cardDescription: cardDescription)
   }

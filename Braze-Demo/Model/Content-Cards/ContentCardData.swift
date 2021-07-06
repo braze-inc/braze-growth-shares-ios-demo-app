@@ -33,7 +33,7 @@ struct ContentCardData: Hashable {
   let contentCardId: String
   let contentCardClassType: ContentCardClassType
   let createdAt: Double
-  let isDismissable: Bool
+  let isDismissible: Bool
 }
 
 // MARK: - Equatable
@@ -48,10 +48,11 @@ extension ContentCardData: Equatable {
 ///
 ///Represents the keys in your Content Card key-value pairs.
 enum ContentCardKey: String {
+  // MARK: - Custom
   case idString
   case created
   case classType = "class_type"
-  case dismissable
+  case dismissible
   case extras
   case image
   case title
@@ -65,6 +66,16 @@ enum ContentCardKey: String {
   case detail = "tile_detail"
   case groupStyle = "group_style"
   case urlString
+  
+  // MARK: - Out of the Box
+  case backgroundColor = "background_color"
+  case borderColor = "border_color"
+  case borderWidth = "border_width"
+  case cornerRadius = "corner_radius"
+  case fontStyle = "font_style"
+  case labelColor = "label_color"
+  case linkColor = "link_color"
+  case unreadColor = "unread_color"
 }
 
 // MARK: - ContentCardClassType

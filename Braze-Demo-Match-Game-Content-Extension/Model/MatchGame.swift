@@ -1,4 +1,4 @@
-protocol MatchGameDelegate: class {
+protocol MatchGameDelegate: AnyObject {
   func cardsDidLoad(_ cards: [MatchCard])
   func cardsDidMatch(_ indicies: [Int], currentScore: Int)
   func cardsDidNotMatch(_ indicies: [Int], currentScore: Int)
