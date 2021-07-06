@@ -365,7 +365,7 @@
 		7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
 		7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDemo.xcdatamodel; sourceTree = "<group>"; };
 		7FBDD49424AD711F00EC0983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7FBDD49924AD711F00EC0983 /* New_Name.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = New_Name.plist; path = ../New_Name.plist; sourceTree = "<group>"; };
+		7FBDD49924AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		7FBDD49E24AD711F00EC0983 /* Braze-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoTests.swift; sourceTree = "<group>"; };
 		7FBDD4A424AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -787,7 +787,7 @@
 				7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */,
 				7F9DCBC324AD786A00E8D207 /* LaunchScreen.storyboard */,
 				7FBDD49424AD711F00EC0983 /* Assets.xcassets */,
-				7FBDD49924AD711F00EC0983 /* New_Name.plist */,
+				7FBDD49924AD711F00EC0983 /* Info.plist */,
 				7FBDD49124AD711E00EC0983 /* Braze-Demo.xcdatamodeld */,
 			);
 			path = SupportingFiles;
