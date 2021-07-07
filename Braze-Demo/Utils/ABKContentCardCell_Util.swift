@@ -62,14 +62,32 @@ extension ABKClassicContentCardCell {
     
     if let fontName = card.extras?[ContentCardKey.fontStyle.rawValue] as? String,
        !fontName.isEmpty {
-      titleLabel.font = UIFont(name: "Sailec-Bold", size: titleLabel.font.pointSize)
-      descriptionLabel.font = UIFont(name: "Sailec-Regular", size: descriptionLabel.font.pointSize)
-      linkLabel.font = UIFont(name: "Sailec-Medium", size: linkLabel.font.pointSize)
+      titleLabel.font = customBoldFont
+      descriptionLabel.font = customRegularFont
+      linkLabel.font = customMediumFont
     } else {
       titleLabel.font = ABKUIUtils.preferredFont(forTextStyle: .callout, weight: .bold)
       descriptionLabel.font = ABKUIUtils.preferredFont(forTextStyle: .footnote, weight: .regular)
       linkLabel.font = ABKUIUtils.preferredFont(forTextStyle: .footnote, weight: .medium)
     }
+  }
+  
+  var customBoldFont: UIFont {
+    let boldFont = UIFont(name: "Sailec-Bold", size: titleLabel.font.pointSize)!
+    let boldFontMetrics = UIFontMetrics(forTextStyle: .callout)
+    return boldFontMetrics.scaledFont(for: boldFont)
+  }
+  
+  var customRegularFont: UIFont {
+    let regularFont = UIFont(name: "Sailec-Regular", size: descriptionLabel.font.pointSize)!
+    let regularFontMetrics = UIFontMetrics(forTextStyle: .footnote)
+    return regularFontMetrics.scaledFont(for: regularFont)
+  }
+  
+  var customMediumFont: UIFont {
+    let mediumFont = UIFont(name: "Sailec-Medium", size: linkLabel.font.pointSize)!
+    let mediumFontMetrics = UIFontMetrics(forTextStyle: .footnote)
+    return mediumFontMetrics.scaledFont(for: mediumFont)
   }
 }
 
@@ -95,19 +113,38 @@ extension ABKCaptionedImageContentCardCell {
     
     if let fontName = card.extras?[ContentCardKey.fontStyle.rawValue] as? String,
        !fontName.isEmpty {
-      titleLabel.font = UIFont(name: "Sailec-Bold", size: titleLabel.font.pointSize)
-      descriptionLabel.font = UIFont(name: "Sailec-Regular", size: descriptionLabel.font.pointSize)
-      linkLabel.font = UIFont(name: "Sailec-Medium", size: linkLabel.font.pointSize)
+      titleLabel.font = customBoldFont
+      descriptionLabel.font = customRegularFont
+      linkLabel.font = customMediumFont
     } else {
       titleLabel.font = ABKUIUtils.preferredFont(forTextStyle: .callout, weight: .bold)
       descriptionLabel.font = ABKUIUtils.preferredFont(forTextStyle: .footnote, weight: .regular)
       linkLabel.font = ABKUIUtils.preferredFont(forTextStyle: .footnote, weight: .medium)
     }
   }
+  
+  var customBoldFont: UIFont {
+    let boldFont = UIFont(name: "Sailec-Bold", size: titleLabel.font.pointSize)!
+    let boldFontMetrics = UIFontMetrics(forTextStyle: .callout)
+    return boldFontMetrics.scaledFont(for: boldFont)
+  }
+  
+  var customRegularFont: UIFont {
+    let regularFont = UIFont(name: "Sailec-Regular", size: descriptionLabel.font.pointSize)!
+    let regularFontMetrics = UIFontMetrics(forTextStyle: .footnote)
+    return regularFontMetrics.scaledFont(for: regularFont)
+  }
+  
+  var customMediumFont: UIFont {
+    let mediumFont = UIFont(name: "Sailec-Medium", size: linkLabel.font.pointSize)!
+    let mediumFontMetrics = UIFontMetrics(forTextStyle: .footnote)
+    return mediumFontMetrics.scaledFont(for: mediumFont)
+  }
 }
 
 // MARK: Default UI
 fileprivate extension ABKBaseContentCardCell {
+  
   var BrazeCornerRadius: CGFloat {
     return 3
   }
