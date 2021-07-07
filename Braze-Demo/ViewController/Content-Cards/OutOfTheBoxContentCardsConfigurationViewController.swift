@@ -45,7 +45,8 @@ extension OutOfTheBoxContentCardsConfigurationViewController {
     stackView.addArrangedSubview(borderWidthView)
     
     let colorView: ColorConfigurationView = .fromNib()
-    colorView.configureView(borderColor: configurationData.color.border, backgroundColor: configurationData.color.background, labelColor: configurationData.color.label, linkColor: configurationData.color.link, unreadColor: configurationData.color.unread, delegate: self)
+    let colorViewAttributes = [("Border", configurationData.color.border), ("Background", configurationData.color.background), ("Label", configurationData.color.label), ("Link", configurationData.color.link), ("Unread", configurationData.color.link)]
+    colorView.configureView(viewAttributes: colorViewAttributes, delegate: self)
     stackView.addArrangedSubview(colorView)
     
     let spacerView = UIView()
