@@ -28,10 +28,18 @@ class OutOfTheBoxContentCardsConfigurationViewController: UIViewController {
   }
 }
 
+// MARK: - View Lifecycle
 extension OutOfTheBoxContentCardsConfigurationViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    configureStackView()
+  }
+}
+
+// MARK: - Private
+private extension OutOfTheBoxContentCardsConfigurationViewController {
+  func configureStackView() {
     let fontView: FontConfigurationView = .fromNib()
     fontView.configureView(delegate: self)
     stackView.addArrangedSubview(fontView)
@@ -53,22 +61,38 @@ extension OutOfTheBoxContentCardsConfigurationViewController {
     spacerView.heightAnchor.constraint(equalToConstant: 70).isActive = true
     stackView.addArrangedSubview(spacerView)
   }
+  
+  func handleApiTriggeredCampaignKey(_ userId: String) {
+    let campaignId = campaignType.campaignId
+    let campaignAPIKey = "YOUR-CAMPAIGN-API-KEY"
+    let triggerProperties = ["font_style": configurationData.fontStyle,
+                             "corner_radius": String(configurationData.cornerRadius),
+                             "border_width": String(configurationData.borderWidth),
+                             "border_color": configurationData.color.border.hexValue(),
+                             "background_color": configurationData.color.background.hexValue(),
+                             "label_color": configurationData.color.label.hexValue(),
+                             "link_color": configurationData.color.link.hexValue(),
+                             "unread_color": configurationData.color.unread.hexValue()]
+    
+    APIRequestBuilder.make(campaignId: campaignId, campaignAPIKey: campaignAPIKey, userId: userId, triggerProperties) { [weak self] alertTitle in
+      guard let self = self else { return }
+      
+      DispatchQueue.main.async {
+        self.presentAlert(title: alertTitle, message: nil)
+      }
+    }
+  }
 }
 
 // MARK: Color Box Action Delegate
 extension OutOfTheBoxContentCardsConfigurationViewController: ColorBoxActionDelegate {
   func colorDidUpdate(newColor: UIColor, tag: Int) {
     switch tag {
-    case 0:
-      configurationData.color.border = newColor
-    case 1:
-      configurationData.color.background = newColor
-    case 2:
-      configurationData.color.label = newColor
-    case 3:
-      configurationData.color.link = newColor
-    case 4:
-      configurationData.color.unread = newColor
+    case 0: configurationData.color.border = newColor
+    case 1: configurationData.color.background = newColor
+    case 2: configurationData.color.label = newColor
+    case 3: configurationData.color.link = newColor
+    case 4: configurationData.color.unread = newColor
     default: break
     }
   }
@@ -92,45 +116,9 @@ extension OutOfTheBoxContentCardsConfigurationViewController: FontActionDelegate
 extension OutOfTheBoxContentCardsConfigurationViewController: SliderActionDelegate {
   func sliderDidUpdate(newValue: Float, tag: Int) {
     switch tag {
-    case 0:
-      configurationData.cornerRadius = newValue
-    case 1:
-      configurationData.borderWidth = newValue
+    case 0: configurationData.cornerRadius = newValue
+    case 1: configurationData.borderWidth = newValue
     default: break
-    }
-  }
-}
-
-// MARK: - Private
-private extension OutOfTheBoxContentCardsConfigurationViewController {
-  func handleApiTriggeredCampaignKey(_ userId: String) {
-    let campaignId = campaignType.campaignId
-    let campaignAPIKey = "YOUR-CAMPAIGN-API-KEY"
-    let triggerProperties = ["font_style": configurationData.fontStyle,
-                             "corner_radius": String(configurationData.cornerRadius),
-                             "border_width": String(configurationData.borderWidth),
-                             "border_color": configurationData.color.border.hexValue(),
-                             "background_color": configurationData.color.background.hexValue(),
-                             "label_color": configurationData.color.label.hexValue(),
-                             "link_color": configurationData.color.link.hexValue(),
-                             "unread_color": configurationData.color.unread.hexValue()]
-    
-    let request = APITriggeredCampaignRequest(campaignId: campaignId, campaignAPIKey: campaignAPIKey, userId: userId, triggerProperties: triggerProperties)
-    
-    APIURLRequest().make(request: request) { [weak self] (result: APIResult<[String:String]>) in
-      guard let self = self else { return }
-      
-      var alertTitle = ""
-      switch result {
-      case .success(let response):
-        alertTitle = response.description
-      case .failure(let title):
-        alertTitle = title
-      }
-      
-      DispatchQueue.main.async {
-        self.presentAlert(title: alertTitle, message: nil)
-      }
     }
   }
 }

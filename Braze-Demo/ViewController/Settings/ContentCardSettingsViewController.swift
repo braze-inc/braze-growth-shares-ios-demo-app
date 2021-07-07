@@ -66,18 +66,8 @@ private extension ContentCardSettingsViewController {
                                  "tile_tags": "Currents",
                                  "tile_deeplink": ""]
     
-    let request = APITriggeredCampaignRequest(campaignId: tileCampaignId, campaignAPIKey: tileCampaignAPIKey, userId: userId, triggerProperties: tileTriggerProperties)
-    
-    APIURLRequest().make(request: request) { [weak self] (result: APIResult<[String:String]>) in
+    APIRequestBuilder.make(campaignId: tileCampaignId, campaignAPIKey: tileCampaignAPIKey, userId: userId, tileTriggerProperties) { [weak self] alertTitle in
       guard let self = self else { return }
-      
-      var alertTitle = ""
-      switch result {
-      case .success(let response):
-        alertTitle = response.description
-      case .failure(let title):
-        alertTitle = title
-      }
       
       DispatchQueue.main.async {
         self.presentAlert(title: alertTitle, message: nil)

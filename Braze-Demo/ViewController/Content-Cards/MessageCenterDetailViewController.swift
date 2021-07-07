@@ -100,7 +100,7 @@ private extension MessageCenterDetailViewController {
     let parameters = ["content_block_id": contentBlockId]
     let request = ContentBlockRequest(contentBlockAPIKey: contentBlockAPIKey, parameters: parameters)
     
-    APIURLRequest().make(request: request) { (result: APIResult<ContentBlock>) in
+    APIURLRequest.make(request: request) { (result: APIResult<ContentBlock>) in
       switch result {
       case .success(let contentBlock):
         DispatchQueue.main.async {

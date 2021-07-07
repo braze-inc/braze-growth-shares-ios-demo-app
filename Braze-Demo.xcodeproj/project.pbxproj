@@ -193,6 +193,7 @@
 		7FDBFE0326900738000C1244 /* OutOfTheBoxConfigurationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */; };
 		7FDBFE052690B2A2000C1244 /* FontConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */; };
 		7FDBFE072690B2EE000C1244 /* FontConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */; };
+		7FDBFE0A26962E70000C1244 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE0926962E70000C1244 /* APIRequestBuilder.swift */; };
 		7FDFA26724B688E900E3B132 /* MessageCenterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */; };
 		7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */; };
 		7FDFA26B24B68CA800E3B132 /* MessageCenterDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */; };
@@ -422,6 +423,7 @@
 		7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxConfigurationData.swift; sourceTree = "<group>"; };
 		7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfigurationView.swift; sourceTree = "<group>"; };
 		7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontConfigurationView.xib; sourceTree = "<group>"; };
+		7FDBFE0926962E70000C1244 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
 		7FDFA26624B688E900E3B132 /* MessageCenterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterViewController.swift; sourceTree = "<group>"; };
 		7FDFA26824B68C9C00E3B132 /* ShoppingCartDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartDataSource.swift; sourceTree = "<group>"; };
 		7FDFA26A24B68CA800E3B132 /* MessageCenterDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCenterDataSource.swift; sourceTree = "<group>"; };
@@ -800,6 +802,7 @@
 				7FE763ED24CBCDB10017C5D2 /* ContentOperationQueue.swift */,
 				7F8FFC1924EC7EB50082C71B /* APIRequest.swift */,
 				7F8AF0132525353D006F478B /* API Requests */,
+				7FDBFE0926962E70000C1244 /* APIRequestBuilder.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1542,6 +1545,7 @@
 				7F87D4AA24B0500200ED0A86 /* BrazeSettingsViewController.swift in Sources */,
 				7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */,
 				7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */,
+				7FDBFE0A26962E70000C1244 /* APIRequestBuilder.swift in Sources */,
 				7FE763F224CD246A0017C5D2 /* Decimal_Util.swift in Sources */,
 				7FBDD48B24AD711E00EC0983 /* SceneDelegate.swift in Sources */,
 				7F12B45A25E7183C003AD64F /* PushNotificationData.swift in Sources */,
