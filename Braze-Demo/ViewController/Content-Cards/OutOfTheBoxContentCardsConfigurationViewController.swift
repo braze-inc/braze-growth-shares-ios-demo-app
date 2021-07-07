@@ -88,8 +88,8 @@ private extension OutOfTheBoxContentCardsConfigurationViewController {
 extension OutOfTheBoxContentCardsConfigurationViewController: ColorBoxActionDelegate {
   func colorDidUpdate(newColor: UIColor, tag: Int) {
     switch tag {
-    case 0: configurationData.color.border = newColor
-    case 1: configurationData.color.background = newColor
+    case 0: configurationData.color.background = newColor
+    case 1: configurationData.color.border = newColor
     case 2: configurationData.color.label = newColor
     case 3: configurationData.color.link = newColor
     case 4: configurationData.color.unread = newColor
