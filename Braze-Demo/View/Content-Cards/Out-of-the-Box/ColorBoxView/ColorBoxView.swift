@@ -32,10 +32,6 @@ class ColorBoxView: UIView {
     titleLabel.text = title
     colorButton.backgroundColor = color
   }
-  
-  func setColor(_ color: UIColor) {
-    
-  }
 }
 
 // MARK: Color Picker Delegate
