@@ -6,7 +6,6 @@ protocol FontActionDelegate: AnyObject {
 
 class FontConfigurationView: UIView {
   
-  
   // MARK: - Actions
   @IBAction func fontDidChange(_ sender: UISegmentedControl) {
     let fontStyle = sender.selectedSegmentIndex == 0 ? "" : "Custom"

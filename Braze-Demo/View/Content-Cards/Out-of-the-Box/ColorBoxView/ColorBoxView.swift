@@ -24,7 +24,10 @@ class ColorBoxView: UIView {
     
     titleLabel.adjustsFontSizeToFitWidth = true
   }
-  
+}
+
+// MARK: - Public
+extension ColorBoxView {
   func configureView(_ title: String?, color: UIColor?, tag: Int, delegate: ColorBoxActionDelegate? = nil) {
     self.delegate = delegate
     self.tag = tag

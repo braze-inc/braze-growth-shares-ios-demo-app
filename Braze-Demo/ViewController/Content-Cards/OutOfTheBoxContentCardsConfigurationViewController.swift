@@ -3,7 +3,7 @@ import UIKit
 class OutOfTheBoxContentCardsConfigurationViewController: UIViewController {
   
   // MARK: - Variables
-  private var configurationData = OutOfTheBoxConfigurationData()
+  private var configurationData = OutOfTheBoxContentCardConfigurationData()
   private var campaignType: OutOfTheBoxContentCardCampaignType {
     return OutOfTheBoxContentCardCampaignType(rawValue: segmentedControl.selectedSegmentIndex) ?? .banner
   }
@@ -53,7 +53,7 @@ private extension OutOfTheBoxContentCardsConfigurationViewController {
     stackView.addArrangedSubview(borderWidthView)
     
     let colorView: ColorConfigurationView = .fromNib()
-    let colorViewAttributes = [("Border", configurationData.color.border), ("Background", configurationData.color.background), ("Label", configurationData.color.label), ("Link", configurationData.color.link), ("Unread", configurationData.color.link)]
+    let colorViewAttributes = [("Background", configurationData.color.background), ("Border", configurationData.color.border), ("Label", configurationData.color.label), ("Link", configurationData.color.link), ("Unread", configurationData.color.link)]
     colorView.configureView(viewAttributes: colorViewAttributes, delegate: self)
     stackView.addArrangedSubview(colorView)
     

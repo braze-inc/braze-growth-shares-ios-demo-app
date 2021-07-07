@@ -1,6 +1,6 @@
 import UIKit
 
-struct OutOfTheBoxConfigurationData {
+struct OutOfTheBoxContentCardConfigurationData {
   
   var fontStyle: String = ""
   var cornerRadius: Float = 3
@@ -8,8 +8,8 @@ struct OutOfTheBoxConfigurationData {
   var color = ColorConfigurationData()
   
   struct ColorConfigurationData {
+    var background: UIColor = .white
     var border: UIColor = .black
-    var background: UIColor = .systemBackground
     var label: UIColor = .label
     var link: UIColor = .link
     var unread: UIColor = .link

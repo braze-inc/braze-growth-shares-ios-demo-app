@@ -190,7 +190,7 @@
 		7FDBFDFB268E6C8C000C1244 /* CustomClassicContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDFA268E6C8C000C1244 /* CustomClassicContentCardCell.swift */; };
 		7FDBFDFD268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFDFC268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift */; };
 		7FDBFE01268FD47B000C1244 /* ABKContentCardCell_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE00268FD47B000C1244 /* ABKContentCardCell_Util.swift */; };
-		7FDBFE0326900738000C1244 /* OutOfTheBoxConfigurationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */; };
+		7FDBFE0326900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE0226900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift */; };
 		7FDBFE052690B2A2000C1244 /* FontConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */; };
 		7FDBFE072690B2EE000C1244 /* FontConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */; };
 		7FDBFE0A26962E70000C1244 /* APIRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDBFE0926962E70000C1244 /* APIRequestBuilder.swift */; };
@@ -420,7 +420,7 @@
 		7FDBFDFA268E6C8C000C1244 /* CustomClassicContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassicContentCardCell.swift; sourceTree = "<group>"; };
 		7FDBFDFC268E6FDD000C1244 /* CustomClassicImageContentCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomClassicImageContentCardCell.swift; sourceTree = "<group>"; };
 		7FDBFE00268FD47B000C1244 /* ABKContentCardCell_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABKContentCardCell_Util.swift; sourceTree = "<group>"; };
-		7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxConfigurationData.swift; sourceTree = "<group>"; };
+		7FDBFE0226900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfTheBoxContentCardConfigurationData.swift; sourceTree = "<group>"; };
 		7FDBFE042690B2A2000C1244 /* FontConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontConfigurationView.swift; sourceTree = "<group>"; };
 		7FDBFE062690B2EE000C1244 /* FontConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontConfigurationView.xib; sourceTree = "<group>"; };
 		7FDBFE0926962E70000C1244 /* APIRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequestBuilder.swift; sourceTree = "<group>"; };
@@ -523,7 +523,7 @@
 				7FCFB99424CA383C001AA381 /* Message.swift */,
 				7F9DCBD124AD7A4F00E8D207 /* Tile.swift */,
 				7FCFB98024C55177001AA381 /* ContentCardData.swift */,
-				7FDBFE0226900738000C1244 /* OutOfTheBoxConfigurationData.swift */,
+				7FDBFE0226900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift */,
 			);
 			path = "Content-Cards";
 			sourceTree = "<group>";
@@ -1523,7 +1523,7 @@
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
 				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
-				7FDBFE0326900738000C1244 /* OutOfTheBoxConfigurationData.swift in Sources */,
+				7FDBFE0326900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift in Sources */,
 				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,

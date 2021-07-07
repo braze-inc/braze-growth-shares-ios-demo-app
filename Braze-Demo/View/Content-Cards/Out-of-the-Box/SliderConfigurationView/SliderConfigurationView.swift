@@ -7,9 +7,9 @@ protocol SliderActionDelegate: AnyObject {
 class SliderConfigurationView: UIView {
   
   // MARK: - Outlets
-  @IBOutlet weak var titleLabel: UILabel!
-  @IBOutlet weak var valueLabel: UILabel!
-  @IBOutlet weak var slider: UISlider!
+  @IBOutlet private weak var titleLabel: UILabel!
+  @IBOutlet private weak var valueLabel: UILabel!
+  @IBOutlet private weak var slider: UISlider!
   
   // MARK: - Actions
   @IBAction func sliderDidDrag(_ sender: UISlider) {
@@ -24,7 +24,10 @@ class SliderConfigurationView: UIView {
   
   // MARK: - Variables
   weak var delegate: SliderActionDelegate?
-  
+}
+
+// MARK: - Public
+extension SliderConfigurationView {
   func configureView(_ title: String, value: Float = 0, minValue: Float = 0, maxValue: Float, tag: Int, delegate: SliderActionDelegate? = nil) {
     self.delegate = delegate
     self.tag = tag
