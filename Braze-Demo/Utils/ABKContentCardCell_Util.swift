@@ -2,27 +2,19 @@ import AppboyUI
 
 // MARK: - ABK Base
 extension ABKBaseContentCardCell {
-  
-  var BrazeCornerRadius: CGFloat {
-    return 3
-  }
-  var BrazeBorderWidth: CGFloat {
-    return 0
-  }
-  
   func applyToBaseView(_ card: ABKContentCard) {
     if let backgroundColor = card.extras?[ContentCardKey.backgroundColor.rawValue] as? String,
        let backgroundColorValue = backgroundColor.colorValue() {
       rootView.backgroundColor = backgroundColorValue
     } else {
-      rootView.backgroundColor = .systemBackground
+      rootView.backgroundColor = BrazeBackgroundColor
     }
     
     if let borderColor = card.extras?[ContentCardKey.borderColor.rawValue] as? String,
        let borderColorValue = borderColor.colorValue() {
       rootView.layer.borderColor = borderColorValue.cgColor
     } else {
-      rootView.layer.borderColor = UIColor.black.cgColor
+      rootView.layer.borderColor = BrazeBorderColor.cgColor
     }
     
     if let cornerRadiusString = card.extras?[ContentCardKey.cornerRadius.rawValue] as? String,
@@ -43,7 +35,7 @@ extension ABKBaseContentCardCell {
        let unreadColorValue = unreadColor.colorValue() {
       unviewedLineViewColor = unreadColorValue
     } else {
-      unviewedLineViewColor = self.tintColor
+      unviewedLineViewColor = BrazeUnreadColor
     }
   }
 }
@@ -57,15 +49,15 @@ extension ABKClassicContentCardCell {
       titleLabel.textColor = labelColorValue
       descriptionLabel.textColor = labelColorValue
     } else {
-      titleLabel.textColor = .label
-      descriptionLabel.textColor = .label
+      titleLabel.textColor = BrazeLabelColor
+      descriptionLabel.textColor = BrazeLabelColor
     }
     
     if let linkColor = card.extras?[ContentCardKey.linkColor.rawValue] as? String,
        let linkColorValue = linkColor.colorValue() {
       linkLabel.textColor = linkColorValue
     } else {
-      linkLabel.textColor = .link
+      linkLabel.textColor = BrazeLinkColor
     }
     
     if let fontName = card.extras?[ContentCardKey.fontStyle.rawValue] as? String,
@@ -90,15 +82,15 @@ extension ABKCaptionedImageContentCardCell {
       titleLabel.textColor = labelColorValue
       descriptionLabel.textColor = labelColorValue
     } else {
-      titleLabel.textColor = .label
-      descriptionLabel.textColor = .label
+      titleLabel.textColor = BrazeLabelColor
+      descriptionLabel.textColor = BrazeLabelColor
     }
     
     if let linkColor = card.extras?[ContentCardKey.linkColor.rawValue] as? String,
        let linkColorValue = linkColor.colorValue() {
       linkLabel.textColor = linkColorValue
     } else {
-      linkLabel.textColor = .link
+      linkLabel.textColor = BrazeLinkColor
     }
     
     if let fontName = card.extras?[ContentCardKey.fontStyle.rawValue] as? String,
@@ -111,5 +103,35 @@ extension ABKCaptionedImageContentCardCell {
       descriptionLabel.font = ABKUIUtils.preferredFont(forTextStyle: .footnote, weight: .regular)
       linkLabel.font = ABKUIUtils.preferredFont(forTextStyle: .footnote, weight: .medium)
     }
+  }
+}
+
+// MARK: Default UI
+fileprivate extension ABKBaseContentCardCell {
+  var BrazeCornerRadius: CGFloat {
+    return 3
+  }
+  var BrazeBorderWidth: CGFloat {
+    return 0
+  }
+  
+  var BrazeBackgroundColor: UIColor {
+    return .systemBackground
+  }
+
+  var BrazeLabelColor: UIColor {
+    return .label
+  }
+  
+  var BrazeLinkColor: UIColor {
+    return .link
+  }
+  
+  var BrazeUnreadColor: UIColor {
+    return self.tintColor
+  }
+  
+  var BrazeBorderColor: UIColor {
+    return .black
   }
 }
