@@ -59,12 +59,12 @@ extension Group {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
     guard let idString = metaData[.idString] as? String,
           let createdAt = metaData[.created] as? Double,
-          let isDismissable = metaData[.dismissable] as? Bool,
+          let isDismissible = metaData[.dismissible] as? Bool,
           let message = metaData[.cardDescription] as? String,
           let extras = metaData[.extras] as? [AnyHashable: Any]
     else { return nil }
     
-    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
+    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
     
     let styleString = extras[ContentCardKey.groupStyle.rawValue] as? String ?? ""
     

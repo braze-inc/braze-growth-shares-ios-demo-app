@@ -27,4 +27,24 @@ extension String {
     
     return attributedString
   }
+  
+  func colorValue(alpha: CGFloat = 1.0) -> UIColor? {
+    if hasPrefix("#") {
+      let start = index(startIndex, offsetBy: 1)
+      let hexColor = String(self[start...])
+
+      let scanner = Scanner(string: hexColor)
+      var hexNumber: UInt64 = 0
+
+      if scanner.scanHexInt64(&hexNumber) {
+        let r = CGFloat((hexNumber & 0xFF0000) >> 16) / 255
+        let g = CGFloat((hexNumber & 0x00FF00) >> 8) / 255
+        let b = CGFloat(hexNumber & 0x0000FF) / 255
+
+        return UIColor(red: r, green: g, blue: b, alpha: alpha)
+      }
+    }
+    
+    return nil
+  }
 }

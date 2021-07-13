@@ -1,6 +1,6 @@
 import UIKit
 
-protocol GestureViewEventDelegate: class {
+protocol GestureViewEventDelegate: AnyObject {
   func viewDidTap()
 }
 

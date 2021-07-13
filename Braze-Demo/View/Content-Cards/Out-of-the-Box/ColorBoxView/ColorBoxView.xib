@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="sGm-Ab-bBR" customClass="ColorBoxView" customModule="Braze_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="101" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXf-A7-2gz">
+                    <rect key="frame" x="29" y="10" width="43" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qrx-Pc-p4n">
+                    <rect key="frame" x="0.0" y="35" width="101" height="85"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="ghk-au-hry"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                            <integer key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="boxDidPress:" destination="sGm-Ab-bBR" eventType="touchUpInside" id="Nl4-Ax-Y7a"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="3w3-q5-Dlh"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="qrx-Pc-p4n" firstAttribute="leading" secondItem="sGm-Ab-bBR" secondAttribute="leading" id="2jF-x1-7LV"/>
+                <constraint firstItem="qrx-Pc-p4n" firstAttribute="top" secondItem="fXf-A7-2gz" secondAttribute="bottom" constant="5" id="8Xc-EX-NNZ"/>
+                <constraint firstItem="fXf-A7-2gz" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sGm-Ab-bBR" secondAttribute="leading" constant="5" id="BTm-Gw-KXn"/>
+                <constraint firstItem="fXf-A7-2gz" firstAttribute="centerX" secondItem="sGm-Ab-bBR" secondAttribute="centerX" id="MGF-KA-s5r"/>
+                <constraint firstAttribute="bottom" secondItem="qrx-Pc-p4n" secondAttribute="bottom" id="Mqs-Uj-PRh"/>
+                <constraint firstAttribute="trailing" secondItem="qrx-Pc-p4n" secondAttribute="trailing" id="pRB-dd-zog"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fXf-A7-2gz" secondAttribute="trailing" constant="5" id="tdx-ID-Kvc"/>
+                <constraint firstItem="fXf-A7-2gz" firstAttribute="top" secondItem="sGm-Ab-bBR" secondAttribute="top" constant="10" id="xc1-4G-h6F"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="colorButton" destination="qrx-Pc-p4n" id="R3S-E0-L9F"/>
+                <outlet property="titleLabel" destination="fXf-A7-2gz" id="BLs-6l-Jfq"/>
+            </connections>
+            <point key="canvasLocation" x="107" y="67"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

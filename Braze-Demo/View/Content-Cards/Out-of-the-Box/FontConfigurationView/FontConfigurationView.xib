@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9wB-tK-PGN" customClass="FontConfigurationView" customModule="Braze_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWl-iA-9Pc">
+                    <rect key="frame" x="189" y="15" width="36" height="19"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="daz-hh-0ts">
+                    <rect key="frame" x="107" y="44" width="200" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Mdy-2E-SU6"/>
+                        <constraint firstAttribute="height" constant="31" id="RLg-r3-IIA"/>
+                    </constraints>
+                    <segments>
+                        <segment title="System"/>
+                        <segment title="Custom"/>
+                    </segments>
+                    <connections>
+                        <action selector="fontDidChange:" destination="9wB-tK-PGN" eventType="valueChanged" id="ZK9-K4-eJS"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="KbS-JJ-b3s"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="FWl-iA-9Pc" firstAttribute="top" secondItem="9wB-tK-PGN" secondAttribute="top" constant="15" id="EUQ-Jy-ggP"/>
+                <constraint firstItem="daz-hh-0ts" firstAttribute="top" secondItem="FWl-iA-9Pc" secondAttribute="bottom" constant="10" id="PS4-1h-6Tc"/>
+                <constraint firstItem="daz-hh-0ts" firstAttribute="centerX" secondItem="FWl-iA-9Pc" secondAttribute="centerX" id="QsL-a8-Vy5"/>
+                <constraint firstItem="KbS-JJ-b3s" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FWl-iA-9Pc" secondAttribute="trailing" constant="20" id="kaD-cr-nHa"/>
+                <constraint firstItem="KbS-JJ-b3s" firstAttribute="bottom" secondItem="daz-hh-0ts" secondAttribute="bottom" constant="15" id="ly8-5V-8WO"/>
+                <constraint firstItem="FWl-iA-9Pc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KbS-JJ-b3s" secondAttribute="leading" constant="20" id="tTg-ST-gPx"/>
+                <constraint firstItem="FWl-iA-9Pc" firstAttribute="centerX" secondItem="KbS-JJ-b3s" secondAttribute="centerX" id="udo-ZC-1De"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-222" y="-38"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

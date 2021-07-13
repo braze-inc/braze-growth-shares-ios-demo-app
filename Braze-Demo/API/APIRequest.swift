@@ -51,7 +51,7 @@ enum APIResult<T> {
 }
 
 struct APIURLRequest {
-  func make<T: Decodable>(request: APIRequest, completion: @escaping (APIResult<T>) -> ()) {
+  static func make<T: Decodable>(request: APIRequest, completion: @escaping (APIResult<T>) -> ()) {
     let components = request.urlComponents
     var urlRequest = URLRequest(url: components.url!)
     urlRequest.httpMethod = request.method.rawValue

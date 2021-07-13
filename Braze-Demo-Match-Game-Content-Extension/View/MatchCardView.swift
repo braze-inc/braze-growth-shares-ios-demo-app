@@ -1,6 +1,6 @@
 import UIKit
 
-protocol MatchCardViewDelegate: class {
+protocol MatchCardViewDelegate: AnyObject {
   func cardTapped(at index: Int)
 }
 

@@ -1,6 +1,6 @@
 import UIKit
 
-protocol SwitchViewDelegate: class {
+protocol SwitchViewDelegate: AnyObject {
   func cellDidSwitch(tag: Int)
 }
 

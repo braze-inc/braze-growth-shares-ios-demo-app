@@ -45,7 +45,7 @@ extension Tile {
   init?(metaData: [ContentCardKey: Any], classType contentCardClassType: ContentCardClassType) {
     guard let idString = metaData[.idString] as? String,
       let createdAt = metaData[.created] as? Double,
-      let isDismissable = metaData[.dismissable] as? Bool,
+      let isDismissible = metaData[.dismissible] as? Bool,
       let extras = metaData[.extras] as? [AnyHashable: Any],
       let title  = extras["tile_title"] as? String,
       let imageUrl = extras["tile_image"] as? String
@@ -59,7 +59,7 @@ extension Tile {
     let detail = extras[ContentCardKey.detail.rawValue] as? String ?? ""
     let tags = extras[ContentCardKey.tags.rawValue] as? String ?? ""
     
-    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissable: isDismissable)
+    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
     
     self.init(contentCardData: contentCardData, id: -1, title: title, detail: detail, price: price, tags: tags.formattedTags, imageUrl: imageUrl)
   }

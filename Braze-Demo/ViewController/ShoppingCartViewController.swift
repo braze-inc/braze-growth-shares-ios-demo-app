@@ -1,6 +1,6 @@
 import UIKit
 
-protocol ShoppingCartActionDelegate: class {
+protocol ShoppingCartActionDelegate: AnyObject {
   func emptiedCart()
 }
 

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qdi-YF-CAl" customClass="SliderConfigurationView" customModule="Braze_Demo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M4J-V1-LIi" userLabel="Header View">
+                    <rect key="frame" x="151.5" y="15" width="111" height="20.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beX-nh-InC">
+                            <rect key="frame" x="0.0" y="0.0" width="50.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ipsum" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtU-3w-8oZ" userLabel="Value Label">
+                            <rect key="frame" x="60.5" y="0.0" width="50.5" height="20.5"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="beX-nh-InC" secondAttribute="bottom" id="9I5-im-57m"/>
+                        <constraint firstItem="beX-nh-InC" firstAttribute="top" secondItem="M4J-V1-LIi" secondAttribute="top" id="As8-O2-5Rf"/>
+                        <constraint firstItem="beX-nh-InC" firstAttribute="leading" secondItem="M4J-V1-LIi" secondAttribute="leading" id="EDg-hh-H20"/>
+                        <constraint firstItem="gtU-3w-8oZ" firstAttribute="top" secondItem="M4J-V1-LIi" secondAttribute="top" id="GXj-p1-aPB"/>
+                        <constraint firstAttribute="trailing" secondItem="gtU-3w-8oZ" secondAttribute="trailing" id="awm-JP-py5"/>
+                        <constraint firstAttribute="bottom" secondItem="gtU-3w-8oZ" secondAttribute="bottom" id="pzg-Hm-K2C"/>
+                        <constraint firstItem="gtU-3w-8oZ" firstAttribute="leading" secondItem="beX-nh-InC" secondAttribute="trailing" constant="10" id="vnX-io-5Uu"/>
+                    </constraints>
+                </view>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zM2-rH-7aA">
+                    <rect key="frame" x="18" y="40.5" width="378" height="55.5"/>
+                    <connections>
+                        <action selector="sliderDidDrag:" destination="qdi-YF-CAl" eventType="valueChanged" id="4JA-ih-doa"/>
+                        <action selector="sliderDidEndDrag:" destination="qdi-YF-CAl" eventType="touchUpOutside" id="CIt-VM-QDj"/>
+                        <action selector="sliderDidEndDrag:" destination="qdi-YF-CAl" eventType="touchUpInside" id="hYr-Mq-XhC"/>
+                    </connections>
+                </slider>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="DQc-1U-jDV"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="DQc-1U-jDV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M4J-V1-LIi" secondAttribute="trailing" constant="20" id="9t1-JF-1ta"/>
+                <constraint firstAttribute="bottom" secondItem="zM2-rH-7aA" secondAttribute="bottom" constant="5" id="DEO-AT-1q6"/>
+                <constraint firstItem="zM2-rH-7aA" firstAttribute="leading" secondItem="DQc-1U-jDV" secondAttribute="leading" constant="20" id="FQc-Sw-g21"/>
+                <constraint firstItem="M4J-V1-LIi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="DQc-1U-jDV" secondAttribute="leading" constant="20" id="GYk-c9-V1x"/>
+                <constraint firstItem="zM2-rH-7aA" firstAttribute="top" secondItem="M4J-V1-LIi" secondAttribute="bottom" constant="5" id="NkL-57-py2"/>
+                <constraint firstItem="M4J-V1-LIi" firstAttribute="centerX" secondItem="DQc-1U-jDV" secondAttribute="centerX" id="ZeK-RW-a2y"/>
+                <constraint firstItem="M4J-V1-LIi" firstAttribute="top" secondItem="qdi-YF-CAl" secondAttribute="top" constant="15" id="eR0-EX-Lh1"/>
+                <constraint firstItem="DQc-1U-jDV" firstAttribute="trailing" secondItem="zM2-rH-7aA" secondAttribute="trailing" constant="20" id="tC5-gB-5Lt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="slider" destination="zM2-rH-7aA" id="jHL-7g-ZU0"/>
+                <outlet property="titleLabel" destination="beX-nh-InC" id="C8g-v8-4gH"/>
+                <outlet property="valueLabel" destination="gtU-3w-8oZ" id="g3k-Ob-Iyq"/>
+            </connections>
+            <point key="canvasLocation" x="-222" y="-38"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

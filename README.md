@@ -74,3 +74,8 @@ Custom interfaces can be added to Push Notifications with the help of Notificati
 4. For an API Triggered Campaign:
     - Replace "YOUR-CAMPAIGN-API-KEY" with your Braze campaign API key [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/Settings/ContentCardSettingsViewController.swift#L61)
     - Replace "YOUR-CAMPAIGN-ID" with your Braze campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/ViewController/Settings/ContentCardSettingsViewController.swift#L60)
+5. For Out-of-the-Box Content Cards:
+    - Replace "YOUR-BANNER-CAMPAIGN-ID" with your Banner Campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/OutOfTheBoxContentCardConfigurationData.swift#L34)
+    - Replace "YOUR-CAPTIONED-IMAGE-CAMPAIGN-ID" with your Captioned Image Campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/OutOfTheBoxContentCardConfigurationData.swift#L35)
+    - Replace "YOUR-CLASSIC-CAMPAIGN-ID" with your Classic Campaign ID [here](https://github.com/braze-inc/braze-growth-shares-ios-demo-app/blob/master/Braze-Demo/Model/Content-Cards/OutOfTheBoxContentCardConfigurationData.swift#L36)
+

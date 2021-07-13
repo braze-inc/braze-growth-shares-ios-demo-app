@@ -7,7 +7,7 @@ protocol CollectionViewDataSourceProvider: UICollectionViewDelegate {
   func resetDataSource()
 }
 
-protocol CellActionDelegate: class {
+protocol CellActionDelegate: AnyObject {
   func cellTapped(with data: Any?)
 }
 

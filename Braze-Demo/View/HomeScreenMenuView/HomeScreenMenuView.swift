@@ -1,6 +1,6 @@
 import UIKit
 
-protocol HomeScreenMenuViewActionDelegate: class {
+protocol HomeScreenMenuViewActionDelegate: AnyObject {
   func menuButtonPressed(atIndex index: Int)
 }
 
