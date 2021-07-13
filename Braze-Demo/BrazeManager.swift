@@ -265,7 +265,7 @@ private extension BrazeManager {
         metaData[.cardDescription] = classic.cardDescription
         metaData[.image] = classic.image
       default:
-        break
+        print("Invalid type from an ABKContentCard: \(card)")
       }
       
       metaData[.idString] = card.idString
