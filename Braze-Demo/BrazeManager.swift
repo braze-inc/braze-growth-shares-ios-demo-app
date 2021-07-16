@@ -10,6 +10,7 @@ class BrazeManager: NSObject {
 #warning("Please enter your API key above")
   private var appboyOptions: [String: Any] {
     return [
+      ABKEndpointKey: endpointToUse,
       ABKIDFADelegateKey: BrazeIDFADelegate(),
       ABKMinimumTriggerTimeIntervalKey: 0,
       ABKPushStoryAppGroupKey : "group.com.braze.book-demo"
@@ -18,7 +19,7 @@ class BrazeManager: NSObject {
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?){
         
-    Appboy.start(withApiKey: apiKey, in: application, withLaunchOptions: launchOptions, withAppboyOptions: appboyOptions)
+    Appboy.start(withApiKey: apiKeyToUse, in: application, withLaunchOptions: launchOptions, withAppboyOptions: appboyOptions)
     
     // MARK: - Push Notifications
     let options: UNAuthorizationOptions = [.alert, .sound, .badge]
@@ -432,5 +433,23 @@ private extension BrazeManager {
     }
     
     remoteStorage.removeObject(forKey: .pendingUserAttributes)
+  }
+}
+
+// MARK: - Environment
+extension BrazeManager {
+  var apiKeyToUse: String {
+    let overrideApiKey = RemoteStorage().retrieve(forKey: .overrideApiKey) as? String
+    return overrideApiKey ?? apiKey
+  }
+  
+  var endpointToUse: String {
+    let overrideEndpoint = RemoteStorage().retrieve(forKey: .overrideEndpoint) as? String
+    return overrideEndpoint ?? endpoint ?? ""
+  }
+  
+  private var endpoint: String? {
+    guard let appboyPlist = Bundle.main.infoDictionary?["Braze"] as? [AnyHashable: Any] else { return nil }
+    return appboyPlist["Endpoint"] as? String
   }
 }

@@ -18,9 +18,7 @@ protocol APIRequest {
 
 extension APIRequest {
   var hostname: String? {
-    guard let appboyPlist = Bundle.main.infoDictionary?["Appboy"] as? [AnyHashable: Any] else { return nil }
-    let sdkEndpoint = appboyPlist["Endpoint"] as? String
-    let restEndpoint = sdkEndpoint?.replacingOccurrences(of: "sdk", with: "rest", options: .literal, range: nil)
+    let restEndpoint = BrazeManager.shared.endpointToUse.replacingOccurrences(of: "sdk", with: "rest", options: .literal, range: nil)
     return restEndpoint
   }
   

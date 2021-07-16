@@ -13,6 +13,9 @@ enum RemoteStorageKey: String, CaseIterable {
   case pendingCustomAttributes = "pending_custom_attributes"
   case pendingUserAttributes = "pending_user_attributes"
   
+  // MARK: - Environment
+  case overrideApiKey = "override_api_key"
+  case overrideEndpoint = "override_endpoint"
 }
 
 enum RemoteStorageType {
