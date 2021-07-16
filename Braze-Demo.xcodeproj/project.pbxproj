@@ -46,7 +46,7 @@
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
 		7F43668425FC7F4F003DE7AA /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43668325FC7F4F003DE7AA /* AppboyUI */; };
 		7F43669A25FC94CA003DE7AA /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F43669925FC94CA003DE7AA /* AppboyPushStory */; };
-		7F459F3426A0AA910084EC23 /* TextFieldEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F459F3326A0AA910084EC23 /* TextFieldEntryView.swift */; };
+		7F459F3426A0AA910084EC23 /* TextFieldEntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F459F3326A0AA910084EC23 /* TextFieldEntryViewCell.swift */; };
 		7F459F3826A0BD310084EC23 /* TextFieldEntryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F459F3726A0BD310084EC23 /* TextFieldEntryDataSource.swift */; };
 		7F4A20D526694FED00168812 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F4A20D426694FED00168812 /* AppboyPushStory */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
@@ -299,7 +299,7 @@
 		7F1ADD6D25E3406300116E92 /* Braze-Demo-Match-Game-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Match-Game-Content-Extension.entitlements"; sourceTree = "<group>"; };
 		7F1ADDA025E4199A00116E92 /* MatchCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCardView.xib; sourceTree = "<group>"; };
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
-		7F459F3326A0AA910084EC23 /* TextFieldEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEntryView.swift; sourceTree = "<group>"; };
+		7F459F3326A0AA910084EC23 /* TextFieldEntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEntryViewCell.swift; sourceTree = "<group>"; };
 		7F459F3726A0BD310084EC23 /* TextFieldEntryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEntryDataSource.swift; sourceTree = "<group>"; };
 		7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardSettingsViewController.swift; sourceTree = "<group>"; };
 		7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageSettingsViewController.swift; sourceTree = "<group>"; };
@@ -866,7 +866,7 @@
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
 				7FCFB98E24C91F0D001AA381 /* BannerAdCollectionViewCell.swift */,
 				7FDFA26C24B68D8800E3B132 /* ShoppingCartTableViewCell.swift */,
-				7F459F3326A0AA910084EC23 /* TextFieldEntryView.swift */,
+				7F459F3326A0AA910084EC23 /* TextFieldEntryViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1562,7 +1562,7 @@
 				7F12B45A25E7183C003AD64F /* PushNotificationData.swift in Sources */,
 				7FCFB98124C55177001AA381 /* ContentCardData.swift in Sources */,
 				7F6C981D2564728F000CDAAA /* BlankCollectionViewCell.swift in Sources */,
-				7F459F3426A0AA910084EC23 /* TextFieldEntryView.swift in Sources */,
+				7F459F3426A0AA910084EC23 /* TextFieldEntryViewCell.swift in Sources */,
 				7FE763F024CBD22A0017C5D2 /* UIViewController_Util.swift in Sources */,
 				7FCFB98D24C91421001AA381 /* Ad.swift in Sources */,
 				7F8967C625740F9900C61405 /* FullListViewController.swift in Sources */,
