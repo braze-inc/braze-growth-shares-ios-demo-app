@@ -865,7 +865,7 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-Eo-Zvu">
+                                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="vB0-Eo-Zvu">
                                                                 <rect key="frame" x="20" y="50.5" width="374" height="51"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="50" id="t6p-N7-Wtl"/>
