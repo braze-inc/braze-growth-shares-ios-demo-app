@@ -60,11 +60,11 @@ class TileListDataSource: NSObject, CollectionViewDataSourceProvider {
       
       switch content {
       case let ad as Ad:
-        let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
+        let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
         cell.configureCell(ad.imageUrl)
         return cell
       case let tile as Tile:
-        let cell: ItemCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
+        let cell: ItemCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
         cell.configureCell(tile.title, tile.detail, tile.price, tile.imageUrl)
         return cell
       default:

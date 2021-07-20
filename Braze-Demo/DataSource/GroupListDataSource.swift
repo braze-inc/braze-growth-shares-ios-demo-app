@@ -66,10 +66,10 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
       
       switch content {
       case is String:
-        let cell: BlankCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
+        let cell: BlankCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
         return cell
       case let ad as Ad:
-        let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
+        let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
         cell.configureCell(ad.imageUrl)
         return cell
       case let group as Group:
@@ -79,7 +79,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
         case .headline:
           return collectionView.dequeueConfiguredReusableCell(using: HeadlineCollectionViewCell.configuredCell(), for: indexPath, item: group)
         case .large:
-          let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusablCell(for: indexPath)
+          let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
           cell.configureCell(group.title, imageUrl: group.imageUrl)
           return cell
         default: return UICollectionViewCell()
