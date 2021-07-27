@@ -3,7 +3,7 @@
     "pins": [
       {
         "package": "Appboy_iOS_SDK",
-        "repositoryURL": "https://github.com/braze-inc/braze-ios-sdk",
+        "repositoryURL": "https://github.com/braze-inc/braze-ios-sdk.git",
         "state": {
           "branch": null,
           "revision": "e9075696dc2a0a6e0d7f510b7dc3836d101bfc4b",

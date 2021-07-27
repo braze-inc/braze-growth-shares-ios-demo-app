@@ -7,7 +7,9 @@ class ContentCardSettingsViewController: UIViewController {
   
   // MARK: - Actions
   @IBAction func apiTriggeredCampaignButtonPressed(_ sender: Any) {
-    guard let userId = BrazeManager.shared.userId, !userId.isEmpty else { return }
+    guard let userId = BrazeManager.shared.userId, !userId.isEmpty else {
+      return presentAlert(title: "NO-EXTERNAL-ID", message: "Sign in to launch API Triggered Campaign")
+    }
     handleApiTriggeredCampaignKey(userId)
   }
   @IBAction func resetHomeScreenButtonPressed(_ sender: Any) {
