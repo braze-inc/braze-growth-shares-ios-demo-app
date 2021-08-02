@@ -349,6 +349,8 @@ private extension BrazeManager {
     switch inAppMessage.extras?[InAppMessageKey.viewType.rawValue] as? String {
     case InAppMessageViewType.picker.rawValue:
       return ModalPickerViewController(inAppMessage: inAppMessage)
+    case InAppMessageViewType.video.rawValue:
+      return ModalVideoViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
     }

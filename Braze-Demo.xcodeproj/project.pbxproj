@@ -44,6 +44,10 @@
 		7F1ADDA125E4199A00116E92 /* MatchCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F1ADDA025E4199A00116E92 /* MatchCardView.xib */; };
 		7F1ADDA825E41D3200116E92 /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
 		7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F384B4D256DC59300673410 /* InAppMessageData.swift */; };
+		7F3AAC3C26B8616700E9F774 /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7F3AAC3B26B8616700E9F774 /* AppboyUI */; };
+		7F3AAC3E26B8616700E9F774 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7F3AAC3D26B8616700E9F774 /* AppboyPushStory */; };
+		7F3AAC4026B8621100E9F774 /* ModalVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3AAC3F26B8621100E9F774 /* ModalVideoViewController.swift */; };
+		7F3AAC4226B8621B00E9F774 /* ModalVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7F3AAC4126B8621B00E9F774 /* ModalVideoViewController.xib */; };
 		7F459F3426A0AA910084EC23 /* TextFieldEntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F459F3326A0AA910084EC23 /* TextFieldEntryViewCell.swift */; };
 		7F459F3826A0BD310084EC23 /* TextFieldEntryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F459F3726A0BD310084EC23 /* TextFieldEntryDataSource.swift */; };
 		7F5549F02582F3D000DAFB84 /* ContentCardSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */; };
@@ -111,8 +115,6 @@
 		7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26224D374B2008269E5 /* Coupon.swift */; };
 		7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26424D392AE008269E5 /* Array_Util.swift */; };
 		7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACDFE426A1DAE600F451D9 /* UITableView_Util.swift */; };
-		7FBD753026B06F21001EC422 /* AppboyUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7FBD752F26B06F21001EC422 /* AppboyUI */; };
-		7FBD753226B06F2E001EC422 /* AppboyPushStory in Frameworks */ = {isa = PBXBuildFile; productRef = 7FBD753126B06F2E001EC422 /* AppboyPushStory */; };
 		7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48824AD711E00EC0983 /* AppDelegate.swift */; };
 		7FBDD48B24AD711E00EC0983 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48A24AD711E00EC0983 /* SceneDelegate.swift */; };
 		7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */; };
@@ -298,6 +300,8 @@
 		7F1ADD6D25E3406300116E92 /* Braze-Demo-Match-Game-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Match-Game-Content-Extension.entitlements"; sourceTree = "<group>"; };
 		7F1ADDA025E4199A00116E92 /* MatchCardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchCardView.xib; sourceTree = "<group>"; };
 		7F384B4D256DC59300673410 /* InAppMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageData.swift; sourceTree = "<group>"; };
+		7F3AAC3F26B8621100E9F774 /* ModalVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalVideoViewController.swift; sourceTree = "<group>"; };
+		7F3AAC4126B8621B00E9F774 /* ModalVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalVideoViewController.xib; sourceTree = "<group>"; };
 		7F459F3326A0AA910084EC23 /* TextFieldEntryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEntryViewCell.swift; sourceTree = "<group>"; };
 		7F459F3726A0BD310084EC23 /* TextFieldEntryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldEntryDataSource.swift; sourceTree = "<group>"; };
 		7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardSettingsViewController.swift; sourceTree = "<group>"; };
@@ -469,7 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F8CB2EB25C888000001F270 /* UserNotificationsUI.framework in Frameworks */,
-				7FBD753226B06F2E001EC422 /* AppboyPushStory in Frameworks */,
+				7F3AAC3E26B8616700E9F774 /* AppboyPushStory in Frameworks */,
 				7F8CB2E925C888000001F270 /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,7 +491,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FBD753026B06F21001EC422 /* AppboyUI in Frameworks */,
+				7F3AAC3C26B8616700E9F774 /* AppboyUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -952,6 +956,8 @@
 				7F88F9AC264496A500B68025 /* FullPermissionViewController */,
 				7F3FBEF325B0F417007715C0 /* ModalPickerViewController */,
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
+				7F3AAC3F26B8621100E9F774 /* ModalVideoViewController.swift */,
+				7F3AAC4126B8621B00E9F774 /* ModalVideoViewController.xib */,
 			);
 			path = "In-App-Messages";
 			sourceTree = "<group>";
@@ -1128,7 +1134,7 @@
 			);
 			name = "Braze-Demo-Push-Story-Content-Extension";
 			packageProductDependencies = (
-				7FBD753126B06F2E001EC422 /* AppboyPushStory */,
+				7F3AAC3D26B8616700E9F774 /* AppboyPushStory */,
 			);
 			productName = "Braze Demo Content Extension";
 			productReference = 7F8CB2E625C888000001F270 /* Braze-Demo-Push-Story-Content-Extension.appex */;
@@ -1171,7 +1177,7 @@
 			);
 			name = "Braze-Demo";
 			packageProductDependencies = (
-				7FBD752F26B06F21001EC422 /* AppboyUI */,
+				7F3AAC3B26B8616700E9F774 /* AppboyUI */,
 			);
 			productName = BookDemo;
 			productReference = 7FBDD48524AD711E00EC0983 /* Braze-Demo.app */;
@@ -1278,7 +1284,7 @@
 			);
 			mainGroup = 7FBDD47C24AD711D00EC0983;
 			packageReferences = (
-				7FBD752E26B06F21001EC422 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */,
+				7F3AAC3A26B8616700E9F774 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */,
 			);
 			productRefGroup = 7FBDD48624AD711E00EC0983 /* Products */;
 			projectDirPath = "";
@@ -1352,6 +1358,7 @@
 			files = (
 				7F6C981025644896000CDAAA /* Group-List.json in Resources */,
 				7FD8EA2C25E75942004A89FA /* Sailec-Bold.otf in Resources */,
+				7F3AAC4226B8621B00E9F774 /* ModalVideoViewController.xib in Resources */,
 				7FCFB97F24C35EE2001AA381 /* ContentCardWebView.xib in Resources */,
 				7FD8EA3325E75942004A89FA /* Sailec-Thin.otf in Resources */,
 				7FD8EA2725E75942004A89FA /* Sailec-BlackItalic.otf in Resources */,
@@ -1536,6 +1543,7 @@
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
+				7F3AAC4026B8621100E9F774 /* ModalVideoViewController.swift in Sources */,
 				7FDBFE01268FD47B000C1244 /* ABKContentCardCell_Util.swift in Sources */,
 				7FDBFDDD268CF264000C1244 /* SliderConfigurationView.swift in Sources */,
 				7FCFB98F24C91F0D001AA381 /* BannerAdCollectionViewCell.swift in Sources */,
@@ -2277,7 +2285,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		7FBD752E26B06F21001EC422 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */ = {
+		7F3AAC3A26B8616700E9F774 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/braze-inc/braze-ios-sdk.git";
 			requirement = {
@@ -2288,14 +2296,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7FBD752F26B06F21001EC422 /* AppboyUI */ = {
+		7F3AAC3B26B8616700E9F774 /* AppboyUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FBD752E26B06F21001EC422 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
+			package = 7F3AAC3A26B8616700E9F774 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
 			productName = AppboyUI;
 		};
-		7FBD753126B06F2E001EC422 /* AppboyPushStory */ = {
+		7F3AAC3D26B8616700E9F774 /* AppboyPushStory */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7FBD752E26B06F21001EC422 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
+			package = 7F3AAC3A26B8616700E9F774 /* XCRemoteSwiftPackageReference "braze-ios-sdk" */;
 			productName = AppboyPushStory;
 		};
 /* End XCSwiftPackageProductDependency section */
