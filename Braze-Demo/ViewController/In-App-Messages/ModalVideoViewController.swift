@@ -28,6 +28,11 @@ extension ModalVideoViewController {
     configureVideoPlayer()
   }
   
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    view.alpha = 1
+  }
+  
   override func viewDidLayoutSubviews() {
     configureVideoPlayerFrame()
   }
