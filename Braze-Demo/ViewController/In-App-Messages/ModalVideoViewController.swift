@@ -54,6 +54,9 @@ private extension ModalVideoViewController {
     playerViewController.didMove(toParent: self)
   }
   
+  /// Set the `AVPlayerViewController`'s  frame to the`videoPlayerContainer`'s bounds explicitly set the .xib file. Only update the value if the two are not equal.
+  ///
+  /// Called in `ViewDidLayoutSubviews()` after the view has been laid out.
   func configureVideoPlayerFrame() {
     guard playerViewController.view.frame != videoPlayerContainer.bounds else { return }
     
