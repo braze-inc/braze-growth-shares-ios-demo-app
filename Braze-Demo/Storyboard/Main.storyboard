@@ -1265,10 +1265,10 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f62-ya-u1v" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="566.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="641.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ADU-aS-6iU">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="566.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="641.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVq-bb-FJA" userLabel="Campaign">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="150.5"/>
@@ -1315,7 +1315,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eml-7S-bd8" userLabel="Campaign">
-                                                        <rect key="frame" x="0.0" y="170.5" width="414" height="150.5"/>
+                                                        <rect key="frame" x="0.0" y="170.5" width="414" height="225.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1i-WB-1bN">
                                                                 <rect key="frame" x="182.5" y="20" width="49" height="20.5"/>
@@ -1347,19 +1347,46 @@
                                                                     <action selector="triggerPressed:" destination="FpX-RM-6ac" eventType="touchUpInside" id="cG5-90-ZLT"/>
                                                                 </connections>
                                                             </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTC-WQ-Cst" userLabel="Video">
+                                                                <rect key="frame" x="20" y="125.5" width="374" height="50"/>
+                                                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="50" id="gya-bE-Xp0"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Video">
+                                                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
+                                                                        <real key="value" value="0.5"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="size" keyPath="layer.shadowOffset">
+                                                                        <size key="value" width="0.0" height="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="triggerPressed:" destination="FpX-RM-6ac" eventType="touchUpInside" id="Gz4-2M-hUV"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <constraints>
+                                                            <constraint firstItem="aTC-WQ-Cst" firstAttribute="leading" secondItem="7ZT-dj-zFP" secondAttribute="leading" id="48v-hG-Dov"/>
+                                                            <constraint firstItem="aTC-WQ-Cst" firstAttribute="top" secondItem="7ZT-dj-zFP" secondAttribute="bottom" constant="25" id="9KK-tm-86d"/>
                                                             <constraint firstItem="S1i-WB-1bN" firstAttribute="top" secondItem="eml-7S-bd8" secondAttribute="top" constant="20" id="B6c-32-ezR"/>
-                                                            <constraint firstAttribute="bottom" secondItem="7ZT-dj-zFP" secondAttribute="bottom" constant="50" id="Jdg-Zf-7ss"/>
                                                             <constraint firstItem="7ZT-dj-zFP" firstAttribute="top" secondItem="S1i-WB-1bN" secondAttribute="bottom" constant="10" id="KLU-Ar-ZNS"/>
                                                             <constraint firstItem="S1i-WB-1bN" firstAttribute="centerX" secondItem="eml-7S-bd8" secondAttribute="centerX" id="XK9-GC-QXd"/>
+                                                            <constraint firstAttribute="bottom" secondItem="aTC-WQ-Cst" secondAttribute="bottom" constant="50" id="Yf3-uD-lOv"/>
                                                             <constraint firstAttribute="trailing" secondItem="7ZT-dj-zFP" secondAttribute="trailing" constant="20" id="m5f-Yg-gj3"/>
+                                                            <constraint firstItem="aTC-WQ-Cst" firstAttribute="trailing" secondItem="7ZT-dj-zFP" secondAttribute="trailing" id="nQ8-gs-BwM"/>
                                                             <constraint firstItem="7ZT-dj-zFP" firstAttribute="leading" secondItem="eml-7S-bd8" secondAttribute="leading" constant="20" id="pWR-DC-uxP"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tZE-CT-Cdg" userLabel="Campaign">
-                                                        <rect key="frame" x="0.0" y="341" width="414" height="225.5"/>
+                                                        <rect key="frame" x="0.0" y="416" width="414" height="225.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full-Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tj7-qG-hah">
                                                                 <rect key="frame" x="161" y="20" width="92" height="20.5"/>
