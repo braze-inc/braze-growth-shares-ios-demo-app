@@ -8,7 +8,6 @@ class ModalVideoViewController: ModalViewController {
   
   // MARK: - Variables
   private let playerViewController = AVPlayerViewController()
-  private var player: AVPlayer?
   
   override var nibName: String {
     return "ModalVideoViewController"
@@ -46,7 +45,7 @@ private extension ModalVideoViewController {
     
     let asset = AVAsset(url: url)
     let playerItem = AVPlayerItem(asset: asset)
-    player = AVPlayer(playerItem: playerItem)
+    let player = AVPlayer(playerItem: playerItem)
     playerViewController.player = player
     
     addChild(playerViewController)
