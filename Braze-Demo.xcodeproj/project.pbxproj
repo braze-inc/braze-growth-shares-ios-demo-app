@@ -616,6 +616,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		7F3AAC4526BACA0200E9F774 /* ModalVideoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7F3AAC3F26B8621100E9F774 /* ModalVideoViewController.swift */,
+				7F3AAC4126B8621B00E9F774 /* ModalVideoViewController.xib */,
+			);
+			path = ModalVideoViewController;
+			sourceTree = "<group>";
+		};
 		7F3FBEF325B0F417007715C0 /* ModalPickerViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -955,9 +964,8 @@
 				7F8967CF25740FAB00C61405 /* FullListViewController */,
 				7F88F9AC264496A500B68025 /* FullPermissionViewController */,
 				7F3FBEF325B0F417007715C0 /* ModalPickerViewController */,
+				7F3AAC4526BACA0200E9F774 /* ModalVideoViewController */,
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
-				7F3AAC3F26B8621100E9F774 /* ModalVideoViewController.swift */,
-				7F3AAC4126B8621B00E9F774 /* ModalVideoViewController.xib */,
 			);
 			path = "In-App-Messages";
 			sourceTree = "<group>";
