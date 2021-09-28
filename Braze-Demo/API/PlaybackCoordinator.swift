@@ -63,9 +63,8 @@ class PlaybackCoordinator {
       // If there's an active session, create an activity for the new selection.
       if groupSession.activity.mediaItem != selectedMediaItem {
         groupSession.activity = MediaItemActivity(mediaItem: selectedMediaItem)
-        }
-      } else {
-
+      }
+    } else {
         Task.init {
           // Create a new activity for the selected movie.
           let activity = MediaItemActivity(mediaItem: selectedMediaItem)
@@ -79,9 +78,9 @@ class PlaybackCoordinator {
             // The user prefers to share this activity with the group.
             // The app enqueues the movie for playback when the activity starts.
             do {
-                _ = try await activity.activate()
+              _ = try await activity.activate()
             } catch {
-                print("Unable to activate the activity: \(error)")
+              print("Unable to activate the activity: \(error)")
             }
           case .cancelled:
             // The user cancels the operation. Do nothing.
