@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,7 @@
             <connections>
                 <outlet property="inAppMessageHeaderLabel" destination="dDg-pF-Mt9" id="E4f-gg-Rar"/>
                 <outlet property="inAppMessageMessageLabel" destination="X7v-sq-cbU" id="lxm-ie-i9D"/>
+                <outlet property="sharePlayButton" destination="j2Y-Ir-jzr" id="yln-GN-1Zw"/>
                 <outlet property="videoPlayerContainer" destination="bk2-yW-Fx9" id="Mle-qc-CeK"/>
                 <outlet property="view" destination="6BP-OF-PV1" id="ibb-q0-QOH"/>
             </connections>
@@ -52,11 +54,20 @@
                         <action selector="dismissInAppMessage:" destination="-1" eventType="touchUpInside" id="KOG-aQ-Gxh"/>
                     </connections>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2Y-Ir-jzr">
+                    <rect key="frame" x="7" y="0.0" width="58.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="shareplay" catalog="system" title=" "/>
+                    <connections>
+                        <action selector="sharePlayButtonPressed:" destination="-1" eventType="touchUpInside" id="f1X-HK-wFh"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="rz2-UM-V9i"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="bk2-yW-Fx9" firstAttribute="leading" secondItem="rz2-UM-V9i" secondAttribute="leading" id="2dw-tz-R1x"/>
+                <constraint firstItem="j2Y-Ir-jzr" firstAttribute="top" secondItem="9ol-un-5OB" secondAttribute="top" id="3Vf-iV-KWg"/>
                 <constraint firstItem="dDg-pF-Mt9" firstAttribute="top" secondItem="6BP-OF-PV1" secondAttribute="top" constant="40" id="Egi-Ld-qVM"/>
                 <constraint firstItem="dDg-pF-Mt9" firstAttribute="leading" secondItem="rz2-UM-V9i" secondAttribute="leading" constant="10" id="HoC-eZ-NxI"/>
                 <constraint firstItem="rz2-UM-V9i" firstAttribute="bottom" secondItem="bk2-yW-Fx9" secondAttribute="bottom" id="K2R-EX-ag5"/>
@@ -64,6 +75,7 @@
                 <constraint firstItem="9ol-un-5OB" firstAttribute="top" secondItem="6BP-OF-PV1" secondAttribute="top" id="QgT-do-XZb"/>
                 <constraint firstItem="rz2-UM-V9i" firstAttribute="trailing" secondItem="bk2-yW-Fx9" secondAttribute="trailing" id="VWw-5J-86x"/>
                 <constraint firstItem="X7v-sq-cbU" firstAttribute="centerX" secondItem="dDg-pF-Mt9" secondAttribute="centerX" id="gFA-Pg-Be7"/>
+                <constraint firstItem="j2Y-Ir-jzr" firstAttribute="leading" secondItem="rz2-UM-V9i" secondAttribute="leading" constant="7" id="pYM-S3-Vdh"/>
                 <constraint firstItem="X7v-sq-cbU" firstAttribute="trailing" secondItem="dDg-pF-Mt9" secondAttribute="trailing" id="qpW-eb-EIh"/>
                 <constraint firstItem="rz2-UM-V9i" firstAttribute="trailing" secondItem="dDg-pF-Mt9" secondAttribute="trailing" constant="15" id="rhE-0I-I8h"/>
                 <constraint firstItem="X7v-sq-cbU" firstAttribute="top" secondItem="dDg-pF-Mt9" secondAttribute="bottom" constant="15" id="rld-re-uhT"/>
@@ -82,6 +94,7 @@
         </view>
     </objects>
     <resources>
+        <image name="shareplay" catalog="system" width="128" height="73"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
