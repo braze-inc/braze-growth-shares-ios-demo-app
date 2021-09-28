@@ -6,7 +6,8 @@ import AVKit
 @available(iOS 15.0, *)
 class PlaybackCoordinator {
   static let shared = PlaybackCoordinator()
-  private var subscriptions = Set<AnyCancellable>()
+  private var groupSessionSubscriptions = Set<AnyCancellable>()
+  private var mediaItemSubscriptions = Set<AnyCancellable>()
   
   private var selectedMediaItem: MediaItem? {
     didSet {
@@ -14,6 +15,7 @@ class PlaybackCoordinator {
       guard let _ = selectedMediaItem else { return }
 
       BrazeManager.shared.logCustomEvent("Video Pressed")
+      mediaItemSubscriptions.removeAll()
     }
   }
 
@@ -30,7 +32,7 @@ class PlaybackCoordinator {
         self.groupSession = groupSession
 
         // Remove previous subscriptions.
-        subscriptions.removeAll()
+        groupSessionSubscriptions.removeAll()
 
         // Observe changes to the session state.
         groupSession.$state.sink { [weak self] state in
@@ -38,9 +40,9 @@ class PlaybackCoordinator {
             // Set the groupSession to nil to publish
             // the invalidated session state.
             self?.groupSession = nil
-            self?.subscriptions.removeAll()
+            self?.groupSessionSubscriptions.removeAll()
           }
-        }.store(in: &subscriptions)
+        }.store(in: &groupSessionSubscriptions)
 
         // Join the session to participate in playback coordination.
         groupSession.join()
@@ -49,7 +51,7 @@ class PlaybackCoordinator {
         groupSession.$activity.sink { [weak self] activity in
           // Set the movie to enqueue it in the player.
           self?.enqueuedMediaItem = activity.mediaItem
-        }.store(in: &subscriptions)
+        }.store(in: &groupSessionSubscriptions)
       }
     }
   }
@@ -93,11 +95,11 @@ class PlaybackCoordinator {
 
   // Launch a video from SharePlay if enqueued.
   func launchVideoPlayerIfNecessary() {
-    PlaybackCoordinator.shared.$enqueuedMediaItem
+    $enqueuedMediaItem
       .receive(on: DispatchQueue.main)
       .compactMap { $0 }
       .assign(to: \.selectedMediaItem, on: self)
-      .store(in: &subscriptions)
+      .store(in: &mediaItemSubscriptions)
   }
 }
 
