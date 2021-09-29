@@ -355,11 +355,7 @@ private extension BrazeManager {
     case InAppMessageViewType.picker.rawValue:
       return ModalPickerViewController(inAppMessage: inAppMessage)
     case InAppMessageViewType.video.rawValue:
-      if #available(iOS 15.0, *) {
-        return ModalVideoViewController(inAppMessage: inAppMessage)
-      } else {
-        return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
-      }
+      return ModalVideoViewController(inAppMessage: inAppMessage)
     default:
       return ABKInAppMessageModalViewController(inAppMessage: inAppMessage)
     }

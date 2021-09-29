@@ -3,7 +3,6 @@ import Combine
 import GroupActivities
 import AVKit
 
-@available(iOS 15, *)
 class ModalVideoViewController: ModalViewController {
   
   // MARK: - Outlets
@@ -11,35 +10,28 @@ class ModalVideoViewController: ModalViewController {
   @IBOutlet private weak var sharePlayButton: UIButton!
   
   // MARK: - Actions
+  @available(iOS 15.0, *)
   @IBAction func sharePlayButtonPressed(_ sender: UIButton) {
     guard let mediaItem = mediaItem else { return }
     PlaybackCoordinator.shared.prepareToPlay(mediaItem)
   }
   
   // MARK: - Variables
-  private let playerViewController = AVPlayerViewController()
-  private let player = AVPlayer()
-  private let groupStateObserver = GroupStateObserver()
+  @available(iOS 15.0, *)
+  private(set) lazy var groupStateObserver = GroupStateObserver()
+  @available(iOS 15.0, *)
+  fileprivate lazy var groupVideoPlayer = GroupVideoPlayer(player: player)
+  
   private var subscriptions = Set<AnyCancellable>()
   private var mediaItem: MediaItem?
   private var isEligibleForSharePlay: Bool = false {
-      didSet {
-        sharePlayButton.isHidden = !isEligibleForSharePlay
-      }
-    }
-  
-  // The group session to coordinate playback with.
-  private var groupSession: GroupSession<MediaItemActivity>? {
     didSet {
-      guard let session = groupSession else {
-        // Stop playback if a session terminates.
-        player.rate = 0
-        return
-      }
-      // Coordinate playback with the active session.
-      player.playbackCoordinator.coordinateWithSession(session)
+      sharePlayButton.isHidden = !isEligibleForSharePlay
     }
   }
+  
+  private let playerViewController = AVPlayerViewController()
+  private let player = AVPlayer()
   
   override var nibName: String {
     return "ModalVideoViewController"
@@ -54,7 +46,10 @@ class ModalVideoViewController: ModalViewController {
     super.viewDidLoad()
     
     configureVideoPlayer()
-    configureSharePlay()
+    
+    if #available(iOS 15, *) {
+      configureSharePlay()
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -68,12 +63,14 @@ class ModalVideoViewController: ModalViewController {
   
   override func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    groupSession?.leave()
+    
+    if #available(iOS 15.0, *) {
+      groupVideoPlayer.session?.leave()
+    }
   }
 }
 
 // MARK: - Private
-@available(iOS 15, *)
 private extension ModalVideoViewController {
   func configureVideoPlayer() {
     guard let urlString = inAppMessage.extras?["video_url"] as? String,
@@ -92,6 +89,7 @@ private extension ModalVideoViewController {
     playerViewController.didMove(toParent: self)
   }
   
+  @available(iOS 15, *)
   func configureSharePlay() {
     // SharePlay button eligibility
     groupStateObserver.$isEligibleForGroupSession
@@ -109,7 +107,7 @@ private extension ModalVideoViewController {
     // The group session subscriber.
     PlaybackCoordinator.shared.$groupSession
       .receive(on: DispatchQueue.main)
-      .assign(to: \.groupSession, on: self)
+      .assign(to: \.groupVideoPlayer.session, on: self)
       .store(in: &subscriptions)
 
     player.publisher(for: \.timeControlStatus, options: [.initial])
@@ -140,5 +138,27 @@ private extension ModalVideoViewController {
     guard playerViewController.view.frame != videoPlayerContainer.bounds else { return }
     
     playerViewController.view.frame = videoPlayerContainer.bounds
+  }
+}
+
+@available(iOS 15, *)
+fileprivate struct GroupVideoPlayer {
+  private let player: AVPlayer
+  
+  init(player: AVPlayer) {
+    self.player = player
+  }
+  
+  // The group session to coordinate playback with.
+  var session: GroupSession<MediaItemActivity>? {
+    didSet {
+      guard let session = session else {
+        // Stop playback if a session terminates.
+        player.rate = 0
+        return
+      }
+      // Coordinate playback with the active session.
+      player.playbackCoordinator.coordinateWithSession(session)
+    }
   }
 }
