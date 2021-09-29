@@ -66,6 +66,7 @@ class ModalVideoViewController: ModalViewController {
     
     if #available(iOS 15.0, *) {
       groupVideoPlayer.session?.leave()
+      PlaybackCoordinator.shared.leave()
     }
   }
 }

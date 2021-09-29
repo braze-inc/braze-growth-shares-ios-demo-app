@@ -2,6 +2,8 @@ import Foundation
 import Combine
 import GroupActivities
 import AVKit
+import AppboyKit
+import AppboyUI
 
 @available(iOS 15.0, *)
 class PlaybackCoordinator {
@@ -14,8 +16,9 @@ class PlaybackCoordinator {
       // Ensure the UI selection always represents the currently playing media.
       guard let _ = selectedMediaItem else { return }
 
-      BrazeManager.shared.logCustomEvent("Video Pressed")
-      mediaItemSubscriptions.removeAll()
+      if !BrazeManager.shared.inAppMessageCurrentlyVisible {
+        BrazeManager.shared.logCustomEvent("Video Pressed")
+      }
     }
   }
 
@@ -55,7 +58,11 @@ class PlaybackCoordinator {
       }
     }
   }
+}
 
+// MARK: - Public Methods
+@available(iOS 15.0, *)
+extension PlaybackCoordinator {
   // Prepares the app to play the movie.
   func prepareToPlay(_ selectedMediaItem: MediaItem) {
     // Return early if the app enqueues the movie.
@@ -100,6 +107,12 @@ class PlaybackCoordinator {
       .compactMap { $0 }
       .assign(to: \.selectedMediaItem, on: self)
       .store(in: &mediaItemSubscriptions)
+  }
+  
+  // Clear activity when user leaves
+  func leave() {
+    groupSession = nil
+    enqueuedMediaItem = nil
   }
 }
 

@@ -172,6 +172,10 @@ extension BrazeManager: ABKInAppMessageUIDelegate {
       return ABKInAppMessageViewController(inAppMessage: inAppMessage)
     }
   }
+  
+  var inAppMessageCurrentlyVisible: Bool {
+    return Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.inAppMessageCurrentlyVisible?() ?? false
+  }
 }
 
 // MARK: - Content Cards
