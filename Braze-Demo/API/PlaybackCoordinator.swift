@@ -2,7 +2,6 @@ import Foundation
 import Combine
 import GroupActivities
 import AVKit
-import AppboyUI
 
 @available(iOS 15.0, *)
 class PlaybackCoordinator {
