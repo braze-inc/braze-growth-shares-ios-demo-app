@@ -18,7 +18,7 @@ class ModalVideoViewController: ModalViewController {
   
   // MARK: - Variables
   @available(iOS 15.0, *)
-  private(set) lazy var groupStateObserver = GroupStateObserver()
+  private lazy var groupStateObserver = GroupStateObserver()
   @available(iOS 15.0, *)
   fileprivate lazy var groupVideoPlayer = GroupVideoPlayer(player: player)
   
