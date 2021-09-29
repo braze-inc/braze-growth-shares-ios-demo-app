@@ -1705,7 +1705,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1731,7 +1731,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1756,7 +1756,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1781,7 +1781,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1807,7 +1807,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Push-Story-Content-Extension/Braze-Demo-Push-Story-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1834,7 +1834,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Push-Story-Content-Extension/Braze-Demo-Push-Story-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1861,7 +1861,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Match-Game-Content-Extension/Braze-Demo-Match-Game-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1887,7 +1887,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Match-Game-Content-Extension/Braze-Demo-Match-Game-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2028,7 +2028,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo/SupportingFiles/Braze-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2055,7 +2055,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo/SupportingFiles/Braze-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2165,7 +2165,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Progress-Content-Extension/Braze-Demo-LAB-Progress-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2191,7 +2191,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Progress-Content-Extension/Braze-Demo-LAB-Progress-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
