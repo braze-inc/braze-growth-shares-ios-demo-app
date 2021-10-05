@@ -13,12 +13,7 @@ class ContentCardSettingsViewController: UIViewController {
     handleApiTriggeredCampaignKey(userId)
   }
   @IBAction func resetHomeScreenButtonPressed(_ sender: Any) {
-    #if targetEnvironment(simulator)
-      NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
-    #else
-      BrazeManager.shared.logCustomEvent("Reset Home Screen")
-    #endif
-    
+    NotificationCenter.default.post(name: .defaultAppExperience, object: nil)
     presentAlert(title: "Reset Home Screen", message: nil)
   }
   @IBAction func eventRemovalCampaignButtonPressed(_ sender: Any) {
