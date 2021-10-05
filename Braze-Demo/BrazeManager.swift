@@ -35,6 +35,11 @@ class BrazeManager: NSObject {
     logPendingCustomEventsIfNecessary()
     logPendingCustomAttributesIfNecessary()
     logPendingUserAttributesIfNecessary()
+    
+    // MARK: - SharePlay
+    if #available(iOS 15, *) {
+      PlaybackCoordinator.shared.launchVideoPlayerIfNecessary()
+    }
   }
   
   /// Initialized as the value for the ABKIDFADelegateKey.
@@ -166,6 +171,10 @@ extension BrazeManager: ABKInAppMessageUIDelegate {
     default:
       return ABKInAppMessageViewController(inAppMessage: inAppMessage)
     }
+  }
+  
+  var inAppMessageCurrentlyVisible: Bool {
+    return Appboy.sharedInstance()?.inAppMessageController.inAppMessageUIController?.inAppMessageCurrentlyVisible?() ?? false
   }
 }
 
