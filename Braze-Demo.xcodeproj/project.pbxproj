@@ -139,8 +139,6 @@
 		7FD1218025F00B8D00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
 		7FD1218925F00B8E00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
 		7FD213D625872B5700FEFAAB /* TileLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */; };
-		7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */; };
-		7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */; };
 		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
 		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
 		7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
@@ -398,8 +396,6 @@
 		7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
 		7FD1216E25F0047B00961131 /* UserAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAttribute.swift; sourceTree = "<group>"; };
 		7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileLayoutBuilder.swift; sourceTree = "<group>"; };
-		7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenMenuView.xib; sourceTree = "<group>"; };
-		7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMenuView.swift; sourceTree = "<group>"; };
 		7FD2F60D256607AB0061950D /* GroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
 		7FD2F612256608A20061950D /* UIButton_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Util.swift; sourceTree = "<group>"; };
 		7FD4526525C8C756007C76D0 /* Braze-Demo-Push-Story-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Push-Story-Content-Extension.entitlements"; sourceTree = "<group>"; };
@@ -734,15 +730,6 @@
 			path = FullListViewController;
 			sourceTree = "<group>";
 		};
-		7F8967EF2575F41500C61405 /* HomeScreenMenuView */ = {
-			isa = PBXGroup;
-			children = (
-				7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */,
-				7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */,
-			);
-			path = HomeScreenMenuView;
-			sourceTree = "<group>";
-		};
 		7F8AF0132525353D006F478B /* API Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -874,7 +861,6 @@
 			children = (
 				7FA45A3424C28BD5009A484B /* Content-Cards */,
 				7F6C98482564B06D000CDAAA /* Grouped */,
-				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,
 				7FDBFDE1268CF280000C1244 /* SwitchTableViewCell */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
@@ -1390,7 +1376,6 @@
 				7FDBFDE8268E1669000C1244 /* ColorBoxView.xib in Resources */,
 				7FDBFE072690B2EE000C1244 /* FontConfigurationView.xib in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
-				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
 				7F88F9A3264496A000B68025 /* FullPermissionViewController.xib in Resources */,
 				7F754FC1250C2DF000CD7B45 /* Tile-List.json in Resources */,
 				7FD8EA2E25E75942004A89FA /* Sailec-BoldItalic.otf in Resources */,
@@ -1547,7 +1532,6 @@
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
 				7F459F3826A0BD310084EC23 /* TextFieldEntryDataSource.swift in Sources */,
-				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
 				7FDBFE0326900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift in Sources */,
 				7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */,
 				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
