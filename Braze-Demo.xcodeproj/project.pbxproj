@@ -110,6 +110,9 @@
 		7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */; };
 		7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */; };
 		7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
+		7FA5F3D92720662B00DF3A83 /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3D82720662B00DF3A83 /* BottleView.swift */; };
+		7FA5F3DB27206FCF00DF3A83 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DA27206FCF00DF3A83 /* HomeDetailView.swift */; };
+		7FA5F3DD27207B4C00DF3A83 /* MiniBottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */; };
 		7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26224D374B2008269E5 /* Coupon.swift */; };
 		7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26424D392AE008269E5 /* Array_Util.swift */; };
 		7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACDFE426A1DAE600F451D9 /* UITableView_Util.swift */; };
@@ -141,6 +144,9 @@
 		7FD213D625872B5700FEFAAB /* TileLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */; };
 		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
 		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
+		7FD63911271F4CBB00378193 /* ActivitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD63910271F4CBB00378193 /* ActivitesView.swift */; };
+		7FD63914271F547B00378193 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD63913271F547B00378193 /* HomeView.swift */; };
+		7FD63916271F56E100378193 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD63915271F56E100378193 /* PillView.swift */; };
 		7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FD8EA2625E75942004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
@@ -364,6 +370,9 @@
 		7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardFullPageView.swift; sourceTree = "<group>"; };
 		7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardFullPageView.xib; sourceTree = "<group>"; };
 		7FA45A3524C29131009A484B /* UIVIew_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew_Util.swift; sourceTree = "<group>"; };
+		7FA5F3D82720662B00DF3A83 /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
+		7FA5F3DA27206FCF00DF3A83 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
+		7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBottleView.swift; sourceTree = "<group>"; };
 		7FAAE26224D374B2008269E5 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		7FAAE26424D392AE008269E5 /* Array_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Util.swift; sourceTree = "<group>"; };
 		7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo.entitlements"; sourceTree = "<group>"; };
@@ -399,6 +408,9 @@
 		7FD2F60D256607AB0061950D /* GroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
 		7FD2F612256608A20061950D /* UIButton_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Util.swift; sourceTree = "<group>"; };
 		7FD4526525C8C756007C76D0 /* Braze-Demo-Push-Story-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Push-Story-Content-Extension.entitlements"; sourceTree = "<group>"; };
+		7FD63910271F4CBB00378193 /* ActivitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesView.swift; sourceTree = "<group>"; };
+		7FD63913271F547B00378193 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7FD63915271F56E100378193 /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
 		7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Medium.otf"; sourceTree = "<group>"; };
 		7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-BlackItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-ThinItalic.otf"; sourceTree = "<group>"; };
@@ -922,6 +934,7 @@
 				7F9DCBD324AD7A5400E8D207 /* Model */,
 				7F9DCBC124AD784700E8D207 /* Storyboard */,
 				7F9DCBC224AD785200E8D207 /* SupportingFiles */,
+				7FD63912271F4CC700378193 /* SwiftUI */,
 				7F9DCBCA24AD79B700E8D207 /* ViewController */,
 				7F87D4AF24B2A25000ED0A86 /* Utils */,
 				7F9DCBD824AD832400E8D207 /* View */,
@@ -957,6 +970,19 @@
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
 			path = "In-App-Messages";
+			sourceTree = "<group>";
+		};
+		7FD63912271F4CC700378193 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7FD63910271F4CBB00378193 /* ActivitesView.swift */,
+				7FD63913271F547B00378193 /* HomeView.swift */,
+				7FD63915271F56E100378193 /* PillView.swift */,
+				7FA5F3D82720662B00DF3A83 /* BottleView.swift */,
+				7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */,
+				7FA5F3DA27206FCF00DF3A83 /* HomeDetailView.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		7FD8EA1725E758F1004A89FA /* Sailec-Font */ = {
@@ -1487,6 +1513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA5F3DB27206FCF00DF3A83 /* HomeDetailView.swift in Sources */,
 				7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */,
 				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
@@ -1499,6 +1526,7 @@
 				7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */,
 				7F6C94C2255F8866000CDAAA /* SlideFromBottomViewController.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
+				7FD63914271F547B00378193 /* HomeView.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
@@ -1506,6 +1534,7 @@
 				7FD1216F25F0047B00961131 /* UserAttribute.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
+				7FA5F3D92720662B00DF3A83 /* BottleView.swift in Sources */,
 				7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */,
 				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
@@ -1525,6 +1554,7 @@
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
 				7FDBFDFB268E6C8C000C1244 /* CustomClassicContentCardCell.swift in Sources */,
 				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
+				7FA5F3DD27207B4C00DF3A83 /* MiniBottleView.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
 				7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */,
@@ -1546,6 +1576,8 @@
 				7F0B4A7D25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,
+				7FD63911271F4CBB00378193 /* ActivitesView.swift in Sources */,
+				7FD63916271F56E100378193 /* PillView.swift in Sources */,
 				7F554A442587257F00DAFB84 /* GroupedLayoutBuilder.swift in Sources */,
 				7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */,
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
@@ -2065,7 +2097,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2087,7 +2119,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2108,7 +2140,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze DemoUITests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2128,7 +2160,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze DemoUITests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
