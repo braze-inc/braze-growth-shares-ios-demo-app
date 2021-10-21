@@ -9,7 +9,7 @@ class LocalDataCoordinator: NSObject {
             let result = try JSONDecoder().decode(T.self, from: jsonData)
             return .success(result)
         } catch {
-            return .failure("Error")
+          return .failure(error.localizedDescription)
         }
     }
 }

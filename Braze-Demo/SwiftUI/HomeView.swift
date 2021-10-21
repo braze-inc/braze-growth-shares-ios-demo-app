@@ -1,40 +1,43 @@
 import SwiftUI
 
 struct HomeView: View {
+  @ObservedObject private var viewModel: HomeViewModel = HomeViewModel()
+  
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
-            PillView()              
-            PillView()
-            PillView()
+            ForEach(viewModel.pills, id: \.self) { pill in
+              PillView(title: pill.title)
+            }
           }
           .padding()
         }
         
-        Text("Lorem Ipsum")
+        Text("Braze LAB Courses")
           .font(.body)
           .padding(.horizontal)
         
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
-            BottleView()
-            BottleView()
-            BottleView()
+            ForEach(viewModel.bottles, id: \.self) { bottle in
+              BottleView(title: bottle.title)
+            }
           }
           .padding(.horizontal)
           .padding(.bottom)
         }
         
         VStack(spacing: 20) {
-          HomeDetailView()
-          HomeDetailView()
-          HomeDetailView()
+          ForEach(viewModel.composites, id: \.self) { composite in
+            CompositeView(title: composite.title, subtitle: composite.subtitle, miniBottles: composite.miniBottles)
+          }
         }
         .padding(.horizontal)
       }
     }
+    .onAppear(perform: viewModel.requestHomeData)
   }
 }
 

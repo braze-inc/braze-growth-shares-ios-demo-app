@@ -1,0 +1,71 @@
+{
+  "pills": [
+    {
+      "title": "Liquid 101",
+    },
+    {
+      "title": "Liquid 102",
+    },
+    {
+      "title": "Liquid 103",
+    }
+  ],
+  "bottles": [
+    {
+      "title": "Liquid 104",
+    },
+    {
+      "title": "Liquid 105",
+    },
+    {
+      "title": "Liquid 106",
+    }
+  ],
+  "composites": [
+    {
+      "title": "Canvas",
+      "subtitle": "Creating customer journeys",
+      "miniBottles": [
+        {
+          "title": "Canvas Basics",
+        },
+        {
+          "title": "Canvas 101",
+        },
+        {
+          "title": "Anatomy of a Canvas",
+        }
+      ]
+    },
+    {
+      "title": "Content Cards",
+      "subtitle": "Creating personlized content",
+      "miniBottles": [
+        {
+          "title": "Content Cards Explained",
+        },
+        {
+          "title": "API-Triggered Content Cards",
+        },
+        {
+          "title": "Custom Content Cards",
+        }
+      ]
+    },
+    {
+      "title": "SMS",
+      "subtitle": "Long codes and short codes",
+      "miniBottles": [
+        {
+          "title": "What is a long code?",
+        },
+        {
+          "title": "What is a short code?",
+        },
+        {
+          "title": "SMS for Dummies",
+        }
+      ]
+    }
+  ]
+}

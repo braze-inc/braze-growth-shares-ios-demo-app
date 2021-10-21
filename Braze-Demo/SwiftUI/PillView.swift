@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct PillView: View {
+  var title: String
+  
   var body: some View {
     ZStack {
       Image(systemName: "pill")
@@ -8,7 +10,7 @@ struct PillView: View {
         .resizable()
         .opacity(0.8)
         .background(Color.black)
-      Text("PILL")
+      Text(title)
         .foregroundColor(.white)
         .font(.title3)
         .fontWeight(.bold)
@@ -20,6 +22,6 @@ struct PillView: View {
 
 struct PillView_Previews: PreviewProvider {
   static var previews: some View {
-    PillView()
+    PillView(title: "PILL")
   }
 }

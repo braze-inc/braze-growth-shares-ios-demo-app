@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct MiniBottleView: View {
+  var title: String
+  
   var body: some View {
     ZStack {
       Image(systemName: "bottle")
@@ -10,11 +12,12 @@ struct MiniBottleView: View {
         .background(Color.black)
       
       VStack {
-        Text("Mini Bottle")
+        Text(title)
           .foregroundColor(.white)
           .font(.body)
           .fontWeight(.bold)
-          .padding(.vertical)
+          .multilineTextAlignment(.center)
+          .padding()
       }
     }
     .frame(width: 150, height: 200)
@@ -24,6 +27,6 @@ struct MiniBottleView: View {
 
 struct MiniBottleView_Previews: PreviewProvider {
     static var previews: some View {
-        MiniBottleView()
+        MiniBottleView(title: "Mini Bottle Grande Bottle Mini Bottle")
     }
 }

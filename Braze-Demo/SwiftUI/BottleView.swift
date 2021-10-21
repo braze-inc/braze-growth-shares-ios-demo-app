@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct BottleView: View {
+  var title: String
+  
   var body: some View {
     ZStack {
       Image(systemName: "bottle")
@@ -11,7 +13,7 @@ struct BottleView: View {
       
       VStack {
         Spacer()
-        Text("Bottle")
+        Text(title)
           .foregroundColor(.white)
           .font(.title3)
           .fontWeight(.bold)
@@ -25,6 +27,6 @@ struct BottleView: View {
 
 struct BottleView_Previews: PreviewProvider {
   static var previews: some View {
-    BottleView()
+    BottleView(title: "Bottle")
   }
 }

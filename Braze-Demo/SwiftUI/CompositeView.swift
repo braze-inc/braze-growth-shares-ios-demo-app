@@ -1,22 +1,29 @@
 import SwiftUI
 
-struct HomeDetailView: View {
+struct CompositeView: View {
+  var title: String
+  var subtitle: String
+  var miniBottles: [Bottle]
+  
   var body: some View {
     ZStack {
       VStack(alignment: .leading) {
-        Text("Lorem Ipsum")
+        Text(title)
           .font(.title3)
           .fontWeight(.bold)
+          .padding(.horizontal)
           
-        Text("Lorem Ipsum")
+        Text(subtitle)
           .font(.body)
+          .padding(.horizontal)
          
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
-            MiniBottleView()
-            MiniBottleView()
-            MiniBottleView()
+            ForEach(miniBottles, id: \.self) { bottle in
+              MiniBottleView(title: bottle.title)
+            }
           }
+          .padding(.horizontal)
         }
         .padding(.top, 25)
         .padding(.bottom, 25)
@@ -24,7 +31,6 @@ struct HomeDetailView: View {
     }
     .padding(.top)
     .padding(.bottom)
-    .padding(.leading)
     .background(Color(red: 242 / 255, green: 242 / 255, blue: 242 / 255))
     .cornerRadius(15)
   }
@@ -32,6 +38,6 @@ struct HomeDetailView: View {
 
 struct HomeDetailView_Previews: PreviewProvider {
   static var previews: some View {
-    HomeDetailView()
+    CompositeView(title: "Lorem", subtitle: "Ipsum", miniBottles: [Bottle(title: "Bottle"), Bottle(title: "Bottle"), Bottle(title: "Bottle"), Bottle(title: "Bottle")])
   }
 }

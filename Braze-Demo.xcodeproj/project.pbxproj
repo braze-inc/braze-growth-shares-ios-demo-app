@@ -111,8 +111,10 @@
 		7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */; };
 		7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
 		7FA5F3D92720662B00DF3A83 /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3D82720662B00DF3A83 /* BottleView.swift */; };
-		7FA5F3DB27206FCF00DF3A83 /* HomeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DA27206FCF00DF3A83 /* HomeDetailView.swift */; };
+		7FA5F3DB27206FCF00DF3A83 /* CompositeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DA27206FCF00DF3A83 /* CompositeView.swift */; };
 		7FA5F3DD27207B4C00DF3A83 /* MiniBottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */; };
+		7FA5F3DF2721F91800DF3A83 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DE2721F91800DF3A83 /* HomeViewModel.swift */; };
+		7FA5F3E127220AFD00DF3A83 /* Home-List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FA5F3E027220AFD00DF3A83 /* Home-List.json */; };
 		7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26224D374B2008269E5 /* Coupon.swift */; };
 		7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26424D392AE008269E5 /* Array_Util.swift */; };
 		7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACDFE426A1DAE600F451D9 /* UITableView_Util.swift */; };
@@ -371,8 +373,10 @@
 		7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardFullPageView.xib; sourceTree = "<group>"; };
 		7FA45A3524C29131009A484B /* UIVIew_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew_Util.swift; sourceTree = "<group>"; };
 		7FA5F3D82720662B00DF3A83 /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
-		7FA5F3DA27206FCF00DF3A83 /* HomeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailView.swift; sourceTree = "<group>"; };
+		7FA5F3DA27206FCF00DF3A83 /* CompositeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeView.swift; sourceTree = "<group>"; };
 		7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBottleView.swift; sourceTree = "<group>"; };
+		7FA5F3DE2721F91800DF3A83 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7FA5F3E027220AFD00DF3A83 /* Home-List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Home-List.json"; sourceTree = "<group>"; };
 		7FAAE26224D374B2008269E5 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		7FAAE26424D392AE008269E5 /* Array_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Util.swift; sourceTree = "<group>"; };
 		7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo.entitlements"; sourceTree = "<group>"; };
@@ -658,6 +662,7 @@
 		7F554A172583372B00DAFB84 /* Local-JSON */ = {
 			isa = PBXGroup;
 			children = (
+				7FA5F3E027220AFD00DF3A83 /* Home-List.json */,
 				7F554A18258337B200DAFB84 /* README.rtf */,
 				7F6C980F25644896000CDAAA /* Group-List.json */,
 				7F754FC0250C2DF000CD7B45 /* Tile-List.json */,
@@ -980,7 +985,8 @@
 				7FD63915271F56E100378193 /* PillView.swift */,
 				7FA5F3D82720662B00DF3A83 /* BottleView.swift */,
 				7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */,
-				7FA5F3DA27206FCF00DF3A83 /* HomeDetailView.swift */,
+				7FA5F3DA27206FCF00DF3A83 /* CompositeView.swift */,
+				7FA5F3DE2721F91800DF3A83 /* HomeViewModel.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -1410,6 +1416,7 @@
 				7FD8EA3125E75942004A89FA /* Sailec-Hairline.otf in Resources */,
 				7FDBFDE3268CF723000C1244 /* ColorConfigurationView.xib in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
+				7FA5F3E127220AFD00DF3A83 /* Home-List.json in Resources */,
 				7FD8EA2A25E75942004A89FA /* Sailec-MediumItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1513,7 +1520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FA5F3DB27206FCF00DF3A83 /* HomeDetailView.swift in Sources */,
+				7FA5F3DB27206FCF00DF3A83 /* CompositeView.swift in Sources */,
 				7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */,
 				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
@@ -1564,6 +1571,7 @@
 				7F459F3826A0BD310084EC23 /* TextFieldEntryDataSource.swift in Sources */,
 				7FDBFE0326900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift in Sources */,
 				7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */,
+				7FA5F3DF2721F91800DF3A83 /* HomeViewModel.swift in Sources */,
 				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
 				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
