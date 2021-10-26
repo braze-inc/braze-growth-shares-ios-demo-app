@@ -9,7 +9,7 @@ struct HomeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
             ForEach(viewModel.pills, id: \.self) { pill in
-              PillView(title: pill.title)
+              PillView(title: pill.title, url: pill.imageUrl)
             }
           }
           .padding()
@@ -22,7 +22,7 @@ struct HomeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
             ForEach(viewModel.bottles, id: \.self) { bottle in
-              BottleView(title: bottle.title)
+              BottleView(title: bottle.title, url: bottle.imageUrl)
             }
           }
           .padding(.horizontal)

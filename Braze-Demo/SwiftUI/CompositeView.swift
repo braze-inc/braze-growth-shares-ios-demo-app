@@ -20,7 +20,7 @@ struct CompositeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
             ForEach(miniBottles, id: \.self) { bottle in
-              MiniBottleView(title: bottle.title)
+              MiniBottleView(title: bottle.title, url: bottle.imageUrl)
             }
           }
           .padding(.horizontal)
@@ -37,7 +37,11 @@ struct CompositeView: View {
 }
 
 struct HomeDetailView_Previews: PreviewProvider {
+  static var imageUrlString: String {
+    return "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
+  }
+  
   static var previews: some View {
-    CompositeView(title: "Lorem", subtitle: "Ipsum", miniBottles: [Bottle(title: "Bottle"), Bottle(title: "Bottle"), Bottle(title: "Bottle"), Bottle(title: "Bottle")])
+    CompositeView(title: "Lorem", subtitle: "Ipsum", miniBottles: [Bottle(title: "Bottle", imageUrlString: imageUrlString), Bottle(title: "Bottle", imageUrlString: imageUrlString), Bottle(title: "Bottle", imageUrlString: imageUrlString), Bottle(title: "Bottle", imageUrlString: imageUrlString)])
   }
 }

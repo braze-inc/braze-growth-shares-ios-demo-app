@@ -37,10 +37,30 @@ struct HomeData: Codable {
 
 struct Pill: Codable, Hashable {
   let title: String
+  let imageUrlString: String
+  
+  private enum CodingKeys: String, CodingKey {
+    case title
+    case imageUrlString = "image"
+  }
+  
+  var imageUrl: URL? {
+    return URL(string: imageUrlString)
+  }
 }
 
 struct Bottle: Codable, Hashable {
   let title: String
+  let imageUrlString: String
+  
+  private enum CodingKeys: String, CodingKey {
+    case title
+    case imageUrlString = "image"
+  }
+  
+  var imageUrl: URL? {
+    return URL(string: imageUrlString)
+  }
 }
 
 struct Composite: Codable, Hashable {

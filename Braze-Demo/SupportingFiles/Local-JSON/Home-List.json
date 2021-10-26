@@ -2,23 +2,29 @@
   "pills": [
     {
       "title": "Liquid 101",
+      "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
     },
     {
       "title": "Liquid 102",
+      "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
     },
     {
       "title": "Liquid 103",
+      "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
     }
   ],
   "bottles": [
     {
       "title": "Liquid 104",
+      "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
     },
     {
       "title": "Liquid 105",
+      "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
     },
     {
       "title": "Liquid 106",
+      "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
     }
   ],
   "composites": [
@@ -28,12 +34,15 @@
       "miniBottles": [
         {
           "title": "Canvas Basics",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
           "title": "Canvas 101",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
           "title": "Anatomy of a Canvas",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         }
       ]
     },
@@ -43,12 +52,15 @@
       "miniBottles": [
         {
           "title": "Content Cards Explained",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
           "title": "API-Triggered Content Cards",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
           "title": "Custom Content Cards",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         }
       ]
     },
@@ -58,12 +70,15 @@
       "miniBottles": [
         {
           "title": "What is a long code?",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
           "title": "What is a short code?",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
           "title": "SMS for Dummies",
+          "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         }
       ]
     }
