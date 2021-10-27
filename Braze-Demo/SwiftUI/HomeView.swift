@@ -37,7 +37,7 @@ struct HomeView: View {
         .padding(.horizontal)
       }
     }
-    .onAppear(perform: viewModel.requestHomeData)
+    .onAppear(perform: viewModel.requestContentCards)
   }
 }
 

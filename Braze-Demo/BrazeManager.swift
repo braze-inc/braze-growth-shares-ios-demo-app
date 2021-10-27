@@ -302,9 +302,11 @@ private extension BrazeManager {
       return Ad(metaData: metaData, classType: classType)
     case .coupon:
       return Coupon(metaData: metaData, classType: classType)
-    case .item(.group):
+    case .home(.group):
       return Group(metaData: metaData, classType: classType)
-    case .item(.tile):
+    case .home(.pill):
+      return HomeItem(metaData: metaData, classType: classType)
+    case .home(.tile):
       return Tile(metaData: metaData, classType: classType)
     case .message(.fullPage):
       return FullPageMessage(metaData: metaData, classType: classType)

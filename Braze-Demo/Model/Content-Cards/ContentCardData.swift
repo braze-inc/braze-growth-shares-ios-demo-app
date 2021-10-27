@@ -83,13 +83,14 @@ enum ContentCardKey: String {
 enum ContentCardClassType: Hashable {
   case ad
   case coupon
-  case item(ItemType)
+  case home(ItemType)
   case message(MessageCenterViewType)
   case none
   
   enum ItemType {
     case tile
     case group
+    case pill
   }
   
   enum MessageCenterViewType {
@@ -100,18 +101,20 @@ enum ContentCardClassType: Hashable {
   /// - parameter rawType: This value must be synced with the `class_type` value that has been set up in your Braze dashboard or its type will be set to `ContentCardClassType.none.`
   init(rawType: String?) {
     switch rawType?.lowercased() {
+    case "ad_banner":
+      self = .ad
     case "coupon_code":
       self = .coupon
-    case "home_tile":
-      self = .item(.tile)
     case "group":
-      self = .item(.group)
+      self = .home(.group)
+    case "home_pill":
+      self = .home(.pill)
+    case "home_tile":
+      self = .home(.tile)
     case "message_full_page":
       self = .message(.fullPage)
     case "message_webview":
       self = .message(.webView)
-    case "ad_banner":
-      self = .ad
     default:
       self = .none
     }
