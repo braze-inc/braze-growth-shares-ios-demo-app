@@ -66,6 +66,8 @@ enum ContentCardKey: String {
   case detail = "tile_detail"
   case groupStyle = "group_style"
   case urlString
+  case compositeId = "composite_id"
+  case eventName = "event_name"
   
   // MARK: - Out of the Box
   case backgroundColor = "background_color"
@@ -90,6 +92,7 @@ enum ContentCardClassType: Hashable {
   enum ItemType {
     case bottle
     case group
+    case miniBottle
     case pill
     case tile
   }
@@ -110,6 +113,8 @@ enum ContentCardClassType: Hashable {
       self = .home(.group)
     case "home_bottle":
       self = .home(.bottle)
+    case "home_mini_bottle":
+      self = .home(.miniBottle)
     case "home_pill":
       self = .home(.pill)
     case "home_tile":

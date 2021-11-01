@@ -15,6 +15,7 @@ final class HomeViewModel: NSObject, ObservableObject {
   @objc func contentCardsUpdated(_ notification: Notification) {
     let pills = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.pill)]) as? [Pill]
     let bottles = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.bottle)]) as? [Bottle]
+    let miniBottles = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.miniBottle)]) as? [MiniBottle]
     
     switch result {
     case .success(let data):
@@ -25,6 +26,16 @@ final class HomeViewModel: NSObject, ObservableObject {
     
     self.data?.pills += pills ?? []
     self.data?.bottles += bottles ?? []
+    
+    if let miniBottles = miniBottles {
+      for miniBottle in miniBottles {
+        for i in 0..<data!.composites.count {
+          if data!.composites[i].id == miniBottle.compositeId {
+            data!.composites[i].miniBottles.append(contentsOf: miniBottles)
+          }
+        }
+      }
+    }
   }
   
   var pills: [Pill] {
@@ -55,7 +66,7 @@ struct HomeData: Codable {
 #warning("TODO change to let, refactor request")
   var pills: [Pill]
   var bottles: [Bottle]
-  let composites: [Composite]
+  var composites: [Composite]
 }
 
 struct Pill: HomeItem, Hashable {
@@ -82,7 +93,7 @@ extension Pill {
           let extras = metaData[.extras] as? [AnyHashable: Any]
     else { return nil }
     
-    let eventName = extras["event_name"] as? String
+    let eventName = extras[ContentCardKey.eventName.rawValue] as? String
     
     let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
     
@@ -94,7 +105,7 @@ struct Composite: Codable, Hashable {
   let id: Int
   let title: String
   let subtitle: String
-  let miniBottles: [MiniBottle]
+  var miniBottles: [MiniBottle]
 }
 
 struct Bottle: HomeItem, Hashable {
@@ -144,7 +155,7 @@ extension MiniBottle {
           let title = metaData[.title] as? String,
           let imageUrlString = metaData[.image] as? String,
           let extras = metaData[.extras] as? [AnyHashable: Any],
-          let compositeIdString = extras["composite_id"] as? String,
+          let compositeIdString = extras[ContentCardKey.compositeId.rawValue] as? String,
           let compositeId = Int(compositeIdString)
     else { return nil }
     
