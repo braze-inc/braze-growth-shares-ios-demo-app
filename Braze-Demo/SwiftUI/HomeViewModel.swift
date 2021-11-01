@@ -13,7 +13,8 @@ final class HomeViewModel: NSObject, ObservableObject {
   }
   
   @objc func contentCardsUpdated(_ notification: Notification) {
-    let pills = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.pill)]) as? [HomeItem]
+    let pills = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.pill)]) as? [Pill]
+    let bottles = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.bottle)]) as? [Bottle]
     
     switch result {
     case .success(let data):
@@ -23,13 +24,14 @@ final class HomeViewModel: NSObject, ObservableObject {
     }
     
     self.data?.pills += pills ?? []
+    self.data?.bottles += bottles ?? []
   }
   
-  var pills: [HomeItem] {
+  var pills: [Pill] {
     return data?.pills ?? []
   }
   
-  var bottles: [HomeItem] {
+  var bottles: [Bottle] {
     return data?.bottles ?? []
   }
   
@@ -38,24 +40,64 @@ final class HomeViewModel: NSObject, ObservableObject {
   }
 }
 
-protocol Displayable {
+protocol HomeItem: ContentCardable, Codable {
   var title: String { get }
   var imageUrlString: String { get }
 }
 
-extension Displayable {
+extension HomeItem {
   var imageUrl: URL? {
     return URL(string: imageUrlString)
   }
 }
 
 struct HomeData: Codable {
-  var pills: [HomeItem]
-  let bottles: [HomeItem]
+#warning("TODO change to let, refactor request")
+  var pills: [Pill]
+  var bottles: [Bottle]
   let composites: [Composite]
 }
 
-struct HomeItem: ContentCardable, Displayable, Codable, Hashable {
+struct Pill: HomeItem, Hashable {
+  private(set) var contentCardData: ContentCardData?
+  private(set) var title: String
+  private(set) var imageUrlString: String
+  
+  let eventName: String?
+  
+  private enum CodingKeys: String, CodingKey {
+    case title
+    case imageUrlString = "image"
+    case eventName = "event_name"
+  }
+}
+
+extension Pill {
+  init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
+    guard let idString = metaData[.idString] as? String,
+          let createdAt = metaData[.created] as? Double,
+          let isDismissible = metaData[.dismissible] as? Bool,
+          let title = metaData[.title] as? String,
+          let imageUrlString = metaData[.image] as? String,
+          let extras = metaData[.extras] as? [AnyHashable: Any]
+    else { return nil }
+    
+    let eventName = extras["event_name"] as? String
+    
+    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
+    
+    self.init(contentCardData: contentCardData, title: title, imageUrlString: imageUrlString, eventName: eventName)
+  }
+}
+
+struct Composite: Codable, Hashable {
+  let id: Int
+  let title: String
+  let subtitle: String
+  let miniBottles: [MiniBottle]
+}
+
+struct Bottle: HomeItem, Hashable {
   private(set) var contentCardData: ContentCardData?
   private(set) var title: String
   private(set) var imageUrlString: String
@@ -66,8 +108,7 @@ struct HomeItem: ContentCardable, Displayable, Codable, Hashable {
   }
 }
 
-// MARK: - Content Card Initializer
-extension HomeItem {
+extension Bottle {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
     guard let idString = metaData[.idString] as? String,
           let createdAt = metaData[.created] as? Double,
@@ -82,8 +123,34 @@ extension HomeItem {
   }
 }
 
-struct Composite: Codable, Hashable {
-  let title: String
-  let subtitle: String
-  let miniBottles: [HomeItem]
+struct MiniBottle: HomeItem, Hashable {
+  let compositeId: Int
+  private(set) var contentCardData: ContentCardData?
+  private(set) var title: String
+  private(set) var imageUrlString: String
+  
+  private enum CodingKeys: String, CodingKey {
+    case compositeId = "composite_id"
+    case title
+    case imageUrlString = "image"
+  }
 }
+
+extension MiniBottle {
+  init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
+    guard let idString = metaData[.idString] as? String,
+          let createdAt = metaData[.created] as? Double,
+          let isDismissible = metaData[.dismissible] as? Bool,
+          let title = metaData[.title] as? String,
+          let imageUrlString = metaData[.image] as? String,
+          let extras = metaData[.extras] as? [AnyHashable: Any],
+          let compositeIdString = extras["composite_id"] as? String,
+          let compositeId = Int(compositeIdString)
+    else { return nil }
+    
+    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
+    
+    self.init(compositeId: compositeId, contentCardData: contentCardData, title: title, imageUrlString: imageUrlString)
+  }
+}
+

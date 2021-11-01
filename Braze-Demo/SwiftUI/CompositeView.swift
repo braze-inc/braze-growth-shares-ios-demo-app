@@ -3,7 +3,7 @@ import SwiftUI
 struct CompositeView: View {
   var title: String
   var subtitle: String
-  var miniBottles: [HomeItem]
+  var miniBottles: [MiniBottle]
   
   var body: some View {
     ZStack {
@@ -42,6 +42,6 @@ struct HomeDetailView_Previews: PreviewProvider {
   }
   
   static var previews: some View {
-    CompositeView(title: "Lorem", subtitle: "Ipsum", miniBottles: [HomeItem(title: "Bottle", imageUrlString: imageUrlString), HomeItem(title: "Bottle", imageUrlString: imageUrlString), HomeItem(title: "Bottle", imageUrlString: imageUrlString), HomeItem(title: "Bottle", imageUrlString: imageUrlString)])
+    CompositeView(title: "Lorem", subtitle: "Ipsum", miniBottles: [MiniBottle(compositeId: 0, title: "Bottle", imageUrlString: imageUrlString), MiniBottle(compositeId: 0, title: "Bottle", imageUrlString: imageUrlString), MiniBottle(compositeId: 0, title: "Bottle", imageUrlString: imageUrlString), MiniBottle(compositeId: 0, title: "Bottle", imageUrlString: imageUrlString)])
   }
 }

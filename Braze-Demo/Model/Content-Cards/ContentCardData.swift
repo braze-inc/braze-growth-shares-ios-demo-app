@@ -88,9 +88,10 @@ enum ContentCardClassType: Hashable {
   case none
   
   enum ItemType {
-    case tile
+    case bottle
     case group
     case pill
+    case tile
   }
   
   enum MessageCenterViewType {
@@ -107,6 +108,8 @@ enum ContentCardClassType: Hashable {
       self = .coupon
     case "group":
       self = .home(.group)
+    case "home_bottle":
+      self = .home(.bottle)
     case "home_pill":
       self = .home(.pill)
     case "home_tile":

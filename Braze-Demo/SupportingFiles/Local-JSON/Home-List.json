@@ -3,14 +3,17 @@
     {
       "title": "Liquid 101",
       "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
+      "event_name": "",
     },
     {
       "title": "Liquid 102",
       "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
+      "event_name": "",
     },
     {
       "title": "Liquid 103",
       "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
+      "event_name": "",
     }
   ],
   "bottles": [
@@ -29,54 +32,66 @@
   ],
   "composites": [
     {
+      "id": 0,
       "title": "Canvas",
       "subtitle": "Creating customer journeys",
       "miniBottles": [
         {
+          "composite_id": 0,
           "title": "Canvas Basics",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
+          "composite_id": 0,
           "title": "Canvas 101",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
+          "composite_id": 0,
           "title": "Anatomy of a Canvas",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         }
       ]
     },
     {
+      "id": 1,
       "title": "Content Cards",
       "subtitle": "Creating personlized content",
       "miniBottles": [
         {
+          "composite_id": 1,
           "title": "Content Cards Explained",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
+          "composite_id": 1,
           "title": "API-Triggered Content Cards",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
+          "composite_id": 1,
           "title": "Custom Content Cards",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         }
       ]
     },
     {
+      "id": 2,
       "title": "SMS",
       "subtitle": "Long codes and short codes",
       "miniBottles": [
         {
+          "composite_id": 2,
           "title": "What is a long code?",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
+          "composite_id": 2,
           "title": "What is a short code?",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         },
         {
+          "composite_id": 2,
           "title": "SMS for Dummies",
           "image": "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI",
         }
