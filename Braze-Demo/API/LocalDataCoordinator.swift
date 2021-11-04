@@ -1,7 +1,6 @@
 import Foundation
 
 enum LocalDataError: Error {
-  case error(String)
   case fileNotFound
   case badJSON(String)
 }
