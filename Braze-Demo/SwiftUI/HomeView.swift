@@ -2,14 +2,13 @@ import SwiftUI
 
 struct HomeView: View {
   @ObservedObject private var viewModel: HomeViewModel = HomeViewModel()
-  @State private var homeData: HomeData?
   
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
-            ForEach(homeData?.pills ?? [], id: \.self) { pill in
+            ForEach(viewModel.pills, id: \.self) { pill in
               PillView(title: pill.title, url: pill.imageUrl)
             }
           }
