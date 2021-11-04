@@ -2,13 +2,14 @@ import SwiftUI
 
 struct HomeView: View {
   @ObservedObject private var viewModel: HomeViewModel = HomeViewModel()
+  @State private var homeData: HomeData?
   
   var body: some View {
     ScrollView {
       VStack(alignment: .leading) {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
-            ForEach(viewModel.pills, id: \.self) { pill in
+            ForEach(homeData?.pills ?? [], id: \.self) { pill in
               PillView(title: pill.title, url: pill.imageUrl)
             }
           }
@@ -37,7 +38,11 @@ struct HomeView: View {
         .padding(.horizontal)
       }
     }
-    .onAppear(perform: viewModel.requestContentCards)
+    .onAppear {
+      Task {
+        await viewModel.requestHomeData()
+      }
+    }
   }
 }
 

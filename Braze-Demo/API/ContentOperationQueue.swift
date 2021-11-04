@@ -1,19 +1,12 @@
 import Foundation
 
-class ContentOperationQueue<T: ContentCardable, U: MetaData>: OperationQueue {
-  private var localContentCompletionHandler: ([U.Element]) -> () = { _ in }
+class ContentOperationQueue: OperationQueue {
   private var contentCardCompletionHandler: ([ContentCardable]) -> () = { _ in }
   private let semaphore = DispatchSemaphore(value: 0)
-  private var classType: ContentCardClassType = .none
-  private var localDataFile: String?
-  private lazy var result: APIResult<U> = {
-    guard let file = localDataFile else { return .failure("No Local Data File Provided") }
-    return LocalDataCoordinator().loadData(fileName: file, withExtension: "json")
-  }()
+  private var classTypes = [ContentCardClassType]()
   
-  init(localDataFile: String?, classType: ContentCardClassType) {
-    self.localDataFile = localDataFile
-    self.classType = classType
+  required init(classTypes: [ContentCardClassType]) {
+    self.classTypes = classTypes
   }
   
   /// The observer in this case is `ContentOperationQueue`. The observer needs to be retained in memory long enough to recieve the initial `contentCardsUpdated(_ notification: Notification)` callback.
@@ -23,8 +16,9 @@ class ContentOperationQueue<T: ContentCardable, U: MetaData>: OperationQueue {
   }
   
   @objc private func contentCardsUpdated(_ notification: Notification) {
-    let contentCards = BrazeManager.shared.handleContentCardsUpdated(notification, for: [classType, .ad])
+    let contentCards = BrazeManager.shared.handleContentCardsUpdated(notification, for: classTypes)
     contentCardCompletionHandler(contentCards)
+    
     semaphore.signal()
   }
 }
@@ -36,49 +30,36 @@ extension ContentOperationQueue {
   ///A `BarrierBlock` is responsible for calling the completion handler when both loading operations are completed. A semaphore is used when working with an `Operation` object to signal that Content Cards are loaded due to the nature of the Notifcation callback.
   /// - parameter content: ContentCardable objects loaded from a local file and from Content Cards.
   /// - parameter ads: Ad objects loaded from Content Cards.
-  func downloadContent(_ completion: @escaping (_ content: [T], _ ads: [Ad]) -> ()) {
-    var content = [T]()
-    var ads = [Ad]()
+  func downloadContent() async -> HomeData {
+    var homeData: HomeData = loadLocalContent()
     
     contentCardCompletionHandler = { contentCards in
-      for card in contentCards {
-        if card is Ad {
-          ads.append(card as! Ad)
-        } else if card is T {
-          content.insert(card as! T, at: 0)
-        }
-      }
-    }
-    
-    localContentCompletionHandler = { localContent in
-      content.append(contentsOf: localContent as! [T])
-    }
-    
-    addOperation { [weak self] in
-      guard let self = self else { return }
-      self.loadLocalContent(self.localContentCompletionHandler)
+     
     }
     
     addOperation { [weak self] in
       guard let self = self else { return }
       self.loadContentCards()
-      self.semaphore.wait()
+      if self.semaphore.wait(timeout: .now() + 5) == .timedOut {
+        return
+      }
     }
     
-    addBarrierBlock {
-      completion(content, ads)
+    return await withCheckedContinuation { continuation in
+      addBarrierBlock {
+        continuation.resume(returning: (homeData))
+      }
     }
   }
 }
 
 // MARK: - Private
 private extension ContentOperationQueue {
-  func loadLocalContent(_ completion: @escaping ([U.Element]) -> ()) {
-    switch result {
-    case .success(let metaData):
-      completion(metaData.items)
-    case .failure:
-      cancelAllOperations()
+  func loadLocalContent() -> HomeData {
+    do {
+      return try LocalDataCoordinator().loadData(fileName: "Home-List", withExtension: "json")
+    } catch {
+      return HomeData(pills: [], bottles: [], composites: [])
     }
   }
 }

@@ -1,41 +1,12 @@
 import SwiftUI
+import Combine
 
+@MainActor
 final class HomeViewModel: NSObject, ObservableObject {
   @Published var data: HomeData?
   
-  private lazy var result: APIResult<HomeData> = {
-    return LocalDataCoordinator().loadData(fileName: "Home-List", withExtension: "json")
-  }()
-  
-  func requestContentCards() {
-    BrazeManager.shared.addObserverForContentCards(observer: self, selector: #selector(contentCardsUpdated))
-    BrazeManager.shared.requestContentCardsRefresh()
-  }
-  
-  @objc func contentCardsUpdated(_ notification: Notification) {
-    let pills = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.pill)]) as? [Pill]
-    let bottles = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.bottle)]) as? [Bottle]
-    let miniBottles = BrazeManager.shared.handleContentCardsUpdated(notification, for: [.home(.miniBottle)]) as? [MiniBottle]
-    
-    switch result {
-    case .success(let data):
-      self.data = data
-    case .failure(let error):
-      print(error)
-    }
-    
-    self.data?.pills += pills ?? []
-    self.data?.bottles += bottles ?? []
-    
-    if let miniBottles = miniBottles {
-      for miniBottle in miniBottles {
-        for i in 0..<data!.composites.count {
-          if data!.composites[i].id == miniBottle.compositeId {
-            data!.composites[i].miniBottles.append(contentsOf: miniBottles)
-          }
-        }
-      }
-    }
+  func requestHomeData() async {
+    self.data = await ContentOperationQueue(classTypes: [.home(.pill), .home(.bottle), .home(.miniBottle)]).downloadContent()
   }
   
   var pills: [Pill] {
@@ -63,10 +34,9 @@ extension HomeItem {
 }
 
 struct HomeData: Codable {
-#warning("TODO change to let, refactor request")
-  var pills: [Pill]
-  var bottles: [Bottle]
-  var composites: [Composite]
+  let pills: [Pill]
+  let bottles: [Bottle]
+  let composites: [Composite]
 }
 
 struct Pill: HomeItem, Hashable {
