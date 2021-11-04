@@ -34,9 +34,9 @@ extension HomeItem {
 }
 
 struct HomeData: Codable {
-  let pills: [Pill]
-  let bottles: [Bottle]
-  let composites: [Composite]
+  var pills: [Pill]
+  var bottles: [Bottle]
+  var composites: [Composite]
 }
 
 struct Pill: HomeItem, Hashable {

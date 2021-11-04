@@ -32,28 +32,23 @@ extension ContentOperationQueue {
   /// - parameter ads: Ad objects loaded from Content Cards.
   func downloadContent() async -> HomeData {
     var homeData: HomeData = loadLocalContent()
-    var pills = homeData.pills
-    var bottles = homeData.bottles
-    var composites = homeData.composites
     
     contentCardCompletionHandler = { contentCards in
       for card in contentCards {
         switch card {
-        case let pillCard as Pill:
-          pills.append(pillCard)
-        case let bottleCard as Bottle:
-          bottles.append(bottleCard)
-        case let miniBottleCard as MiniBottle:
-          for i in 0..<composites.count {
-            if composites[i].id == miniBottleCard.compositeId {
-              composites[i].miniBottles.append(miniBottleCard)
+        case let pill as Pill:
+          homeData.pills.append(pill)
+        case let bottle as Bottle:
+          homeData.bottles.append(bottle)
+        case let miniBottle as MiniBottle:
+          for i in 0..<homeData.composites.count {
+            if homeData.composites[i].id == miniBottle.compositeId {
+              homeData.composites[i].miniBottles.append(miniBottle)
             }
           }
         default: continue
         }
       }
-      
-      homeData = HomeData(pills: pills, bottles: bottles, composites: composites)
     }
     
     addOperation { [weak self] in
