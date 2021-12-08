@@ -4,5 +4,4 @@ enum GroupSection: Int, CaseIterable {
   case secondary
   case headline
   case large
-  case ad
 }

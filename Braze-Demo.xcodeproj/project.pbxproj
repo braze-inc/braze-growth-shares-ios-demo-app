@@ -52,7 +52,6 @@
 		7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */; };
 		7F554A19258337B200DAFB84 /* README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 7F554A18258337B200DAFB84 /* README.rtf */; };
 		7F554A272585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */; };
-		7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A302585F2B400DAFB84 /* SmallRowCollectionViewCell.swift */; };
 		7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A3625871FE900DAFB84 /* HeaderSupplementaryView.swift */; };
 		7F554A3F2587209700DAFB84 /* FooterSupplementaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A3E2587209700DAFB84 /* FooterSupplementaryView.swift */; };
 		7F554A442587257F00DAFB84 /* GroupedLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F554A432587257F00DAFB84 /* GroupedLayoutBuilder.swift */; };
@@ -309,7 +308,6 @@
 		7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppMessageSettingsViewController.swift; sourceTree = "<group>"; };
 		7F554A18258337B200DAFB84 /* README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = README.rtf; sourceTree = "<group>"; };
 		7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBackgroundDecorationView.swift; sourceTree = "<group>"; };
-		7F554A302585F2B400DAFB84 /* SmallRowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallRowCollectionViewCell.swift; sourceTree = "<group>"; };
 		7F554A3625871FE900DAFB84 /* HeaderSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderSupplementaryView.swift; sourceTree = "<group>"; };
 		7F554A3E2587209700DAFB84 /* FooterSupplementaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterSupplementaryView.swift; sourceTree = "<group>"; };
 		7F554A432587257F00DAFB84 /* GroupedLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedLayoutBuilder.swift; sourceTree = "<group>"; };
@@ -675,7 +673,6 @@
 				7F6C983A25648B1F000CDAAA /* LargeRowCollectionViewCell.swift */,
 				7F6C98492564B08B000CDAAA /* HeadlineCollectionViewCell.swift */,
 				7F554A262585ED2D00DAFB84 /* SectionBackgroundDecorationView.swift */,
-				7F554A302585F2B400DAFB84 /* SmallRowCollectionViewCell.swift */,
 				7F554A3625871FE900DAFB84 /* HeaderSupplementaryView.swift */,
 				7F554A3E2587209700DAFB84 /* FooterSupplementaryView.swift */,
 			);
@@ -1551,7 +1548,6 @@
 				7FDBFE0326900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift in Sources */,
 				7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */,
 				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
-				7F554A312585F2B400DAFB84 /* SmallRowCollectionViewCell.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
 				7F3AAC4026B8621100E9F774 /* ModalVideoViewController.swift in Sources */,
@@ -1705,7 +1701,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1731,7 +1727,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Register-Content-Extension/Braze-Demo-LAB-Register-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1756,7 +1752,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1781,7 +1777,7 @@
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1807,7 +1803,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Push-Story-Content-Extension/Braze-Demo-Push-Story-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1834,7 +1830,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Push-Story-Content-Extension/Braze-Demo-Push-Story-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1861,7 +1857,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Match-Game-Content-Extension/Braze-Demo-Match-Game-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -1887,7 +1883,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-Match-Game-Content-Extension/Braze-Demo-Match-Game-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2028,7 +2024,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo/SupportingFiles/Braze-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2055,7 +2051,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo/SupportingFiles/Braze-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2165,7 +2161,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Progress-Content-Extension/Braze-Demo-LAB-Progress-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
@@ -2191,7 +2187,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Braze-Demo-LAB-Progress-Content-Extension/Braze-Demo-LAB-Progress-Content-Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;

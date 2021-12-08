@@ -13,18 +13,6 @@ class HeadlineCollectionViewCell: UICollectionViewListCell {
   required init?(coder: NSCoder) {
     super.init(coder: coder)
   }
-
-  static func configuredCell() ->  UICollectionView.CellRegistration<HeadlineCollectionViewCell, Group> {
-    return UICollectionView.CellRegistration<HeadlineCollectionViewCell, Group> { (cell, indexPath, subgroup) in
-      cell.layer.cornerRadius = 15
-      cell.layer.masksToBounds = true
-      
-      let style = NSMutableParagraphStyle()
-      style.lineSpacing = 10
-      style.alignment = .center
-      cell.titleLabel.attributedText = NSAttributedString(string: subgroup.title, attributes: [.paragraphStyle: style])
-    }
-  }
 }
 
 // MARK: - Private
