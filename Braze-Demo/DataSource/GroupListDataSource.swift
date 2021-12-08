@@ -31,7 +31,6 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
     
     snapshot.appendSections(GroupSection.allCases)
     snapshot.appendItems(["Blank"], toSection: .blank)
-    snapshot.appendItems(ads, toSection: .ad)
     
     let groups = content as! [Group]
     groups.forEach {
@@ -62,22 +61,39 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
   }
   
   func configureDataSource(_ collectionView: UICollectionView) {
-    dataSource = UICollectionViewDiffableDataSource<GroupSection, AnyHashable>(collectionView: collectionView) { (collectionView, indexPath, content) -> UICollectionViewCell? in
+   
+    let blankCellRegistration = UICollectionView.CellRegistration<BlankCollectionViewCell, AnyHashable> { (_, _, _) in }
+    
+    let smallRowRegistration = UICollectionView.CellRegistration<SmallRowCollectionViewCell, Group> { cell, indexPath, item in
+        var content = UIListContentConfiguration.valueCell()
+        content.image = UIImage(systemName: "globe")
+        content.imageProperties.tintColor = .systemGreen
+        content.attributedText = item.title.firstWordBold()
+        cell.contentConfiguration = content
+        cell.accessories = [.disclosureIndicator()]
+    }
+    
+    let headlineRowRegistration = UICollectionView.CellRegistration<HeadlineCollectionViewCell, Group> { cell, indexPath, item in
+        cell.layer.cornerRadius = 15
+        cell.layer.masksToBounds = true
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 10
+        style.alignment = .center
+        cell.titleLabel.attributedText = NSAttributedString(string: item.title, attributes: [.paragraphStyle: style])
+    }
+    
+    dataSource = UICollectionViewDiffableDataSource<GroupSection, AnyHashable>(collectionView: collectionView) { (collectionView, indexPath, item) -> UICollectionViewCell? in
       
-      switch content {
+      switch item {
       case is String:
-        let cell: BlankCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
-        return cell
-      case let ad as Ad:
-        let cell: BannerAdCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
-        cell.configureCell(ad.imageUrl)
-        return cell
+        return collectionView.dequeueConfiguredReusableCell(using: blankCellRegistration, for: indexPath, item: nil)
       case let group as Group:
         switch GroupSection(rawValue: indexPath.section) {
         case .primary, .secondary:
-          return collectionView.dequeueConfiguredReusableCell(using: SmallRowCollectionViewCell.configuredCell(), for: indexPath, item: group)
+          return collectionView.dequeueConfiguredReusableCell(using: smallRowRegistration, for: indexPath, item: group)
         case .headline:
-          return collectionView.dequeueConfiguredReusableCell(using: HeadlineCollectionViewCell.configuredCell(), for: indexPath, item: group)
+          return collectionView.dequeueConfiguredReusableCell(using: headlineRowRegistration, for: indexPath, item: group)
         case .large:
           let cell: LargeRowCollectionViewCell! = collectionView.dequeueReusableCell(for: indexPath)
           cell.configureCell(group.title, imageUrl: group.imageUrl)
@@ -109,8 +125,6 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
       guard let section = GroupSection(rawValue: sectionIndex) else { return nil }
       
       switch section {
-      case .ad:
-        return GroupedLayoutBuilder.buildAdLayoutSection(layoutEnvironment: layoutEnvironment)
       case .blank:
         return GroupedLayoutBuilder.buildBlankLayoutSection()
       case .primary, .secondary:
