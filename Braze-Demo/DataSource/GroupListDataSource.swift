@@ -64,7 +64,7 @@ class GroupListDataSource: NSObject, CollectionViewDataSourceProvider {
    
     let blankCellRegistration = UICollectionView.CellRegistration<BlankCollectionViewCell, AnyHashable> { (_, _, _) in }
     
-    let smallRowRegistration = UICollectionView.CellRegistration<SmallRowCollectionViewCell, Group> { cell, indexPath, item in
+    let smallRowRegistration = UICollectionView.CellRegistration<UICollectionViewListCell, Group> { cell, indexPath, item in
         var content = UIListContentConfiguration.valueCell()
         content.image = UIImage(systemName: "globe")
         content.imageProperties.tintColor = .systemGreen
