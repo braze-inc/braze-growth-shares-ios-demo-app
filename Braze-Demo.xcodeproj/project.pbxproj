@@ -109,6 +109,11 @@
 		7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */; };
 		7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */; };
 		7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
+		7FA5F3D92720662B00DF3A83 /* BottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3D82720662B00DF3A83 /* BottleView.swift */; };
+		7FA5F3DB27206FCF00DF3A83 /* CompositeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DA27206FCF00DF3A83 /* CompositeView.swift */; };
+		7FA5F3DD27207B4C00DF3A83 /* MiniBottleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */; };
+		7FA5F3DF2721F91800DF3A83 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA5F3DE2721F91800DF3A83 /* HomeViewModel.swift */; };
+		7FA5F3E127220AFD00DF3A83 /* Home-List.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FA5F3E027220AFD00DF3A83 /* Home-List.json */; };
 		7FAAE26324D374B2008269E5 /* Coupon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26224D374B2008269E5 /* Coupon.swift */; };
 		7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAAE26424D392AE008269E5 /* Array_Util.swift */; };
 		7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FACDFE426A1DAE600F451D9 /* UITableView_Util.swift */; };
@@ -138,10 +143,11 @@
 		7FD1218025F00B8D00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
 		7FD1218925F00B8E00961131 /* UserAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD1216E25F0047B00961131 /* UserAttribute.swift */; };
 		7FD213D625872B5700FEFAAB /* TileLayoutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */; };
-		7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */; };
-		7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */; };
 		7FD2F60E256607AB0061950D /* GroupSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F60D256607AB0061950D /* GroupSection.swift */; };
 		7FD2F613256608A20061950D /* UIButton_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD2F612256608A20061950D /* UIButton_Util.swift */; };
+		7FD63911271F4CBB00378193 /* ActivitesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD63910271F4CBB00378193 /* ActivitesView.swift */; };
+		7FD63914271F547B00378193 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD63913271F547B00378193 /* HomeView.swift */; };
+		7FD63916271F56E100378193 /* PillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD63915271F56E100378193 /* PillView.swift */; };
 		7FD8EA0725E75197004A89FA /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7FD8EA0F25E75477004A89FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FBDD49424AD711F00EC0983 /* Assets.xcassets */; };
 		7FD8EA2625E75942004A89FA /* Sailec-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */; };
@@ -364,6 +370,11 @@
 		7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardFullPageView.swift; sourceTree = "<group>"; };
 		7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardFullPageView.xib; sourceTree = "<group>"; };
 		7FA45A3524C29131009A484B /* UIVIew_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew_Util.swift; sourceTree = "<group>"; };
+		7FA5F3D82720662B00DF3A83 /* BottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottleView.swift; sourceTree = "<group>"; };
+		7FA5F3DA27206FCF00DF3A83 /* CompositeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeView.swift; sourceTree = "<group>"; };
+		7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniBottleView.swift; sourceTree = "<group>"; };
+		7FA5F3DE2721F91800DF3A83 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		7FA5F3E027220AFD00DF3A83 /* Home-List.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "Home-List.json"; sourceTree = "<group>"; };
 		7FAAE26224D374B2008269E5 /* Coupon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coupon.swift; sourceTree = "<group>"; };
 		7FAAE26424D392AE008269E5 /* Array_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array_Util.swift; sourceTree = "<group>"; };
 		7FABB1E42512A92600253FAF /* Braze-Demo.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo.entitlements"; sourceTree = "<group>"; };
@@ -396,11 +407,12 @@
 		7FCFEB18256C38B500079EAF /* ModalPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalPickerViewController.xib; sourceTree = "<group>"; };
 		7FD1216E25F0047B00961131 /* UserAttribute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAttribute.swift; sourceTree = "<group>"; };
 		7FD213D525872B5700FEFAAB /* TileLayoutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileLayoutBuilder.swift; sourceTree = "<group>"; };
-		7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeScreenMenuView.xib; sourceTree = "<group>"; };
-		7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenMenuView.swift; sourceTree = "<group>"; };
 		7FD2F60D256607AB0061950D /* GroupSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupSection.swift; sourceTree = "<group>"; };
 		7FD2F612256608A20061950D /* UIButton_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton_Util.swift; sourceTree = "<group>"; };
 		7FD4526525C8C756007C76D0 /* Braze-Demo-Push-Story-Content-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Braze-Demo-Push-Story-Content-Extension.entitlements"; sourceTree = "<group>"; };
+		7FD63910271F4CBB00378193 /* ActivitesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitesView.swift; sourceTree = "<group>"; };
+		7FD63913271F547B00378193 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7FD63915271F56E100378193 /* PillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillView.swift; sourceTree = "<group>"; };
 		7FD8EA1825E75941004A89FA /* Sailec-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-Medium.otf"; sourceTree = "<group>"; };
 		7FD8EA1925E75941004A89FA /* Sailec-BlackItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-BlackItalic.otf"; sourceTree = "<group>"; };
 		7FD8EA1A25E75941004A89FA /* Sailec-ThinItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sailec-ThinItalic.otf"; sourceTree = "<group>"; };
@@ -648,6 +660,7 @@
 		7F554A172583372B00DAFB84 /* Local-JSON */ = {
 			isa = PBXGroup;
 			children = (
+				7FA5F3E027220AFD00DF3A83 /* Home-List.json */,
 				7F554A18258337B200DAFB84 /* README.rtf */,
 				7F6C980F25644896000CDAAA /* Group-List.json */,
 				7F754FC0250C2DF000CD7B45 /* Tile-List.json */,
@@ -729,15 +742,6 @@
 				7F8967CA25740FA600C61405 /* FullListViewController.xib */,
 			);
 			path = FullListViewController;
-			sourceTree = "<group>";
-		};
-		7F8967EF2575F41500C61405 /* HomeScreenMenuView */ = {
-			isa = PBXGroup;
-			children = (
-				7FD2F5FA2564C6C00061950D /* HomeScreenMenuView.xib */,
-				7FD2F5FF2564C6CA0061950D /* HomeScreenMenuView.swift */,
-			);
-			path = HomeScreenMenuView;
 			sourceTree = "<group>";
 		};
 		7F8AF0132525353D006F478B /* API Requests */ = {
@@ -871,7 +875,6 @@
 			children = (
 				7FA45A3424C28BD5009A484B /* Content-Cards */,
 				7F6C98482564B06D000CDAAA /* Grouped */,
-				7F8967EF2575F41500C61405 /* HomeScreenMenuView */,
 				7FDBFDE1268CF280000C1244 /* SwitchTableViewCell */,
 				7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */,
 				7FDFA26E24B68DC000E3B132 /* MessageCenterTableViewCell.swift */,
@@ -933,6 +936,7 @@
 				7F9DCBD324AD7A5400E8D207 /* Model */,
 				7F9DCBC124AD784700E8D207 /* Storyboard */,
 				7F9DCBC224AD785200E8D207 /* SupportingFiles */,
+				7FD63912271F4CC700378193 /* SwiftUI */,
 				7F9DCBCA24AD79B700E8D207 /* ViewController */,
 				7F87D4AF24B2A25000ED0A86 /* Utils */,
 				7F9DCBD824AD832400E8D207 /* View */,
@@ -968,6 +972,20 @@
 				7F6C94C1255F8866000CDAAA /* SlideFromBottomViewController.swift */,
 			);
 			path = "In-App-Messages";
+			sourceTree = "<group>";
+		};
+		7FD63912271F4CC700378193 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7FD63910271F4CBB00378193 /* ActivitesView.swift */,
+				7FD63913271F547B00378193 /* HomeView.swift */,
+				7FD63915271F56E100378193 /* PillView.swift */,
+				7FA5F3D82720662B00DF3A83 /* BottleView.swift */,
+				7FA5F3DC27207B4C00DF3A83 /* MiniBottleView.swift */,
+				7FA5F3DA27206FCF00DF3A83 /* CompositeView.swift */,
+				7FA5F3DE2721F91800DF3A83 /* HomeViewModel.swift */,
+			);
+			path = SwiftUI;
 			sourceTree = "<group>";
 		};
 		7FD8EA1725E758F1004A89FA /* Sailec-Font */ = {
@@ -1387,7 +1405,6 @@
 				7FDBFDE8268E1669000C1244 /* ColorBoxView.xib in Resources */,
 				7FDBFE072690B2EE000C1244 /* FontConfigurationView.xib in Resources */,
 				7FCFEB19256C38B500079EAF /* ModalPickerViewController.xib in Resources */,
-				7FD2F5FB2564C6C00061950D /* HomeScreenMenuView.xib in Resources */,
 				7F88F9A3264496A000B68025 /* FullPermissionViewController.xib in Resources */,
 				7F754FC1250C2DF000CD7B45 /* Tile-List.json in Resources */,
 				7FD8EA2E25E75942004A89FA /* Sailec-BoldItalic.otf in Resources */,
@@ -1396,6 +1413,7 @@
 				7FD8EA3125E75942004A89FA /* Sailec-Hairline.otf in Resources */,
 				7FDBFDE3268CF723000C1244 /* ColorConfigurationView.xib in Resources */,
 				7F9DCBC424AD786A00E8D207 /* LaunchScreen.storyboard in Resources */,
+				7FA5F3E127220AFD00DF3A83 /* Home-List.json in Resources */,
 				7FD8EA2A25E75942004A89FA /* Sailec-MediumItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1499,6 +1517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FA5F3DB27206FCF00DF3A83 /* CompositeView.swift in Sources */,
 				7FCFB99324C9445B001AA381 /* UICollectionView_Util.swift in Sources */,
 				7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */,
 				7FAAE26524D392AE008269E5 /* Array_Util.swift in Sources */,
@@ -1511,6 +1530,7 @@
 				7F5549F52582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift in Sources */,
 				7F6C94C2255F8866000CDAAA /* SlideFromBottomViewController.swift in Sources */,
 				7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */,
+				7FD63914271F547B00378193 /* HomeView.swift in Sources */,
 				7FCFB97924C2D184001AA381 /* Double_Util.swift in Sources */,
 				7FE763EE24CBCDB10017C5D2 /* ContentOperationQueue.swift in Sources */,
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
@@ -1518,6 +1538,7 @@
 				7FD1216F25F0047B00961131 /* UserAttribute.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
+				7FA5F3D92720662B00DF3A83 /* BottleView.swift in Sources */,
 				7F6C97FE25642DA4000CDAAA /* TileListDataSource.swift in Sources */,
 				7FDFA26924B68C9C00E3B132 /* ShoppingCartDataSource.swift in Sources */,
 				7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */,
@@ -1537,6 +1558,7 @@
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
 				7FDBFDFB268E6C8C000C1244 /* CustomClassicContentCardCell.swift in Sources */,
 				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,
+				7FA5F3DD27207B4C00DF3A83 /* MiniBottleView.swift in Sources */,
 				7FDFA26D24B68D8800E3B132 /* ShoppingCartTableViewCell.swift in Sources */,
 				7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */,
 				7F8967D42574246B00C61405 /* SwitchTableViewCell.swift in Sources */,
@@ -1544,9 +1566,9 @@
 				7FC3106624D1C29A00053D90 /* ContentCardGestureView.swift in Sources */,
 				7F384B4E256DC59300673410 /* InAppMessageData.swift in Sources */,
 				7F459F3826A0BD310084EC23 /* TextFieldEntryDataSource.swift in Sources */,
-				7FD2F6002564C6CA0061950D /* HomeScreenMenuView.swift in Sources */,
 				7FDBFE0326900738000C1244 /* OutOfTheBoxContentCardConfigurationData.swift in Sources */,
 				7FACDFE526A1DAE600F451D9 /* UITableView_Util.swift in Sources */,
+				7FA5F3DF2721F91800DF3A83 /* HomeViewModel.swift in Sources */,
 				7F88F9992644969500B68025 /* FullPermissionViewController.swift in Sources */,
 				7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */,
 				7F554A3725871FE900DAFB84 /* HeaderSupplementaryView.swift in Sources */,
@@ -1558,6 +1580,8 @@
 				7F0B4A7D25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift in Sources */,
 				7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */,
 				7FCFEB0D256C389A00079EAF /* ModalPickerViewController.swift in Sources */,
+				7FD63911271F4CBB00378193 /* ActivitesView.swift in Sources */,
+				7FD63916271F56E100378193 /* PillView.swift in Sources */,
 				7F554A442587257F00DAFB84 /* GroupedLayoutBuilder.swift in Sources */,
 				7F8AF00C25253521006F478B /* ContentBlockRequest.swift in Sources */,
 				7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */,
@@ -1704,13 +1728,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Dev";
@@ -1730,13 +1754,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Register-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.register-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Register Content Extension Prod";
@@ -1755,13 +1779,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-service-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Service Extension Development";
@@ -1780,13 +1804,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Service-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.notification-service-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Service Extension Production";
@@ -1806,13 +1830,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.push-story-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1833,13 +1857,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Push-Story-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.push-story-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1860,13 +1884,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.match-game-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Match Game Content Extension Dev";
@@ -1886,13 +1910,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-Match-Game-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.match-game-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo Match Game Content Extension Prod";
@@ -1952,7 +1976,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -2006,7 +2030,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -2027,12 +2051,12 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2054,12 +2078,12 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "$(SRCROOT)/Braze-Demo/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2077,8 +2101,8 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2099,8 +2123,8 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze Demo Tests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2120,7 +2144,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze DemoUITests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2140,7 +2164,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = U883FP5L7Z;
-				INFOPLIST_FILE = "Braze DemoUITests/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Braze-DemoUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2164,13 +2188,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.progress-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Progress Content Extension Dev";
@@ -2190,13 +2214,13 @@
 				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 5GLZKGNWQ3;
 				INFOPLIST_FILE = "Braze-Demo-LAB-Progress-Content-Extension/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 3.0;
+				MARKETING_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.braze.book-demo.progress-notification-content-extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Braze Demo LAB Progress Content Extension Prod";
