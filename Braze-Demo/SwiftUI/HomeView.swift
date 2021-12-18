@@ -9,20 +9,21 @@ struct HomeView: View {
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
             ForEach(viewModel.pills, id: \.self) { pill in
-              PillView(title: pill.title, url: pill.imageUrl)
+              PillView(pill: pill)
             }
           }
           .padding()
         }
         
-        Text("Braze LAB Courses")
+        Text(viewModel.header.title)
+          .foregroundColor(viewModel.header.fontColor)
           .font(.body)
           .padding(.horizontal)
         
         ScrollView(.horizontal, showsIndicators: false) {
           HStack(spacing: 10) {
             ForEach(viewModel.bottles, id: \.self) { bottle in
-              BottleView(title: bottle.title, url: bottle.imageUrl)
+              BottleView(bottle: bottle)
             }
           }
           .padding(.horizontal)
@@ -31,7 +32,7 @@ struct HomeView: View {
         
         VStack(spacing: 20) {
           ForEach(viewModel.composites, id: \.self) { composite in
-            CompositeView(title: composite.title, subtitle: composite.subtitle, miniBottles: composite.miniBottles)
+            CompositeView(composite: composite)
           }
         }
         .padding(.horizontal)

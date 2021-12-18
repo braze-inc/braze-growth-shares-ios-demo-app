@@ -30,23 +30,24 @@ extension ContentOperationQueue {
   ///A `BarrierBlock` is responsible for calling the completion handler when both loading operations are completed. A semaphore is used when working with an `Operation` object to signal that Content Cards are loaded due to the nature of the Notifcation callback.
   /// - parameter content: ContentCardable objects loaded from a local file and from Content Cards.
   /// - parameter ads: Ad objects loaded from Content Cards.
-  func downloadContent() async -> HomeData {
-    var homeData: HomeData = loadLocalContent()
+  func downloadContent() async -> HomeMetaData {
+    var meta: HomeMetaData = await loadMetaData()
     
     contentCardCompletionHandler = { contentCards in
       for card in contentCards {
-        switch card {
-        case let pill as Pill:
-          homeData.pills.append(pill)
-        case let bottle as Bottle:
-          homeData.bottles.append(bottle)
-        case let miniBottle as MiniBottle:
-          for i in 0..<homeData.composites.count {
-            if homeData.composites[i].id == miniBottle.compositeId {
-              homeData.composites[i].miniBottles.append(miniBottle)
+        switch card.contentCardData?.contentCardClassType {
+        case .home(.pill):
+          meta.data[0].attributes.pills += [card as! HomeItem]
+        case .home(.bottle):
+          meta.data[0].attributes.bottles += [card as! HomeItem]
+        case .home(.miniBottle):
+          let miniBottle = card as! HomeItem
+          for i in 0..<meta.data[0].attributes.composites.count {
+            if meta.data[0].attributes.composites[i].compositeID == miniBottle.compositeID {
+              meta.data[0].attributes.composites[i].miniBottles.append(miniBottle)
             }
           }
-        default: continue
+        default: break
         }
       }
     }
@@ -61,7 +62,7 @@ extension ContentOperationQueue {
     
     return await withCheckedContinuation { continuation in
       addBarrierBlock {
-        continuation.resume(returning: (homeData))
+        continuation.resume(returning: (meta))
       }
     }
   }
@@ -69,11 +70,11 @@ extension ContentOperationQueue {
 
 // MARK: - Private
 private extension ContentOperationQueue {
-  func loadLocalContent() -> HomeData {
+  func loadMetaData() async -> HomeMetaData {
     do {
-      return try LocalDataCoordinator().loadData(fileName: "Home-List", withExtension: "json")
+      return try await NetworkRequest.makeRequest()
     } catch {
-      return HomeData(pills: [], bottles: [], composites: [])
+      return HomeMetaData.empty
     }
   }
 }

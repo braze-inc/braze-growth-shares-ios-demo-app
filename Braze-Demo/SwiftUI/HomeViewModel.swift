@@ -3,57 +3,30 @@ import Combine
 
 @MainActor
 final class HomeViewModel: NSObject, ObservableObject {
-  @Published var data: HomeData?
+  @Published var meta: HomeMetaData = HomeMetaData.empty
   
   func requestHomeData() async {
-    self.data = await ContentOperationQueue(classTypes: [.home(.pill), .home(.bottle), .home(.miniBottle)]).downloadContent()
+    self.meta = await ContentOperationQueue(classTypes: [.home(.pill), .home(.bottle), .home(.miniBottle)]).downloadContent()
   }
   
-  var pills: [Pill] {
-    return data?.pills ?? []
+  var header: Header {
+    return  meta.data.first!.attributes.header
   }
   
-  var bottles: [Bottle] {
-    return data?.bottles ?? []
+  var pills: [HomeItem] {
+    return meta.data.first!.attributes.pills
+  }
+  
+  var bottles: [HomeItem] {
+    return  meta.data.first!.attributes.bottles
   }
   
   var composites: [Composite] {
-    return data?.composites ?? []
+    return  meta.data.first!.attributes.composites
   }
-}
-
-protocol HomeItem: ContentCardable, Codable {
-  var title: String { get }
-  var imageUrlString: String { get }
 }
 
 extension HomeItem {
-  var imageUrl: URL? {
-    return URL(string: imageUrlString)
-  }
-}
-
-struct HomeData: Codable {
-  var pills: [Pill]
-  var bottles: [Bottle]
-  var composites: [Composite]
-}
-
-struct Pill: HomeItem, Hashable {
-  private(set) var contentCardData: ContentCardData?
-  private(set) var title: String
-  private(set) var imageUrlString: String
-  
-  let eventName: String?
-  
-  private enum CodingKeys: String, CodingKey {
-    case title
-    case imageUrlString = "image"
-    case eventName = "event_name"
-  }
-}
-
-extension Pill {
   init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
     guard let idString = metaData[.idString] as? String,
           let createdAt = metaData[.created] as? Double,
@@ -63,75 +36,135 @@ extension Pill {
           let extras = metaData[.extras] as? [AnyHashable: Any]
     else { return nil }
     
-    let eventName = extras[ContentCardKey.eventName.rawValue] as? String
-    
     let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
+   
+    var compositeID: Int?
+    if let compositeIDString = extras[ContentCardKey.compositeId.rawValue] as? String {
+      compositeID = Int(compositeIDString)
+    }
     
-    self.init(contentCardData: contentCardData, title: title, imageUrlString: imageUrlString, eventName: eventName)
+    self.init(contentCardData: contentCardData, id: 0, title: title, eventName: "", imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: compositeID)
   }
 }
 
-struct Composite: Codable, Hashable {
+// MARK: - HomeMetaData
+struct HomeMetaData: Codable {
+  var data: [HomeData]
+}
+
+extension HomeMetaData {
+  static var empty: HomeMetaData {
+    return HomeMetaData(data: [HomeData(id: -1, attributes: HomeAttributes(createdAt: "", updatedAt: "", publishedAt: "", configuration: HomeConfiguration(id: -1, apiKey: "", configTitle: "", attributesDescription: "", configIcon: "", vertical: ""), header: Header(id: -1, title: "", fontColorString: nil, backgroundColorString: nil), pills: [], bottles: [], composites: []))])
+  }
+}
+
+// MARK: - HomeData
+struct HomeData: Codable {
+  let id: Int
+  var attributes: HomeAttributes
+}
+
+// MARK: - HomeAttributes
+struct HomeAttributes: Codable {
+  let createdAt, updatedAt, publishedAt: String
+  let configuration: HomeConfiguration
+  let header: Header
+  var pills, bottles: [HomeItem]
+  var composites: [Composite]
+  
+  enum CodingKeys: String, CodingKey {
+    case createdAt, updatedAt, publishedAt, header, pills, bottles, composites
+    case configuration = "attributes"
+  }
+}
+
+// MARK: - HomeConfiguration
+struct HomeConfiguration: Codable {
+  let id: Int
+  let apiKey, configTitle, attributesDescription: String
+  let configIcon: String
+  let vertical: String
+
+  enum CodingKeys: String, CodingKey {
+    case id, vertical
+    case apiKey = "api_key"
+    case configTitle = "config_title"
+    case attributesDescription = "description"
+    case configIcon = "config_icon"
+  }
+}
+
+// MARK: - HomeItem
+struct HomeItem: ContentCardable, Codable, Hashable, HomeColorable, HomeImageable {
+  private(set) var contentCardData: ContentCardData?
   let id: Int
   let title: String
-  let subtitle: String
-  var miniBottles: [MiniBottle]
-}
+  let eventName: String?
+  private(set) var imageUrlString: String?
+  private(set) var fontColorString, backgroundColorString: String?
+  let compositeID: Int?
 
-struct Bottle: HomeItem, Hashable {
-  private(set) var contentCardData: ContentCardData?
-  private(set) var title: String
-  private(set) var imageUrlString: String
-  
-  private enum CodingKeys: String, CodingKey {
-    case title
+  enum CodingKeys: String, CodingKey {
+    case id, title
     case imageUrlString = "image"
+    case eventName = "event_name"
+    case backgroundColorString = "background_color"
+    case fontColorString = "font_color"
+    case compositeID = "composite_id"
   }
 }
 
-extension Bottle {
-  init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
-    guard let idString = metaData[.idString] as? String,
-          let createdAt = metaData[.created] as? Double,
-          let isDismissible = metaData[.dismissible] as? Bool,
-          let title = metaData[.title] as? String,
-          let imageUrlString = metaData[.image] as? String
-    else { return nil }
-    
-    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
-    
-    self.init(contentCardData: contentCardData, title: title, imageUrlString: imageUrlString)
+protocol HomeImageable {
+  var imageUrlString: String? { get }
+}
+
+extension HomeImageable {
+  var imageUrl: URL? {
+    guard let imageUrlString = imageUrlString else { return nil }
+    return URL(string: imageUrlString)
   }
 }
 
-struct MiniBottle: HomeItem, Hashable {
-  let compositeId: Int
-  private(set) var contentCardData: ContentCardData?
-  private(set) var title: String
-  private(set) var imageUrlString: String
+protocol HomeColorable {
+  var fontColorString: String? { get }
+  var backgroundColorString: String? { get}
+}
+
+extension HomeColorable {
+  var fontColor: Color {
+    return Color(fontColorString?.colorValue() ?? .black)
+  }
   
-  private enum CodingKeys: String, CodingKey {
-    case compositeId = "composite_id"
-    case title
-    case imageUrlString = "image"
+  var backgroundColor: Color {
+    return Color(backgroundColorString?.colorValue() ?? .white)
   }
 }
 
-extension MiniBottle {
-  init?(metaData: [ContentCardKey : Any], classType contentCardClassType: ContentCardClassType) {
-    guard let idString = metaData[.idString] as? String,
-          let createdAt = metaData[.created] as? Double,
-          let isDismissible = metaData[.dismissible] as? Bool,
-          let title = metaData[.title] as? String,
-          let imageUrlString = metaData[.image] as? String,
-          let extras = metaData[.extras] as? [AnyHashable: Any],
-          let compositeIdString = extras[ContentCardKey.compositeId.rawValue] as? String,
-          let compositeId = Int(compositeIdString)
-    else { return nil }
-    
-    let contentCardData = ContentCardData(contentCardId: idString, contentCardClassType: contentCardClassType, createdAt: createdAt, isDismissible: isDismissible)
-    
-    self.init(compositeId: compositeId, contentCardData: contentCardData, title: title, imageUrlString: imageUrlString)
+// MARK: - Composite
+struct Composite: Codable, Hashable, HomeColorable {
+  let id: Int
+  let title, subtitle: String
+  private(set) var fontColorString, backgroundColorString: String?
+  let compositeID: Int
+  var miniBottles: [HomeItem]
+
+  enum CodingKeys: String, CodingKey {
+    case id, title, subtitle
+    case fontColorString = "font_color"
+    case backgroundColorString = "background_color"
+    case compositeID = "composite_id"
+    case miniBottles = "mini_bottles"
   }
 }
 
+// MARK: - Header
+struct Header: Codable, HomeColorable {
+  let id: Int
+  let title: String
+  private(set) var fontColorString, backgroundColorString: String?
+
+  enum CodingKeys: String, CodingKey {
+    case id, title
+    case fontColorString = "font_color"
+  }
+}
