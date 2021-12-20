@@ -34,22 +34,7 @@ extension ContentOperationQueue {
     var meta: HomeMetaData = await loadMetaData()
     
     contentCardCompletionHandler = { contentCards in
-      for card in contentCards {
-        switch card.contentCardData?.contentCardClassType {
-        case .home(.pill):
-          meta.data[0].attributes.pills += [card as! HomeItem]
-        case .home(.bottle):
-          meta.data[0].attributes.bottles += [card as! HomeItem]
-        case .home(.miniBottle):
-          let miniBottle = card as! HomeItem
-          for i in 0..<meta.data[0].attributes.composites.count {
-            if meta.data[0].attributes.composites[i].compositeID == miniBottle.compositeID {
-              meta.data[0].attributes.composites[i].miniBottles.append(miniBottle)
-            }
-          }
-        default: break
-        }
-      }
+      self.formatContentCards(contentCards, toData: &meta.data)
     }
     
     addOperation { [weak self] in
@@ -75,6 +60,25 @@ private extension ContentOperationQueue {
       return try await NetworkRequest.makeRequest()
     } catch {
       return HomeMetaData.empty
+    }
+  }
+  
+  func formatContentCards(_ cards: [ContentCardable], toData data: inout HomeData) {
+    for card in cards {
+      switch card.contentCardData?.contentCardClassType {
+      case .home(.pill):
+        data.attributes.pills.append(card as! HomeItem)
+      case .home(.bottle):
+        data.attributes.bottles.append(card as! HomeItem)
+      case .home(.miniBottle):
+        let miniBottle = card as! HomeItem
+        for i in 0..<data.attributes.composites.count {
+          if data.attributes.composites[i].compositeID == miniBottle.compositeID {
+            data.attributes.composites[i].miniBottles.append(miniBottle)
+          }
+        }
+      default: continue
+      }
     }
   }
 }

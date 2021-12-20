@@ -10,19 +10,19 @@ final class HomeViewModel: NSObject, ObservableObject {
   }
   
   var header: Header {
-    return  meta.data.first!.attributes.header
+    return  meta.data.attributes.header
   }
   
   var pills: [HomeItem] {
-    return meta.data.first!.attributes.pills
+    return meta.data.attributes.pills
   }
   
   var bottles: [HomeItem] {
-    return  meta.data.first!.attributes.bottles
+    return  meta.data.attributes.bottles
   }
   
   var composites: [Composite] {
-    return  meta.data.first!.attributes.composites
+    return  meta.data.attributes.composites
   }
 }
 
@@ -49,12 +49,12 @@ extension HomeItem {
 
 // MARK: - HomeMetaData
 struct HomeMetaData: Codable {
-  var data: [HomeData]
+  var data: HomeData
 }
 
 extension HomeMetaData {
   static var empty: HomeMetaData {
-    return HomeMetaData(data: [HomeData(id: -1, attributes: HomeAttributes(createdAt: "", updatedAt: "", publishedAt: "", configuration: HomeConfiguration(id: -1, apiKey: "", configTitle: "", attributesDescription: "", configIcon: "", vertical: ""), header: Header(id: -1, title: "", fontColorString: nil, backgroundColorString: nil), pills: [], bottles: [], composites: []))])
+    return HomeMetaData(data: HomeData(id: -1, attributes: HomeAttributes(createdAt: "", updatedAt: "", publishedAt: "", configuration: HomeConfiguration(id: -1, apiKey: "", configTitle: "", attributesDescription: "", configIcon: "", vertical: ""), header: Header(id: -1, title: "", fontColorString: nil, backgroundColorString: nil), pills: [], bottles: [], composites: [])))
   }
 }
 
