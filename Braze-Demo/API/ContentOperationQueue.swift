@@ -57,7 +57,7 @@ extension ContentOperationQueue {
 private extension ContentOperationQueue {
   func loadMetaData() async -> HomeMetaData {
     do {
-      return try await NetworkRequest.makeRequest()
+      return try await NetworkRequest.makeRequest(string: "https://run.mocky.io/v3/6a11c26a-9b9e-4811-90b9-e97f98f55d5a")
     } catch {
       return HomeMetaData.empty
     }

@@ -6,8 +6,8 @@ enum NetworkRequestError: Error {
 }
 
 class NetworkRequest<T: Codable>: NSObject {
-  static func makeRequest() async throws -> T {
-    guard let url = URL(string: "https://run.mocky.io/v3/6a11c26a-9b9e-4811-90b9-e97f98f55d5a") else {
+  static func makeRequest(string: String) async throws -> T {
+    guard let url = URL(string: string) else {
       throw NetworkRequestError.invalidUrl
     }
 
