@@ -30,6 +30,6 @@ struct PillView_Previews: PreviewProvider {
   }
   
   static var previews: some View {
-    PillView(pill: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: nil))
+    PillView(pill: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: nil))
   }
 }

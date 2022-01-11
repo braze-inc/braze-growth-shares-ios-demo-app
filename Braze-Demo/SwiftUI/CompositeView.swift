@@ -38,7 +38,7 @@ struct CompositeView: View {
 
 struct HomeDetailView_Previews: PreviewProvider {
   static var miniBottle: HomeItem {
-    return HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: 0)
+    return HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: 0)
   }
   
   static var imageUrlString: String {

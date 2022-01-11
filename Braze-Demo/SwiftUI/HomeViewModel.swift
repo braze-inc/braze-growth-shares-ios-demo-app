@@ -43,7 +43,7 @@ extension HomeItem {
       compositeID = Int(compositeIDString)
     }
     
-    self.init(contentCardData: contentCardData, id: 0, title: title, eventName: "", imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: compositeID)
+    self.init(contentCardData: contentCardData, id: 0, title: title, eventName: "", image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: compositeID)
   }
 }
 
@@ -54,7 +54,7 @@ struct HomeMetaData: Codable {
 
 extension HomeMetaData {
   static var empty: HomeMetaData {
-    return HomeMetaData(data: HomeData(id: -1, attributes: HomeAttributes(createdAt: "", updatedAt: "", publishedAt: "", configuration: HomeConfiguration(id: -1, apiKey: "", configTitle: "", attributesDescription: "", configIcon: "", vertical: ""), header: Header(id: -1, title: "", fontColorString: nil, backgroundColorString: nil), pills: [], bottles: [], composites: [])))
+    return HomeMetaData(data: HomeData(id: -1, attributes: HomeAttributes(createdAt: "", updatedAt: "", publishedAt: "", configuration: HomeConfiguration(id: -1, apiKey: "", configTitle: "", attributesDescription: "", vertical: ""), header: Header(id: -1, title: "", fontColorString: nil, backgroundColorString: nil), pills: [], bottles: [], composites: [])))
   }
 }
 
@@ -82,7 +82,6 @@ struct HomeAttributes: Codable {
 struct HomeConfiguration: Codable {
   let id: Int
   let apiKey, configTitle, attributesDescription: String
-  let configIcon: String
   let vertical: String
 
   enum CodingKeys: String, CodingKey {
@@ -90,23 +89,22 @@ struct HomeConfiguration: Codable {
     case apiKey = "api_key"
     case configTitle = "config_title"
     case attributesDescription = "description"
-    case configIcon = "config_icon"
   }
 }
 
 // MARK: - HomeItem
-struct HomeItem: ContentCardable, Codable, Hashable, HomeColorable, HomeImageable {
+struct HomeItem: ContentCardable, Codable, Hashable, HomeColorable {
   private(set) var contentCardData: ContentCardData?
   let id: Int
   let title: String
   let eventName: String?
+  let image: ImageMetaData?
   private(set) var imageUrlString: String?
   private(set) var fontColorString, backgroundColorString: String?
   let compositeID: Int?
 
   enum CodingKeys: String, CodingKey {
-    case id, title
-    case imageUrlString = "image"
+    case id, title, image
     case eventName = "event_name"
     case backgroundColorString = "background_color"
     case fontColorString = "font_color"
@@ -114,14 +112,38 @@ struct HomeItem: ContentCardable, Codable, Hashable, HomeColorable, HomeImageabl
   }
 }
 
-protocol HomeImageable {
-  var imageUrlString: String? { get }
+extension HomeItem {
+  var imageUrl: URL? {
+    if let urlString = image?.data.attributes.url {
+      let domain = "https://masquerade.k8s.tools-001.p-use-1.braze.com"
+      return URL(string: domain + urlString)
+    } else if let urlString = imageUrlString {
+      return URL(string: urlString)
+    } else {
+      return nil
+    }
+  }
 }
 
-extension HomeImageable {
-  var imageUrl: URL? {
-    guard let imageUrlString = imageUrlString else { return nil }
-    return URL(string: imageUrlString)
+// MARK: - Image
+struct ImageMetaData: Codable, Hashable {
+  let data: ImageData
+}
+
+// MARK: - ImageData
+struct ImageData: Codable, Hashable  {
+  let id: Int
+  let attributes: ImageAttributes
+}
+
+// MARK: - ImageAttributes
+struct ImageAttributes: Codable, Hashable {
+  let url: String
+  let previewURL: String?
+
+  enum CodingKeys: String, CodingKey {
+    case url
+    case previewURL = "previewUrl"
   }
 }
 

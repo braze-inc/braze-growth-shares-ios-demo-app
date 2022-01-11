@@ -57,7 +57,7 @@ extension ContentOperationQueue {
 private extension ContentOperationQueue {
   func loadMetaData() async -> HomeMetaData {
     do {
-      return try await NetworkRequest.makeRequest(string: "https://run.mocky.io/v3/6a11c26a-9b9e-4811-90b9-e97f98f55d5a")
+      return try await NetworkRequest.makeRequest(string: "https://masquerade.k8s.tools-001.p-use-1.braze.com/api/configs/1?populate=attributes,header,pills,bottles,composites.mini_bottles,attributes.config_icon,pills.image,bottles.image,composites.mini_bottles.image")
     } catch {
       return HomeMetaData.empty
     }

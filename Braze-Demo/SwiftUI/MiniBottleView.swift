@@ -34,6 +34,6 @@ struct MiniBottleView_Previews: PreviewProvider {
   }
   
     static var previews: some View {
-      MiniBottleView(miniBottle: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: 0))
+      MiniBottleView(miniBottle: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: 0))
     }
 }
