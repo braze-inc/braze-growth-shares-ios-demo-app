@@ -303,13 +303,13 @@ private extension BrazeManager {
     case .coupon:
       return Coupon(metaData: metaData, classType: classType)
     case .home(.bottle):
-      return Bottle(metaData: metaData, classType: classType)
+      return HomeItem(metaData: metaData, classType: classType)
     case .home(.group):
       return Group(metaData: metaData, classType: classType)
     case .home(.miniBottle):
-      return MiniBottle(metaData: metaData, classType: classType)
+      return HomeItem(metaData: metaData, classType: classType)
     case .home(.pill):
-      return Pill(metaData: metaData, classType: classType)
+      return HomeItem(metaData: metaData, classType: classType)
     case .home(.tile):
       return Tile(metaData: metaData, classType: classType)
     case .message(.fullPage):

@@ -1,22 +1,21 @@
 import SwiftUI
 
 struct PillView: View {
-  var title: String
-  var url: URL?
+  var pill: HomeItem
   
   var body: some View {
     ZStack {
-      AsyncImage(url: url, content: { image in
+      AsyncImage(url: pill.imageUrl, content: { image in
         image
           .renderingMode(.original)
           .resizable()
           .opacity(0.8)
       }, placeholder: {
-        Color.clear
+        pill.backgroundColor
       })
       
-      Text(title)
-        .foregroundColor(.white)
+      Text(pill.title)
+        .foregroundColor(pill.fontColor)
         .font(.title3)
         .fontWeight(.bold)
     }
@@ -26,11 +25,11 @@ struct PillView: View {
 }
 
 struct PillView_Previews: PreviewProvider {
-  static var url: URL? {
-    return URL(string: "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI")
+  static var imageUrlString: String {
+    return "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
   }
   
   static var previews: some View {
-    PillView(title: "PILL", url: url)
+    PillView(pill: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: nil))
   }
 }

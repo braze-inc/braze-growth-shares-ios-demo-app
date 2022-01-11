@@ -69,6 +69,7 @@
 		7F754FC3250C2F8000CD7B45 /* RemoteStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */; };
 		7F754FC5250C3A5200CD7B45 /* String_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC4250C3A5200CD7B45 /* String_Util.swift */; };
 		7F754FC7250C436000CD7B45 /* MessageCenterContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */; };
+		7F7FE75C2769274B00BFCAD7 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7FE75B2769274B00BFCAD7 /* NetworkRequest.swift */; };
 		7F87D4AA24B0500200ED0A86 /* BrazeSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */; };
 		7F87D4AC24B2709400ED0A86 /* ShoppingCartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */; };
 		7F87D4AE24B2A24B00ED0A86 /* TextField_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */; };
@@ -331,6 +332,7 @@
 		7F754FC2250C2F8000CD7B45 /* RemoteStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteStorage.swift; sourceTree = "<group>"; };
 		7F754FC4250C3A5200CD7B45 /* String_Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String_Util.swift; sourceTree = "<group>"; };
 		7F754FC6250C435F00CD7B45 /* MessageCenterContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCenterContainerViewController.swift; sourceTree = "<group>"; };
+		7F7FE75B2769274B00BFCAD7 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		7F87D4A924B0500200ED0A86 /* BrazeSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeSettingsViewController.swift; sourceTree = "<group>"; };
 		7F87D4AB24B2709400ED0A86 /* ShoppingCartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCartViewController.swift; sourceTree = "<group>"; };
 		7F87D4AD24B2A24B00ED0A86 /* TextField_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField_Util.swift; sourceTree = "<group>"; };
@@ -385,7 +387,7 @@
 		7FBDD48C24AD711E00EC0983 /* HomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewController.swift; sourceTree = "<group>"; };
 		7FBDD49224AD711E00EC0983 /* BookDemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookDemo.xcdatamodel; sourceTree = "<group>"; };
 		7FBDD49424AD711F00EC0983 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7FBDD49924AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		7FBDD49924AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Braze-Demo/Info.plist"; sourceTree = SOURCE_ROOT; };
 		7FBDD49E24AD711F00EC0983 /* Braze-DemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Braze-DemoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FBDD4A224AD711F00EC0983 /* BrazeDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrazeDemoTests.swift; sourceTree = "<group>"; };
 		7FBDD4A424AD711F00EC0983 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -826,6 +828,7 @@
 				7F8AF0132525353D006F478B /* API Requests */,
 				7FDBFE0926962E70000C1244 /* APIRequestBuilder.swift */,
 				7FC6D2F42703B11D00513F82 /* PlaybackCoordinator.swift */,
+				7F7FE75B2769274B00BFCAD7 /* NetworkRequest.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1555,6 +1558,7 @@
 				7FDBFE052690B2A2000C1244 /* FontConfigurationView.swift in Sources */,
 				7FBDD49324AD711E00EC0983 /* Braze-Demo.xcdatamodeld in Sources */,
 				7FBDD48924AD711E00EC0983 /* AppDelegate.swift in Sources */,
+				7F7FE75C2769274B00BFCAD7 /* NetworkRequest.swift in Sources */,
 				7FF1ADBA24C0B67400AF09F0 /* MessageCenterDetailViewController.swift in Sources */,
 				7FDBFDFB268E6C8C000C1244 /* CustomClassicContentCardCell.swift in Sources */,
 				7F6C980B25643EAA000CDAAA /* CollectionViewDataSourceProvider.swift in Sources */,

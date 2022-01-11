@@ -1,23 +1,22 @@
 import SwiftUI
 
 struct MiniBottleView: View {
-  var title: String
-  var url: URL?
+  var miniBottle: HomeItem
   
   var body: some View {
     ZStack {
-      AsyncImage(url: url, content: { image in
+      AsyncImage(url: miniBottle.imageUrl, content: { image in
         image
           .renderingMode(.original)
           .resizable()
           .opacity(0.8)
       }, placeholder: {
-        Color.clear
+        miniBottle.backgroundColor
       })
       
       VStack {
-        Text(title)
-          .foregroundColor(.white)
+        Text(miniBottle.title)
+          .foregroundColor(miniBottle.fontColor)
           .font(.body)
           .fontWeight(.bold)
           .multilineTextAlignment(.center)
@@ -30,11 +29,11 @@ struct MiniBottleView: View {
 }
 
 struct MiniBottleView_Previews: PreviewProvider {
-  static var url: URL? {
-    return URL(string: "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI")
+  static var imageUrlString: String {
+    "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
   }
   
     static var previews: some View {
-      MiniBottleView(title: "Mini Bottle Grande Bottle Mini Bottle", url: url)
+      MiniBottleView(miniBottle: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: "#000000", compositeID: 0))
     }
 }

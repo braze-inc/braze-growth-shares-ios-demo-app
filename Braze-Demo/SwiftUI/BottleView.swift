@@ -1,24 +1,23 @@
 import SwiftUI
 
 struct BottleView: View {
-  var title: String
-  var url: URL?
+  var bottle: HomeItem
   
   var body: some View {
     ZStack {
-      AsyncImage(url: url, content: { image in
+      AsyncImage(url: bottle.imageUrl, content: { image in
         image
           .renderingMode(.original)
           .resizable()
           .opacity(0.8)
       }, placeholder: {
-        Color.clear
+        bottle.backgroundColor
       })
       
       VStack {
         Spacer()
-        Text(title)
-          .foregroundColor(.white)
+        Text(bottle.title)
+          .foregroundColor(bottle.fontColor)
           .font(.title3)
           .fontWeight(.bold)
           .padding(.vertical)
@@ -30,11 +29,11 @@ struct BottleView: View {
 }
 
 struct BottleView_Previews: PreviewProvider {
-  static var url: URL? {
-    return URL(string: "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI")
+  static var imageUrlString: String {
+    return "https://i.picsum.photos/id/866/200/300.jpg?hmac=rcadCENKh4rD6MAp6V_ma-AyWv641M4iiOpe1RyFHeI"
   }
   
   static var previews: some View {
-    BottleView(title: "Bottle", url: url)
+    BottleView(bottle: HomeItem(contentCardData: nil, id: 0, title: "LOREM", eventName: nil, image: nil, imageUrlString: imageUrlString, fontColorString: "#FFFFFF", backgroundColorString: nil, compositeID: nil))
   }
 }
