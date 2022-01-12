@@ -10,11 +10,11 @@ class ConfigSettingsViewController: UIViewController {
   @IBOutlet private weak var tableView: UITableView!
   
   // MARK: - Variables
-  private typealias DataSource = UITableViewDiffableDataSource<ConfigSection, Datum>
-  private typealias Snapshot = NSDiffableDataSourceSnapshot<ConfigSection, Datum>
+  private typealias DataSource = UITableViewDiffableDataSource<ConfigSection, ConfigData>
+  private typealias Snapshot = NSDiffableDataSourceSnapshot<ConfigSection, ConfigData>
   private var dataSource: DataSource!
   
-  var config: Config? {
+  var config: ConfigMetaData? {
     didSet {
       configureDataSource()
     }
@@ -28,7 +28,7 @@ class ConfigSettingsViewController: UIViewController {
     }
   }
   
-  private func loadConfigData() async -> Config? {
+  private func loadConfigData() async -> ConfigMetaData? {
     do {
       return try await NetworkRequest.makeRequest(string: "https://masquerade.k8s.tools-001.p-use-1.braze.com/api/configs?populate=attributes")
     } catch {
@@ -51,12 +51,12 @@ class ConfigSettingsViewController: UIViewController {
       if cell == nil {
           cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
       }
-      cell.textLabel?.text = content.attributes.attributes.configTitle
+      cell.textLabel?.text = content.config.detail.configTitle
       cell.detailTextLabel?.numberOfLines = 0
       cell.detailTextLabel?.text =
                                   """
-                                  Identifier: \(String(content.attributes.attributes.id))
-                                  Last Updated: \(content.attributes.updatedAt)
+                                  Identifier: \(String(content.config.detail.id))
+                                  Last Updated: \(content.config.updatedAt)
                                   """
       return cell
       
@@ -69,7 +69,7 @@ class ConfigSettingsViewController: UIViewController {
 extension ConfigSettingsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let config = config!.data[indexPath.row]
-    ConfigManager.shared.identifier = config.attributes.attributes.id
+    ConfigManager.shared.identifier = config.config.detail.id
   }
 }
 
@@ -88,32 +88,32 @@ class ConfigManager: NSObject {
 
 
 // MARK: - Config
-struct Config: Codable {
-    let data: [Datum]
+struct ConfigMetaData: Codable {
+  let data: [ConfigData]
 }
 
 // MARK: - Datum
-struct Datum: Codable, Hashable {
-    let id: Int
-    let attributes: DatumAttributes
+struct ConfigData: Codable, Hashable {
+  let id: Int
+  let config: ConfigAttributes
 }
 
 // MARK: - DatumAttributes
-struct DatumAttributes: Codable, Hashable {
-    let createdAt, updatedAt, publishedAt: String
-    let attributes: AttributesAttributes
+struct ConfigAttributes: Codable, Hashable {
+  let createdAt, updatedAt, publishedAt: String
+  let detail: ConfigDetailAttributes
 }
 
 // MARK: - AttributesAttributes
-struct AttributesAttributes: Codable, Hashable {
-    let id: Int
-    let apiKey, configTitle, attributesDescription, vertical: String
+struct ConfigDetailAttributes: Codable, Hashable {
+  let id: Int
+  let apiKey, configTitle, attributesDescription, vertical: String
 
-    enum CodingKeys: String, CodingKey {
-        case id
-        case apiKey = "api_key"
-        case configTitle = "config_title"
-        case attributesDescription = "description"
-        case vertical
-    }
+  enum CodingKeys: String, CodingKey {
+    case id
+    case apiKey = "api_key"
+    case configTitle = "config_title"
+    case attributesDescription = "description"
+    case vertical
+  }
 }
