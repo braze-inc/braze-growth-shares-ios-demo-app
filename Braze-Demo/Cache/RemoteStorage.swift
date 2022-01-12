@@ -16,6 +16,9 @@ enum RemoteStorageKey: String, CaseIterable {
   // MARK: - Environment
   case overrideApiKey = "override_api_key"
   case overrideEndpoint = "override_endpoint"
+  
+  // MARK: - Config
+  case configIdentifier = "config_identifier"
 }
 
 enum RemoteStorageType {

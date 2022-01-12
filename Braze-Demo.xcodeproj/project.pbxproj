@@ -107,6 +107,7 @@
 		7F9DCBCF24AD7A0400E8D207 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */; };
 		7F9DCBD224AD7A4F00E8D207 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBD124AD7A4F00E8D207 /* Tile.swift */; };
 		7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */; };
+		7FA20179278F6D7300285D3E /* ConfigSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA20178278F6D7300285D3E /* ConfigSettingsViewController.swift */; };
 		7FA45A2E24C28B7A009A484B /* ContentCardFullPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */; };
 		7FA45A3324C28BD0009A484B /* ContentCardFullPageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */; };
 		7FA45A3624C29131009A484B /* UIVIew_Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA45A3524C29131009A484B /* UIVIew_Util.swift */; };
@@ -369,6 +370,7 @@
 		7F9DCBCE24AD7A0400E8D207 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		7F9DCBD124AD7A4F00E8D207 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		7F9DCBD624AD831C00E8D207 /* ItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		7FA20178278F6D7300285D3E /* ConfigSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigSettingsViewController.swift; sourceTree = "<group>"; };
 		7FA45A2D24C28B7A009A484B /* ContentCardFullPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentCardFullPageView.swift; sourceTree = "<group>"; };
 		7FA45A3224C28BD0009A484B /* ContentCardFullPageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContentCardFullPageView.xib; sourceTree = "<group>"; };
 		7FA45A3524C29131009A484B /* UIVIew_Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIew_Util.swift; sourceTree = "<group>"; };
@@ -655,6 +657,7 @@
 				7F5549EF2582F3D000DAFB84 /* ContentCardSettingsViewController.swift */,
 				7F5549F42582F3DC00DAFB84 /* InAppMessageSettingsViewController.swift */,
 				7F0B4A7C25F5B60C008DC80B /* PushNotificationsSettingsViewController.swift */,
+				7FA20178278F6D7300285D3E /* ConfigSettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1539,6 +1542,7 @@
 				7FCFB99524CA383C001AA381 /* Message.swift in Sources */,
 				7F6C980625643E82000CDAAA /* GroupListDataSource.swift in Sources */,
 				7FD1216F25F0047B00961131 /* UserAttribute.swift in Sources */,
+				7FA20179278F6D7300285D3E /* ConfigSettingsViewController.swift in Sources */,
 				7FBDD48D24AD711E00EC0983 /* HomeListViewController.swift in Sources */,
 				7F9DCBD724AD831C00E8D207 /* ItemCollectionViewCell.swift in Sources */,
 				7FA5F3D92720662B00DF3A83 /* BottleView.swift in Sources */,
