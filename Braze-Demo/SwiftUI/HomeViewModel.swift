@@ -81,8 +81,8 @@ struct HomeAttributes: Codable {
 // MARK: - HomeConfiguration
 struct HomeConfiguration: Codable {
   let id: Int
-  let apiKey, configTitle, attributesDescription: String
-  let vertical: String
+  let apiKey: String?
+  let configTitle, attributesDescription, vertical: String
 
   enum CodingKeys: String, CodingKey {
     case id, vertical
@@ -114,7 +114,7 @@ struct HomeItem: ContentCardable, Codable, Hashable, HomeColorable {
 
 extension HomeItem {
   var imageUrl: URL? {
-    if let urlString = image?.data.attributes.url {
+    if let urlString = image?.data?.attributes.url {
       let domain = "https://masquerade.k8s.tools-001.p-use-1.braze.com"
       return URL(string: domain + urlString)
     } else if let urlString = imageUrlString {
@@ -127,7 +127,7 @@ extension HomeItem {
 
 // MARK: - Image
 struct ImageMetaData: Codable, Hashable {
-  let data: ImageData
+  let data: ImageData?
 }
 
 // MARK: - ImageData
