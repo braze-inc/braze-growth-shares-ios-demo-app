@@ -96,18 +96,28 @@ struct ConfigMetaData: Codable {
 struct ConfigData: Codable, Hashable {
   let id: Int
   let config: ConfigAttributes
+  
+  enum CodingKeys: String, CodingKey {
+    case id
+    case config = "attributes"
+  }
 }
 
 // MARK: - DatumAttributes
 struct ConfigAttributes: Codable, Hashable {
   let createdAt, updatedAt, publishedAt: String
   let detail: ConfigDetailAttributes
+  
+  enum CodingKeys: String, CodingKey {
+    case createdAt, updatedAt, publishedAt
+    case detail = "attributes"
+  }
 }
 
 // MARK: - AttributesAttributes
 struct ConfigDetailAttributes: Codable, Hashable {
   let id: Int
-  let apiKey, configTitle, attributesDescription, vertical: String
+  let apiKey, configTitle, attributesDescription, vertical: String?
 
   enum CodingKeys: String, CodingKey {
     case id
