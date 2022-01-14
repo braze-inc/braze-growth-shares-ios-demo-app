@@ -1,6 +1,6 @@
 import UIKit
 
-private enum SettingsSection: Int {
+private enum SettingsSection {
   case environment
   case config
   case channel

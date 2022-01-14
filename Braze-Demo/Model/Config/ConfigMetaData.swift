@@ -5,7 +5,7 @@ struct ConfigMetaData: Codable {
   let data: [ConfigData]
 }
 
-// MARK: - Datum
+// MARK: - ConfigData
 struct ConfigData: Codable, Hashable {
   let id: Int
   let config: ConfigAttributes
@@ -16,7 +16,7 @@ struct ConfigData: Codable, Hashable {
   }
 }
 
-// MARK: - DatumAttributes
+// MARK: - ConfigAttributes
 struct ConfigAttributes: Codable, Hashable {
   let createdAt, updatedAt, publishedAt: String
   let detail: ConfigDetailAttributes
@@ -40,7 +40,7 @@ struct ConfigAttributes: Codable, Hashable {
   }
 }
 
-// MARK: - AttributesAttributes
+// MARK: - ConfigDetailAttributes
 struct ConfigDetailAttributes: Codable, Hashable {
   let id: Int
   let apiKey, configTitle, attributesDescription, vertical: String?
