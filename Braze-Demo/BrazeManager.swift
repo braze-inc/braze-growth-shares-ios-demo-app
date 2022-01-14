@@ -304,8 +304,6 @@ private extension BrazeManager {
       return Coupon(metaData: metaData, classType: classType)
     case .home(.bottle):
       return HomeItem(metaData: metaData, classType: classType)
-    case .home(.group):
-      return Group(metaData: metaData, classType: classType)
     case .home(.miniBottle):
       return HomeItem(metaData: metaData, classType: classType)
     case .home(.pill):

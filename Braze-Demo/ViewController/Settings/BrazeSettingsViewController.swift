@@ -1,6 +1,6 @@
 import UIKit
 
-private enum SettingsSection {
+private enum SettingsSection: Int {
   case environment
   case config
   case channel
@@ -31,11 +31,23 @@ extension BrazeSettingsViewController {
     configureDataSource()
   }
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    switch segue.identifier {
+    case configSegueIdentifier:
+      guard let viewController = segue.destination as? ConfigSettingsViewController else { break }
+      viewController.configureDelegate(self)
+    default:
+      break
+    }
+  }
+}
+
+extension BrazeSettingsViewController: ConfigSettingsDelegate {
+  func didUpdateConfig(identifier: Int) {
     var snapshot = dataSource.snapshot()
-    snapshot.reloadItems(["Identifier: "])
-    dataSource.apply(snapshot, animatingDifferences: true)
+    snapshot.reloadItems([ConfigManager.shared])
+    dataSource.apply(snapshot, animatingDifferences: false)
   }
 }
 
@@ -46,28 +58,16 @@ private extension BrazeSettingsViewController {
 
     snapshot.appendSections([.environment, .config, .channel])
     snapshot.appendItems(TextFieldDataSource.entryProperties, toSection: .environment)
-    snapshot.appendItems(["Identifier: "], toSection: .config)
+    snapshot.appendItems([ConfigManager.shared], toSection: .config)
     snapshot.appendItems(rows, toSection: .channel)
     
     dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, content) -> UITableViewCell? in
       
       switch content {
       case let item as String:
-        var textLabelString = item
-        switch indexPath.section {
-          case 1: textLabelString = item + String(ConfigManager.shared.identifier)
-          default: break
-        }
-        let cellIdentifier = "RowCell"
-        var cell: UITableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-        }
-        cell.textLabel?.text = textLabelString
-        cell.accessoryType = .disclosureIndicator
-        cell.selectionStyle = .none
-        return cell
+        return self.defaultTableViewCell(cellIdentifier: "RowCell", textLabelText: item)
+      case let item as ConfigManager:
+        return self.defaultTableViewCell(cellIdentifier: "ConfigCell", textLabelText: "Identifier: \(item.identifier)")
       case let textEntry as TextFieldDataSource.EntryProperty:
         let cell: TextFieldEntryViewCell! = tableView.dequeueResusableCell(for: indexPath)
         cell.configureCell(textEntry.header, placeholder: textEntry.placeholder, text: textEntry.text, buttonTitle: textEntry.buttonTitle)
@@ -128,6 +128,18 @@ extension BrazeSettingsViewController: UITableViewDelegate {
 
 // MARK: - Private
 private extension BrazeSettingsViewController {
+  func defaultTableViewCell(cellIdentifier: String, textLabelText: String) -> UITableViewCell {
+    var cell: UITableViewCell!
+    cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+    if cell == nil {
+        cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+    }
+    cell.textLabel?.text = textLabelText
+    cell.accessoryType = .disclosureIndicator
+    cell.selectionStyle = .none
+    return cell
+  }
+  
   func performCellAction(textEntry: TextFieldDataSource.EntryProperty, text: String, indexPath: IndexPath) {
     var alertTitle = ""
     var alertMessage = ""

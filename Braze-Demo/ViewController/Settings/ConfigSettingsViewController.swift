@@ -1,5 +1,9 @@
 import UIKit
 
+protocol ConfigSettingsDelegate: AnyObject {
+  func didUpdateConfig(identifier: Int)
+}
+
 private enum ConfigSection {
   case list
 }
@@ -13,8 +17,10 @@ class ConfigSettingsViewController: UIViewController {
   private typealias DataSource = UITableViewDiffableDataSource<ConfigSection, ConfigData>
   private typealias Snapshot = NSDiffableDataSourceSnapshot<ConfigSection, ConfigData>
   private var dataSource: DataSource!
+  private var selectedRow = -1
+  private weak var delegate: ConfigSettingsDelegate?
   
-  var config: ConfigMetaData? {
+  var configs: [ConfigData] = [] {
     didSet {
       configureDataSource()
     }
@@ -24,8 +30,13 @@ class ConfigSettingsViewController: UIViewController {
     super.viewDidLoad()
     
     Task {
-      self.config = await self.loadConfigData()
+      let metaData = await self.loadConfigData()
+      self.configs = metaData?.data ?? []
     }
+  }
+  
+  func configureDelegate(_ delegate: ConfigSettingsDelegate) {
+    self.delegate = delegate
   }
   
   private func loadConfigData() async -> ConfigMetaData? {
@@ -37,29 +48,20 @@ class ConfigSettingsViewController: UIViewController {
   }
   
   private func configureDataSource() {
-    guard let configs = config?.data else { return }
-    
     var snapshot = Snapshot()
     snapshot.appendSections([.list])
     snapshot.appendItems(configs, toSection: .list)
     
-    dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, content) -> UITableViewCell? in
+    dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, item) -> UITableViewCell? in
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: ConfigTableViewCell.cellIdentifier, for: indexPath) as? ConfigTableViewCell else { return UITableViewCell() }
       
-      let cellIdentifier = "ConfigCell"
-      var cell: UITableViewCell!
-      cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-      if cell == nil {
-          cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
+      let isSelected = item.config.detail.id == ConfigManager.shared.identifier
+      if isSelected {
+        self.selectedRow = indexPath.row
       }
-      cell.textLabel?.text = content.config.detail.configTitle
-      cell.detailTextLabel?.numberOfLines = 0
-      cell.detailTextLabel?.text =
-                                  """
-                                  Identifier: \(String(content.config.detail.id))
-                                  Last Updated: \(content.config.updatedAt)
-                                  """
-      return cell
       
+      cell.configureCell(title: item.config.detail.configTitle, identifier: item.config.detail.id, updated: item.config.updatedAtReadable, isSelected: isSelected)
+      return cell
     })
     
     dataSource.apply(snapshot, animatingDifferences: false)
@@ -68,62 +70,25 @@ class ConfigSettingsViewController: UIViewController {
 
 extension ConfigSettingsViewController: UITableViewDelegate {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let config = config!.data[indexPath.row]
-    ConfigManager.shared.identifier = config.config.detail.id
-  }
-}
-
-class ConfigManager: NSObject {
-  static let shared = ConfigManager()
-  
-  var identifier: Int {
-    set {
-      RemoteStorage().store(newValue, forKey: .configIdentifier)
+    tableView.deselectRow(at: indexPath, animated: false)
+    
+    let newSelectedRow = indexPath.row
+    if selectedRow == newSelectedRow { return }
+    
+    let config = configs[indexPath.row]
+    let identifier = config.config.detail.id
+    
+    ConfigManager.shared.identifier = identifier
+    delegate?.didUpdateConfig(identifier: identifier)
+ 
+    if let previousCell = tableView.cellForRow(at: IndexPath(row: selectedRow, section: indexPath.section)) {
+      previousCell.accessoryType = .none
     }
-    get {
-      return RemoteStorage().retrieve(forKey: .configIdentifier) as? Int ?? 1
+
+    if let cell = tableView.cellForRow(at: indexPath) {
+      cell.accessoryType = .checkmark
     }
-  }
-}
-
-
-// MARK: - Config
-struct ConfigMetaData: Codable {
-  let data: [ConfigData]
-}
-
-// MARK: - Datum
-struct ConfigData: Codable, Hashable {
-  let id: Int
-  let config: ConfigAttributes
-  
-  enum CodingKeys: String, CodingKey {
-    case id
-    case config = "attributes"
-  }
-}
-
-// MARK: - DatumAttributes
-struct ConfigAttributes: Codable, Hashable {
-  let createdAt, updatedAt, publishedAt: String
-  let detail: ConfigDetailAttributes
-  
-  enum CodingKeys: String, CodingKey {
-    case createdAt, updatedAt, publishedAt
-    case detail = "attributes"
-  }
-}
-
-// MARK: - AttributesAttributes
-struct ConfigDetailAttributes: Codable, Hashable {
-  let id: Int
-  let apiKey, configTitle, attributesDescription, vertical: String?
-
-  enum CodingKeys: String, CodingKey {
-    case id
-    case apiKey = "api_key"
-    case configTitle = "config_title"
-    case attributesDescription = "description"
-    case vertical
+    
+    selectedRow = indexPath.row
   }
 }
