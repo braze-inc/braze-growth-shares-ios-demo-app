@@ -1,5 +1,9 @@
 import UIKit
 
+protocol CellActionDelegate: AnyObject {
+  func cellTapped(with item: Any?)
+}
+
 class MessageCenterDataSource: NSObject {
   
   // MARK: - Variables

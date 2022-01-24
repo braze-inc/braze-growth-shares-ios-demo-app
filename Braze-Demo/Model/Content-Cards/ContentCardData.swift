@@ -109,16 +109,12 @@ enum ContentCardClassType: Hashable {
       self = .ad
     case "coupon_code":
       self = .coupon
-    case "group":
-      self = .home(.group)
     case "home_bottle":
       self = .home(.bottle)
     case "home_mini_bottle":
       self = .home(.miniBottle)
     case "home_pill":
       self = .home(.pill)
-    case "home_tile":
-      self = .home(.tile)
     case "message_full_page":
       self = .message(.fullPage)
     case "message_webview":

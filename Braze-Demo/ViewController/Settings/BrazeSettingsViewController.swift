@@ -2,6 +2,7 @@ import UIKit
 
 private enum SettingsSection {
   case environment
+  case config
   case channel
 }
 
@@ -15,6 +16,7 @@ class BrazeSettingsViewController: UIViewController {
   private typealias Snapshot = NSDiffableDataSourceSnapshot<SettingsSection, AnyHashable>
   private var dataSource: DataSource!
   private let rows = ["Content Cards", "In-App Messages", "Push Notifications"]
+  private let configSegueIdentifier = "segueToConfig"
   private let contentCardsSegueIdentifer = "segueToContentCards"
   private let inAppMessagesSegueIdentifier = "segueToInAppMessages"
   private let pushNotificationsSegueIdentifier = "segueToPushNotifications"
@@ -28,6 +30,25 @@ extension BrazeSettingsViewController {
     tableView.tableFooterView = UIView()
     configureDataSource()
   }
+  
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    super.prepare(for: segue, sender: sender)
+    switch segue.identifier {
+    case configSegueIdentifier:
+      guard let viewController = segue.destination as? ConfigSettingsViewController else { break }
+      viewController.configureDelegate(self)
+    default:
+      break
+    }
+  }
+}
+
+extension BrazeSettingsViewController: ConfigSettingsDelegate {
+  func didUpdateConfig(identifier: Int) {
+    var snapshot = dataSource.snapshot()
+    snapshot.reloadItems([ConfigManager.shared])
+    dataSource.apply(snapshot, animatingDifferences: false)
+  }
 }
 
 // MARK: - Private
@@ -35,24 +56,18 @@ private extension BrazeSettingsViewController {
   func configureDataSource() {
     var snapshot = Snapshot()
 
-    snapshot.appendSections([.environment, .channel])
+    snapshot.appendSections([.environment, .config, .channel])
     snapshot.appendItems(TextFieldDataSource.entryProperties, toSection: .environment)
+    snapshot.appendItems([ConfigManager.shared], toSection: .config)
     snapshot.appendItems(rows, toSection: .channel)
     
     dataSource = UITableViewDiffableDataSource(tableView: tableView, cellProvider: { (tableView, indexPath, content) -> UITableViewCell? in
       
       switch content {
       case let item as String:
-        let cellIdentifier = "RowCell"
-        var cell: UITableViewCell!
-        cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-        }
-        cell.textLabel?.text = item
-        cell.accessoryType = .disclosureIndicator
-        cell.selectionStyle = .none
-        return cell
+        return self.defaultTableViewCell(cellIdentifier: "RowCell", textLabelText: item)
+      case let item as ConfigManager:
+        return self.defaultTableViewCell(cellIdentifier: "ConfigCell", textLabelText: "Identifier: \(item.identifier)")
       case let textEntry as TextFieldDataSource.EntryProperty:
         let cell: TextFieldEntryViewCell! = tableView.dequeueResusableCell(for: indexPath)
         cell.configureCell(textEntry.header, placeholder: textEntry.placeholder, text: textEntry.text, buttonTitle: textEntry.buttonTitle)
@@ -79,10 +94,9 @@ extension BrazeSettingsViewController: UITableViewDelegate {
     label.backgroundColor = .white
     
     switch section {
-    case 0:
-      label.text = "ENVIRONMENT SETTINGS"
-    case 1:
-      label.text = "CHANNEL SETTINGS"
+    case 0: label.text = "ENVIRONMENT SETTINGS"
+    case 1: label.text = "CONFIG SETTINGS"
+    case 2: label.text = "CHANNEL SETTINGS"
     default: break
     }
     
@@ -100,10 +114,12 @@ extension BrazeSettingsViewController: UITableViewDelegate {
     
     switch (indexPath.section, indexPath.row) {
     case (1,0):
+      performSegue(withIdentifier: configSegueIdentifier, sender: nil)
+    case (2,0):
       performSegue(withIdentifier: contentCardsSegueIdentifer, sender: nil)
-    case (1,1):
+    case (2,1):
       performSegue(withIdentifier: inAppMessagesSegueIdentifier, sender: nil)
-    case (1,2):
+    case (2,2):
       performSegue(withIdentifier: pushNotificationsSegueIdentifier, sender: nil)
     default: return
     }
@@ -112,6 +128,18 @@ extension BrazeSettingsViewController: UITableViewDelegate {
 
 // MARK: - Private
 private extension BrazeSettingsViewController {
+  func defaultTableViewCell(cellIdentifier: String, textLabelText: String) -> UITableViewCell {
+    var cell: UITableViewCell!
+    cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+    if cell == nil {
+        cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+    }
+    cell.textLabel?.text = textLabelText
+    cell.accessoryType = .disclosureIndicator
+    cell.selectionStyle = .none
+    return cell
+  }
+  
   func performCellAction(textEntry: TextFieldDataSource.EntryProperty, text: String, indexPath: IndexPath) {
     var alertTitle = ""
     var alertMessage = ""
